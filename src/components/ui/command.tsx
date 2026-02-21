@@ -20,13 +20,36 @@ const Command: Component<ParentProps<CommandPrimitive.CommandRootProps>> = (prop
   )
 }
 
-const CommandDialog: Component<ParentProps<DialogRootProps> & { class?: string }> = (props) => {
-  const [local, others] = splitProps(props, ["children", "class"])
+const CommandDialog: Component<
+  ParentProps<DialogRootProps & CommandPrimitive.CommandRootProps> & {
+    class?: string
+    commandClass?: string
+  }
+> = (props) => {
+  const [local, rest] = splitProps(props, ["children", "class", "commandClass"])
+  const [commandProps, dialogProps] = splitProps(rest, [
+    "label",
+    "shouldFilter",
+    "filter",
+    "defaultValue",
+    "value",
+    "onValueChange",
+    "loop",
+    "disablePointerSelection",
+    "vimBindings",
+    "onKeyDown",
+  ])
 
   return (
-    <Dialog {...others}>
+    <Dialog {...dialogProps}>
       <DialogContent class={cn("overflow-hidden p-0", local.class)}>
-        <Command class="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
+        <Command
+          class={cn(
+            "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5",
+            local.commandClass
+          )}
+          {...commandProps}
+        >
           {local.children}
         </Command>
       </DialogContent>

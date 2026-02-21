@@ -50,7 +50,7 @@ type MoveTab = (typeof MOVE_TABS)[number]
 export default function CommandPalette() {
   const [isOpen, setIsOpen] = createSignal(false)
   const [query, setQuery] = createSignal("")
-  const [activeIndex, setActiveIndex] = createSignal(0)
+  const [selectedResultId, setSelectedResultId] = createSignal("")
 
   const [searchIndex, setSearchIndex] = createSignal<SearchDocument[] | null>(null)
   const [pokemonList, setPokemonList] = createSignal<PokemonListItem[] | null>(null)
@@ -78,20 +78,19 @@ export default function CommandPalette() {
   const results = createMemo(() => resolution().results)
   const activeResult = createMemo(() => {
     const current = results()
-    const index = activeIndex()
     if (current.length === 0) {
       return null
     }
 
-    if (index < 0) {
-      return current[0]
+    const selectedId = selectedResultId()
+    if (selectedId) {
+      const selectedResult = current.find((result) => result.id === selectedId)
+      if (selectedResult) {
+        return selectedResult
+      }
     }
 
-    if (index >= current.length) {
-      return current[current.length - 1]
-    }
-
-    return current[index]
+    return current[0]
   })
 
   const [activePokemonDetail] = createResource(
@@ -118,19 +117,14 @@ export default function CommandPalette() {
   createEffect(
     on(results, (nextResults) => {
       if (nextResults.length === 0) {
-        setActiveIndex(0)
+        setSelectedResultId("")
         return
       }
 
-      if (activeIndex() >= nextResults.length) {
-        setActiveIndex(0)
+      const currentSelection = selectedResultId()
+      if (!nextResults.some((result) => result.id === currentSelection)) {
+        setSelectedResultId(nextResults[0]?.id ?? "")
       }
-    })
-  )
-
-  createEffect(
-    on(query, () => {
-      setActiveIndex(0)
     })
   )
 
@@ -196,12 +190,13 @@ export default function CommandPalette() {
   function openPalette(nextQuery = "") {
     setIsOpen(true)
     setQuery(nextQuery)
+    setSelectedResultId("")
   }
 
   function closePalette() {
     setIsOpen(false)
     setQuery("")
-    setActiveIndex(0)
+    setSelectedResultId("")
   }
 
   function executeResult(result: PaletteResult | null, openInNewTab = false) {
@@ -232,29 +227,10 @@ export default function CommandPalette() {
     }
   }
 
-  function onQueryKeyDown(event: KeyboardEvent) {
-    const currentResults = results()
-
-    if (event.key === "ArrowDown") {
+  function onCommandKeyDown(event: KeyboardEvent) {
+    if (event.key === "Enter" && event.shiftKey) {
       event.preventDefault()
-      if (currentResults.length > 0) {
-        setActiveIndex((current) => Math.min(current + 1, currentResults.length - 1))
-      }
-      return
-    }
-
-    if (event.key === "ArrowUp") {
-      event.preventDefault()
-      if (currentResults.length > 0) {
-        setActiveIndex((current) => Math.max(current - 1, 0))
-      }
-      return
-    }
-
-    if (event.key === "Enter") {
-      event.preventDefault()
-      const openInNewTab = event.shiftKey
-      executeResult(activeResult(), openInNewTab)
+      executeResult(activeResult(), true)
       return
     }
   }
@@ -262,6 +238,9 @@ export default function CommandPalette() {
   return (
     <CommandDialog
       open={isOpen()}
+      value={selectedResultId()}
+      onValueChange={setSelectedResultId}
+      onKeyDown={onCommandKeyDown}
       onOpenChange={(open) => {
         if (!open) closePalette()
       }}
@@ -272,12 +251,11 @@ export default function CommandPalette() {
           ref={inputRef}
           value={query()}
           onValueChange={setQuery}
-          onKeyDown={onQueryKeyDown}
           placeholder="Try: lucario moves | lucario spawn | moves trickroom"
         />
 
-        <div class="grid max-h-[500px] min-h-[400px] grid-cols-[280px_1fr]">
-          <div class="overflow-y-auto border-border border-r">
+        <div class="grid h-[500px] min-h-[400px] grid-cols-[280px_1fr] overflow-hidden">
+          <div class="min-h-0 overflow-hidden border-border border-r">
             <Show
               when={!loadError()}
               fallback={
@@ -294,7 +272,7 @@ export default function CommandPalette() {
                   </div>
                 }
               >
-                <CommandList class="p-2">
+                <CommandList class="h-full max-h-none min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain p-0">
                   <Show
                     when={results().length > 0}
                     fallback={
@@ -304,15 +282,13 @@ export default function CommandPalette() {
                     }
                   >
                     <For each={results()}>
-                      {(result, index) => (
+                      {(result) => (
                         <CommandItem
                           value={result.id}
                           class={cn(
-                            "mb-0.5 flex cursor-pointer flex-col gap-1 border-transparent border-l-2 p-3 transition-colors",
-                            index() === activeIndex() && "border-l-foreground bg-secondary"
+                            "flex cursor-pointer flex-col gap-1 border-transparent border-l-2 p-3 transition-colors aria-selected:border-l-foreground aria-selected:bg-secondary aria-selected:text-foreground"
                           )}
-                          onPointerMove={() => setActiveIndex(index())}
-                          onClick={() => executeResult(result)}
+                          onSelect={() => executeResult(result)}
                         >
                           <div class="font-medium text-sm">{result.title}</div>
                           <div class="text-muted-foreground text-xs">{result.subtitle}</div>
@@ -325,7 +301,7 @@ export default function CommandPalette() {
             </Show>
           </div>
 
-          <div class="hidden overflow-y-auto p-5 lg:block">
+          <div class="hidden min-h-0 overflow-y-auto p-5 lg:block">
             <QuickviewPanel
               result={activeResult()}
               pokemonDetail={activePokemonDetail()}
