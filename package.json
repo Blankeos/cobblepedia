@@ -8,9 +8,10 @@
     "build": "bunx --bun vike build",
     "preview": "NODE_ENV=production bun run dist/server/index.mjs",
     "preview-static": "vite preview",
+    "generate:data": "bun scripts/generate-cobblemon-data.ts",
     "check": "tsc --noemit",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
+    "lint": "biome check src scripts package.json tsconfig.json vite.config.ts biome.json PRD.md AGENTS.md",
+    "lint:fix": "biome check --write src scripts package.json tsconfig.json vite.config.ts biome.json PRD.md AGENTS.md",
     "update": "bunx npm-check-updates --format group --interactive"
   },
   "keywords": [],
@@ -25,7 +26,10 @@
   },
   "dependencies": {
     "@photonjs/hono": "^0.1.12",
+    "bagon-hooks": "^0.0.6",
+    "cmdk-solid": "^1.1.2",
     "hono": "^4.12.0",
+    "jszip": "^3.10.1",
     "solid-js": "1.9.11",
     "vike": "^0.4.253",
     "vike-metadata-solid": "^1.0.5",

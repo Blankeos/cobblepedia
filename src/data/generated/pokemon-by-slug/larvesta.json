@@ -1,0 +1,1315 @@
+{
+  "slug": "larvesta",
+  "name": "Larvesta",
+  "dexNumber": 636,
+  "implemented": true,
+  "types": [
+    "bug",
+    "fire"
+  ],
+  "abilities": [
+    {
+      "id": "flamebody",
+      "hidden": false,
+      "label": "Flamebody"
+    },
+    {
+      "id": "swarm",
+      "hidden": true,
+      "label": "Swarm"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
+  "aliases": [
+    "larvesta"
+  ],
+  "maleRatio": 0.5,
+  "height": 11,
+  "weight": 288,
+  "catchRate": 45,
+  "baseExperienceYield": 72,
+  "baseFriendship": 50,
+  "eggCycles": 40,
+  "baseStats": {
+    "hp": 55,
+    "attack": 85,
+    "defence": 55,
+    "special_attack": 50,
+    "special_defence": 55,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "larvesta_volcarona",
+      "variant": "level_up",
+      "result": {
+        "raw": "volcarona",
+        "slug": "volcarona",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "quiverdance"
+      ],
+      "requirementText": [
+        "Level 59+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 59+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 59
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "larvesta_volcarona",
+        "variant": "level_up",
+        "result": "volcarona",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "quiverdance"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 59
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "larvesta",
+        "name": "Larvesta",
+        "dexNumber": 636
+      },
+      {
+        "slug": "volcarona",
+        "name": "Volcarona",
+        "dexNumber": 637
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "larvesta",
+        "toSlug": "volcarona",
+        "method": "level_up",
+        "requirementText": [
+          "Level 59+"
+        ]
+      }
+    ],
+    "roots": [
+      "larvesta"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "54:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "level",
+      "sourceValue": 54,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "42:bugbuzz",
+      "moveId": "bugbuzz",
+      "moveName": "Bug Buzz",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbuzz",
+      "moveId": "bugbuzz",
+      "moveName": "Bug Buzz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "60:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "level",
+      "sourceValue": 60,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "18:flamewheel",
+      "moveId": "flamewheel",
+      "moveName": "Flame Wheel",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "66:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "level",
+      "sourceValue": 66,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:foresight",
+      "moveId": "foresight",
+      "moveName": "Foresight",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:harden",
+      "moveId": "harden",
+      "moveName": "Harden",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:leechlife",
+      "moveId": "leechlife",
+      "moveName": "Leech Life",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:leechlife",
+      "moveId": "leechlife",
+      "moveName": "Leech Life",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:leechlife",
+      "moveId": "leechlife",
+      "moveName": "Leech Life",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lunge",
+      "moveId": "lunge",
+      "moveName": "Lunge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:morningsun",
+      "moveId": "morningsun",
+      "moveName": "Morning Sun",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pounce",
+      "moveId": "pounce",
+      "moveName": "Pounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "larvesta-1",
+      "sourceFile": "0636_larvesta.json",
+      "pokemon": {
+        "raw": "larvesta",
+        "slug": "larvesta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "11-36",
+      "levelMin": 11,
+      "levelMax": 36,
+      "weight": 84,
+      "presets": [
+        "natural",
+        "desert_pyramid"
+      ],
+      "biomeHints": [
+        "Is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "minecraft:desert_pyramid"
+        ],
+        "minY": 48,
+        "neededNearbyBlocks": [
+          "#cobblemon:desert_pyramid_blocks"
+        ],
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland",
+          "minecraft:blue_terracotta",
+          "minecraft:orange_terracotta"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "larvesta-1",
+        "pokemon": "larvesta",
+        "presets": [
+          "natural",
+          "desert_pyramid"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "11-36",
+        "weight": 84,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_desert"
+          ],
+          "minY": 48
+        }
+      }
+    },
+    {
+      "id": "larvesta-2",
+      "sourceFile": "0636_larvesta.json",
+      "pokemon": {
+        "raw": "larvesta",
+        "slug": "larvesta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "11-36",
+      "levelMin": 11,
+      "levelMax": 36,
+      "weight": 84,
+      "presets": [
+        "natural",
+        "jungle_pyramid"
+      ],
+      "biomeHints": [
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "minecraft:cobblestone",
+          "#minecraft:mossy_cobblestone"
+        ],
+        "structures": [
+          "minecraft:jungle_pyramid"
+        ],
+        "minY": 48,
+        "neededNearbyBlocks": [
+          "#cobblemon:jungle_pyramid_blocks"
+        ],
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "larvesta-2",
+        "pokemon": "larvesta",
+        "presets": [
+          "natural",
+          "jungle_pyramid"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "11-36",
+        "weight": 84,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_jungle"
+          ],
+          "minY": 48
+        }
+      }
+    },
+    {
+      "id": "larvesta-3",
+      "sourceFile": "0636_larvesta.json",
+      "pokemon": {
+        "raw": "larvesta",
+        "slug": "larvesta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "11-36",
+      "levelMin": 11,
+      "levelMax": 36,
+      "weight": 8.4,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Nether/is Crimson",
+        "Nether/is Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_crimson",
+          "#cobblemon:nether/is_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "larvesta-3",
+        "pokemon": "larvesta",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "11-36",
+        "weight": 8.4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_crimson",
+            "#cobblemon:nether/is_forest"
+          ]
+        },
+        "drops": {
+          "amount": 4,
+          "entries": [
+            {
+              "item": "minecraft:string",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 5
+            },
+            {
+              "item": "cobblemon:silver_powder",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:charti_berry",
+              "percentage": 2.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "larvesta-4",
+      "sourceFile": "0636_larvesta.json",
+      "pokemon": {
+        "raw": "larvesta",
+        "slug": "larvesta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "11-36",
+      "levelMin": 11,
+      "levelMax": 36,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "structures": [
+          "#aether:dungeons"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "larvesta-4",
+        "pokemon": "larvesta",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "11-36",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "structures": [
+            "#aether:dungeons"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 636,
+    "name": "Larvesta",
+    "primaryType": "bug",
+    "secondaryType": "fire",
+    "maleRatio": 0.5,
+    "height": 11,
+    "weight": 288,
+    "pokedex": [
+      "cobblemon.species.larvesta.desc"
+    ],
+    "labels": [
+      "gen5"
+    ],
+    "aspects": [],
+    "abilities": [
+      "flamebody",
+      "h:swarm"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 85,
+      "defence": 55,
+      "special_attack": 50,
+      "special_defence": 55,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 1,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 72,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 40,
+    "baseFriendship": 50,
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 1.2,
+      "height": 0.85,
+      "fixed": false
+    },
+    "behaviour": {
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "larvesta",
+            "tier": 1
+          }
+        ]
+      },
+      "resting": {
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "fireImmune": true
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "minecraft:blaze_powder",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:silver_powder",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:charti_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:ember",
+      "1:stringshot",
+      "1:absorb",
+      "6:flamecharge",
+      "12:strugglebug",
+      "18:flamewheel",
+      "24:bugbite",
+      "30:screech",
+      "36:leechlife",
+      "42:bugbuzz",
+      "48:takedown",
+      "54:amnesia",
+      "60:doubleedge",
+      "66:flareblitz",
+      "egg:absorb",
+      "egg:foresight",
+      "egg:harden",
+      "egg:morningsun",
+      "egg:thrash",
+      "tm:acrobatics",
+      "tm:amnesia",
+      "tm:bodyslam",
+      "tm:bugbite",
+      "tm:bugbuzz",
+      "tm:calmmind",
+      "tm:doubleedge",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:gigadrain",
+      "tm:heatwave",
+      "tm:incinerate",
+      "tm:leechlife",
+      "tm:lightscreen",
+      "tm:lunge",
+      "tm:magnetrise",
+      "tm:overheat",
+      "tm:pounce",
+      "tm:protect",
+      "tm:psychic",
+      "tm:rest",
+      "tm:safeguard",
+      "tm:screech",
+      "tm:signalbeam",
+      "tm:skittersmack",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:stringshot",
+      "tm:strugglebug",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:trailblaze",
+      "tm:uturn",
+      "tm:wildcharge",
+      "tm:willowisp",
+      "tm:zenheadbutt",
+      "tutor:bugbite",
+      "tutor:calmmind",
+      "tutor:flamethrower",
+      "tutor:gigadrain",
+      "tutor:heatwave",
+      "tutor:leechlife",
+      "tutor:magnetrise",
+      "tutor:psychic",
+      "tutor:rest",
+      "tutor:signalbeam",
+      "tutor:skittersmack",
+      "tutor:sleeptalk",
+      "tutor:stringshot",
+      "tutor:wildcharge",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "larvesta_volcarona",
+        "variant": "level_up",
+        "result": "volcarona",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "quiverdance"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 59
+          }
+        ]
+      }
+    ]
+  }
+}

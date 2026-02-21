@@ -1,0 +1,2245 @@
+{
+  "slug": "poliwag",
+  "name": "Poliwag",
+  "dexNumber": 60,
+  "implemented": true,
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    {
+      "id": "waterabsorb",
+      "hidden": false,
+      "label": "Waterabsorb"
+    },
+    {
+      "id": "damp",
+      "hidden": false,
+      "label": "Damp"
+    },
+    {
+      "id": "swiftswim",
+      "hidden": true,
+      "label": "Swiftswim"
+    }
+  ],
+  "eggGroups": [
+    "water_1"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "aspects": [],
+  "aliases": [
+    "poliwag"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 124,
+  "catchRate": 255,
+  "baseExperienceYield": 60,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 40,
+    "attack": 50,
+    "defence": 40,
+    "special_attack": 40,
+    "special_defence": 40,
+    "speed": 90
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "poliwag_poliwhirl",
+      "variant": "level_up",
+      "result": {
+        "raw": "poliwhirl",
+        "slug": "poliwhirl",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Level 25+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 25+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 25
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "poliwag_poliwhirl",
+        "variant": "level_up",
+        "result": "poliwhirl",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 25
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "poliwag",
+        "name": "Poliwag",
+        "dexNumber": 60
+      },
+      {
+        "slug": "poliwhirl",
+        "name": "Poliwhirl",
+        "dexNumber": 61
+      },
+      {
+        "slug": "poliwrath",
+        "name": "Poliwrath",
+        "dexNumber": 62
+      },
+      {
+        "slug": "politoed",
+        "name": "Politoed",
+        "dexNumber": 186
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "poliwag",
+        "toSlug": "poliwhirl",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+"
+        ]
+      },
+      {
+        "fromSlug": "poliwhirl",
+        "toSlug": "politoed",
+        "method": "trade",
+        "requirementText": [
+          "Hold Kings Rock"
+        ]
+      },
+      {
+        "fromSlug": "poliwhirl",
+        "toSlug": "poliwrath",
+        "method": "item_interact",
+        "requirementText": []
+      }
+    ],
+    "roots": [
+      "poliwag"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:bellydrum",
+      "moveId": "bellydrum",
+      "moveName": "Belly Drum",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:bubble",
+      "moveId": "bubble",
+      "moveName": "Bubble",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "18:bubblebeam",
+      "moveId": "bubblebeam",
+      "moveName": "Bubble Beam",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:chillingwater",
+      "moveId": "chillingwater",
+      "moveName": "Chilling Water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doubleslap",
+      "moveId": "doubleslap",
+      "moveName": "Double Slap",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "54:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "level",
+      "sourceValue": 54,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "42:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:hypnosis",
+      "moveId": "hypnosis",
+      "moveName": "Hypnosis",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:iceball",
+      "moveId": "iceball",
+      "moveName": "Ice Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:iceball",
+      "moveId": "iceball",
+      "moveName": "Ice Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:mindreader",
+      "moveId": "mindreader",
+      "moveName": "Mind Reader",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:mist",
+      "moveId": "mist",
+      "moveName": "Mist",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:mudbomb",
+      "moveId": "mudbomb",
+      "moveName": "Mud Bomb",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:pound",
+      "moveId": "pound",
+      "moveName": "Pound",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:psywave",
+      "moveId": "psywave",
+      "moveName": "Psywave",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:refresh",
+      "moveId": "refresh",
+      "moveName": "Refresh",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:splash",
+      "moveId": "splash",
+      "moveName": "Splash",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:sweetkiss",
+      "moveId": "sweetkiss",
+      "moveName": "Sweet Kiss",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:wakeupslap",
+      "moveId": "wakeupslap",
+      "moveName": "Wake-Up Slap",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:watersport",
+      "moveId": "watersport",
+      "moveName": "Water Sport",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:watersport",
+      "moveId": "watersport",
+      "moveName": "Water Sport",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:waterfall",
+      "moveId": "waterfall",
+      "moveName": "Waterfall",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:weatherball",
+      "moveId": "weatherball",
+      "moveName": "Weather Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "poliwag-1",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-1",
+        "pokemon": "poliwag",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": true
+        }
+      }
+    },
+    {
+      "id": "poliwag-10",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 5.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_temperate"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-10",
+        "pokemon": "poliwag",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 5.4,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_temperate"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-11",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_temperate"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-11",
+        "pokemon": "poliwag",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_temperate"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-12",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-12",
+        "pokemon": "poliwag",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-13",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 5.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-13",
+        "pokemon": "poliwag",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 5.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-14",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
+      ],
+      "raw": {
+        "id": "poliwag-14",
+        "pokemon": "poliwag",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        },
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-2",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:lily_pad"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-2",
+        "pokemon": "poliwag",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:lily_pad"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-3",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 5.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_temperate"
+        ],
+        "isRaining": true,
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-3",
+        "pokemon": "poliwag",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 5.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_temperate"
+          ],
+          "isRaining": true,
+          "neededNearbyBlocks": [
+            "minecraft:water"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-4",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 5.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_temperate"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-4",
+        "pokemon": "poliwag",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 5.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_temperate"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-5",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-5",
+        "pokemon": "poliwag",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "poliwag-6",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 5.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-6",
+        "pokemon": "poliwag",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 5.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "poliwag-7",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_temperate"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-7",
+        "pokemon": "poliwag",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_temperate"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poliwag-8",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
+      ],
+      "raw": {
+        "id": "poliwag-8",
+        "pokemon": "poliwag",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        },
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "poliwag-9",
+      "sourceFile": "0060_poliwag.json",
+      "pokemon": {
+        "raw": "poliwag",
+        "slug": "poliwag",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:lily_pad"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poliwag-9",
+        "pokemon": "poliwag",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:lily_pad"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 60,
+    "name": "Poliwag",
+    "primaryType": "water",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 124,
+    "pokedex": [
+      "cobblemon.species.poliwag.desc"
+    ],
+    "labels": [
+      "gen1"
+    ],
+    "aspects": [],
+    "abilities": [
+      "waterabsorb",
+      "damp",
+      "h:swiftswim"
+    ],
+    "eggGroups": [
+      "water_1"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 50,
+      "defence": 40,
+      "special_attack": 40,
+      "special_defence": 40,
+      "speed": 90
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 60,
+    "experienceGroup": "medium_slow",
+    "catchRate": 255,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 0.6,
+      "height": 0.8,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "canBreatheUnderwater": true,
+          "swimSpeed": "0.2"
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "6",
+        "toleratedLeaders": [
+          {
+            "pokemon": "tympole",
+            "tier": 1
+          },
+          {
+            "pokemon": "poliwag",
+            "tier": 2
+          },
+          {
+            "pokemon": "palpitoad",
+            "tier": 3
+          },
+          {
+            "pokemon": "poliwhirl",
+            "tier": 4
+          },
+          {
+            "pokemon": "seismitoad",
+            "tier": 5
+          },
+          {
+            "pokemon": "poliwrath",
+            "tier": 6
+          },
+          {
+            "pokemon": "politoed",
+            "tier": 7
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:kings_rock",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:chesto_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:watersport",
+      "1:bubble",
+      "1:hypnosis",
+      "1:watergun",
+      "6:pound",
+      "12:mudshot",
+      "18:bubblebeam",
+      "24:raindance",
+      "30:bodyslam",
+      "36:earthpower",
+      "42:hydropump",
+      "48:bellydrum",
+      "54:doubleedge",
+      "egg:doubleslap",
+      "egg:endeavor",
+      "egg:mindreader",
+      "egg:mist",
+      "egg:mudbomb",
+      "egg:muddywater",
+      "egg:refresh",
+      "egg:splash",
+      "egg:wakeupslap",
+      "egg:waterpulse",
+      "egg:watersport",
+      "tm:amnesia",
+      "tm:blizzard",
+      "tm:bodyslam",
+      "tm:bulldoze",
+      "tm:chillingwater",
+      "tm:dig",
+      "tm:dive",
+      "tm:doubleedge",
+      "tm:earthpower",
+      "tm:encore",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:focuspunch",
+      "tm:hail",
+      "tm:haze",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:hydropump",
+      "tm:iceball",
+      "tm:icebeam",
+      "tm:icywind",
+      "tm:liquidation",
+      "tm:lowkick",
+      "tm:muddywater",
+      "tm:mudshot",
+      "tm:mudslap",
+      "tm:protect",
+      "tm:psychic",
+      "tm:raindance",
+      "tm:rest",
+      "tm:sleeptalk",
+      "tm:substitute",
+      "tm:surf",
+      "tm:swift",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thief",
+      "tm:waterfall",
+      "tm:waterpulse",
+      "tm:weatherball",
+      "tm:whirlpool",
+      "tutor:bulldoze",
+      "tutor:dive",
+      "tutor:earthpower",
+      "tutor:endeavor",
+      "tutor:focuspunch",
+      "tutor:helpinghand",
+      "tutor:iceball",
+      "tutor:icebeam",
+      "tutor:icywind",
+      "tutor:liquidation",
+      "tutor:lowkick",
+      "tutor:mudslap",
+      "tutor:psychic",
+      "tutor:rest",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:curse",
+      "legacy:defensecurl",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:psywave",
+      "legacy:rage",
+      "legacy:return",
+      "legacy:round",
+      "legacy:scald",
+      "legacy:secretpower",
+      "legacy:skullbash",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic",
+      "special:sweetkiss"
+    ],
+    "evolutions": [
+      {
+        "id": "poliwag_poliwhirl",
+        "variant": "level_up",
+        "result": "poliwhirl",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 25
+          }
+        ]
+      }
+    ]
+  }
+}

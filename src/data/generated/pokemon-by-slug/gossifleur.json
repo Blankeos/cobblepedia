@@ -1,0 +1,960 @@
+{
+  "slug": "gossifleur",
+  "name": "Gossifleur",
+  "dexNumber": 829,
+  "implemented": true,
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    {
+      "id": "cottondown",
+      "hidden": false,
+      "label": "Cottondown"
+    },
+    {
+      "id": "regenerator",
+      "hidden": false,
+      "label": "Regenerator"
+    },
+    {
+      "id": "effectspore",
+      "hidden": true,
+      "label": "Effectspore"
+    }
+  ],
+  "eggGroups": [
+    "grass"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
+  "aliases": [
+    "gossifleur"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 22,
+  "catchRate": 190,
+  "baseExperienceYield": 50,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 40,
+    "attack": 40,
+    "defence": 60,
+    "special_attack": 40,
+    "special_defence": 60,
+    "speed": 10
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "gossifleur_eldegoss",
+      "variant": "level_up",
+      "result": {
+        "raw": "eldegoss",
+        "slug": "eldegoss",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "cottonspore"
+      ],
+      "requirementText": [
+        "Level 20+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 20+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 20
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "gossifleur_eldegoss",
+        "variant": "level_up",
+        "result": "eldegoss",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "cottonspore"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "gossifleur",
+        "name": "Gossifleur",
+        "dexNumber": 829
+      },
+      {
+        "slug": "eldegoss",
+        "name": "Eldegoss",
+        "dexNumber": 830
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "gossifleur",
+        "toSlug": "eldegoss",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
+      }
+    ],
+    "roots": [
+      "gossifleur"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "32:aromatherapy",
+      "moveId": "aromatherapy",
+      "moveName": "Aromatherapy",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyterrain",
+      "moveId": "grassyterrain",
+      "moveName": "Grassy Terrain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:growth",
+      "moveId": "growth",
+      "moveName": "Growth",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "21:leaftornado",
+      "moveId": "leaftornado",
+      "moveName": "Leaf Tornado",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leafage",
+      "moveId": "leafage",
+      "moveName": "Leafage",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:leechseed",
+      "moveId": "leechseed",
+      "moveName": "Leech Seed",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:poisonpowder",
+      "moveId": "poisonpowder",
+      "moveName": "Poison Powder",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pollenpuff",
+      "moveId": "pollenpuff",
+      "moveName": "Pollen Puff",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:rapidspin",
+      "moveId": "rapidspin",
+      "moveName": "Rapid Spin",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "12:razorleaf",
+      "moveId": "razorleaf",
+      "moveName": "Razor Leaf",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:sing",
+      "moveId": "sing",
+      "moveName": "Sing",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:sleeppowder",
+      "moveId": "sleeppowder",
+      "moveName": "Sleep Powder",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:stunspore",
+      "moveId": "stunspore",
+      "moveName": "Stun Spore",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "8:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "24:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "gossifleur-1",
+      "sourceFile": "0829_gossifleur.json",
+      "pokemon": {
+        "raw": "gossifleur",
+        "slug": "gossifleur",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-25",
+      "levelMin": 1,
+      "levelMax": 25,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "gossifleur-1",
+        "pokemon": "gossifleur",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-25",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ],
+          "isRaining": false
+        }
+      }
+    },
+    {
+      "id": "gossifleur-2",
+      "sourceFile": "0829_gossifleur.json",
+      "pokemon": {
+        "raw": "gossifleur",
+        "slug": "gossifleur",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-25",
+      "levelMin": 1,
+      "levelMax": 25,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Skyroot Grove",
+        "Skyroot Meadow"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "aether:skyroot_grove",
+          "aether:skyroot_meadow"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "gossifleur-2",
+        "pokemon": "gossifleur",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-25",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "aether:skyroot_grove",
+            "aether:skyroot_meadow"
+          ]
+        }
+      }
+    },
+    {
+      "id": "gossifleur-3",
+      "sourceFile": "0829_gossifleur.json",
+      "pokemon": {
+        "raw": "gossifleur",
+        "slug": "gossifleur",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-25",
+      "levelMin": 1,
+      "levelMax": 25,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "gossifleur-3",
+        "pokemon": "gossifleur",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-25",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ],
+          "isRaining": false
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 829,
+    "name": "Gossifleur",
+    "primaryType": "grass",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 22,
+    "pokedex": [
+      "cobblemon.species.gossifleur.desc"
+    ],
+    "labels": [
+      "gen8"
+    ],
+    "aspects": [],
+    "abilities": [
+      "cottondown",
+      "regenerator",
+      "h:effectspore"
+    ],
+    "eggGroups": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 40,
+      "defence": 60,
+      "special_attack": 40,
+      "special_defence": 60,
+      "speed": 10
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 50,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.7,
+      "height": 1.5,
+      "fixed": false
+    },
+    "standingEyeHeight": 0.6,
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.28
+        },
+        "swim": {
+          "avoidsWater": true
+        },
+        "fly": {
+          "canFly": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "hoppip",
+            "tier": 1
+          },
+          {
+            "pokemon": "cottonee",
+            "tier": 1
+          },
+          {
+            "pokemon": "gossifleur",
+            "tier": 1
+          },
+          {
+            "pokemon": "skiploom",
+            "tier": 2
+          },
+          {
+            "pokemon": "jumpluff",
+            "tier": 3
+          },
+          {
+            "pokemon": "whimsicott",
+            "tier": 3
+          },
+          {
+            "pokemon": "eldegoss",
+            "tier": 3
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 1,
+      "entries": [
+        {
+          "item": "cobblemon:coba_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:leafage",
+      "1:sing",
+      "4:rapidspin",
+      "8:sweetscent",
+      "12:razorleaf",
+      "16:round",
+      "21:leaftornado",
+      "24:synthesis",
+      "28:hypervoice",
+      "32:aromatherapy",
+      "36:leafstorm",
+      "egg:growth",
+      "egg:leechseed",
+      "egg:poisonpowder",
+      "egg:sleeppowder",
+      "egg:stunspore",
+      "egg:worryseed",
+      "tm:bulletseed",
+      "tm:charm",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:gigadrain",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:grassyterrain",
+      "tm:helpinghand",
+      "tm:hypervoice",
+      "tm:leafstorm",
+      "tm:lightscreen",
+      "tm:magicalleaf",
+      "tm:pollenpuff",
+      "tm:protect",
+      "tm:rest",
+      "tm:round",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:synthesis",
+      "tm:terablast",
+      "tm:worryseed",
+      "tutor:energyball",
+      "tutor:gigadrain",
+      "tutor:grassyglide",
+      "tutor:helpinghand",
+      "tutor:hypervoice",
+      "tutor:magicalleaf",
+      "tutor:rest",
+      "tutor:sleeptalk",
+      "tutor:synthesis",
+      "tutor:worryseed",
+      "legacy:attract",
+      "legacy:snore"
+    ],
+    "evolutions": [
+      {
+        "id": "gossifleur_eldegoss",
+        "variant": "level_up",
+        "result": "eldegoss",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "cottonspore"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    ]
+  }
+}

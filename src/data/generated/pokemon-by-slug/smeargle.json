@@ -1,0 +1,511 @@
+{
+  "slug": "smeargle",
+  "name": "Smeargle",
+  "dexNumber": 235,
+  "implemented": true,
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    {
+      "id": "owntempo",
+      "hidden": false,
+      "label": "Owntempo"
+    },
+    {
+      "id": "technician",
+      "hidden": false,
+      "label": "Technician"
+    },
+    {
+      "id": "moody",
+      "hidden": true,
+      "label": "Moody"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen2"
+  ],
+  "aspects": [],
+  "aliases": [
+    "smeargle"
+  ],
+  "maleRatio": 0.5,
+  "height": 12,
+  "weight": 580,
+  "catchRate": 45,
+  "baseExperienceYield": 88,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 55,
+    "attack": 20,
+    "defence": 35,
+    "special_attack": 20,
+    "special_defence": 45,
+    "speed": 75
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "smeargle",
+        "name": "Smeargle",
+        "dexNumber": 235
+      }
+    ],
+    "edges": [],
+    "roots": [
+      "smeargle"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:furyswipes",
+      "moveId": "furyswipes",
+      "moveName": "Fury Swipes",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:meanlook",
+      "moveId": "meanlook",
+      "moveName": "Mean Look",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:odorsleuth",
+      "moveId": "odorsleuth",
+      "moveName": "Odor Sleuth",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:seismictoss",
+      "moveId": "seismictoss",
+      "moveName": "Seismic Toss",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:sketch",
+      "moveId": "sketch",
+      "moveName": "Sketch",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:spore",
+      "moveId": "spore",
+      "moveName": "Spore",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "smeargle-1",
+      "sourceFile": "0235_smeargle.json",
+      "pokemon": {
+        "raw": "smeargle",
+        "slug": "smeargle",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "1-25",
+      "levelMin": 1,
+      "levelMax": 25,
+      "weight": 10,
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village",
+          "minecraft:trail_ruins"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "smeargle-1",
+        "pokemon": "smeargle",
+        "presets": [
+          "natural",
+          "urban"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "1-25",
+        "weight": 10,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "smeargle-2",
+      "sourceFile": "0235_smeargle.json",
+      "pokemon": {
+        "raw": "smeargle",
+        "slug": "smeargle",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "1-25",
+      "levelMin": 1,
+      "levelMax": 25,
+      "weight": 10,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "smeargle-2",
+        "pokemon": "smeargle",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "1-25",
+        "weight": 10,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "#minecraft:village"
+          ]
+        }
+      }
+    },
+    {
+      "id": "smeargle-3",
+      "sourceFile": "0235_smeargle.json",
+      "pokemon": {
+        "raw": "smeargle",
+        "slug": "smeargle",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-25",
+      "levelMin": 1,
+      "levelMax": 25,
+      "weight": 2,
+      "presets": [
+        "mansion"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "structures": [
+          "minecraft:mansion",
+          "minecraft:woodland_mansion"
+        ],
+        "minY": 62,
+        "neededBaseBlocks": [
+          "minecraft:birch_planks",
+          "minecraft:double_smooth_stone_slab",
+          "minecraft:oak_planks",
+          "minecraft:polished_andesite",
+          "#minecraft:wool",
+          "#minecraft:wool_carpets"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:mansion_blocks",
+          "minecraft:light_blue_wool",
+          "minecraft:blue_wool",
+          "minecraft:cyan_wool",
+          "minecraft:light_gray_wool",
+          "minecraft:gray_wool",
+          "minecraft:green_wool",
+          "minecraft:black_wool",
+          "minecraft:lime_wool",
+          "minecraft:orange_wool",
+          "minecraft:yellow_wool",
+          "minecraft:brown_wool",
+          "minecraft:yellow_carpet",
+          "minecraft:lime_carpet"
+        ],
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "smeargle-3",
+        "pokemon": "smeargle",
+        "presets": [
+          "mansion"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-25",
+        "weight": 2,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:light_blue_wool",
+            "minecraft:blue_wool",
+            "minecraft:cyan_wool",
+            "minecraft:light_gray_wool",
+            "minecraft:gray_wool",
+            "minecraft:green_wool",
+            "minecraft:black_wool",
+            "minecraft:lime_wool",
+            "minecraft:orange_wool",
+            "minecraft:yellow_wool",
+            "minecraft:brown_wool",
+            "minecraft:yellow_carpet",
+            "minecraft:lime_carpet"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 235,
+    "name": "Smeargle",
+    "primaryType": "normal",
+    "maleRatio": 0.5,
+    "height": 12,
+    "weight": 580,
+    "pokedex": [
+      "cobblemon.species.smeargle.desc"
+    ],
+    "labels": [
+      "gen2"
+    ],
+    "aspects": [],
+    "abilities": [
+      "owntempo",
+      "technician",
+      "h:moody"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 20,
+      "defence": 35,
+      "special_attack": 20,
+      "special_defence": 45,
+      "speed": 75
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 88,
+    "experienceGroup": "fast",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 0.8,
+      "height": 1.8,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "entityInteract": {
+        "avoidedBySkeleton": true
+      },
+      "characteristicRainbow": true,
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "moves": [
+      "1:sketch",
+      "tutor:falseswipe",
+      "tutor:flamethrower",
+      "legacy:captivate",
+      "legacy:sleeptalk",
+      "special:falseswipe",
+      "special:flamethrower",
+      "special:furyswipes",
+      "special:meanlook",
+      "special:odorsleuth",
+      "special:seismictoss",
+      "special:spore"
+    ],
+    "evolutions": []
+  }
+}

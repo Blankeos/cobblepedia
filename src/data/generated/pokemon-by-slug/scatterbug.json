@@ -1,0 +1,738 @@
+{
+  "slug": "scatterbug",
+  "name": "Scatterbug",
+  "dexNumber": 664,
+  "implemented": true,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shielddust",
+      "hidden": false,
+      "label": "Shielddust"
+    },
+    {
+      "id": "compoundeyes",
+      "hidden": false,
+      "label": "Compoundeyes"
+    },
+    {
+      "id": "friendguard",
+      "hidden": true,
+      "label": "Friendguard"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
+  "aliases": [
+    "scatterbug"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 25,
+  "catchRate": 255,
+  "baseExperienceYield": 40,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 38,
+    "attack": 35,
+    "defence": 40,
+    "special_attack": 27,
+    "special_defence": 25,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "scatterbug_spewpa",
+      "variant": "level_up",
+      "result": {
+        "raw": "spewpa",
+        "slug": "spewpa",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "protect"
+      ],
+      "requirementText": [
+        "Level 9+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 9+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 9
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "scatterbug_spewpa",
+        "variant": "level_up",
+        "result": "spewpa",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "protect"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 9
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "scatterbug",
+        "name": "Scatterbug",
+        "dexNumber": 664
+      },
+      {
+        "slug": "spewpa",
+        "name": "Spewpa",
+        "dexNumber": 665
+      },
+      {
+        "slug": "vivillon",
+        "name": "Vivillon",
+        "dexNumber": 666
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "scatterbug",
+        "toSlug": "spewpa",
+        "method": "level_up",
+        "requirementText": [
+          "Level 9+"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/archipelago",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/continental",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/elegant",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/fancy",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/garden",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/high Plains",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/icy Snow",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/jungle",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/marine",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/meadow",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/monsoon",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/ocean",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/polar",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/river",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/sandstorm",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/savanna",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/sun",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/tundra",
+          "Biome ",
+          "Structure Village"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/inferno"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/void"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Biome Evolution/vivillon/forsaken"
+        ]
+      },
+      {
+        "fromSlug": "spewpa",
+        "toSlug": "vivillon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 12+",
+          "Advancement Catch All Vivillon"
+        ]
+      }
+    ],
+    "roots": [
+      "scatterbug"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "15:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:poisonpowder",
+      "moveId": "poisonpowder",
+      "moveName": "Poison Powder",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pounce",
+      "moveId": "pounce",
+      "moveName": "Pounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:ragepowder",
+      "moveId": "ragepowder",
+      "moveName": "Rage Powder",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:stunspore",
+      "moveId": "stunspore",
+      "moveName": "Stun Spore",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:stunspore",
+      "moveId": "stunspore",
+      "moveName": "Stun Spore",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "scatterbug-1",
+      "sourceFile": "0664_scatterbug.json",
+      "pokemon": {
+        "raw": "scatterbug",
+        "slug": "scatterbug",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 7,
+      "presets": [
+        "natural",
+        "foliage"
+      ],
+      "biomeHints": [
+        "Is Aether",
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest",
+        "Is Plains",
+        "Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:leaves",
+          "#c:leaves"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_floral",
+          "#cobblemon:is_plains",
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "scatterbug-1",
+        "pokemon": "scatterbug",
+        "presets": [
+          "natural",
+          "foliage"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 7,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_floral",
+            "#cobblemon:is_plains",
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "scatterbug-2",
+      "sourceFile": "0664_scatterbug.json",
+      "pokemon": {
+        "raw": "scatterbug",
+        "slug": "scatterbug",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 4.5,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "scatterbug-2",
+        "pokemon": "scatterbug",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 4.5,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 664,
+    "name": "Scatterbug",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 25,
+    "pokedex": [
+      "cobblemon.species.scatterbug.desc"
+    ],
+    "labels": [
+      "gen6"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shielddust",
+      "compoundeyes",
+      "h:friendguard"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 38,
+      "attack": 35,
+      "defence": 40,
+      "special_attack": 27,
+      "special_defence": 25,
+      "speed": 35
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 40,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "shoulderMountable": true,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.7,
+      "height": 0.6,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.26
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:bright_powder",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:cheri_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:stringshot",
+      "6:stunspore",
+      "15:bugbite",
+      "egg:poisonpowder",
+      "egg:ragepowder",
+      "egg:stunspore",
+      "tm:bugbite",
+      "tm:pounce",
+      "tm:stringshot",
+      "tm:strugglebug",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:stringshot"
+    ],
+    "evolutions": [
+      {
+        "id": "scatterbug_spewpa",
+        "variant": "level_up",
+        "result": "spewpa",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "protect"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 9
+          }
+        ]
+      }
+    ]
+  }
+}

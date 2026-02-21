@@ -1,0 +1,1505 @@
+{
+  "slug": "drakloak",
+  "name": "Drakloak",
+  "dexNumber": 886,
+  "implemented": true,
+  "types": [
+    "dragon",
+    "ghost"
+  ],
+  "abilities": [
+    {
+      "id": "clearbody",
+      "hidden": false,
+      "label": "Clearbody"
+    },
+    {
+      "id": "infiltrator",
+      "hidden": false,
+      "label": "Infiltrator"
+    },
+    {
+      "id": "cursedbody",
+      "hidden": true,
+      "label": "Cursedbody"
+    }
+  ],
+  "eggGroups": [
+    "amorphous",
+    "dragon"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
+  "aliases": [
+    "drakloak"
+  ],
+  "maleRatio": 0.5,
+  "height": 14,
+  "weight": 110,
+  "catchRate": 45,
+  "baseExperienceYield": 144,
+  "baseFriendship": 50,
+  "eggCycles": 40,
+  "baseStats": {
+    "hp": 68,
+    "attack": 80,
+    "defence": 50,
+    "special_attack": 60,
+    "special_defence": 50,
+    "speed": 102
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "preEvolution": {
+    "raw": "dreepy",
+    "slug": "dreepy",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "drakloak_dragapult",
+      "variant": "level_up",
+      "result": {
+        "raw": "dragapult",
+        "slug": "dragapult",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "dragondarts"
+      ],
+      "requirementText": [
+        "Level 60+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 60+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 60
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "drakloak_dragapult",
+        "variant": "level_up",
+        "result": "dragapult",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "dragondarts"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 60
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "dreepy",
+        "name": "Dreepy",
+        "dexNumber": 885
+      },
+      {
+        "slug": "drakloak",
+        "name": "Drakloak",
+        "dexNumber": 886
+      },
+      {
+        "slug": "dragapult",
+        "name": "Dragapult",
+        "dexNumber": 887
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "drakloak",
+        "toSlug": "dragapult",
+        "method": "level_up",
+        "requirementText": [
+          "Level 60+"
+        ]
+      },
+      {
+        "fromSlug": "dreepy",
+        "toSlug": "drakloak",
+        "method": "level_up",
+        "requirementText": [
+          "Level 50+"
+        ]
+      }
+    ],
+    "roots": [
+      "dreepy"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:astonish",
+      "moveId": "astonish",
+      "moveName": "Astonish",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:breakingswipe",
+      "moveId": "breakingswipe",
+      "moveName": "Breaking Swipe",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:brine",
+      "moveId": "brine",
+      "moveName": "Brine",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:disable",
+      "moveId": "disable",
+      "moveName": "Disable",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:doublehit",
+      "moveId": "doublehit",
+      "moveName": "Double Hit",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "66:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "level",
+      "sourceValue": 66,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragoncheer",
+      "moveId": "dragoncheer",
+      "moveName": "Dragon Cheer",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "42:dragondance",
+      "moveId": "dragondance",
+      "moveName": "Dragon Dance",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragondance",
+      "moveId": "dragondance",
+      "moveName": "Dragon Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "61:dragonrush",
+      "moveId": "dragonrush",
+      "moveName": "Dragon Rush",
+      "sourceType": "level",
+      "sourceValue": 61,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:grudge",
+      "moveId": "grudge",
+      "moveName": "Grudge",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "18:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "72:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "level",
+      "sourceValue": 72,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:lockon",
+      "moveId": "lockon",
+      "moveName": "Lock-On",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:nightshade",
+      "moveId": "nightshade",
+      "moveName": "Night Shade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:phantomforce",
+      "moveId": "phantomforce",
+      "moveName": "Phantom Force",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:phantomforce",
+      "moveId": "phantomforce",
+      "moveName": "Phantom Force",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pounce",
+      "moveId": "pounce",
+      "moveName": "Pounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychicfangs",
+      "moveId": "psychicfangs",
+      "moveName": "Psychic Fangs",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:steelwing",
+      "moveId": "steelwing",
+      "moveName": "Steel Wing",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "54:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "level",
+      "sourceValue": 54,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "drakloak-1",
+      "sourceFile": "0886_drakloak.json",
+      "pokemon": {
+        "raw": "drakloak",
+        "slug": "drakloak",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 2.16,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Coast",
+        "Stony Shore",
+        "Is Beach",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        }
+      ],
+      "raw": {
+        "id": "drakloak-1",
+        "pokemon": "drakloak",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-55",
+        "weight": 2.16,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "drakloak-2",
+      "sourceFile": "0886_drakloak.json",
+      "pokemon": {
+        "raw": "drakloak",
+        "slug": "drakloak",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 2.16,
+      "presets": [],
+      "biomeHints": [
+        "Is Coast",
+        "Stony Shore",
+        "Is Beach",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        }
+      ],
+      "raw": {
+        "id": "drakloak-2",
+        "pokemon": "drakloak",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-55",
+        "weight": 2.16,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "drakloak-3",
+      "sourceFile": "0886_drakloak.json",
+      "pokemon": {
+        "raw": "drakloak",
+        "slug": "drakloak",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "surface",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 2.16,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Coast",
+        "Stony Shore",
+        "Is Beach",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean"
+        ],
+        "timeRange": "dusk"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "drakloak-3",
+        "pokemon": "drakloak",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "surface",
+        "bucket": "ultra-rare",
+        "level": "50-55",
+        "weight": 2.16,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean"
+          ],
+          "timeRange": "dusk"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "drakloak-4",
+      "sourceFile": "0886_drakloak.json",
+      "pokemon": {
+        "raw": "drakloak",
+        "slug": "drakloak",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 2.16,
+      "presets": [],
+      "biomeHints": [
+        "Is Coast",
+        "Stony Shore",
+        "Is Beach",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        }
+      ],
+      "raw": {
+        "id": "drakloak-4",
+        "pokemon": "drakloak",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "50-55",
+        "weight": 2.16,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "drakloak-5",
+      "sourceFile": "0886_drakloak.json",
+      "pokemon": {
+        "raw": "drakloak",
+        "slug": "drakloak",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 2.16,
+      "presets": [],
+      "biomeHints": [
+        "Is Coast",
+        "Stony Shore",
+        "Is Beach",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        }
+      ],
+      "raw": {
+        "id": "drakloak-5",
+        "pokemon": "drakloak",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "50-55",
+        "weight": 2.16,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "dusk"
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 886,
+    "name": "Drakloak",
+    "primaryType": "dragon",
+    "secondaryType": "ghost",
+    "maleRatio": 0.5,
+    "height": 14,
+    "weight": 110,
+    "pokedex": [
+      "cobblemon.species.drakloak.desc"
+    ],
+    "labels": [
+      "gen8"
+    ],
+    "aspects": [],
+    "abilities": [
+      "clearbody",
+      "infiltrator",
+      "h:cursedbody"
+    ],
+    "eggGroups": [
+      "amorphous",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "attack": 80,
+      "defence": 50,
+      "special_attack": 60,
+      "special_defence": 50,
+      "speed": 102
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 2
+    },
+    "baseExperienceYield": 144,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 40,
+    "baseFriendship": 50,
+    "baseScale": 0.65,
+    "hitbox": {
+      "width": 0.9,
+      "height": 1.55,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "swimSpeed": 0.3,
+          "canBreatheUnderwater": true
+        },
+        "fly": {
+          "canFly": true
+        },
+        "walk": {
+          "canWalk": false
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "times": [
+          "167-11833,13702-22299"
+        ],
+        "drowsyChance": 0.0021,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "5",
+        "toleratedLeaders": [
+          {
+            "pokemon": "drakloak",
+            "tier": 1
+          },
+          {
+            "pokemon": "dragapult",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:phantom_membrane",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:haban_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:dragonpulse",
+      "1:astonish",
+      "1:infestation",
+      "1:quickattack",
+      "1:bite",
+      "6:lockon",
+      "12:assurance",
+      "18:hex",
+      "24:agility",
+      "30:doublehit",
+      "36:uturn",
+      "42:dragondance",
+      "48:phantomforce",
+      "54:takedown",
+      "61:dragonrush",
+      "66:doubleedge",
+      "72:lastresort",
+      "egg:confuseray",
+      "egg:curse",
+      "egg:disable",
+      "egg:doubleteam",
+      "egg:dragontail",
+      "egg:grudge",
+      "egg:suckerpunch",
+      "tm:acrobatics",
+      "tm:agility",
+      "tm:allyswitch",
+      "tm:assurance",
+      "tm:batonpass",
+      "tm:beatup",
+      "tm:breakingswipe",
+      "tm:brine",
+      "tm:confuseray",
+      "tm:curse",
+      "tm:dive",
+      "tm:doubleedge",
+      "tm:doubleteam",
+      "tm:dracometeor",
+      "tm:dragoncheer",
+      "tm:dragondance",
+      "tm:dragonpulse",
+      "tm:dragontail",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:flamethrower",
+      "tm:helpinghand",
+      "tm:hex",
+      "tm:hydropump",
+      "tm:infestation",
+      "tm:lastresort",
+      "tm:lightscreen",
+      "tm:nightshade",
+      "tm:outrage",
+      "tm:phantomforce",
+      "tm:pounce",
+      "tm:protect",
+      "tm:psychicfangs",
+      "tm:reflect",
+      "tm:rest",
+      "tm:shadowball",
+      "tm:sleeptalk",
+      "tm:steelwing",
+      "tm:substitute",
+      "tm:suckerpunch",
+      "tm:sunnyday",
+      "tm:surf",
+      "tm:swift",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thief",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:thunderwave",
+      "tm:uturn",
+      "tm:willowisp",
+      "tutor:allyswitch",
+      "tutor:dive",
+      "tutor:dracometeor",
+      "tutor:dragonpulse",
+      "tutor:flamethrower",
+      "tutor:helpinghand",
+      "tutor:lastresort",
+      "tutor:outrage",
+      "tutor:rest",
+      "tutor:shadowball",
+      "tutor:sleeptalk",
+      "tutor:suckerpunch",
+      "tutor:swift",
+      "tutor:thunderbolt",
+      "legacy:attract",
+      "legacy:round",
+      "legacy:scald",
+      "legacy:snore"
+    ],
+    "preEvolution": "dreepy",
+    "evolutions": [
+      {
+        "id": "drakloak_dragapult",
+        "variant": "level_up",
+        "result": "dragapult",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "dragondarts"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 60
+          }
+        ]
+      }
+    ]
+  }
+}

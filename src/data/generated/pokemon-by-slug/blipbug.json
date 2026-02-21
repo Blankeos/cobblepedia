@@ -1,0 +1,324 @@
+{
+  "slug": "blipbug",
+  "name": "Blipbug",
+  "dexNumber": 824,
+  "implemented": false,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "swarm",
+      "hidden": false,
+      "label": "Swarm"
+    },
+    {
+      "id": "compoundeyes",
+      "hidden": false,
+      "label": "Compoundeyes"
+    },
+    {
+      "id": "telepathy",
+      "hidden": true,
+      "label": "Telepathy"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
+  "aliases": [
+    "blipbug"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 80,
+  "catchRate": 255,
+  "baseExperienceYield": 36,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 25,
+    "attack": 20,
+    "defence": 20,
+    "special_attack": 25,
+    "special_defence": 45,
+    "speed": 45
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "blipbug_dottler",
+      "variant": "level_up",
+      "result": {
+        "raw": "dottler",
+        "slug": "dottler",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "reflect",
+        "lightscreen",
+        "confusion"
+      ],
+      "requirementText": [
+        "Level 10+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 10+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 10
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "blipbug_dottler",
+        "variant": "level_up",
+        "result": "dottler",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "reflect",
+          "lightscreen",
+          "confusion"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "blipbug",
+        "name": "Blipbug",
+        "dexNumber": 824
+      },
+      {
+        "slug": "dottler",
+        "name": "Dottler",
+        "dexNumber": 825
+      },
+      {
+        "slug": "orbeetle",
+        "name": "Orbeetle",
+        "dexNumber": 826
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "blipbug",
+        "toSlug": "dottler",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      },
+      {
+        "fromSlug": "dottler",
+        "toSlug": "orbeetle",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+"
+        ]
+      }
+    ],
+    "roots": [
+      "blipbug"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:recover",
+      "moveId": "recover",
+      "moveName": "Recover",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:stickyweb",
+      "moveId": "stickyweb",
+      "moveName": "Sticky Web",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:supersonic",
+      "moveId": "supersonic",
+      "moveName": "Supersonic",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 824,
+    "name": "Blipbug",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 80,
+    "pokedex": [
+      "cobblemon.species.blipbug.desc"
+    ],
+    "labels": [
+      "gen8"
+    ],
+    "aspects": [],
+    "abilities": [
+      "swarm",
+      "compoundeyes",
+      "h:telepathy"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 25,
+      "attack": 20,
+      "defence": 20,
+      "special_attack": 25,
+      "special_defence": 45,
+      "speed": 45
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 36,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:psychic_seed",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:razz_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:strugglebug",
+      "egg:infestation",
+      "egg:recover",
+      "egg:stickyweb",
+      "egg:supersonic",
+      "tm:infestation",
+      "tm:strugglebug",
+      "tm:terablast"
+    ],
+    "evolutions": [
+      {
+        "id": "blipbug_dottler",
+        "variant": "level_up",
+        "result": "dottler",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "reflect",
+          "lightscreen",
+          "confusion"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      }
+    }
+  }
+}

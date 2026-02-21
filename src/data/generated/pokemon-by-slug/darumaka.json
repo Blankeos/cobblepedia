@@ -1,0 +1,2456 @@
+{
+  "slug": "darumaka",
+  "name": "Darumaka",
+  "dexNumber": 554,
+  "implemented": true,
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    {
+      "id": "hustle",
+      "hidden": false,
+      "label": "Hustle"
+    },
+    {
+      "id": "innerfocus",
+      "hidden": true,
+      "label": "Innerfocus"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen5",
+    "unovan_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "darumaka",
+    "darumaka galar",
+    "galar"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 375,
+  "catchRate": 120,
+  "baseExperienceYield": 63,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 70,
+    "attack": 90,
+    "defence": 45,
+    "special_attack": 15,
+    "special_defence": 45,
+    "speed": 50
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "darumaka_darmanitan",
+      "variant": "level_up",
+      "result": {
+        "raw": "darmanitan blazing_mode=standard",
+        "slug": "darmanitan",
+        "aspectTokens": [
+          "blazing_mode=standard"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "hammerarm"
+      ],
+      "requirementText": [
+        "Level 35+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 35+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 35
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "darumaka_darmanitan",
+        "variant": "level_up",
+        "result": "darmanitan blazing_mode=standard",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "hammerarm"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 35
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "darumaka",
+        "name": "Darumaka",
+        "dexNumber": 554
+      },
+      {
+        "slug": "darmanitan",
+        "name": "Darmanitan",
+        "dexNumber": 555
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "darumaka",
+        "toSlug": "darmanitan",
+        "method": "item_interact",
+        "requirementText": []
+      },
+      {
+        "fromSlug": "darumaka",
+        "toSlug": "darmanitan",
+        "method": "level_up",
+        "requirementText": [
+          "Level 35+"
+        ]
+      }
+    ],
+    "roots": [
+      "darumaka"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:bellydrum",
+      "moveId": "bellydrum",
+      "moveName": "Belly Drum",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "8:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:extrasensory",
+      "moveId": "extrasensory",
+      "moveName": "Extrasensory",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "20:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:flamewheel",
+      "moveId": "flamewheel",
+      "moveName": "Flame Wheel",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "40:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:hammerarm",
+      "moveId": "hammerarm",
+      "moveName": "Hammer Arm",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:poweruppunch",
+      "moveId": "poweruppunch",
+      "moveName": "Power-Up Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "44:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "32:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:yawn",
+      "moveId": "yawn",
+      "moveName": "Yawn",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "darumaka-1",
+      "sourceFile": "0554_darumaka.json",
+      "pokemon": {
+        "raw": "darumaka",
+        "slug": "darumaka",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 54,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_desert",
+          "#cobblemon:is_jungle"
+        ],
+        "structures": [
+          "#cobblemon:ruin"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "darumaka-1",
+        "pokemon": "darumaka",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 54,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_desert",
+            "#cobblemon:is_jungle"
+          ],
+          "structures": [
+            "#cobblemon:ruin"
+          ]
+        }
+      }
+    },
+    {
+      "id": "darumaka-2",
+      "sourceFile": "0554_darumaka.json",
+      "pokemon": {
+        "raw": "darumaka",
+        "slug": "darumaka",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 54,
+      "presets": [
+        "natural",
+        "desert_pyramid"
+      ],
+      "biomeHints": [
+        "Is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "minecraft:desert_pyramid"
+        ],
+        "minY": 62,
+        "neededNearbyBlocks": [
+          "#cobblemon:desert_pyramid_blocks"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland",
+          "minecraft:blue_terracotta",
+          "minecraft:orange_terracotta"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "darumaka-2",
+        "pokemon": "darumaka",
+        "presets": [
+          "natural",
+          "desert_pyramid"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 54,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    },
+    {
+      "id": "darumaka-3",
+      "sourceFile": "0554_darumaka.json",
+      "pokemon": {
+        "raw": "darumaka",
+        "slug": "darumaka",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 54,
+      "presets": [
+        "natural",
+        "jungle_pyramid"
+      ],
+      "biomeHints": [
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "minecraft:cobblestone",
+          "#minecraft:mossy_cobblestone"
+        ],
+        "structures": [
+          "minecraft:jungle_pyramid"
+        ],
+        "minY": 62,
+        "neededNearbyBlocks": [
+          "#cobblemon:jungle_pyramid_blocks"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "darumaka-3",
+        "pokemon": "darumaka",
+        "presets": [
+          "natural",
+          "jungle_pyramid"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 54,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "darumaka-4",
+      "sourceFile": "0554_darumaka.json",
+      "pokemon": {
+        "raw": "darumaka",
+        "slug": "darumaka",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 5.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Nether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#minecraft:is_nether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_frozen",
+          "#cobblemon:nether/is_quartz",
+          "#cobblemon:nether/is_toxic"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "darumaka-4",
+        "pokemon": "darumaka",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 5.4,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_nether"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:nether/is_frozen",
+            "#cobblemon:nether/is_quartz",
+            "#cobblemon:nether/is_toxic"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Galar",
+      "slug": "darumaka-galar",
+      "aspects": [
+        "galarian"
+      ],
+      "types": [
+        "ice"
+      ],
+      "abilities": [],
+      "moves": [
+        {
+          "raw": "1:powdersnow",
+          "moveId": "powdersnow",
+          "moveName": "Powder Snow",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "4:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "sourceType": "level",
+          "sourceValue": 4,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "8:bite",
+          "moveId": "bite",
+          "moveName": "Bite",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "12:avalanche",
+          "moveId": "avalanche",
+          "moveName": "Avalanche",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "16:workup",
+          "moveId": "workup",
+          "moveName": "Work Up",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "20:icefang",
+          "moveId": "icefang",
+          "moveName": "Ice Fang",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "24:headbutt",
+          "moveId": "headbutt",
+          "moveName": "Headbutt",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "28:icepunch",
+          "moveId": "icepunch",
+          "moveName": "Ice Punch",
+          "sourceType": "level",
+          "sourceValue": 28,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "32:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "36:bellydrum",
+          "moveId": "bellydrum",
+          "moveName": "Belly Drum",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "40:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "44:thrash",
+          "moveId": "thrash",
+          "moveName": "Thrash",
+          "sourceType": "level",
+          "sourceValue": 44,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "48:superpower",
+          "moveId": "superpower",
+          "moveName": "Superpower",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:flamewheel",
+          "moveId": "flamewheel",
+          "moveName": "Flame Wheel",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:freezedry",
+          "moveId": "freezedry",
+          "moveName": "Freeze-Dry",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:hammerarm",
+          "moveId": "hammerarm",
+          "moveName": "Hammer Arm",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:incinerate",
+          "moveId": "incinerate",
+          "moveName": "Incinerate",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:poweruppunch",
+          "moveId": "poweruppunch",
+          "moveName": "Power-Up Punch",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:yawn",
+          "moveId": "yawn",
+          "moveName": "Yawn",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:avalanche",
+          "moveId": "avalanche",
+          "moveName": "Avalanche",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:encore",
+          "moveId": "encore",
+          "moveName": "Encore",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:fireblast",
+          "moveId": "fireblast",
+          "moveName": "Fire Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:firespin",
+          "moveId": "firespin",
+          "moveName": "Fire Spin",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:flareblitz",
+          "moveId": "flareblitz",
+          "moveName": "Flare Blitz",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:fling",
+          "moveId": "fling",
+          "moveName": "Fling",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:focusenergy",
+          "moveId": "focusenergy",
+          "moveName": "Focus Energy",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:grassknot",
+          "moveId": "grassknot",
+          "moveName": "Grass Knot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:gyroball",
+          "moveId": "gyroball",
+          "moveName": "Gyro Ball",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:headbutt",
+          "moveId": "headbutt",
+          "moveName": "Headbutt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:heatwave",
+          "moveId": "heatwave",
+          "moveName": "Heat Wave",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:icefang",
+          "moveId": "icefang",
+          "moveName": "Ice Fang",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:icepunch",
+          "moveId": "icepunch",
+          "moveName": "Ice Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:incinerate",
+          "moveId": "incinerate",
+          "moveName": "Incinerate",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:megakick",
+          "moveId": "megakick",
+          "moveName": "Mega Kick",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:megapunch",
+          "moveId": "megapunch",
+          "moveName": "Mega Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:overheat",
+          "moveId": "overheat",
+          "moveName": "Overheat",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:poweruppunch",
+          "moveId": "poweruppunch",
+          "moveName": "Power-Up Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:solarbeam",
+          "moveId": "solarbeam",
+          "moveName": "Solar Beam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:superpower",
+          "moveId": "superpower",
+          "moveName": "Superpower",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:thief",
+          "moveId": "thief",
+          "moveName": "Thief",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:uturn",
+          "moveId": "uturn",
+          "moveName": "U-turn",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:willowisp",
+          "moveId": "willowisp",
+          "moveName": "Will-O-Wisp",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:workup",
+          "moveId": "workup",
+          "moveName": "Work Up",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:focusenergy",
+          "moveId": "focusenergy",
+          "moveName": "Focus Energy",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:heatwave",
+          "moveId": "heatwave",
+          "moveName": "Heat Wave",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:icefang",
+          "moveId": "icefang",
+          "moveName": "Ice Fang",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:icepunch",
+          "moveId": "icepunch",
+          "moveName": "Ice Punch",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:superpower",
+          "moveId": "superpower",
+          "moveName": "Superpower",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "darumaka_darmanitangalar",
+          "variant": "item_interact",
+          "result": {
+            "raw": "darmanitan blazing_mode=standard galarian",
+            "slug": "darmanitan",
+            "aspectTokens": [
+              "blazing_mode=standard",
+              "galarian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "iciclecrash"
+          ],
+          "requirementText": [],
+          "requirements": [],
+          "requiredContext": "cobblemon:ice_stone",
+          "fromForm": "Galar",
+          "raw": {
+            "id": "darumaka_darmanitangalar",
+            "variant": "item_interact",
+            "result": "darmanitan blazing_mode=standard galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "iciclecrash"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:ice_stone"
+          }
+        }
+      ],
+      "raw": {
+        "name": "Galar",
+        "primaryType": "ice",
+        "maleRatio": 0.5,
+        "height": 7,
+        "weight": 400,
+        "pokedex": [
+          "cobblemon.species.darumaka-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "cobblemon:ice_stone",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:occa_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:powdersnow",
+          "1:tackle",
+          "4:taunt",
+          "8:bite",
+          "12:avalanche",
+          "16:workup",
+          "20:icefang",
+          "24:headbutt",
+          "28:icepunch",
+          "32:uproar",
+          "36:bellydrum",
+          "40:blizzard",
+          "44:thrash",
+          "48:superpower",
+          "egg:flamewheel",
+          "egg:focuspunch",
+          "egg:freezedry",
+          "egg:hammerarm",
+          "egg:incinerate",
+          "egg:poweruppunch",
+          "egg:takedown",
+          "egg:yawn",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:brickbreak",
+          "tm:dig",
+          "tm:encore",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firepunch",
+          "tm:firespin",
+          "tm:flamethrower",
+          "tm:flareblitz",
+          "tm:fling",
+          "tm:focusenergy",
+          "tm:focuspunch",
+          "tm:grassknot",
+          "tm:gyroball",
+          "tm:headbutt",
+          "tm:heatwave",
+          "tm:icebeam",
+          "tm:icefang",
+          "tm:icepunch",
+          "tm:incinerate",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:overheat",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sleeptalk",
+          "tm:solarbeam",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:superpower",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:uproar",
+          "tm:uturn",
+          "tm:willowisp",
+          "tm:workup",
+          "tm:zenheadbutt",
+          "tutor:firefang",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:focusenergy",
+          "tutor:focuspunch",
+          "tutor:heatwave",
+          "tutor:icebeam",
+          "tutor:icefang",
+          "tutor:icepunch",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:superpower",
+          "tutor:uproar",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [
+          {
+            "id": "darumaka_darmanitangalar",
+            "variant": "item_interact",
+            "result": "darmanitan blazing_mode=standard galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "iciclecrash"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:ice_stone"
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "4",
+            "toleratedLeaders": [
+              {
+                "pokemon": "darumaka",
+                "tier": 1
+              },
+              {
+                "pokemon": "darmanitan",
+                "tier": 2
+              }
+            ]
+          },
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 554,
+    "name": "Darumaka",
+    "primaryType": "fire",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 375,
+    "pokedex": [
+      "cobblemon.species.darumaka.desc"
+    ],
+    "labels": [
+      "gen5",
+      "unovan_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "hustle",
+      "h:innerfocus"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 90,
+      "defence": 45,
+      "special_attack": 15,
+      "special_defence": 45,
+      "speed": 50
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 1,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 63,
+    "experienceGroup": "medium_slow",
+    "catchRate": 120,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "galarian"
+    ],
+    "baseScale": 1,
+    "hitbox": {
+      "width": 0.7,
+      "height": 0.83,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.2
+        },
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        }
+      },
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "darumaka",
+            "tier": 1
+          },
+          {
+            "pokemon": "darmanitan",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "fireImmune": true
+    },
+    "drops": {
+      "amount": 1,
+      "entries": [
+        {
+          "item": "cobblemon:rawst_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:rage",
+      "1:ember",
+      "4:taunt",
+      "8:bite",
+      "12:incinerate",
+      "16:workup",
+      "20:firefang",
+      "24:headbutt",
+      "28:firepunch",
+      "32:uproar",
+      "36:bellydrum",
+      "40:flareblitz",
+      "44:thrash",
+      "48:superpower",
+      "egg:extrasensory",
+      "egg:flamewheel",
+      "egg:focuspunch",
+      "egg:hammerarm",
+      "egg:takedown",
+      "egg:yawn",
+      "tm:brickbreak",
+      "tm:dig",
+      "tm:encore",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firefang",
+      "tm:firepunch",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:fling",
+      "tm:focusenergy",
+      "tm:focuspunch",
+      "tm:grassknot",
+      "tm:gyroball",
+      "tm:headbutt",
+      "tm:heatwave",
+      "tm:incinerate",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:overheat",
+      "tm:poweruppunch",
+      "tm:protect",
+      "tm:rest",
+      "tm:roar",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:rollout",
+      "tm:sleeptalk",
+      "tm:snatch",
+      "tm:solarbeam",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:superpower",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:thief",
+      "tm:uproar",
+      "tm:uturn",
+      "tm:willowisp",
+      "tm:workup",
+      "tm:zenheadbutt",
+      "tutor:endeavor",
+      "tutor:firefang",
+      "tutor:firepunch",
+      "tutor:flamethrower",
+      "tutor:focusenergy",
+      "tutor:focuspunch",
+      "tutor:heatwave",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:rollout",
+      "tutor:sleeptalk",
+      "tutor:snatch",
+      "tutor:superpower",
+      "tutor:uproar",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "darumaka_darmanitan",
+        "variant": "level_up",
+        "result": "darmanitan blazing_mode=standard",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "hammerarm"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 35
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Galar",
+        "primaryType": "ice",
+        "maleRatio": 0.5,
+        "height": 7,
+        "weight": 400,
+        "pokedex": [
+          "cobblemon.species.darumaka-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "cobblemon:ice_stone",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:occa_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:powdersnow",
+          "1:tackle",
+          "4:taunt",
+          "8:bite",
+          "12:avalanche",
+          "16:workup",
+          "20:icefang",
+          "24:headbutt",
+          "28:icepunch",
+          "32:uproar",
+          "36:bellydrum",
+          "40:blizzard",
+          "44:thrash",
+          "48:superpower",
+          "egg:flamewheel",
+          "egg:focuspunch",
+          "egg:freezedry",
+          "egg:hammerarm",
+          "egg:incinerate",
+          "egg:poweruppunch",
+          "egg:takedown",
+          "egg:yawn",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:brickbreak",
+          "tm:dig",
+          "tm:encore",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firepunch",
+          "tm:firespin",
+          "tm:flamethrower",
+          "tm:flareblitz",
+          "tm:fling",
+          "tm:focusenergy",
+          "tm:focuspunch",
+          "tm:grassknot",
+          "tm:gyroball",
+          "tm:headbutt",
+          "tm:heatwave",
+          "tm:icebeam",
+          "tm:icefang",
+          "tm:icepunch",
+          "tm:incinerate",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:overheat",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sleeptalk",
+          "tm:solarbeam",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:superpower",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:uproar",
+          "tm:uturn",
+          "tm:willowisp",
+          "tm:workup",
+          "tm:zenheadbutt",
+          "tutor:firefang",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:focusenergy",
+          "tutor:focuspunch",
+          "tutor:heatwave",
+          "tutor:icebeam",
+          "tutor:icefang",
+          "tutor:icepunch",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:superpower",
+          "tutor:uproar",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [
+          {
+            "id": "darumaka_darmanitangalar",
+            "variant": "item_interact",
+            "result": "darmanitan blazing_mode=standard galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "iciclecrash"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:ice_stone"
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "4",
+            "toleratedLeaders": [
+              {
+                "pokemon": "darumaka",
+                "tier": 1
+              },
+              {
+                "pokemon": "darmanitan",
+                "tier": 2
+              }
+            ]
+          },
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        }
+      }
+    ]
+  }
+}

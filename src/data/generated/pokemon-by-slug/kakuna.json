@@ -1,0 +1,509 @@
+{
+  "slug": "kakuna",
+  "name": "Kakuna",
+  "dexNumber": 14,
+  "implemented": true,
+  "types": [
+    "bug",
+    "poison"
+  ],
+  "abilities": [
+    {
+      "id": "shedskin",
+      "hidden": false,
+      "label": "Shedskin"
+    },
+    {
+      "id": "shedskin",
+      "hidden": true,
+      "label": "Shedskin"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "aspects": [],
+  "aliases": [
+    "kakuna"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 100,
+  "catchRate": 120,
+  "baseExperienceYield": 72,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 45,
+    "attack": 25,
+    "defence": 50,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "weedle",
+    "slug": "weedle",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "kakuna_beedrill",
+      "variant": "level_up",
+      "result": {
+        "raw": "beedrill",
+        "slug": "beedrill",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "twineedle",
+        "furyattack"
+      ],
+      "requirementText": [
+        "Level 10+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 10+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 10
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "kakuna_beedrill",
+        "variant": "level_up",
+        "result": "beedrill",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "twineedle",
+          "furyattack"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "weedle",
+        "name": "Weedle",
+        "dexNumber": 13
+      },
+      {
+        "slug": "kakuna",
+        "name": "Kakuna",
+        "dexNumber": 14
+      },
+      {
+        "slug": "beedrill",
+        "name": "Beedrill",
+        "dexNumber": 15
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "kakuna",
+        "toSlug": "beedrill",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      },
+      {
+        "fromSlug": "weedle",
+        "toSlug": "kakuna",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+"
+        ]
+      }
+    ],
+    "roots": [
+      "weedle"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:harden",
+      "moveId": "harden",
+      "moveName": "Harden",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:poisonsting",
+      "moveId": "poisonsting",
+      "moveName": "Poison Sting",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "kakuna-1",
+      "sourceFile": "0014_kakuna.json",
+      "pokemon": {
+        "raw": "kakuna",
+        "slug": "kakuna",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-21",
+      "levelMin": 7,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Jungle",
+        "Skyroot Forest",
+        "Skyroot Woodland"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle",
+          "aether:skyroot_forest",
+          "aether:skyroot_woodland"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kakuna-1",
+        "pokemon": "kakuna",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-21",
+        "weight": 2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle",
+            "aether:skyroot_forest",
+            "aether:skyroot_woodland"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "kakuna-2",
+      "sourceFile": "0014_kakuna.json",
+      "pokemon": {
+        "raw": "kakuna",
+        "slug": "kakuna",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-21",
+      "levelMin": 7,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "The Bumblezone"
+      ],
+      "condition": {
+        "biomes": [
+          "#the_bumblezone:the_bumblezone"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kakuna-2",
+        "pokemon": "kakuna",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-21",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#the_bumblezone:the_bumblezone"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 14,
+    "name": "Kakuna",
+    "primaryType": "bug",
+    "secondaryType": "poison",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 100,
+    "pokedex": [
+      "cobblemon.species.kakuna.desc"
+    ],
+    "labels": [
+      "gen1"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shedskin",
+      "h:shedskin"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 25,
+      "defence": 50,
+      "special_attack": 25,
+      "special_defence": 25,
+      "speed": 35
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 2,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 72,
+    "experienceGroup": "medium_fast",
+    "catchRate": 120,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 0.75,
+    "hitbox": {
+      "width": 0.5,
+      "height": 0.9,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "canWalk": false
+        },
+        "swim": {
+          "canSwimInWater": false,
+          "avoidsWater": true
+        },
+        "canLook": false
+      },
+      "herd": {
+        "maxSize": "9"
+      },
+      "combat": {
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "cobblemon:pinap_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:harden",
+      "1:poisonsting",
+      "tm:bugbite",
+      "tm:electroweb",
+      "tm:irondefense",
+      "tm:skittersmack",
+      "tm:stringshot",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:electroweb",
+      "tutor:irondefense",
+      "tutor:skittersmack",
+      "tutor:stringshot"
+    ],
+    "preEvolution": "weedle",
+    "evolutions": [
+      {
+        "id": "kakuna_beedrill",
+        "variant": "level_up",
+        "result": "beedrill",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "twineedle",
+          "furyattack"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    ]
+  }
+}

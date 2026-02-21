@@ -1,0 +1,428 @@
+{
+  "slug": "wynaut",
+  "name": "Wynaut",
+  "dexNumber": 360,
+  "implemented": true,
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    {
+      "id": "shadowtag",
+      "hidden": false,
+      "label": "Shadowtag"
+    },
+    {
+      "id": "telepathy",
+      "hidden": true,
+      "label": "Telepathy"
+    }
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "labels": [
+    "gen3",
+    "baby"
+  ],
+  "aspects": [],
+  "aliases": [
+    "wynaut"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 140,
+  "catchRate": 125,
+  "baseExperienceYield": 52,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 95,
+    "attack": 23,
+    "defence": 48,
+    "special_attack": 23,
+    "special_defence": 48,
+    "speed": 23
+  },
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "wynaut_wobbuffet",
+      "variant": "level_up",
+      "result": {
+        "raw": "wobbuffet",
+        "slug": "wobbuffet",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "counter",
+        "mirrorcoat",
+        "safeguard",
+        "destinybond"
+      ],
+      "requirementText": [
+        "Level 15+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 15+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 15
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "wynaut_wobbuffet",
+        "variant": "level_up",
+        "result": "wobbuffet",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "counter",
+          "mirrorcoat",
+          "safeguard",
+          "destinybond"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 15
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "wobbuffet",
+        "name": "Wobbuffet",
+        "dexNumber": 202
+      },
+      {
+        "slug": "wynaut",
+        "name": "Wynaut",
+        "dexNumber": 360
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "wynaut",
+        "toSlug": "wobbuffet",
+        "method": "level_up",
+        "requirementText": [
+          "Level 15+"
+        ]
+      }
+    ],
+    "roots": [
+      "wynaut"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "1:destinybond",
+      "moveId": "destinybond",
+      "moveName": "Destiny Bond",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "1:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:mirrorcoat",
+      "moveId": "mirrorcoat",
+      "moveName": "Mirror Coat",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "1:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:splash",
+      "moveId": "splash",
+      "moveName": "Splash",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "special:tickle",
+      "moveId": "tickle",
+      "moveName": "Tickle",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "wynaut-1",
+      "sourceFile": "0360_wynaut.json",
+      "pokemon": {
+        "raw": "wynaut",
+        "slug": "wynaut",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "1-26",
+      "levelMin": 1,
+      "levelMax": 26,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_deep_dark"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wynaut-1",
+        "pokemon": "wynaut",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "1-26",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_deep_dark"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 360,
+    "name": "Wynaut",
+    "primaryType": "psychic",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 140,
+    "pokedex": [
+      "cobblemon.species.wynaut.desc"
+    ],
+    "labels": [
+      "gen3",
+      "baby"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shadowtag",
+      "h:telepathy"
+    ],
+    "eggGroups": [
+      "undiscovered"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 23,
+      "defence": 48,
+      "special_attack": 23,
+      "special_defence": 48,
+      "speed": 23
+    },
+    "evYield": {
+      "hp": 1,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 52,
+    "experienceGroup": "medium_fast",
+    "catchRate": 125,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.85,
+    "hitbox": {
+      "width": 0.55,
+      "height": 0.93,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 1,
+      "entries": [
+        {
+          "item": "cobblemon:colbur_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:splash",
+      "1:charm",
+      "1:encore",
+      "1:counter",
+      "1:mirrorcoat",
+      "1:safeguard",
+      "1:destinybond",
+      "1:amnesia",
+      "tm:amnesia",
+      "tm:charm",
+      "tm:encore",
+      "tm:safeguard",
+      "special:tickle"
+    ],
+    "evolutions": [
+      {
+        "id": "wynaut_wobbuffet",
+        "variant": "level_up",
+        "result": "wobbuffet",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "counter",
+          "mirrorcoat",
+          "safeguard",
+          "destinybond"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 15
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "2",
+        "toleratedLeaders": [
+          {
+            "pokemon": "wobbuffet",
+            "tier": 1
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      }
+    }
+  }
+}

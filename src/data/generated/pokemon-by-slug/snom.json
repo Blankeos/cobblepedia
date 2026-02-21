@@ -1,0 +1,512 @@
+{
+  "slug": "snom",
+  "name": "Snom",
+  "dexNumber": 872,
+  "implemented": false,
+  "types": [
+    "ice",
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shielddust",
+      "hidden": false,
+      "label": "Shielddust"
+    },
+    {
+      "id": "icescales",
+      "hidden": true,
+      "label": "Icescales"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
+  "aliases": [
+    "snom"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 38,
+  "catchRate": 190,
+  "baseExperienceYield": 37,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 30,
+    "attack": 25,
+    "defence": 35,
+    "special_attack": 45,
+    "special_defence": 30,
+    "speed": 20
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "snom_frosmoth",
+      "variant": "level_up",
+      "result": {
+        "raw": "frosmoth",
+        "slug": "frosmoth",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "icywind"
+      ],
+      "requirementText": [
+        "Friendship 160+",
+        "Time: Night"
+      ],
+      "requirements": [
+        {
+          "variant": "friendship",
+          "text": "Friendship 160+",
+          "raw": {
+            "variant": "friendship",
+            "amount": 160
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Night",
+          "raw": {
+            "variant": "time_range",
+            "range": "night"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "snom_frosmoth",
+        "variant": "level_up",
+        "result": "frosmoth",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "icywind"
+        ],
+        "requirements": [
+          {
+            "variant": "friendship",
+            "amount": 160
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "snom",
+        "name": "Snom",
+        "dexNumber": 872
+      },
+      {
+        "slug": "frosmoth",
+        "name": "Frosmoth",
+        "dexNumber": 873
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "snom",
+        "toSlug": "frosmoth",
+        "method": "level_up",
+        "requirementText": [
+          "Friendship 160+",
+          "Time: Night"
+        ]
+      }
+    ],
+    "roots": [
+      "snom"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbuzz",
+      "moveId": "bugbuzz",
+      "moveName": "Bug Buzz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:fairywind",
+      "moveId": "fairywind",
+      "moveName": "Fairy Wind",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:iciclespear",
+      "moveId": "iciclespear",
+      "moveName": "Icicle Spear",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lunge",
+      "moveId": "lunge",
+      "moveName": "Lunge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:mirrorcoat",
+      "moveId": "mirrorcoat",
+      "moveName": "Mirror Coat",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pounce",
+      "moveId": "pounce",
+      "moveName": "Pounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:powdersnow",
+      "moveId": "powdersnow",
+      "moveName": "Powder Snow",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 872,
+    "name": "Snom",
+    "primaryType": "ice",
+    "secondaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 38,
+    "pokedex": [
+      "cobblemon.species.snom.desc"
+    ],
+    "labels": [
+      "gen8"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shielddust",
+      "h:icescales"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "attack": 25,
+      "defence": 35,
+      "special_attack": 45,
+      "special_defence": 30,
+      "speed": 20
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 1,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 37,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "herd": {
+        "maxSize": "6",
+        "toleratedLeaders": [
+          {
+            "pokemon": "snom",
+            "tier": 1
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:snowball",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:silver_powder",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:charti_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:powdersnow",
+      "1:strugglebug",
+      "egg:bugbite",
+      "egg:fairywind",
+      "egg:mirrorcoat",
+      "tm:bugbite",
+      "tm:bugbuzz",
+      "tm:facade",
+      "tm:iciclespear",
+      "tm:icywind",
+      "tm:lunge",
+      "tm:pounce",
+      "tm:protect",
+      "tm:rest",
+      "tm:skittersmack",
+      "tm:sleeptalk",
+      "tm:strugglebug",
+      "tm:substitute",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:icywind",
+      "tutor:rest",
+      "tutor:skittersmack",
+      "tutor:sleeptalk",
+      "legacy:attract",
+      "legacy:endure",
+      "legacy:round",
+      "legacy:snore"
+    ],
+    "evolutions": [
+      {
+        "id": "snom_frosmoth",
+        "variant": "level_up",
+        "result": "frosmoth",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "icywind"
+        ],
+        "requirements": [
+          {
+            "variant": "friendship",
+            "amount": 160
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ]
+      }
+    ]
+  }
+}

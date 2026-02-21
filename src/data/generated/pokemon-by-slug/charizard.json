@@ -1,0 +1,2690 @@
+{
+  "slug": "charizard",
+  "name": "Charizard",
+  "dexNumber": 6,
+  "implemented": true,
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    {
+      "id": "blaze",
+      "hidden": false,
+      "label": "Blaze"
+    },
+    {
+      "id": "solarpower",
+      "hidden": true,
+      "label": "Solarpower"
+    }
+  ],
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "aspects": [],
+  "aliases": [
+    "charizard",
+    "charizard gmax",
+    "charizard mega-x",
+    "charizard mega-y",
+    "gmax",
+    "mega-x",
+    "mega-y"
+  ],
+  "maleRatio": 0.875,
+  "height": 17,
+  "weight": 905,
+  "catchRate": 45,
+  "baseExperienceYield": 267,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 78,
+    "attack": 84,
+    "defence": 78,
+    "special_attack": 109,
+    "special_defence": 85,
+    "speed": 100
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "charmeleon",
+    "slug": "charmeleon",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "charmander",
+        "name": "Charmander",
+        "dexNumber": 4
+      },
+      {
+        "slug": "charmeleon",
+        "name": "Charmeleon",
+        "dexNumber": 5
+      },
+      {
+        "slug": "charizard",
+        "name": "Charizard",
+        "dexNumber": 6
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "charmander",
+        "toSlug": "charmeleon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 16+"
+        ]
+      },
+      {
+        "fromSlug": "charmeleon",
+        "toSlug": "charizard",
+        "method": "level_up",
+        "requirementText": [
+          "Level 36+"
+        ]
+      }
+    ],
+    "roots": [
+      "charmander"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bellydrum",
+      "moveId": "bellydrum",
+      "moveName": "Belly Drum",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:blastburn",
+      "moveId": "blastburn",
+      "moveName": "Blast Burn",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:blastburn",
+      "moveId": "blastburn",
+      "moveName": "Blast Burn",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:blastburn",
+      "moveId": "blastburn",
+      "moveName": "Blast Burn",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:blazekick",
+      "moveId": "blazekick",
+      "moveName": "Blaze Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:breakingswipe",
+      "moveId": "breakingswipe",
+      "moveName": "Breaking Swipe",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:celebrate",
+      "moveId": "celebrate",
+      "moveName": "Celebrate",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:dragonbreath",
+      "moveId": "dragonbreath",
+      "moveName": "Dragon Breath",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragoncheer",
+      "moveId": "dragoncheer",
+      "moveName": "Dragon Cheer",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:dragonclaw",
+      "moveId": "dragonclaw",
+      "moveName": "Dragon Claw",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragonclaw",
+      "moveId": "dragonclaw",
+      "moveName": "Dragon Claw",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragondance",
+      "moveId": "dragondance",
+      "moveName": "Dragon Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:dragonrage",
+      "moveId": "dragonrage",
+      "moveName": "Dragon Rage",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:dragonrage",
+      "moveId": "dragonrage",
+      "moveName": "Dragon Rage",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:dragonrush",
+      "moveId": "dragonrush",
+      "moveName": "Dragon Rush",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dynamicpunch",
+      "moveId": "dynamicpunch",
+      "moveName": "Dynamic Punch",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "19:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "level",
+      "sourceValue": 19,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firepledge",
+      "moveId": "firepledge",
+      "moveName": "Fire Pledge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firepledge",
+      "moveId": "firepledge",
+      "moveName": "Fire Pledge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "46:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "level",
+      "sourceValue": 46,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:fissure",
+      "moveId": "fissure",
+      "moveName": "Fissure",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:flameburst",
+      "moveId": "flameburst",
+      "moveName": "Flame Burst",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "62:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "level",
+      "sourceValue": 62,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fly",
+      "moveId": "fly",
+      "moveName": "Fly",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focusblast",
+      "moveId": "focusblast",
+      "moveName": "Focus Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:furyswipes",
+      "moveId": "furyswipes",
+      "moveName": "Fury Swipes",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatcrash",
+      "moveId": "heatcrash",
+      "moveName": "Heat Crash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:holdhands",
+      "moveId": "holdhands",
+      "moveName": "Hold Hands",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:howl",
+      "moveId": "howl",
+      "moveName": "Howl",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hurricane",
+      "moveId": "hurricane",
+      "moveName": "Hurricane",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "54:inferno",
+      "moveId": "inferno",
+      "moveName": "Inferno",
+      "sourceType": "level",
+      "sourceValue": 54,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mysticalfire",
+      "moveId": "mysticalfire",
+      "moveName": "Mystical Fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:mysticalfire",
+      "moveId": "mysticalfire",
+      "moveName": "Mystical Fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:poweruppunch",
+      "moveId": "poweruppunch",
+      "moveName": "Power-Up Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:scaleshot",
+      "moveId": "scaleshot",
+      "moveName": "Scale Shot",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "39:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "level",
+      "sourceValue": 39,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:scratch",
+      "moveId": "scratch",
+      "moveName": "Scratch",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:seismictoss",
+      "moveId": "seismictoss",
+      "moveName": "Seismic Toss",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skydrop",
+      "moveId": "skydrop",
+      "moveName": "Sky Drop",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:slash",
+      "moveId": "slash",
+      "moveName": "Slash",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:smokescreen",
+      "moveId": "smokescreen",
+      "moveName": "Smokescreen",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:steelwing",
+      "moveId": "steelwing",
+      "moveName": "Steel Wing",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:submission",
+      "moveId": "submission",
+      "moveName": "Submission",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:temperflare",
+      "moveId": "temperflare",
+      "moveName": "Temper Flare",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:weatherball",
+      "moveId": "weatherball",
+      "moveName": "Weather Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:wingattack",
+      "moveId": "wingattack",
+      "moveName": "Wing Attack",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:wingattack",
+      "moveId": "wingattack",
+      "moveName": "Wing Attack",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "charizard-1",
+      "sourceFile": "0006_charizard.json",
+      "pokemon": {
+        "raw": "charizard",
+        "slug": "charizard",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "36-53",
+      "levelMin": 36,
+      "levelMax": 53,
+      "weight": 0.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands",
+        "Is Volcanic",
+        "Volcanic Plains",
+        "Volcano"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_hills",
+          "#cobblemon:is_volcanic"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "charizard-1",
+        "pokemon": "charizard",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "36-53",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_hills",
+            "#cobblemon:is_volcanic"
+          ],
+          "isRaining": false
+        }
+      }
+    },
+    {
+      "id": "charizard-2",
+      "sourceFile": "0006_charizard.json",
+      "pokemon": {
+        "raw": "charizard",
+        "slug": "charizard",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "36-53",
+      "levelMin": 36,
+      "levelMax": 53,
+      "weight": 0.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Nether/is Basalt"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_basalt"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "charizard-2",
+        "pokemon": "charizard",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "36-53",
+        "weight": 0.4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_basalt"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Mega-X",
+      "slug": "charizard-megax",
+      "aspects": [
+        "mega_x"
+      ],
+      "types": [
+        "fire",
+        "dragon"
+      ],
+      "abilities": [
+        {
+          "id": "toughclaws",
+          "hidden": false,
+          "label": "Toughclaws"
+        },
+        {
+          "id": "toughclaws",
+          "hidden": true,
+          "label": "Toughclaws"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega-X",
+        "primaryType": "fire",
+        "secondaryType": "dragon",
+        "maleRatio": 0.875,
+        "height": 17,
+        "weight": 1105,
+        "pokedex": [
+          "cobblemon.species.charizard-megax.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega_x"
+        ],
+        "abilities": [
+          "toughclaws",
+          "h:toughclaws"
+        ],
+        "baseStats": {
+          "hp": 78,
+          "attack": 130,
+          "defence": 111,
+          "special_attack": 130,
+          "special_defence": 85,
+          "speed": 100
+        },
+        "baseExperienceYield": 317,
+        "riding": {
+          "behaviour": {
+            "key": "cobblemon:composite",
+            "alternateBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:air/bird",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                0
+              ]
+            },
+            "defaultBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:land/horse",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                "-1 * 0.5*q.jump_strength/50"
+              ]
+            },
+            "transitionStrategy": "cobblemon:strategy/jump"
+          },
+          "seats": [],
+          "stats": {
+            "ACCELERATION": {
+              "ranges": {
+                "AIR": "20-50",
+                "LAND": "90-100"
+              }
+            },
+            "JUMP": {
+              "ranges": {
+                "AIR": "25-50",
+                "LAND": "10-20"
+              }
+            },
+            "SKILL": {
+              "ranges": {
+                "AIR": "50-100",
+                "LAND": "15-30"
+              }
+            },
+            "SPEED": {
+              "ranges": {
+                "AIR": "25-60",
+                "LAND": "10-20"
+              }
+            },
+            "STAMINA": {
+              "ranges": {
+                "AIR": "35-70",
+                "LAND": "15-30"
+              }
+            }
+          }
+        },
+        "behaviour": {
+          "combat": {
+            "willDefendOwner": true,
+            "willDefendSelf": true,
+            "willFlee": false
+          },
+          "fireImmune": true,
+          "herd": {
+            "maxSize": "6"
+          },
+          "moving": {
+            "fly": {
+              "canFly": true
+            },
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            }
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true,
+        "lightingData": {
+          "lightLevel": 14,
+          "liquidGlowMode": "LAND"
+        }
+      }
+    },
+    {
+      "name": "Mega-Y",
+      "slug": "charizard-megay",
+      "aspects": [
+        "mega_y"
+      ],
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "abilities": [
+        {
+          "id": "drought",
+          "hidden": false,
+          "label": "Drought"
+        },
+        {
+          "id": "drought",
+          "hidden": true,
+          "label": "Drought"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega-Y",
+        "primaryType": "fire",
+        "secondaryType": "flying",
+        "maleRatio": 0.875,
+        "height": 17,
+        "weight": 1005,
+        "pokedex": [
+          "cobblemon.species.charizard-megay.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega_y"
+        ],
+        "abilities": [
+          "drought",
+          "h:drought"
+        ],
+        "baseStats": {
+          "hp": 78,
+          "attack": 104,
+          "defence": 78,
+          "special_attack": 159,
+          "special_defence": 115,
+          "speed": 100
+        },
+        "baseExperienceYield": 317,
+        "riding": {
+          "behaviour": {
+            "key": "cobblemon:composite",
+            "alternateBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:air/bird",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                0
+              ]
+            },
+            "defaultBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:land/horse",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                "-1 * 0.5*q.jump_strength/50"
+              ]
+            },
+            "transitionStrategy": "cobblemon:strategy/jump"
+          },
+          "seats": [],
+          "stats": {
+            "ACCELERATION": {
+              "ranges": {
+                "AIR": "20-50",
+                "LAND": "90-100"
+              }
+            },
+            "JUMP": {
+              "ranges": {
+                "AIR": "25-50",
+                "LAND": "10-20"
+              }
+            },
+            "SKILL": {
+              "ranges": {
+                "AIR": "50-100",
+                "LAND": "15-30"
+              }
+            },
+            "SPEED": {
+              "ranges": {
+                "AIR": "25-60",
+                "LAND": "10-20"
+              }
+            },
+            "STAMINA": {
+              "ranges": {
+                "AIR": "35-70",
+                "LAND": "15-30"
+              }
+            }
+          }
+        },
+        "behaviour": {
+          "combat": {
+            "willDefendOwner": true,
+            "willDefendSelf": true,
+            "willFlee": false
+          },
+          "fireImmune": true,
+          "herd": {
+            "maxSize": "6"
+          },
+          "moving": {
+            "fly": {
+              "canFly": true
+            },
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            }
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true,
+        "lightingData": {
+          "lightLevel": 14,
+          "liquidGlowMode": "LAND"
+        }
+      }
+    },
+    {
+      "name": "Gmax",
+      "slug": "charizard-gmax",
+      "aspects": [
+        "gmax"
+      ],
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Gmax",
+        "primaryType": "fire",
+        "secondaryType": "flying",
+        "maleRatio": 0.875,
+        "height": 280,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.charizard-gmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax"
+        ],
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 6,
+    "name": "Charizard",
+    "primaryType": "fire",
+    "secondaryType": "flying",
+    "maleRatio": 0.875,
+    "height": 17,
+    "weight": 905,
+    "pokedex": [
+      "cobblemon.species.charizard.desc"
+    ],
+    "labels": [
+      "gen1"
+    ],
+    "aspects": [],
+    "abilities": [
+      "blaze",
+      "h:solarpower"
+    ],
+    "eggGroups": [
+      "monster",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "attack": 84,
+      "defence": 78,
+      "special_attack": 109,
+      "special_defence": 85,
+      "speed": 100
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 3,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 267,
+    "experienceGroup": "medium_slow",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "height": 2.65,
+      "fixed": false,
+      "width": 1.5
+    },
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": false,
+              "playForPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind.stereo",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "playForPassengers": false,
+              "soundLocation": "cobblemon:ride.loop.wind.mono",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": false,
+              "playForPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather.stereo",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "playForPassengers": false,
+              "soundLocation": "cobblemon:ride.loop.leather.mono",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "45-75",
+            "JUMP": "30-65",
+            "SKILL": "55-85",
+            "SPEED": "30-65",
+            "STAMINA": "45-75"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "55-65",
+            "JUMP": "15-25",
+            "SKILL": "10-25",
+            "SPEED": "25-40",
+            "STAMINA": "20-30"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.039005388,
+                "y": -2.4511793,
+                "z": 0.10381147
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.056267936,
+                "y": -2.0914204,
+                "z": -0.45272845
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.7674751,
+                "z": -0.27694723
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "behaviour": {
+      "combat": {
+        "willDefendOwner": true,
+        "willDefendSelf": true,
+        "willFlee": false
+      },
+      "fireImmune": true,
+      "herd": {
+        "maxSize": "5"
+      },
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true,
+          "swimSpeed": 0.1
+        },
+        "walk": {
+          "walkSpeed": 0.147
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "drowsyChance": 0.0333,
+        "light": "0-4",
+        "rouseChance": 0.0042
+      }
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:blaze_powder",
+          "quantityRange": "0-3"
+        },
+        {
+          "item": "cobblemon:charcoal_stick",
+          "percentage": 25
+        }
+      ]
+    },
+    "moves": [
+      "1:dragonclaw",
+      "1:airslash",
+      "1:scratch",
+      "1:growl",
+      "1:ember",
+      "1:smokescreen",
+      "1:dragonrage",
+      "1:wingattack",
+      "1:heatwave",
+      "1:flameburst",
+      "12:dragonbreath",
+      "19:firefang",
+      "24:slash",
+      "30:flamethrower",
+      "39:scaryface",
+      "46:firespin",
+      "54:inferno",
+      "62:flareblitz",
+      "egg:ancientpower",
+      "egg:bellydrum",
+      "egg:bite",
+      "egg:counter",
+      "egg:dragonrage",
+      "egg:dragonrush",
+      "egg:dragontail",
+      "egg:irontail",
+      "egg:metalclaw",
+      "egg:wingattack",
+      "tm:acrobatics",
+      "tm:aerialace",
+      "tm:aircutter",
+      "tm:airslash",
+      "tm:ancientpower",
+      "tm:beatup",
+      "tm:blastburn",
+      "tm:blazekick",
+      "tm:bodyslam",
+      "tm:breakingswipe",
+      "tm:brickbreak",
+      "tm:brutalswing",
+      "tm:bulldoze",
+      "tm:crunch",
+      "tm:cut",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:dragoncheer",
+      "tm:dragonclaw",
+      "tm:dragondance",
+      "tm:dragonpulse",
+      "tm:dragontail",
+      "tm:earthquake",
+      "tm:echoedvoice",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firefang",
+      "tm:firepledge",
+      "tm:firepunch",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:fling",
+      "tm:fly",
+      "tm:focusblast",
+      "tm:focuspunch",
+      "tm:furycutter",
+      "tm:gigaimpact",
+      "tm:headbutt",
+      "tm:heatcrash",
+      "tm:heatwave",
+      "tm:helpinghand",
+      "tm:honeclaws",
+      "tm:hurricane",
+      "tm:hyperbeam",
+      "tm:incinerate",
+      "tm:irontail",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:metalclaw",
+      "tm:mysticalfire",
+      "tm:ominouswind",
+      "tm:outrage",
+      "tm:overheat",
+      "tm:poweruppunch",
+      "tm:protect",
+      "tm:rest",
+      "tm:roar",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:roost",
+      "tm:sandstorm",
+      "tm:scaryface",
+      "tm:scorchingsands",
+      "tm:shadowclaw",
+      "tm:skydrop",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:steelwing",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swift",
+      "tm:swordsdance",
+      "tm:takedown",
+      "tm:temperflare",
+      "tm:terablast",
+      "tm:thunderpunch",
+      "tm:twister",
+      "tm:weatherball",
+      "tm:willowisp",
+      "tm:workup",
+      "tutor:ancientpower",
+      "tutor:blastburn",
+      "tutor:block",
+      "tutor:bulldoze",
+      "tutor:dragonpulse",
+      "tutor:firefang",
+      "tutor:firepledge",
+      "tutor:firepunch",
+      "tutor:flamethrower",
+      "tutor:focuspunch",
+      "tutor:furycutter",
+      "tutor:gigaimpact",
+      "tutor:heatwave",
+      "tutor:helpinghand",
+      "tutor:hyperbeam",
+      "tutor:irontail",
+      "tutor:mysticalfire",
+      "tutor:ominouswind",
+      "tutor:outrage",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:roost",
+      "tutor:scorchingsands",
+      "tutor:shadowclaw",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:thunderpunch",
+      "tutor:twister",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:curse",
+      "legacy:defensecurl",
+      "legacy:defog",
+      "legacy:doubleteam",
+      "legacy:dualwingbeat",
+      "legacy:dynamicpunch",
+      "legacy:falseswipe",
+      "legacy:fissure",
+      "legacy:frustration",
+      "legacy:furyswipes",
+      "legacy:hiddenpower",
+      "legacy:leer",
+      "legacy:mimic",
+      "legacy:mudslap",
+      "legacy:naturalgift",
+      "legacy:rage",
+      "legacy:reflect",
+      "legacy:return",
+      "legacy:round",
+      "legacy:scaleshot",
+      "legacy:secretpower",
+      "legacy:seismictoss",
+      "legacy:skullbash",
+      "legacy:snore",
+      "legacy:submission",
+      "legacy:swagger",
+      "legacy:tailwind",
+      "legacy:toxic",
+      "special:blastburn",
+      "special:block",
+      "special:celebrate",
+      "special:holdhands",
+      "special:howl",
+      "special:quickattack"
+    ],
+    "preEvolution": "charmeleon",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Mega-X",
+        "primaryType": "fire",
+        "secondaryType": "dragon",
+        "maleRatio": 0.875,
+        "height": 17,
+        "weight": 1105,
+        "pokedex": [
+          "cobblemon.species.charizard-megax.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega_x"
+        ],
+        "abilities": [
+          "toughclaws",
+          "h:toughclaws"
+        ],
+        "baseStats": {
+          "hp": 78,
+          "attack": 130,
+          "defence": 111,
+          "special_attack": 130,
+          "special_defence": 85,
+          "speed": 100
+        },
+        "baseExperienceYield": 317,
+        "riding": {
+          "behaviour": {
+            "key": "cobblemon:composite",
+            "alternateBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:air/bird",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                0
+              ]
+            },
+            "defaultBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:land/horse",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                "-1 * 0.5*q.jump_strength/50"
+              ]
+            },
+            "transitionStrategy": "cobblemon:strategy/jump"
+          },
+          "seats": [],
+          "stats": {
+            "ACCELERATION": {
+              "ranges": {
+                "AIR": "20-50",
+                "LAND": "90-100"
+              }
+            },
+            "JUMP": {
+              "ranges": {
+                "AIR": "25-50",
+                "LAND": "10-20"
+              }
+            },
+            "SKILL": {
+              "ranges": {
+                "AIR": "50-100",
+                "LAND": "15-30"
+              }
+            },
+            "SPEED": {
+              "ranges": {
+                "AIR": "25-60",
+                "LAND": "10-20"
+              }
+            },
+            "STAMINA": {
+              "ranges": {
+                "AIR": "35-70",
+                "LAND": "15-30"
+              }
+            }
+          }
+        },
+        "behaviour": {
+          "combat": {
+            "willDefendOwner": true,
+            "willDefendSelf": true,
+            "willFlee": false
+          },
+          "fireImmune": true,
+          "herd": {
+            "maxSize": "6"
+          },
+          "moving": {
+            "fly": {
+              "canFly": true
+            },
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            }
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true,
+        "lightingData": {
+          "lightLevel": 14,
+          "liquidGlowMode": "LAND"
+        }
+      },
+      {
+        "name": "Mega-Y",
+        "primaryType": "fire",
+        "secondaryType": "flying",
+        "maleRatio": 0.875,
+        "height": 17,
+        "weight": 1005,
+        "pokedex": [
+          "cobblemon.species.charizard-megay.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega_y"
+        ],
+        "abilities": [
+          "drought",
+          "h:drought"
+        ],
+        "baseStats": {
+          "hp": 78,
+          "attack": 104,
+          "defence": 78,
+          "special_attack": 159,
+          "special_defence": 115,
+          "speed": 100
+        },
+        "baseExperienceYield": 317,
+        "riding": {
+          "behaviour": {
+            "key": "cobblemon:composite",
+            "alternateBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:air/bird",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                0
+              ]
+            },
+            "defaultBehaviour": {
+              "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+              "key": "cobblemon:land/horse",
+              "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+              "jumpVector": [
+                0,
+                "0.3*q.jump_strength/50",
+                "-1 * 0.5*q.jump_strength/50"
+              ]
+            },
+            "transitionStrategy": "cobblemon:strategy/jump"
+          },
+          "seats": [],
+          "stats": {
+            "ACCELERATION": {
+              "ranges": {
+                "AIR": "20-50",
+                "LAND": "90-100"
+              }
+            },
+            "JUMP": {
+              "ranges": {
+                "AIR": "25-50",
+                "LAND": "10-20"
+              }
+            },
+            "SKILL": {
+              "ranges": {
+                "AIR": "50-100",
+                "LAND": "15-30"
+              }
+            },
+            "SPEED": {
+              "ranges": {
+                "AIR": "25-60",
+                "LAND": "10-20"
+              }
+            },
+            "STAMINA": {
+              "ranges": {
+                "AIR": "35-70",
+                "LAND": "15-30"
+              }
+            }
+          }
+        },
+        "behaviour": {
+          "combat": {
+            "willDefendOwner": true,
+            "willDefendSelf": true,
+            "willFlee": false
+          },
+          "fireImmune": true,
+          "herd": {
+            "maxSize": "6"
+          },
+          "moving": {
+            "fly": {
+              "canFly": true
+            },
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            }
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true,
+        "lightingData": {
+          "lightLevel": 14,
+          "liquidGlowMode": "LAND"
+        }
+      },
+      {
+        "name": "Gmax",
+        "primaryType": "fire",
+        "secondaryType": "flying",
+        "maleRatio": 0.875,
+        "height": 280,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.charizard-gmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax"
+        ],
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true
+      }
+    ],
+    "lightingData": {
+      "lightLevel": 14,
+      "liquidGlowMode": "LAND"
+    }
+  }
+}

@@ -1,0 +1,1778 @@
+{
+  "slug": "deerling",
+  "name": "Deerling",
+  "dexNumber": 585,
+  "implemented": true,
+  "types": [
+    "normal",
+    "grass"
+  ],
+  "abilities": [
+    {
+      "id": "chlorophyll",
+      "hidden": false,
+      "label": "Chlorophyll"
+    },
+    {
+      "id": "sapsipper",
+      "hidden": false,
+      "label": "Sapsipper"
+    },
+    {
+      "id": "serenegrace",
+      "hidden": true,
+      "label": "Serenegrace"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [
+    "spring"
+  ],
+  "aliases": [
+    "autumn",
+    "deerling",
+    "deerling autumn",
+    "deerling summer",
+    "deerling winter",
+    "summer",
+    "winter"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 195,
+  "catchRate": 190,
+  "baseExperienceYield": 67,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 60,
+    "attack": 60,
+    "defence": 50,
+    "special_attack": 40,
+    "special_defence": 50,
+    "speed": 75
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "deerling_sawsbuck",
+      "variant": "level_up",
+      "result": {
+        "raw": "sawsbuck",
+        "slug": "sawsbuck",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "hornleech"
+      ],
+      "requirementText": [
+        "Level 34+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 34+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 34
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "deerling_sawsbuck",
+        "variant": "level_up",
+        "result": "sawsbuck",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "hornleech"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 34
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "deerling",
+        "name": "Deerling",
+        "dexNumber": 585
+      },
+      {
+        "slug": "sawsbuck",
+        "name": "Sawsbuck",
+        "dexNumber": 586
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "deerling",
+        "toSlug": "sawsbuck",
+        "method": "level_up",
+        "requirementText": [
+          "Level 34+"
+        ]
+      }
+    ],
+    "roots": [
+      "deerling"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:aromatherapy",
+      "moveId": "aromatherapy",
+      "moveName": "Aromatherapy",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:camouflage",
+      "moveId": "camouflage",
+      "moveName": "Camouflage",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "32:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "10:doublekick",
+      "moveId": "doublekick",
+      "moveName": "Double Kick",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "37:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "level",
+      "sourceValue": 37,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:faketears",
+      "moveId": "faketears",
+      "moveName": "Fake Tears",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:faketears",
+      "moveId": "faketears",
+      "moveName": "Fake Tears",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:feintattack",
+      "moveId": "feintattack",
+      "moveName": "Feint Attack",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:grasswhistle",
+      "moveId": "grasswhistle",
+      "moveName": "Grass Whistle",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyterrain",
+      "moveId": "grassyterrain",
+      "moveName": "Grassy Terrain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:jumpkick",
+      "moveId": "jumpkick",
+      "moveName": "Jump Kick",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "13:leechseed",
+      "moveId": "leechseed",
+      "moveName": "Leech Seed",
+      "sourceType": "level",
+      "sourceValue": 13,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:odorsleuth",
+      "moveId": "odorsleuth",
+      "moveName": "Odor Sleuth",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "7:sandattack",
+      "moveId": "sandattack",
+      "moveName": "Sand Attack",
+      "sourceType": "level",
+      "sourceValue": 7,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "42:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "20:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "deerling-1",
+      "sourceFile": "0585_deerling.json",
+      "pokemon": {
+        "raw": "deerling",
+        "slug": "deerling",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 1.8,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest",
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_forest",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_plains",
+          "#cobblemon:is_snowy_forest",
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "deerling-1",
+        "pokemon": "deerling",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_forest",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_plains",
+            "#cobblemon:is_snowy_forest",
+            "#cobblemon:is_taiga"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "deerling-2",
+      "sourceFile": "0585_deerling.json",
+      "pokemon": {
+        "raw": "deerling",
+        "slug": "deerling",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "deerling-2",
+        "pokemon": "deerling",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    },
+    {
+      "id": "deerling-3",
+      "sourceFile": "0585_deerling.json",
+      "pokemon": {
+        "raw": "deerling",
+        "slug": "deerling",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 8.4,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "deerling-3",
+        "pokemon": "deerling",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "9-34",
+        "weight": 8.4,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Summer",
+      "slug": "deerling-summer",
+      "aspects": [
+        "summer"
+      ],
+      "types": [
+        "normal",
+        "grass"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "deerling_sawsbuck",
+          "variant": "level_up",
+          "result": {
+            "raw": "sawsbuck",
+            "slug": "sawsbuck",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "hornleech"
+          ],
+          "requirementText": [
+            "Level 34+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 34+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 34
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Summer",
+          "raw": {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Summer",
+        "primaryType": "normal",
+        "secondaryType": "grass",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 195,
+        "pokedex": [
+          "cobblemon.species.deerling-summer.desc"
+        ],
+        "labels": [
+          "gen5"
+        ],
+        "aspects": [
+          "summer"
+        ],
+        "evolutions": [
+          {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    },
+    {
+      "name": "Autumn",
+      "slug": "deerling-autumn",
+      "aspects": [
+        "autumn"
+      ],
+      "types": [
+        "normal",
+        "grass"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "deerling_sawsbuck",
+          "variant": "level_up",
+          "result": {
+            "raw": "sawsbuck",
+            "slug": "sawsbuck",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "hornleech"
+          ],
+          "requirementText": [
+            "Level 34+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 34+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 34
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Autumn",
+          "raw": {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Autumn",
+        "primaryType": "normal",
+        "secondaryType": "grass",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 195,
+        "pokedex": [
+          "cobblemon.species.deerling-autumn.desc"
+        ],
+        "labels": [
+          "gen5"
+        ],
+        "aspects": [
+          "autumn"
+        ],
+        "evolutions": [
+          {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    },
+    {
+      "name": "Winter",
+      "slug": "deerling-winter",
+      "aspects": [
+        "winter"
+      ],
+      "types": [
+        "normal",
+        "grass"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "deerling_sawsbuck",
+          "variant": "level_up",
+          "result": {
+            "raw": "sawsbuck",
+            "slug": "sawsbuck",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "hornleech"
+          ],
+          "requirementText": [
+            "Level 34+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 34+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 34
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Winter",
+          "raw": {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Winter",
+        "primaryType": "normal",
+        "secondaryType": "grass",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 195,
+        "pokedex": [
+          "cobblemon.species.deerling-winter.desc"
+        ],
+        "labels": [
+          "gen5"
+        ],
+        "aspects": [
+          "winter"
+        ],
+        "evolutions": [
+          {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 585,
+    "name": "Deerling",
+    "primaryType": "normal",
+    "secondaryType": "grass",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 195,
+    "pokedex": [
+      "cobblemon.species.deerling.desc"
+    ],
+    "labels": [
+      "gen5"
+    ],
+    "aspects": [
+      "spring"
+    ],
+    "abilities": [
+      "chlorophyll",
+      "sapsipper",
+      "h:serenegrace"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 60,
+      "defence": 50,
+      "special_attack": 40,
+      "special_defence": 50,
+      "speed": 75
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 67,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "season"
+    ],
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 0.6,
+      "height": 1.1,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:leather",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:yache_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:camouflage",
+      "4:growl",
+      "7:sandattack",
+      "10:doublekick",
+      "13:leechseed",
+      "16:feintattack",
+      "20:takedown",
+      "24:jumpkick",
+      "28:aromatherapy",
+      "32:charm",
+      "37:doubleedge",
+      "42:solarbeam",
+      "egg:agility",
+      "egg:batonpass",
+      "egg:faketears",
+      "egg:grasswhistle",
+      "egg:headbutt",
+      "egg:naturalgift",
+      "egg:odorsleuth",
+      "egg:sleeptalk",
+      "egg:synthesis",
+      "egg:worryseed",
+      "tm:agility",
+      "tm:batonpass",
+      "tm:bodyslam",
+      "tm:bounce",
+      "tm:bulldoze",
+      "tm:bulletseed",
+      "tm:charm",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:echoedvoice",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:faketears",
+      "tm:flash",
+      "tm:gigadrain",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:grassyterrain",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:lastresort",
+      "tm:leafstorm",
+      "tm:lightscreen",
+      "tm:magicalleaf",
+      "tm:naturalgift",
+      "tm:naturepower",
+      "tm:playrough",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:safeguard",
+      "tm:seedbomb",
+      "tm:shadowball",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:synthesis",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thunderwave",
+      "tm:trailblaze",
+      "tm:wildcharge",
+      "tm:workup",
+      "tm:worryseed",
+      "tm:zenheadbutt",
+      "tutor:bounce",
+      "tutor:bulldoze",
+      "tutor:endeavor",
+      "tutor:energyball",
+      "tutor:gigadrain",
+      "tutor:grassyglide",
+      "tutor:helpinghand",
+      "tutor:lastresort",
+      "tutor:magicalleaf",
+      "tutor:playrough",
+      "tutor:rest",
+      "tutor:seedbomb",
+      "tutor:shadowball",
+      "tutor:sleeptalk",
+      "tutor:synthesis",
+      "tutor:wildcharge",
+      "tutor:worryseed",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "deerling_sawsbuck",
+        "variant": "level_up",
+        "result": "sawsbuck",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "hornleech"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 34
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Summer",
+        "primaryType": "normal",
+        "secondaryType": "grass",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 195,
+        "pokedex": [
+          "cobblemon.species.deerling-summer.desc"
+        ],
+        "labels": [
+          "gen5"
+        ],
+        "aspects": [
+          "summer"
+        ],
+        "evolutions": [
+          {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      },
+      {
+        "name": "Autumn",
+        "primaryType": "normal",
+        "secondaryType": "grass",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 195,
+        "pokedex": [
+          "cobblemon.species.deerling-autumn.desc"
+        ],
+        "labels": [
+          "gen5"
+        ],
+        "aspects": [
+          "autumn"
+        ],
+        "evolutions": [
+          {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      },
+      {
+        "name": "Winter",
+        "primaryType": "normal",
+        "secondaryType": "grass",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 195,
+        "pokedex": [
+          "cobblemon.species.deerling-winter.desc"
+        ],
+        "labels": [
+          "gen5"
+        ],
+        "aspects": [
+          "winter"
+        ],
+        "evolutions": [
+          {
+            "id": "deerling_sawsbuck",
+            "variant": "level_up",
+            "result": "sawsbuck",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "hornleech"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 34
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "deerling",
+            "tier": 1
+          },
+          {
+            "pokemon": "stantler",
+            "tier": 2
+          },
+          {
+            "pokemon": "wyrdeer",
+            "tier": 3
+          },
+          {
+            "pokemon": "sawsbuck",
+            "tier": 4
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    }
+  }
+}

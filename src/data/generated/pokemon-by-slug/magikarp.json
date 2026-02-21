@@ -1,0 +1,4009 @@
+{
+  "slug": "magikarp",
+  "name": "Magikarp",
+  "dexNumber": 129,
+  "implemented": true,
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    {
+      "id": "swiftswim",
+      "hidden": false,
+      "label": "Swiftswim"
+    },
+    {
+      "id": "rattled",
+      "hidden": true,
+      "label": "Rattled"
+    }
+  ],
+  "eggGroups": [
+    "water_2",
+    "dragon"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "aspects": [],
+  "aliases": [
+    "magikarp"
+  ],
+  "maleRatio": 0.5,
+  "height": 9,
+  "weight": 100,
+  "catchRate": 255,
+  "baseExperienceYield": 40,
+  "baseFriendship": 50,
+  "eggCycles": 5,
+  "baseStats": {
+    "hp": 20,
+    "attack": 10,
+    "defence": 55,
+    "special_attack": 15,
+    "special_defence": 20,
+    "speed": 80
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "magikarp_gyarados",
+      "variant": "level_up",
+      "result": {
+        "raw": "gyarados",
+        "slug": "gyarados",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "bite"
+      ],
+      "requirementText": [
+        "Level 20+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 20+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 20
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "magikarp_gyarados",
+        "variant": "level_up",
+        "result": "gyarados",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "bite"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "magikarp",
+        "name": "Magikarp",
+        "dexNumber": 129
+      },
+      {
+        "slug": "gyarados",
+        "name": "Gyarados",
+        "dexNumber": 130
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "magikarp",
+        "toSlug": "gyarados",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
+      }
+    ],
+    "roots": [
+      "magikarp"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:celebrate",
+      "moveId": "celebrate",
+      "moveName": "Celebrate",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "25:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null
+    },
+    {
+      "raw": "special:happyhour",
+      "moveId": "happyhour",
+      "moveName": "Happy Hour",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:splash",
+      "moveId": "splash",
+      "moveName": "Splash",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "15:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "magikarp-1",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp",
+        "slug": "magikarp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 9.9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-1",
+        "pokemon": "magikarp",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 9.9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "magikarp-2",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp",
+        "slug": "magikarp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "surface",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 1.84,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-2",
+        "pokemon": "magikarp",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "surface",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 1.84,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "magikarp-3",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp",
+        "slug": "magikarp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-3",
+        "pokemon": "magikarp",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "magikarp-4",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp",
+        "slug": "magikarp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 9.9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Freshwater",
+        "Is River",
+        "Is Swamp",
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater",
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-4",
+        "pokemon": "magikarp",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 9.9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "magikarp-5",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp",
+        "slug": "magikarp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-5",
+        "pokemon": "magikarp",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "magikarp-apricot-stripes-15",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=apricot-stripes",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=apricot-stripes"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_jungle",
+              "#cobblemon:is_ocean",
+              "#cobblemon:is_plains"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-apricot-stripes-15",
+        "pokemon": "magikarp magikarp_jump=apricot-stripes",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_jungle",
+                "#cobblemon:is_ocean",
+                "#cobblemon:is_plains"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_desert",
+                "#cobblemon:is_savanna"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-apricot-tiger-15",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=apricot-tiger",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=apricot-tiger"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_jungle",
+              "#cobblemon:is_ocean",
+              "#cobblemon:is_plains"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-apricot-tiger-15",
+        "pokemon": "magikarp magikarp_jump=apricot-tiger",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_jungle",
+                "#cobblemon:is_ocean",
+                "#cobblemon:is_plains"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_desert",
+                "#cobblemon:is_savanna"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-apricot-zebra-15",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=apricot-zebra",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=apricot-zebra"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_jungle",
+              "#cobblemon:is_ocean",
+              "#cobblemon:is_plains"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-apricot-zebra-15",
+        "pokemon": "magikarp magikarp_jump=apricot-zebra",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_jungle",
+                "#cobblemon:is_ocean",
+                "#cobblemon:is_plains"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_desert",
+                "#cobblemon:is_savanna"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-black-forehead-20",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=black-forehead",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=black-forehead"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_taiga"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-black-forehead-20",
+        "pokemon": "magikarp magikarp_jump=black-forehead",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_taiga"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-black-forehead-21",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=black-forehead",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=black-forehead"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 6,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-black-forehead-21",
+        "pokemon": "magikarp magikarp_jump=black-forehead",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-black-forehead-22",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=black-forehead",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=black-forehead"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_taiga"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-black-forehead-22",
+        "pokemon": "magikarp magikarp_jump=black-forehead",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_taiga"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-black-mask-20",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=black-mask",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=black-mask"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_taiga"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-black-mask-20",
+        "pokemon": "magikarp magikarp_jump=black-mask",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_taiga"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-black-mask-21",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=black-mask",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=black-mask"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 6,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-black-mask-21",
+        "pokemon": "magikarp magikarp_jump=black-mask",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-black-mask-22",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=black-mask",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=black-mask"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_taiga"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-black-mask-22",
+        "pokemon": "magikarp magikarp_jump=black-mask",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_taiga"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-blue-raindrops-23",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=blue-raindrops",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=blue-raindrops"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_island",
+              "#cobblemon:is_ocean"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-blue-raindrops-23",
+        "pokemon": "magikarp magikarp_jump=blue-raindrops",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_island",
+                "#cobblemon:is_ocean"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_snowy",
+                "#cobblemon:is_tundra"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-blue-saucy-23",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=blue-saucy",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=blue-saucy"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_island",
+              "#cobblemon:is_ocean"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-blue-saucy-23",
+        "pokemon": "magikarp magikarp_jump=blue-saucy",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_island",
+                "#cobblemon:is_ocean"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_snowy",
+                "#cobblemon:is_tundra"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-brown-stripes-16",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=brown-stripes",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=brown-stripes"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_swamp",
+              "#cobblemon:is_taiga"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_jungle"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-brown-stripes-16",
+        "pokemon": "magikarp magikarp_jump=brown-stripes",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_swamp",
+                "#cobblemon:is_taiga"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_jungle"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-brown-tiger-16",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=brown-tiger",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=brown-tiger"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_swamp",
+              "#cobblemon:is_taiga"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_jungle"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-brown-tiger-16",
+        "pokemon": "magikarp magikarp_jump=brown-tiger",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_swamp",
+                "#cobblemon:is_taiga"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_jungle"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-brown-zebra-16",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=brown-zebra",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=brown-zebra"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_swamp",
+              "#cobblemon:is_taiga"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_jungle"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-brown-zebra-16",
+        "pokemon": "magikarp magikarp_jump=brown-zebra",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_swamp",
+                "#cobblemon:is_taiga"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_jungle"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-calico-orange-gold-10",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=calico-orange-gold",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=calico-orange-gold"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_island"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-calico-orange-gold-10",
+        "pokemon": "magikarp magikarp_jump=calico-orange-gold",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_island"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-calico-orange-white-9",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=calico-orange-white",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=calico-orange-white"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_freshwater"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_temperate"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-calico-orange-white-9",
+        "pokemon": "magikarp magikarp_jump=calico-orange-white",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_freshwater"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_temperate"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-calico-orange-white-black-9",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=calico-orange-white-black",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=calico-orange-white-black"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_freshwater"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_temperate"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-calico-orange-white-black-9",
+        "pokemon": "magikarp magikarp_jump=calico-orange-white-black",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_freshwater"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_temperate"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-calico-white-orange-9",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=calico-white-orange",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=calico-white-orange"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_freshwater"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_temperate"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-calico-white-orange-9",
+        "pokemon": "magikarp magikarp_jump=calico-white-orange",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_freshwater"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_temperate"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-gray-bubbles-13",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=gray-bubbles",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=gray-bubbles"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_river",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-gray-bubbles-13",
+        "pokemon": "magikarp magikarp_jump=gray-bubbles",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_river",
+                "#cobblemon:is_snowy",
+                "#cobblemon:is_tundra"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-gray-diamonds-13",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=gray-diamonds",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=gray-diamonds"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_river",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-gray-diamonds-13",
+        "pokemon": "magikarp magikarp_jump=gray-diamonds",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_river",
+                "#cobblemon:is_snowy",
+                "#cobblemon:is_tundra"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-gray-patches-13",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=gray-patches",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=gray-patches"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_river",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_mountain",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-gray-patches-13",
+        "pokemon": "magikarp magikarp_jump=gray-patches",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_river",
+                "#cobblemon:is_snowy",
+                "#cobblemon:is_tundra"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_mountain",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-dapples-11",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-dapples",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-dapples"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_forest",
+              "#cobblemon:is_island",
+              "#cobblemon:is_savanna"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_ocean",
+              "#cobblemon:is_river"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-dapples-11",
+        "pokemon": "magikarp magikarp_jump=orange-dapples",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_forest",
+                "#cobblemon:is_island",
+                "#cobblemon:is_savanna"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_ocean",
+                "#cobblemon:is_river"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-forehead-17",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-forehead",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-forehead"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-forehead-17",
+        "pokemon": "magikarp magikarp_jump=orange-forehead",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-forehead-18",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-forehead",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-forehead"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 10,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-orange-forehead-18",
+        "pokemon": "magikarp magikarp_jump=orange-forehead",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 10,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-forehead-19",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-forehead",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-forehead"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-forehead-19",
+        "pokemon": "magikarp magikarp_jump=orange-forehead",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-mask-17",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-mask",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-mask"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-mask-17",
+        "pokemon": "magikarp magikarp_jump=orange-mask",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-mask-18",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-mask",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-mask"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 10,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-orange-mask-18",
+        "pokemon": "magikarp magikarp_jump=orange-mask",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 10,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-mask-19",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-mask",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-mask"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-mask-19",
+        "pokemon": "magikarp magikarp_jump=orange-mask",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_savanna",
+              "#cobblemon:is_snowy",
+              "#cobblemon:is_tundra"
+            ]
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-orca-11",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-orca",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-orca"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_forest",
+              "#cobblemon:is_island",
+              "#cobblemon:is_savanna"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_ocean",
+              "#cobblemon:is_river"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-orca-11",
+        "pokemon": "magikarp magikarp_jump=orange-orca",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_forest",
+                "#cobblemon:is_island",
+                "#cobblemon:is_savanna"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_ocean",
+                "#cobblemon:is_river"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-orange-two-tone-11",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=orange-two-tone",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=orange-two-tone"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_badlands",
+              "#cobblemon:is_forest",
+              "#cobblemon:is_island",
+              "#cobblemon:is_savanna"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_ocean",
+              "#cobblemon:is_river"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-orange-two-tone-11",
+        "pokemon": "magikarp magikarp_jump=orange-two-tone",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_badlands",
+                "#cobblemon:is_forest",
+                "#cobblemon:is_island",
+                "#cobblemon:is_savanna"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_ocean",
+                "#cobblemon:is_river"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-pink-dapples-12",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=pink-dapples",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=pink-dapples"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_magical",
+              "#cobblemon:is_plains"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_island"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-pink-dapples-12",
+        "pokemon": "magikarp magikarp_jump=pink-dapples",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_desert",
+                "#cobblemon:is_magical",
+                "#cobblemon:is_plains"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_island"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-pink-orca-12",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=pink-orca",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=pink-orca"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_magical",
+              "#cobblemon:is_plains"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_island"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-pink-orca-12",
+        "pokemon": "magikarp magikarp_jump=pink-orca",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_desert",
+                "#cobblemon:is_magical",
+                "#cobblemon:is_plains"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_island"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-pink-two-tone-12",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=pink-two-tone",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=pink-two-tone"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_desert",
+              "#cobblemon:is_magical",
+              "#cobblemon:is_plains"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_island"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-pink-two-tone-12",
+        "pokemon": "magikarp magikarp_jump=pink-two-tone",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_desert",
+                "#cobblemon:is_magical",
+                "#cobblemon:is_plains"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_island"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-purple-bubbles-14",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=purple-bubbles",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=purple-bubbles"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_forest",
+              "#cobblemon:is_magical",
+              "#cobblemon:is_taiga"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_swamp"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-purple-bubbles-14",
+        "pokemon": "magikarp magikarp_jump=purple-bubbles",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_forest",
+                "#cobblemon:is_magical",
+                "#cobblemon:is_taiga"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_swamp"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-purple-diamonds-14",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=purple-diamonds",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=purple-diamonds"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_forest",
+              "#cobblemon:is_magical",
+              "#cobblemon:is_taiga"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_swamp"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-purple-diamonds-14",
+        "pokemon": "magikarp magikarp_jump=purple-diamonds",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_forest",
+                "#cobblemon:is_magical",
+                "#cobblemon:is_taiga"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_swamp"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-purple-patches-14",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=purple-patches",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=purple-patches"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_floral",
+              "#cobblemon:is_forest",
+              "#cobblemon:is_magical",
+              "#cobblemon:is_taiga"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_swamp"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-purple-patches-14",
+        "pokemon": "magikarp magikarp_jump=purple-patches",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_floral",
+                "#cobblemon:is_forest",
+                "#cobblemon:is_magical",
+                "#cobblemon:is_taiga"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_swamp"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-skelly-6",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=skelly",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=skelly"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_spooky"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-skelly-6",
+        "pokemon": "magikarp magikarp_jump=skelly",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-skelly-7",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=skelly",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=skelly"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 6,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magikarp-skelly-7",
+        "pokemon": "magikarp magikarp_jump=skelly",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-skelly-8",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=skelly",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=skelly"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_spooky"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-skelly-8",
+        "pokemon": "magikarp magikarp_jump=skelly",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-violet-raindrops-24",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=violet-raindrops",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=violet-raindrops"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_jungle",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_magical"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-violet-raindrops-24",
+        "pokemon": "magikarp magikarp_jump=violet-raindrops",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_jungle",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_magical"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "magikarp-violet-saucy-24",
+      "sourceFile": "0129_magikarp.json",
+      "pokemon": {
+        "raw": "magikarp magikarp_jump=violet-saucy",
+        "slug": "magikarp",
+        "aspectTokens": [
+          "magikarp_jump=violet-saucy"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_jungle",
+              "#cobblemon:is_spooky"
+            ]
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "biomes": [
+              "#cobblemon:is_magical"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "magikarp-violet-saucy-24",
+        "pokemon": "magikarp magikarp_jump=violet-saucy",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-20",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_jungle",
+                "#cobblemon:is_spooky"
+              ]
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "biomes": [
+                "#cobblemon:is_magical"
+              ]
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 129,
+    "name": "Magikarp",
+    "primaryType": "water",
+    "maleRatio": 0.5,
+    "height": 9,
+    "weight": 100,
+    "pokedex": [
+      "cobblemon.species.magikarp.desc"
+    ],
+    "labels": [
+      "gen1"
+    ],
+    "aspects": [],
+    "abilities": [
+      "swiftswim",
+      "h:rattled"
+    ],
+    "eggGroups": [
+      "water_2",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 20,
+      "attack": 10,
+      "defence": 55,
+      "special_attack": 15,
+      "special_defence": 20,
+      "speed": 80
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 40,
+    "experienceGroup": "slow",
+    "catchRate": 255,
+    "eggCycles": 5,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 0.8,
+      "height": 0.8,
+      "fixed": false
+    },
+    "behaviour": {
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "goldeen",
+            "tier": 1
+          },
+          {
+            "pokemon": "magikarp",
+            "tier": 1
+          },
+          {
+            "pokemon": "feebas",
+            "tier": 1
+          },
+          {
+            "pokemon": "seaking",
+            "tier": 2
+          },
+          {
+            "pokemon": "gyarados mega=false",
+            "tier": 3
+          },
+          {
+            "pokemon": "gyarados mega",
+            "tier": 4
+          },
+          {
+            "pokemon": "manaphy",
+            "tier": 5
+          }
+        ]
+      },
+      "moving": {
+        "canLook": false,
+        "walk": {
+          "avoidsLand": true
+        },
+        "swim": {
+          "swimSpeed": 0.1,
+          "canBreatheUnderwater": true
+        }
+      },
+      "resting": {
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:salmon"
+        },
+        {
+          "item": "minecraft:bone_meal",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:wacan_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:splash",
+      "15:tackle",
+      "25:flail",
+      "tm:bounce",
+      "tutor:bounce",
+      "legacy:hydropump",
+      "special:celebrate",
+      "special:happyhour"
+    ],
+    "evolutions": [
+      {
+        "id": "magikarp_gyarados",
+        "variant": "level_up",
+        "result": "gyarados",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "bite"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    ]
+  }
+}

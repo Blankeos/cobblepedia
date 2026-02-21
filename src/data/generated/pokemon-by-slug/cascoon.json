@@ -1,0 +1,419 @@
+{
+  "slug": "cascoon",
+  "name": "Cascoon",
+  "dexNumber": 268,
+  "implemented": false,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shedskin",
+      "hidden": false,
+      "label": "Shedskin"
+    },
+    {
+      "id": "shedskin",
+      "hidden": true,
+      "label": "Shedskin"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [
+    "cascoon-cocoon"
+  ],
+  "aliases": [
+    "cascoon"
+  ],
+  "maleRatio": 0.5,
+  "height": 7,
+  "weight": 115,
+  "catchRate": 120,
+  "baseExperienceYield": 72,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 50,
+    "attack": 35,
+    "defence": 55,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 15
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "wurmple",
+    "slug": "wurmple",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "cascoon_dustox",
+      "variant": "level_up",
+      "result": {
+        "raw": "dustox",
+        "slug": "dustox",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirementText": [
+        "Level 10+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 10+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 10
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "cascoon_dustox",
+        "variant": "level_up",
+        "result": "dustox",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "gust"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "wurmple",
+        "name": "Wurmple",
+        "dexNumber": 265
+      },
+      {
+        "slug": "silcoon",
+        "name": "Silcoon",
+        "dexNumber": 266
+      },
+      {
+        "slug": "beautifly",
+        "name": "Beautifly",
+        "dexNumber": 267
+      },
+      {
+        "slug": "cascoon",
+        "name": "Cascoon",
+        "dexNumber": 268
+      },
+      {
+        "slug": "dustox",
+        "name": "Dustox",
+        "dexNumber": 269
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "cascoon",
+        "toSlug": "dustox",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      },
+      {
+        "fromSlug": "silcoon",
+        "toSlug": "beautifly",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      },
+      {
+        "fromSlug": "wurmple",
+        "toSlug": "cascoon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+",
+          "Property wurmple cocoon_species=cascoon"
+        ]
+      },
+      {
+        "fromSlug": "wurmple",
+        "toSlug": "silcoon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+",
+          "Property wurmple cocoon_species=silcoon"
+        ]
+      }
+    ],
+    "roots": [
+      "wurmple"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:harden",
+      "moveId": "harden",
+      "moveName": "Harden",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:poisonsting",
+      "moveId": "poisonsting",
+      "moveName": "Poison Sting",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 268,
+    "name": "Cascoon",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 7,
+    "weight": 115,
+    "pokedex": [
+      "cobblemon.species.cascoon.desc"
+    ],
+    "labels": [
+      "gen3"
+    ],
+    "aspects": [
+      "cascoon-cocoon"
+    ],
+    "abilities": [
+      "shedskin",
+      "h:shedskin"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 35,
+      "defence": 55,
+      "special_attack": 25,
+      "special_defence": 25,
+      "speed": 15
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 2,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 72,
+    "experienceGroup": "medium_fast",
+    "catchRate": 120,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "canWalk": false
+        },
+        "swim": {
+          "canSwimInWater": false,
+          "avoidsWater": true
+        },
+        "canLook": false
+      },
+      "resting": {
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "cobblemon:pecha_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:harden",
+      "1:tackle",
+      "1:poisonsting",
+      "tm:bugbite",
+      "tm:electroweb",
+      "tm:irondefense",
+      "tm:skittersmack",
+      "tm:stringshot",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:electroweb",
+      "tutor:irondefense",
+      "tutor:skittersmack",
+      "tutor:stringshot",
+      "legacy:snore"
+    ],
+    "preEvolution": "wurmple",
+    "evolutions": [
+      {
+        "id": "cascoon_dustox",
+        "variant": "level_up",
+        "result": "dustox",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "gust"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    ]
+  }
+}

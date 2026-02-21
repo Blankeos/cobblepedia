@@ -1,0 +1,850 @@
+{
+  "slug": "combee",
+  "name": "Combee",
+  "dexNumber": 415,
+  "implemented": true,
+  "types": [
+    "bug",
+    "flying"
+  ],
+  "abilities": [
+    {
+      "id": "honeygather",
+      "hidden": false,
+      "label": "Honeygather"
+    },
+    {
+      "id": "hustle",
+      "hidden": true,
+      "label": "Hustle"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
+  "aliases": [
+    "combee"
+  ],
+  "maleRatio": 0.875,
+  "height": 3,
+  "weight": 55,
+  "catchRate": 120,
+  "baseExperienceYield": 49,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 30,
+    "attack": 30,
+    "defence": 42,
+    "special_attack": 30,
+    "special_defence": 42,
+    "speed": 70
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "combee_vespiquen",
+      "variant": "level_up",
+      "result": {
+        "raw": "vespiquen",
+        "slug": "vespiquen",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "slash"
+      ],
+      "requirementText": [
+        "Level 21+",
+        "Property gender=female"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 21+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 21
+          }
+        },
+        {
+          "variant": "properties",
+          "text": "Property gender=female",
+          "raw": {
+            "variant": "properties",
+            "target": "gender=female"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "combee_vespiquen",
+        "variant": "level_up",
+        "result": "vespiquen",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "slash"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 21
+          },
+          {
+            "variant": "properties",
+            "target": "gender=female"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "combee",
+        "name": "Combee",
+        "dexNumber": 415
+      },
+      {
+        "slug": "vespiquen",
+        "name": "Vespiquen",
+        "dexNumber": 416
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "combee",
+        "toSlug": "vespiquen",
+        "method": "level_up",
+        "requirementText": [
+          "Level 21+",
+          "Property gender=female"
+        ]
+      }
+    ],
+    "roots": [
+      "combee"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "legacy:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbuzz",
+      "moveId": "bugbuzz",
+      "moveName": "Bug Buzz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:gust",
+      "moveId": "gust",
+      "moveName": "Gust",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lunge",
+      "moveId": "lunge",
+      "moveName": "Lunge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "combee-1",
+      "sourceFile": "0415_combee.json",
+      "pokemon": {
+        "raw": "combee",
+        "slug": "combee",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-24",
+      "levelMin": 1,
+      "levelMax": 24,
+      "weight": 9.9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Temperate",
+        "Is Forest",
+        "Is Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_temperate"
+        ],
+        "timeRange": "day",
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "neededNearbyBlocks": [
+              "#minecraft:beehives"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "combee-1",
+        "pokemon": "combee",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-24",
+        "weight": 9.9,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "neededNearbyBlocks": [
+              "#minecraft:beehives"
+            ]
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_temperate"
+          ],
+          "timeRange": "day",
+          "isRaining": false
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "combee-2",
+      "sourceFile": "0415_combee.json",
+      "pokemon": {
+        "raw": "combee",
+        "slug": "combee",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-24",
+      "levelMin": 1,
+      "levelMax": 24,
+      "weight": 9.9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers",
+          "#cobblemon:saccharine_trees"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "neededNearbyBlocks": [
+              "#minecraft:beehives"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "combee-2",
+        "pokemon": "combee",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-24",
+        "weight": 9.9,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "neededNearbyBlocks": [
+              "#minecraft:beehives"
+            ]
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "timeRange": "day",
+          "isRaining": false,
+          "neededNearbyBlocks": [
+            "#cobblemon:flowers",
+            "#cobblemon:saccharine_trees"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "combee-3",
+      "sourceFile": "0415_combee.json",
+      "pokemon": {
+        "raw": "combee",
+        "slug": "combee",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-24",
+      "levelMin": 1,
+      "levelMax": 24,
+      "weight": 9.9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "neededNearbyBlocks": [
+              "#minecraft:beehives"
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "id": "combee-3",
+        "pokemon": "combee",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-24",
+        "weight": 9.9,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "neededNearbyBlocks": [
+              "#minecraft:beehives"
+            ]
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "combee-4",
+      "sourceFile": "0415_combee.json",
+      "pokemon": {
+        "raw": "combee",
+        "slug": "combee",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-24",
+      "levelMin": 1,
+      "levelMax": 24,
+      "weight": 99,
+      "presets": [],
+      "biomeHints": [
+        "The Bumblezone"
+      ],
+      "condition": {
+        "biomes": [
+          "#the_bumblezone:the_bumblezone"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "combee-4",
+        "pokemon": "combee",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-24",
+        "weight": 99,
+        "condition": {
+          "biomes": [
+            "#the_bumblezone:the_bumblezone"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 415,
+    "name": "Combee",
+    "primaryType": "bug",
+    "secondaryType": "flying",
+    "maleRatio": 0.875,
+    "height": 3,
+    "weight": 55,
+    "pokedex": [
+      "cobblemon.species.combee.desc"
+    ],
+    "labels": [
+      "gen4"
+    ],
+    "aspects": [],
+    "features": [
+      "has_nectar"
+    ],
+    "abilities": [
+      "honeygather",
+      "h:hustle"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "attack": 30,
+      "defence": 42,
+      "special_attack": 30,
+      "special_defence": 42,
+      "speed": 70
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 49,
+    "experienceGroup": "medium_slow",
+    "catchRate": 120,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "shoulderMountable": true,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 0.6,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true
+        },
+        "walk": {
+          "canWalk": false
+        }
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "vespiquen",
+            "tier": 1
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true,
+        "willFlee": false,
+        "willDefendSelf": true
+      }
+    },
+    "ai": [
+      {
+        "type": "apply_behaviours",
+        "behaviours": [
+          "cobblemon:pokemon_bee",
+          "cobblemon:fights_melee"
+        ]
+      },
+      {
+        "type": "cobblemon:set_variables",
+        "variableValues": {
+          "hover_wander_minimum_height": 1,
+          "hover_wander_maximum_height": 3
+        }
+      }
+    ],
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:honey_bottle",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "minecraft:honeycomb",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:poison_barb",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:charti_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:sweetscent",
+      "1:gust",
+      "1:bugbite",
+      "1:strugglebug",
+      "tm:bugbite",
+      "tm:bugbuzz",
+      "tm:endeavor",
+      "tm:lunge",
+      "tm:ominouswind",
+      "tm:skittersmack",
+      "tm:sleeptalk",
+      "tm:stringshot",
+      "tm:strugglebug",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:endeavor",
+      "tutor:ominouswind",
+      "tutor:skittersmack",
+      "tutor:sleeptalk",
+      "tutor:stringshot",
+      "legacy:aircutter",
+      "legacy:dualwingbeat",
+      "legacy:mudslap",
+      "legacy:snore",
+      "legacy:swift",
+      "legacy:tailwind"
+    ],
+    "evolutions": [
+      {
+        "id": "combee_vespiquen",
+        "variant": "level_up",
+        "result": "vespiquen",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "slash"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 21
+          },
+          {
+            "variant": "properties",
+            "target": "gender=female"
+          }
+        ]
+      }
+    ]
+  }
+}

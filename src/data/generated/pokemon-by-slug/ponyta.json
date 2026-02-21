@@ -1,0 +1,2382 @@
+{
+  "slug": "ponyta",
+  "name": "Ponyta",
+  "dexNumber": 77,
+  "implemented": true,
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    {
+      "id": "runaway",
+      "hidden": false,
+      "label": "Runaway"
+    },
+    {
+      "id": "flashfire",
+      "hidden": false,
+      "label": "Flashfire"
+    },
+    {
+      "id": "flamebody",
+      "hidden": true,
+      "label": "Flamebody"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "galar",
+    "ponyta",
+    "ponyta galar"
+  ],
+  "maleRatio": 0.5,
+  "height": 10,
+  "weight": 300,
+  "catchRate": 190,
+  "baseExperienceYield": 82,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 50,
+    "attack": 85,
+    "defence": 55,
+    "special_attack": 65,
+    "special_defence": 65,
+    "speed": 90
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "ponyta_rapidash",
+      "variant": "level_up",
+      "result": {
+        "raw": "rapidash",
+        "slug": "rapidash",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "furyattack",
+        "smartstrike"
+      ],
+      "requirementText": [
+        "Level 40+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 40+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 40
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "ponyta_rapidash",
+        "variant": "level_up",
+        "result": "rapidash",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "furyattack",
+          "smartstrike"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 40
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "ponyta",
+        "name": "Ponyta",
+        "dexNumber": 77
+      },
+      {
+        "slug": "rapidash",
+        "name": "Rapidash",
+        "dexNumber": 78
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "ponyta",
+        "toSlug": "rapidash",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      }
+    ],
+    "roots": [
+      "ponyta"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "20:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doublekick",
+      "moveId": "doublekick",
+      "moveName": "Double Kick",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "10:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "50:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "35:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "15:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "25:flamewheel",
+      "moveId": "flamewheel",
+      "moveName": "Flame Wheel",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "55:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "level",
+      "sourceValue": 55,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:highhorsepower",
+      "moveId": "highhorsepower",
+      "moveName": "High Horsepower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:highhorsepower",
+      "moveId": "highhorsepower",
+      "moveName": "High Horsepower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:horndrill",
+      "moveId": "horndrill",
+      "moveName": "Horn Drill",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:hypnosis",
+      "moveId": "hypnosis",
+      "moveName": "Hypnosis",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "45:inferno",
+      "moveId": "inferno",
+      "moveName": "Inferno",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:morningsun",
+      "moveId": "morningsun",
+      "moveName": "Morning Sun",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mysticalfire",
+      "moveId": "mysticalfire",
+      "moveName": "Mystical Fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:mysticalfire",
+      "moveId": "mysticalfire",
+      "moveName": "Mystical Fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarblade",
+      "moveId": "solarblade",
+      "moveName": "Solar Blade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:stomp",
+      "moveId": "stomp",
+      "moveName": "Stomp",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "5:tailwhip",
+      "moveId": "tailwhip",
+      "moveName": "Tail Whip",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null
+    },
+    {
+      "raw": "41:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "level",
+      "sourceValue": 41,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "ponyta-1",
+      "sourceFile": "0077_ponyta.json",
+      "pokemon": {
+        "raw": "ponyta",
+        "slug": "ponyta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 5.04,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Grassland",
+        "Is Plains",
+        "Is Savanna"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_grassland"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "ponyta-1",
+        "pokemon": "ponyta",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 5.04,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_grassland"
+          ],
+          "isRaining": false
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_magical"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ponyta-2",
+      "sourceFile": "0077_ponyta.json",
+      "pokemon": {
+        "raw": "ponyta",
+        "slug": "ponyta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 5.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Nether/is Overgrowth",
+        "Nether/is Wasteland"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_overgrowth",
+          "#cobblemon:nether/is_wasteland"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ponyta-2",
+        "pokemon": "ponyta",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 5.4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_overgrowth",
+            "#cobblemon:nether/is_wasteland"
+          ]
+        },
+        "drops": {
+          "amount": 3,
+          "entries": [
+            {
+              "item": "minecraft:leather",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 5
+            },
+            {
+              "item": "cobblemon:shuca_berry",
+              "percentage": 2.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ponyta-galarian-3",
+      "sourceFile": "0077_ponyta.json",
+      "pokemon": {
+        "raw": "ponyta galarian",
+        "slug": "ponyta",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 8.4,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest",
+        "Is Magical",
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "ponyta-galarian-3",
+        "pokemon": "ponyta galarian",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 8.4,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_magical"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ponyta-galarian-4",
+      "sourceFile": "0077_ponyta.json",
+      "pokemon": {
+        "raw": "ponyta galarian",
+        "slug": "ponyta",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ponyta-galarian-4",
+        "pokemon": "ponyta galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Galar",
+      "slug": "ponyta-galar",
+      "aspects": [
+        "galarian"
+      ],
+      "types": [
+        "psychic"
+      ],
+      "abilities": [
+        {
+          "id": "runaway",
+          "hidden": false,
+          "label": "Runaway"
+        },
+        {
+          "id": "pastelveil",
+          "hidden": false,
+          "label": "Pastelveil"
+        },
+        {
+          "id": "anticipation",
+          "hidden": true,
+          "label": "Anticipation"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "1:growl",
+          "moveId": "growl",
+          "moveName": "Growl",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "5:tailwhip",
+          "moveId": "tailwhip",
+          "moveName": "Tail Whip",
+          "sourceType": "level",
+          "sourceValue": 5,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "10:confusion",
+          "moveId": "confusion",
+          "moveName": "Confusion",
+          "sourceType": "level",
+          "sourceValue": 10,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "15:fairywind",
+          "moveId": "fairywind",
+          "moveName": "Fairy Wind",
+          "sourceType": "level",
+          "sourceValue": 15,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "20:agility",
+          "moveId": "agility",
+          "moveName": "Agility",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "25:psybeam",
+          "moveId": "psybeam",
+          "moveName": "Psybeam",
+          "sourceType": "level",
+          "sourceValue": 25,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "30:stomp",
+          "moveId": "stomp",
+          "moveName": "Stomp",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "35:healpulse",
+          "moveId": "healpulse",
+          "moveName": "Heal Pulse",
+          "sourceType": "level",
+          "sourceValue": 35,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "41:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "level",
+          "sourceValue": 41,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "45:dazzlinggleam",
+          "moveId": "dazzlinggleam",
+          "moveName": "Dazzling Gleam",
+          "sourceType": "level",
+          "sourceValue": 45,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "50:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "sourceType": "level",
+          "sourceValue": 50,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "55:healingwish",
+          "moveId": "healingwish",
+          "moveName": "Healing Wish",
+          "sourceType": "level",
+          "sourceValue": 55,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:doublekick",
+          "moveId": "doublekick",
+          "moveName": "Double Kick",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:horndrill",
+          "moveId": "horndrill",
+          "moveName": "Horn Drill",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:hypnosis",
+          "moveId": "hypnosis",
+          "moveName": "Hypnosis",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:morningsun",
+          "moveId": "morningsun",
+          "moveName": "Morning Sun",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "egg:thrash",
+          "moveId": "thrash",
+          "moveName": "Thrash",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:agility",
+          "moveId": "agility",
+          "moveName": "Agility",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:allyswitch",
+          "moveId": "allyswitch",
+          "moveName": "Ally Switch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:bounce",
+          "moveId": "bounce",
+          "moveName": "Bounce",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:charm",
+          "moveId": "charm",
+          "moveName": "Charm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:dazzlinggleam",
+          "moveId": "dazzlinggleam",
+          "moveName": "Dazzling Gleam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:expandingforce",
+          "moveId": "expandingforce",
+          "moveName": "Expanding Force",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:futuresight",
+          "moveId": "futuresight",
+          "moveName": "Future Sight",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:highhorsepower",
+          "moveId": "highhorsepower",
+          "moveName": "High Horsepower",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:imprison",
+          "moveId": "imprison",
+          "moveName": "Imprison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:mysticalfire",
+          "moveId": "mysticalfire",
+          "moveName": "Mystical Fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:playrough",
+          "moveId": "playrough",
+          "moveName": "Play Rough",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:psybeam",
+          "moveId": "psybeam",
+          "moveName": "Psybeam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:storedpower",
+          "moveId": "storedpower",
+          "moveName": "Stored Power",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tm:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:allyswitch",
+          "moveId": "allyswitch",
+          "moveName": "Ally Switch",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:bounce",
+          "moveId": "bounce",
+          "moveName": "Bounce",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:dazzlinggleam",
+          "moveId": "dazzlinggleam",
+          "moveName": "Dazzling Gleam",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:expandingforce",
+          "moveId": "expandingforce",
+          "moveName": "Expanding Force",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:highhorsepower",
+          "moveId": "highhorsepower",
+          "moveName": "High Horsepower",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:mysticalfire",
+          "moveId": "mysticalfire",
+          "moveName": "Mystical Fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:playrough",
+          "moveId": "playrough",
+          "moveName": "Play Rough",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "tutor:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "ponyta_rapidashgalar",
+          "variant": "level_up",
+          "result": {
+            "raw": "rapidash galarian",
+            "slug": "rapidash",
+            "aspectTokens": [
+              "galarian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "psychocut"
+          ],
+          "requirementText": [
+            "Level 40+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 40+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 40
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Galar",
+          "raw": {
+            "id": "ponyta_rapidashgalar",
+            "variant": "level_up",
+            "result": "rapidash galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "psychocut"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Galar",
+        "primaryType": "psychic",
+        "maleRatio": 0.5,
+        "height": 8,
+        "weight": 240,
+        "pokedex": [
+          "cobblemon.species.ponyta-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "abilities": [
+          "runaway",
+          "pastelveil",
+          "h:anticipation"
+        ],
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "minecraft:leather",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:razz_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:tackle",
+          "1:growl",
+          "5:tailwhip",
+          "10:confusion",
+          "15:fairywind",
+          "20:agility",
+          "25:psybeam",
+          "30:stomp",
+          "35:healpulse",
+          "41:takedown",
+          "45:dazzlinggleam",
+          "50:psychic",
+          "55:healingwish",
+          "egg:doubleedge",
+          "egg:doublekick",
+          "egg:horndrill",
+          "egg:hypnosis",
+          "egg:morningsun",
+          "egg:thrash",
+          "tm:agility",
+          "tm:allyswitch",
+          "tm:bodyslam",
+          "tm:bounce",
+          "tm:calmmind",
+          "tm:charm",
+          "tm:dazzlinggleam",
+          "tm:doubleedge",
+          "tm:endure",
+          "tm:expandingforce",
+          "tm:facade",
+          "tm:futuresight",
+          "tm:highhorsepower",
+          "tm:imprison",
+          "tm:irontail",
+          "tm:lowkick",
+          "tm:mysticalfire",
+          "tm:playrough",
+          "tm:protect",
+          "tm:psybeam",
+          "tm:psychic",
+          "tm:rest",
+          "tm:sleeptalk",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:wildcharge",
+          "tm:zenheadbutt",
+          "tutor:allyswitch",
+          "tutor:bounce",
+          "tutor:calmmind",
+          "tutor:dazzlinggleam",
+          "tutor:expandingforce",
+          "tutor:highhorsepower",
+          "tutor:irontail",
+          "tutor:lowkick",
+          "tutor:mysticalfire",
+          "tutor:playrough",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:sleeptalk",
+          "tutor:swift",
+          "tutor:wildcharge",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [
+          {
+            "id": "ponyta_rapidashgalar",
+            "variant": "level_up",
+            "result": "rapidash galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "psychocut"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              }
+            ]
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "blitzle",
+                "tier": 1
+              },
+              {
+                "pokemon": "mudbray",
+                "tier": 1
+              },
+              {
+                "pokemon": "ponyta",
+                "tier": 2
+              },
+              {
+                "pokemon": "zebstrika",
+                "tier": 3
+              },
+              {
+                "pokemon": "mudsdale",
+                "tier": 3
+              },
+              {
+                "pokemon": "rapidash",
+                "tier": 4
+              },
+              {
+                "pokemon": "glastrier",
+                "tier": 5
+              },
+              {
+                "pokemon": "spectrier",
+                "tier": 5
+              }
+            ]
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "lightingData": {
+          "lightLevel": 10,
+          "liquidGlowMode": "LAND"
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 77,
+    "name": "Ponyta",
+    "primaryType": "fire",
+    "maleRatio": 0.5,
+    "height": 10,
+    "weight": 300,
+    "pokedex": [
+      "cobblemon.species.ponyta.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "runaway",
+      "flashfire",
+      "h:flamebody"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 85,
+      "defence": 55,
+      "special_attack": 65,
+      "special_defence": 65,
+      "speed": 90
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 82,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "galarian"
+    ],
+    "baseScale": 1,
+    "hitbox": {
+      "width": 0.8,
+      "height": 1.4,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.3
+        },
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "blitzle",
+            "tier": 1
+          },
+          {
+            "pokemon": "mudbray",
+            "tier": 1
+          },
+          {
+            "pokemon": "ponyta",
+            "tier": 2
+          },
+          {
+            "pokemon": "zebstrika",
+            "tier": 3
+          },
+          {
+            "pokemon": "mudsdale",
+            "tier": 3
+          },
+          {
+            "pokemon": "rapidash",
+            "tier": 4
+          },
+          {
+            "pokemon": "glastrier",
+            "tier": 5
+          },
+          {
+            "pokemon": "spectrier",
+            "tier": 5
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "fireImmune": true
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:leather",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "minecraft:blaze_powder",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:shuca_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:growl",
+      "1:tackle",
+      "5:tailwhip",
+      "10:ember",
+      "15:flamecharge",
+      "20:agility",
+      "25:flamewheel",
+      "30:stomp",
+      "35:firespin",
+      "41:takedown",
+      "45:inferno",
+      "50:fireblast",
+      "55:flareblitz",
+      "egg:captivate",
+      "egg:doubleedge",
+      "egg:doublekick",
+      "egg:horndrill",
+      "egg:hypnosis",
+      "egg:morningsun",
+      "egg:thrash",
+      "tm:agility",
+      "tm:allyswitch",
+      "tm:bodyslam",
+      "tm:bounce",
+      "tm:captivate",
+      "tm:charm",
+      "tm:doubleedge",
+      "tm:echoedvoice",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:headbutt",
+      "tm:heatwave",
+      "tm:highhorsepower",
+      "tm:incinerate",
+      "tm:irontail",
+      "tm:lowkick",
+      "tm:mysticalfire",
+      "tm:overheat",
+      "tm:playrough",
+      "tm:protect",
+      "tm:rest",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:solarblade",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swift",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:wildcharge",
+      "tm:willowisp",
+      "tutor:allyswitch",
+      "tutor:bounce",
+      "tutor:flamethrower",
+      "tutor:heatwave",
+      "tutor:highhorsepower",
+      "tutor:irontail",
+      "tutor:lowkick",
+      "tutor:mysticalfire",
+      "tutor:playrough",
+      "tutor:rest",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:wildcharge",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:confide",
+      "legacy:curse",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:quickattack",
+      "legacy:rage",
+      "legacy:reflect",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:skullbash",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "ponyta_rapidash",
+        "variant": "level_up",
+        "result": "rapidash",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "furyattack",
+          "smartstrike"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 40
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Galar",
+        "primaryType": "psychic",
+        "maleRatio": 0.5,
+        "height": 8,
+        "weight": 240,
+        "pokedex": [
+          "cobblemon.species.ponyta-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "abilities": [
+          "runaway",
+          "pastelveil",
+          "h:anticipation"
+        ],
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "minecraft:leather",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:razz_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:tackle",
+          "1:growl",
+          "5:tailwhip",
+          "10:confusion",
+          "15:fairywind",
+          "20:agility",
+          "25:psybeam",
+          "30:stomp",
+          "35:healpulse",
+          "41:takedown",
+          "45:dazzlinggleam",
+          "50:psychic",
+          "55:healingwish",
+          "egg:doubleedge",
+          "egg:doublekick",
+          "egg:horndrill",
+          "egg:hypnosis",
+          "egg:morningsun",
+          "egg:thrash",
+          "tm:agility",
+          "tm:allyswitch",
+          "tm:bodyslam",
+          "tm:bounce",
+          "tm:calmmind",
+          "tm:charm",
+          "tm:dazzlinggleam",
+          "tm:doubleedge",
+          "tm:endure",
+          "tm:expandingforce",
+          "tm:facade",
+          "tm:futuresight",
+          "tm:highhorsepower",
+          "tm:imprison",
+          "tm:irontail",
+          "tm:lowkick",
+          "tm:mysticalfire",
+          "tm:playrough",
+          "tm:protect",
+          "tm:psybeam",
+          "tm:psychic",
+          "tm:rest",
+          "tm:sleeptalk",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:wildcharge",
+          "tm:zenheadbutt",
+          "tutor:allyswitch",
+          "tutor:bounce",
+          "tutor:calmmind",
+          "tutor:dazzlinggleam",
+          "tutor:expandingforce",
+          "tutor:highhorsepower",
+          "tutor:irontail",
+          "tutor:lowkick",
+          "tutor:mysticalfire",
+          "tutor:playrough",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:sleeptalk",
+          "tutor:swift",
+          "tutor:wildcharge",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [
+          {
+            "id": "ponyta_rapidashgalar",
+            "variant": "level_up",
+            "result": "rapidash galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "psychocut"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              }
+            ]
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "blitzle",
+                "tier": 1
+              },
+              {
+                "pokemon": "mudbray",
+                "tier": 1
+              },
+              {
+                "pokemon": "ponyta",
+                "tier": 2
+              },
+              {
+                "pokemon": "zebstrika",
+                "tier": 3
+              },
+              {
+                "pokemon": "mudsdale",
+                "tier": 3
+              },
+              {
+                "pokemon": "rapidash",
+                "tier": 4
+              },
+              {
+                "pokemon": "glastrier",
+                "tier": 5
+              },
+              {
+                "pokemon": "spectrier",
+                "tier": 5
+              }
+            ]
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "lightingData": {
+          "lightLevel": 10,
+          "liquidGlowMode": "LAND"
+        }
+      }
+    ],
+    "lightingData": {
+      "lightLevel": 15,
+      "liquidGlowMode": "LAND"
+    }
+  }
+}

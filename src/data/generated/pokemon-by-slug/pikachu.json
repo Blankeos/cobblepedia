@@ -1,0 +1,2381 @@
+{
+  "slug": "pikachu",
+  "name": "Pikachu",
+  "dexNumber": 25,
+  "implemented": true,
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    {
+      "id": "static",
+      "hidden": false,
+      "label": "Static"
+    },
+    {
+      "id": "lightningrod",
+      "hidden": true,
+      "label": "Lightningrod"
+    }
+  ],
+  "eggGroups": [
+    "field",
+    "fairy"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "alola-bias",
+    "gmax",
+    "partner",
+    "pikachu",
+    "pikachu alola-bias",
+    "pikachu gmax",
+    "pikachu partner"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 60,
+  "catchRate": 190,
+  "baseExperienceYield": 112,
+  "baseFriendship": 50,
+  "eggCycles": 10,
+  "baseStats": {
+    "hp": 35,
+    "attack": 55,
+    "defence": 40,
+    "special_attack": 50,
+    "special_defence": 50,
+    "speed": 90
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "preEvolution": {
+    "raw": "pichu",
+    "slug": "pichu",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "pikachu_raichu",
+      "variant": "item_interact",
+      "result": {
+        "raw": "raichu",
+        "slug": "raichu",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "thunderpunch"
+      ],
+      "requirementText": [
+        "Biome "
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "text": "Biome ",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+          }
+        }
+      ],
+      "requiredContext": "cobblemon:thunder_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "pikachu_raichu",
+        "variant": "item_interact",
+        "result": "raichu",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "thunderpunch"
+        ],
+        "requirements": [
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+          }
+        ],
+        "requiredContext": "cobblemon:thunder_stone"
+      }
+    },
+    {
+      "id": "pikachu_raichualola",
+      "variant": "item_interact",
+      "result": {
+        "raw": "raichu alolan",
+        "slug": "raichu",
+        "aspectTokens": [
+          "alolan"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "psychic"
+      ],
+      "requirementText": [
+        "Biome Evolution/regional/pikachu Alolabiome",
+        "Biome "
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "text": "Biome Evolution/regional/pikachu Alolabiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome ",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+          }
+        }
+      ],
+      "requiredContext": "cobblemon:thunder_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "pikachu_raichualola",
+        "variant": "item_interact",
+        "result": "raichu alolan",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "psychic"
+        ],
+        "requirements": [
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+          }
+        ],
+        "requiredContext": "cobblemon:thunder_stone"
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "pikachu",
+        "name": "Pikachu",
+        "dexNumber": 25
+      },
+      {
+        "slug": "raichu",
+        "name": "Raichu",
+        "dexNumber": 26
+      },
+      {
+        "slug": "pichu",
+        "name": "Pichu",
+        "dexNumber": 172
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "pichu",
+        "toSlug": "pikachu",
+        "method": "level_up",
+        "requirementText": [
+          "Friendship 160+"
+        ]
+      },
+      {
+        "fromSlug": "pikachu",
+        "toSlug": "raichu",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome "
+        ]
+      },
+      {
+        "fromSlug": "pikachu",
+        "toSlug": "raichu",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome Evolution/regional/pikachu Alolabiome",
+          "Biome "
+        ]
+      },
+      {
+        "fromSlug": "pikachu",
+        "toSlug": "raichu",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome ",
+          "Biome Evolution/regional/pikachu Kantobiome"
+        ]
+      }
+    ],
+    "roots": [
+      "pichu"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "24:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:alluringvoice",
+      "moveId": "alluringvoice",
+      "moveName": "Alluring Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:babydolleyes",
+      "moveId": "babydolleyes",
+      "moveName": "Baby-Doll Eyes",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:babydolleyes",
+      "moveId": "babydolleyes",
+      "moveName": "Baby-Doll Eyes",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bestow",
+      "moveId": "bestow",
+      "moveName": "Bestow",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:celebrate",
+      "moveId": "celebrate",
+      "moveName": "Celebrate",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:chargebeam",
+      "moveId": "chargebeam",
+      "moveName": "Charge Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:detect",
+      "moveId": "detect",
+      "moveName": "Detect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:disarmingvoice",
+      "moveId": "disarmingvoice",
+      "moveName": "Disarming Voice",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:disarmingvoice",
+      "moveId": "disarmingvoice",
+      "moveName": "Disarming Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "32:discharge",
+      "moveId": "discharge",
+      "moveName": "Discharge",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doublekick",
+      "moveId": "doublekick",
+      "moveName": "Double Kick",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doubleslap",
+      "moveId": "doubleslap",
+      "moveName": "Double Slap",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "8:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:drainingkiss",
+      "moveId": "drainingkiss",
+      "moveName": "Draining Kiss",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dynamicpunch",
+      "moveId": "dynamicpunch",
+      "moveName": "Dynamic Punch",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:eerieimpulse",
+      "moveId": "eerieimpulse",
+      "moveName": "Eerie Impulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electricterrain",
+      "moveId": "electricterrain",
+      "moveName": "Electric Terrain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:electroball",
+      "moveId": "electroball",
+      "moveName": "Electro Ball",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroball",
+      "moveId": "electroball",
+      "moveName": "Electro Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:extremespeed",
+      "moveId": "extremespeed",
+      "moveName": "Extreme Speed",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:fakeout",
+      "moveId": "fakeout",
+      "moveName": "Fake Out",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:faketears",
+      "moveId": "faketears",
+      "moveName": "Fake Tears",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:feint",
+      "moveId": "feint",
+      "moveName": "Feint",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:fly",
+      "moveId": "fly",
+      "moveName": "Fly",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:followme",
+      "moveId": "followme",
+      "moveName": "Follow Me",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "special:happyhour",
+      "moveId": "happyhour",
+      "moveName": "Happy Hour",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:heartstamp",
+      "moveId": "heartstamp",
+      "moveName": "Heart Stamp",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:holdhands",
+      "moveId": "holdhands",
+      "moveName": "Hold Hands",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "40:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:luckychant",
+      "moveId": "luckychant",
+      "moveName": "Lucky Chant",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:nastyplot",
+      "moveId": "nastyplot",
+      "moveName": "Nasty Plot",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:nastyplot",
+      "moveId": "nastyplot",
+      "moveName": "Nasty Plot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:nuzzle",
+      "moveId": "nuzzle",
+      "moveName": "Nuzzle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:payday",
+      "moveId": "payday",
+      "moveName": "Pay Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:playnice",
+      "moveId": "playnice",
+      "moveName": "Play Nice",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:present",
+      "moveId": "present",
+      "moveName": "Present",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:refresh",
+      "moveId": "refresh",
+      "moveName": "Refresh",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:risingvoltage",
+      "moveId": "risingvoltage",
+      "moveName": "Rising Voltage",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:risingvoltage",
+      "moveId": "risingvoltage",
+      "moveName": "Rising Voltage",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:seismictoss",
+      "moveId": "seismictoss",
+      "moveName": "Seismic Toss",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:sing",
+      "moveId": "sing",
+      "moveName": "Sing",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:slam",
+      "moveId": "slam",
+      "moveName": "Slam",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "20:spark",
+      "moveId": "spark",
+      "moveName": "Spark",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:submission",
+      "moveId": "submission",
+      "moveName": "Submission",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:sweetkiss",
+      "moveId": "sweetkiss",
+      "moveName": "Sweet Kiss",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "special:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tailwhip",
+      "moveId": "tailwhip",
+      "moveName": "Tail Whip",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:teeterdance",
+      "moveId": "teeterdance",
+      "moveName": "Teeter Dance",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "44:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:thundershock",
+      "moveId": "thundershock",
+      "moveName": "Thunder Shock",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "4:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:tickle",
+      "moveId": "tickle",
+      "moveName": "Tickle",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:upperhand",
+      "moveId": "upperhand",
+      "moveName": "Upper Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:voltswitch",
+      "moveId": "voltswitch",
+      "moveName": "Volt Switch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:volttackle",
+      "moveId": "volttackle",
+      "moveName": "Volt Tackle",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:volttackle",
+      "moveId": "volttackle",
+      "moveName": "Volt Tackle",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:wish",
+      "moveId": "wish",
+      "moveName": "Wish",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:yawn",
+      "moveId": "yawn",
+      "moveName": "Yawn",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:zapcannon",
+      "moveId": "zapcannon",
+      "moveName": "Zap Cannon",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "pikachu-1",
+      "sourceFile": "0025_pikachu.json",
+      "pokemon": {
+        "raw": "pikachu",
+        "slug": "pikachu",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-32",
+      "levelMin": 16,
+      "levelMax": 32,
+      "weight": 0.712,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "isThundering": true
+          }
+        }
+      ],
+      "raw": {
+        "id": "pikachu-1",
+        "pokemon": "pikachu",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "16-32",
+        "weight": 0.712,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "isThundering": true
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pikachu-alola-2",
+      "sourceFile": "0025_pikachu.json",
+      "pokemon": {
+        "raw": "pikachu region_bias=alola",
+        "slug": "pikachu",
+        "aspectTokens": [
+          "region_bias=alola"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-32",
+      "levelMin": 16,
+      "levelMax": 32,
+      "weight": 0.304,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Skyroot Forest",
+        "Skyroot Woodland",
+        "Is Tropical Island",
+        "Tropics"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_beach",
+          "aether:skyroot_forest",
+          "aether:skyroot_woodland",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "isThundering": true
+          }
+        }
+      ],
+      "raw": {
+        "id": "pikachu-alola-2",
+        "pokemon": "pikachu region_bias=alola",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "16-32",
+        "weight": 0.304,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "isThundering": true
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_beach",
+            "aether:skyroot_forest",
+            "aether:skyroot_woodland",
+            "#cobblemon:is_tropical_island"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Partner",
+      "slug": "pikachu-partner",
+      "aspects": [
+        "partner-cap"
+      ],
+      "types": [
+        "electric"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Partner",
+        "primaryType": "electric",
+        "maleRatio": 1,
+        "height": 4,
+        "weight": 60,
+        "pokedex": [
+          "cobblemon.species.pikachu-partner.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "partner-cap"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "evolutions": [],
+        "battleOnly": false
+      }
+    },
+    {
+      "name": "Gmax",
+      "slug": "pikachu-gmax",
+      "aspects": [
+        "gmax"
+      ],
+      "types": [
+        "electric"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Gmax",
+        "primaryType": "electric",
+        "maleRatio": 0.5,
+        "height": 210,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.pikachu-gmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax"
+        ],
+        "dynamaxBlocked": true,
+        "evolutions": [],
+        "battleOnly": true
+      }
+    },
+    {
+      "name": "Alola-Bias",
+      "slug": "pikachu-alolabias",
+      "aspects": [
+        "region-bias-alola"
+      ],
+      "types": [
+        "electric"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "pikachu_raichu",
+          "variant": "item_interact",
+          "result": {
+            "raw": "raichu",
+            "slug": "raichu",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "thunderpunch"
+          ],
+          "requirementText": [
+            "Biome ",
+            "Biome Evolution/regional/pikachu Kantobiome"
+          ],
+          "requirements": [
+            {
+              "variant": "biome",
+              "text": "Biome ",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Biome Evolution/regional/pikachu Kantobiome",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            }
+          ],
+          "requiredContext": "cobblemon:thunder_stone",
+          "fromForm": "Alola-Bias",
+          "raw": {
+            "id": "pikachu_raichu",
+            "variant": "item_interact",
+            "result": "raichu",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "thunderpunch"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            ],
+            "requiredContext": "cobblemon:thunder_stone"
+          }
+        },
+        {
+          "id": "pikachu_raichualola",
+          "variant": "item_interact",
+          "result": {
+            "raw": "raichu alolan",
+            "slug": "raichu",
+            "aspectTokens": [
+              "alolan"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "psychic"
+          ],
+          "requirementText": [
+            "Biome "
+          ],
+          "requirements": [
+            {
+              "variant": "biome",
+              "text": "Biome ",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            }
+          ],
+          "requiredContext": "cobblemon:thunder_stone",
+          "fromForm": "Alola-Bias",
+          "raw": {
+            "id": "pikachu_raichualola",
+            "variant": "item_interact",
+            "result": "raichu alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "psychic"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            ],
+            "requiredContext": "cobblemon:thunder_stone"
+          }
+        }
+      ],
+      "raw": {
+        "name": "Alola-Bias",
+        "primaryType": "electric",
+        "maleRatio": 0.5,
+        "height": 4,
+        "weight": 60,
+        "pokedex": [
+          "cobblemon.species.pikachu-alolabias.desc"
+        ],
+        "labels": [
+          "gen7",
+          "customized_official",
+          "alolan_form"
+        ],
+        "aspects": [
+          "region-bias-alola"
+        ],
+        "dynamaxBlocked": false,
+        "preEvolution": "pichu",
+        "evolutions": [
+          {
+            "id": "pikachu_raichu",
+            "variant": "item_interact",
+            "result": "raichu",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "thunderpunch"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            ],
+            "requiredContext": "cobblemon:thunder_stone"
+          },
+          {
+            "id": "pikachu_raichualola",
+            "variant": "item_interact",
+            "result": "raichu alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "psychic"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            ],
+            "requiredContext": "cobblemon:thunder_stone"
+          }
+        ]
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 25,
+    "name": "Pikachu",
+    "primaryType": "electric",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 60,
+    "pokedex": [
+      "cobblemon.species.pikachu.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "static",
+      "h:lightningrod"
+    ],
+    "eggGroups": [
+      "field",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "attack": 55,
+      "defence": 40,
+      "special_attack": 50,
+      "special_defence": 50,
+      "speed": 90
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 2
+    },
+    "baseExperienceYield": 112,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 10,
+    "baseFriendship": 50,
+    "features": [
+      "alolan",
+      "region_bias"
+    ],
+    "shoulderMountable": true,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.7,
+      "height": 1.3,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.15
+        },
+        "swim": {
+          "swimSpeed": 0.15,
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "5",
+        "toleratedLeaders": [
+          {
+            "pokemon": "pikachu",
+            "tier": 1
+          },
+          {
+            "pokemon": "morpeko",
+            "tier": 1
+          },
+          {
+            "pokemon": "raichu",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "cobblemon:light_ball",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:thunder_stone",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:oran_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:thundershock",
+      "1:growl",
+      "1:tailwhip",
+      "1:quickattack",
+      "1:slam",
+      "1:playnice",
+      "1:nuzzle",
+      "1:sweetkiss",
+      "1:nastyplot",
+      "1:charm",
+      "4:thunderwave",
+      "8:doubleteam",
+      "12:electroball",
+      "16:feint",
+      "20:spark",
+      "24:agility",
+      "28:irontail",
+      "32:discharge",
+      "36:thunderbolt",
+      "40:lightscreen",
+      "44:thunder",
+      "egg:bestow",
+      "egg:bide",
+      "egg:charge",
+      "egg:disarmingvoice",
+      "egg:doubleslap",
+      "egg:fakeout",
+      "egg:flail",
+      "egg:luckychant",
+      "egg:present",
+      "egg:tickle",
+      "egg:wish",
+      "tm:agility",
+      "tm:alluringvoice",
+      "tm:babydolleyes",
+      "tm:bodyslam",
+      "tm:brickbreak",
+      "tm:charge",
+      "tm:chargebeam",
+      "tm:charm",
+      "tm:covet",
+      "tm:dig",
+      "tm:disarmingvoice",
+      "tm:doubleteam",
+      "tm:drainingkiss",
+      "tm:echoedvoice",
+      "tm:eerieimpulse",
+      "tm:electricterrain",
+      "tm:electroball",
+      "tm:electroweb",
+      "tm:encore",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:faketears",
+      "tm:flash",
+      "tm:fling",
+      "tm:focuspunch",
+      "tm:grassknot",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:irontail",
+      "tm:knockoff",
+      "tm:laserfocus",
+      "tm:lightscreen",
+      "tm:magnetrise",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:nastyplot",
+      "tm:payday",
+      "tm:playrough",
+      "tm:protect",
+      "tm:raindance",
+      "tm:reflect",
+      "tm:rest",
+      "tm:reversal",
+      "tm:risingvoltage",
+      "tm:rocksmash",
+      "tm:rollout",
+      "tm:shockwave",
+      "tm:signalbeam",
+      "tm:sleeptalk",
+      "tm:strength",
+      "tm:substitute",
+      "tm:surf",
+      "tm:swift",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thief",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:thunderpunch",
+      "tm:thunderwave",
+      "tm:trailblaze",
+      "tm:upperhand",
+      "tm:voltswitch",
+      "tm:volttackle",
+      "tm:wildcharge",
+      "tutor:babydolleyes",
+      "tutor:covet",
+      "tutor:electroweb",
+      "tutor:endeavor",
+      "tutor:focuspunch",
+      "tutor:helpinghand",
+      "tutor:irontail",
+      "tutor:knockoff",
+      "tutor:laserfocus",
+      "tutor:lastresort",
+      "tutor:magnetrise",
+      "tutor:playrough",
+      "tutor:rest",
+      "tutor:risingvoltage",
+      "tutor:rocksmash",
+      "tutor:rollout",
+      "tutor:shockwave",
+      "tutor:signalbeam",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:thunderbolt",
+      "tutor:thunderpunch",
+      "tutor:volttackle",
+      "tutor:wildcharge",
+      "legacy:attract",
+      "legacy:calmmind",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:counter",
+      "legacy:curse",
+      "legacy:defensecurl",
+      "legacy:detect",
+      "legacy:doubleedge",
+      "legacy:doublekick",
+      "legacy:dynamicpunch",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:mudslap",
+      "legacy:naturalgift",
+      "legacy:rage",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:seismictoss",
+      "legacy:skullbash",
+      "legacy:snore",
+      "legacy:submission",
+      "legacy:swagger",
+      "legacy:toxic",
+      "legacy:uproar",
+      "legacy:zapcannon",
+      "special:celebrate",
+      "special:endeavor",
+      "special:extremespeed",
+      "special:fly",
+      "special:followme",
+      "special:happyhour",
+      "special:heartstamp",
+      "special:holdhands",
+      "special:lastresort",
+      "special:refresh",
+      "special:sing",
+      "special:sweetscent",
+      "special:teeterdance",
+      "special:yawn"
+    ],
+    "preEvolution": "pichu",
+    "evolutions": [
+      {
+        "id": "pikachu_raichu",
+        "variant": "item_interact",
+        "result": "raichu",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "thunderpunch"
+        ],
+        "requirements": [
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+          }
+        ],
+        "requiredContext": "cobblemon:thunder_stone"
+      },
+      {
+        "id": "pikachu_raichualola",
+        "variant": "item_interact",
+        "result": "raichu alolan",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "psychic"
+        ],
+        "requirements": [
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+          }
+        ],
+        "requiredContext": "cobblemon:thunder_stone"
+      }
+    ],
+    "forms": [
+      {
+        "name": "Partner",
+        "primaryType": "electric",
+        "maleRatio": 1,
+        "height": 4,
+        "weight": 60,
+        "pokedex": [
+          "cobblemon.species.pikachu-partner.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "partner-cap"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "evolutions": [],
+        "battleOnly": false
+      },
+      {
+        "name": "Gmax",
+        "primaryType": "electric",
+        "maleRatio": 0.5,
+        "height": 210,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.pikachu-gmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax"
+        ],
+        "dynamaxBlocked": true,
+        "evolutions": [],
+        "battleOnly": true
+      },
+      {
+        "name": "Alola-Bias",
+        "primaryType": "electric",
+        "maleRatio": 0.5,
+        "height": 4,
+        "weight": 60,
+        "pokedex": [
+          "cobblemon.species.pikachu-alolabias.desc"
+        ],
+        "labels": [
+          "gen7",
+          "customized_official",
+          "alolan_form"
+        ],
+        "aspects": [
+          "region-bias-alola"
+        ],
+        "dynamaxBlocked": false,
+        "preEvolution": "pichu",
+        "evolutions": [
+          {
+            "id": "pikachu_raichu",
+            "variant": "item_interact",
+            "result": "raichu",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "thunderpunch"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_alolabiome"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            ],
+            "requiredContext": "cobblemon:thunder_stone"
+          },
+          {
+            "id": "pikachu_raichualola",
+            "variant": "item_interact",
+            "result": "raichu alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "psychic"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/pikachu_kantobiome"
+              }
+            ],
+            "requiredContext": "cobblemon:thunder_stone"
+          }
+        ]
+      }
+    ]
+  }
+}

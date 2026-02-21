@@ -1,0 +1,675 @@
+{
+  "slug": "beldum",
+  "name": "Beldum",
+  "dexNumber": 374,
+  "implemented": true,
+  "types": [
+    "steel",
+    "psychic"
+  ],
+  "abilities": [
+    {
+      "id": "clearbody",
+      "hidden": false,
+      "label": "Clearbody"
+    },
+    {
+      "id": "lightmetal",
+      "hidden": true,
+      "label": "Lightmetal"
+    }
+  ],
+  "eggGroups": [
+    "mineral"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
+  "aliases": [
+    "beldum"
+  ],
+  "maleRatio": -1,
+  "height": 6,
+  "weight": 952,
+  "catchRate": 3,
+  "baseExperienceYield": 60,
+  "baseFriendship": 35,
+  "eggCycles": 40,
+  "baseStats": {
+    "hp": 40,
+    "attack": 55,
+    "defence": 80,
+    "special_attack": 35,
+    "special_defence": 60,
+    "speed": 30
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "beldum_metang",
+      "variant": "level_up",
+      "result": {
+        "raw": "metang",
+        "slug": "metang",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "confusion",
+        "metalclaw"
+      ],
+      "requirementText": [
+        "Level 20+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 20+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 20
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "beldum_metang",
+        "variant": "level_up",
+        "result": "metang",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "confusion",
+          "metalclaw"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "beldum",
+        "name": "Beldum",
+        "dexNumber": 374
+      },
+      {
+        "slug": "metang",
+        "name": "Metang",
+        "dexNumber": 375
+      },
+      {
+        "slug": "metagross",
+        "name": "Metagross",
+        "dexNumber": 376
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "beldum",
+        "toSlug": "metang",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
+      },
+      {
+        "fromSlug": "metang",
+        "toSlug": "metagross",
+        "method": "level_up",
+        "requirementText": [
+          "Level 45+"
+        ]
+      }
+    ],
+    "roots": [
+      "beldum"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "special:holdback",
+      "moveId": "holdback",
+      "moveName": "Hold Back",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:steelbeam",
+      "moveId": "steelbeam",
+      "moveName": "Steel Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:steelbeam",
+      "moveId": "steelbeam",
+      "moveName": "Steel Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "beldum-1",
+      "sourceFile": "0374_beldum.json",
+      "pokemon": {
+        "raw": "beldum",
+        "slug": "beldum",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 6,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Peak",
+        "Frozen Peaks",
+        "Jagged Peaks"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_peak"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beldum-1",
+        "pokemon": "beldum",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "5-30",
+        "weight": 6,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_peak"
+          ]
+        }
+      }
+    },
+    {
+      "id": "beldum-2",
+      "sourceFile": "0374_beldum.json",
+      "pokemon": {
+        "raw": "beldum",
+        "slug": "beldum",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_end"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beldum-2",
+        "pokemon": "beldum",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_end"
+          ]
+        }
+      }
+    },
+    {
+      "id": "beldum-3",
+      "sourceFile": "0374_beldum.json",
+      "pokemon": {
+        "raw": "beldum",
+        "slug": "beldum",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beldum-3",
+        "pokemon": "beldum",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    },
+    {
+      "id": "beldum-4",
+      "sourceFile": "0374_beldum.json",
+      "pokemon": {
+        "raw": "beldum",
+        "slug": "beldum",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 1.68,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "structures": [
+          "#aether:dungeons"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beldum-4",
+        "pokemon": "beldum",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "5-30",
+        "weight": 1.68,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "structures": [
+            "#aether:dungeons"
+          ]
+        }
+      }
+    },
+    {
+      "id": "beldum-5",
+      "sourceFile": "0374_beldum.json",
+      "pokemon": {
+        "raw": "beldum",
+        "slug": "beldum",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [],
+      "biomeHints": [
+        "Howling Constructs"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:howling_constructs"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beldum-5",
+        "pokemon": "beldum",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:howling_constructs"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 374,
+    "name": "Beldum",
+    "primaryType": "steel",
+    "secondaryType": "psychic",
+    "maleRatio": -1,
+    "height": 6,
+    "weight": 952,
+    "pokedex": [
+      "cobblemon.species.beldum.desc"
+    ],
+    "labels": [
+      "gen3"
+    ],
+    "aspects": [],
+    "abilities": [
+      "clearbody",
+      "h:lightmetal"
+    ],
+    "eggGroups": [
+      "mineral"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 55,
+      "defence": 80,
+      "special_attack": 35,
+      "special_defence": 60,
+      "speed": 30
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 60,
+    "experienceGroup": "slow",
+    "catchRate": 3,
+    "eggCycles": 40,
+    "baseFriendship": 35,
+    "shoulderMountable": true,
+    "baseScale": 0.75,
+    "hitbox": {
+      "width": 0.6,
+      "height": 0.8,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true
+        },
+        "walk": {
+          "canWalk": false
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "beldum",
+            "tier": 1
+          },
+          {
+            "pokemon": "metang",
+            "tier": 2
+          },
+          {
+            "pokemon": "metagross mega=false",
+            "tier": 3
+          },
+          {
+            "pokemon": "metagross mega",
+            "tier": 4
+          }
+        ]
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:ender_pearl",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:metal_coat",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "tm:headbutt",
+      "tm:irondefense",
+      "tm:ironhead",
+      "tm:steelbeam",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:zenheadbutt",
+      "tutor:irondefense",
+      "tutor:ironhead",
+      "tutor:steelbeam",
+      "tutor:zenheadbutt",
+      "special:holdback"
+    ],
+    "evolutions": [
+      {
+        "id": "beldum_metang",
+        "variant": "level_up",
+        "result": "metang",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "confusion",
+          "metalclaw"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,4731 @@
+{
+  "slug": "wooper",
+  "name": "Wooper",
+  "dexNumber": 194,
+  "implemented": true,
+  "types": [
+    "water",
+    "ground"
+  ],
+  "abilities": [
+    {
+      "id": "damp",
+      "hidden": false,
+      "label": "Damp"
+    },
+    {
+      "id": "waterabsorb",
+      "hidden": false,
+      "label": "Waterabsorb"
+    },
+    {
+      "id": "unaware",
+      "hidden": true,
+      "label": "Unaware"
+    }
+  ],
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "labels": [
+    "gen2",
+    "johtonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "paldea",
+    "wooper",
+    "wooper paldea"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 85,
+  "catchRate": 255,
+  "baseExperienceYield": 42,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 55,
+    "attack": 45,
+    "defence": 45,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 15
+  },
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "wooper_quagsire",
+      "variant": "level_up",
+      "result": {
+        "raw": "quagsire",
+        "slug": "quagsire",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Level 20+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 20+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 20
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "wooper_quagsire",
+        "variant": "level_up",
+        "result": "quagsire",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "wooper",
+        "name": "Wooper",
+        "dexNumber": 194
+      },
+      {
+        "slug": "quagsire",
+        "name": "Quagsire",
+        "dexNumber": 195
+      },
+      {
+        "slug": "clodsire",
+        "name": "Clodsire",
+        "dexNumber": 980
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "wooper",
+        "toSlug": "clodsire",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
+      },
+      {
+        "fromSlug": "wooper",
+        "toSlug": "quagsire",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
+      }
+    ],
+    "roots": [
+      "wooper"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "32:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:avalanche",
+      "moveId": "avalanche",
+      "moveName": "Avalanche",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:chillingwater",
+      "moveId": "chillingwater",
+      "moveName": "Chilling Water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doublekick",
+      "moveId": "doublekick",
+      "moveName": "Double Kick",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dynamicpunch",
+      "moveId": "dynamicpunch",
+      "moveName": "Dynamic Punch",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "40:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:eerieimpulse",
+      "moveId": "eerieimpulse",
+      "moveName": "Eerie Impulse",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:guardswap",
+      "moveId": "guardswap",
+      "moveName": "Guard Swap",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:icepunch",
+      "moveId": "icepunch",
+      "moveName": "Ice Punch",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:mist",
+      "moveId": "mist",
+      "moveName": "Mist",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:mudbomb",
+      "moveId": "mudbomb",
+      "moveName": "Mud Bomb",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "8:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:mudsport",
+      "moveId": "mudsport",
+      "moveName": "Mud Sport",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:mudsport",
+      "moveId": "mudsport",
+      "moveName": "Mud Sport",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:poweruppunch",
+      "moveId": "poweruppunch",
+      "moveName": "Power-Up Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:recover",
+      "moveId": "recover",
+      "moveName": "Recover",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:slam",
+      "moveId": "slam",
+      "moveName": "Slam",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snowscape",
+      "moveId": "snowscape",
+      "moveName": "Snowscape",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:spitup",
+      "moveId": "spitup",
+      "moveName": "Spit Up",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:stockpile",
+      "moveId": "stockpile",
+      "moveName": "Stockpile",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:swallow",
+      "moveId": "swallow",
+      "moveName": "Swallow",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tailwhip",
+      "moveId": "tailwhip",
+      "moveName": "Tail Whip",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:waterfall",
+      "moveId": "waterfall",
+      "moveName": "Waterfall",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "21:yawn",
+      "moveId": "yawn",
+      "moveName": "Yawn",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "wooper-1",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-1",
+        "pokemon": "wooper",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "wooper-10",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-10",
+        "pokemon": "wooper",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-11",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-11",
+        "pokemon": "wooper",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-12",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-12",
+        "pokemon": "wooper",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-13",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-13",
+        "pokemon": "wooper",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:water"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-14",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-14",
+        "pokemon": "wooper",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-2",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-2",
+        "pokemon": "wooper",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "wooper-3",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ],
+        "maxY": 62
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-3",
+        "pokemon": "wooper",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:water"
+          ],
+          "maxY": 62
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-4",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "maxY": 62
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-4",
+        "pokemon": "wooper",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "maxY": 62
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-5",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-5",
+        "pokemon": "wooper",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-6",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-6",
+        "pokemon": "wooper",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-7",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-7",
+        "pokemon": "wooper",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-8",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-8",
+        "pokemon": "wooper",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-9",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper",
+        "slug": "wooper",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-9",
+        "pokemon": "wooper",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-21",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Has Block/mud"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-21",
+        "pokemon": "wooper paldean",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-22",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Has Block/mud"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-22",
+        "pokemon": "wooper paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-23",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Savanna"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-23",
+        "pokemon": "wooper paldean",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:water"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-24",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Savanna"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-24",
+        "pokemon": "wooper paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-25",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Has Block/mud"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-25",
+        "pokemon": "wooper paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-26",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "minLureLevel": 1
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-26",
+        "pokemon": "wooper paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-27",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-paldean-27",
+        "pokemon": "wooper paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-28",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Has Block/mud"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-28",
+        "pokemon": "wooper paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-29",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Savanna"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-29",
+        "pokemon": "wooper paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-30",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Has Block/mud"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-30",
+        "pokemon": "wooper paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-31",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "minLureLevel": 1
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-paldean-31",
+        "pokemon": "wooper paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "wooper-paldean-32",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper paldean",
+        "slug": "wooper",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-paldean-32",
+        "pokemon": "wooper paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "wooper-true-15",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper wooper_heart=true",
+        "slug": "wooper",
+        "aspectTokens": [
+          "wooper_heart=true"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 10,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "rodType": "cobblemon:love_rod"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-true-15",
+        "pokemon": "wooper wooper_heart=true",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 10,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "rodType": "cobblemon:love_rod"
+        }
+      }
+    },
+    {
+      "id": "wooper-true-16",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper wooper_heart=true",
+        "slug": "wooper",
+        "aspectTokens": [
+          "wooper_heart=true"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "rodType": "cobblemon:love_rod"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-true-16",
+        "pokemon": "wooper wooper_heart=true",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "rodType": "cobblemon:love_rod"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-true-17",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper wooper_heart=true",
+        "slug": "wooper",
+        "aspectTokens": [
+          "wooper_heart=true"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 20,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "bait": "cobblemon:love_sweet"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wooper-true-17",
+        "pokemon": "wooper wooper_heart=true",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 20,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "bait": "cobblemon:love_sweet"
+        }
+      }
+    },
+    {
+      "id": "wooper-true-18",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper wooper_heart=true",
+        "slug": "wooper",
+        "aspectTokens": [
+          "wooper_heart=true"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 20,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "bait": "cobblemon:love_sweet"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-true-18",
+        "pokemon": "wooper wooper_heart=true",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 20,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "bait": "cobblemon:love_sweet"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-true-19",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper wooper_heart=true",
+        "slug": "wooper",
+        "aspectTokens": [
+          "wooper_heart=true"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "rodType": "cobblemon:love_rod"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-true-19",
+        "pokemon": "wooper wooper_heart=true",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "rodType": "cobblemon:love_rod"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wooper-true-20",
+      "sourceFile": "0194_wooper.json",
+      "pokemon": {
+        "raw": "wooper wooper_heart=true",
+        "slug": "wooper",
+        "aspectTokens": [
+          "wooper_heart=true"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 20,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "bait": "cobblemon:love_sweet"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "wooper-true-20",
+        "pokemon": "wooper wooper_heart=true",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 20,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "bait": "cobblemon:love_sweet"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Paldea",
+      "slug": "wooper-paldea",
+      "aspects": [
+        "paldean"
+      ],
+      "types": [
+        "poison",
+        "ground"
+      ],
+      "abilities": [
+        {
+          "id": "poisonpoint",
+          "hidden": false,
+          "label": "Poisonpoint"
+        },
+        {
+          "id": "waterabsorb",
+          "hidden": false,
+          "label": "Waterabsorb"
+        },
+        {
+          "id": "unaware",
+          "hidden": true,
+          "label": "Unaware"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:tailwhip",
+          "moveId": "tailwhip",
+          "moveName": "Tail Whip",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "1:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "4:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "sourceType": "level",
+          "sourceValue": 4,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "8:poisontail",
+          "moveId": "poisontail",
+          "moveName": "Poison Tail",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "12:toxicspikes",
+          "moveId": "toxicspikes",
+          "moveName": "Toxic Spikes",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "16:slam",
+          "moveId": "slam",
+          "moveName": "Slam",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "21:yawn",
+          "moveId": "yawn",
+          "moveName": "Yawn",
+          "sourceType": "level",
+          "sourceValue": 21,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "24:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "28:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "sourceType": "level",
+          "sourceValue": 28,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "32:amnesia",
+          "moveId": "amnesia",
+          "moveName": "Amnesia",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "36:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "40:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:counter",
+          "moveId": "counter",
+          "moveName": "Counter",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:doublekick",
+          "moveId": "doublekick",
+          "moveName": "Double Kick",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:haze",
+          "moveId": "haze",
+          "moveName": "Haze",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:mist",
+          "moveId": "mist",
+          "moveName": "Mist",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:recover",
+          "moveId": "recover",
+          "moveName": "Recover",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:spitup",
+          "moveId": "spitup",
+          "moveName": "Spit Up",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:stockpile",
+          "moveId": "stockpile",
+          "moveName": "Stockpile",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "egg:swallow",
+          "moveId": "swallow",
+          "moveName": "Swallow",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:amnesia",
+          "moveId": "amnesia",
+          "moveName": "Amnesia",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:bodypress",
+          "moveId": "bodypress",
+          "moveName": "Body Press",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:chillingwater",
+          "moveId": "chillingwater",
+          "moveName": "Chilling Water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:haze",
+          "moveId": "haze",
+          "moveName": "Haze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:hydropump",
+          "moveId": "hydropump",
+          "moveName": "Hydro Pump",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:liquidation",
+          "moveId": "liquidation",
+          "moveName": "Liquidation",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:poisontail",
+          "moveId": "poisontail",
+          "moveName": "Poison Tail",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:spikes",
+          "moveId": "spikes",
+          "moveName": "Spikes",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:surf",
+          "moveId": "surf",
+          "moveName": "Surf",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:toxicspikes",
+          "moveId": "toxicspikes",
+          "moveName": "Toxic Spikes",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:venoshock",
+          "moveId": "venoshock",
+          "moveName": "Venoshock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:waterfall",
+          "moveId": "waterfall",
+          "moveName": "Waterfall",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tm:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:liquidation",
+          "moveId": "liquidation",
+          "moveName": "Liquidation",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:spikes",
+          "moveId": "spikes",
+          "moveName": "Spikes",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        },
+        {
+          "raw": "tutor:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Paldea"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "wooper_clodsire",
+          "variant": "level_up",
+          "result": {
+            "raw": "clodsire",
+            "slug": "clodsire",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "amnesia"
+          ],
+          "requirementText": [
+            "Level 20+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 20+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 20
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Paldea",
+          "raw": {
+            "id": "wooper_clodsire",
+            "variant": "level_up",
+            "result": "clodsire",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "amnesia"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Paldea",
+        "primaryType": "poison",
+        "secondaryType": "ground",
+        "maleRatio": 0.5,
+        "height": 4,
+        "weight": 110,
+        "pokedex": [
+          "cobblemon.species.wooper-paldea.desc"
+        ],
+        "labels": [
+          "gen9",
+          "paldean_form"
+        ],
+        "aspects": [
+          "paldean"
+        ],
+        "abilities": [
+          "poisonpoint",
+          "waterabsorb",
+          "h:unaware"
+        ],
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "minecraft:clay_ball",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:pecha_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:tailwhip",
+          "1:mudshot",
+          "4:tackle",
+          "8:poisontail",
+          "12:toxicspikes",
+          "16:slam",
+          "21:yawn",
+          "24:poisonjab",
+          "28:sludgewave",
+          "32:amnesia",
+          "36:toxic",
+          "40:earthquake",
+          "egg:acidspray",
+          "egg:afteryou",
+          "egg:ancientpower",
+          "egg:counter",
+          "egg:curse",
+          "egg:doublekick",
+          "egg:haze",
+          "egg:mist",
+          "egg:recover",
+          "egg:spitup",
+          "egg:stockpile",
+          "egg:swallow",
+          "tm:acidspray",
+          "tm:afteryou",
+          "tm:amnesia",
+          "tm:ancientpower",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:bulldoze",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:gunkshot",
+          "tm:haze",
+          "tm:helpinghand",
+          "tm:hydropump",
+          "tm:liquidation",
+          "tm:lowkick",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:spikes",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:surf",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:venoshock",
+          "tm:waterfall",
+          "tm:waterpulse",
+          "tutor:afteryou",
+          "tutor:ancientpower",
+          "tutor:bulldoze",
+          "tutor:earthpower",
+          "tutor:gunkshot",
+          "tutor:helpinghand",
+          "tutor:liquidation",
+          "tutor:lowkick",
+          "tutor:mudslap",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:spikes",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:waterpulse"
+        ],
+        "evolutions": [
+          {
+            "id": "wooper_clodsire",
+            "variant": "level_up",
+            "result": "clodsire",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "amnesia"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              }
+            ]
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "6",
+            "toleratedLeaders": [
+              {
+                "pokemon": "wooper",
+                "tier": 1
+              },
+              {
+                "pokemon": "quagsire",
+                "tier": 2
+              },
+              {
+                "pokemon": "clodsire",
+                "tier": 2
+              }
+            ]
+          },
+          "resting": {
+            "willSleepOnBed": true,
+            "times": [
+              "any"
+            ],
+            "drowsyChance": 0.0014,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "canBreatheUnderwater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 194,
+    "name": "Wooper",
+    "primaryType": "water",
+    "secondaryType": "ground",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 85,
+    "pokedex": [
+      "cobblemon.species.wooper.desc"
+    ],
+    "labels": [
+      "gen2",
+      "johtonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "damp",
+      "waterabsorb",
+      "h:unaware"
+    ],
+    "eggGroups": [
+      "water_1",
+      "field"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 45,
+      "defence": 45,
+      "special_attack": 25,
+      "special_defence": 25,
+      "speed": 15
+    },
+    "evYield": {
+      "hp": 1,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 42,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "paldean"
+    ],
+    "shoulderMountable": true,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.8,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "canBreatheUnderwater": true,
+          "swimSpeed": "0.2"
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "light": "0-4",
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "6",
+        "toleratedLeaders": [
+          {
+            "pokemon": "wooper",
+            "tier": 1
+          },
+          {
+            "pokemon": "quagsire",
+            "tier": 2
+          },
+          {
+            "pokemon": "clodsire",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:clay_ball",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:rindo_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:watergun",
+      "1:tailwhip",
+      "1:mudsport",
+      "4:raindance",
+      "8:mudshot",
+      "12:mist",
+      "12:haze",
+      "16:slam",
+      "21:yawn",
+      "24:aquatail",
+      "28:muddywater",
+      "32:amnesia",
+      "36:toxic",
+      "40:earthquake",
+      "egg:acidspray",
+      "egg:afteryou",
+      "egg:ancientpower",
+      "egg:counter",
+      "egg:curse",
+      "egg:doublekick",
+      "egg:mudbomb",
+      "egg:mudsport",
+      "egg:recover",
+      "egg:spitup",
+      "egg:stockpile",
+      "egg:swallow",
+      "tm:acidspray",
+      "tm:afteryou",
+      "tm:amnesia",
+      "tm:ancientpower",
+      "tm:aquatail",
+      "tm:avalanche",
+      "tm:blizzard",
+      "tm:bodyslam",
+      "tm:bulldoze",
+      "tm:chillingwater",
+      "tm:curse",
+      "tm:dig",
+      "tm:dive",
+      "tm:doubleedge",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:encore",
+      "tm:endure",
+      "tm:facade",
+      "tm:flash",
+      "tm:guardswap",
+      "tm:hail",
+      "tm:haze",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:hydropump",
+      "tm:icebeam",
+      "tm:icywind",
+      "tm:infestation",
+      "tm:irontail",
+      "tm:liquidation",
+      "tm:muddywater",
+      "tm:mudshot",
+      "tm:mudslap",
+      "tm:poweruppunch",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:rollout",
+      "tm:safeguard",
+      "tm:sandstorm",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:snowscape",
+      "tm:spikes",
+      "tm:stealthrock",
+      "tm:stompingtantrum",
+      "tm:stoneedge",
+      "tm:substitute",
+      "tm:surf",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:toxic",
+      "tm:trailblaze",
+      "tm:waterfall",
+      "tm:waterpulse",
+      "tm:whirlpool",
+      "tutor:afteryou",
+      "tutor:ancientpower",
+      "tutor:aquatail",
+      "tutor:bulldoze",
+      "tutor:dive",
+      "tutor:earthpower",
+      "tutor:helpinghand",
+      "tutor:icebeam",
+      "tutor:icywind",
+      "tutor:irontail",
+      "tutor:liquidation",
+      "tutor:mudslap",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:rollout",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:spikes",
+      "tutor:stealthrock",
+      "tutor:stompingtantrum",
+      "tutor:stoneedge",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:defensecurl",
+      "legacy:doubleteam",
+      "legacy:dynamicpunch",
+      "legacy:eerieimpulse",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:icepunch",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:round",
+      "legacy:scald",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger"
+    ],
+    "evolutions": [
+      {
+        "id": "wooper_quagsire",
+        "variant": "level_up",
+        "result": "quagsire",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Paldea",
+        "primaryType": "poison",
+        "secondaryType": "ground",
+        "maleRatio": 0.5,
+        "height": 4,
+        "weight": 110,
+        "pokedex": [
+          "cobblemon.species.wooper-paldea.desc"
+        ],
+        "labels": [
+          "gen9",
+          "paldean_form"
+        ],
+        "aspects": [
+          "paldean"
+        ],
+        "abilities": [
+          "poisonpoint",
+          "waterabsorb",
+          "h:unaware"
+        ],
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "minecraft:clay_ball",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:pecha_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:tailwhip",
+          "1:mudshot",
+          "4:tackle",
+          "8:poisontail",
+          "12:toxicspikes",
+          "16:slam",
+          "21:yawn",
+          "24:poisonjab",
+          "28:sludgewave",
+          "32:amnesia",
+          "36:toxic",
+          "40:earthquake",
+          "egg:acidspray",
+          "egg:afteryou",
+          "egg:ancientpower",
+          "egg:counter",
+          "egg:curse",
+          "egg:doublekick",
+          "egg:haze",
+          "egg:mist",
+          "egg:recover",
+          "egg:spitup",
+          "egg:stockpile",
+          "egg:swallow",
+          "tm:acidspray",
+          "tm:afteryou",
+          "tm:amnesia",
+          "tm:ancientpower",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:bulldoze",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:gunkshot",
+          "tm:haze",
+          "tm:helpinghand",
+          "tm:hydropump",
+          "tm:liquidation",
+          "tm:lowkick",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:spikes",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:surf",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:venoshock",
+          "tm:waterfall",
+          "tm:waterpulse",
+          "tutor:afteryou",
+          "tutor:ancientpower",
+          "tutor:bulldoze",
+          "tutor:earthpower",
+          "tutor:gunkshot",
+          "tutor:helpinghand",
+          "tutor:liquidation",
+          "tutor:lowkick",
+          "tutor:mudslap",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:spikes",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:waterpulse"
+        ],
+        "evolutions": [
+          {
+            "id": "wooper_clodsire",
+            "variant": "level_up",
+            "result": "clodsire",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "amnesia"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              }
+            ]
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "6",
+            "toleratedLeaders": [
+              {
+                "pokemon": "wooper",
+                "tier": 1
+              },
+              {
+                "pokemon": "quagsire",
+                "tier": 2
+              },
+              {
+                "pokemon": "clodsire",
+                "tier": 2
+              }
+            ]
+          },
+          "resting": {
+            "willSleepOnBed": true,
+            "times": [
+              "any"
+            ],
+            "drowsyChance": 0.0014,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "canBreatheUnderwater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        }
+      }
+    ]
+  }
+}

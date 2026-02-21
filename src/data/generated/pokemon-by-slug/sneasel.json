@@ -1,0 +1,3136 @@
+{
+  "slug": "sneasel",
+  "name": "Sneasel",
+  "dexNumber": 215,
+  "implemented": true,
+  "types": [
+    "dark",
+    "ice"
+  ],
+  "abilities": [
+    {
+      "id": "innerfocus",
+      "hidden": false,
+      "label": "Innerfocus"
+    },
+    {
+      "id": "keeneye",
+      "hidden": false,
+      "label": "Keeneye"
+    },
+    {
+      "id": "pickpocket",
+      "hidden": true,
+      "label": "Pickpocket"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen2",
+    "johtonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "hisui",
+    "sneasel",
+    "sneasel hisui"
+  ],
+  "maleRatio": 0.5,
+  "height": 9,
+  "weight": 280,
+  "catchRate": 60,
+  "baseExperienceYield": 86,
+  "baseFriendship": 35,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 55,
+    "attack": 95,
+    "defence": 55,
+    "special_attack": 35,
+    "special_defence": 75,
+    "speed": 115
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "sneasel_weavile",
+      "variant": "level_up",
+      "result": {
+        "raw": "weavile",
+        "slug": "weavile",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Razor Claw",
+        "Time: Night"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Razor Claw",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:razor_claw"
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Night",
+          "raw": {
+            "variant": "time_range",
+            "range": "night"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "sneasel_weavile",
+        "variant": "level_up",
+        "result": "weavile",
+        "consumeHeldItem": true,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:razor_claw"
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ],
+        "permanent": true
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "sneasel",
+        "name": "Sneasel",
+        "dexNumber": 215
+      },
+      {
+        "slug": "weavile",
+        "name": "Weavile",
+        "dexNumber": 461
+      },
+      {
+        "slug": "sneasler",
+        "name": "Sneasler",
+        "dexNumber": 903
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "sneasel",
+        "toSlug": "sneasler",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Razor Claw",
+          "Time: Day"
+        ]
+      },
+      {
+        "fromSlug": "sneasel",
+        "toSlug": "weavile",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Razor Claw",
+          "Time: Night"
+        ]
+      }
+    ],
+    "roots": [
+      "sneasel"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:assist",
+      "moveId": "assist",
+      "moveName": "Assist",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:avalanche",
+      "moveId": "avalanche",
+      "moveName": "Avalanche",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "42:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:crushclaw",
+      "moveId": "crushclaw",
+      "moveName": "Crush Claw",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:detect",
+      "moveId": "detect",
+      "moveName": "Detect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doublehit",
+      "moveId": "doublehit",
+      "moveName": "Double Hit",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dreameater",
+      "moveId": "dreameater",
+      "moveName": "Dream Eater",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dynamicpunch",
+      "moveId": "dynamicpunch",
+      "moveName": "Dynamic Punch",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:embargo",
+      "moveId": "embargo",
+      "moveName": "Embargo",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:fakeout",
+      "moveId": "fakeout",
+      "moveName": "Fake Out",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:faketears",
+      "moveId": "faketears",
+      "moveName": "Fake Tears",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:feint",
+      "moveId": "feint",
+      "moveName": "Feint",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:feintattack",
+      "moveId": "feintattack",
+      "moveName": "Feint Attack",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:foresight",
+      "moveId": "foresight",
+      "moveName": "Foresight",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:foulplay",
+      "moveId": "foulplay",
+      "moveName": "Foul Play",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:foulplay",
+      "moveId": "foulplay",
+      "moveName": "Foul Play",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:furyswipes",
+      "moveId": "furyswipes",
+      "moveName": "Fury Swipes",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icepunch",
+      "moveId": "icepunch",
+      "moveName": "Ice Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icepunch",
+      "moveId": "icepunch",
+      "moveName": "Ice Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:iceshard",
+      "moveId": "iceshard",
+      "moveName": "Ice Shard",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:iciclecrash",
+      "moveId": "iciclecrash",
+      "moveName": "Icicle Crash",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:iciclespear",
+      "moveId": "iciclespear",
+      "moveName": "Icicle Spear",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lashout",
+      "moveId": "lashout",
+      "moveName": "Lash Out",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lashout",
+      "moveId": "lashout",
+      "moveName": "Lash Out",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lowsweep",
+      "moveId": "lowsweep",
+      "moveName": "Low Sweep",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "18:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:nastyplot",
+      "moveId": "nastyplot",
+      "moveName": "Nasty Plot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:nightmare",
+      "moveId": "nightmare",
+      "moveName": "Nightmare",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:poweruppunch",
+      "moveId": "poweruppunch",
+      "moveName": "Power-Up Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychocut",
+      "moveId": "psychocut",
+      "moveName": "Psycho Cut",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:psychocut",
+      "moveId": "psychocut",
+      "moveName": "Psycho Cut",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:punishment",
+      "moveId": "punishment",
+      "moveName": "Punishment",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:pursuit",
+      "moveId": "pursuit",
+      "moveName": "Pursuit",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:scratch",
+      "moveId": "scratch",
+      "moveName": "Scratch",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "54:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "sourceType": "level",
+      "sourceValue": 54,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "60:slash",
+      "moveId": "slash",
+      "moveName": "Slash",
+      "sourceType": "level",
+      "sourceValue": 60,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snowscape",
+      "moveId": "snowscape",
+      "moveName": "Snowscape",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:torment",
+      "moveId": "torment",
+      "moveName": "Torment",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:tripleaxel",
+      "moveId": "tripleaxel",
+      "moveName": "Triple Axel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:tripleaxel",
+      "moveId": "tripleaxel",
+      "moveName": "Triple Axel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:upperhand",
+      "moveId": "upperhand",
+      "moveName": "Upper Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:xscissor",
+      "moveId": "xscissor",
+      "moveName": "X-Scissor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:xscissor",
+      "moveId": "xscissor",
+      "moveName": "X-Scissor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "sneasel-1",
+      "sourceFile": "0215_sneasel.json",
+      "pokemon": {
+        "raw": "sneasel",
+        "slug": "sneasel",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "18-43",
+      "levelMin": 18,
+      "levelMax": 43,
+      "weight": 9.2,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
+        }
+      ],
+      "raw": {
+        "id": "sneasel-1",
+        "pokemon": "sneasel",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "18-43",
+        "weight": 9.2,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sneasel-hisuian-2",
+      "sourceFile": "0215_sneasel.json",
+      "pokemon": {
+        "raw": "sneasel hisuian",
+        "slug": "sneasel",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "18-43",
+      "levelMin": 18,
+      "levelMax": 43,
+      "weight": 9.2,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_taiga",
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "sneasel-hisuian-2",
+        "pokemon": "sneasel hisuian",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "18-43",
+        "weight": 9.2,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_taiga",
+            "#cobblemon:is_volcanic"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui",
+      "slug": "sneasel-hisui",
+      "aspects": [
+        "hisuian"
+      ],
+      "types": [
+        "fighting",
+        "poison"
+      ],
+      "abilities": [],
+      "moves": [
+        {
+          "raw": "1:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:scratch",
+          "moveId": "scratch",
+          "moveName": "Scratch",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:leer",
+          "moveId": "leer",
+          "moveName": "Leer",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "6:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "sourceType": "level",
+          "sourceValue": 6,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "12:quickattack",
+          "moveId": "quickattack",
+          "moveName": "Quick Attack",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "18:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "sourceType": "level",
+          "sourceValue": 18,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "24:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "30:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "36:honeclaws",
+          "moveId": "honeclaws",
+          "moveName": "Hone Claws",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "42:slash",
+          "moveId": "slash",
+          "moveName": "Slash",
+          "sourceType": "level",
+          "sourceValue": 42,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "48:agility",
+          "moveId": "agility",
+          "moveName": "Agility",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "54:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "sourceType": "level",
+          "sourceValue": 54,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "60:closecombat",
+          "moveId": "closecombat",
+          "moveName": "Close Combat",
+          "sourceType": "level",
+          "sourceValue": 60,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:counter",
+          "moveId": "counter",
+          "moveName": "Counter",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:doublehit",
+          "moveId": "doublehit",
+          "moveName": "Double Hit",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:fakeout",
+          "moveId": "fakeout",
+          "moveName": "Fake Out",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:feint",
+          "moveId": "feint",
+          "moveName": "Feint",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:nightslash",
+          "moveId": "nightslash",
+          "moveName": "Night Slash",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:quickguard",
+          "moveId": "quickguard",
+          "moveName": "Quick Guard",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:switcheroo",
+          "moveId": "switcheroo",
+          "moveName": "Switcheroo",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:agility",
+          "moveId": "agility",
+          "moveName": "Agility",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:closecombat",
+          "moveId": "closecombat",
+          "moveName": "Close Combat",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:coaching",
+          "moveId": "coaching",
+          "moveName": "Coaching",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:falseswipe",
+          "moveId": "falseswipe",
+          "moveName": "False Swipe",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:fling",
+          "moveId": "fling",
+          "moveName": "Fling",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:focusblast",
+          "moveId": "focusblast",
+          "moveName": "Focus Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:focusenergy",
+          "moveId": "focusenergy",
+          "moveName": "Focus Energy",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:grassknot",
+          "moveId": "grassknot",
+          "moveName": "Grass Knot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:honeclaws",
+          "moveId": "honeclaws",
+          "moveName": "Hone Claws",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:lashout",
+          "moveId": "lashout",
+          "moveName": "Lash Out",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:lowsweep",
+          "moveId": "lowsweep",
+          "moveName": "Low Sweep",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:nastyplot",
+          "moveId": "nastyplot",
+          "moveName": "Nasty Plot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:poisontail",
+          "moveId": "poisontail",
+          "moveName": "Poison Tail",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:reversal",
+          "moveId": "reversal",
+          "moveName": "Reversal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:thief",
+          "moveId": "thief",
+          "moveName": "Thief",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:toxicspikes",
+          "moveId": "toxicspikes",
+          "moveName": "Toxic Spikes",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:vacuumwave",
+          "moveId": "vacuumwave",
+          "moveName": "Vacuum Wave",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:venoshock",
+          "moveId": "venoshock",
+          "moveName": "Venoshock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:xscissor",
+          "moveId": "xscissor",
+          "moveName": "X-Scissor",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:coaching",
+          "moveId": "coaching",
+          "moveName": "Coaching",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:falseswipe",
+          "moveId": "falseswipe",
+          "moveName": "False Swipe",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:focusenergy",
+          "moveId": "focusenergy",
+          "moveName": "Focus Energy",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:lashout",
+          "moveId": "lashout",
+          "moveName": "Lash Out",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:vacuumwave",
+          "moveId": "vacuumwave",
+          "moveName": "Vacuum Wave",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:xscissor",
+          "moveId": "xscissor",
+          "moveName": "X-Scissor",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "sneasel_sneasler",
+          "variant": "level_up",
+          "result": {
+            "raw": "sneasler",
+            "slug": "sneasler",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": true,
+          "learnableMoves": [
+            "direclaw"
+          ],
+          "requirementText": [
+            "Hold Razor Claw",
+            "Time: Day"
+          ],
+          "requirements": [
+            {
+              "variant": "held_item",
+              "text": "Hold Razor Claw",
+              "raw": {
+                "variant": "held_item",
+                "itemCondition": "cobblemon:razor_claw"
+              }
+            },
+            {
+              "variant": "time_range",
+              "text": "Time: Day",
+              "raw": {
+                "variant": "time_range",
+                "range": "day"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Hisui",
+          "raw": {
+            "id": "sneasel_sneasler",
+            "variant": "level_up",
+            "result": "sneasler",
+            "consumeHeldItem": true,
+            "learnableMoves": [
+              "direclaw"
+            ],
+            "requirements": [
+              {
+                "variant": "held_item",
+                "itemCondition": "cobblemon:razor_claw"
+              },
+              {
+                "variant": "time_range",
+                "range": "day"
+              }
+            ],
+            "permanent": true
+          }
+        }
+      ],
+      "raw": {
+        "name": "Hisui",
+        "primaryType": "fighting",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 9,
+        "weight": 270,
+        "pokedex": [
+          "cobblemon.species.sneasel-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "drops": {
+          "amount": 3,
+          "entries": [
+            {
+              "item": "cobblemon:razor_claw",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:poison_barb",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:payapa_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:rocksmash",
+          "1:scratch",
+          "1:leer",
+          "6:taunt",
+          "12:quickattack",
+          "18:metalclaw",
+          "24:poisonjab",
+          "30:brickbreak",
+          "36:honeclaws",
+          "42:slash",
+          "48:agility",
+          "54:screech",
+          "60:closecombat",
+          "egg:counter",
+          "egg:doublehit",
+          "egg:fakeout",
+          "egg:feint",
+          "egg:nightslash",
+          "egg:quickguard",
+          "egg:switcheroo",
+          "tm:acidspray",
+          "tm:aerialace",
+          "tm:agility",
+          "tm:brickbreak",
+          "tm:bulkup",
+          "tm:calmmind",
+          "tm:closecombat",
+          "tm:coaching",
+          "tm:dig",
+          "tm:endure",
+          "tm:facade",
+          "tm:falseswipe",
+          "tm:fling",
+          "tm:focusblast",
+          "tm:focusenergy",
+          "tm:focuspunch",
+          "tm:gigaimpact",
+          "tm:grassknot",
+          "tm:gunkshot",
+          "tm:honeclaws",
+          "tm:irontail",
+          "tm:lashout",
+          "tm:lowkick",
+          "tm:lowsweep",
+          "tm:metalclaw",
+          "tm:nastyplot",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:reversal",
+          "tm:rocksmash",
+          "tm:screech",
+          "tm:shadowball",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:spite",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:vacuumwave",
+          "tm:venoshock",
+          "tm:xscissor",
+          "tutor:aerialace",
+          "tutor:bulkup",
+          "tutor:calmmind",
+          "tutor:coaching",
+          "tutor:falseswipe",
+          "tutor:focusenergy",
+          "tutor:focuspunch",
+          "tutor:gigaimpact",
+          "tutor:gunkshot",
+          "tutor:irontail",
+          "tutor:lashout",
+          "tutor:lowkick",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:shadowball",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:spite",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:vacuumwave",
+          "tutor:xscissor"
+        ],
+        "evolutions": [
+          {
+            "id": "sneasel_sneasler",
+            "variant": "level_up",
+            "result": "sneasler",
+            "consumeHeldItem": true,
+            "learnableMoves": [
+              "direclaw"
+            ],
+            "requirements": [
+              {
+                "variant": "held_item",
+                "itemCondition": "cobblemon:razor_claw"
+              },
+              {
+                "variant": "time_range",
+                "range": "day"
+              }
+            ],
+            "permanent": true
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "6",
+            "toleratedLeaders": [
+              {
+                "pokemon": "sneasel",
+                "tier": 1
+              }
+            ]
+          },
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "entityInteract": {
+            "avoidedByCreeper": true
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 215,
+    "name": "Sneasel",
+    "primaryType": "dark",
+    "secondaryType": "ice",
+    "maleRatio": 0.5,
+    "height": 9,
+    "weight": 280,
+    "pokedex": [
+      "cobblemon.species.sneasel.desc"
+    ],
+    "labels": [
+      "gen2",
+      "johtonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "innerfocus",
+      "keeneye",
+      "h:pickpocket"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 95,
+      "defence": 55,
+      "special_attack": 35,
+      "special_defence": 75,
+      "speed": 115
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 86,
+    "experienceGroup": "medium_slow",
+    "catchRate": 60,
+    "eggCycles": 20,
+    "baseFriendship": 35,
+    "features": [
+      "hisuian"
+    ],
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 0.6,
+      "height": 1.25,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.15
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "entityInteract": {
+        "avoidedByCreeper": true,
+        "avoidedByPhantom": true
+      },
+      "herd": {
+        "maxSize": "6",
+        "toleratedLeaders": [
+          {
+            "pokemon": "sneasel",
+            "tier": 1
+          },
+          {
+            "pokemon": "weavile",
+            "tier": 2
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "cobblemon:razor_claw",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:grip_claw",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:quick_claw",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:chople_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:scratch",
+      "1:leer",
+      "1:feintattack",
+      "6:taunt",
+      "12:quickattack",
+      "18:metalclaw",
+      "24:icywind",
+      "30:furyswipes",
+      "36:honeclaws",
+      "42:beatup",
+      "48:agility",
+      "54:screech",
+      "60:slash",
+      "egg:assist",
+      "egg:bite",
+      "egg:counter",
+      "egg:crushclaw",
+      "egg:doublehit",
+      "egg:fakeout",
+      "egg:feint",
+      "egg:foresight",
+      "egg:iceshard",
+      "egg:iciclecrash",
+      "egg:punishment",
+      "egg:pursuit",
+      "egg:spite",
+      "tm:aerialace",
+      "tm:agility",
+      "tm:avalanche",
+      "tm:beatup",
+      "tm:blizzard",
+      "tm:brickbreak",
+      "tm:calmmind",
+      "tm:cut",
+      "tm:darkpulse",
+      "tm:dig",
+      "tm:dreameater",
+      "tm:embargo",
+      "tm:endure",
+      "tm:facade",
+      "tm:faketears",
+      "tm:falseswipe",
+      "tm:fling",
+      "tm:focuspunch",
+      "tm:foulplay",
+      "tm:furycutter",
+      "tm:gigaimpact",
+      "tm:hail",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:honeclaws",
+      "tm:icebeam",
+      "tm:icepunch",
+      "tm:iciclespear",
+      "tm:icywind",
+      "tm:irontail",
+      "tm:knockoff",
+      "tm:laserfocus",
+      "tm:lashout",
+      "tm:lowkick",
+      "tm:lowsweep",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:metalclaw",
+      "tm:nastyplot",
+      "tm:payback",
+      "tm:poisonjab",
+      "tm:poweruppunch",
+      "tm:protect",
+      "tm:psychocut",
+      "tm:raindance",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:reversal",
+      "tm:rocksmash",
+      "tm:scaryface",
+      "tm:screech",
+      "tm:shadowball",
+      "tm:shadowclaw",
+      "tm:sleeptalk",
+      "tm:snarl",
+      "tm:snatch",
+      "tm:snowscape",
+      "tm:spite",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:surf",
+      "tm:swift",
+      "tm:swordsdance",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:thief",
+      "tm:throatchop",
+      "tm:torment",
+      "tm:trailblaze",
+      "tm:tripleaxel",
+      "tm:upperhand",
+      "tm:waterpulse",
+      "tm:xscissor",
+      "tutor:aerialace",
+      "tutor:calmmind",
+      "tutor:darkpulse",
+      "tutor:falseswipe",
+      "tutor:focuspunch",
+      "tutor:foulplay",
+      "tutor:furycutter",
+      "tutor:gigaimpact",
+      "tutor:helpinghand",
+      "tutor:icebeam",
+      "tutor:icepunch",
+      "tutor:icywind",
+      "tutor:irontail",
+      "tutor:knockoff",
+      "tutor:laserfocus",
+      "tutor:lashout",
+      "tutor:lowkick",
+      "tutor:poisonjab",
+      "tutor:psychocut",
+      "tutor:rest",
+      "tutor:rocksmash",
+      "tutor:shadowball",
+      "tutor:shadowclaw",
+      "tutor:sleeptalk",
+      "tutor:snarl",
+      "tutor:snatch",
+      "tutor:spite",
+      "tutor:swift",
+      "tutor:throatchop",
+      "tutor:tripleaxel",
+      "tutor:waterpulse",
+      "tutor:xscissor",
+      "legacy:attract",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:curse",
+      "legacy:defensecurl",
+      "legacy:detect",
+      "legacy:doubleedge",
+      "legacy:doubleteam",
+      "legacy:dynamicpunch",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:mudslap",
+      "legacy:naturalgift",
+      "legacy:nightmare",
+      "legacy:psychup",
+      "legacy:reflect",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic",
+      "legacy:whirlpool"
+    ],
+    "evolutions": [
+      {
+        "id": "sneasel_weavile",
+        "variant": "level_up",
+        "result": "weavile",
+        "consumeHeldItem": true,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:razor_claw"
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ],
+        "permanent": true
+      }
+    ],
+    "forms": [
+      {
+        "name": "Hisui",
+        "primaryType": "fighting",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 9,
+        "weight": 270,
+        "pokedex": [
+          "cobblemon.species.sneasel-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "drops": {
+          "amount": 3,
+          "entries": [
+            {
+              "item": "cobblemon:razor_claw",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:poison_barb",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:payapa_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:rocksmash",
+          "1:scratch",
+          "1:leer",
+          "6:taunt",
+          "12:quickattack",
+          "18:metalclaw",
+          "24:poisonjab",
+          "30:brickbreak",
+          "36:honeclaws",
+          "42:slash",
+          "48:agility",
+          "54:screech",
+          "60:closecombat",
+          "egg:counter",
+          "egg:doublehit",
+          "egg:fakeout",
+          "egg:feint",
+          "egg:nightslash",
+          "egg:quickguard",
+          "egg:switcheroo",
+          "tm:acidspray",
+          "tm:aerialace",
+          "tm:agility",
+          "tm:brickbreak",
+          "tm:bulkup",
+          "tm:calmmind",
+          "tm:closecombat",
+          "tm:coaching",
+          "tm:dig",
+          "tm:endure",
+          "tm:facade",
+          "tm:falseswipe",
+          "tm:fling",
+          "tm:focusblast",
+          "tm:focusenergy",
+          "tm:focuspunch",
+          "tm:gigaimpact",
+          "tm:grassknot",
+          "tm:gunkshot",
+          "tm:honeclaws",
+          "tm:irontail",
+          "tm:lashout",
+          "tm:lowkick",
+          "tm:lowsweep",
+          "tm:metalclaw",
+          "tm:nastyplot",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:reversal",
+          "tm:rocksmash",
+          "tm:screech",
+          "tm:shadowball",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:spite",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:vacuumwave",
+          "tm:venoshock",
+          "tm:xscissor",
+          "tutor:aerialace",
+          "tutor:bulkup",
+          "tutor:calmmind",
+          "tutor:coaching",
+          "tutor:falseswipe",
+          "tutor:focusenergy",
+          "tutor:focuspunch",
+          "tutor:gigaimpact",
+          "tutor:gunkshot",
+          "tutor:irontail",
+          "tutor:lashout",
+          "tutor:lowkick",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:shadowball",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:spite",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:vacuumwave",
+          "tutor:xscissor"
+        ],
+        "evolutions": [
+          {
+            "id": "sneasel_sneasler",
+            "variant": "level_up",
+            "result": "sneasler",
+            "consumeHeldItem": true,
+            "learnableMoves": [
+              "direclaw"
+            ],
+            "requirements": [
+              {
+                "variant": "held_item",
+                "itemCondition": "cobblemon:razor_claw"
+              },
+              {
+                "variant": "time_range",
+                "range": "day"
+              }
+            ],
+            "permanent": true
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "6",
+            "toleratedLeaders": [
+              {
+                "pokemon": "sneasel",
+                "tier": 1
+              }
+            ]
+          },
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "entityInteract": {
+            "avoidedByCreeper": true
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          }
+        }
+      }
+    ]
+  }
+}

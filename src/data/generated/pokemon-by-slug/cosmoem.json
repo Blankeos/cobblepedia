@@ -1,0 +1,392 @@
+{
+  "slug": "cosmoem",
+  "name": "Cosmoem",
+  "dexNumber": 790,
+  "implemented": false,
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    {
+      "id": "sturdy",
+      "hidden": false,
+      "label": "Sturdy"
+    },
+    {
+      "id": "sturdy",
+      "hidden": true,
+      "label": "Sturdy"
+    }
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "labels": [
+    "gen7",
+    "legendary",
+    "restricted"
+  ],
+  "aspects": [],
+  "aliases": [
+    "cosmoem"
+  ],
+  "maleRatio": -1,
+  "height": 1,
+  "weight": 9999,
+  "catchRate": 3,
+  "baseExperienceYield": 140,
+  "baseFriendship": 0,
+  "eggCycles": 120,
+  "baseStats": {
+    "hp": 43,
+    "attack": 29,
+    "defence": 131,
+    "special_attack": 29,
+    "special_defence": 131,
+    "speed": 37
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "cosmog",
+    "slug": "cosmog",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "cosmoem_solgaleo",
+      "variant": "level_up",
+      "result": {
+        "raw": "solgaleo",
+        "slug": "solgaleo",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "sunsteelstrike"
+      ],
+      "requirementText": [
+        "Level 53+",
+        "Time: Day"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 53+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 53
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Day",
+          "raw": {
+            "variant": "time_range",
+            "range": "day"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "cosmoem_solgaleo",
+        "variant": "level_up",
+        "result": "solgaleo",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "sunsteelstrike"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 53
+          },
+          {
+            "variant": "time_range",
+            "range": "day"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cosmoem_lunala",
+      "variant": "level_up",
+      "result": {
+        "raw": "lunala",
+        "slug": "lunala",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "moongeistbeam"
+      ],
+      "requirementText": [
+        "Level 53+",
+        "Time: Night"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 53+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 53
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Night",
+          "raw": {
+            "variant": "time_range",
+            "range": "night"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "cosmoem_lunala",
+        "variant": "level_up",
+        "result": "lunala",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "moongeistbeam"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 53
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "cosmog",
+        "name": "Cosmog",
+        "dexNumber": 789
+      },
+      {
+        "slug": "cosmoem",
+        "name": "Cosmoem",
+        "dexNumber": 790
+      },
+      {
+        "slug": "solgaleo",
+        "name": "Solgaleo",
+        "dexNumber": 791
+      },
+      {
+        "slug": "lunala",
+        "name": "Lunala",
+        "dexNumber": 792
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "cosmoem",
+        "toSlug": "lunala",
+        "method": "level_up",
+        "requirementText": [
+          "Level 53+",
+          "Time: Night"
+        ]
+      },
+      {
+        "fromSlug": "cosmoem",
+        "toSlug": "solgaleo",
+        "method": "level_up",
+        "requirementText": [
+          "Level 53+",
+          "Time: Day"
+        ]
+      },
+      {
+        "fromSlug": "cosmog",
+        "toSlug": "cosmoem",
+        "method": "level_up",
+        "requirementText": [
+          "Level 43+"
+        ]
+      }
+    ],
+    "roots": [
+      "cosmog"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:cosmicpower",
+      "moveId": "cosmicpower",
+      "moveName": "Cosmic Power",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:cosmicpower",
+      "moveId": "cosmicpower",
+      "moveName": "Cosmic Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:splash",
+      "moveId": "splash",
+      "moveName": "Splash",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "1:teleport",
+      "moveId": "teleport",
+      "moveName": "Teleport",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 790,
+    "name": "Cosmoem",
+    "primaryType": "psychic",
+    "maleRatio": -1,
+    "height": 1,
+    "weight": 9999,
+    "pokedex": [
+      "cobblemon.species.cosmoem.desc"
+    ],
+    "labels": [
+      "gen7",
+      "legendary",
+      "restricted"
+    ],
+    "aspects": [],
+    "abilities": [
+      "sturdy",
+      "h:sturdy"
+    ],
+    "eggGroups": [
+      "undiscovered"
+    ],
+    "baseStats": {
+      "hp": 43,
+      "attack": 29,
+      "defence": 131,
+      "special_attack": 29,
+      "special_defence": 131,
+      "speed": 37
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 140,
+    "experienceGroup": "slow",
+    "catchRate": 3,
+    "eggCycles": 120,
+    "baseFriendship": 0,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "moves": [
+      "1:cosmicpower",
+      "1:teleport",
+      "1:splash",
+      "tm:cosmicpower"
+    ],
+    "preEvolution": "cosmog",
+    "evolutions": [
+      {
+        "id": "cosmoem_solgaleo",
+        "variant": "level_up",
+        "result": "solgaleo",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "sunsteelstrike"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 53
+          },
+          {
+            "variant": "time_range",
+            "range": "day"
+          }
+        ]
+      },
+      {
+        "id": "cosmoem_lunala",
+        "variant": "level_up",
+        "result": "lunala",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "moongeistbeam"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 53
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "5"
+      },
+      "resting": {
+        "depth": "comatose",
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        },
+        "canLook": false,
+        "walk": {
+          "canWalk": false
+        },
+        "fly": {
+          "canFly": true
+        }
+      },
+      "combat": {
+        "willFlee": false
+      }
+    }
+  }
+}

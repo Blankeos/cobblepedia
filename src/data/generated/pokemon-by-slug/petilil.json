@@ -1,0 +1,1666 @@
+{
+  "slug": "petilil",
+  "name": "Petilil",
+  "dexNumber": 548,
+  "implemented": true,
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    {
+      "id": "chlorophyll",
+      "hidden": false,
+      "label": "Chlorophyll"
+    },
+    {
+      "id": "owntempo",
+      "hidden": false,
+      "label": "Owntempo"
+    },
+    {
+      "id": "leafguard",
+      "hidden": true,
+      "label": "Leafguard"
+    }
+  ],
+  "eggGroups": [
+    "grass"
+  ],
+  "labels": [
+    "gen5",
+    "unovan_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "hisui-bias",
+    "petilil",
+    "petilil hisui-bias"
+  ],
+  "maleRatio": 0,
+  "height": 5,
+  "weight": 66,
+  "catchRate": 190,
+  "baseExperienceYield": 56,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 45,
+    "attack": 35,
+    "defence": 50,
+    "special_attack": 70,
+    "special_defence": 50,
+    "speed": 30
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "petilil_lilliganthisui",
+      "variant": "item_interact",
+      "result": {
+        "raw": "lilligant hisuian",
+        "slug": "lilligant",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "victorydance"
+      ],
+      "requirementText": [
+        "Biome Evolution/regional/petilil Hisuibiome"
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "text": "Biome Evolution/regional/petilil Hisuibiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/petilil_hisuibiome"
+          }
+        }
+      ],
+      "requiredContext": "cobblemon:sun_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "petilil_lilliganthisui",
+        "variant": "item_interact",
+        "result": "lilligant hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "victorydance"
+        ],
+        "requirements": [
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/petilil_hisuibiome"
+          }
+        ],
+        "requiredContext": "cobblemon:sun_stone"
+      }
+    },
+    {
+      "id": "petilil_lilligant",
+      "variant": "item_interact",
+      "result": {
+        "raw": "lilligant",
+        "slug": "lilligant",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "petaldance"
+      ],
+      "requirementText": [],
+      "requirements": [],
+      "requiredContext": "cobblemon:sun_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "petilil_lilligant",
+        "variant": "item_interact",
+        "result": "lilligant",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "petaldance"
+        ],
+        "requiredContext": "cobblemon:sun_stone"
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "petilil",
+        "name": "Petilil",
+        "dexNumber": 548
+      },
+      {
+        "slug": "lilligant",
+        "name": "Lilligant",
+        "dexNumber": 549
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome Evolution/regional/petilil Hisuibiome"
+        ]
+      },
+      {
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": []
+      },
+      {
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome Evolution/regional/petilil Unovabiome"
+        ]
+      }
+    ],
+    "roots": [
+      "petilil"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "27:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "level",
+      "sourceValue": 27,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:aromatherapy",
+      "moveId": "aromatherapy",
+      "moveName": "Aromatherapy",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:babydolleyes",
+      "moveId": "babydolleyes",
+      "moveName": "Baby-Doll Eyes",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:babydolleyes",
+      "moveId": "babydolleyes",
+      "moveName": "Baby-Doll Eyes",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dreameater",
+      "moveId": "dreameater",
+      "moveName": "Dream Eater",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "30:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "39:entrainment",
+      "moveId": "entrainment",
+      "moveName": "Entrainment",
+      "sourceType": "level",
+      "sourceValue": 39,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "21:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:grasswhistle",
+      "moveId": "grasswhistle",
+      "moveName": "Grass Whistle",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:growth",
+      "moveId": "growth",
+      "moveName": "Growth",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:healbell",
+      "moveId": "healbell",
+      "moveName": "Heal Bell",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:healbell",
+      "moveId": "healbell",
+      "moveName": "Heal Bell",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:healingwish",
+      "moveId": "healingwish",
+      "moveName": "Healing Wish",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "3:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "level",
+      "sourceValue": 3,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:ingrain",
+      "moveId": "ingrain",
+      "moveName": "Ingrain",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "42:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:leechseed",
+      "moveId": "leechseed",
+      "moveName": "Leech Seed",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "15:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "9:megadrain",
+      "moveId": "megadrain",
+      "moveName": "Mega Drain",
+      "sourceType": "level",
+      "sourceValue": 9,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pollenpuff",
+      "moveId": "pollenpuff",
+      "moveName": "Pollen Puff",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "18:sleeppowder",
+      "moveId": "sleeppowder",
+      "moveName": "Sleep Powder",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:stunspore",
+      "moveId": "stunspore",
+      "moveName": "Stun Spore",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "33:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "level",
+      "sourceValue": 33,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "petilil-1",
+      "sourceFile": "0548_petilil.json",
+      "pokemon": {
+        "raw": "petilil",
+        "slug": "petilil",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 9.5,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_hills"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "petilil-1",
+        "pokemon": "petilil",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 9.5,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    },
+    {
+      "id": "petilil-2",
+      "sourceFile": "0548_petilil.json",
+      "pokemon": {
+        "raw": "petilil",
+        "slug": "petilil",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 1.9,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Tropical Island",
+        "Tropics",
+        "Tropical Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_hills",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "petilil-2",
+        "pokemon": "petilil",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 1.9,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_tropical_island"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_hills",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "petilil-3",
+      "sourceFile": "0548_petilil.json",
+      "pokemon": {
+        "raw": "petilil",
+        "slug": "petilil",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 9.5,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "petilil-3",
+        "pokemon": "petilil",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 9.5,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    },
+    {
+      "id": "petilil-hisui-4",
+      "sourceFile": "0548_petilil.json",
+      "pokemon": {
+        "raw": "petilil region_bias=hisui",
+        "slug": "petilil",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 5.7,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "petilil-hisui-4",
+        "pokemon": "petilil region_bias=hisui",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 5.7,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_hills"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "petilil-hisui-5",
+      "sourceFile": "0548_petilil.json",
+      "pokemon": {
+        "raw": "petilil region_bias=hisui",
+        "slug": "petilil",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 5.7,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "petilil-hisui-5",
+        "pokemon": "petilil region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 5.7,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui-Bias",
+      "slug": "petilil-hisuibias",
+      "aspects": [
+        "region-bias-hisui"
+      ],
+      "types": [
+        "grass"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "petilil_lilligant",
+          "variant": "item_interact",
+          "result": {
+            "raw": "lilligant",
+            "slug": "lilligant",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "petaldance"
+          ],
+          "requirementText": [
+            "Biome Evolution/regional/petilil Unovabiome"
+          ],
+          "requirements": [
+            {
+              "variant": "biome",
+              "text": "Biome Evolution/regional/petilil Unovabiome",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/petilil_unovabiome"
+              }
+            }
+          ],
+          "requiredContext": "cobblemon:sun_stone",
+          "fromForm": "Hisui-Bias",
+          "raw": {
+            "id": "petilil_lilligant",
+            "variant": "item_interact",
+            "result": "lilligant",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "petaldance"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/petilil_unovabiome"
+              }
+            ],
+            "requiredContext": "cobblemon:sun_stone"
+          }
+        },
+        {
+          "id": "petilil_lilliganthisui",
+          "variant": "item_interact",
+          "result": {
+            "raw": "lilligant hisuian",
+            "slug": "lilligant",
+            "aspectTokens": [
+              "hisuian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "victorydance"
+          ],
+          "requirementText": [],
+          "requirements": [],
+          "requiredContext": "cobblemon:sun_stone",
+          "fromForm": "Hisui-Bias",
+          "raw": {
+            "id": "petilil_lilliganthisui",
+            "variant": "item_interact",
+            "result": "lilligant hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "victorydance"
+            ],
+            "requiredContext": "cobblemon:sun_stone"
+          }
+        }
+      ],
+      "raw": {
+        "name": "Hisui-Bias",
+        "primaryType": "grass",
+        "maleRatio": 0,
+        "height": 5,
+        "weight": 66,
+        "pokedex": [
+          "cobblemon.species.petilil-hisuibias.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "customized_official",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "region-bias-hisui"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "petilil_lilligant",
+            "variant": "item_interact",
+            "result": "lilligant",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "petaldance"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/petilil_unovabiome"
+              }
+            ],
+            "requiredContext": "cobblemon:sun_stone"
+          },
+          {
+            "id": "petilil_lilliganthisui",
+            "variant": "item_interact",
+            "result": "lilligant hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "victorydance"
+            ],
+            "requiredContext": "cobblemon:sun_stone"
+          }
+        ]
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 548,
+    "name": "Petilil",
+    "primaryType": "grass",
+    "maleRatio": 0,
+    "height": 5,
+    "weight": 66,
+    "pokedex": [
+      "cobblemon.species.petilil.desc"
+    ],
+    "labels": [
+      "gen5",
+      "unovan_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "chlorophyll",
+      "owntempo",
+      "h:leafguard"
+    ],
+    "eggGroups": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 35,
+      "defence": 50,
+      "special_attack": 70,
+      "special_defence": 50,
+      "speed": 30
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 1,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 56,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "region_bias"
+    ],
+    "shoulderMountable": true,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.7,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.14
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "petilil",
+            "tier": 1
+          },
+          {
+            "pokemon": "lilligant hisuian",
+            "tier": 2
+          },
+          {
+            "pokemon": "lilligant hisuian=false",
+            "tier": 3
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "cobblemon:revival_herb",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:persim_berry",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:absorb_bulb",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:absorb",
+      "1:growth",
+      "1:aromatherapy",
+      "3:helpinghand",
+      "6:stunspore",
+      "9:megadrain",
+      "12:charm",
+      "15:magicalleaf",
+      "18:sleeppowder",
+      "21:gigadrain",
+      "24:leechseed",
+      "27:afteryou",
+      "30:energyball",
+      "33:synthesis",
+      "36:sunnyday",
+      "39:entrainment",
+      "42:leafstorm",
+      "egg:bide",
+      "egg:grasswhistle",
+      "egg:healingwish",
+      "egg:ingrain",
+      "egg:naturalgift",
+      "egg:sweetscent",
+      "egg:worryseed",
+      "tm:afteryou",
+      "tm:babydolleyes",
+      "tm:bulletseed",
+      "tm:charm",
+      "tm:covet",
+      "tm:cut",
+      "tm:dreameater",
+      "tm:encore",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:flash",
+      "tm:gigadrain",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:healbell",
+      "tm:helpinghand",
+      "tm:laserfocus",
+      "tm:leafstorm",
+      "tm:magicalleaf",
+      "tm:naturalgift",
+      "tm:naturepower",
+      "tm:pollenpuff",
+      "tm:protect",
+      "tm:rest",
+      "tm:safeguard",
+      "tm:seedbomb",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:synthesis",
+      "tm:terablast",
+      "tm:trailblaze",
+      "tm:worryseed",
+      "tutor:afteryou",
+      "tutor:babydolleyes",
+      "tutor:covet",
+      "tutor:energyball",
+      "tutor:gigadrain",
+      "tutor:grassyglide",
+      "tutor:healbell",
+      "tutor:helpinghand",
+      "tutor:laserfocus",
+      "tutor:magicalleaf",
+      "tutor:rest",
+      "tutor:seedbomb",
+      "tutor:sleeptalk",
+      "tutor:synthesis",
+      "tutor:worryseed",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "petilil_lilliganthisui",
+        "variant": "item_interact",
+        "result": "lilligant hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "victorydance"
+        ],
+        "requirements": [
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/petilil_hisuibiome"
+          }
+        ],
+        "requiredContext": "cobblemon:sun_stone"
+      },
+      {
+        "id": "petilil_lilligant",
+        "variant": "item_interact",
+        "result": "lilligant",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "petaldance"
+        ],
+        "requiredContext": "cobblemon:sun_stone"
+      }
+    ],
+    "forms": [
+      {
+        "name": "Hisui-Bias",
+        "primaryType": "grass",
+        "maleRatio": 0,
+        "height": 5,
+        "weight": 66,
+        "pokedex": [
+          "cobblemon.species.petilil-hisuibias.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "customized_official",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "region-bias-hisui"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "petilil_lilligant",
+            "variant": "item_interact",
+            "result": "lilligant",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "petaldance"
+            ],
+            "requirements": [
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/petilil_unovabiome"
+              }
+            ],
+            "requiredContext": "cobblemon:sun_stone"
+          },
+          {
+            "id": "petilil_lilliganthisui",
+            "variant": "item_interact",
+            "result": "lilligant hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "victorydance"
+            ],
+            "requiredContext": "cobblemon:sun_stone"
+          }
+        ]
+      }
+    ]
+  }
+}

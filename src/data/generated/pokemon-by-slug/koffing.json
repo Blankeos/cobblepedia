@@ -1,0 +1,1854 @@
+{
+  "slug": "koffing",
+  "name": "Koffing",
+  "dexNumber": 109,
+  "implemented": true,
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    {
+      "id": "levitate",
+      "hidden": false,
+      "label": "Levitate"
+    },
+    {
+      "id": "neutralizinggas",
+      "hidden": false,
+      "label": "Neutralizinggas"
+    },
+    {
+      "id": "stench",
+      "hidden": true,
+      "label": "Stench"
+    }
+  ],
+  "eggGroups": [
+    "amorphous"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "galar-bias",
+    "koffing",
+    "koffing galar-bias"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 10,
+  "catchRate": 190,
+  "baseExperienceYield": 68,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 40,
+    "attack": 65,
+    "defence": 95,
+    "special_attack": 60,
+    "special_defence": 45,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "koffing_weezing",
+      "variant": "level_up",
+      "result": {
+        "raw": "weezing",
+        "slug": "weezing",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "doublehit"
+      ],
+      "requirementText": [
+        "Level 35+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 35+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 35
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "koffing_weezing",
+        "variant": "level_up",
+        "result": "weezing",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "doublehit"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "koffing_weezinggalar",
+      "variant": "level_up",
+      "result": {
+        "raw": "weezing galarian",
+        "slug": "weezing",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "doublehit"
+      ],
+      "requirementText": [
+        "Level 35+",
+        "Biome Evolution/regional/koffing Galarbiome"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 35+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 35
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Evolution/regional/koffing Galarbiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/koffing_galarbiome"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "koffing_weezinggalar",
+        "variant": "level_up",
+        "result": "weezing galarian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "doublehit"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 35
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/koffing_galarbiome"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "koffing",
+        "name": "Koffing",
+        "dexNumber": 109
+      },
+      {
+        "slug": "weezing",
+        "name": "Weezing",
+        "dexNumber": 110
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "koffing",
+        "toSlug": "weezing",
+        "method": "level_up",
+        "requirementText": [
+          "Level 35+"
+        ]
+      },
+      {
+        "fromSlug": "koffing",
+        "toSlug": "weezing",
+        "method": "level_up",
+        "requirementText": [
+          "Level 35+",
+          "Biome Evolution/regional/koffing Galarbiome"
+        ]
+      },
+      {
+        "fromSlug": "koffing",
+        "toSlug": "weezing",
+        "method": "level_up",
+        "requirementText": [
+          "Level 35+",
+          "Biome Evolution/regional/koffing Kantobiome"
+        ]
+      }
+    ],
+    "roots": [
+      "koffing"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "40:belch",
+      "moveId": "belch",
+      "moveName": "Belch",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:clearsmog",
+      "moveId": "clearsmog",
+      "moveName": "Clear Smog",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:corrosivegas",
+      "moveId": "corrosivegas",
+      "moveName": "Corrosive Gas",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:corrosivegas",
+      "moveId": "corrosivegas",
+      "moveName": "Corrosive Gas",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "52:destinybond",
+      "moveId": "destinybond",
+      "moveName": "Destiny Bond",
+      "sourceType": "level",
+      "sourceValue": 52,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "44:explosion",
+      "moveId": "explosion",
+      "moveName": "Explosion",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:explosion",
+      "moveId": "explosion",
+      "moveName": "Explosion",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:grudge",
+      "moveId": "grudge",
+      "moveName": "Grudge",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:memento",
+      "moveId": "memento",
+      "moveName": "Memento",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:poisongas",
+      "moveId": "poisongas",
+      "moveName": "Poison Gas",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psybeam",
+      "moveId": "psybeam",
+      "moveName": "Psybeam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:psywave",
+      "moveId": "psywave",
+      "moveName": "Psywave",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:selfdestruct",
+      "moveId": "selfdestruct",
+      "moveName": "Self-Destruct",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:selfdestruct",
+      "moveId": "selfdestruct",
+      "moveName": "Self-Destruct",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "20:sludge",
+      "moveId": "sludge",
+      "moveName": "Sludge",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "32:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:smog",
+      "moveId": "smog",
+      "moveName": "Smog",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "8:smokescreen",
+      "moveId": "smokescreen",
+      "moveName": "Smokescreen",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:spitup",
+      "moveId": "spitup",
+      "moveName": "Spit Up",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:stockpile",
+      "moveId": "stockpile",
+      "moveName": "Stockpile",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:swallow",
+      "moveId": "swallow",
+      "moveName": "Swallow",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:torment",
+      "moveId": "torment",
+      "moveName": "Torment",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:toxicspikes",
+      "moveId": "toxicspikes",
+      "moveName": "Toxic Spikes",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:venomdrench",
+      "moveId": "venomdrench",
+      "moveName": "Venom Drench",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:venoshock",
+      "moveId": "venoshock",
+      "moveName": "Venoshock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:zapcannon",
+      "moveId": "zapcannon",
+      "moveName": "Zap Cannon",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "koffing-1",
+      "sourceFile": "0109_koffing.json",
+      "pokemon": {
+        "raw": "koffing",
+        "slug": "koffing",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 1.8,
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village",
+          "minecraft:trail_ruins"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "koffing-1",
+        "pokemon": "koffing",
+        "presets": [
+          "natural",
+          "urban"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "koffing-2",
+      "sourceFile": "0109_koffing.json",
+      "pokemon": {
+        "raw": "koffing",
+        "slug": "koffing",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "koffing-2",
+        "pokemon": "koffing",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 5,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "#minecraft:village"
+          ]
+        }
+      }
+    },
+    {
+      "id": "koffing-3",
+      "sourceFile": "0109_koffing.json",
+      "pokemon": {
+        "raw": "koffing",
+        "slug": "koffing",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Nether/is Toxic"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_toxic"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "koffing-3",
+        "pokemon": "koffing",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_toxic"
+          ]
+        }
+      }
+    },
+    {
+      "id": "koffing-galar-4",
+      "sourceFile": "0109_koffing.json",
+      "pokemon": {
+        "raw": "koffing region_bias=galar",
+        "slug": "koffing",
+        "aspectTokens": [
+          "region_bias=galar"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Magical",
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_magical"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "koffing-galar-4",
+        "pokemon": "koffing region_bias=galar",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_magical"
+          ]
+        }
+      }
+    },
+    {
+      "id": "koffing-galar-5",
+      "sourceFile": "0109_koffing.json",
+      "pokemon": {
+        "raw": "koffing region_bias=galar",
+        "slug": "koffing",
+        "aspectTokens": [
+          "region_bias=galar"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "9-34",
+      "levelMin": 9,
+      "levelMax": 34,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "koffing-galar-5",
+        "pokemon": "koffing region_bias=galar",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "9-34",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Galar-Bias",
+      "slug": "koffing-galarbias",
+      "aspects": [
+        "region-bias-galar"
+      ],
+      "types": [
+        "poison"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "koffing_weezing",
+          "variant": "level_up",
+          "result": {
+            "raw": "weezing",
+            "slug": "weezing",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "doublehit"
+          ],
+          "requirementText": [
+            "Level 35+",
+            "Biome Evolution/regional/koffing Kantobiome"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 35+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 35
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Biome Evolution/regional/koffing Kantobiome",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/koffing_kantobiome"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Galar-Bias",
+          "raw": {
+            "id": "koffing_weezing",
+            "variant": "level_up",
+            "result": "weezing",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "doublehit"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 35
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/koffing_kantobiome"
+              }
+            ]
+          }
+        },
+        {
+          "id": "koffing_weezinggalar",
+          "variant": "level_up",
+          "result": {
+            "raw": "weezing galarian",
+            "slug": "weezing",
+            "aspectTokens": [
+              "galarian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "doublehit"
+          ],
+          "requirementText": [
+            "Level 35+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 35+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 35
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Galar-Bias",
+          "raw": {
+            "id": "koffing_weezinggalar",
+            "variant": "level_up",
+            "result": "weezing galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "doublehit"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 35
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Galar-Bias",
+        "primaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 10,
+        "pokedex": [
+          "cobblemon.species.koffing-galarbias.desc"
+        ],
+        "labels": [
+          "gen8",
+          "customized_official",
+          "galarian_form"
+        ],
+        "aspects": [
+          "region-bias-galar"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "koffing_weezing",
+            "variant": "level_up",
+            "result": "weezing",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "doublehit"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 35
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/koffing_kantobiome"
+              }
+            ]
+          },
+          {
+            "id": "koffing_weezinggalar",
+            "variant": "level_up",
+            "result": "weezing galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "doublehit"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 35
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 109,
+    "name": "Koffing",
+    "primaryType": "poison",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 10,
+    "pokedex": [
+      "cobblemon.species.koffing.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "levitate",
+      "neutralizinggas",
+      "h:stench"
+    ],
+    "eggGroups": [
+      "amorphous"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 65,
+      "defence": 95,
+      "special_attack": 60,
+      "special_defence": 45,
+      "speed": 35
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 68,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "galarian"
+    ],
+    "baseScale": 0.9,
+    "hitbox": {
+      "width": 0.9,
+      "height": 1.2,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true
+        },
+        "walk": {
+          "canWalk": false
+        }
+      },
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "koffing",
+            "tier": 1
+          },
+          {
+            "pokemon": "weezing",
+            "tier": 2
+          }
+        ]
+      },
+      "resting": {
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:black_sludge",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:smoke_ball",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:poisongas",
+      "1:tackle",
+      "4:smog",
+      "8:smokescreen",
+      "12:clearsmog",
+      "16:assurance",
+      "20:sludge",
+      "24:haze",
+      "28:selfdestruct",
+      "32:sludgebomb",
+      "36:toxic",
+      "40:belch",
+      "44:explosion",
+      "48:memento",
+      "52:destinybond",
+      "egg:curse",
+      "egg:grudge",
+      "egg:painsplit",
+      "egg:psywave",
+      "egg:spite",
+      "egg:spitup",
+      "egg:stockpile",
+      "egg:swallow",
+      "tm:acidspray",
+      "tm:assurance",
+      "tm:bodyslam",
+      "tm:corrosivegas",
+      "tm:curse",
+      "tm:darkpulse",
+      "tm:endure",
+      "tm:explosion",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:flamethrower",
+      "tm:flash",
+      "tm:gunkshot",
+      "tm:gyroball",
+      "tm:haze",
+      "tm:incinerate",
+      "tm:infestation",
+      "tm:painsplit",
+      "tm:payback",
+      "tm:protect",
+      "tm:psybeam",
+      "tm:raindance",
+      "tm:rest",
+      "tm:rollout",
+      "tm:scaryface",
+      "tm:screech",
+      "tm:selfdestruct",
+      "tm:shadowball",
+      "tm:shockwave",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:spite",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:thief",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:torment",
+      "tm:toxic",
+      "tm:toxicspikes",
+      "tm:venomdrench",
+      "tm:venoshock",
+      "tm:willowisp",
+      "tutor:corrosivegas",
+      "tutor:darkpulse",
+      "tutor:flamethrower",
+      "tutor:gunkshot",
+      "tutor:painsplit",
+      "tutor:rest",
+      "tutor:rollout",
+      "tutor:shadowball",
+      "tutor:shockwave",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:spite",
+      "tutor:thunderbolt",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:headbutt",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:rage",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:uproar",
+      "legacy:zapcannon"
+    ],
+    "evolutions": [
+      {
+        "id": "koffing_weezing",
+        "variant": "level_up",
+        "result": "weezing",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "doublehit"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 35
+          }
+        ]
+      },
+      {
+        "id": "koffing_weezinggalar",
+        "variant": "level_up",
+        "result": "weezing galarian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "doublehit"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 35
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/koffing_galarbiome"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Galar-Bias",
+        "primaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 6,
+        "weight": 10,
+        "pokedex": [
+          "cobblemon.species.koffing-galarbias.desc"
+        ],
+        "labels": [
+          "gen8",
+          "customized_official",
+          "galarian_form"
+        ],
+        "aspects": [
+          "region-bias-galar"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "koffing_weezing",
+            "variant": "level_up",
+            "result": "weezing",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "doublehit"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 35
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/koffing_kantobiome"
+              }
+            ]
+          },
+          {
+            "id": "koffing_weezinggalar",
+            "variant": "level_up",
+            "result": "weezing galarian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "doublehit"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 35
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

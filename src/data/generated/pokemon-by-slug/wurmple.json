@@ -1,0 +1,488 @@
+{
+  "slug": "wurmple",
+  "name": "Wurmple",
+  "dexNumber": 265,
+  "implemented": false,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shielddust",
+      "hidden": false,
+      "label": "Shielddust"
+    },
+    {
+      "id": "runaway",
+      "hidden": true,
+      "label": "Runaway"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
+  "aliases": [
+    "wurmple"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 36,
+  "catchRate": 255,
+  "baseExperienceYield": 56,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 45,
+    "attack": 45,
+    "defence": 35,
+    "special_attack": 20,
+    "special_defence": 30,
+    "speed": 20
+  },
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "wurmple_silcoon",
+      "variant": "level_up",
+      "result": {
+        "raw": "silcoon",
+        "slug": "silcoon",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "harden"
+      ],
+      "requirementText": [
+        "Level 7+",
+        "Property wurmple cocoon_species=silcoon"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 7+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 7
+          }
+        },
+        {
+          "variant": "properties",
+          "text": "Property wurmple cocoon_species=silcoon",
+          "raw": {
+            "variant": "properties",
+            "target": "wurmple cocoon_species=silcoon"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "wurmple_silcoon",
+        "variant": "level_up",
+        "result": "silcoon",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "harden"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 7
+          },
+          {
+            "variant": "properties",
+            "target": "wurmple cocoon_species=silcoon"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wurmple_cascoon",
+      "variant": "level_up",
+      "result": {
+        "raw": "cascoon",
+        "slug": "cascoon",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "harden"
+      ],
+      "requirementText": [
+        "Level 7+",
+        "Property wurmple cocoon_species=cascoon"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 7+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 7
+          }
+        },
+        {
+          "variant": "properties",
+          "text": "Property wurmple cocoon_species=cascoon",
+          "raw": {
+            "variant": "properties",
+            "target": "wurmple cocoon_species=cascoon"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "wurmple_cascoon",
+        "variant": "level_up",
+        "result": "cascoon",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "harden"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 7
+          },
+          {
+            "variant": "properties",
+            "target": "wurmple cocoon_species=cascoon"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "wurmple",
+        "name": "Wurmple",
+        "dexNumber": 265
+      },
+      {
+        "slug": "silcoon",
+        "name": "Silcoon",
+        "dexNumber": 266
+      },
+      {
+        "slug": "beautifly",
+        "name": "Beautifly",
+        "dexNumber": 267
+      },
+      {
+        "slug": "cascoon",
+        "name": "Cascoon",
+        "dexNumber": 268
+      },
+      {
+        "slug": "dustox",
+        "name": "Dustox",
+        "dexNumber": 269
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "cascoon",
+        "toSlug": "dustox",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      },
+      {
+        "fromSlug": "silcoon",
+        "toSlug": "beautifly",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      },
+      {
+        "fromSlug": "wurmple",
+        "toSlug": "cascoon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+",
+          "Property wurmple cocoon_species=cascoon"
+        ]
+      },
+      {
+        "fromSlug": "wurmple",
+        "toSlug": "silcoon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+",
+          "Property wurmple cocoon_species=silcoon"
+        ]
+      }
+    ],
+    "roots": [
+      "wurmple"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "15:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "5:poisonsting",
+      "moveId": "poisonsting",
+      "moveName": "Poison Sting",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 265,
+    "name": "Wurmple",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 36,
+    "pokedex": [
+      "cobblemon.species.wurmple.desc"
+    ],
+    "labels": [
+      "gen3"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shielddust",
+      "h:runaway"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 45,
+      "defence": 35,
+      "special_attack": 20,
+      "special_defence": 30,
+      "speed": 20
+    },
+    "evYield": {
+      "hp": 1,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 56,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:pecha_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:stringshot",
+      "5:poisonsting",
+      "15:bugbite",
+      "tm:bugbite",
+      "tm:electroweb",
+      "tm:skittersmack",
+      "tm:stringshot",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:electroweb",
+      "tutor:skittersmack",
+      "tutor:stringshot",
+      "legacy:snore"
+    ],
+    "evolutions": [
+      {
+        "id": "wurmple_silcoon",
+        "variant": "level_up",
+        "result": "silcoon",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "harden"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 7
+          },
+          {
+            "variant": "properties",
+            "target": "wurmple cocoon_species=silcoon"
+          }
+        ]
+      },
+      {
+        "id": "wurmple_cascoon",
+        "variant": "level_up",
+        "result": "cascoon",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "harden"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 7
+          },
+          {
+            "variant": "properties",
+            "target": "wurmple cocoon_species=cascoon"
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    }
+  }
+}

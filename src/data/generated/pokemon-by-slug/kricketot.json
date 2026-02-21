@@ -1,0 +1,503 @@
+{
+  "slug": "kricketot",
+  "name": "Kricketot",
+  "dexNumber": 401,
+  "implemented": true,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shedskin",
+      "hidden": false,
+      "label": "Shedskin"
+    },
+    {
+      "id": "runaway",
+      "hidden": true,
+      "label": "Runaway"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
+  "aliases": [
+    "kricketot"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 22,
+  "catchRate": 255,
+  "baseExperienceYield": 39,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 37,
+    "attack": 25,
+    "defence": 41,
+    "special_attack": 25,
+    "special_defence": 41,
+    "speed": 25
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "kricketot_kricketune",
+      "variant": "level_up",
+      "result": {
+        "raw": "kricketune",
+        "slug": "kricketune",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "furycutter"
+      ],
+      "requirementText": [
+        "Level 10+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 10+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 10
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "kricketot_kricketune",
+        "variant": "level_up",
+        "result": "kricketune",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "furycutter"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "kricketot",
+        "name": "Kricketot",
+        "dexNumber": 401
+      },
+      {
+        "slug": "kricketune",
+        "name": "Kricketune",
+        "dexNumber": 402
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "kricketot",
+        "toSlug": "kricketune",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      }
+    ],
+    "roots": [
+      "kricketot"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "16:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lunge",
+      "moveId": "lunge",
+      "moveName": "Lunge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pound",
+      "moveId": "pound",
+      "moveName": "Pound",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "6:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strugglebug",
+      "moveId": "strugglebug",
+      "moveName": "Struggle Bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "kricketot-1",
+      "sourceFile": "0401_kricketot.json",
+      "pokemon": {
+        "raw": "kricketot",
+        "slug": "kricketot",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-19",
+      "levelMin": 1,
+      "levelMax": 19,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_swamp"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kricketot-1",
+        "pokemon": "kricketot",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-19",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_swamp"
+          ],
+          "timeRange": "night"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 401,
+    "name": "Kricketot",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 22,
+    "pokedex": [
+      "cobblemon.species.kricketot.desc"
+    ],
+    "labels": [
+      "gen4"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shedskin",
+      "h:runaway"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 37,
+      "attack": 25,
+      "defence": 41,
+      "special_attack": 25,
+      "special_defence": 41,
+      "speed": 25
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 39,
+    "experienceGroup": "medium_slow",
+    "catchRate": 255,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "shoulderMountable": true,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 0.6,
+      "height": 0.9,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "light": "0-4",
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "kricketot",
+            "tier": 1
+          },
+          {
+            "pokemon": "kricketune",
+            "tier": 2
+          }
+        ]
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:metronome",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:coba_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:growl",
+      "1:bide",
+      "1:tackle",
+      "6:strugglebug",
+      "16:bugbite",
+      "tm:bugbite",
+      "tm:endeavor",
+      "tm:lunge",
+      "tm:pound",
+      "tm:skittersmack",
+      "tm:stringshot",
+      "tm:strugglebug",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:endeavor",
+      "tutor:skittersmack",
+      "tutor:stringshot",
+      "legacy:mudslap",
+      "legacy:snore",
+      "legacy:uproar"
+    ],
+    "evolutions": [
+      {
+        "id": "kricketot_kricketune",
+        "variant": "level_up",
+        "result": "kricketune",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "furycutter"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    ]
+  }
+}

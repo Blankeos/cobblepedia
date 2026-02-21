@@ -1,0 +1,2936 @@
+{
+  "slug": "lilligant",
+  "name": "Lilligant",
+  "dexNumber": 549,
+  "implemented": true,
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    {
+      "id": "chlorophyll",
+      "hidden": false,
+      "label": "Chlorophyll"
+    },
+    {
+      "id": "owntempo",
+      "hidden": false,
+      "label": "Owntempo"
+    },
+    {
+      "id": "leafguard",
+      "hidden": true,
+      "label": "Leafguard"
+    }
+  ],
+  "eggGroups": [
+    "grass"
+  ],
+  "labels": [
+    "gen5",
+    "unovan_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "hisui",
+    "lilligant",
+    "lilligant hisui"
+  ],
+  "maleRatio": 0,
+  "height": 11,
+  "weight": 163,
+  "catchRate": 75,
+  "baseExperienceYield": 168,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 70,
+    "attack": 60,
+    "defence": 75,
+    "special_attack": 110,
+    "special_defence": 75,
+    "speed": 90
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "petilil",
+    "slug": "petilil",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "petilil",
+        "name": "Petilil",
+        "dexNumber": 548
+      },
+      {
+        "slug": "lilligant",
+        "name": "Lilligant",
+        "dexNumber": 549
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome Evolution/regional/petilil Hisuibiome"
+        ]
+      },
+      {
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": []
+      },
+      {
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": [
+          "Biome Evolution/regional/petilil Unovabiome"
+        ]
+      }
+    ],
+    "roots": [
+      "petilil"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "1:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:alluringvoice",
+      "moveId": "alluringvoice",
+      "moveName": "Alluring Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:aromatherapy",
+      "moveId": "aromatherapy",
+      "moveName": "Aromatherapy",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dreameater",
+      "moveId": "dreameater",
+      "moveName": "Dream Eater",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:entrainment",
+      "moveId": "entrainment",
+      "moveName": "Entrainment",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:grasswhistle",
+      "moveId": "grasswhistle",
+      "moveName": "Grass Whistle",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:grassyterrain",
+      "moveId": "grassyterrain",
+      "moveName": "Grassy Terrain",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:growth",
+      "moveId": "growth",
+      "moveName": "Growth",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:healbell",
+      "moveId": "healbell",
+      "moveName": "Heal Bell",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:healbell",
+      "moveId": "healbell",
+      "moveName": "Heal Bell",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:healingwish",
+      "moveId": "healingwish",
+      "moveName": "Healing Wish",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:ingrain",
+      "moveId": "ingrain",
+      "moveName": "Ingrain",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:leafblade",
+      "moveId": "leafblade",
+      "moveName": "Leaf Blade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leechseed",
+      "moveId": "leechseed",
+      "moveName": "Leech Seed",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "5:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:megadrain",
+      "moveId": "megadrain",
+      "moveName": "Mega Drain",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:petalblizzard",
+      "moveId": "petalblizzard",
+      "moveName": "Petal Blizzard",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:petalblizzard",
+      "moveId": "petalblizzard",
+      "moveName": "Petal Blizzard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:petaldance",
+      "moveId": "petaldance",
+      "moveName": "Petal Dance",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:pollenpuff",
+      "moveId": "pollenpuff",
+      "moveName": "Pollen Puff",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:quiverdance",
+      "moveId": "quiverdance",
+      "moveName": "Quiver Dance",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:roleplay",
+      "moveId": "roleplay",
+      "moveName": "Role Play",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:roleplay",
+      "moveId": "roleplay",
+      "moveName": "Role Play",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:sleeppowder",
+      "moveId": "sleeppowder",
+      "moveName": "Sleep Powder",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:solarblade",
+      "moveId": "solarblade",
+      "moveName": "Solar Blade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:stunspore",
+      "moveId": "stunspore",
+      "moveName": "Stun Spore",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:teeterdance",
+      "moveId": "teeterdance",
+      "moveName": "Teeter Dance",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:weatherball",
+      "moveId": "weatherball",
+      "moveName": "Weather Ball",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "lilligant-1",
+      "sourceFile": "0549_lilligant.json",
+      "pokemon": {
+        "raw": "lilligant",
+        "slug": "lilligant",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "23-48",
+      "levelMin": 23,
+      "levelMax": 48,
+      "weight": 0.5,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_hills"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "lilligant-1",
+        "pokemon": "lilligant",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "23-48",
+        "weight": 0.5,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lilligant-2",
+      "sourceFile": "0549_lilligant.json",
+      "pokemon": {
+        "raw": "lilligant",
+        "slug": "lilligant",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "23-48",
+      "levelMin": 23,
+      "levelMax": 48,
+      "weight": 0.1,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Tropical Island",
+        "Tropics",
+        "Tropical Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_hills",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "lilligant-2",
+        "pokemon": "lilligant",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "23-48",
+        "weight": 0.1,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_tropical_island"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_hills",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lilligant-3",
+      "sourceFile": "0549_lilligant.json",
+      "pokemon": {
+        "raw": "lilligant",
+        "slug": "lilligant",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "23-48",
+      "levelMin": 23,
+      "levelMax": 48,
+      "weight": 0.5,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lilligant-3",
+        "pokemon": "lilligant",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "23-48",
+        "weight": 0.5,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lilligant-hisuian-4",
+      "sourceFile": "0549_lilligant.json",
+      "pokemon": {
+        "raw": "lilligant hisuian",
+        "slug": "lilligant",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "23-48",
+      "levelMin": 23,
+      "levelMax": 48,
+      "weight": 0.3,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "lilligant-hisuian-4",
+        "pokemon": "lilligant hisuian",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "23-48",
+        "weight": 0.3,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_hills"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lilligant-hisuian-5",
+      "sourceFile": "0549_lilligant.json",
+      "pokemon": {
+        "raw": "lilligant hisuian",
+        "slug": "lilligant",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "23-48",
+      "levelMin": 23,
+      "levelMax": 48,
+      "weight": 0.3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lilligant-hisuian-5",
+        "pokemon": "lilligant hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "23-48",
+        "weight": 0.3,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui",
+      "slug": "lilligant-hisui",
+      "aspects": [
+        "hisuian"
+      ],
+      "types": [
+        "grass",
+        "fighting"
+      ],
+      "abilities": [
+        {
+          "id": "chlorophyll",
+          "hidden": false,
+          "label": "Chlorophyll"
+        },
+        {
+          "id": "hustle",
+          "hidden": false,
+          "label": "Hustle"
+        },
+        {
+          "id": "leafguard",
+          "hidden": true,
+          "label": "Leafguard"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:leafblade",
+          "moveId": "leafblade",
+          "moveName": "Leaf Blade",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:magicalleaf",
+          "moveId": "magicalleaf",
+          "moveName": "Magical Leaf",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:energyball",
+          "moveId": "energyball",
+          "moveName": "Energy Ball",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:victorydance",
+          "moveId": "victorydance",
+          "moveName": "Victory Dance",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:teeterdance",
+          "moveId": "teeterdance",
+          "moveName": "Teeter Dance",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:solarblade",
+          "moveId": "solarblade",
+          "moveName": "Solar Blade",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:petalblizzard",
+          "moveId": "petalblizzard",
+          "moveName": "Petal Blizzard",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:entrainment",
+          "moveId": "entrainment",
+          "moveName": "Entrainment",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:leafstorm",
+          "moveId": "leafstorm",
+          "moveName": "Leaf Storm",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:defog",
+          "moveId": "defog",
+          "moveName": "Defog",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:megakick",
+          "moveId": "megakick",
+          "moveName": "Mega Kick",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:sleeppowder",
+          "moveId": "sleeppowder",
+          "moveName": "Sleep Powder",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:stunspore",
+          "moveId": "stunspore",
+          "moveName": "Stun Spore",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:growth",
+          "moveId": "growth",
+          "moveName": "Growth",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:leechseed",
+          "moveId": "leechseed",
+          "moveName": "Leech Seed",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:megadrain",
+          "moveId": "megadrain",
+          "moveName": "Mega Drain",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:absorb",
+          "moveId": "absorb",
+          "moveName": "Absorb",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:aromatherapy",
+          "moveId": "aromatherapy",
+          "moveName": "Aromatherapy",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "5:axekick",
+          "moveId": "axekick",
+          "moveName": "Axe Kick",
+          "sourceType": "level",
+          "sourceValue": 5,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:bide",
+          "moveId": "bide",
+          "moveName": "Bide",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:grasswhistle",
+          "moveId": "grasswhistle",
+          "moveName": "Grass Whistle",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:healingwish",
+          "moveId": "healingwish",
+          "moveName": "Healing Wish",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:ingrain",
+          "moveId": "ingrain",
+          "moveName": "Ingrain",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:naturalgift",
+          "moveId": "naturalgift",
+          "moveName": "Natural Gift",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:sweetscent",
+          "moveId": "sweetscent",
+          "moveName": "Sweet Scent",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:worryseed",
+          "moveId": "worryseed",
+          "moveName": "Worry Seed",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:acrobatics",
+          "moveId": "acrobatics",
+          "moveName": "Acrobatics",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:airslash",
+          "moveId": "airslash",
+          "moveName": "Air Slash",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:babydolleyes",
+          "moveId": "babydolleyes",
+          "moveName": "Baby-Doll Eyes",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:bulletseed",
+          "moveId": "bulletseed",
+          "moveName": "Bullet Seed",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:charm",
+          "moveId": "charm",
+          "moveName": "Charm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:closecombat",
+          "moveId": "closecombat",
+          "moveName": "Close Combat",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:coaching",
+          "moveId": "coaching",
+          "moveName": "Coaching",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:defog",
+          "moveId": "defog",
+          "moveName": "Defog",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:encore",
+          "moveId": "encore",
+          "moveName": "Encore",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:energyball",
+          "moveId": "energyball",
+          "moveName": "Energy Ball",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:focusenergy",
+          "moveId": "focusenergy",
+          "moveName": "Focus Energy",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:grassknot",
+          "moveId": "grassknot",
+          "moveName": "Grass Knot",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:grassyglide",
+          "moveId": "grassyglide",
+          "moveName": "Grassy Glide",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:grassyterrain",
+          "moveId": "grassyterrain",
+          "moveName": "Grassy Terrain",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:hurricane",
+          "moveId": "hurricane",
+          "moveName": "Hurricane",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:icespinner",
+          "moveId": "icespinner",
+          "moveName": "Ice Spinner",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:leafblade",
+          "moveId": "leafblade",
+          "moveName": "Leaf Blade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:leafstorm",
+          "moveId": "leafstorm",
+          "moveName": "Leaf Storm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:lowsweep",
+          "moveId": "lowsweep",
+          "moveName": "Low Sweep",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:magicalleaf",
+          "moveId": "magicalleaf",
+          "moveName": "Magical Leaf",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:megakick",
+          "moveId": "megakick",
+          "moveName": "Mega Kick",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:metronome",
+          "moveId": "metronome",
+          "moveName": "Metronome",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:naturalgift",
+          "moveId": "naturalgift",
+          "moveName": "Natural Gift",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:petalblizzard",
+          "moveId": "petalblizzard",
+          "moveName": "Petal Blizzard",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:pollenpuff",
+          "moveId": "pollenpuff",
+          "moveName": "Pollen Puff",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:psychup",
+          "moveId": "psychup",
+          "moveName": "Psych Up",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:seedbomb",
+          "moveId": "seedbomb",
+          "moveName": "Seed Bomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:solarbeam",
+          "moveId": "solarbeam",
+          "moveName": "Solar Beam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:solarblade",
+          "moveId": "solarblade",
+          "moveName": "Solar Blade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:tripleaxel",
+          "moveId": "tripleaxel",
+          "moveName": "Triple Axel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:upperhand",
+          "moveId": "upperhand",
+          "moveName": "Upper Hand",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:vacuumwave",
+          "moveId": "vacuumwave",
+          "moveName": "Vacuum Wave",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:weatherball",
+          "moveId": "weatherball",
+          "moveName": "Weather Ball",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:worryseed",
+          "moveId": "worryseed",
+          "moveName": "Worry Seed",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:babydolleyes",
+          "moveId": "babydolleyes",
+          "moveName": "Baby-Doll Eyes",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:coaching",
+          "moveId": "coaching",
+          "moveName": "Coaching",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:defog",
+          "moveId": "defog",
+          "moveName": "Defog",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:energyball",
+          "moveId": "energyball",
+          "moveName": "Energy Ball",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:focusenergy",
+          "moveId": "focusenergy",
+          "moveName": "Focus Energy",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:grassyglide",
+          "moveId": "grassyglide",
+          "moveName": "Grassy Glide",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:magicalleaf",
+          "moveId": "magicalleaf",
+          "moveName": "Magical Leaf",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:seedbomb",
+          "moveId": "seedbomb",
+          "moveName": "Seed Bomb",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:tripleaxel",
+          "moveId": "tripleaxel",
+          "moveName": "Triple Axel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:vacuumwave",
+          "moveId": "vacuumwave",
+          "moveName": "Vacuum Wave",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:worryseed",
+          "moveId": "worryseed",
+          "moveName": "Worry Seed",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:confide",
+          "moveId": "confide",
+          "moveName": "Confide",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:doubleteam",
+          "moveId": "doubleteam",
+          "moveName": "Double Team",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:frustration",
+          "moveId": "frustration",
+          "moveName": "Frustration",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:hiddenpower",
+          "moveId": "hiddenpower",
+          "moveName": "Hidden Power",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:return",
+          "moveId": "return",
+          "moveName": "Return",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:secretpower",
+          "moveId": "secretpower",
+          "moveName": "Secret Power",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "legacy:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Hisui",
+        "primaryType": "grass",
+        "secondaryType": "fighting",
+        "maleRatio": 0,
+        "height": 12,
+        "weight": 192,
+        "pokedex": [
+          "cobblemon.species.lilligant-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "abilities": [
+          "chlorophyll",
+          "hustle",
+          "h:leafguard"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "attack": 105,
+          "defence": 75,
+          "special_attack": 50,
+          "special_defence": 75,
+          "speed": 105
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 1,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 0,
+          "speed": 1
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 0.5,
+          "height": 2.1,
+          "fixed": false
+        },
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "cobblemon:revival_herb",
+              "percentage": 5
+            },
+            {
+              "item": "cobblemon:coba_berry",
+              "percentage": 5
+            }
+          ]
+        },
+        "moves": [
+          "1:leafblade",
+          "1:magicalleaf",
+          "1:energyball",
+          "1:victorydance",
+          "1:teeterdance",
+          "1:solarblade",
+          "1:petalblizzard",
+          "1:afteryou",
+          "1:entrainment",
+          "1:leafstorm",
+          "1:defog",
+          "1:megakick",
+          "1:sunnyday",
+          "1:synthesis",
+          "1:gigadrain",
+          "1:sleeppowder",
+          "1:stunspore",
+          "1:growth",
+          "1:leechseed",
+          "1:megadrain",
+          "1:absorb",
+          "1:helpinghand",
+          "1:aromatherapy",
+          "5:axekick",
+          "egg:bide",
+          "egg:grasswhistle",
+          "egg:healingwish",
+          "egg:ingrain",
+          "egg:naturalgift",
+          "egg:sweetscent",
+          "egg:worryseed",
+          "tm:acrobatics",
+          "tm:aerialace",
+          "tm:afteryou",
+          "tm:airslash",
+          "tm:babydolleyes",
+          "tm:brickbreak",
+          "tm:bulletseed",
+          "tm:charm",
+          "tm:closecombat",
+          "tm:coaching",
+          "tm:defog",
+          "tm:encore",
+          "tm:endure",
+          "tm:energyball",
+          "tm:facade",
+          "tm:focusenergy",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:grassknot",
+          "tm:grassyglide",
+          "tm:grassyterrain",
+          "tm:helpinghand",
+          "tm:hurricane",
+          "tm:hyperbeam",
+          "tm:icespinner",
+          "tm:leafblade",
+          "tm:leafstorm",
+          "tm:lowkick",
+          "tm:lowsweep",
+          "tm:magicalleaf",
+          "tm:megakick",
+          "tm:metronome",
+          "tm:naturalgift",
+          "tm:petalblizzard",
+          "tm:poisonjab",
+          "tm:pollenpuff",
+          "tm:protect",
+          "tm:psychup",
+          "tm:raindance",
+          "tm:rest",
+          "tm:rocksmash",
+          "tm:seedbomb",
+          "tm:sleeptalk",
+          "tm:solarbeam",
+          "tm:solarblade",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:synthesis",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:trailblaze",
+          "tm:tripleaxel",
+          "tm:upperhand",
+          "tm:vacuumwave",
+          "tm:weatherball",
+          "tm:worryseed",
+          "tutor:aerialace",
+          "tutor:afteryou",
+          "tutor:babydolleyes",
+          "tutor:coaching",
+          "tutor:defog",
+          "tutor:energyball",
+          "tutor:focusenergy",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:grassyglide",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:lowkick",
+          "tutor:magicalleaf",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:seedbomb",
+          "tutor:sleeptalk",
+          "tutor:synthesis",
+          "tutor:tripleaxel",
+          "tutor:vacuumwave",
+          "tutor:worryseed",
+          "legacy:attract",
+          "legacy:confide",
+          "legacy:doubleteam",
+          "legacy:frustration",
+          "legacy:hiddenpower",
+          "legacy:return",
+          "legacy:round",
+          "legacy:secretpower",
+          "legacy:snore",
+          "legacy:swagger",
+          "legacy:toxic"
+        ],
+        "preEvolution": "petilil",
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "herd": {
+            "maxSize": "5"
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 549,
+    "name": "Lilligant",
+    "primaryType": "grass",
+    "maleRatio": 0,
+    "height": 11,
+    "weight": 163,
+    "pokedex": [
+      "cobblemon.species.lilligant.desc"
+    ],
+    "labels": [
+      "gen5",
+      "unovan_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "chlorophyll",
+      "owntempo",
+      "h:leafguard"
+    ],
+    "eggGroups": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 60,
+      "defence": 75,
+      "special_attack": 110,
+      "special_defence": 75,
+      "speed": 90
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 2,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 168,
+    "experienceGroup": "medium_fast",
+    "catchRate": 75,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "hisuian"
+    ],
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 1.1,
+      "height": 2.3,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "cobblemon:revival_herb",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:persim_berry",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:absorb_bulb",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:growth",
+      "1:leechseed",
+      "1:megadrain",
+      "1:synthesis",
+      "1:teeterdance",
+      "1:quiverdance",
+      "1:petaldance",
+      "1:gigadrain",
+      "1:sunnyday",
+      "1:helpinghand",
+      "1:energyball",
+      "1:afteryou",
+      "1:petalblizzard",
+      "1:aromatherapy",
+      "1:sleeppowder",
+      "1:entrainment",
+      "1:leafstorm",
+      "1:absorb",
+      "1:stunspore",
+      "1:charm",
+      "5:magicalleaf",
+      "egg:bide",
+      "egg:grasswhistle",
+      "egg:healingwish",
+      "egg:ingrain",
+      "egg:naturalgift",
+      "egg:sweetscent",
+      "egg:worryseed",
+      "tm:afteryou",
+      "tm:alluringvoice",
+      "tm:bulletseed",
+      "tm:charm",
+      "tm:covet",
+      "tm:cut",
+      "tm:dreameater",
+      "tm:encore",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:flash",
+      "tm:gigadrain",
+      "tm:gigaimpact",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:grassyterrain",
+      "tm:healbell",
+      "tm:helpinghand",
+      "tm:hyperbeam",
+      "tm:laserfocus",
+      "tm:leafblade",
+      "tm:leafstorm",
+      "tm:lightscreen",
+      "tm:magicalleaf",
+      "tm:naturalgift",
+      "tm:naturepower",
+      "tm:petalblizzard",
+      "tm:pollenpuff",
+      "tm:protect",
+      "tm:psychup",
+      "tm:rest",
+      "tm:roleplay",
+      "tm:safeguard",
+      "tm:seedbomb",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:solarblade",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swordsdance",
+      "tm:synthesis",
+      "tm:terablast",
+      "tm:trailblaze",
+      "tm:weatherball",
+      "tm:worryseed",
+      "tutor:afteryou",
+      "tutor:covet",
+      "tutor:energyball",
+      "tutor:gigadrain",
+      "tutor:gigaimpact",
+      "tutor:grassyglide",
+      "tutor:healbell",
+      "tutor:helpinghand",
+      "tutor:hyperbeam",
+      "tutor:laserfocus",
+      "tutor:magicalleaf",
+      "tutor:rest",
+      "tutor:roleplay",
+      "tutor:seedbomb",
+      "tutor:sleeptalk",
+      "tutor:synthesis",
+      "tutor:worryseed",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "preEvolution": "petilil",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Hisui",
+        "primaryType": "grass",
+        "secondaryType": "fighting",
+        "maleRatio": 0,
+        "height": 12,
+        "weight": 192,
+        "pokedex": [
+          "cobblemon.species.lilligant-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "abilities": [
+          "chlorophyll",
+          "hustle",
+          "h:leafguard"
+        ],
+        "baseStats": {
+          "hp": 70,
+          "attack": 105,
+          "defence": 75,
+          "special_attack": 50,
+          "special_defence": 75,
+          "speed": 105
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 1,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 0,
+          "speed": 1
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 0.5,
+          "height": 2.1,
+          "fixed": false
+        },
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "cobblemon:revival_herb",
+              "percentage": 5
+            },
+            {
+              "item": "cobblemon:coba_berry",
+              "percentage": 5
+            }
+          ]
+        },
+        "moves": [
+          "1:leafblade",
+          "1:magicalleaf",
+          "1:energyball",
+          "1:victorydance",
+          "1:teeterdance",
+          "1:solarblade",
+          "1:petalblizzard",
+          "1:afteryou",
+          "1:entrainment",
+          "1:leafstorm",
+          "1:defog",
+          "1:megakick",
+          "1:sunnyday",
+          "1:synthesis",
+          "1:gigadrain",
+          "1:sleeppowder",
+          "1:stunspore",
+          "1:growth",
+          "1:leechseed",
+          "1:megadrain",
+          "1:absorb",
+          "1:helpinghand",
+          "1:aromatherapy",
+          "5:axekick",
+          "egg:bide",
+          "egg:grasswhistle",
+          "egg:healingwish",
+          "egg:ingrain",
+          "egg:naturalgift",
+          "egg:sweetscent",
+          "egg:worryseed",
+          "tm:acrobatics",
+          "tm:aerialace",
+          "tm:afteryou",
+          "tm:airslash",
+          "tm:babydolleyes",
+          "tm:brickbreak",
+          "tm:bulletseed",
+          "tm:charm",
+          "tm:closecombat",
+          "tm:coaching",
+          "tm:defog",
+          "tm:encore",
+          "tm:endure",
+          "tm:energyball",
+          "tm:facade",
+          "tm:focusenergy",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:grassknot",
+          "tm:grassyglide",
+          "tm:grassyterrain",
+          "tm:helpinghand",
+          "tm:hurricane",
+          "tm:hyperbeam",
+          "tm:icespinner",
+          "tm:leafblade",
+          "tm:leafstorm",
+          "tm:lowkick",
+          "tm:lowsweep",
+          "tm:magicalleaf",
+          "tm:megakick",
+          "tm:metronome",
+          "tm:naturalgift",
+          "tm:petalblizzard",
+          "tm:poisonjab",
+          "tm:pollenpuff",
+          "tm:protect",
+          "tm:psychup",
+          "tm:raindance",
+          "tm:rest",
+          "tm:rocksmash",
+          "tm:seedbomb",
+          "tm:sleeptalk",
+          "tm:solarbeam",
+          "tm:solarblade",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:synthesis",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:trailblaze",
+          "tm:tripleaxel",
+          "tm:upperhand",
+          "tm:vacuumwave",
+          "tm:weatherball",
+          "tm:worryseed",
+          "tutor:aerialace",
+          "tutor:afteryou",
+          "tutor:babydolleyes",
+          "tutor:coaching",
+          "tutor:defog",
+          "tutor:energyball",
+          "tutor:focusenergy",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:grassyglide",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:lowkick",
+          "tutor:magicalleaf",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:seedbomb",
+          "tutor:sleeptalk",
+          "tutor:synthesis",
+          "tutor:tripleaxel",
+          "tutor:vacuumwave",
+          "tutor:worryseed",
+          "legacy:attract",
+          "legacy:confide",
+          "legacy:doubleteam",
+          "legacy:frustration",
+          "legacy:hiddenpower",
+          "legacy:return",
+          "legacy:round",
+          "legacy:secretpower",
+          "legacy:snore",
+          "legacy:swagger",
+          "legacy:toxic"
+        ],
+        "preEvolution": "petilil",
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "herd": {
+            "maxSize": "5"
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        }
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "5"
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "resting": {
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      }
+    }
+  }
+}

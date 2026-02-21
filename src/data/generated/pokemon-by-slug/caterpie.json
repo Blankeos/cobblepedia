@@ -1,0 +1,559 @@
+{
+  "slug": "caterpie",
+  "name": "Caterpie",
+  "dexNumber": 10,
+  "implemented": true,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shielddust",
+      "hidden": false,
+      "label": "Shielddust"
+    },
+    {
+      "id": "runaway",
+      "hidden": true,
+      "label": "Runaway"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "aspects": [],
+  "aliases": [
+    "caterpie"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 29,
+  "catchRate": 255,
+  "baseExperienceYield": 39,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 45,
+    "attack": 30,
+    "defence": 35,
+    "special_attack": 20,
+    "special_defence": 20,
+    "speed": 45
+  },
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "caterpie_metapod",
+      "variant": "level_up",
+      "result": {
+        "raw": "metapod",
+        "slug": "metapod",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "harden"
+      ],
+      "requirementText": [
+        "Level 7+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 7+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 7
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "caterpie_metapod",
+        "variant": "level_up",
+        "result": "metapod",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "harden"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 7
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "caterpie",
+        "name": "Caterpie",
+        "dexNumber": 10
+      },
+      {
+        "slug": "metapod",
+        "name": "Metapod",
+        "dexNumber": 11
+      },
+      {
+        "slug": "butterfree",
+        "name": "Butterfree",
+        "dexNumber": 12
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "caterpie",
+        "toSlug": "metapod",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+"
+        ]
+      },
+      {
+        "fromSlug": "metapod",
+        "toSlug": "butterfree",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      }
+    ],
+    "roots": [
+      "caterpie"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "9:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 9,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "caterpie-1",
+      "sourceFile": "0010_caterpie.json",
+      "pokemon": {
+        "raw": "caterpie",
+        "slug": "caterpie",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 7,
+      "presets": [
+        "natural",
+        "foliage",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:leaves",
+          "#c:leaves"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_plains",
+          "aether:skyroot_forest",
+          "aether:skyroot_woodland"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "caterpie-1",
+        "pokemon": "caterpie",
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 7,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_plains",
+            "aether:skyroot_forest",
+            "aether:skyroot_woodland"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "caterpie-valencian-2",
+      "sourceFile": "0010_caterpie.json",
+      "pokemon": {
+        "raw": "caterpie valencian",
+        "slug": "caterpie",
+        "aspectTokens": [
+          "valencian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 7,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Jungle",
+        "Is Tropical Island",
+        "Tropics",
+        "Tropical Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "caterpie-valencian-2",
+        "pokemon": "caterpie valencian",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 7,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_tropical_island"
+          ]
+        }
+      }
+    },
+    {
+      "id": "caterpie-valencian-3",
+      "sourceFile": "0010_caterpie.json",
+      "pokemon": {
+        "raw": "caterpie valencian",
+        "slug": "caterpie",
+        "aspectTokens": [
+          "valencian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-20",
+      "levelMin": 1,
+      "levelMax": 20,
+      "weight": 4.5,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "caterpie-valencian-3",
+        "pokemon": "caterpie valencian",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-20",
+        "weight": 4.5,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 10,
+    "name": "Caterpie",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 29,
+    "pokedex": [
+      "cobblemon.species.caterpie.desc"
+    ],
+    "labels": [
+      "gen1"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shielddust",
+      "h:runaway"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 30,
+      "defence": 35,
+      "special_attack": 20,
+      "special_defence": 20,
+      "speed": 45
+    },
+    "evYield": {
+      "hp": 1,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 39,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "features": [
+      "valencian"
+    ],
+    "shoulderMountable": true,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.8,
+      "height": 0.6,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.26
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "herd": {
+        "maxSize": "9"
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:wepear_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:stringshot",
+      "9:bugbite",
+      "tm:bugbite",
+      "tm:electroweb",
+      "tm:stringshot",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:electroweb",
+      "tutor:stringshot",
+      "legacy:snore"
+    ],
+    "evolutions": [
+      {
+        "id": "caterpie_metapod",
+        "variant": "level_up",
+        "result": "metapod",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "harden"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 7
+          }
+        ]
+      }
+    ]
+  }
+}

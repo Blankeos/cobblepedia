@@ -1,0 +1,945 @@
+{
+  "slug": "burmy",
+  "name": "Burmy",
+  "dexNumber": 412,
+  "implemented": false,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shedskin",
+      "hidden": false,
+      "label": "Shedskin"
+    },
+    {
+      "id": "overcoat",
+      "hidden": true,
+      "label": "Overcoat"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [
+    "plant-cloak"
+  ],
+  "aliases": [
+    "burmy",
+    "burmy sandy",
+    "burmy trash",
+    "sandy",
+    "trash"
+  ],
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 34,
+  "catchRate": 120,
+  "baseExperienceYield": 45,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 40,
+    "attack": 29,
+    "defence": 45,
+    "special_attack": 29,
+    "special_defence": 45,
+    "speed": 36
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "burmy_wormadam",
+      "variant": "level_up",
+      "result": {
+        "raw": "wormadam",
+        "slug": "wormadam",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "quiverdance"
+      ],
+      "requirementText": [
+        "Level 20+",
+        "Property gender=female"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 20+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 20
+          }
+        },
+        {
+          "variant": "properties",
+          "text": "Property gender=female",
+          "raw": {
+            "variant": "properties",
+            "target": "gender=female"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "burmy_wormadam",
+        "variant": "level_up",
+        "result": "wormadam",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "quiverdance"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          },
+          {
+            "variant": "properties",
+            "target": "gender=female"
+          }
+        ]
+      }
+    },
+    {
+      "id": "burmy_mothim",
+      "variant": "level_up",
+      "result": {
+        "raw": "mothim",
+        "slug": "mothim",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "quiverdance"
+      ],
+      "requirementText": [
+        "Level 20+",
+        "Property gender=male"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 20+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 20
+          }
+        },
+        {
+          "variant": "properties",
+          "text": "Property gender=male",
+          "raw": {
+            "variant": "properties",
+            "target": "gender=male"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "burmy_mothim",
+        "variant": "level_up",
+        "result": "mothim",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "quiverdance"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          },
+          {
+            "variant": "properties",
+            "target": "gender=male"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "burmy",
+        "name": "Burmy",
+        "dexNumber": 412
+      },
+      {
+        "slug": "wormadam",
+        "name": "Wormadam",
+        "dexNumber": 413
+      },
+      {
+        "slug": "mothim",
+        "name": "Mothim",
+        "dexNumber": 414
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "burmy",
+        "toSlug": "mothim",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+",
+          "Property gender=male"
+        ]
+      },
+      {
+        "fromSlug": "burmy",
+        "toSlug": "wormadam",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+",
+          "Property gender=female"
+        ]
+      }
+    ],
+    "roots": [
+      "burmy"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "15:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "20:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "10:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [
+    {
+      "name": "Sandy",
+      "slug": "burmy-sandy",
+      "aspects": [
+        "sandy-cloak"
+      ],
+      "types": [
+        "bug"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "burmy_wormadam",
+          "variant": "level_up",
+          "result": {
+            "raw": "wormadam",
+            "slug": "wormadam",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "quiverdance"
+          ],
+          "requirementText": [
+            "Level 20+",
+            "Property gender=female"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 20+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 20
+              }
+            },
+            {
+              "variant": "properties",
+              "text": "Property gender=female",
+              "raw": {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Sandy",
+          "raw": {
+            "id": "burmy_wormadam",
+            "variant": "level_up",
+            "result": "wormadam",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            ]
+          }
+        },
+        {
+          "id": "burmy_mothim",
+          "variant": "level_up",
+          "result": {
+            "raw": "mothim",
+            "slug": "mothim",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "quiverdance"
+          ],
+          "requirementText": [
+            "Level 20+",
+            "Property gender=male"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 20+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 20
+              }
+            },
+            {
+              "variant": "properties",
+              "text": "Property gender=male",
+              "raw": {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Sandy",
+          "raw": {
+            "id": "burmy_mothim",
+            "variant": "level_up",
+            "result": "mothim",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Sandy",
+        "primaryType": "bug",
+        "maleRatio": 0.5,
+        "height": 2,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.burmy-sandy.desc"
+        ],
+        "labels": [
+          "gen4"
+        ],
+        "aspects": [
+          "sandy-cloak"
+        ],
+        "evolutions": [
+          {
+            "id": "burmy_wormadam",
+            "variant": "level_up",
+            "result": "wormadam",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            ]
+          },
+          {
+            "id": "burmy_mothim",
+            "variant": "level_up",
+            "result": "mothim",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    },
+    {
+      "name": "Trash",
+      "slug": "burmy-trash",
+      "aspects": [
+        "trash-cloak"
+      ],
+      "types": [
+        "bug"
+      ],
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "burmy_wormadam",
+          "variant": "level_up",
+          "result": {
+            "raw": "wormadam",
+            "slug": "wormadam",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "quiverdance"
+          ],
+          "requirementText": [
+            "Level 20+",
+            "Property gender=female"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 20+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 20
+              }
+            },
+            {
+              "variant": "properties",
+              "text": "Property gender=female",
+              "raw": {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Trash",
+          "raw": {
+            "id": "burmy_wormadam",
+            "variant": "level_up",
+            "result": "wormadam",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            ]
+          }
+        },
+        {
+          "id": "burmy_mothim",
+          "variant": "level_up",
+          "result": {
+            "raw": "mothim",
+            "slug": "mothim",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "quiverdance"
+          ],
+          "requirementText": [
+            "Level 20+",
+            "Property gender=male"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 20+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 20
+              }
+            },
+            {
+              "variant": "properties",
+              "text": "Property gender=male",
+              "raw": {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Trash",
+          "raw": {
+            "id": "burmy_mothim",
+            "variant": "level_up",
+            "result": "mothim",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Trash",
+        "primaryType": "bug",
+        "maleRatio": 0.5,
+        "height": 2,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.burmy-trash.desc"
+        ],
+        "labels": [
+          "gen4"
+        ],
+        "aspects": [
+          "trash-cloak"
+        ],
+        "evolutions": [
+          {
+            "id": "burmy_wormadam",
+            "variant": "level_up",
+            "result": "wormadam",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            ]
+          },
+          {
+            "id": "burmy_mothim",
+            "variant": "level_up",
+            "result": "mothim",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    }
+  ],
+  "rawSpecies": {
+    "nationalPokedexNumber": 412,
+    "name": "Burmy",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 2,
+    "weight": 34,
+    "pokedex": [
+      "cobblemon.species.burmy.desc"
+    ],
+    "labels": [
+      "gen4"
+    ],
+    "aspects": [
+      "plant-cloak"
+    ],
+    "abilities": [
+      "shedskin",
+      "h:overcoat"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 29,
+      "defence": 45,
+      "special_attack": 29,
+      "special_defence": 45,
+      "speed": 36
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 45,
+    "experienceGroup": "medium_fast",
+    "catchRate": 120,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:occa_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "10:tackle",
+      "15:bugbite",
+      "20:stringshot",
+      "tm:bugbite",
+      "tm:electroweb",
+      "tm:stringshot",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:electroweb",
+      "tutor:stringshot",
+      "legacy:hiddenpower",
+      "legacy:protect",
+      "legacy:snore"
+    ],
+    "evolutions": [
+      {
+        "id": "burmy_wormadam",
+        "variant": "level_up",
+        "result": "wormadam",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "quiverdance"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          },
+          {
+            "variant": "properties",
+            "target": "gender=female"
+          }
+        ]
+      },
+      {
+        "id": "burmy_mothim",
+        "variant": "level_up",
+        "result": "mothim",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "quiverdance"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 20
+          },
+          {
+            "variant": "properties",
+            "target": "gender=male"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Sandy",
+        "primaryType": "bug",
+        "maleRatio": 0.5,
+        "height": 2,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.burmy-sandy.desc"
+        ],
+        "labels": [
+          "gen4"
+        ],
+        "aspects": [
+          "sandy-cloak"
+        ],
+        "evolutions": [
+          {
+            "id": "burmy_wormadam",
+            "variant": "level_up",
+            "result": "wormadam",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            ]
+          },
+          {
+            "id": "burmy_mothim",
+            "variant": "level_up",
+            "result": "mothim",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      },
+      {
+        "name": "Trash",
+        "primaryType": "bug",
+        "maleRatio": 0.5,
+        "height": 2,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.burmy-trash.desc"
+        ],
+        "labels": [
+          "gen4"
+        ],
+        "aspects": [
+          "trash-cloak"
+        ],
+        "evolutions": [
+          {
+            "id": "burmy_wormadam",
+            "variant": "level_up",
+            "result": "wormadam",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=female"
+              }
+            ]
+          },
+          {
+            "id": "burmy_mothim",
+            "variant": "level_up",
+            "result": "mothim",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "quiverdance"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 20
+              },
+              {
+                "variant": "properties",
+                "target": "gender=male"
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "canWalk": false
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      }
+    }
+  }
+}

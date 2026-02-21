@@ -1,0 +1,866 @@
+{
+  "slug": "charcadet",
+  "name": "Charcadet",
+  "dexNumber": 935,
+  "implemented": true,
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    {
+      "id": "flashfire",
+      "hidden": false,
+      "label": "Flashfire"
+    },
+    {
+      "id": "flamebody",
+      "hidden": true,
+      "label": "Flamebody"
+    }
+  ],
+  "eggGroups": [
+    "human_like"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "aliases": [
+    "charcadet"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 105,
+  "catchRate": 90,
+  "baseExperienceYield": 51,
+  "baseFriendship": 50,
+  "eggCycles": 35,
+  "baseStats": {
+    "hp": 40,
+    "attack": 50,
+    "defence": 40,
+    "special_attack": 50,
+    "special_defence": 40,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "charcadet_armarouge",
+      "variant": "item_interact",
+      "result": {
+        "raw": "armarouge",
+        "slug": "armarouge",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "psyshock"
+      ],
+      "requirementText": [],
+      "requirements": [],
+      "requiredContext": "cobblemon:auspicious_armor",
+      "fromForm": null,
+      "raw": {
+        "id": "charcadet_armarouge",
+        "variant": "item_interact",
+        "result": "armarouge",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "psyshock"
+        ],
+        "requirements": [],
+        "requiredContext": "cobblemon:auspicious_armor"
+      }
+    },
+    {
+      "id": "charcadet_ceruledge",
+      "variant": "item_interact",
+      "result": {
+        "raw": "ceruledge",
+        "slug": "ceruledge",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "shadowclaw"
+      ],
+      "requirementText": [],
+      "requirements": [],
+      "requiredContext": "cobblemon:malicious_armor",
+      "fromForm": null,
+      "raw": {
+        "id": "charcadet_ceruledge",
+        "variant": "item_interact",
+        "result": "ceruledge",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "shadowclaw"
+        ],
+        "requirements": [],
+        "requiredContext": "cobblemon:malicious_armor"
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "charcadet",
+        "name": "Charcadet",
+        "dexNumber": 935
+      },
+      {
+        "slug": "armarouge",
+        "name": "Armarouge",
+        "dexNumber": 936
+      },
+      {
+        "slug": "ceruledge",
+        "name": "Ceruledge",
+        "dexNumber": 937
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "charcadet",
+        "toSlug": "armarouge",
+        "method": "item_interact",
+        "requirementText": []
+      },
+      {
+        "fromSlug": "charcadet",
+        "toSlug": "ceruledge",
+        "method": "item_interact",
+        "requirementText": []
+      }
+    ],
+    "roots": [
+      "charcadet"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:astonish",
+      "moveId": "astonish",
+      "moveName": "Astonish",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "special:celebrate",
+      "moveId": "celebrate",
+      "moveName": "Celebrate",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "8:clearsmog",
+      "moveId": "clearsmog",
+      "moveName": "Clear Smog",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:destinybond",
+      "moveId": "destinybond",
+      "moveName": "Destiny Bond",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:disable",
+      "moveId": "disable",
+      "moveName": "Disable",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "32:lavaplume",
+      "moveId": "lavaplume",
+      "moveName": "Lava Plume",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "20:nightshade",
+      "moveId": "nightshade",
+      "moveName": "Night Shade",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:nightshade",
+      "moveId": "nightshade",
+      "moveName": "Night Shade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "charcadet-1",
+      "sourceFile": "0935_charcadet.json",
+      "pokemon": {
+        "raw": "charcadet",
+        "slug": "charcadet",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-26",
+      "levelMin": 1,
+      "levelMax": 26,
+      "weight": 92,
+      "presets": [
+        "natural",
+        "nether_structures"
+      ],
+      "biomeHints": [
+        "Is Nether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "minecraft:chiseled_polished_blackstone",
+          "minecraft:cracked_polished_blackstone_bricks",
+          "minecraft:gilded_blackstone",
+          "minecraft:nether_bricks",
+          "minecraft:polished_basalt",
+          "minecraft:polished_blackstone_bricks"
+        ],
+        "structures": [
+          "minecraft:bastion_remnant",
+          "minecraft:fortress"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:nether_structure_blocks"
+        ],
+        "biomes": [
+          "#minecraft:is_nether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "charcadet-1",
+        "pokemon": "charcadet",
+        "presets": [
+          "natural",
+          "nether_structures"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-26",
+        "weight": 92,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_nether"
+          ]
+        },
+        "drops": {
+          "amount": 3,
+          "entries": [
+            {
+              "item": "minecraft:blaze_rod",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:charcoal_stick",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:rawst_berry",
+              "percentage": 2.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "charcadet-2",
+      "sourceFile": "0935_charcadet.json",
+      "pokemon": {
+        "raw": "charcadet",
+        "slug": "charcadet",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-26",
+      "levelMin": 1,
+      "levelMax": 26,
+      "weight": 18.4,
+      "presets": [
+        "ruined_portal"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "structures": [
+          "#minecraft:ruined_portal"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:ruined_portal_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "charcadet-2",
+        "pokemon": "charcadet",
+        "presets": [
+          "ruined_portal"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-26",
+        "weight": 18.4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "charcadet-3",
+      "sourceFile": "0935_charcadet.json",
+      "pokemon": {
+        "raw": "charcadet",
+        "slug": "charcadet",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-26",
+      "levelMin": 1,
+      "levelMax": 26,
+      "weight": 9.2,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "structures": [
+          "#aether:dungeons"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "charcadet-3",
+        "pokemon": "charcadet",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-26",
+        "weight": 9.2,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "structures": [
+            "#aether:dungeons"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 935,
+    "name": "Charcadet",
+    "primaryType": "fire",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 105,
+    "pokedex": [
+      "cobblemon.species.charcadet.desc"
+    ],
+    "labels": [
+      "gen9"
+    ],
+    "aspects": [],
+    "abilities": [
+      "flashfire",
+      "h:flamebody"
+    ],
+    "eggGroups": [
+      "human_like"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 50,
+      "defence": 40,
+      "special_attack": 50,
+      "special_defence": 40,
+      "speed": 35
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 1,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 51,
+    "experienceGroup": "slow",
+    "catchRate": 90,
+    "eggCycles": 35,
+    "baseFriendship": 50,
+    "shoulderMountable": true,
+    "standingEyeHeight": 0.67,
+    "baseScale": 0.55,
+    "hitbox": {
+      "width": 0.6,
+      "height": 1.3,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "light": "0-4",
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.25
+        },
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        }
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "charcadet",
+            "tier": 1
+          },
+          {
+            "pokemon": "armarouge",
+            "tier": 2
+          },
+          {
+            "pokemon": "ceruledge",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      },
+      "fireImmune": true
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:charcoal",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "cobblemon:charcoal_stick",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:rawst_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:leer",
+      "1:ember",
+      "1:astonish",
+      "8:clearsmog",
+      "12:firespin",
+      "16:willowisp",
+      "20:nightshade",
+      "24:flamecharge",
+      "28:incinerate",
+      "32:lavaplume",
+      "egg:destinybond",
+      "egg:disable",
+      "egg:spite",
+      "tm:confuseray",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:heatwave",
+      "tm:helpinghand",
+      "tm:incinerate",
+      "tm:nightshade",
+      "tm:overheat",
+      "tm:protect",
+      "tm:rest",
+      "tm:sleeptalk",
+      "tm:spite",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:willowisp",
+      "tutor:flamethrower",
+      "tutor:heatwave",
+      "tutor:helpinghand",
+      "tutor:rest",
+      "tutor:sleeptalk",
+      "tutor:spite",
+      "special:celebrate"
+    ],
+    "evolutions": [
+      {
+        "id": "charcadet_armarouge",
+        "variant": "item_interact",
+        "result": "armarouge",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "psyshock"
+        ],
+        "requirements": [],
+        "requiredContext": "cobblemon:auspicious_armor"
+      },
+      {
+        "id": "charcadet_ceruledge",
+        "variant": "item_interact",
+        "result": "ceruledge",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "shadowclaw"
+        ],
+        "requirements": [],
+        "requiredContext": "cobblemon:malicious_armor"
+      }
+    ],
+    "lightingData": {
+      "lightLevel": 7,
+      "liquidGlowMode": "LAND"
+    }
+  }
+}

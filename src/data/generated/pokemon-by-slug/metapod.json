@@ -1,0 +1,576 @@
+{
+  "slug": "metapod",
+  "name": "Metapod",
+  "dexNumber": 11,
+  "implemented": true,
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    {
+      "id": "shedskin",
+      "hidden": false,
+      "label": "Shedskin"
+    },
+    {
+      "id": "shedskin",
+      "hidden": true,
+      "label": "Shedskin"
+    }
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "aspects": [],
+  "aliases": [
+    "metapod"
+  ],
+  "maleRatio": 0.5,
+  "height": 7,
+  "weight": 99,
+  "catchRate": 120,
+  "baseExperienceYield": 72,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 50,
+    "attack": 20,
+    "defence": 55,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 30
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "caterpie",
+    "slug": "caterpie",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "metapod_butterfree",
+      "variant": "level_up",
+      "result": {
+        "raw": "butterfree",
+        "slug": "butterfree",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirementText": [
+        "Level 10+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 10+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 10
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "metapod_butterfree",
+        "variant": "level_up",
+        "result": "butterfree",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "gust"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "caterpie",
+        "name": "Caterpie",
+        "dexNumber": 10
+      },
+      {
+        "slug": "metapod",
+        "name": "Metapod",
+        "dexNumber": 11
+      },
+      {
+        "slug": "butterfree",
+        "name": "Butterfree",
+        "dexNumber": 12
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "caterpie",
+        "toSlug": "metapod",
+        "method": "level_up",
+        "requirementText": [
+          "Level 7+"
+        ]
+      },
+      {
+        "fromSlug": "metapod",
+        "toSlug": "butterfree",
+        "method": "level_up",
+        "requirementText": [
+          "Level 10+"
+        ]
+      }
+    ],
+    "roots": [
+      "caterpie"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bugbite",
+      "moveId": "bugbite",
+      "moveName": "Bug Bite",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:harden",
+      "moveId": "harden",
+      "moveName": "Harden",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stringshot",
+      "moveId": "stringshot",
+      "moveName": "String Shot",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "metapod-1",
+      "sourceFile": "0011_metapod.json",
+      "pokemon": {
+        "raw": "metapod",
+        "slug": "metapod",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-21",
+      "levelMin": 7,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "foliage",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:leaves",
+          "#c:leaves"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_plains",
+          "aether:skyroot_forest",
+          "aether:skyroot_woodland"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "metapod-1",
+        "pokemon": "metapod",
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-21",
+        "weight": 2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_plains",
+            "aether:skyroot_forest",
+            "aether:skyroot_woodland"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "metapod-valencian-2",
+      "sourceFile": "0011_metapod.json",
+      "pokemon": {
+        "raw": "metapod valencian",
+        "slug": "metapod",
+        "aspectTokens": [
+          "valencian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-21",
+      "levelMin": 7,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Jungle",
+        "Is Tropical Island",
+        "Tropics",
+        "Tropical Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "metapod-valencian-2",
+        "pokemon": "metapod valencian",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-21",
+        "weight": 2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_tropical_island"
+          ]
+        }
+      }
+    },
+    {
+      "id": "metapod-valencian-3",
+      "sourceFile": "0011_metapod.json",
+      "pokemon": {
+        "raw": "metapod valencian",
+        "slug": "metapod",
+        "aspectTokens": [
+          "valencian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-21",
+      "levelMin": 7,
+      "levelMax": 21,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Floral Meadow"
+      ],
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "metapod-valencian-3",
+        "pokemon": "metapod valencian",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-21",
+        "weight": 1,
+        "condition": {
+          "biomes": [
+            "the_bumblezone:floral_meadow"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "#the_bumblezone:sempiternal_sanctums"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 11,
+    "name": "Metapod",
+    "primaryType": "bug",
+    "maleRatio": 0.5,
+    "height": 7,
+    "weight": 99,
+    "pokedex": [
+      "cobblemon.species.metapod.desc"
+    ],
+    "labels": [
+      "gen1"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shedskin",
+      "h:shedskin"
+    ],
+    "eggGroups": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 20,
+      "defence": 55,
+      "special_attack": 25,
+      "special_defence": 25,
+      "speed": 30
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 2,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 72,
+    "experienceGroup": "medium_fast",
+    "catchRate": 120,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "features": [
+      "valencian"
+    ],
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 0.8,
+      "height": 0.8,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "canWalk": false
+        },
+        "swim": {
+          "canSwimInWater": false,
+          "avoidsWater": true
+        },
+        "canLook": false
+      },
+      "herd": {
+        "maxSize": "9"
+      },
+      "combat": {
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "cobblemon:wepear_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:harden",
+      "1:tackle",
+      "tm:bugbite",
+      "tm:electroweb",
+      "tm:irondefense",
+      "tm:stringshot",
+      "tm:terablast",
+      "tutor:bugbite",
+      "tutor:electroweb",
+      "tutor:irondefense",
+      "tutor:stringshot",
+      "legacy:snore"
+    ],
+    "preEvolution": "caterpie",
+    "evolutions": [
+      {
+        "id": "metapod_butterfree",
+        "variant": "level_up",
+        "result": "butterfree",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "gust"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 10
+          }
+        ]
+      }
+    ]
+  }
+}

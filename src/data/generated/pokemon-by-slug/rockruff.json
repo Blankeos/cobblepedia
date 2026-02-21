@@ -1,0 +1,2436 @@
+{
+  "slug": "rockruff",
+  "name": "Rockruff",
+  "dexNumber": 744,
+  "implemented": false,
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    {
+      "id": "keeneye",
+      "hidden": false,
+      "label": "Keeneye"
+    },
+    {
+      "id": "vitalspirit",
+      "hidden": false,
+      "label": "Vitalspirit"
+    },
+    {
+      "id": "steadfast",
+      "hidden": true,
+      "label": "Steadfast"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "aspects": [],
+  "aliases": [
+    "dusk",
+    "rockruff",
+    "rockruff dusk"
+  ],
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 92,
+  "catchRate": 190,
+  "baseExperienceYield": 56,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 45,
+    "attack": 65,
+    "defence": 40,
+    "special_attack": 30,
+    "special_defence": 40,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "rockruff_lycanroc",
+      "variant": "level_up",
+      "result": {
+        "raw": "lycanroc wolf_form=midday",
+        "slug": "lycanroc",
+        "aspectTokens": [
+          "wolf_form=midday"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "accelerock",
+        "suckerpunch"
+      ],
+      "requirementText": [
+        "Level 25+",
+        "Time: Day"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 25+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 25
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Day",
+          "raw": {
+            "variant": "time_range",
+            "range": "day"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "rockruff_lycanroc",
+        "variant": "level_up",
+        "result": "lycanroc wolf_form=midday",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "accelerock",
+          "suckerpunch"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 25
+          },
+          {
+            "variant": "time_range",
+            "range": "day"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rockruff_lycanrocmidnight",
+      "variant": "level_up",
+      "result": {
+        "raw": "lycanroc wolf_form=midnight",
+        "slug": "lycanroc",
+        "aspectTokens": [
+          "wolf_form=midnight"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "counter"
+      ],
+      "requirementText": [
+        "Level 25+",
+        "Time: Night"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 25+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 25
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Night",
+          "raw": {
+            "variant": "time_range",
+            "range": "night"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "rockruff_lycanrocmidnight",
+        "variant": "level_up",
+        "result": "lycanroc wolf_form=midnight",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "counter"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 25
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "rockruff",
+        "name": "Rockruff",
+        "dexNumber": 744
+      },
+      {
+        "slug": "lycanroc",
+        "name": "Lycanroc",
+        "dexNumber": 745
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "rockruff",
+        "toSlug": "lycanroc",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+",
+          "Time: Day"
+        ]
+      },
+      {
+        "fromSlug": "rockruff",
+        "toSlug": "lycanroc",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+",
+          "Time: Night"
+        ]
+      },
+      {
+        "fromSlug": "rockruff",
+        "toSlug": "lycanroc",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+",
+          "Time: Dusk"
+        ]
+      }
+    ],
+    "roots": [
+      "rockruff"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "20:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:crushclaw",
+      "moveId": "crushclaw",
+      "moveName": "Crush Claw",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "8:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:howl",
+      "moveId": "howl",
+      "moveName": "Howl",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:odorsleuth",
+      "moveId": "odorsleuth",
+      "moveName": "Odor Sleuth",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychicfangs",
+      "moveId": "psychicfangs",
+      "moveName": "Psychic Fangs",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rockclimb",
+      "moveId": "rockclimb",
+      "moveName": "Rock Climb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rockpolish",
+      "moveId": "rockpolish",
+      "moveName": "Rock Polish",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "32:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:rockthrow",
+      "moveId": "rockthrow",
+      "moveName": "Rock Throw",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "24:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:sandattack",
+      "moveId": "sandattack",
+      "moveName": "Sand Attack",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "40:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "44:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [
+    {
+      "name": "Dusk",
+      "slug": "rockruff-dusk",
+      "aspects": [
+        "dusk-form"
+      ],
+      "types": [
+        "rock"
+      ],
+      "abilities": [
+        {
+          "id": "owntempo",
+          "hidden": false,
+          "label": "Owntempo"
+        },
+        {
+          "id": "owntempo",
+          "hidden": true,
+          "label": "Owntempo"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "1:leer",
+          "moveId": "leer",
+          "moveName": "Leer",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "4:sandattack",
+          "moveId": "sandattack",
+          "moveName": "Sand Attack",
+          "sourceType": "level",
+          "sourceValue": 4,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "8:doubleteam",
+          "moveId": "doubleteam",
+          "moveName": "Double Team",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "12:rockthrow",
+          "moveId": "rockthrow",
+          "moveName": "Rock Throw",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "16:howl",
+          "moveId": "howl",
+          "moveName": "Howl",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "20:bite",
+          "moveId": "bite",
+          "moveName": "Bite",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "24:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "28:roar",
+          "moveId": "roar",
+          "moveName": "Roar",
+          "sourceType": "level",
+          "sourceValue": 28,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "32:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "36:crunch",
+          "moveId": "crunch",
+          "moveName": "Crunch",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "40:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "44:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "level",
+          "sourceValue": 44,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "48:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "egg:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "egg:lastresort",
+          "moveId": "lastresort",
+          "moveName": "Last Resort",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "egg:odorsleuth",
+          "moveId": "odorsleuth",
+          "moveName": "Odor Sleuth",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "egg:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "egg:thrash",
+          "moveId": "thrash",
+          "moveName": "Thrash",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:charm",
+          "moveId": "charm",
+          "moveName": "Charm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:crunch",
+          "moveId": "crunch",
+          "moveName": "Crunch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:crushclaw",
+          "moveId": "crushclaw",
+          "moveName": "Crush Claw",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:doubleteam",
+          "moveId": "doubleteam",
+          "moveName": "Double Team",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:echoedvoice",
+          "moveId": "echoedvoice",
+          "moveName": "Echoed Voice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:lastresort",
+          "moveId": "lastresort",
+          "moveName": "Last Resort",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:playrough",
+          "moveId": "playrough",
+          "moveName": "Play Rough",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:psychicfangs",
+          "moveId": "psychicfangs",
+          "moveName": "Psychic Fangs",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:roar",
+          "moveId": "roar",
+          "moveName": "Roar",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:rockclimb",
+          "moveId": "rockclimb",
+          "moveName": "Rock Climb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:rockpolish",
+          "moveId": "rockpolish",
+          "moveName": "Rock Polish",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tm:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:lastresort",
+          "moveId": "lastresort",
+          "moveName": "Last Resort",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:playrough",
+          "moveId": "playrough",
+          "moveName": "Play Rough",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "tutor:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:confide",
+          "moveId": "confide",
+          "moveName": "Confide",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:frustration",
+          "moveId": "frustration",
+          "moveName": "Frustration",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:hiddenpower",
+          "moveId": "hiddenpower",
+          "moveName": "Hidden Power",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:return",
+          "moveId": "return",
+          "moveName": "Return",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "legacy:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        },
+        {
+          "raw": "special:happyhour",
+          "moveId": "happyhour",
+          "moveName": "Happy Hour",
+          "sourceType": "special",
+          "sourceValue": null,
+          "fromForm": "Dusk"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "rockruff_lycanrocdusk",
+          "variant": "level_up",
+          "result": {
+            "raw": "lycanroc wolf_form=dusk",
+            "slug": "lycanroc",
+            "aspectTokens": [
+              "wolf_form=dusk"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "thrash",
+            "crushclaw"
+          ],
+          "requirementText": [
+            "Level 25+",
+            "Time: Dusk"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 25+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 25
+              }
+            },
+            {
+              "variant": "time_range",
+              "text": "Time: Dusk",
+              "raw": {
+                "variant": "time_range",
+                "range": "dusk"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Dusk",
+          "raw": {
+            "id": "rockruff_lycanrocdusk",
+            "variant": "level_up",
+            "result": "lycanroc wolf_form=dusk",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "thrash",
+              "crushclaw"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 25
+              },
+              {
+                "variant": "time_range",
+                "range": "dusk"
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Dusk",
+        "primaryType": "rock",
+        "maleRatio": 0.5,
+        "height": 5,
+        "weight": 92,
+        "pokedex": [
+          "cobblemon.species.rockruff-dusk.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "dusk-form"
+        ],
+        "abilities": [
+          "owntempo",
+          "h:owntempo"
+        ],
+        "moves": [
+          "1:tackle",
+          "1:leer",
+          "4:sandattack",
+          "8:doubleteam",
+          "12:rockthrow",
+          "16:howl",
+          "20:bite",
+          "24:rocktomb",
+          "28:roar",
+          "32:rockslide",
+          "36:crunch",
+          "40:scaryface",
+          "44:stealthrock",
+          "48:stoneedge",
+          "egg:endeavor",
+          "egg:lastresort",
+          "egg:odorsleuth",
+          "egg:suckerpunch",
+          "egg:thrash",
+          "tm:bodyslam",
+          "tm:bulldoze",
+          "tm:charm",
+          "tm:covet",
+          "tm:crunch",
+          "tm:crushclaw",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:doubleteam",
+          "tm:earthpower",
+          "tm:echoedvoice",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:firefang",
+          "tm:helpinghand",
+          "tm:hypervoice",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:lastresort",
+          "tm:mudslap",
+          "tm:playrough",
+          "tm:protect",
+          "tm:psychicfangs",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockclimb",
+          "tm:rockpolish",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaryface",
+          "tm:sleeptalk",
+          "tm:snarl",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:suckerpunch",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thunderfang",
+          "tm:trailblaze",
+          "tm:zenheadbutt",
+          "tutor:bulldoze",
+          "tutor:covet",
+          "tutor:earthpower",
+          "tutor:endeavor",
+          "tutor:firefang",
+          "tutor:helpinghand",
+          "tutor:hypervoice",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:lastresort",
+          "tutor:mudslap",
+          "tutor:playrough",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:snarl",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:suckerpunch",
+          "tutor:thunderfang",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:confide",
+          "legacy:frustration",
+          "legacy:hiddenpower",
+          "legacy:return",
+          "legacy:round",
+          "legacy:snore",
+          "legacy:swagger",
+          "legacy:toxic",
+          "special:happyhour"
+        ],
+        "evolutions": [
+          {
+            "id": "rockruff_lycanrocdusk",
+            "variant": "level_up",
+            "result": "lycanroc wolf_form=dusk",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "thrash",
+              "crushclaw"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 25
+              },
+              {
+                "variant": "time_range",
+                "range": "dusk"
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    }
+  ],
+  "rawSpecies": {
+    "nationalPokedexNumber": 744,
+    "name": "Rockruff",
+    "primaryType": "rock",
+    "maleRatio": 0.5,
+    "height": 5,
+    "weight": 92,
+    "pokedex": [
+      "cobblemon.species.rockruff.desc"
+    ],
+    "labels": [
+      "gen7"
+    ],
+    "aspects": [],
+    "abilities": [
+      "keeneye",
+      "vitalspirit",
+      "h:steadfast"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 65,
+      "defence": 40,
+      "special_attack": 30,
+      "special_defence": 40,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 1,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 56,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "entityInteract": {
+        "avoidedBySkeleton": true
+      },
+      "herd": {
+        "maxSize": "6",
+        "toleratedLeaders": [
+          {
+            "pokemon": "rockruff",
+            "tier": 1
+          },
+          {
+            "pokemon": "lycanroc midnight",
+            "tier": 2
+          },
+          {
+            "pokemon": "lycanroc wolf_form=midday",
+            "tier": 3
+          },
+          {
+            "pokemon": "lycanroc dusk",
+            "tier": 4
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:bone",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "minecraft:rotten_flesh",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:hard_stone",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:babiri_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:leer",
+      "4:sandattack",
+      "8:doubleteam",
+      "12:rockthrow",
+      "16:howl",
+      "20:bite",
+      "24:rocktomb",
+      "28:roar",
+      "32:rockslide",
+      "36:crunch",
+      "40:scaryface",
+      "44:stealthrock",
+      "48:stoneedge",
+      "egg:crushclaw",
+      "egg:endeavor",
+      "egg:lastresort",
+      "egg:odorsleuth",
+      "egg:suckerpunch",
+      "egg:thrash",
+      "tm:bodyslam",
+      "tm:bulldoze",
+      "tm:charm",
+      "tm:covet",
+      "tm:crunch",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:doubleteam",
+      "tm:earthpower",
+      "tm:echoedvoice",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:firefang",
+      "tm:helpinghand",
+      "tm:hypervoice",
+      "tm:irondefense",
+      "tm:ironhead",
+      "tm:irontail",
+      "tm:lastresort",
+      "tm:mudslap",
+      "tm:playrough",
+      "tm:protect",
+      "tm:psychicfangs",
+      "tm:rest",
+      "tm:roar",
+      "tm:rockclimb",
+      "tm:rockpolish",
+      "tm:rockslide",
+      "tm:rocktomb",
+      "tm:sandstorm",
+      "tm:scaryface",
+      "tm:sleeptalk",
+      "tm:snarl",
+      "tm:stealthrock",
+      "tm:stompingtantrum",
+      "tm:stoneedge",
+      "tm:substitute",
+      "tm:suckerpunch",
+      "tm:swordsdance",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:thunderfang",
+      "tm:trailblaze",
+      "tm:zenheadbutt",
+      "tutor:bulldoze",
+      "tutor:covet",
+      "tutor:earthpower",
+      "tutor:endeavor",
+      "tutor:firefang",
+      "tutor:helpinghand",
+      "tutor:hypervoice",
+      "tutor:irondefense",
+      "tutor:ironhead",
+      "tutor:irontail",
+      "tutor:lastresort",
+      "tutor:mudslap",
+      "tutor:playrough",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:sleeptalk",
+      "tutor:snarl",
+      "tutor:stealthrock",
+      "tutor:stompingtantrum",
+      "tutor:stoneedge",
+      "tutor:suckerpunch",
+      "tutor:thunderfang",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "rockruff_lycanroc",
+        "variant": "level_up",
+        "result": "lycanroc wolf_form=midday",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "accelerock",
+          "suckerpunch"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 25
+          },
+          {
+            "variant": "time_range",
+            "range": "day"
+          }
+        ]
+      },
+      {
+        "id": "rockruff_lycanrocmidnight",
+        "variant": "level_up",
+        "result": "lycanroc wolf_form=midnight",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "counter"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 25
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Dusk",
+        "primaryType": "rock",
+        "maleRatio": 0.5,
+        "height": 5,
+        "weight": 92,
+        "pokedex": [
+          "cobblemon.species.rockruff-dusk.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "dusk-form"
+        ],
+        "abilities": [
+          "owntempo",
+          "h:owntempo"
+        ],
+        "moves": [
+          "1:tackle",
+          "1:leer",
+          "4:sandattack",
+          "8:doubleteam",
+          "12:rockthrow",
+          "16:howl",
+          "20:bite",
+          "24:rocktomb",
+          "28:roar",
+          "32:rockslide",
+          "36:crunch",
+          "40:scaryface",
+          "44:stealthrock",
+          "48:stoneedge",
+          "egg:endeavor",
+          "egg:lastresort",
+          "egg:odorsleuth",
+          "egg:suckerpunch",
+          "egg:thrash",
+          "tm:bodyslam",
+          "tm:bulldoze",
+          "tm:charm",
+          "tm:covet",
+          "tm:crunch",
+          "tm:crushclaw",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:doubleteam",
+          "tm:earthpower",
+          "tm:echoedvoice",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:firefang",
+          "tm:helpinghand",
+          "tm:hypervoice",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:lastresort",
+          "tm:mudslap",
+          "tm:playrough",
+          "tm:protect",
+          "tm:psychicfangs",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockclimb",
+          "tm:rockpolish",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaryface",
+          "tm:sleeptalk",
+          "tm:snarl",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:suckerpunch",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thunderfang",
+          "tm:trailblaze",
+          "tm:zenheadbutt",
+          "tutor:bulldoze",
+          "tutor:covet",
+          "tutor:earthpower",
+          "tutor:endeavor",
+          "tutor:firefang",
+          "tutor:helpinghand",
+          "tutor:hypervoice",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:lastresort",
+          "tutor:mudslap",
+          "tutor:playrough",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:snarl",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:suckerpunch",
+          "tutor:thunderfang",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:confide",
+          "legacy:frustration",
+          "legacy:hiddenpower",
+          "legacy:return",
+          "legacy:round",
+          "legacy:snore",
+          "legacy:swagger",
+          "legacy:toxic",
+          "special:happyhour"
+        ],
+        "evolutions": [
+          {
+            "id": "rockruff_lycanrocdusk",
+            "variant": "level_up",
+            "result": "lycanroc wolf_form=dusk",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "thrash",
+              "crushclaw"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 25
+              },
+              {
+                "variant": "time_range",
+                "range": "dusk"
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    ]
+  }
+}

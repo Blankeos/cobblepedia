@@ -1,0 +1,2387 @@
+{
+  "slug": "growlithe",
+  "name": "Growlithe",
+  "dexNumber": 58,
+  "implemented": true,
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    {
+      "id": "intimidate",
+      "hidden": false,
+      "label": "Intimidate"
+    },
+    {
+      "id": "flashfire",
+      "hidden": false,
+      "label": "Flashfire"
+    },
+    {
+      "id": "justified",
+      "hidden": true,
+      "label": "Justified"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "growlithe",
+    "growlithe hisui",
+    "hisui"
+  ],
+  "maleRatio": 0.75,
+  "height": 7,
+  "weight": 190,
+  "catchRate": 190,
+  "baseExperienceYield": 70,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 55,
+    "attack": 70,
+    "defence": 45,
+    "special_attack": 70,
+    "special_defence": 50,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "growlithe_arcanine",
+      "variant": "item_interact",
+      "result": {
+        "raw": "arcanine",
+        "slug": "arcanine",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "extremespeed"
+      ],
+      "requirementText": [],
+      "requirements": [],
+      "requiredContext": "cobblemon:fire_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "growlithe_arcanine",
+        "variant": "item_interact",
+        "result": "arcanine",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "extremespeed"
+        ],
+        "requirements": [],
+        "requiredContext": "cobblemon:fire_stone"
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "slug": "growlithe",
+        "name": "Growlithe",
+        "dexNumber": 58
+      },
+      {
+        "slug": "arcanine",
+        "name": "Arcanine",
+        "dexNumber": 59
+      }
+    ],
+    "edges": [
+      {
+        "fromSlug": "growlithe",
+        "toSlug": "arcanine",
+        "method": "item_interact",
+        "requirementText": []
+      }
+    ],
+    "roots": [
+      "growlithe"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "legacy:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "20:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "8:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:burnup",
+      "moveId": "burnup",
+      "moveName": "Burn Up",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:closecombat",
+      "moveId": "closecombat",
+      "moveName": "Close Combat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "32:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doublekick",
+      "moveId": "doublekick",
+      "moveName": "Double Kick",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dragonbreath",
+      "moveId": "dragonbreath",
+      "moveName": "Dragon Breath",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:dragonrage",
+      "moveId": "dragonrage",
+      "moveName": "Dragon Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "24:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "28:flameburst",
+      "moveId": "flameburst",
+      "moveName": "Flame Burst",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "12:flamewheel",
+      "moveId": "flamewheel",
+      "moveName": "Flame Wheel",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null
+    },
+    {
+      "raw": "40:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "56:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "level",
+      "sourceValue": 56,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "16:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "4:howl",
+      "moveId": "howl",
+      "moveName": "Howl",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:morningsun",
+      "moveId": "morningsun",
+      "moveName": "Morning Sun",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "1:odorsleuth",
+      "moveId": "odorsleuth",
+      "moveName": "Odor Sleuth",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "48:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:psychicfangs",
+      "moveId": "psychicfangs",
+      "moveName": "Psychic Fangs",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:ragingfury",
+      "moveId": "ragingfury",
+      "moveName": "Raging Fury",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "52:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "sourceType": "level",
+      "sourceValue": 52,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "44:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "36:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:temperflare",
+      "moveId": "temperflare",
+      "moveName": "Temper Flare",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "egg:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "growlithe-1",
+      "sourceFile": "0058_growlithe.json",
+      "pokemon": {
+        "raw": "growlithe",
+        "slug": "growlithe",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 9.2,
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village",
+          "minecraft:trail_ruins"
+        ],
+        "biomes": [
+          "#cobblemon:is_desert"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "growlithe-1",
+        "pokemon": "growlithe",
+        "presets": [
+          "natural",
+          "urban"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-35",
+        "weight": 9.2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    },
+    {
+      "id": "growlithe-2",
+      "sourceFile": "0058_growlithe.json",
+      "pokemon": {
+        "raw": "growlithe",
+        "slug": "growlithe",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 9.2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_desert"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "growlithe-2",
+        "pokemon": "growlithe",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-35",
+        "weight": 9.2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "#minecraft:village"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui",
+      "slug": "growlithe-hisui",
+      "aspects": [
+        "hisuian"
+      ],
+      "types": [
+        "fire",
+        "rock"
+      ],
+      "abilities": [
+        {
+          "id": "intimidate",
+          "hidden": false,
+          "label": "Intimidate"
+        },
+        {
+          "id": "flashfire",
+          "hidden": false,
+          "label": "Flashfire"
+        },
+        {
+          "id": "rockhead",
+          "hidden": true,
+          "label": "Rockhead"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:leer",
+          "moveId": "leer",
+          "moveName": "Leer",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "1:ember",
+          "moveId": "ember",
+          "moveName": "Ember",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "4:howl",
+          "moveId": "howl",
+          "moveName": "Howl",
+          "sourceType": "level",
+          "sourceValue": 4,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "8:bite",
+          "moveId": "bite",
+          "moveName": "Bite",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "12:flamewheel",
+          "moveId": "flamewheel",
+          "moveName": "Flame Wheel",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "16:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "24:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "28:retaliate",
+          "moveId": "retaliate",
+          "moveName": "Retaliate",
+          "sourceType": "level",
+          "sourceValue": 28,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "32:crunch",
+          "moveId": "crunch",
+          "moveName": "Crunch",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "36:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "40:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "44:roar",
+          "moveId": "roar",
+          "moveName": "Roar",
+          "sourceType": "level",
+          "sourceValue": 44,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "48:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "52:reversal",
+          "moveId": "reversal",
+          "moveName": "Reversal",
+          "sourceType": "level",
+          "sourceValue": 52,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "56:flareblitz",
+          "moveId": "flareblitz",
+          "moveName": "Flare Blitz",
+          "sourceType": "level",
+          "sourceValue": 56,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:doublekick",
+          "moveId": "doublekick",
+          "moveName": "Double Kick",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:headsmash",
+          "moveId": "headsmash",
+          "moveName": "Head Smash",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:morningsun",
+          "moveId": "morningsun",
+          "moveName": "Morning Sun",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "egg:thrash",
+          "moveId": "thrash",
+          "moveName": "Thrash",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:agility",
+          "moveId": "agility",
+          "moveName": "Agility",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:closecombat",
+          "moveId": "closecombat",
+          "moveName": "Close Combat",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:crunch",
+          "moveId": "crunch",
+          "moveName": "Crunch",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:fireblast",
+          "moveId": "fireblast",
+          "moveName": "Fire Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:firespin",
+          "moveId": "firespin",
+          "moveName": "Fire Spin",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:flamecharge",
+          "moveId": "flamecharge",
+          "moveName": "Flame Charge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:flareblitz",
+          "moveId": "flareblitz",
+          "moveName": "Flare Blitz",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:heatwave",
+          "moveId": "heatwave",
+          "moveName": "Heat Wave",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:overheat",
+          "moveId": "overheat",
+          "moveName": "Overheat",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:powergem",
+          "moveId": "powergem",
+          "moveName": "Power Gem",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:psychicfangs",
+          "moveId": "psychicfangs",
+          "moveName": "Psychic Fangs",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:retaliate",
+          "moveId": "retaliate",
+          "moveName": "Retaliate",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:reversal",
+          "moveId": "reversal",
+          "moveName": "Reversal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:roar",
+          "moveId": "roar",
+          "moveName": "Roar",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rockblast",
+          "moveId": "rockblast",
+          "moveName": "Rock Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:scorchingsands",
+          "moveId": "scorchingsands",
+          "moveName": "Scorching Sands",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:smackdown",
+          "moveId": "smackdown",
+          "moveName": "Smack Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:smartstrike",
+          "moveId": "smartstrike",
+          "moveName": "Smart Strike",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:temperflare",
+          "moveId": "temperflare",
+          "moveName": "Temper Flare",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tm:willowisp",
+          "moveId": "willowisp",
+          "moveName": "Will-O-Wisp",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:heatwave",
+          "moveId": "heatwave",
+          "moveName": "Heat Wave",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:scorchingsands",
+          "moveId": "scorchingsands",
+          "moveName": "Scorching Sands",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        },
+        {
+          "raw": "tutor:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "growlithe_arcaninehisui",
+          "variant": "item_interact",
+          "result": {
+            "raw": "arcanine hisuian",
+            "slug": "arcanine",
+            "aspectTokens": [
+              "hisuian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "extremespeed"
+          ],
+          "requirementText": [],
+          "requirements": [],
+          "requiredContext": "cobblemon:fire_stone",
+          "fromForm": "Hisui",
+          "raw": {
+            "id": "growlithe_arcaninehisui",
+            "variant": "item_interact",
+            "result": "arcanine hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "extremespeed"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:fire_stone"
+          }
+        }
+      ],
+      "raw": {
+        "name": "Hisui",
+        "primaryType": "fire",
+        "secondaryType": "rock",
+        "maleRatio": 0.75,
+        "height": 8,
+        "weight": 227,
+        "pokedex": [
+          "cobblemon.species.growlithe-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "abilities": [
+          "intimidate",
+          "flashfire",
+          "h:rockhead"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 75,
+          "defence": 45,
+          "special_attack": 65,
+          "special_defence": 50,
+          "speed": 55
+        },
+        "moves": [
+          "1:leer",
+          "1:ember",
+          "4:howl",
+          "8:bite",
+          "12:flamewheel",
+          "16:helpinghand",
+          "24:firefang",
+          "28:retaliate",
+          "32:crunch",
+          "36:takedown",
+          "40:flamethrower",
+          "44:roar",
+          "48:rockslide",
+          "52:reversal",
+          "56:flareblitz",
+          "egg:covet",
+          "egg:doubleedge",
+          "egg:doublekick",
+          "egg:headsmash",
+          "egg:morningsun",
+          "egg:thrash",
+          "tm:agility",
+          "tm:bodyslam",
+          "tm:closecombat",
+          "tm:covet",
+          "tm:crunch",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firespin",
+          "tm:flamecharge",
+          "tm:flamethrower",
+          "tm:flareblitz",
+          "tm:heatwave",
+          "tm:helpinghand",
+          "tm:irontail",
+          "tm:outrage",
+          "tm:overheat",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychicfangs",
+          "tm:rest",
+          "tm:retaliate",
+          "tm:reversal",
+          "tm:roar",
+          "tm:rockblast",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaryface",
+          "tm:scorchingsands",
+          "tm:sleeptalk",
+          "tm:smackdown",
+          "tm:smartstrike",
+          "tm:stealthrock",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:takedown",
+          "tm:temperflare",
+          "tm:terablast",
+          "tm:thunderfang",
+          "tm:wildcharge",
+          "tm:willowisp",
+          "tutor:covet",
+          "tutor:firefang",
+          "tutor:flamethrower",
+          "tutor:heatwave",
+          "tutor:helpinghand",
+          "tutor:irontail",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:scorchingsands",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:stoneedge",
+          "tutor:thunderfang",
+          "tutor:wildcharge"
+        ],
+        "evolutions": [
+          {
+            "id": "growlithe_arcaninehisui",
+            "variant": "item_interact",
+            "result": "arcanine hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "extremespeed"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:fire_stone"
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            }
+          },
+          "entityInteract": {
+            "avoidedBySkeleton": true
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "fireImmune": true
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 58,
+    "name": "Growlithe",
+    "primaryType": "fire",
+    "maleRatio": 0.75,
+    "height": 7,
+    "weight": 190,
+    "pokedex": [
+      "cobblemon.species.growlithe.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "intimidate",
+      "flashfire",
+      "h:justified"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 70,
+      "defence": 45,
+      "special_attack": 70,
+      "special_defence": 50,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 1,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 70,
+    "experienceGroup": "slow",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "hisuian"
+    ],
+    "baseScale": 0.75,
+    "hitbox": {
+      "width": 1.1,
+      "height": 1.15,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "entityInteract": {
+        "avoidedBySkeleton": true,
+        "avoidedByFox": true
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "fireImmune": true
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:bone",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:rawst_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:ember",
+      "1:leer",
+      "1:odorsleuth",
+      "4:howl",
+      "8:bite",
+      "12:flamewheel",
+      "16:helpinghand",
+      "20:agility",
+      "24:firefang",
+      "28:flameburst",
+      "32:crunch",
+      "36:takedown",
+      "40:flamethrower",
+      "44:roar",
+      "48:playrough",
+      "52:reversal",
+      "56:flareblitz",
+      "egg:burnup",
+      "egg:covet",
+      "egg:doubleedge",
+      "egg:doublekick",
+      "egg:morningsun",
+      "egg:ragingfury",
+      "egg:thrash",
+      "tm:agility",
+      "tm:bodyslam",
+      "tm:charm",
+      "tm:closecombat",
+      "tm:covet",
+      "tm:crunch",
+      "tm:curse",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firefang",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:headbutt",
+      "tm:heatwave",
+      "tm:helpinghand",
+      "tm:incinerate",
+      "tm:irontail",
+      "tm:outrage",
+      "tm:overheat",
+      "tm:playrough",
+      "tm:protect",
+      "tm:psychicfangs",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:reversal",
+      "tm:roar",
+      "tm:rocksmash",
+      "tm:safeguard",
+      "tm:scaryface",
+      "tm:sleeptalk",
+      "tm:snarl",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swift",
+      "tm:takedown",
+      "tm:temperflare",
+      "tm:terablast",
+      "tm:thief",
+      "tm:thunderfang",
+      "tm:wildcharge",
+      "tm:willowisp",
+      "tutor:covet",
+      "tutor:firefang",
+      "tutor:flamethrower",
+      "tutor:heatwave",
+      "tutor:helpinghand",
+      "tutor:irontail",
+      "tutor:outrage",
+      "tutor:playrough",
+      "tutor:rest",
+      "tutor:rocksmash",
+      "tutor:sleeptalk",
+      "tutor:snarl",
+      "tutor:swift",
+      "tutor:thunderfang",
+      "tutor:wildcharge",
+      "legacy:aerialace",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:dragonbreath",
+      "legacy:dragonrage",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:mudslap",
+      "legacy:naturalgift",
+      "legacy:rage",
+      "legacy:reflect",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:skullbash",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "growlithe_arcanine",
+        "variant": "item_interact",
+        "result": "arcanine",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "extremespeed"
+        ],
+        "requirements": [],
+        "requiredContext": "cobblemon:fire_stone"
+      }
+    ],
+    "forms": [
+      {
+        "name": "Hisui",
+        "primaryType": "fire",
+        "secondaryType": "rock",
+        "maleRatio": 0.75,
+        "height": 8,
+        "weight": 227,
+        "pokedex": [
+          "cobblemon.species.growlithe-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "abilities": [
+          "intimidate",
+          "flashfire",
+          "h:rockhead"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 75,
+          "defence": 45,
+          "special_attack": 65,
+          "special_defence": 50,
+          "speed": 55
+        },
+        "moves": [
+          "1:leer",
+          "1:ember",
+          "4:howl",
+          "8:bite",
+          "12:flamewheel",
+          "16:helpinghand",
+          "24:firefang",
+          "28:retaliate",
+          "32:crunch",
+          "36:takedown",
+          "40:flamethrower",
+          "44:roar",
+          "48:rockslide",
+          "52:reversal",
+          "56:flareblitz",
+          "egg:covet",
+          "egg:doubleedge",
+          "egg:doublekick",
+          "egg:headsmash",
+          "egg:morningsun",
+          "egg:thrash",
+          "tm:agility",
+          "tm:bodyslam",
+          "tm:closecombat",
+          "tm:covet",
+          "tm:crunch",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firespin",
+          "tm:flamecharge",
+          "tm:flamethrower",
+          "tm:flareblitz",
+          "tm:heatwave",
+          "tm:helpinghand",
+          "tm:irontail",
+          "tm:outrage",
+          "tm:overheat",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychicfangs",
+          "tm:rest",
+          "tm:retaliate",
+          "tm:reversal",
+          "tm:roar",
+          "tm:rockblast",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaryface",
+          "tm:scorchingsands",
+          "tm:sleeptalk",
+          "tm:smackdown",
+          "tm:smartstrike",
+          "tm:stealthrock",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:takedown",
+          "tm:temperflare",
+          "tm:terablast",
+          "tm:thunderfang",
+          "tm:wildcharge",
+          "tm:willowisp",
+          "tutor:covet",
+          "tutor:firefang",
+          "tutor:flamethrower",
+          "tutor:heatwave",
+          "tutor:helpinghand",
+          "tutor:irontail",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:scorchingsands",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:stoneedge",
+          "tutor:thunderfang",
+          "tutor:wildcharge"
+        ],
+        "evolutions": [
+          {
+            "id": "growlithe_arcaninehisui",
+            "variant": "item_interact",
+            "result": "arcanine hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "extremespeed"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:fire_stone"
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            }
+          },
+          "entityInteract": {
+            "avoidedBySkeleton": true
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "fireImmune": true
+        }
+      }
+    ]
+  }
+}
