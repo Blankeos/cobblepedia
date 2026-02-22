@@ -2,7 +2,7 @@ import { useKeyboard } from "bagon-hooks"
 import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
-import { IconBox, IconEgg } from "@/assets/icons"
+import { IconBox, IconEgg, IconForms } from "@/assets/icons"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
@@ -21,7 +21,7 @@ import {
 } from "@/data/formatters"
 import pokemonDexNavData from "@/data/generated/pokemon-dex-nav.json"
 import { formatRideableCategory, parseRideableSummaryFromSpecies } from "@/data/rideable"
-import { getPokemonOfficialArtworkUrl } from "@/lib/pokeapi-artwork"
+import { resolvePokemonArtworkUrls } from "@/lib/pokeapi-artwork"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
@@ -153,6 +153,7 @@ function PokemonDetailView(props: {
   const [activeView, setActiveView] = createSignal<ArtworkView>("official")
   const [selectedFormSlug, setSelectedFormSlug] = createSignal<string | null>(null)
   const [artworkFailed, setArtworkFailed] = createSignal(false)
+  const [artworkUrlIndex, setArtworkUrlIndex] = createSignal(0)
 
   const availableForms = createMemo(() => detail().forms)
 
@@ -255,9 +256,26 @@ function PokemonDetailView(props: {
   const primaryType = () => activeTypes()[0] || "normal"
   const typeColor = () => getTypeColor(primaryType())
   const rideableSummary = createMemo(() => parseRideableSummaryFromSpecies(detail().rawSpecies))
-  const artworkUrl = createMemo(() =>
-    getPokemonOfficialArtworkUrl(detail().dexNumber, activeView() === "shiny", selectedFormSlug())
+
+  const [artworkResolution] = createResource(
+    () => ({
+      dexNumber: detail().dexNumber,
+      baseSlug: detail().slug,
+      formSlug: selectedFormSlug(),
+      formName: selectedForm()?.name ?? null,
+      shiny: activeView() === "shiny",
+    }),
+    resolvePokemonArtworkUrls
   )
+
+  const artworkUrl = createMemo(() => {
+    const resolution = artworkResolution()
+    if (!resolution) {
+      return null
+    }
+
+    return resolution.urls[artworkUrlIndex()] ?? null
+  })
 
   createEffect(() => {
     detail().slug
@@ -270,6 +288,7 @@ function PokemonDetailView(props: {
     detail().dexNumber
     selectedFormSlug()
     activeView()
+    setArtworkUrlIndex(0)
     setArtworkFailed(false)
   })
 
@@ -293,6 +312,43 @@ function PokemonDetailView(props: {
 
     selectForm(options[nextIndex]?.slug ?? null)
   }
+
+  const handleArtworkError = () => {
+    const resolution = artworkResolution()
+    const urls = resolution?.urls ?? []
+    const nextIndex = artworkUrlIndex() + 1
+    if (nextIndex < urls.length) {
+      setArtworkUrlIndex(nextIndex)
+      return
+    }
+
+    setArtworkFailed(true)
+  }
+
+  const artworkFallbackLabel = createMemo(() => {
+    if (artworkResolution.loading) {
+      return null
+    }
+
+    const resolution = artworkResolution()
+    if (!resolution) {
+      return null
+    }
+
+    if (selectedFormSlug() && !resolution.matchedForm) {
+      return "Base form artwork"
+    }
+
+    if (artworkUrlIndex() === 1) {
+      return "Home artwork"
+    }
+
+    if (artworkUrlIndex() === 2) {
+      return "Sprite fallback"
+    }
+
+    return null
+  })
 
   useKeyboard({
     onKeyDown: (event) => {
@@ -367,12 +423,10 @@ function PokemonDetailView(props: {
             <Show when={hasForms()}>
               <div class="flex flex-col gap-1.5">
                 <div class="flex items-center gap-2">
-                  <span class="text-muted-foreground text-xs uppercase tracking-wide">Forms</span>
-                  <div class="flex items-center gap-1 text-[10px] text-muted-foreground">
-                    <kbd class="border border-border bg-secondary px-1 py-0.5 font-mono">H</kbd>
-                    <span>/</span>
-                    <kbd class="border border-border bg-secondary px-1 py-0.5 font-mono">L</kbd>
-                  </div>
+                  <span class="inline-flex items-center gap-1.5 text-muted-foreground text-xs uppercase tracking-wide">
+                    <IconForms class="h-3.5 w-3.5" />
+                    Forms
+                  </span>
                 </div>
                 <div class="flex flex-wrap items-center gap-1.5">
                   <For each={formOptions()}>
@@ -481,30 +535,49 @@ function PokemonDetailView(props: {
               />
             </div>
 
+            <Show when={artworkFallbackLabel()}>
+              {(label) => (
+                <span class="border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wide">
+                  {label()}
+                </span>
+              )}
+            </Show>
+
             {/* Artwork Display - Compact */}
             <div class="relative h-40 w-40 overflow-hidden border border-border bg-secondary/30 sm:h-44 sm:w-44">
               <Show
-                when={!artworkFailed() ? artworkUrl() : null}
+                when={!artworkResolution.loading}
                 fallback={
-                  <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2 text-center">
-                    <div class="text-2xl">🖼️</div>
-                    <p class="text-muted-foreground text-xs">Artwork unavailable for this view.</p>
+                  <div class="flex h-full w-full items-center justify-center">
+                    <div class="h-5 w-5 animate-spin border-2 border-border border-t-foreground" />
                   </div>
                 }
               >
-                {(url) => (
-                  <div class="flex h-full w-full items-center justify-center p-2">
-                    <img
-                      src={url()}
-                      alt={`${displayName()} ${activeView()} artwork`}
-                      class="h-full w-full object-contain"
-                      loading="eager"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                      onError={() => setArtworkFailed(true)}
-                    />
-                  </div>
-                )}
+                <Show
+                  when={!artworkFailed() ? artworkUrl() : null}
+                  fallback={
+                    <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2 text-center">
+                      <div class="text-2xl">🖼️</div>
+                      <p class="text-muted-foreground text-xs">
+                        Artwork unavailable for this view.
+                      </p>
+                    </div>
+                  }
+                >
+                  {(url) => (
+                    <div class="flex h-full w-full items-center justify-center p-2">
+                      <img
+                        src={url()}
+                        alt={`${displayName()} ${activeView()} artwork`}
+                        class="h-full w-full object-contain"
+                        loading="eager"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
+                        onError={handleArtworkError}
+                      />
+                    </div>
+                  )}
+                </Show>
               </Show>
             </div>
           </div>
