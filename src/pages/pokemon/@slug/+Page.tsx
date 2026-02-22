@@ -1,8 +1,16 @@
-import { useKeyboard } from "bagon-hooks"
 import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
-import { IconBox, IconEgg, IconForms } from "@/assets/icons"
+import {
+  IconArrowRight,
+  IconBarChart,
+  IconBox,
+  IconEgg,
+  IconForms,
+  IconMapPin,
+  IconSword,
+  IconZap,
+} from "@/assets/icons"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
@@ -350,26 +358,6 @@ function PokemonDetailView(props: {
     return null
   })
 
-  useKeyboard({
-    onKeyDown: (event) => {
-      if (!hasForms() || isEditableTarget(event.target)) {
-        return
-      }
-
-      const key = event.key.toLowerCase()
-      if (key === "h" || event.key === "[") {
-        event.preventDefault()
-        shiftFormSelection(-1)
-        return
-      }
-
-      if (key === "l" || event.key === "]") {
-        event.preventDefault()
-        shiftFormSelection(1)
-      }
-    },
-  })
-
   const leaderHotkeys = useLeaderNavigationHotkeys({
     onPrevious: () => {
       if (props.previous) {
@@ -381,6 +369,16 @@ function PokemonDetailView(props: {
         navigateToPokemon(props.next.slug)
       }
     },
+    onFormPrevious: hasForms()
+      ? () => {
+          shiftFormSelection(-1)
+        }
+      : undefined,
+    onFormNext: hasForms()
+      ? () => {
+          shiftFormSelection(1)
+        }
+      : undefined,
   })
 
   return (
@@ -594,8 +592,14 @@ function PokemonDetailView(props: {
           {/* Base Stats */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-              <span class="text-muted-foreground">◈</span>
+              <IconBarChart class="h-4 w-4 text-muted-foreground" />
               <h2 class="font-semibold">Base Stats</h2>
+              <span class="ml-auto font-mono text-muted-foreground text-sm">
+                Total:{" "}
+                <span class="font-semibold text-foreground">
+                  {Object.values(activeBaseStats()).reduce((sum, val) => sum + val, 0)}
+                </span>
+              </span>
             </div>
             <div class="p-4">
               <For each={Object.entries(activeBaseStats())}>
@@ -623,7 +627,7 @@ function PokemonDetailView(props: {
           {/* Abilities */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-              <span class="text-muted-foreground">⚡</span>
+              <IconZap class="h-4 w-4 text-muted-foreground" />
               <h2 class="font-semibold">Abilities</h2>
             </div>
             <div class="divide-y divide-border">
@@ -654,7 +658,7 @@ function PokemonDetailView(props: {
           {/* Breeding */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-              <span class="text-muted-foreground">♦</span>
+              <IconEgg class="h-4 w-4 text-muted-foreground" />
               <h2 class="font-semibold">Breeding</h2>
             </div>
             <div class="grid grid-cols-2 gap-px bg-border">
@@ -710,7 +714,7 @@ function PokemonDetailView(props: {
           {/* Spawn Locations */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-              <span class="text-muted-foreground">⌖</span>
+              <IconMapPin class="h-4 w-4 text-muted-foreground" />
               <h2 class="font-semibold">Spawn Locations</h2>
             </div>
             <Show
@@ -776,7 +780,7 @@ function PokemonDetailView(props: {
           {/* Evolution Family */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-              <span class="text-muted-foreground">⟿</span>
+              <IconArrowRight class="h-4 w-4 text-muted-foreground" />
               <h2 class="font-semibold">Evolution Family</h2>
             </div>
             <div class="p-4">
@@ -1059,7 +1063,7 @@ function MovesSection(props: {
     <section class="border border-border bg-card">
       <div class="flex items-center justify-between border-border border-b bg-secondary px-4 py-3">
         <div class="flex items-center gap-2">
-          <span class="text-muted-foreground">✦</span>
+          <IconSword class="h-4 w-4 text-muted-foreground" />
           <h2 class="font-semibold">Moveset</h2>
           <Show when={props.activeFormName}>
             {(formName) => (
@@ -1256,24 +1260,4 @@ function syncSelectedFormSlug(formSlug: string | null) {
 
   const nextUrl = `${url.pathname}${url.search}${url.hash}`
   window.history.replaceState(null, "", nextUrl)
-}
-
-function isEditableTarget(target: EventTarget | null): boolean {
-  if (!(target instanceof Element)) {
-    return false
-  }
-
-  if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
-    return true
-  }
-
-  if (target instanceof HTMLSelectElement) {
-    return true
-  }
-
-  if (target instanceof HTMLElement && target.isContentEditable) {
-    return true
-  }
-
-  return Boolean(target.closest("[contenteditable='true']"))
 }

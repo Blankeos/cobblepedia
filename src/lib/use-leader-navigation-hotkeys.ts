@@ -4,6 +4,8 @@ import { createSignal, onCleanup } from "solid-js"
 type UseLeaderNavigationHotkeysProps = {
   onPrevious: () => void
   onNext: () => void
+  onFormPrevious?: () => void
+  onFormNext?: () => void
   timeoutMs?: number
   disabled?: boolean
 }
@@ -67,6 +69,20 @@ export function useLeaderNavigationHotkeys(props: UseLeaderNavigationHotkeysProp
         return
       }
 
+      if (isFormPreviousKey(event) && props.onFormPrevious) {
+        event.preventDefault()
+        clearLeader()
+        props.onFormPrevious()
+        return
+      }
+
+      if (isFormNextKey(event) && props.onFormNext) {
+        event.preventDefault()
+        clearLeader()
+        props.onFormNext()
+        return
+      }
+
       clearLeader()
     },
   })
@@ -93,6 +109,14 @@ function isNextKey(event: KeyboardEvent): boolean {
 
 function isPreviousKey(event: KeyboardEvent): boolean {
   return event.key === "<" || event.key === "," || event.code === "Comma"
+}
+
+function isFormPreviousKey(event: KeyboardEvent): boolean {
+  return event.key === "h" || event.key === "H"
+}
+
+function isFormNextKey(event: KeyboardEvent): boolean {
+  return event.key === "l" || event.key === "L"
 }
 
 function isModifierKey(event: KeyboardEvent): boolean {

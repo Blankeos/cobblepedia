@@ -221,10 +221,17 @@ Done means all are true:
 
 ## 15) Icon Management (iconmate)
 
-Use `iconmate --help` to explore available commands. Common workflow:
+Use `iconmate --help` to explore available commands.
 
-- Search: `iconmate iconify <search-term>` (e.g., `iconmate iconify arrow`)
-- Add: `iconmate add <set:icon>` (e.g., `iconmate add lucide:arrow-right`)
+### Recommended workflow for SolidJS components:
+
+1. **Search** for icons: `iconmate iconify search <term>` (e.g., `iconmate iconify search arrow`)
+2. **Add** with SolidJS preset: `iconmate add --preset=solid --folder src/assets/icons --name <Name> --icon <set:icon>`
+   - Example: `iconmate add --preset=solid --folder src/assets/icons --name ArrowRight --icon lucide:arrow-right`
+
+The `--preset=solid` flag generates proper SolidJS TSX components that work with the codebase. The command will:
+- Generate a `.tsx` component file
+- Automatically add the export to `src/assets/icons/index.ts`
 
 For detailed help on a specific subcommand, run `iconmate <command> --help` (e.g., `iconmate iconify --help`).
 

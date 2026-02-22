@@ -250,154 +250,157 @@ export default function Page() {
       <Show when={!rideableMons.loading} fallback={<LoadingState />}>
         <Show when={rideableMons()}>
           {(dataSignal) => (
-            <div class="space-y-5">
-              <header class="border border-border bg-card p-5">
-                <div class="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <p class="font-mono text-muted-foreground text-xs uppercase tracking-wide">
-                      Mobility Index
-                    </p>
-                    <h1 class="mt-1 font-semibold text-3xl tracking-tight sm:text-4xl">
-                      Rideable Mons
-                    </h1>
-                    <p class="mt-2 max-w-2xl text-muted-foreground text-sm">
-                      Filter every mountable species by movement category, ride class, and seat
-                      count.
-                    </p>
-                  </div>
-
-                  <div class="grid grid-cols-2 gap-px border border-border bg-border text-sm sm:grid-cols-3">
-                    <StatCell label="Total" value={summary().total} />
-                    <StatCell label="Air" value={summary().air} />
-                    <StatCell label="Land" value={summary().land} />
-                    <StatCell label="Liquid" value={summary().liquid} />
-                    <StatCell label="Multi-Mode" value={summary().multiMode} />
-                    <StatCell label="Multi-Seat" value={summary().multiSeat} />
-                  </div>
+            <div class="space-y-4">
+              {/* Compact Header */}
+              <header class="flex flex-wrap items-end justify-between gap-4 border-border border-b pb-4">
+                <div>
+                  <span class="font-mono text-muted-foreground text-xs uppercase tracking-widest">
+                    Mounts
+                  </span>
+                  <h1 class="font-semibold text-3xl tracking-tight">Rideable Pokémon</h1>
                 </div>
 
-                <div class="mt-4 flex flex-wrap items-center gap-2 text-muted-foreground text-xs">
-                  <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">/</kbd>
-                  <span>Focus search</span>
-                  <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">J</kbd>
-                  <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">K</kbd>
-                  <span>Move selection</span>
-                  <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">Enter</kbd>
-                  <span>Open Pokemon</span>
+                <div class="flex items-center gap-px border border-border bg-border">
+                  <StatPill label="Total" value={summary().total} />
+                  <StatPill label="Air" value={summary().air} />
+                  <StatPill label="Land" value={summary().land} />
+                  <StatPill label="Water" value={summary().liquid} />
                 </div>
               </header>
 
-              <section class="border border-border bg-card">
-                <div class="border-border border-b p-4">
-                  <div class="grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+              {/* Filter Bar */}
+              <section class="space-y-3">
+                {/* Search + Sort Row */}
+                <div class="flex flex-wrap items-center gap-3">
+                  <div class="relative min-w-[200px] max-w-md flex-1">
                     <input
                       ref={searchInputRef}
                       type="text"
-                      class="w-full border border-border bg-background px-3 py-2 text-sm outline-none placeholder:text-muted-foreground focus:border-muted-foreground"
-                      placeholder="Search by name, slug, or dex..."
+                      class="w-full border border-border bg-background px-3 py-2 pr-8 text-sm outline-none placeholder:text-muted-foreground focus:border-foreground"
+                      placeholder="Search mounts..."
                       value={search()}
                       onInput={(event) => setSearch(event.currentTarget.value)}
                     />
-
-                    <label class="flex items-center gap-2 text-muted-foreground text-xs uppercase tracking-wide">
-                      Sort
-                      <select
-                        class="border border-border bg-background px-2 py-1.5 text-foreground text-xs"
-                        value={sortBy()}
-                        onChange={(event) => setSortBy(event.currentTarget.value as SortOption)}
-                      >
-                        <option value="dex">Dex #</option>
-                        <option value="name">Name</option>
-                        <option value="seats">Seats (high)</option>
-                        <option value="modes">Modes (high)</option>
-                      </select>
-                    </label>
+                    <kbd class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2 border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
+                      /
+                    </kbd>
                   </div>
 
-                  <div class="mt-3 flex flex-wrap items-center gap-2">
-                    <For each={CATEGORY_FILTERS}>
-                      {(category) => (
-                        <FilterChip
-                          active={categoryFilter() === category}
-                          label={
-                            category === "ALL" ? "All Categories" : formatRideableCategory(category)
-                          }
-                          count={categoryCounts()[category] ?? 0}
-                          onClick={() => setCategoryFilter(category)}
-                          icon={
-                            category === "ALL" ? null : (
-                              <RideableCategoryIcon category={category} class="h-3.5 w-3.5" />
-                            )
-                          }
-                        />
-                      )}
-                    </For>
-                  </div>
-
-                  <div class="mt-3 flex flex-wrap items-center gap-2">
-                    <FilterChip
-                      active={classFilter() === "ALL"}
-                      label="All Classes"
-                      onClick={() => setClassFilter("ALL")}
-                    />
-                    <For each={availableClasses()}>
-                      {(classId) => (
-                        <FilterChip
-                          active={classFilter() === classId}
-                          label={formatRideableClass(classId)}
-                          onClick={() => setClassFilter(classId)}
-                          icon={<RideableClassIcon classId={classId} class="h-3.5 w-3.5" />}
-                        />
-                      )}
-                    </For>
-                  </div>
-
-                  <div class="mt-3 flex flex-wrap items-center gap-2">
-                    <FilterChip
-                      active={seatFilter() === "ALL"}
-                      label="All Seats"
-                      onClick={() => setSeatFilter("ALL")}
-                    />
-                    <FilterChip
-                      active={seatFilter() === "1"}
-                      label="1 seat"
-                      onClick={() => setSeatFilter("1")}
-                    />
-                    <FilterChip
-                      active={seatFilter() === "2"}
-                      label="2 seats"
-                      onClick={() => setSeatFilter("2")}
-                    />
-                    <FilterChip
-                      active={seatFilter() === "3+"}
-                      label="3+ seats"
-                      onClick={() => setSeatFilter("3+")}
-                    />
+                  <div class="flex items-center gap-2">
+                    <span class="text-muted-foreground text-xs uppercase">Sort</span>
+                    <select
+                      class="border border-border bg-background px-2 py-2 text-xs outline-none focus:border-foreground"
+                      value={sortBy()}
+                      onChange={(event) => setSortBy(event.currentTarget.value as SortOption)}
+                    >
+                      <option value="dex">Dex #</option>
+                      <option value="name">Name</option>
+                      <option value="seats">Seats</option>
+                      <option value="modes">Modes</option>
+                    </select>
                   </div>
                 </div>
 
+                {/* Filter Chips */}
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-muted-foreground text-xs uppercase">Category</span>
+                  <For each={CATEGORY_FILTERS}>
+                    {(category) => (
+                      <FilterPill
+                        active={categoryFilter() === category}
+                        label={category === "ALL" ? "All" : formatRideableCategory(category)}
+                        count={categoryCounts()[category] ?? undefined}
+                        onClick={() => setCategoryFilter(category)}
+                        icon={
+                          category === "ALL" ? undefined : (
+                            <RideableCategoryIcon category={category} class="h-3 w-3" />
+                          )
+                        }
+                      />
+                    )}
+                  </For>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-muted-foreground text-xs uppercase">Class</span>
+                  <FilterPill
+                    active={classFilter() === "ALL"}
+                    label="All"
+                    onClick={() => setClassFilter("ALL")}
+                  />
+                  <For each={availableClasses()}>
+                    {(classId) => (
+                      <FilterPill
+                        active={classFilter() === classId}
+                        label={formatRideableClass(classId)}
+                        onClick={() => setClassFilter(classId)}
+                        icon={<RideableClassIcon classId={classId} class="h-3 w-3" />}
+                      />
+                    )}
+                  </For>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-muted-foreground text-xs uppercase">Seats</span>
+                  <FilterPill
+                    active={seatFilter() === "ALL"}
+                    label="Any"
+                    onClick={() => setSeatFilter("ALL")}
+                  />
+                  <FilterPill
+                    active={seatFilter() === "1"}
+                    label="1"
+                    onClick={() => setSeatFilter("1")}
+                  />
+                  <FilterPill
+                    active={seatFilter() === "2"}
+                    label="2"
+                    onClick={() => setSeatFilter("2")}
+                  />
+                  <FilterPill
+                    active={seatFilter() === "3+"}
+                    label="3+"
+                    onClick={() => setSeatFilter("3+")}
+                  />
+                </div>
+
+                {/* Keyboard hint */}
+                <div class="flex items-center gap-3 text-muted-foreground text-xs">
+                  <span class="flex items-center gap-1">
+                    <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">J</kbd>
+                    <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">K</kbd>
+                    <span>Navigate</span>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono">
+                      Enter
+                    </kbd>
+                    <span>Open</span>
+                  </span>
+                </div>
+              </section>
+
+              {/* Results Table */}
+              <section class="border border-border bg-card">
                 <Show
                   when={filteredMons().length > 0}
                   fallback={
-                    <div class="px-4 py-10 text-center">
-                      <p class="font-medium">No rideable Pokemon match this filter set.</p>
-                      <p class="mt-1 text-muted-foreground text-sm">
-                        Try clearing a category or class.
-                      </p>
+                    <div class="px-4 py-12 text-center">
+                      <p class="text-muted-foreground">No mounts match these filters.</p>
                     </div>
                   }
                 >
-                  <div class="max-h-[68vh] overflow-auto">
+                  <div class="max-h-[60vh] overflow-auto">
                     <table class="w-full text-sm">
-                      <thead class="sticky top-0 bg-secondary/95 backdrop-blur-sm">
-                        <tr>
-                          <th class="px-4 py-2 text-left font-medium text-muted-foreground">
+                      <thead class="sticky top-0 z-10 bg-secondary/95 backdrop-blur-sm">
+                        <tr class="border-border border-b">
+                          <th class="px-4 py-2.5 text-left font-medium text-muted-foreground text-xs uppercase">
                             Pokemon
                           </th>
-                          <th class="px-4 py-2 text-left font-medium text-muted-foreground">
-                            Ride Classes
+                          <th class="px-4 py-2.5 text-left font-medium text-muted-foreground text-xs uppercase">
+                            Ride Type
                           </th>
-                          <th class="px-4 py-2 text-right font-medium text-muted-foreground">
+                          <th class="px-4 py-2.5 text-right font-medium text-muted-foreground text-xs uppercase">
                             Seats
                           </th>
                         </tr>
@@ -411,19 +414,19 @@ export default function Page() {
                               <tr
                                 class={cn(
                                   "cursor-pointer transition-colors",
-                                  isSelected() ? "bg-secondary/70" : "hover:bg-secondary/40"
+                                  isSelected() ? "bg-secondary" : "hover:bg-secondary/50"
                                 )}
                                 onMouseEnter={() => setSelectedIndex(index())}
                                 onClick={() => window.location.assign(`/pokemon/${pokemon.slug}`)}
                                 aria-selected={isSelected()}
                               >
-                                <td class="px-4 py-3 align-top">
+                                <td class="px-4 py-2.5">
                                   <div class="flex items-center gap-3">
                                     <PokemonSprite
                                       dexNumber={pokemon.dexNumber}
                                       name={pokemon.name}
+                                      class="h-10 w-10"
                                     />
-
                                     <div>
                                       <a
                                         href={`/pokemon/${pokemon.slug}`}
@@ -432,46 +435,41 @@ export default function Page() {
                                       >
                                         {pokemon.name}
                                       </a>
-                                      <div class="mt-0.5 flex items-center gap-1.5 text-muted-foreground text-xs">
+                                      <div class="mt-0.5 flex items-center gap-2 text-muted-foreground text-xs">
                                         <span class="font-mono">
                                           #{String(pokemon.dexNumber).padStart(3, "0")}
                                         </span>
-                                        <span>·</span>
-                                        <div class="flex flex-wrap gap-1">
-                                          <For each={pokemon.types}>
-                                            {(type) => (
-                                              <span
-                                                class="border px-1.5 py-0 font-medium text-[10px] uppercase tracking-wide"
-                                                style={{
-                                                  "border-color": TYPE_COLORS[type] ?? "#888888",
-                                                  color: TYPE_COLORS[type] ?? "#888888",
-                                                }}
-                                              >
-                                                {titleCaseFromId(type)}
-                                              </span>
-                                            )}
-                                          </For>
-                                        </div>
+                                        <For each={pokemon.types}>
+                                          {(type) => (
+                                            <span
+                                              class="border px-1 py-0 font-medium text-[10px] uppercase tracking-wide"
+                                              style={{
+                                                "border-color": `${TYPE_COLORS[type] ?? "#888"}66`,
+                                                color: TYPE_COLORS[type] ?? "#888",
+                                              }}
+                                            >
+                                              {titleCaseFromId(type)}
+                                            </span>
+                                          )}
+                                        </For>
                                       </div>
                                     </div>
                                   </div>
                                 </td>
 
-                                <td class="px-4 py-3 align-top">
-                                  <div class="flex flex-wrap gap-1">
+                                <td class="px-4 py-2.5">
+                                  <div class="flex flex-wrap gap-1.5">
                                     <For each={pokemon.behaviours}>
                                       {(behaviour) => (
-                                        <span class="inline-flex items-center gap-1 border border-border bg-secondary/40 px-2 py-0.5 text-[11px]">
+                                        <span class="inline-flex items-center gap-1 border border-border bg-secondary/50 px-2 py-0.5 text-[11px]">
                                           <RideableCategoryIcon
                                             category={behaviour.category}
-                                            class="h-3.5 w-3.5 text-muted-foreground"
+                                            class="h-3 w-3 text-muted-foreground"
                                           />
-                                          <RideableClassIcon
-                                            classId={behaviour.classId}
-                                            class="h-3.5 w-3.5"
-                                          />
-                                          <span>{formatRideableCategory(behaviour.category)}</span>
-                                          <span class="text-muted-foreground">/</span>
+                                          <span class="text-muted-foreground">
+                                            {formatRideableCategory(behaviour.category)}
+                                          </span>
+                                          <span class="text-border">/</span>
                                           <span>{titleCaseFromId(behaviour.classId)}</span>
                                         </span>
                                       )}
@@ -479,11 +477,8 @@ export default function Page() {
                                   </div>
                                 </td>
 
-                                <td class="px-4 py-3 text-right align-top">
+                                <td class="px-4 py-2.5 text-right">
                                   <span class="font-mono text-base">{pokemon.seatCount}</span>
-                                  <p class="text-muted-foreground text-xs">
-                                    {pokemon.seatCount === 1 ? "seat" : "seats"}
-                                  </p>
                                 </td>
                               </tr>
                             )
@@ -494,8 +489,9 @@ export default function Page() {
                   </div>
                 </Show>
 
-                <div class="border-border border-t px-4 py-2 font-mono text-muted-foreground text-xs uppercase tracking-wide">
-                  Showing {filteredMons().length} of {dataSignal().length} rideable species
+                {/* Footer */}
+                <div class="border-border border-t px-4 py-2 font-mono text-muted-foreground text-xs">
+                  {filteredMons().length} of {dataSignal().length} mounts
                 </div>
               </section>
             </div>
@@ -506,11 +502,11 @@ export default function Page() {
   )
 }
 
-function FilterChip(props: {
+function FilterPill(props: {
   label: string
   active: boolean
   onClick: () => void
-  icon?: JSX.Element | null
+  icon?: JSX.Element
   count?: number
 }) {
   return (
@@ -520,26 +516,24 @@ function FilterChip(props: {
         "inline-flex items-center gap-1.5 border px-2.5 py-1 text-xs transition-colors",
         props.active
           ? "border-foreground bg-foreground text-background"
-          : "border-border bg-secondary text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+          : "border-border bg-card text-muted-foreground hover:border-muted-foreground hover:text-foreground"
       )}
       onClick={props.onClick}
     >
       {props.icon}
       <span>{props.label}</span>
       <Show when={typeof props.count === "number"}>
-        <span class="font-mono opacity-80">{props.count}</span>
+        <span class="font-mono opacity-70">{props.count}</span>
       </Show>
     </button>
   )
 }
 
-function StatCell(props: { label: string; value: number }) {
+function StatPill(props: { label: string; value: number }) {
   return (
-    <div class="bg-card px-3 py-2">
-      <p class="font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
-        {props.label}
-      </p>
-      <p class="mt-0.5 font-mono text-lg">{props.value}</p>
+    <div class="bg-card px-3 py-2 text-center">
+      <span class="block font-mono text-[10px] text-muted-foreground uppercase">{props.label}</span>
+      <span class="block font-mono text-lg leading-none">{props.value}</span>
     </div>
   )
 }
@@ -548,7 +542,7 @@ function LoadingState() {
   return (
     <div class="flex min-h-[40vh] flex-col items-center justify-center gap-3">
       <div class="h-8 w-8 animate-spin border-2 border-border border-t-foreground" />
-      <p class="text-muted-foreground text-sm">Loading rideable data...</p>
+      <p class="text-muted-foreground text-sm">Loading mounts...</p>
     </div>
   )
 }
