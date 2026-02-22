@@ -149,6 +149,12 @@ export type PokemonListItem = {
   eggGroups: string[]
 }
 
+export type PokemonDexNavItem = {
+  slug: string
+  name: string
+  dexNumber: number
+}
+
 export type MoveLearnerRecord = {
   slug: string
   name: string
@@ -159,10 +165,29 @@ export type MoveLearnerRecord = {
 export type MoveLearnerEntryRecord = {
   moveId: string
   moveName: string
+  shortDescription: string | null
+  description: string | null
   learners: MoveLearnerRecord[]
 }
 
 export type MoveLearnersIndex = Record<string, MoveLearnerEntryRecord>
+
+export type AbilityPokemonRecord = {
+  slug: string
+  name: string
+  dexNumber: number
+  hidden: boolean
+}
+
+export type AbilityEntryRecord = {
+  abilityId: string
+  name: string
+  shortDescription: string | null
+  description: string | null
+  pokemon: AbilityPokemonRecord[]
+}
+
+export type AbilityIndex = Record<string, AbilityEntryRecord>
 
 export type SearchDocument = {
   id: string

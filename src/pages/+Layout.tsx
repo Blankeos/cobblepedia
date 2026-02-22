@@ -28,9 +28,10 @@ export default function RootLayout(props: FlowProps) {
             onClick={openPalette}
           >
             <span>Search</span>
-            <kbd class="bg-secondary px-1.5 py-0.5 font-mono">Cmd</kbd>
-            <span>+</span>
-            <kbd class="bg-secondary px-1.5 py-0.5 font-mono">K</kbd>
+            <span class="flex items-center gap-0.5 border-border border-l pl-2 text-muted-foreground/70">
+              <kbd class="font-mono text-xs">⌘</kbd>
+              <span class="text-xs">K</span>
+            </span>
           </button>
         </div>
       </header>

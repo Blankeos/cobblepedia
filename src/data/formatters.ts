@@ -165,7 +165,20 @@ export function formatEvolutionRequirement(requirement: Record<string, unknown>)
   }
 
   if (variant === "biome") {
-    return `Biome ${formatBiomeToken(String(requirement.biomeCondition ?? ""))}`
+    const biomeCondition =
+      typeof requirement.biomeCondition === "string" ? requirement.biomeCondition : null
+    const biomeAnticondition =
+      typeof requirement.biomeAnticondition === "string" ? requirement.biomeAnticondition : null
+
+    if (biomeCondition) {
+      return `Biome ${formatBiomeToken(biomeCondition)}`
+    }
+
+    if (biomeAnticondition) {
+      return `Not in biome ${formatBiomeToken(biomeAnticondition)}`
+    }
+
+    return "Biome requirement"
   }
 
   if (variant === "weather") {
@@ -244,6 +257,18 @@ export function formatEvolutionRequirement(requirement: Record<string, unknown>)
   }
 
   return `Requirement: ${JSON.stringify(requirement)}`
+}
+
+export function formatEvolutionRequiredContext(variant: string, requiredContext: string): string {
+  if (variant === "item_interact") {
+    return `Use ${titleCaseFromId(requiredContext)}`
+  }
+
+  if (variant === "trade") {
+    return `Trade with ${titleCaseFromId(requiredContext)}`
+  }
+
+  return `Context: ${titleCaseFromId(requiredContext)}`
 }
 
 export function formatConditionChips(condition: Record<string, unknown> | null): string[] {

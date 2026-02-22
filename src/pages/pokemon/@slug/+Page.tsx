@@ -1,7 +1,8 @@
 import { createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
-import type { MoveSourceType, PokemonDetailRecord } from "@/data/cobblemon-types"
+import { PokemonModelPreview } from "@/components/pokemon-model-preview"
+import type { MoveSourceType, PokemonDetailRecord, PokemonDexNavItem } from "@/data/cobblemon-types"
 import { loadPokemonDetail } from "@/data/data-loader"
 import {
   formatConditionChips,
@@ -10,13 +11,21 @@ import {
   sortMovesForTab,
   titleCaseFromId,
 } from "@/data/formatters"
+import pokemonDexNavData from "@/data/generated/pokemon-dex-nav.json"
+import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
 
 const PAGE_MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type PageMoveTab = (typeof PAGE_MOVE_TABS)[number]
+type ArtworkView = "official" | "shiny" | "model"
 
-// Type color mapping for subtle accents
+const POKEMON_DEX_NAV = pokemonDexNavData as PokemonDexNavItem[]
+const POKEMON_DEX_NAV_INDEX_BY_SLUG = new Map<string, number>()
+for (const [index, pokemon] of POKEMON_DEX_NAV.entries()) {
+  POKEMON_DEX_NAV_INDEX_BY_SLUG.set(pokemon.slug, index)
+}
+
 const TYPE_COLORS: Record<string, string> = {
   normal: "#A8A878",
   fire: "#F08030",
@@ -38,8 +47,30 @@ const TYPE_COLORS: Record<string, string> = {
   fairy: "#EE99AC",
 }
 
+const EGG_GROUP_COLORS: Record<string, string> = {
+  monster: "#8b5cf6",
+  water1: "#38bdf8",
+  bug: "#84cc16",
+  flying: "#818cf8",
+  field: "#d97706",
+  fairy: "#f472b6",
+  grass: "#22c55e",
+  human_like: "#f97316",
+  water3: "#0ea5e9",
+  mineral: "#94a3b8",
+  amorphous: "#a78bfa",
+  water2: "#0284c7",
+  ditto: "#e879f9",
+  dragon: "#6366f1",
+  undiscovered: "#64748b",
+}
+
 function getTypeColor(type: string): string {
   return TYPE_COLORS[type.toLowerCase()] || "#888888"
+}
+
+function getEggGroupColor(group: string): string {
+  return EGG_GROUP_COLORS[group.toLowerCase()] || "#9ca3af"
 }
 
 export default function Page() {
@@ -57,6 +88,8 @@ export default function Page() {
     return loadPokemonDetail(nextSlug)
   })
 
+  const dexNeighbors = createMemo(() => findDexNeighborsByOffset(slug()))
+
   useMetadata({
     title: getTitle("Pokemon"),
   })
@@ -65,7 +98,13 @@ export default function Page() {
     <div class="min-h-screen bg-background">
       <Show when={!detail.loading} fallback={<LoadingState />}>
         <Show when={detail()} fallback={<NotFoundState />}>
-          {(detailSignal) => <PokemonDetailView detail={detailSignal()} />}
+          {(detailSignal) => (
+            <PokemonDetailView
+              detail={detailSignal()}
+              previous={dexNeighbors().previous}
+              next={dexNeighbors().next}
+            />
+          )}
         </Show>
       </Show>
     </div>
@@ -95,42 +134,162 @@ function NotFoundState() {
   )
 }
 
-function PokemonDetailView(props: { detail: PokemonDetailRecord }) {
+function PokemonDetailView(props: {
+  detail: PokemonDetailRecord
+  previous: PokemonDexNavItem | null
+  next: PokemonDexNavItem | null
+}) {
   const detail = () => props.detail
   const primaryType = () => detail().types[0] || "normal"
   const typeColor = () => getTypeColor(primaryType())
+  const [activeView, setActiveView] = createSignal<ArtworkView>("official")
+
+  const leaderHotkeys = useLeaderNavigationHotkeys({
+    onPrevious: () => {
+      if (props.previous) {
+        navigateToPokemon(props.previous.slug)
+      }
+    },
+    onNext: () => {
+      if (props.next) {
+        navigateToPokemon(props.next.slug)
+      }
+    },
+  })
 
   return (
-    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Hero Section */}
-      <header class="relative mb-8 overflow-hidden border border-border bg-card">
-        <div class="flex items-start justify-between p-6 sm:p-8">
-          <div class="flex flex-1 flex-col gap-4">
-            <span class="font-mono text-muted-foreground text-sm">
-              #{String(detail().dexNumber).padStart(3, "0")}
-            </span>
+    <div class="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+      {/* Dex Navigation Bar - Pokemon cards instead of arrows */}
+      <nav class="mb-4 flex items-center justify-between gap-4">
+        <DexNavCard pokemon={props.previous} direction="previous" />
 
-            <h1 class="font-semibold text-4xl tracking-tight sm:text-5xl">{detail().name}</h1>
+        <div class="flex items-center gap-1.5 text-muted-foreground">
+          <span class="hidden text-xs sm:inline">Leader</span>
+          <kbd class="hidden border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px] sm:inline">
+            Space
+          </kbd>
+          <span class="hidden text-xs sm:inline">then</span>
+          <kbd class="hidden border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px] sm:inline">
+            &lt;
+          </kbd>
+          <span class="hidden text-xs sm:inline">/</span>
+          <kbd class="hidden border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px] sm:inline">
+            &gt;
+          </kbd>
+        </div>
+
+        <DexNavCard pokemon={props.next} direction="next" />
+      </nav>
+
+      {/* Hero Section - Compact with view toggle */}
+      <header class="relative mb-6 border border-border bg-card">
+        <div class="flex flex-col gap-4 p-4 sm:flex-row sm:items-start sm:justify-between sm:p-5">
+          {/* Left: Pokemon Info */}
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-sm" style={{ color: typeColor() }}>
+                #{String(detail().dexNumber).padStart(3, "0")}
+              </span>
+            </div>
+
+            <h1 class="font-semibold text-3xl tracking-tight sm:text-4xl">{detail().name}</h1>
 
             <div class="flex flex-wrap gap-2">
               <For each={detail().types}>
                 {(type) => (
-                  <span
-                    class="border px-3 py-1 font-medium text-xs uppercase tracking-wider"
+                  <a
+                    href={`/types/${type}`}
+                    class="flex items-center gap-1.5 border px-3 py-1 font-medium text-xs uppercase tracking-wider transition-colors hover:bg-secondary/60"
                     style={{
                       "border-color": getTypeColor(type),
                       color: getTypeColor(type),
                     }}
                   >
+                    <TypeIcon type={type} />
                     {titleCaseFromId(type)}
-                  </span>
+                  </a>
                 )}
               </For>
             </div>
+
+            {/* Quick stats row */}
+            <div class="mt-2 flex flex-wrap gap-4 text-sm">
+              <div class="flex items-center gap-1.5">
+                <span class="text-muted-foreground">Height:</span>
+                <span class="font-mono">{detail().height ?? "—"}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-muted-foreground">Weight:</span>
+                <span class="font-mono">{detail().weight ?? "—"}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-muted-foreground">Catch:</span>
+                <span class="font-mono">{detail().catchRate ?? "—"}</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hidden h-24 w-24 items-center justify-center border border-border bg-secondary sm:flex">
-            <span class="font-mono text-2xl text-muted-foreground">{detail().name[0]}</span>
+          {/* Right: Artwork/Model Display */}
+          <div class="flex flex-col items-center gap-3 sm:items-end">
+            {/* View Toggle */}
+            <div class="flex items-center border border-border bg-secondary/50">
+              <ViewToggleButton
+                active={activeView() === "official"}
+                onClick={() => setActiveView("official")}
+                label="Official"
+              />
+              <ViewToggleButton
+                active={activeView() === "shiny"}
+                onClick={() => setActiveView("shiny")}
+                label="Shiny"
+              />
+              <ViewToggleButton
+                active={activeView() === "model"}
+                onClick={() => setActiveView("model")}
+                label="3D"
+              />
+            </div>
+
+            {/* Artwork Display - Compact */}
+            <div class="relative h-40 w-40 overflow-hidden border border-border bg-secondary/30 sm:h-44 sm:w-44">
+              <Show when={activeView() === "official"}>
+                <div class="flex h-full w-full items-center justify-center p-2">
+                  <img
+                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${detail().dexNumber}.png`}
+                    alt={`${detail().name} official artwork`}
+                    class="h-full w-full object-contain"
+                    loading="eager"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget
+                      target.style.display = "none"
+                    }}
+                  />
+                </div>
+              </Show>
+
+              <Show when={activeView() === "shiny"}>
+                <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2">
+                  <div class="text-3xl">✨</div>
+                  <p class="text-center text-muted-foreground text-xs">
+                    Shiny artwork
+                    <br />
+                    coming soon
+                  </p>
+                </div>
+              </Show>
+
+              <Show when={activeView() === "model"}>
+                <div class="h-full w-full">
+                  <PokemonModelPreview
+                    slug={detail().slug}
+                    dexNumber={detail().dexNumber}
+                    name={detail().name}
+                  />
+                </div>
+              </Show>
+            </div>
           </div>
         </div>
 
@@ -158,8 +317,11 @@ function PokemonDetailView(props: { detail: PokemonDetailRecord }) {
                     </div>
                     <div class="h-2 w-full bg-secondary">
                       <div
-                        class="h-full bg-foreground transition-all duration-500"
-                        style={{ width: `${Math.min((value / 255) * 100, 100)}%` }}
+                        class="h-full transition-all duration-500"
+                        style={{
+                          width: `${Math.min((value / 255) * 100, 100)}%`,
+                          "background-color": typeColor(),
+                        }}
                       />
                     </div>
                   </div>
@@ -178,7 +340,9 @@ function PokemonDetailView(props: { detail: PokemonDetailRecord }) {
               <For each={detail().abilities}>
                 {(ability) => (
                   <div class="flex items-center justify-between px-4 py-3">
-                    <span>{ability.label}</span>
+                    <a href={`/abilities/${ability.id}`} class="hover:underline">
+                      {ability.label}
+                    </a>
                     {ability.hidden && (
                       <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
                         Hidden
@@ -203,7 +367,19 @@ function PokemonDetailView(props: { detail: PokemonDetailRecord }) {
                 </span>
                 <div class="flex flex-wrap gap-1">
                   <For each={detail().eggGroups}>
-                    {(group) => <span class="text-sm">{formatEggGroup(group)}</span>}
+                    {(group) => (
+                      <a
+                        href={`/egg-groups/${group}`}
+                        class="border px-2.5 py-0.5 font-medium text-xs uppercase tracking-wider transition-colors hover:bg-secondary/60"
+                        style={{
+                          "border-color": `${getEggGroupColor(group)}40`,
+                          "background-color": `${getEggGroupColor(group)}15`,
+                          color: getEggGroupColor(group),
+                        }}
+                      >
+                        {formatEggGroup(group)}
+                      </a>
+                    )}
                   </For>
                 </div>
               </div>
@@ -224,14 +400,6 @@ function PokemonDetailView(props: { detail: PokemonDetailRecord }) {
                   Catch Rate
                 </span>
                 <span class="font-mono text-lg">{detail().catchRate ?? "—"}</span>
-              </div>
-              <div class="col-span-2 bg-card p-4">
-                <span class="mb-1 block font-mono text-muted-foreground text-xs uppercase">
-                  Dimensions
-                </span>
-                <span class="font-mono text-lg">
-                  {detail().height ?? "—"} × {detail().weight ?? "—"}
-                </span>
               </div>
             </div>
           </section>
@@ -366,7 +534,148 @@ function PokemonDetailView(props: { detail: PokemonDetailRecord }) {
           </section>
         </div>
       </div>
+
+      <Show when={leaderHotkeys.leaderActive()}>
+        <div class="pointer-events-none fixed right-4 bottom-4 z-50 w-80 max-w-[calc(100vw-2rem)] border border-border bg-card/95 shadow-lg backdrop-blur-sm">
+          <div class="flex items-center justify-between border-border border-b bg-secondary/70 px-3 py-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+                Leader
+              </span>
+              <kbd class="border border-border bg-card px-1.5 py-0.5 font-mono text-[10px]">
+                Space
+              </kbd>
+            </div>
+            <span class="animate-pulse font-mono text-[10px] text-success uppercase">
+              Awaiting key
+            </span>
+          </div>
+          <div class="grid grid-cols-[auto_1fr] gap-x-2 gap-y-1.5 px-3 py-3 text-xs">
+            <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
+              &gt; / .
+            </kbd>
+            <span>Next Pokemon</span>
+            <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
+              &lt; / ,
+            </kbd>
+            <span>Previous Pokemon</span>
+            <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
+              Esc
+            </kbd>
+            <span class="text-muted-foreground">Cancel</span>
+          </div>
+        </div>
+      </Show>
     </div>
+  )
+}
+
+function ViewToggleButton(props: { active: boolean; onClick: () => void; label: string }) {
+  return (
+    <button
+      type="button"
+      onClick={props.onClick}
+      class={cn(
+        "border px-3 py-1 font-medium text-xs transition-all",
+        props.active
+          ? "bg-foreground text-background"
+          : "text-muted-foreground hover:text-foreground"
+      )}
+    >
+      {props.label}
+    </button>
+  )
+}
+
+function DexNavCard(props: { pokemon: PokemonDexNavItem | null; direction: "previous" | "next" }) {
+  const isPrevious = props.direction === "previous"
+
+  if (!props.pokemon) {
+    return (
+      <div
+        class={cn(
+          "flex items-center gap-2 border border-border bg-secondary/30 px-3 py-2 opacity-40",
+          isPrevious ? "flex-row" : "flex-row-reverse"
+        )}
+      >
+        <div class="flex h-8 w-8 items-center justify-center bg-secondary">
+          <span class="text-muted-foreground text-xs">—</span>
+        </div>
+        <div class={cn("flex flex-col", isPrevious ? "items-start" : "items-end")}>
+          <span class="text-[10px] text-muted-foreground">{isPrevious ? "First" : "Last"}</span>
+          <span class="font-medium text-xs">—</span>
+        </div>
+      </div>
+    )
+  }
+
+  const name = props.pokemon.name
+  const dexNumber = props.pokemon.dexNumber
+
+  return (
+    <a
+      href={`/pokemon/${props.pokemon.slug}`}
+      class={cn(
+        "group flex items-center gap-2 border border-border bg-card px-3 py-2 transition-all hover:border-muted-foreground hover:bg-secondary/30",
+        isPrevious ? "flex-row" : "flex-row-reverse"
+      )}
+    >
+      <span
+        class={cn(
+          "text-muted-foreground text-sm transition-colors group-hover:text-foreground",
+          isPrevious ? "order-first" : "order-last"
+        )}
+      >
+        {isPrevious ? "←" : "→"}
+      </span>
+      <div class="flex h-8 w-8 items-center justify-center overflow-hidden bg-secondary">
+        <img
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`}
+          alt={name}
+          class="h-6 w-6 object-contain transition-transform group-hover:scale-110"
+          loading="lazy"
+        />
+      </div>
+      <div class={cn("flex flex-col", isPrevious ? "items-start" : "items-end")}>
+        <span class="font-mono text-[10px] text-muted-foreground">
+          #{String(dexNumber).padStart(3, "0")}
+        </span>
+        <span class="font-medium text-xs transition-colors group-hover:text-foreground">
+          {name}
+        </span>
+      </div>
+    </a>
+  )
+}
+
+function TypeIcon(props: { type: string }) {
+  // Simple circle indicator for type
+  const colors: Record<string, string> = {
+    normal: "#A8A878",
+    fire: "#F08030",
+    water: "#6890F0",
+    electric: "#F8D030",
+    grass: "#78C850",
+    ice: "#98D8D8",
+    fighting: "#C03028",
+    poison: "#A040A0",
+    ground: "#E0C068",
+    flying: "#A890F0",
+    psychic: "#F85888",
+    bug: "#A8B820",
+    rock: "#B8A038",
+    ghost: "#705898",
+    dragon: "#7038F8",
+    dark: "#705848",
+    steel: "#B8B8D0",
+    fairy: "#EE99AC",
+  }
+
+  return (
+    <span
+      class="h-2 w-2"
+      style={{ "background-color": colors[props.type.toLowerCase()] || "#888" }}
+    />
   )
 }
 
@@ -450,7 +759,11 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
             <For each={filteredMoves().slice(0, 50)}>
               {(move) => (
                 <tr class="hover:bg-secondary/50">
-                  <td class="px-4 py-2.5">{move.moveName}</td>
+                  <td class="px-4 py-2.5">
+                    <a href={`/moves/${move.moveId}`} class="hover:underline">
+                      {move.moveName}
+                    </a>
+                  </td>
                   <td class="px-4 py-2.5 text-right">
                     <SourceBadge type={move.sourceType} value={move.sourceValue} />
                   </td>
@@ -485,6 +798,32 @@ function SourceBadge(props: { type: MoveSourceType; value: number | null }) {
       {formatMoveSource(props.type, props.value)}
     </span>
   )
+}
+
+function findDexNeighborsByOffset(currentSlug: string) {
+  if (!currentSlug || POKEMON_DEX_NAV.length === 0) {
+    return {
+      previous: null,
+      next: null,
+    }
+  }
+
+  const index = POKEMON_DEX_NAV_INDEX_BY_SLUG.get(currentSlug)
+  if (index === undefined) {
+    return {
+      previous: null,
+      next: null,
+    }
+  }
+
+  return {
+    previous: POKEMON_DEX_NAV[index - 1] ?? null,
+    next: POKEMON_DEX_NAV[index + 1] ?? null,
+  }
+}
+
+function navigateToPokemon(slug: string) {
+  window.location.assign(`/pokemon/${slug}`)
 }
 
 function formatStatName(stat: string): string {

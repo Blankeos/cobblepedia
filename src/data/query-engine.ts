@@ -9,6 +9,10 @@ import type {
 import { normalizeSearchText, titleCaseFromId } from "@/data/formatters"
 
 const MOVE_KEYWORDS = new Set(["move", "moves"])
+const MAX_POKEMON_RESULTS = 60
+const MAX_FACET_RESULTS = 40
+const MAX_MOVE_RESULTS = 30
+const MAX_FALLBACK_RESULTS = 30
 
 const FACET_LABELS: Record<QueryFacet, string> = {
   "egg-group": "Egg Groups",
@@ -47,7 +51,7 @@ export function resolveQuery(
     const defaultResults = pokemonDocs
       .slice()
       .sort(sortSearchDocs)
-      .slice(0, 12)
+      .slice(0, MAX_POKEMON_RESULTS)
       .map((doc) => createPokemonResult(doc, pokemonBySlug, null, 0))
 
     return {
@@ -78,7 +82,7 @@ export function resolveQuery(
       return {
         intent: "pokemon-facet",
         normalizedQuery,
-        results: facetCandidates.slice(0, 10).map((candidate) => {
+        results: facetCandidates.slice(0, MAX_FACET_RESULTS).map((candidate) => {
           return createPokemonResult(
             candidate.doc,
             pokemonBySlug,
@@ -96,7 +100,7 @@ export function resolveQuery(
       intent: "pokemon-overview",
       normalizedQuery,
       results: overviewCandidates
-        .slice(0, 12)
+        .slice(0, MAX_POKEMON_RESULTS)
         .map((candidate) =>
           createPokemonResult(candidate.doc, pokemonBySlug, null, candidate.score)
         ),
@@ -109,7 +113,7 @@ export function resolveQuery(
     results: pokemonDocs
       .slice()
       .sort(sortSearchDocs)
-      .slice(0, 8)
+      .slice(0, MAX_FALLBACK_RESULTS)
       .map((doc) => createPokemonResult(doc, pokemonBySlug, null, 0)),
   }
 }
@@ -175,7 +179,7 @@ function matchMoves(
       return right.learnerCount - left.learnerCount
     })
 
-  return scored.slice(0, 8).map((entry) => {
+  return scored.slice(0, MAX_MOVE_RESULTS).map((entry) => {
     const moveId = entry.doc.moveId ?? ""
     const learnerCount = moveLearners[moveId]?.learners.length ?? 0
 

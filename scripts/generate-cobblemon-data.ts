@@ -3,12 +3,14 @@ import { mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises"
 import path from "node:path"
 import JSZip from "jszip"
 import type {
+  AbilityIndex,
   EvolutionEdgeRecord,
   MetaRecord,
   MoveLearnersIndex,
   MoveSourceType,
   ParsedMove,
   PokemonDetailRecord,
+  PokemonDexNavItem,
   PokemonFormRecord,
   PokemonListItem,
   SearchDocument,
@@ -17,6 +19,7 @@ import type {
 import {
   canonicalId,
   formatAbilityId,
+  formatEvolutionRequiredContext,
   formatEvolutionRequirement,
   normalizeSearchText,
   parseLevelRange,
@@ -77,6 +80,22 @@ type SpawnWarnings = {
 
 type ShowdownData = {
   moveNames: Map<string, string>
+  moves: Map<
+    string,
+    {
+      name: string
+      shortDescription: string | null
+      description: string | null
+    }
+  >
+  abilities: Map<
+    string,
+    {
+      name: string
+      shortDescription: string | null
+      description: string | null
+    }
+  >
   learnsetCount: number
 }
 
@@ -131,7 +150,9 @@ async function main() {
   }
 
   const pokemonList = buildPokemonList(detailsBySlug)
-  const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild)
+  const pokemonDexNav = buildPokemonDexNav(pokemonList)
+  const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild, showdownData.moves)
+  const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
   const searchIndex = buildSearchIndex(pokemonList, moveLearners)
 
   if (searchIndex.some((doc) => doc.resultType === "pokemon-overview" && !doc.implemented)) {
@@ -158,7 +179,9 @@ async function main() {
   await writeArtifacts({
     meta,
     pokemonList,
+    pokemonDexNav,
     moveLearners,
+    abilityIndex,
     searchIndex,
     detailsBySlug,
   })
@@ -257,29 +280,78 @@ async function loadShowdownData(): Promise<ShowdownData> {
 
   const movesCode = await readZipEntryAsText(zip, "data/moves.js")
   const movesTextCode = await readZipEntryAsText(zip, "data/text/moves.js")
+  const abilitiesCode = await readZipEntryAsText(zip, "data/abilities.js")
+  const abilitiesTextCode = await readZipEntryAsText(zip, "data/text/abilities.js")
   const learnsetsCode = await readZipEntryAsText(zip, "data/learnsets.js")
 
   const movesModule = evaluateCommonJsModule(movesCode)
   const movesTextModule = evaluateCommonJsModule(movesTextCode)
+  const abilitiesModule = evaluateCommonJsModule(abilitiesCode)
+  const abilitiesTextModule = evaluateCommonJsModule(abilitiesTextCode)
   const learnsetsModule = evaluateCommonJsModule(learnsetsCode)
 
   const moves = getNamedExport(movesModule, "Moves")
   const movesText = getNamedExport(movesTextModule, "MovesText")
+  const abilities = getNamedExport(abilitiesModule, "Abilities")
+  const abilitiesText = getNamedExport(abilitiesTextModule, "AbilitiesText")
   const learnsets = getNamedExport(learnsetsModule, "Learnsets")
 
   const moveNames = new Map<string, string>()
+  const moveEntries = new Map<
+    string,
+    {
+      name: string
+      shortDescription: string | null
+      description: string | null
+    }
+  >()
+
   for (const [moveId, moveData] of Object.entries(moves)) {
     const textEntry = isRecord(movesText[moveId]) ? movesText[moveId] : null
     const moveEntry = isRecord(moveData) ? moveData : null
 
     const textName = textEntry && typeof textEntry.name === "string" ? textEntry.name : null
     const moveName = moveEntry && typeof moveEntry.name === "string" ? moveEntry.name : null
+    const resolvedName = textName ?? moveName ?? titleCaseFromId(moveId)
 
-    moveNames.set(moveId, textName ?? moveName ?? titleCaseFromId(moveId))
+    moveNames.set(moveId, resolvedName)
+    moveEntries.set(moveId, {
+      name: resolvedName,
+      shortDescription: typeof textEntry?.shortDesc === "string" ? textEntry.shortDesc : null,
+      description: typeof textEntry?.desc === "string" ? textEntry.desc : null,
+    })
+  }
+
+  const abilityEntries = new Map<
+    string,
+    {
+      name: string
+      shortDescription: string | null
+      description: string | null
+    }
+  >()
+  const abilityIds = new Set([...Object.keys(abilities), ...Object.keys(abilitiesText)])
+
+  for (const abilityId of abilityIds) {
+    const abilityEntry = isRecord(abilities[abilityId]) ? abilities[abilityId] : null
+    const textEntry = isRecord(abilitiesText[abilityId]) ? abilitiesText[abilityId] : null
+
+    const abilityName =
+      (typeof textEntry?.name === "string" ? textEntry.name : null) ??
+      (typeof abilityEntry?.name === "string" ? abilityEntry.name : null) ??
+      titleCaseFromId(abilityId)
+
+    abilityEntries.set(abilityId, {
+      name: abilityName,
+      shortDescription: typeof textEntry?.shortDesc === "string" ? textEntry.shortDesc : null,
+      description: typeof textEntry?.desc === "string" ? textEntry.desc : null,
+    })
   }
 
   return {
     moveNames,
+    moves: moveEntries,
+    abilities: abilityEntries,
     learnsetCount: Object.keys(learnsets).length,
   }
 }
@@ -750,6 +822,11 @@ function parseEvolutionEdges(
     const requirementObjects = Array.isArray(rawEvolution.requirements)
       ? rawEvolution.requirements
       : []
+
+    const variant = typeof rawEvolution.variant === "string" ? rawEvolution.variant : "unknown"
+    const requiredContext =
+      typeof rawEvolution.requiredContext === "string" ? rawEvolution.requiredContext : null
+
     const requirements = requirementObjects
       .filter((value): value is Record<string, unknown> => isRecord(value))
       .map((requirement) => {
@@ -760,18 +837,25 @@ function parseEvolutionEdges(
         }
       })
 
+    const requirementText = requirements.map((requirement) => requirement.text)
+    if (requiredContext) {
+      const requiredContextText = formatEvolutionRequiredContext(variant, requiredContext)
+      if (!requirementText.includes(requiredContextText)) {
+        requirementText.unshift(requiredContextText)
+      }
+    }
+
     edges.push({
       id: typeof rawEvolution.id === "string" ? rawEvolution.id : `evolution-${index + 1}`,
-      variant: typeof rawEvolution.variant === "string" ? rawEvolution.variant : "unknown",
+      variant,
       result,
       consumeHeldItem: Boolean(rawEvolution.consumeHeldItem),
       learnableMoves: Array.isArray(rawEvolution.learnableMoves)
         ? rawEvolution.learnableMoves.filter((move): move is string => typeof move === "string")
         : [],
-      requirementText: requirements.map((requirement) => requirement.text),
+      requirementText,
       requirements,
-      requiredContext:
-        typeof rawEvolution.requiredContext === "string" ? rawEvolution.requiredContext : null,
+      requiredContext,
       fromForm: params.fromForm,
       raw: rawEvolution,
     })
@@ -897,9 +981,22 @@ function buildPokemonList(detailsBySlug: Map<string, PokemonDetailRecord>): Poke
     })
 }
 
+function buildPokemonDexNav(pokemonList: PokemonListItem[]): PokemonDexNavItem[] {
+  return pokemonList
+    .filter((pokemon) => pokemon.implemented)
+    .map((pokemon) => {
+      return {
+        slug: pokemon.slug,
+        name: pokemon.name,
+        dexNumber: pokemon.dexNumber,
+      }
+    })
+}
+
 function buildMoveLearnersIndex(
   detailsBySlug: Map<string, PokemonDetailRecord>,
-  moveLearnersBuild: Map<string, Map<string, Set<MoveSourceType>>>
+  moveLearnersBuild: Map<string, Map<string, Set<MoveSourceType>>>,
+  moveMap: ShowdownData["moves"]
 ): MoveLearnersIndex {
   const entries = Array.from(moveLearnersBuild.entries()).sort(([leftMove], [rightMove]) => {
     return leftMove.localeCompare(rightMove)
@@ -936,11 +1033,103 @@ function buildMoveLearnersIndex(
         ? (findMoveNameFromDetails(moveId, learners[0].slug, detailsBySlug) ??
           titleCaseFromId(moveId))
         : titleCaseFromId(moveId)
+    const moveInfo = moveMap.get(moveId)
 
     index[moveId] = {
       moveId,
-      moveName,
+      moveName: moveInfo?.name ?? moveName,
+      shortDescription: moveInfo?.shortDescription ?? null,
+      description: moveInfo?.description ?? null,
       learners,
+    }
+  }
+
+  return index
+}
+
+function buildAbilityIndex(
+  detailsBySlug: Map<string, PokemonDetailRecord>,
+  abilityMap: ShowdownData["abilities"]
+): AbilityIndex {
+  const byAbility = new Map<
+    string,
+    Map<
+      string,
+      {
+        slug: string
+        name: string
+        dexNumber: number
+        hidden: boolean
+      }
+    >
+  >()
+
+  const registerAbility = (
+    detail: PokemonDetailRecord,
+    ability: {
+      id: string
+      hidden: boolean
+    }
+  ) => {
+    if (!ability.id) {
+      return
+    }
+
+    if (!byAbility.has(ability.id)) {
+      byAbility.set(ability.id, new Map())
+    }
+
+    const pokemonMap = byAbility.get(ability.id)
+    if (!pokemonMap) {
+      return
+    }
+
+    const existing = pokemonMap.get(detail.slug)
+    if (existing) {
+      existing.hidden = existing.hidden && ability.hidden
+      return
+    }
+
+    pokemonMap.set(detail.slug, {
+      slug: detail.slug,
+      name: detail.name,
+      dexNumber: detail.dexNumber,
+      hidden: ability.hidden,
+    })
+  }
+
+  for (const detail of detailsBySlug.values()) {
+    for (const ability of detail.abilities) {
+      registerAbility(detail, ability)
+    }
+
+    for (const form of detail.forms) {
+      for (const ability of form.abilities) {
+        registerAbility(detail, ability)
+      }
+    }
+  }
+
+  const index: AbilityIndex = {}
+
+  for (const [abilityId, pokemonMap] of Array.from(byAbility.entries()).sort(([left], [right]) => {
+    return left.localeCompare(right)
+  })) {
+    const abilityInfo = abilityMap.get(abilityId)
+    const pokemon = Array.from(pokemonMap.values()).sort((left, right) => {
+      if (left.dexNumber !== right.dexNumber) {
+        return left.dexNumber - right.dexNumber
+      }
+
+      return left.slug.localeCompare(right.slug)
+    })
+
+    index[abilityId] = {
+      abilityId,
+      name: abilityInfo?.name ?? titleCaseFromId(abilityId),
+      shortDescription: abilityInfo?.shortDescription ?? null,
+      description: abilityInfo?.description ?? null,
+      pokemon,
     }
   }
 
@@ -1024,7 +1213,9 @@ function buildSearchIndex(
 async function writeArtifacts(params: {
   meta: MetaRecord
   pokemonList: PokemonListItem[]
+  pokemonDexNav: PokemonDexNavItem[]
   moveLearners: MoveLearnersIndex
+  abilityIndex: AbilityIndex
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
 }) {
@@ -1033,7 +1224,9 @@ async function writeArtifacts(params: {
 
   await writeJsonFile(path.join(GENERATED_ROOT, "meta.json"), params.meta)
   await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-list.json"), params.pokemonList)
+  await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-dex-nav.json"), params.pokemonDexNav)
   await writeJsonFile(path.join(GENERATED_ROOT, "move-learners.json"), params.moveLearners)
+  await writeJsonFile(path.join(GENERATED_ROOT, "ability-index.json"), params.abilityIndex)
   await writeJsonFile(path.join(GENERATED_ROOT, "search-index.json"), params.searchIndex)
 
   const sortedDetails = Array.from(params.detailsBySlug.entries()).sort(([left], [right]) => {

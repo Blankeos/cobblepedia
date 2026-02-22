@@ -32,9 +32,9 @@ const FEATURES = [
   },
   {
     icon: "04",
-    title: "Live Preview",
-    description: "See results update as you type. Full details before you commit.",
-    example: "Arrow keys",
+    title: "Built for vim-nerds",
+    description: "Keyboard-first navigation with hjkl support. No mouse required.",
+    example: "hjkl / gg / G / Cmd+K",
   },
 ]
 
@@ -55,21 +55,21 @@ export default function Page() {
       <section class="flex flex-col items-center border-border border-b py-20 text-center">
         <div class="mb-8 inline-flex items-center gap-2 border border-border bg-secondary px-3 py-1.5">
           <span class="h-1.5 w-1.5 rounded-full bg-success"></span>
-          <span class="font-medium text-muted-foreground text-xs">Live Data</span>
+          <span class="font-medium text-muted-foreground text-xs">Instant Results</span>
         </div>
 
         <h1 class="mb-5 font-semibold text-4xl tracking-tight sm:text-6xl lg:text-7xl">
-          Cobblemon answers,
+          The fastest
           <br />
-          <span class="text-muted-foreground">one keystroke away.</span>
+          <span class="text-muted-foreground">Cobblemon wiki.</span>
         </h1>
 
         <p class="mb-10 max-w-xl text-lg text-muted-foreground">
-          Fast, comprehensive reference for Cobblemon. Search moves, spawns, evolutions, and egg
-          groups without leaving your keyboard.
+          The most comprehensive, easy-to-use wiki for Cobblemon. Search moves, spawns, evolutions,
+          and egg groups without leaving your keyboard.
         </p>
 
-        <div class="mb-16 flex items-center gap-3">
+        <div class="mb-16">
           <button
             type="button"
             class="inline-flex items-center gap-2 border border-foreground bg-foreground px-6 py-3 font-medium text-background text-sm transition-colors hover:bg-foreground/90"
@@ -86,15 +86,11 @@ export default function Page() {
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
             </svg>
-            Open Search
-          </button>
-          <button
-            type="button"
-            class="inline-flex items-center gap-1.5 border border-border px-4 py-3 text-muted-foreground text-sm"
-          >
-            <kbd class="bg-secondary px-1.5 py-0.5 font-mono text-xs">Cmd</kbd>
-            <span>+</span>
-            <kbd class="bg-secondary px-1.5 py-0.5 font-mono text-xs">K</kbd>
+            <span>Open Search</span>
+            <span class="ml-2 flex items-center gap-1 border-background/20 border-l pl-3 text-background/70">
+              <kbd class="rounded bg-background/10 px-1.5 py-0.5 font-mono text-xs">⌘</kbd>
+              <span class="text-xs">K</span>
+            </span>
           </button>
         </div>
 
@@ -132,10 +128,6 @@ export default function Page() {
                   <div class="flex cursor-pointer flex-col gap-1 border-foreground border-l-2 bg-secondary p-3">
                     <span class="font-medium text-sm">Lucario</span>
                     <span class="text-muted-foreground text-xs">Aura Pokemon · Fighting/Steel</span>
-                  </div>
-                  <div class="flex cursor-pointer flex-col gap-1 border-transparent border-l-2 p-3 hover:bg-secondary">
-                    <span class="font-medium text-sm">Lucario Mega</span>
-                    <span class="text-muted-foreground text-xs">Mega Evolution</span>
                   </div>
                   <div class="flex cursor-pointer flex-col gap-1 border-transparent border-l-2 p-3 hover:bg-secondary">
                     <span class="font-medium text-sm">Riolu</span>
@@ -232,15 +224,34 @@ export default function Page() {
           </span>
           <h2 class="font-semibold text-3xl tracking-tight">Current snapshot</h2>
           <p class="mt-3 text-muted-foreground text-sm">
-            Data cached from the official{" "}
+            Data sourced from the{" "}
             <a
               href="https://gitlab.com/cable-mc/cobblemon"
               class="text-foreground underline hover:no-underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Cobblemon GitLab repository
+              official Cobblemon repository
             </a>
+            ,{" "}
+            <a
+              href="https://gitlab.com/cable-mc/cobblemon-assets"
+              class="text-foreground underline hover:no-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cobblemon Assets
+            </a>{" "}
+            for model previews, and{" "}
+            <a
+              href="https://pokeapi.co"
+              class="text-foreground underline hover:no-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PokeAPI
+            </a>{" "}
+            for additional images.
           </p>
         </div>
 

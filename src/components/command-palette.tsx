@@ -220,11 +220,8 @@ export default function CommandPalette() {
     }
 
     if (result.type === "move-learners" && result.moveId) {
-      const firstLearner = moveLearners()?.[result.moveId]?.learners[0]
-      if (firstLearner) {
-        closePalette()
-        navigate(`/pokemon/${firstLearner.slug}`)
-      }
+      closePalette()
+      navigate(`/moves/${result.moveId}`)
     }
   }
 

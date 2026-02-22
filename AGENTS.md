@@ -227,3 +227,24 @@ Use `iconmate --help` to explore available commands. Common workflow:
 - Add: `iconmate add <set:icon>` (e.g., `iconmate add lucide:arrow-right`)
 
 For detailed help on a specific subcommand, run `iconmate <command> --help` (e.g., `iconmate iconify --help`).
+
+## 16) Model Preview and Artwork Data
+
+Model previews are required to be runtime-fetched (not stored in this repo).
+
+- Cobblemon model source for previews:
+  - `https://gitlab.com/cable-mc/cobblemon-assets/-/tree/master/blockbench/pokemon`
+- Do not commit upstream model payloads (`.geo.json`, `.bbmodel`, texture PNGs) into this codebase.
+- Render previews with `three.js`.
+- Resolve and fetch assets dynamically for the currently viewed Pokemon.
+
+PokeAPI sprite/art requirements:
+
+- Use PokeAPI v1beta2 GraphQL endpoint: `https://graphql.pokeapi.co/v1beta2`
+- Use `fetch` directly for GraphQL POST requests. Do **not** add a full GraphQL client dependency.
+- Docs/explorer: `https://graphql.pokeapi.co/v1beta2/console/`
+- Preferred art sprite path in response JSON:
+  - `pokemon[0].pokemonsprites[0].sprites.other["official-artwork"].front_default`
+- Recommended fallback order when artwork is missing:
+  1. `sprites.other.home.front_default`
+  2. `sprites.front_default`

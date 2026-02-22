@@ -1,14 +1,18 @@
 import type {
+  AbilityIndex,
   MetaRecord,
   MoveLearnersIndex,
   PokemonDetailRecord,
+  PokemonDexNavItem,
   PokemonListItem,
   SearchDocument,
 } from "@/data/cobblemon-types"
 
 let searchIndexPromise: Promise<SearchDocument[]> | null = null
 let pokemonListPromise: Promise<PokemonListItem[]> | null = null
+let pokemonDexNavPromise: Promise<PokemonDexNavItem[]> | null = null
 let moveLearnersPromise: Promise<MoveLearnersIndex> | null = null
+let abilityIndexPromise: Promise<AbilityIndex> | null = null
 let metaPromise: Promise<MetaRecord> | null = null
 
 const pokemonDetailModules = import.meta.glob<{ default: PokemonDetailRecord }>(
@@ -36,6 +40,25 @@ export function loadPokemonList(): Promise<PokemonListItem[]> {
   return pokemonListPromise
 }
 
+export function loadPokemonDexNav(): Promise<PokemonDexNavItem[]> {
+  if (!pokemonDexNavPromise) {
+    pokemonDexNavPromise = import("./generated/pokemon-dex-nav.json")
+      .then((module) => module.default as PokemonDexNavItem[])
+      .catch(async () => {
+        const pokemonList = await loadPokemonList()
+        return pokemonList
+          .filter((pokemon) => pokemon.implemented)
+          .map((pokemon) => ({
+            slug: pokemon.slug,
+            name: pokemon.name,
+            dexNumber: pokemon.dexNumber,
+          }))
+      })
+  }
+
+  return pokemonDexNavPromise
+}
+
 export function loadMoveLearners(): Promise<MoveLearnersIndex> {
   if (!moveLearnersPromise) {
     moveLearnersPromise = import("./generated/move-learners.json").then(
@@ -44,6 +67,16 @@ export function loadMoveLearners(): Promise<MoveLearnersIndex> {
   }
 
   return moveLearnersPromise
+}
+
+export function loadAbilityIndex(): Promise<AbilityIndex> {
+  if (!abilityIndexPromise) {
+    abilityIndexPromise = import("./generated/ability-index.json").then(
+      (module) => module.default as AbilityIndex
+    )
+  }
+
+  return abilityIndexPromise
 }
 
 export function loadMeta(): Promise<MetaRecord> {
