@@ -14,6 +14,8 @@ type SeatFilter = "ALL" | "1" | "2" | "3+"
 type SortOption = "dex" | "name" | "seats" | "modes"
 
 const CATEGORY_FILTERS = ["ALL", "LAND", "LIQUID", "AIR"] as const
+type RideableCategoryFilter = (typeof CATEGORY_FILTERS)[number]
+type RideableCategory = Exclude<RideableCategoryFilter, "ALL">
 
 const TYPE_COLORS: Record<string, string> = {
   normal: "#A8A878",
@@ -45,7 +47,7 @@ export default function Page() {
 
   const [rideableMons] = createResource(loadRideableMons)
   const [search, setSearch] = createSignal("")
-  const [categoryFilter, setCategoryFilter] = createSignal<string>("ALL")
+  const [categoryFilters, setCategoryFilters] = createSignal<RideableCategory[]>([])
   const [classFilter, setClassFilter] = createSignal<string>("ALL")
   const [seatFilter, setSeatFilter] = createSignal<SeatFilter>("ALL")
   const [sortBy, setSortBy] = createSignal<SortOption>("dex")
@@ -114,7 +116,7 @@ export default function Page() {
 
   const filteredMons = createMemo(() => {
     const query = search().trim().toLowerCase()
-    const category = categoryFilter()
+    const categories = categoryFilters()
     const classId = classFilter()
     const seats = seatFilter()
     const sort = sortBy()
@@ -127,7 +129,10 @@ export default function Page() {
         }
       }
 
-      if (category !== "ALL" && !pokemon.categories.includes(category)) {
+      if (
+        categories.length > 0 &&
+        !categories.every((category) => pokemon.categories.includes(category))
+      ) {
         return false
       }
 
@@ -190,12 +195,27 @@ export default function Page() {
 
   createEffect(() => {
     search()
-    categoryFilter()
+    categoryFilters()
     classFilter()
     seatFilter()
     sortBy()
     setSelectedIndex(0)
   })
+
+  const toggleCategoryFilter = (category: RideableCategoryFilter) => {
+    if (category === "ALL") {
+      setCategoryFilters([])
+      return
+    }
+
+    setCategoryFilters((current) => {
+      if (current.includes(category)) {
+        return current.filter((value) => value !== category)
+      }
+
+      return [...current, category]
+    })
+  }
 
   createEffect(() => {
     const maxIndex = filteredMons().length - 1
@@ -307,10 +327,14 @@ export default function Page() {
                   <For each={CATEGORY_FILTERS}>
                     {(category) => (
                       <FilterPill
-                        active={categoryFilter() === category}
+                        active={
+                          category === "ALL"
+                            ? categoryFilters().length === 0
+                            : categoryFilters().includes(category)
+                        }
                         label={category === "ALL" ? "All" : formatRideableCategory(category)}
                         count={categoryCounts()[category] ?? undefined}
-                        onClick={() => setCategoryFilter(category)}
+                        onClick={() => toggleCategoryFilter(category)}
                         icon={
                           category === "ALL" ? undefined : (
                             <RideableCategoryIcon category={category} class="h-3 w-3" />
