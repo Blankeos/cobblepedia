@@ -10,6 +10,7 @@ import {
   IconEgg,
   IconForms,
   IconMapPin,
+  IconShield,
   IconSword,
   IconZap,
 } from "@/assets/icons"
@@ -23,8 +24,14 @@ import type {
   PokemonDexNeighbors,
   RideableSummaryRecord,
 } from "@/data/cobblemon-types"
-import { loadItemIndex, loadPokemonDetail, loadPokemonDexNeighbors } from "@/data/data-loader"
 import {
+  loadItemIndex,
+  loadMoveLearnerEntry,
+  loadPokemonDetail,
+  loadPokemonDexNeighbors,
+} from "@/data/data-loader"
+import {
+  canonicalId,
   formatConditionChips,
   formatEggGroup,
   formatMoveSource,
@@ -32,6 +39,14 @@ import {
   titleCaseFromId,
 } from "@/data/formatters"
 import { formatRideableCategory, parseRideableSummaryFromSpecies } from "@/data/rideable"
+import {
+  buildPikalyticsDexUrl,
+  buildSmogonDexUrl,
+  type CompetitiveDistributionEntry,
+  type CompetitiveFormHint,
+  type CompetitiveReferenceData,
+  loadCompetitiveReferenceData,
+} from "@/lib/competitive-data"
 import { resolvePokemonArtworkUrls } from "@/lib/pokeapi-artwork"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
 import { useParams } from "@/route-tree.gen"
@@ -41,6 +56,9 @@ import getTitle from "@/utils/get-title"
 const PAGE_MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type PageMoveTab = (typeof PAGE_MOVE_TABS)[number]
 type ArtworkView = "official" | "shiny"
+
+const SMOGON_LOGO_URL = "https://archives.bulbagarden.net/media/upload/3/38/Smogon_logo.png"
+const PIKALYTICS_LOGO_URL = "https://cdn.pikalytics.com/images/favicon/apple-icon.png"
 
 const TYPE_COLORS: Record<string, string> = {
   normal: "#A8A878",
@@ -832,6 +850,12 @@ function PokemonDetailView(props: {
         <div class="space-y-6">
           <MovesSection moves={activeMoves()} activeFormName={selectedForm()?.name ?? null} />
 
+          <CompetitiveSection
+            slug={detail().slug}
+            name={detail().name}
+            selectedForm={selectedForm()}
+          />
+
           {/* Spawn Locations */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
@@ -1215,6 +1239,389 @@ function MovesSection(props: {
       </div>
     </section>
   )
+}
+
+function CompetitiveSection(props: {
+  slug: string
+  name: string
+  selectedForm: PokemonDetailRecord["forms"][number] | null
+}) {
+  const selectedFormHint = createMemo<CompetitiveFormHint | null>(() => {
+    if (!props.selectedForm) {
+      return null
+    }
+
+    return {
+      slug: props.selectedForm.slug,
+      name: props.selectedForm.name,
+      battleOnly: props.selectedForm.battleOnly,
+      aspects: props.selectedForm.aspects,
+    }
+  })
+
+  const pikalyticsFallbackId = createMemo(() => {
+    const selectedForm = selectedFormHint()
+    if (!selectedForm || selectedForm.battleOnly) {
+      return props.name
+    }
+
+    const baseNameId = props.name.trim().replace(/\s+/g, "-")
+    const formNameId = selectedForm.name.trim().replace(/\s+/g, "-")
+
+    if (baseNameId && formNameId) {
+      return `${baseNameId}-${formNameId}`
+    }
+
+    return selectedForm.slug
+  })
+
+  const competitiveQuery = useQuery(() => ({
+    queryKey: [
+      "competitive-reference",
+      props.slug,
+      props.name,
+      selectedFormHint()?.slug ?? "",
+      selectedFormHint()?.name ?? "",
+      selectedFormHint()?.battleOnly ?? false,
+    ],
+    enabled: !import.meta.env.SSR,
+    staleTime: 1000 * 60 * 30,
+    queryFn: () =>
+      loadCompetitiveReferenceData({
+        slug: props.slug,
+        name: props.name,
+        selectedForm: selectedFormHint(),
+      }),
+  }))
+
+  const competitiveData = createMemo<CompetitiveReferenceData | null>(
+    () => competitiveQuery.data ?? null
+  )
+  const snapshot = createMemo(() => competitiveData()?.snapshot ?? null)
+
+  const smogonUrl = createMemo(() => competitiveData()?.smogonUrl ?? buildSmogonDexUrl(props.slug))
+  const pikalyticsUrl = createMemo(
+    () => competitiveData()?.pikalyticsUrl ?? buildPikalyticsDexUrl(pikalyticsFallbackId())
+  )
+
+  const pikalyticsDataDateLabel = createMemo(() =>
+    formatCompetitiveDataDate(competitiveData()?.pikalyticsDataDate ?? null)
+  )
+
+  return (
+    <section class="border border-border bg-card">
+      <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
+        <IconShield class="h-4 w-4 text-muted-foreground" />
+        <h2 class="font-semibold">Competitive</h2>
+      </div>
+
+      <div class="space-y-4 p-4">
+        {/* Description */}
+        <p class="text-muted-foreground text-sm">
+          External battle references for common movesets, items, and abilities.
+        </p>
+
+        {/* External Links */}
+        <div class="grid gap-2 sm:grid-cols-2">
+          <a
+            href={smogonUrl()}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="group flex items-center gap-3 border border-border bg-secondary px-3 py-2.5 text-xs transition-all hover:border-foreground/20 hover:bg-secondary/80"
+          >
+            <img
+              src={SMOGON_LOGO_URL}
+              alt=""
+              class="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+            />
+            <span class="flex-1 font-medium">Smogon Analysis</span>
+            <IconArrowRight class="h-3 w-3 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+          </a>
+          <a
+            href={pikalyticsUrl()}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="group flex items-center gap-3 border border-border bg-secondary px-3 py-2.5 text-xs transition-all hover:border-foreground/20 hover:bg-secondary/80"
+          >
+            <img
+              src={PIKALYTICS_LOGO_URL}
+              alt=""
+              class="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+            />
+            <span class="flex-1 font-medium">Pikalytics Stats</span>
+            <IconArrowRight class="h-3 w-3 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+          </a>
+        </div>
+
+        {/* Metadata */}
+        <div class="flex flex-wrap items-center gap-1.5 text-[10px] text-muted-foreground">
+          <span class="border border-border bg-secondary px-1.5 py-0.5 font-mono uppercase tracking-wide">
+            {competitiveData()?.pikalyticsFormatLabel ?? "VGC 2026 Regulation Set F (1760+)"}
+          </span>
+          <Show when={pikalyticsDataDateLabel()}>
+            {(label) => (
+              <span class="border border-border bg-secondary/50 px-1.5 py-0.5 font-mono uppercase tracking-wide">
+                {label()}
+              </span>
+            )}
+          </Show>
+          <Show when={snapshot()?.ranking != null}>
+            <span class="border border-border bg-secondary/50 px-1.5 py-0.5 font-mono uppercase tracking-wide">
+              #{snapshot()?.ranking}
+            </span>
+          </Show>
+          <Show when={snapshot()?.usagePercent != null}>
+            <span class="border border-border bg-secondary/50 px-1.5 py-0.5 font-mono uppercase tracking-wide">
+              {formatCompetitivePercent(snapshot()?.usagePercent ?? 0)}
+            </span>
+          </Show>
+        </div>
+
+        {/* Data Content */}
+        <Show
+          when={!competitiveQuery.isPending}
+          fallback={
+            <div class="flex items-center gap-2 text-muted-foreground text-xs">
+              <div class="h-3.5 w-3.5 animate-spin rounded-full border-2 border-border border-t-foreground" />
+              Loading competitive data...
+            </div>
+          }
+        >
+          <Show
+            when={snapshot()}
+            fallback={
+              <div class="flex items-start gap-2 rounded-sm border border-border bg-secondary/30 px-3 py-2.5 text-xs">
+                <div class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
+                <p class="text-muted-foreground">
+                  No reliable ladder sample available. Use the links above for set research.
+                </p>
+              </div>
+            }
+          >
+            {(snapshotSignal) => (
+              <div class="space-y-4">
+                {/* Stats Grid */}
+                <div class="grid gap-2 sm:grid-cols-3">
+                  <CompetitiveMovesList entries={snapshotSignal().topMoves} emptyLabel="—" />
+                  <CompetitiveDistributionList
+                    title="Items"
+                    entries={snapshotSignal().topItems}
+                    emptyLabel="—"
+                  />
+                  <CompetitiveDistributionList
+                    title="Abilities"
+                    entries={snapshotSignal().topAbilities}
+                    emptyLabel="—"
+                  />
+                </div>
+
+                {/* Spread */}
+                <Show when={snapshotSignal().topSpread}>
+                  {(spread) => (
+                    <div class="flex items-center gap-3 rounded-sm border border-border bg-secondary/30 px-3 py-2.5">
+                      <span class="text-[10px] text-muted-foreground uppercase tracking-wide">
+                        EV Spread
+                      </span>
+                      <div class="flex flex-1 flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                        <span class="font-medium font-mono">{spread().nature}</span>
+                        <span class="font-mono text-muted-foreground">{spread().evSpread}</span>
+                        <span class="font-mono text-[10px] text-muted-foreground/70">
+                          {formatCompetitivePercent(spread().percent)}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </Show>
+              </div>
+            )}
+          </Show>
+        </Show>
+      </div>
+    </section>
+  )
+}
+
+function CompetitiveDistributionList(props: {
+  title: string
+  entries: CompetitiveDistributionEntry[]
+  emptyLabel: string
+}) {
+  const maxPercent = createMemo(() => {
+    if (props.entries.length === 0) return 0
+    return Math.max(...props.entries.map((e) => e.percent))
+  })
+
+  return (
+    <div class="border border-border bg-secondary/20 p-3">
+      <h3 class="mb-2.5 font-medium text-[10px] text-muted-foreground uppercase tracking-wide">
+        {props.title}
+      </h3>
+
+      <Show
+        when={props.entries.length > 0}
+        fallback={<p class="py-2 text-center text-muted-foreground text-xs">{props.emptyLabel}</p>}
+      >
+        <ul class="space-y-2">
+          <For each={props.entries.slice(0, 4)}>
+            {(entry) => {
+              const barWidth = createMemo(() => {
+                if (maxPercent() <= 0) return 0
+                return (entry.percent / maxPercent()) * 100
+              })
+
+              return (
+                <li class="group">
+                  <div class="mb-1 flex items-center justify-between gap-2 text-xs">
+                    <span class="truncate font-medium">{entry.label}</span>
+                    <span class="shrink-0 font-mono text-[10px] text-muted-foreground">
+                      {formatCompetitivePercent(entry.percent)}
+                    </span>
+                  </div>
+                  <div class="h-0.5 w-full overflow-hidden bg-secondary/50">
+                    <div
+                      class="h-full bg-muted-foreground/30 transition-all duration-300"
+                      style={{ width: `${barWidth()}%` }}
+                    />
+                  </div>
+                </li>
+              )
+            }}
+          </For>
+        </ul>
+      </Show>
+    </div>
+  )
+}
+
+function CompetitiveMovesList(props: {
+  entries: CompetitiveDistributionEntry[]
+  emptyLabel: string
+}) {
+  const maxPercent = createMemo(() => {
+    if (props.entries.length === 0) return 0
+    return Math.max(...props.entries.map((e) => e.percent))
+  })
+
+  return (
+    <div class="border border-border bg-secondary/20 p-3">
+      <h3 class="mb-2.5 font-medium text-[10px] text-muted-foreground uppercase tracking-wide">
+        Moves
+      </h3>
+
+      <Show
+        when={props.entries.length > 0}
+        fallback={<p class="py-2 text-center text-muted-foreground text-xs">{props.emptyLabel}</p>}
+      >
+        <ul class="space-y-2">
+          <For each={props.entries.slice(0, 4)}>
+            {(entry) => <CompetitiveMoveItem entry={entry} maxPercent={maxPercent()} />}
+          </For>
+        </ul>
+      </Show>
+    </div>
+  )
+}
+
+function CompetitiveMoveItem(props: { entry: CompetitiveDistributionEntry; maxPercent: number }) {
+  const moveId = createMemo(() => {
+    return canonicalId(props.entry.label)
+  })
+
+  const moveQuery = useQuery(() => ({
+    queryKey: ["competitive-move", moveId()],
+    enabled: !import.meta.env.SSR && !!moveId(),
+    staleTime: 1000 * 60 * 30,
+    queryFn: () => loadMoveLearnerEntry(moveId()),
+  }))
+
+  const moveData = createMemo(() => moveQuery.data)
+  const moveType = createMemo(() => moveData()?.type ?? null)
+  const typeColor = createMemo(() => (moveType() ? getTypeColor(moveType()!) : null))
+
+  const barWidth = createMemo(() => {
+    if (props.maxPercent <= 0) return 0
+    return (props.entry.percent / props.maxPercent) * 100
+  })
+
+  return (
+    <li class="group">
+      <div class="mb-1 flex items-center justify-between gap-2 text-xs">
+        <a
+          href={`/moves/${moveId()}`}
+          class="flex items-center gap-1.5 truncate transition-opacity hover:opacity-80"
+        >
+          <Show when={typeColor()}>
+            {(color) => (
+              <span class="h-2 w-2 shrink-0 rounded-full" style={{ "background-color": color() }} />
+            )}
+          </Show>
+          <span class="truncate font-medium">{props.entry.label}</span>
+        </a>
+        <span class="shrink-0 font-mono text-[10px] text-muted-foreground">
+          {formatCompetitivePercent(props.entry.percent)}
+        </span>
+      </div>
+      <div class="h-0.5 w-full overflow-hidden bg-secondary/50">
+        <div
+          class="h-full bg-muted-foreground/30 transition-all duration-300"
+          style={{ width: `${barWidth()}%` }}
+        />
+      </div>
+    </li>
+  )
+}
+
+function formatCompetitivePercent(percent: number): string {
+  if (!Number.isFinite(percent)) {
+    return "--"
+  }
+
+  if (percent >= 10) {
+    return `${percent.toFixed(1)}%`
+  }
+
+  if (percent >= 1) {
+    return `${percent.toFixed(2)}%`
+  }
+
+  return `${percent.toFixed(3)}%`
+}
+
+function formatCompetitiveDataDate(dataDate: string | null): string | null {
+  if (!dataDate) {
+    return null
+  }
+
+  const [yearToken, monthToken] = dataDate.split("-")
+  const year = Number.parseInt(yearToken ?? "", 10)
+  const month = Number.parseInt(monthToken ?? "", 10)
+
+  if (!Number.isFinite(year) || !Number.isFinite(month) || month < 1 || month > 12) {
+    return dataDate
+  }
+
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ]
+
+  return `${monthNames[month - 1]} ${year}`
 }
 
 function SourceBadge(props: { type: MoveSourceType; value: number | null }) {
