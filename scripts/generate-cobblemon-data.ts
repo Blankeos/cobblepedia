@@ -6,6 +6,7 @@ import type {
   AbilityIndex,
   AbilitySlot,
   EvolutionEdgeRecord,
+  ItemIndex,
   MetaRecord,
   MoveLearnersIndex,
   MoveSourceType,
@@ -38,6 +39,9 @@ const UPSTREAM_ROOT = path.resolve(
 )
 
 const UPSTREAM_URL = "https://gitlab.com/cable-mc/cobblemon"
+const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
+const COBBLEMON_ASSETS_REF = "master"
+const COBBLEMON_ASSETS_ITEMS_ROOT = "items"
 const KNOWN_MOVE_PREFIXES = new Set(["egg", "tm", "tutor", "legacy", "special", "form_change"])
 
 const SPECIES_ROOT = path.join(UPSTREAM_ROOT, "common/src/main/resources/data/cobblemon/species")
@@ -60,6 +64,10 @@ const SHOWDOWN_ZIP_PATH = path.join(
 const SPAWNER_CONFIG_PATH = path.join(
   UPSTREAM_ROOT,
   "common/src/main/resources/data/cobblemon/spawning/best-spawner-config.json"
+)
+const EN_US_LANG_PATH = path.join(
+  UPSTREAM_ROOT,
+  "common/src/main/resources/assets/cobblemon/lang/en_us.json"
 )
 
 const GENERATED_ROOT = path.join(PROJECT_ROOT, "src/data/generated")
@@ -133,6 +141,11 @@ type MoveLearnerBuildEntry = {
 
 type MoveLearnersBuildMap = Map<string, Map<string, MoveLearnerBuildEntry>>
 
+type GitLabTreeEntry = {
+  path: string
+  type: "tree" | "blob"
+}
+
 await main()
 
 async function main() {
@@ -189,6 +202,7 @@ async function main() {
   const pokemonTypeEntries = buildPokemonTypeEntries(detailsBySlug)
   const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild, showdownData.moves)
   const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
+  const itemIndex = await loadItemIndex()
   const rideableMons = buildRideableMons(detailsBySlug)
   const searchIndex = buildSearchIndex(pokemonList, moveLearners)
 
@@ -211,6 +225,7 @@ async function main() {
       return sum + detail.spawnEntries.length
     }, 0),
     moveCount: showdownData.moveNames.size,
+    itemCount: Object.keys(itemIndex).length,
   }
 
   await writeArtifacts({
@@ -220,6 +235,7 @@ async function main() {
     pokemonTypeEntries,
     moveLearners,
     abilityIndex,
+    itemIndex,
     rideableMons,
     searchIndex,
     detailsBySlug,
@@ -230,6 +246,7 @@ async function main() {
   console.log(`- Species: ${meta.speciesCount} (${meta.implementedSpeciesCount} implemented)`)
   console.log(`- Spawn entries: ${meta.spawnEntryCount}`)
   console.log(`- Move map size: ${meta.moveCount}`)
+  console.log(`- Item entries: ${meta.itemCount}`)
   console.log(`- Learnset entries parsed: ${showdownData.learnsetCount}`)
 }
 
@@ -241,6 +258,7 @@ async function validateInputPaths() {
     BIOME_TAG_ROOT,
     SHOWDOWN_ZIP_PATH,
     SPAWNER_CONFIG_PATH,
+    EN_US_LANG_PATH,
   ]
 
   for (const requiredPath of requiredPaths) {
@@ -417,6 +435,186 @@ async function loadShowdownData(): Promise<ShowdownData> {
     abilities: abilityEntries,
     learnsetCount: Object.keys(learnsets).length,
   }
+}
+
+async function loadItemIndex(): Promise<ItemIndex> {
+  const lang = await readJson(EN_US_LANG_PATH)
+  let itemAssetPathById = new Map<string, string>()
+
+  try {
+    itemAssetPathById = await loadItemAssetPathById()
+  } catch (error) {
+    console.warn("[warn] Failed to load Cobblemon item sprite paths from GitLab assets", error)
+  }
+
+  const nameByItemId = new Map<string, string>()
+  const descriptionByItemId = new Map<string, Map<number, string>>()
+
+  for (const [rawKey, rawValue] of Object.entries(lang)) {
+    if (typeof rawValue !== "string") {
+      continue
+    }
+
+    const value = rawValue.trim()
+    if (!value) {
+      continue
+    }
+
+    const nameMatch = rawKey.match(/^item\.cobblemon\.([a-z0-9_]+)$/)
+    if (nameMatch) {
+      const itemId = nameMatch[1]
+      if (itemId) {
+        nameByItemId.set(itemId, value)
+      }
+      continue
+    }
+
+    const tooltipMatch = rawKey.match(/^item\.cobblemon\.([a-z0-9_]+)\.tooltip(?:_(\d+))?$/)
+    if (tooltipMatch) {
+      const itemId = tooltipMatch[1]
+      if (!itemId) {
+        continue
+      }
+
+      const index = tooltipMatch[2] ? Number.parseInt(tooltipMatch[2], 10) : 1
+      if (!Number.isFinite(index) || index <= 0) {
+        continue
+      }
+
+      if (!descriptionByItemId.has(itemId)) {
+        descriptionByItemId.set(itemId, new Map<number, string>())
+      }
+
+      descriptionByItemId.get(itemId)?.set(index, value)
+      continue
+    }
+
+    const descriptionMatch = rawKey.match(/^item\.cobblemon\.([a-z0-9_]+)\.(desc|description)$/)
+    if (!descriptionMatch) {
+      continue
+    }
+
+    const itemId = descriptionMatch[1]
+    if (!itemId) {
+      continue
+    }
+
+    if (!descriptionByItemId.has(itemId)) {
+      descriptionByItemId.set(itemId, new Map<number, string>())
+    }
+
+    descriptionByItemId.get(itemId)?.set(1, value)
+  }
+
+  const allItemIds = new Set<string>([...nameByItemId.keys(), ...descriptionByItemId.keys()])
+  const sortedItemIds = Array.from(allItemIds).sort((left, right) => left.localeCompare(right))
+  const itemIndex: ItemIndex = {}
+
+  for (const itemId of sortedItemIds) {
+    const name = nameByItemId.get(itemId) ?? titleCaseFromId(itemId)
+    const descriptionMap = descriptionByItemId.get(itemId)
+
+    const descriptionLines = descriptionMap
+      ? Array.from(descriptionMap.entries())
+          .sort(([left], [right]) => left - right)
+          .map(([, line]) => line)
+          .filter((line, index, list) => list.indexOf(line) === index)
+      : []
+
+    itemIndex[itemId] = {
+      itemId,
+      name,
+      description: descriptionLines.length > 0 ? descriptionLines.join(" ") : null,
+      descriptionLines,
+      assetPath: itemAssetPathById.get(itemId) ?? null,
+    }
+  }
+
+  return itemIndex
+}
+
+async function loadItemAssetPathById(): Promise<Map<string, string>> {
+  const treeEntries = await listGitLabTreeEntries(COBBLEMON_ASSETS_ITEMS_ROOT, {
+    recursive: true,
+    perPage: 200,
+  })
+
+  const bestPathByItemId = new Map<string, string>()
+
+  for (const treeEntry of treeEntries) {
+    if (treeEntry.type !== "blob") {
+      continue
+    }
+
+    const normalizedPath = treeEntry.path.trim().toLowerCase()
+    if (!normalizedPath.endsWith(".png")) {
+      continue
+    }
+
+    const fileName = normalizedPath.split("/").at(-1) ?? ""
+    const itemId = fileName.replace(/\.png$/u, "")
+    if (!/^[a-z0-9_]+$/u.test(itemId)) {
+      continue
+    }
+
+    const existingPath = bestPathByItemId.get(itemId)
+    if (!existingPath || isPreferredItemAssetPath(normalizedPath, existingPath)) {
+      bestPathByItemId.set(itemId, normalizedPath)
+    }
+  }
+
+  return bestPathByItemId
+}
+
+function isPreferredItemAssetPath(nextPath: string, currentPath: string): boolean {
+  if (nextPath.length !== currentPath.length) {
+    return nextPath.length < currentPath.length
+  }
+
+  return nextPath.localeCompare(currentPath) < 0
+}
+
+async function listGitLabTreeEntries(
+  treePath: string,
+  options?: {
+    recursive?: boolean
+    perPage?: number
+  }
+): Promise<GitLabTreeEntry[]> {
+  const entries: GitLabTreeEntry[] = []
+  const perPage = Math.min(Math.max(options?.perPage ?? 100, 1), 200)
+  const recursive = options?.recursive ? "&recursive=true" : ""
+
+  let page = 1
+  while (true) {
+    const url = `https://gitlab.com/api/v4/projects/${COBBLEMON_ASSETS_PROJECT_ID}/repository/tree?path=${encodeURIComponent(
+      treePath
+    )}&ref=${COBBLEMON_ASSETS_REF}&per_page=${perPage}&page=${page}${recursive}`
+
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(
+        `GitLab assets tree lookup failed with status ${response.status} for ${treePath}`
+      )
+    }
+
+    const chunk = (await response.json()) as GitLabTreeEntry[]
+    entries.push(...chunk)
+
+    const nextPageRaw = response.headers.get("x-next-page")
+    if (!nextPageRaw) {
+      break
+    }
+
+    const nextPage = Number.parseInt(nextPageRaw, 10)
+    if (!Number.isFinite(nextPage) || nextPage <= page) {
+      break
+    }
+
+    page = nextPage
+  }
+
+  return entries
 }
 
 async function loadSpawnPresets(): Promise<Map<string, Record<string, unknown>>> {
@@ -1971,6 +2169,7 @@ async function writeArtifacts(params: {
   pokemonTypeEntries: PokemonTypeEntryRecord[]
   moveLearners: MoveLearnersIndex
   abilityIndex: AbilityIndex
+  itemIndex: ItemIndex
   rideableMons: RideableMonRecord[]
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
@@ -1987,6 +2186,7 @@ async function writeArtifacts(params: {
   )
   await writeJsonFile(path.join(GENERATED_ROOT, "move-learners.json"), params.moveLearners)
   await writeJsonFile(path.join(GENERATED_ROOT, "ability-index.json"), params.abilityIndex)
+  await writeJsonFile(path.join(GENERATED_ROOT, "item-index.json"), params.itemIndex)
   await writeJsonFile(path.join(GENERATED_ROOT, "rideable-mons.json"), params.rideableMons)
   await writeJsonFile(path.join(GENERATED_ROOT, "search-index.json"), params.searchIndex)
 

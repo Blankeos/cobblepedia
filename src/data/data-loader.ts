@@ -1,5 +1,6 @@
 import type {
   AbilityIndex,
+  ItemIndex,
   MetaRecord,
   MoveLearnersIndex,
   PokemonDetailRecord,
@@ -16,6 +17,7 @@ let pokemonDexNavPromise: Promise<PokemonDexNavItem[]> | null = null
 let pokemonTypeEntriesPromise: Promise<PokemonTypeEntryRecord[]> | null = null
 let moveLearnersPromise: Promise<MoveLearnersIndex> | null = null
 let abilityIndexPromise: Promise<AbilityIndex> | null = null
+let itemIndexPromise: Promise<ItemIndex> | null = null
 let rideableMonsPromise: Promise<RideableMonRecord[]> | null = null
 let metaPromise: Promise<MetaRecord> | null = null
 
@@ -91,6 +93,16 @@ export function loadAbilityIndex(): Promise<AbilityIndex> {
   }
 
   return abilityIndexPromise
+}
+
+export function loadItemIndex(): Promise<ItemIndex> {
+  if (!itemIndexPromise) {
+    itemIndexPromise = import("./generated/item-index.json").then(
+      (module) => module.default as ItemIndex
+    )
+  }
+
+  return itemIndexPromise
 }
 
 export function loadRideableMons(): Promise<RideableMonRecord[]> {

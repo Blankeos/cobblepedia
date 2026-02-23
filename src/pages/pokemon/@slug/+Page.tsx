@@ -14,12 +14,13 @@ import {
 import { EvolutionFamilyFlow } from "@/components/evolution-family-flow"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
+  ItemIndex,
   MoveSourceType,
   PokemonDetailRecord,
   PokemonDexNavItem,
   RideableSummaryRecord,
 } from "@/data/cobblemon-types"
-import { loadPokemonDetail } from "@/data/data-loader"
+import { loadItemIndex, loadPokemonDetail } from "@/data/data-loader"
 import {
   formatConditionChips,
   formatEggGroup,
@@ -105,6 +106,7 @@ export default function Page() {
     }
     return loadPokemonDetail(nextSlug)
   })
+  const [itemIndex] = createResource(loadItemIndex)
 
   const dexNeighbors = createMemo(() => findDexNeighborsByOffset(slug()))
 
@@ -121,6 +123,7 @@ export default function Page() {
               detail={detailSignal()}
               previous={dexNeighbors().previous}
               next={dexNeighbors().next}
+              itemIndex={itemIndex() ?? null}
             />
           )}
         </Show>
@@ -156,6 +159,7 @@ function PokemonDetailView(props: {
   detail: PokemonDetailRecord
   previous: PokemonDexNavItem | null
   next: PokemonDexNavItem | null
+  itemIndex: ItemIndex | null
 }) {
   const pageContext = usePageContext()
   const detail = () => props.detail
@@ -804,6 +808,7 @@ function PokemonDetailView(props: {
             family={detail().evolutionFamily}
             activeSlug={detail().slug}
             activeFormSlug={selectedFormSlug() ?? requestedFormSlug()}
+            itemIndex={props.itemIndex}
           />
         </Show>
       </section>

@@ -18,6 +18,7 @@ const pageRoutes = [
   "/dashboard/settings",
   "/egg-groups",
   "/egg-groups/@eggGroupId",
+  "/items/@itemId",
   "/moves/@moveId",
   "/pokemon/@slug",
   "/rideable-mons",

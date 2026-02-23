@@ -9,6 +9,7 @@ export type SearchResultType =
   | "pokemon-facet"
   | "move-learners"
   | "ability-entry"
+  | "item-entry"
   | "type-entry"
   | "egg-group-entry"
   | "primary-page"
@@ -22,7 +23,18 @@ export type MetaRecord = {
   implementedSpeciesCount: number
   spawnEntryCount: number
   moveCount: number
+  itemCount: number
 }
+
+export type ItemEntryRecord = {
+  itemId: string
+  name: string
+  description: string | null
+  descriptionLines: string[]
+  assetPath: string | null
+}
+
+export type ItemIndex = Record<string, ItemEntryRecord>
 
 export type PokemonAbility = {
   id: string
@@ -294,6 +306,7 @@ export type PaletteResult = {
   slug: string | null
   moveId: string | null
   abilityId?: string | null
+  itemId?: string | null
   typeId?: string | null
   eggGroupId?: string | null
   facet: QueryFacet | null

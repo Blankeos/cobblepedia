@@ -1,9 +1,11 @@
 import { Index } from "flexsearch"
 import type {
   AbilityIndex,
+  ItemIndex,
   MoveLearnersIndex,
   PaletteResult,
   PokemonListItem,
+  PokemonTypeEntryRecord,
 } from "@/data/cobblemon-types"
 import {
   canonicalId,
@@ -12,7 +14,14 @@ import {
   titleCaseFromId,
 } from "@/data/formatters"
 
-type PaletteSearchEntityType = "pokemon" | "move" | "ability" | "type" | "egg-group"
+type PaletteSearchEntityType =
+  | "pokemon"
+  | "pokemon-form"
+  | "move"
+  | "ability"
+  | "item"
+  | "type"
+  | "egg-group"
 
 type PaletteSearchDoc = {
   id: string
@@ -28,8 +37,10 @@ type PaletteSearchDoc = {
 
 type PaletteFlexSearchParams = {
   pokemonList: PokemonListItem[]
+  pokemonTypeEntries: PokemonTypeEntryRecord[]
   moveLearners: MoveLearnersIndex
   abilityIndex: AbilityIndex
+  itemIndex: ItemIndex
 }
 
 export type PaletteFlexSearch = {
@@ -40,10 +51,23 @@ const DEFAULT_LIMIT = 90
 
 const ENTITY_SCORE_BONUS: Record<PaletteSearchEntityType, number> = {
   pokemon: 30,
+  "pokemon-form": 40,
   move: 24,
   ability: 20,
+  item: 20,
   type: 14,
   "egg-group": 14,
+}
+
+const REGIONAL_FORM_SYNONYMS: Record<string, string[]> = {
+  alola: ["alolan"],
+  alolan: ["alola"],
+  galar: ["galarian"],
+  galarian: ["galar"],
+  hisui: ["hisuian"],
+  hisuian: ["hisui"],
+  paldea: ["paldean"],
+  paldean: ["paldea"],
 }
 
 export function createPaletteFlexSearch(params: PaletteFlexSearchParams): PaletteFlexSearch {
@@ -111,12 +135,41 @@ export function createPaletteFlexSearch(params: PaletteFlexSearchParams): Palett
 function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchDoc[] {
   const docs: PaletteSearchDoc[] = []
 
+  const formEntriesBySlug = new Map<string, PokemonTypeEntryRecord[]>()
+  for (const entry of params.pokemonTypeEntries) {
+    if (!entry.implemented || !entry.formSlug) {
+      continue
+    }
+
+    const existing = formEntriesBySlug.get(entry.slug)
+    if (existing) {
+      existing.push(entry)
+      continue
+    }
+
+    formEntriesBySlug.set(entry.slug, [entry])
+  }
+
   for (const pokemon of params.pokemonList) {
+    const formEntries = formEntriesBySlug.get(pokemon.slug) ?? []
+    const formAliasSet = new Set<string>()
+
+    for (const formEntry of formEntries) {
+      for (const alias of buildFormSearchAliases(pokemon.name, formEntry)) {
+        formAliasSet.add(alias)
+      }
+    }
+
+    const nonFormAliases = pokemon.aliases.filter((alias) => {
+      const normalizedAlias = normalizeSearchText(alias)
+      return normalizedAlias ? !formAliasSet.has(normalizedAlias) : false
+    })
+
     const pokemonTypes = pokemon.types.map((type) => titleCaseFromId(type)).join(" / ")
     const aliases = uniqueNormalized([
       pokemon.name,
       pokemon.slug,
-      ...pokemon.aliases,
+      ...nonFormAliases,
       ...pokemon.types,
       ...pokemon.eggGroups,
       "pokemon",
@@ -128,7 +181,7 @@ function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchD
         entityType: "pokemon",
         title: pokemon.name,
         aliases,
-        searchTextParts: [pokemon.name, pokemon.slug, ...pokemon.aliases, pokemonTypes, "pokemon"],
+        searchTextParts: [pokemon.name, pokemon.slug, ...nonFormAliases, pokemonTypes, "pokemon"],
         result: {
           id: `pokemon-overview:${pokemon.slug}`,
           type: "pokemon-overview",
@@ -141,6 +194,49 @@ function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchD
         },
       })
     )
+
+    for (const formEntry of formEntries) {
+      if (!formEntry.formSlug) {
+        continue
+      }
+
+      const formAliases = buildFormSearchAliases(pokemon.name, formEntry)
+      const formTypes = (formEntry.types.length > 0 ? formEntry.types : pokemon.types)
+        .map((type) => titleCaseFromId(type))
+        .join(" / ")
+
+      docs.push(
+        createDoc({
+          id: `pokemon-form:${formEntry.slug}:${formEntry.formSlug}`,
+          entityType: "pokemon-form",
+          title: formEntry.name,
+          aliases: formAliases,
+          searchTextParts: [
+            formEntry.name,
+            pokemon.name,
+            formEntry.formName ?? "",
+            formEntry.formSlug,
+            ...formAliases,
+            formTypes,
+            "pokemon",
+            "form",
+          ],
+          result: {
+            id: `pokemon-form:${formEntry.slug}:${formEntry.formSlug}`,
+            type: "pokemon-overview",
+            title: formEntry.name,
+            subtitle: formTypes
+              ? `#${formEntry.dexNumber} ${formTypes} Form`
+              : `#${formEntry.dexNumber} Form`,
+            slug: formEntry.slug,
+            moveId: null,
+            facet: null,
+            score: 0,
+            url: `/pokemon/${formEntry.slug}?form=${encodeURIComponent(formEntry.formSlug)}`,
+          },
+        })
+      )
+    }
   }
 
   const moveEntries = Object.values(params.moveLearners)
@@ -217,6 +313,47 @@ function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchD
     )
   }
 
+  for (const item of Object.values(params.itemIndex)) {
+    const subtitle = item.descriptionLines[0] ?? item.description ?? "Item entry"
+    const aliases = uniqueNormalized([
+      item.name,
+      item.itemId,
+      ...item.descriptionLines,
+      item.description ?? "",
+      "item",
+      "items",
+    ])
+
+    docs.push(
+      createDoc({
+        id: `item:${item.itemId}`,
+        entityType: "item",
+        title: item.name,
+        aliases,
+        searchTextParts: [
+          item.name,
+          item.itemId,
+          ...item.descriptionLines,
+          item.description ?? "",
+          "item",
+          "items",
+        ],
+        result: {
+          id: `item:${item.itemId}`,
+          type: "item-entry",
+          title: item.name,
+          subtitle: `Item - ${subtitle}`,
+          slug: null,
+          moveId: null,
+          itemId: item.itemId,
+          facet: null,
+          score: 0,
+          url: `/items/${item.itemId}`,
+        },
+      })
+    )
+  }
+
   const typeCounts = new Map<string, number>()
   const eggGroupCounts = new Map<string, number>()
 
@@ -281,6 +418,89 @@ function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchD
   }
 
   return docs
+}
+
+function buildFormSearchAliases(baseName: string, form: PokemonTypeEntryRecord): string[] {
+  if (!form.formSlug) {
+    return []
+  }
+
+  const aliases = new Set<string>()
+  const normalizedBaseName = normalizeSearchText(baseName)
+
+  const variantTerms = new Set<string>()
+  for (const value of [
+    form.formName ?? "",
+    form.formSlug,
+    form.formSlug.replace(`${form.slug}-`, ""),
+  ]) {
+    const normalized = normalizeSearchText(value)
+    if (!normalized) {
+      continue
+    }
+
+    variantTerms.add(normalized)
+    for (const expanded of expandRegionalFormTerms(normalized)) {
+      variantTerms.add(expanded)
+    }
+  }
+
+  for (const term of variantTerms) {
+    aliases.add(term)
+
+    if (normalizedBaseName) {
+      aliases.add(`${normalizedBaseName} ${term}`)
+      aliases.add(`${term} ${normalizedBaseName}`)
+    }
+  }
+
+  aliases.add(normalizeSearchText(form.name))
+  aliases.add(normalizeSearchText(form.id))
+
+  return uniqueNormalized(Array.from(aliases))
+}
+
+function expandRegionalFormTerms(term: string): string[] {
+  const normalized = normalizeSearchText(term)
+  if (!normalized) {
+    return []
+  }
+
+  const directSynonyms = REGIONAL_FORM_SYNONYMS[normalized] ?? []
+  if (directSynonyms.length > 0) {
+    return directSynonyms
+  }
+
+  const tokenSynonymSets = normalized
+    .split(" ")
+    .map((token) => {
+      const synonyms = REGIONAL_FORM_SYNONYMS[token] ?? []
+      return [token, ...synonyms]
+    })
+    .filter((tokens) => tokens.length > 1)
+
+  if (tokenSynonymSets.length === 0) {
+    return []
+  }
+
+  const expanded = new Set<string>()
+  for (let index = 0; index < tokenSynonymSets.length; index += 1) {
+    const sourceTokens = normalized.split(" ")
+    const variantTokens = [...sourceTokens]
+    const tokenSet = tokenSynonymSets[index]
+    const sourceToken = tokenSet[0]
+    const sourceIndex = sourceTokens.indexOf(sourceToken)
+    if (sourceIndex < 0) {
+      continue
+    }
+
+    for (const replacement of tokenSet.slice(1)) {
+      variantTokens[sourceIndex] = replacement
+      expanded.add(variantTokens.join(" "))
+    }
+  }
+
+  return Array.from(expanded)
 }
 
 function createDoc(params: {

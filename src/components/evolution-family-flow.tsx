@@ -3,16 +3,19 @@ import type {
   EvolutionFamilyEdgeRecord,
   EvolutionFamilyMemberRecord,
   EvolutionFamilyRecord,
+  ItemIndex,
 } from "@/data/cobblemon-types"
 import { titleCaseFromId } from "@/data/formatters"
 import { buildDiagflowLayout, type DiagflowEdge, type DiagflowNode } from "@/lib/diagflow"
 import { cn } from "@/utils/cn"
+import { ItemSprite } from "./item-sprite"
 import { PokemonSprite } from "./pokemon-sprite"
 
 type EvolutionFamilyFlowProps = {
   family: EvolutionFamilyRecord
   activeSlug: string
   activeFormSlug?: string | null
+  itemIndex?: ItemIndex | null
 }
 
 type EvolutionFlowNode = DiagflowNode<EvolutionFamilyMemberRecord>
@@ -90,7 +93,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
     let maxWidth = 196
     for (const edge of props.family.edges) {
       const method = formatMethodLabel(edge.method)
-      const requirements = formatRequirementSummary(edge.method, edge.requirementText)
+      const requirements = formatRequirementSummary(edge)
       const text = requirements ? `${method} ${requirements}` : method
       const estimatedWidth = text.length * 6.35 + (requirements ? 64 : 38)
       maxWidth = Math.max(maxWidth, estimatedWidth)
@@ -173,10 +176,8 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
         <For each={layout().edges}>
           {(edge) => {
             const isActiveEdge = edge.from === activeNodeId() || edge.to === activeNodeId()
-            const requirementSummary = formatRequirementSummary(
-              edge.data.method,
-              edge.data.requirementText
-            )
+            const requirementSummary = formatRequirementSummary(edge.data)
+            const requirementTokens = formatRequirementTokens(edge.data)
 
             return (
               <div
@@ -198,11 +199,41 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                   <span class="whitespace-nowrap font-medium text-[10px] leading-none">
                     {formatMethodLabel(edge.data.method)}
                   </span>
-                  <Show when={requirementSummary}>
+                  <Show when={requirementSummary && requirementTokens.length > 0}>
                     <span class="h-3 w-px bg-border/60" />
-                    <span class="whitespace-nowrap text-[10px] text-muted-foreground leading-none">
-                      {requirementSummary}
-                    </span>
+                    <div class="flex items-center gap-1 text-[10px] text-muted-foreground leading-none">
+                      <For each={requirementTokens}>
+                        {(token, tokenIndex) => (
+                          <div class="inline-flex items-center gap-1 whitespace-nowrap">
+                            <Show when={tokenIndex() > 0}>
+                              <span class="text-muted-foreground/60">/</span>
+                            </Show>
+                            <Show
+                              when={token.itemId}
+                              fallback={<span class="whitespace-nowrap">{token.text}</span>}
+                            >
+                              {(itemIdSignal) => (
+                                <a
+                                  href={`/items/${itemIdSignal()}`}
+                                  class="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
+                                >
+                                  <ItemSprite
+                                    itemId={itemIdSignal()}
+                                    name={token.text}
+                                    assetPath={resolveItemAssetPath(
+                                      itemIdSignal(),
+                                      props.itemIndex
+                                    )}
+                                    class="h-3.5 w-3.5"
+                                  />
+                                  <span class="whitespace-nowrap">{token.text}</span>
+                                </a>
+                              )}
+                            </Show>
+                          </div>
+                        )}
+                      </For>
+                    </div>
                   </Show>
                 </div>
               </div>
@@ -277,36 +308,75 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
   )
 }
 
-function formatRequirementSummary(method: string, requirements: string[]): string | null {
-  if (requirements.length === 0) {
+function formatRequirementSummary(edge: EvolutionFamilyEdgeRecord): string | null {
+  const tokens = formatRequirementTokens(edge)
+  if (tokens.length === 0) {
     return null
   }
 
-  const normalized = requirements
-    .map((requirement) => formatRequirementToken(method, requirement))
+  return tokens.map((token) => token.text).join(" / ")
+}
+
+function formatRequirementTokens(edge: EvolutionFamilyEdgeRecord): Array<{
+  text: string
+  itemId: string | null
+}> {
+  const normalizedMethod = normalizeEvolutionMethod(edge.method)
+  const baseTokens = edge.requirementText
+    .map((requirement) => formatRequirementToken(normalizedMethod, requirement))
     .filter((requirement): requirement is string => Boolean(requirement))
 
-  if (normalized.length === 0) {
-    return null
+  if (baseTokens.length === 0) {
+    return []
   }
 
   const deduped: string[] = []
-  for (const item of normalized) {
-    if (!deduped.includes(item)) {
-      deduped.push(item)
+  for (const token of baseTokens) {
+    if (!deduped.includes(token)) {
+      deduped.push(token)
     }
   }
 
-  return deduped.join(" / ")
+  const itemId =
+    normalizedMethod === "item_interact" ? inferItemIdFromRequirementLabel(deduped[0] ?? "") : null
+
+  return deduped.map((text, index) => ({
+    text,
+    itemId: index === 0 ? itemId : null,
+  }))
 }
 
-function formatRequirementToken(method: string, requirement: string): string | null {
+function normalizeEvolutionMethod(method: string): string {
+  return method.toLowerCase().replace(/[-_]/g, "_")
+}
+
+function inferItemIdFromRequirementLabel(label: string): string | null {
+  const normalized = label
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
+
+  return normalized ? normalized : null
+}
+
+function resolveItemAssetPath(
+  itemId: string,
+  itemIndex: ItemIndex | null | undefined
+): string | null {
+  if (!itemIndex) {
+    return null
+  }
+
+  return itemIndex[itemId]?.assetPath ?? null
+}
+
+function formatRequirementToken(normalizedMethod: string, requirement: string): string | null {
   const text = requirement.replace(/\s+/g, " ").trim()
   if (!text) {
     return null
   }
 
-  const normalizedMethod = method.toLowerCase().replace(/[-_]/g, "_")
   const lower = text.toLowerCase()
 
   if (lower === "property gender=female") {

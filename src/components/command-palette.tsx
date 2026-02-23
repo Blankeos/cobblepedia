@@ -12,6 +12,7 @@ import {
   Show,
   Switch,
 } from "solid-js"
+import { ItemSprite } from "@/components/item-sprite"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import {
   CommandDialog,
@@ -24,21 +25,26 @@ import {
 import type {
   AbilityEntryRecord,
   AbilityIndex,
+  ItemEntryRecord,
+  ItemIndex,
   MoveLearnerEntryRecord,
   MoveLearnersIndex,
   MoveSourceType,
   PaletteResult,
   PokemonDetailRecord,
   PokemonListItem,
+  PokemonTypeEntryRecord,
   QueryFacet,
   QueryResolution,
   SearchDocument,
 } from "@/data/cobblemon-types"
 import {
   loadAbilityIndex,
+  loadItemIndex,
   loadMoveLearners,
   loadPokemonDetail,
   loadPokemonList,
+  loadPokemonTypeEntries,
   loadSearchIndex,
 } from "@/data/data-loader"
 import {
@@ -95,8 +101,12 @@ export default function CommandPalette() {
 
   const [searchIndex, setSearchIndex] = createSignal<SearchDocument[] | null>(null)
   const [pokemonList, setPokemonList] = createSignal<PokemonListItem[] | null>(null)
+  const [pokemonTypeEntries, setPokemonTypeEntries] = createSignal<PokemonTypeEntryRecord[] | null>(
+    null
+  )
   const [moveLearners, setMoveLearners] = createSignal<MoveLearnersIndex | null>(null)
   const [abilityIndex, setAbilityIndex] = createSignal<AbilityIndex | null>(null)
+  const [itemIndex, setItemIndex] = createSignal<ItemIndex | null>(null)
   const [loadError, setLoadError] = createSignal<string | null>(null)
 
   let inputRef: HTMLInputElement | undefined
@@ -105,8 +115,10 @@ export default function CommandPalette() {
     return (
       searchIndex() !== null &&
       pokemonList() !== null &&
+      pokemonTypeEntries() !== null &&
       moveLearners() !== null &&
-      abilityIndex() !== null
+      abilityIndex() !== null &&
+      itemIndex() !== null
     )
   })
 
@@ -148,17 +160,21 @@ export default function CommandPalette() {
 
   const flexSearch = createMemo(() => {
     const list = pokemonList()
+    const typeEntries = pokemonTypeEntries()
     const moves = moveLearners()
     const abilities = abilityIndex()
+    const items = itemIndex()
 
-    if (!list || !moves || !abilities) {
+    if (!list || !typeEntries || !moves || !abilities || !items) {
       return null
     }
 
     return createPaletteFlexSearch({
       pokemonList: list,
+      pokemonTypeEntries: typeEntries,
       moveLearners: moves,
       abilityIndex: abilities,
+      itemIndex: items,
     })
   })
 
@@ -190,15 +206,18 @@ export default function CommandPalette() {
       moveLearners() ?? {}
     )
 
+    const entityResults = flexSearch()?.search(currentQuery, 90) ?? []
+
     const parserResults =
-      parserResolution.intent === "fuzzy-fallback"
-        ? []
-        : parserResolution.results.map((result) => ({
+      parserResolution.intent === "pokemon-facet" || parserResolution.intent === "move-learners"
+        ? parserResolution.results.map((result) => ({
             ...result,
             score: result.score + 500,
           }))
+        : entityResults.length === 0
+          ? parserResolution.results
+          : []
 
-    const entityResults = flexSearch()?.search(currentQuery, 90) ?? []
     const mergedResults = mergeResultsById([...parserResults, ...entityResults], 90)
 
     if (mergedResults.length > 0) {
@@ -219,6 +238,18 @@ export default function CommandPalette() {
 
     for (const pokemon of pokemonList() ?? []) {
       map.set(pokemon.slug, pokemon.dexNumber)
+    }
+
+    return map
+  })
+
+  const itemAssetPathById = createMemo(() => {
+    const map = new Map<string, string>()
+
+    for (const item of Object.values(itemIndex() ?? {})) {
+      if (item.assetPath) {
+        map.set(item.itemId, item.assetPath)
+      }
     }
 
     return map
@@ -273,6 +304,17 @@ export default function CommandPalette() {
     return index[result.abilityId] ?? null
   })
 
+  const activeItemEntry = createMemo<ItemEntryRecord | null>(() => {
+    const result = activeResult()
+    const index = itemIndex()
+
+    if (!result || result.type !== "item-entry" || !result.itemId || !index) {
+      return null
+    }
+
+    return index[result.itemId] ?? null
+  })
+
   createEffect(
     on(results, (nextResults) => {
       if (nextResults.length === 0) {
@@ -292,13 +334,31 @@ export default function CommandPalette() {
       return
     }
 
-    void Promise.all([loadSearchIndex(), loadPokemonList(), loadMoveLearners(), loadAbilityIndex()])
-      .then(([nextSearchIndex, nextPokemonList, nextMoveLearners, nextAbilityIndex]) => {
-        setSearchIndex(nextSearchIndex)
-        setPokemonList(nextPokemonList)
-        setMoveLearners(nextMoveLearners)
-        setAbilityIndex(nextAbilityIndex)
-      })
+    void Promise.all([
+      loadSearchIndex(),
+      loadPokemonList(),
+      loadPokemonTypeEntries(),
+      loadMoveLearners(),
+      loadAbilityIndex(),
+      loadItemIndex(),
+    ])
+      .then(
+        ([
+          nextSearchIndex,
+          nextPokemonList,
+          nextPokemonTypeEntries,
+          nextMoveLearners,
+          nextAbilityIndex,
+          nextItemIndex,
+        ]) => {
+          setSearchIndex(nextSearchIndex)
+          setPokemonList(nextPokemonList)
+          setPokemonTypeEntries(nextPokemonTypeEntries)
+          setMoveLearners(nextMoveLearners)
+          setAbilityIndex(nextAbilityIndex)
+          setItemIndex(nextItemIndex)
+        }
+      )
       .catch((error: unknown) => {
         const message = error instanceof Error ? error.message : "Failed to load index"
         setLoadError(message)
@@ -418,7 +478,7 @@ export default function CommandPalette() {
           ref={inputRef}
           value={query()}
           onValueChange={setQuery}
-          placeholder="Search Pokemon, moves, abilities, types, egg groups..."
+          placeholder="Search Pokemon, moves, abilities, items, types, egg groups..."
         />
 
         <div class="grid h-[500px] min-h-[400px] grid-cols-[280px_1fr] overflow-hidden">
@@ -466,19 +526,37 @@ export default function CommandPalette() {
                               >
                                 <Show
                                   when={
-                                    result.slug
-                                      ? (pokemonDexBySlug().get(result.slug) ?? null)
-                                      : null
+                                    result.type === "item-entry" ? (result.itemId ?? null) : null
                                   }
-                                  fallback={<PrimaryPageIcon result={result} />}
+                                  fallback={
+                                    <Show
+                                      when={
+                                        result.slug
+                                          ? (pokemonDexBySlug().get(result.slug) ?? null)
+                                          : null
+                                      }
+                                      fallback={<PrimaryPageIcon result={result} />}
+                                    >
+                                      {(dexNumber) => (
+                                        <PokemonSprite
+                                          dexNumber={dexNumber()}
+                                          name={result.title}
+                                          class="h-10 w-10"
+                                          imageClass="h-7 w-7"
+                                        />
+                                      )}
+                                    </Show>
+                                  }
                                 >
-                                  {(dexNumber) => (
-                                    <PokemonSprite
-                                      dexNumber={dexNumber()}
-                                      name={result.title}
-                                      class="h-10 w-10"
-                                      imageClass="h-7 w-7"
-                                    />
+                                  {(itemId) => (
+                                    <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40">
+                                      <ItemSprite
+                                        itemId={itemId()}
+                                        name={result.title}
+                                        assetPath={itemAssetPathById().get(itemId()) ?? null}
+                                        class="h-7 w-7"
+                                      />
+                                    </div>
                                   )}
                                 </Show>
 
@@ -506,6 +584,7 @@ export default function CommandPalette() {
               pokemonDetail={activePokemonDetail()}
               moveEntry={activeMoveEntry()}
               abilityEntry={activeAbilityEntry()}
+              itemEntry={activeItemEntry()}
               pokemonList={pokemonList()}
               loadingPokemon={activePokemonDetail.loading}
             />
@@ -526,6 +605,7 @@ function QuickviewPanel(props: {
   pokemonDetail: PokemonDetailRecord | null | undefined
   moveEntry: MoveLearnerEntryRecord | null
   abilityEntry: AbilityEntryRecord | null
+  itemEntry: ItemEntryRecord | null
   pokemonList: PokemonListItem[] | null
   loadingPokemon: boolean
 }) {
@@ -555,6 +635,10 @@ function QuickviewPanel(props: {
 
             <Match when={result().type === "ability-entry"}>
               <AbilityEntryQuickview entry={props.abilityEntry} />
+            </Match>
+
+            <Match when={result().type === "item-entry"}>
+              <ItemEntryQuickview entry={props.itemEntry} />
             </Match>
 
             <Match when={result().type === "type-entry"}>
@@ -1164,6 +1248,54 @@ function AbilityEntryQuickview(props: { entry: AbilityEntryRecord | null }) {
   )
 }
 
+function ItemEntryQuickview(props: { entry: ItemEntryRecord | null }) {
+  return (
+    <Show
+      when={props.entry}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">Item details unavailable.</div>
+      }
+    >
+      {(entrySignal) => {
+        const entry = entrySignal()
+
+        return (
+          <div class="flex flex-col gap-5">
+            <div class="border-border border-b pb-4">
+              <div class="mb-3 flex items-center gap-3">
+                <ItemSprite
+                  itemId={entry.itemId}
+                  name={entry.name}
+                  assetPath={entry.assetPath}
+                  class="h-10 w-10"
+                />
+                <h3 class="font-semibold text-lg">{entry.name}</h3>
+              </div>
+              <p class="text-muted-foreground text-sm">
+                {entry.description || "No item description available."}
+              </p>
+              <p class="mt-2 font-mono text-muted-foreground text-xs">Item ID: {entry.itemId}</p>
+            </div>
+
+            <Show when={entry.descriptionLines.length > 1}>
+              <div class="space-y-2">
+                <p class="font-mono text-muted-foreground text-xs uppercase tracking-wide">
+                  Details
+                </p>
+                <div class="space-y-1">
+                  <For each={entry.descriptionLines}>
+                    {(line) => <p class="text-muted-foreground text-sm">{line}</p>}
+                  </For>
+                </div>
+              </div>
+            </Show>
+          </div>
+        )
+      }}
+    </Show>
+  )
+}
+
 function TypeEntryQuickview(props: {
   result: PaletteResult
   pokemonList: PokemonListItem[] | null
@@ -1385,7 +1517,7 @@ function groupPaletteResults(
     })
   }
 
-  const groupOrder = ["pages", "pokemon", "moves", "abilities", "types", "egg-groups"]
+  const groupOrder = ["pages", "pokemon", "moves", "abilities", "items", "types", "egg-groups"]
 
   return groupOrder
     .map((key) => groups.get(key))
@@ -1409,6 +1541,10 @@ function resolveResultGroupDescriptor(result: PaletteResult): { key: string; hea
 
   if (result.type === "ability-entry") {
     return { key: "abilities", heading: "Abilities" }
+  }
+
+  if (result.type === "item-entry") {
+    return { key: "items", heading: "Items" }
   }
 
   if (result.type === "type-entry") {
@@ -1453,6 +1589,10 @@ function resolveResultIcon(result: PaletteResult): string {
 
   if (result.type === "ability-entry") {
     return "AB"
+  }
+
+  if (result.type === "item-entry") {
+    return "IT"
   }
 
   if (result.type === "type-entry") {
