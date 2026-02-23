@@ -70,6 +70,13 @@ const PRIMARY_PAGES: Array<{
   image?: string
 }> = [
   {
+    id: "page:pokemon",
+    title: "Pokemon",
+    subtitle: "List Pokemon directly in the command palette",
+    url: "/",
+    icon: "PK",
+  },
+  {
     id: "page:rideable",
     title: "Rideable Mons",
     subtitle: "Browse Pokemon that can be ridden",
@@ -98,6 +105,7 @@ export default function CommandPalette() {
   const [isOpen, setIsOpen] = createSignal(false)
   const [query, setQuery] = createSignal("")
   const [selectedResultId, setSelectedResultId] = createSignal("")
+  const [activePrimaryPageId, setActivePrimaryPageId] = createSignal<string | null>(null)
 
   const [searchIndex, setSearchIndex] = createSignal<SearchDocument[] | null>(null)
   const [pokemonList, setPokemonList] = createSignal<PokemonListItem[] | null>(null)
@@ -152,8 +160,64 @@ export default function CommandPalette() {
 
   const isShowingPrimaryPagesOnly = createMemo(() => {
     const currentQuery = query().trim()
-    // When query is empty or starts with / or >, show only primary pages
-    return !currentQuery || currentQuery.startsWith("/") || currentQuery.startsWith(">")
+
+    if (currentQuery.startsWith("/") || currentQuery.startsWith(">")) {
+      return true
+    }
+
+    if (activePrimaryPageId() === "page:pokemon") {
+      return false
+    }
+
+    return !currentQuery
+  })
+
+  const pokemonPrimaryResults = createMemo((): PaletteResult[] => {
+    if (activePrimaryPageId() !== "page:pokemon") {
+      return []
+    }
+
+    const list = pokemonList() ?? []
+    const searchTerm = query().trim().toLowerCase()
+
+    if (searchTerm.startsWith("/") || searchTerm.startsWith(">")) {
+      return []
+    }
+
+    return list
+      .filter((pokemon) => pokemon.implemented)
+      .filter((pokemon) => {
+        if (!searchTerm) {
+          return true
+        }
+
+        const target = `${pokemon.name} ${pokemon.slug} ${pokemon.aliases.join(" ")}`.toLowerCase()
+        return target.includes(searchTerm)
+      })
+      .sort((left, right) => {
+        if (left.dexNumber !== right.dexNumber) {
+          return left.dexNumber - right.dexNumber
+        }
+
+        return left.name.localeCompare(right.name)
+      })
+      .slice(0, 90)
+      .map((pokemon) => {
+        const pokemonTypes = pokemon.types.map((type) => titleCaseFromId(type)).join(" / ")
+
+        return {
+          id: `pokemon-overview:${pokemon.slug}`,
+          type: "pokemon-overview" as const,
+          title: pokemon.name,
+          subtitle: pokemonTypes
+            ? `#${pokemon.dexNumber} ${pokemonTypes}`
+            : `#${pokemon.dexNumber}`,
+          slug: pokemon.slug,
+          moveId: null,
+          facet: null,
+          score: 1000 - pokemon.dexNumber,
+        }
+      })
   })
 
   const flexSearch = createMemo(() => {
@@ -183,6 +247,14 @@ export default function CommandPalette() {
   const resolution = createMemo<QueryResolution>(() => {
     const currentQuery = query().trim()
     const primaryPages = primaryPageResults()
+
+    if (activePrimaryPageId() === "page:pokemon" && !isShowingPrimaryPagesOnly()) {
+      return {
+        intent: "pokemon-overview" as const,
+        normalizedQuery: currentQuery,
+        results: pokemonPrimaryResults(),
+      }
+    }
 
     // When showing primary pages only, don't include search results
     if (isShowingPrimaryPagesOnly()) {
@@ -334,6 +406,15 @@ export default function CommandPalette() {
     })
   )
 
+  createEffect(
+    on(query, (nextQuery) => {
+      const normalized = nextQuery.trim()
+      if (normalized.startsWith("/") || normalized.startsWith(">")) {
+        setActivePrimaryPageId(null)
+      }
+    })
+  )
+
   createEffect(() => {
     if (!isOpen() || dataReady()) {
       return
@@ -413,16 +494,25 @@ export default function CommandPalette() {
     setIsOpen(true)
     setQuery(nextQuery)
     setSelectedResultId("")
+    setActivePrimaryPageId(null)
   }
 
   function closePalette() {
     setIsOpen(false)
     setQuery("")
     setSelectedResultId("")
+    setActivePrimaryPageId(null)
   }
 
   function executeResult(result: PaletteResult | null, openInNewTab = false) {
     if (!result) {
+      return
+    }
+
+    if (result.type === "primary-page" && result.id === "page:pokemon") {
+      setActivePrimaryPageId("page:pokemon")
+      setQuery("")
+      setSelectedResultId("")
       return
     }
 
@@ -508,7 +598,9 @@ export default function CommandPalette() {
                       <CommandEmpty class="py-6 text-center text-sm">
                         {isShowingPrimaryPagesOnly()
                           ? "No pages found. Try a different search."
-                          : "Try `lucario evolution` or `moves trickroom`."}
+                          : activePrimaryPageId() === "page:pokemon"
+                            ? "No Pokemon found. Try another name."
+                            : "Try `lucario evolution` or `moves trickroom`."}
                       </CommandEmpty>
                     }
                   >
@@ -1414,6 +1506,7 @@ function EggGroupEntryQuickview(props: {
 
 function PrimaryPageQuickview(props: { result: PaletteResult }) {
   const pageInfo = createMemo(() => PRIMARY_PAGES.find((p) => p.id === props.result.id))
+  const opensPaletteList = createMemo(() => pageInfo()?.id === "page:pokemon")
 
   return (
     <Show
@@ -1447,12 +1540,18 @@ function PrimaryPageQuickview(props: { result: PaletteResult }) {
           </div>
 
           <div class="space-y-3">
-            <p class="text-muted-foreground text-sm">Press Enter to navigate to this page.</p>
+            <p class="text-muted-foreground text-sm">
+              {opensPaletteList()
+                ? "Press Enter to list Pokemon directly in this palette."
+                : "Press Enter to navigate to this page."}
+            </p>
 
-            <div class="flex items-center gap-2 text-muted-foreground text-xs">
-              <span class="font-mono">URL:</span>
-              <code class="border border-border bg-secondary px-2 py-1">{info().url}</code>
-            </div>
+            <Show when={!opensPaletteList()}>
+              <div class="flex items-center gap-2 text-muted-foreground text-xs">
+                <span class="font-mono">URL:</span>
+                <code class="border border-border bg-secondary px-2 py-1">{info().url}</code>
+              </div>
+            </Show>
           </div>
 
           <div class="border-border border-t pt-4">
@@ -1464,7 +1563,12 @@ function PrimaryPageQuickview(props: { result: PaletteResult }) {
                 • Type <code class="rounded bg-secondary px-1">/</code> or{" "}
                 <code class="rounded bg-secondary px-1">&gt;</code> to filter pages
               </li>
-              <li>• Search normally to find Pokemon and data entries</li>
+              <li>
+                •{" "}
+                {opensPaletteList()
+                  ? "Type to filter the Pokemon list after opening it"
+                  : "Search normally to find Pokemon and data entries"}
+              </li>
               <li>• Use arrow keys to navigate results</li>
             </ul>
           </div>
