@@ -73,10 +73,15 @@ type RawSpeciesFile = {
 
 type DirectedEvolutionEdge = {
   fromSlug: string
+  fromFormSlug: string | null
   toSlug: string
   toAspectTokens: string[]
   method: string
   requirementText: string[]
+}
+
+type ResolvedEvolutionFamilyEdge = PokemonDetailRecord["evolutionFamily"]["edges"][number] & {
+  sourceFormSlug: string | null
 }
 
 type EvolutionFamilyNodeCandidate = {
@@ -1010,6 +1015,7 @@ function buildEvolutionFamilies(
       link(detail.slug, evolution.result.slug)
       directedEdges.push({
         fromSlug: detail.slug,
+        fromFormSlug: null,
         toSlug: evolution.result.slug,
         toAspectTokens: evolution.result.aspectTokens,
         method: evolution.variant,
@@ -1022,6 +1028,7 @@ function buildEvolutionFamilies(
         link(detail.slug, evolution.result.slug)
         directedEdges.push({
           fromSlug: detail.slug,
+          fromFormSlug: form.slug,
           toSlug: evolution.result.slug,
           toAspectTokens: evolution.result.aspectTokens,
           method: evolution.variant,
@@ -1061,7 +1068,7 @@ function buildEvolutionFamilies(
       (edge) => componentSet.has(edge.fromSlug) && componentSet.has(edge.toSlug)
     )
 
-    const resolvedEdges: PokemonDetailRecord["evolutionFamily"]["edges"] = []
+    const resolvedEdges: ResolvedEvolutionFamilyEdge[] = []
     for (const edge of componentEdges) {
       const fromMember = resolveEvolutionFamilyMemberNode({
         detail: detailsBySlug.get(edge.fromSlug) ?? null,
@@ -1088,10 +1095,11 @@ function buildEvolutionFamilies(
         toSlug: edge.toSlug,
         method: edge.method,
         requirementText: edge.requirementText,
+        sourceFormSlug: edge.fromFormSlug,
       })
     }
 
-    const edges = dedupeEvolutionEdges(resolvedEdges)
+    const edges = dedupeEvolutionEdges(simplifyEvolutionEdges(resolvedEdges))
 
     const members = Array.from(memberByNodeId.values()).sort((left, right) => {
       if (left.dexNumber !== right.dexNumber) {
@@ -1434,6 +1442,105 @@ function toEvolutionFamilyMember(
     formSlug: candidate.formSlug,
     formName: candidate.formName,
   }
+}
+
+function simplifyEvolutionEdges(
+  edges: ResolvedEvolutionFamilyEdge[]
+): PokemonDetailRecord["evolutionFamily"]["edges"] {
+  if (edges.length <= 1) {
+    return edges.map((edge) => ({
+      fromNodeId: edge.fromNodeId,
+      toNodeId: edge.toNodeId,
+      fromSlug: edge.fromSlug,
+      toSlug: edge.toSlug,
+      method: edge.method,
+      requirementText: edge.requirementText,
+    }))
+  }
+
+  const routeKey = (edge: ResolvedEvolutionFamilyEdge) =>
+    `${edge.fromNodeId}::${edge.toNodeId}::${edge.method}`
+
+  const hasBaseEdgeByRoute = new Set<string>()
+  for (const edge of edges) {
+    if (!edge.sourceFormSlug) {
+      hasBaseEdgeByRoute.add(routeKey(edge))
+    }
+  }
+
+  const filteredBySource = edges.filter((edge) => {
+    if (!edge.sourceFormSlug) {
+      return true
+    }
+
+    return !hasBaseEdgeByRoute.has(routeKey(edge))
+  })
+
+  const grouped = new Map<string, ResolvedEvolutionFamilyEdge[]>()
+  for (const edge of filteredBySource) {
+    const key = routeKey(edge)
+    const existing = grouped.get(key)
+    if (existing) {
+      existing.push(edge)
+      continue
+    }
+    grouped.set(key, [edge])
+  }
+
+  const simplified: PokemonDetailRecord["evolutionFamily"]["edges"] = []
+
+  for (const group of grouped.values()) {
+    const requirementSets = group.map((edge) => toNormalizedRequirementSet(edge.requirementText))
+
+    for (const [index, edge] of group.entries()) {
+      const currentRequirements = requirementSets[index]
+      const isRedundant = group.some((_, candidateIndex) => {
+        if (candidateIndex === index) {
+          return false
+        }
+
+        const candidateRequirements = requirementSets[candidateIndex]
+        return isStrictRequirementSubset(candidateRequirements, currentRequirements)
+      })
+
+      if (isRedundant) {
+        continue
+      }
+
+      simplified.push({
+        fromNodeId: edge.fromNodeId,
+        toNodeId: edge.toNodeId,
+        fromSlug: edge.fromSlug,
+        toSlug: edge.toSlug,
+        method: edge.method,
+        requirementText: edge.requirementText,
+      })
+    }
+  }
+
+  return simplified
+}
+
+function toNormalizedRequirementSet(requirements: string[]): Set<string> {
+  return new Set(
+    requirements
+      .map((requirement) => requirement.trim().toLowerCase().replace(/\s+/g, " "))
+      .filter(Boolean)
+  )
+}
+
+function isStrictRequirementSubset(subset: Set<string>, superset: Set<string>): boolean {
+  if (subset.size >= superset.size) {
+    return false
+  }
+
+  for (const token of subset) {
+    if (!superset.has(token)) {
+      return false
+    }
+  }
+
+  return true
 }
 
 function buildPokemonList(detailsBySlug: Map<string, PokemonDetailRecord>): PokemonListItem[] {

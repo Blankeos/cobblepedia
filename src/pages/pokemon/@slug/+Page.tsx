@@ -157,11 +157,22 @@ function PokemonDetailView(props: {
   previous: PokemonDexNavItem | null
   next: PokemonDexNavItem | null
 }) {
+  const pageContext = usePageContext()
   const detail = () => props.detail
   const [activeView, setActiveView] = createSignal<ArtworkView>("official")
   const [selectedFormSlug, setSelectedFormSlug] = createSignal<string | null>(null)
   const [artworkFailed, setArtworkFailed] = createSignal(false)
   const [artworkUrlIndex, setArtworkUrlIndex] = createSignal(0)
+
+  const requestedFormSlug = createMemo(() => {
+    const queryValue = pageContext.urlParsed.search.form
+    if (typeof queryValue !== "string") {
+      return null
+    }
+
+    const normalized = queryValue.trim().toLowerCase()
+    return normalized.length > 0 ? normalized : null
+  })
 
   const availableForms = createMemo(() => detail().forms)
 
@@ -286,10 +297,9 @@ function PokemonDetailView(props: {
   })
 
   createEffect(() => {
-    detail().slug
-    const requestedFormSlug = readSelectedFormSlugFromUrl()
-    const matchesForm = detail().forms.some((form) => form.slug === requestedFormSlug)
-    setSelectedFormSlug(matchesForm ? requestedFormSlug : null)
+    const requested = requestedFormSlug()
+    const matchesForm = detail().forms.some((form) => form.slug === requested)
+    setSelectedFormSlug(matchesForm ? requested : null)
   })
 
   createEffect(() => {
@@ -793,7 +803,7 @@ function PokemonDetailView(props: {
           <EvolutionFamilyFlow
             family={detail().evolutionFamily}
             activeSlug={detail().slug}
-            activeFormSlug={selectedFormSlug()}
+            activeFormSlug={selectedFormSlug() ?? requestedFormSlug()}
           />
         </Show>
       </section>
@@ -1180,20 +1190,6 @@ function formatAbilitySlot(slot: PokemonDetailRecord["abilities"][number]["slot"
   }
 
   return "Hidden"
-}
-
-function readSelectedFormSlugFromUrl(): string | null {
-  if (typeof window === "undefined") {
-    return null
-  }
-
-  const queryValue = new URLSearchParams(window.location.search).get("form")
-  if (!queryValue) {
-    return null
-  }
-
-  const normalized = queryValue.trim().toLowerCase()
-  return normalized.length > 0 ? normalized : null
 }
 
 function syncSelectedFormSlug(formSlug: string | null) {

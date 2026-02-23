@@ -41,6 +41,15 @@ function formatMethodLabel(method: string): string {
 
 export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
   const activeNodeId = createMemo(() => {
+    if (props.activeFormSlug) {
+      const byFormSlug = props.family.members.find(
+        (member) => member.formSlug === props.activeFormSlug
+      )
+      if (byFormSlug) {
+        return byFormSlug.nodeId
+      }
+    }
+
     const exact = props.family.members.find(
       (member) =>
         member.slug === props.activeSlug &&
