@@ -48,4 +48,11 @@ Other wikis make you browse. Cobblepedia lets you *ask*.
 
 ---
 
-MIT License
+BSD-3-Clause License
+
+**What this means:**
+
+- You CAN fork and host your own version
+- You CAN modify and redistribute the code
+- You CANNOT call it "Cobblepedia" or imply your version is official without permission
+- You MUST keep the copyright notice and license intact
