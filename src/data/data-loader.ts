@@ -1,5 +1,6 @@
 import type {
   AbilityIndex,
+  BiomeTagIndex,
   ItemIndex,
   MetaRecord,
   MoveLearnerEntryRecord,
@@ -22,6 +23,7 @@ let pokemonListPromise: Promise<PokemonListItem[]> | null = null
 let pokemonDexNavPromise: Promise<PokemonDexNavItem[]> | null = null
 let pokemonTypeEntriesPromise: Promise<PokemonTypeEntryRecord[]> | null = null
 let abilityIndexPromise: Promise<AbilityIndex> | null = null
+let biomeTagIndexPromise: Promise<BiomeTagIndex> | null = null
 let itemIndexPromise: Promise<ItemIndex> | null = null
 let pokemonFormSpriteIndexPromise: Promise<PokemonFormSpriteIndex> | null = null
 let rideableMonsPromise: Promise<RideableMonRecord[]> | null = null
@@ -127,6 +129,16 @@ export function loadAbilityIndex(): Promise<AbilityIndex> {
   }
 
   return abilityIndexPromise
+}
+
+export function loadBiomeTagIndex(): Promise<BiomeTagIndex> {
+  if (!biomeTagIndexPromise) {
+    biomeTagIndexPromise = loadGeneratedJson<BiomeTagIndex>("biome-tag-index.json").catch(
+      () => ({})
+    )
+  }
+
+  return biomeTagIndexPromise
 }
 
 export function loadItemIndex(): Promise<ItemIndex> {

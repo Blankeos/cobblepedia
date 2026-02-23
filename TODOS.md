@@ -26,7 +26,7 @@ Big feats:
 - [ ] Evo item who is it related to wiki info i.e. Fire Stone. Alcremie's items.
 - [ ] Drop item data when I kill them
 - [ ] Drop item data when I put them in pasture blocks. (Cobbleverse-specific)
-- [ ] Spawn Location hover (just like cobbledex.info, it displays the actual Biome names in minecraft)
+- [x] Spawn Location hover (just like cobbledex.info, it displays the actual Biome names in minecraft)
 
 - [ ] SEO friendliness! SSR stuff! please!
   - [ ] Icon Metadata (art!)

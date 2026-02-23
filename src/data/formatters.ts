@@ -282,15 +282,21 @@ export function formatEvolutionRequiredContext(variant: string, requiredContext:
   return `Context: ${titleCaseFromId(requiredContext)}`
 }
 
-export function formatConditionChips(condition: Record<string, unknown> | null): string[] {
+export function formatConditionChips(
+  condition: Record<string, unknown> | null,
+  options: {
+    includeBiomes?: boolean
+  } = {}
+): string[] {
   if (!condition) {
     return []
   }
 
+  const includeBiomes = options.includeBiomes ?? true
   const chips: string[] = []
 
   const biomes = Array.isArray(condition.biomes) ? condition.biomes : []
-  if (biomes.length > 0) {
+  if (includeBiomes && biomes.length > 0) {
     chips.push(
       `Biomes: ${biomes
         .slice(0, 2)

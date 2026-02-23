@@ -36,6 +36,8 @@ export type ItemEntryRecord = {
 
 export type ItemIndex = Record<string, ItemEntryRecord>
 
+export type BiomeTagIndex = Record<string, string[]>
+
 export type PokemonAbility = {
   id: string
   label: string

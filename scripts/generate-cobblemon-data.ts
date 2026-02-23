@@ -5,6 +5,7 @@ import JSZip from "jszip"
 import type {
   AbilityIndex,
   AbilitySlot,
+  BiomeTagIndex,
   CompetitiveStatSpread,
   EvolutionEdgeRecord,
   ItemIndex,
@@ -288,6 +289,7 @@ async function main() {
   const showdownData = await loadShowdownData()
   const spawnPresets = await loadSpawnPresets()
   const biomeTagMap = await loadBiomeTagMap()
+  const biomeTagIndex = buildBiomeTagIndex(biomeTagMap)
   const bucketWeights = await loadBucketWeights()
 
   const spawnWarnings: SpawnWarnings = {
@@ -369,6 +371,7 @@ async function main() {
     pokemonTypeEntries,
     moveLearnerShards,
     abilityIndex,
+    biomeTagIndex,
     itemIndex,
     rideableMons,
     pokemonFormSpriteIndex,
@@ -772,7 +775,8 @@ async function loadBiomeTagMap(): Promise<Map<string, string[]>> {
   const map = new Map<string, string[]>()
 
   for (const filePath of biomeFiles) {
-    const tagId = `#cobblemon:${path.basename(filePath, ".json")}`
+    const relativeTagPath = path.relative(BIOME_TAG_ROOT, filePath).replace(/\\/g, "/")
+    const tagId = `#cobblemon:${relativeTagPath.replace(/\.json$/i, "")}`
     const data = await readJson(filePath)
     const values = Array.isArray(data.values) ? data.values : []
 
@@ -794,6 +798,32 @@ async function loadBiomeTagMap(): Promise<Map<string, string[]>> {
   }
 
   return map
+}
+
+function buildBiomeTagIndex(biomeTagMap: Map<string, string[]>): BiomeTagIndex {
+  const index: BiomeTagIndex = {}
+  const sortedEntries = Array.from(biomeTagMap.entries()).sort(([left], [right]) => {
+    return left.localeCompare(right)
+  })
+
+  for (const [tagId, locations] of sortedEntries) {
+    const dedupedLocations: string[] = []
+    const seenLocations = new Set<string>()
+
+    for (const location of locations) {
+      const normalizedLocation = location.trim()
+      if (!normalizedLocation || seenLocations.has(normalizedLocation)) {
+        continue
+      }
+
+      seenLocations.add(normalizedLocation)
+      dedupedLocations.push(normalizedLocation)
+    }
+
+    index[tagId] = dedupedLocations
+  }
+
+  return index
 }
 
 async function loadBucketWeights(): Promise<Map<string, number>> {
@@ -3305,6 +3335,7 @@ async function writeArtifacts(params: {
   pokemonTypeEntries: PokemonTypeEntryRecord[]
   moveLearnerShards: Map<string, MoveLearnersIndex>
   abilityIndex: AbilityIndex
+  biomeTagIndex: BiomeTagIndex
   itemIndex: ItemIndex
   rideableMons: RideableMonRecord[]
   pokemonFormSpriteIndex: PokemonFormSpriteIndex
@@ -3332,6 +3363,7 @@ async function writeArtifacts(params: {
   await writeSharedArtifact("pokemon-dex-nav.json", params.pokemonDexNav)
   await writeSharedArtifact("pokemon-type-entries.json", params.pokemonTypeEntries)
   await writeSharedArtifact("ability-index.json", params.abilityIndex)
+  await writeSharedArtifact("biome-tag-index.json", params.biomeTagIndex)
   await writeSharedArtifact("item-index.json", params.itemIndex)
   await writeSharedArtifact("rideable-mons.json", params.rideableMons)
   await writeSharedArtifact("pokemon-form-sprite-index.json", params.pokemonFormSpriteIndex)

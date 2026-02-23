@@ -12,13 +12,14 @@ import {
   IconIconArrowUpRight,
   IconIconGhost,
   IconMapPin,
-  IconShield,
+  IconMedalOutline,
   IconSword,
   IconZap,
 } from "@/assets/icons"
 import { EvolutionFamilyFlow } from "@/components/evolution-family-flow"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
+  BiomeTagIndex,
   ItemIndex,
   MoveSourceType,
   PokemonDetailRecord,
@@ -28,6 +29,7 @@ import type {
   SmogonMovesetRecord,
 } from "@/data/cobblemon-types"
 import {
+  loadBiomeTagIndex,
   loadItemIndex,
   loadMoveLearnerEntry,
   loadPokemonDetail,
@@ -52,6 +54,7 @@ import {
   loadCompetitiveReferenceData,
 } from "@/lib/competitive-data"
 import { resolvePokemonArtworkUrls } from "@/lib/pokeapi-artwork"
+import { Tippy } from "@/lib/solid-tippy"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
 import { useParams } from "@/route-tree.gen"
 import { cn } from "@/utils/cn"
@@ -173,6 +176,11 @@ export default function Page() {
     queryFn: loadItemIndex,
   }))
 
+  const biomeTagIndexQuery = useQuery(() => ({
+    queryKey: ["biome-tag-index"],
+    queryFn: loadBiomeTagIndex,
+  }))
+
   useMetadata({
     title: getTitle("Pokemon"),
   })
@@ -187,6 +195,7 @@ export default function Page() {
               previous={dexNeighborsQuery.data?.previous ?? null}
               next={dexNeighborsQuery.data?.next ?? null}
               itemIndex={itemIndexQuery.data ?? null}
+              biomeTagIndex={biomeTagIndexQuery.data ?? {}}
             />
           )}
         </Show>
@@ -223,6 +232,7 @@ function PokemonDetailView(props: {
   previous: PokemonDexNavItem | null
   next: PokemonDexNavItem | null
   itemIndex: ItemIndex | null
+  biomeTagIndex: BiomeTagIndex
 }) {
   const pageContext = usePageContext()
   const detail = () => props.detail
@@ -871,17 +881,44 @@ function PokemonDetailView(props: {
               <div class="divide-y divide-border">
                 <For each={detail().spawnEntries}>
                   {(entry) => {
-                    const chips = formatConditionChips(entry.condition)
+                    const biomeTokens = getConditionBiomeTokens(entry.condition)
+                    const yRange = getConditionYRange(entry.condition)
+                    const chips = formatConditionChips(entry.condition, {
+                      includeBiomes: false,
+                    })
+
                     return (
                       <div class="p-4">
                         <div class="mb-2 flex items-center justify-between">
                           <span class="font-medium">{titleCaseFromId(entry.bucket)}</span>
-                          <div class="flex items-center gap-2 text-muted-foreground text-sm">
-                            <span>{entry.levelText ?? "—"}</span>
-                            <span>·</span>
-                            <span>{titleCaseFromId(entry.spawnablePositionType)}</span>
+                          <div class="flex flex-wrap items-center justify-end gap-1.5">
+                            <span class="border border-border bg-secondary/35 px-1.5 py-0.5 font-mono text-[11px] text-foreground">
+                              Lv {entry.levelText ?? "—"}
+                            </span>
+                            <Show when={yRange}>
+                              {(resolvedRange) => (
+                                <span class="border border-border bg-secondary/35 px-1.5 py-0.5 font-mono text-[11px] text-foreground">
+                                  Y {resolvedRange()}
+                                </span>
+                              )}
+                            </Show>
+                            <span class="text-muted-foreground text-sm">
+                              {titleCaseFromId(entry.spawnablePositionType)}
+                            </span>
                           </div>
                         </div>
+                        <Show when={biomeTokens.length > 0}>
+                          <div class="mb-2 flex flex-wrap gap-1">
+                            <For each={biomeTokens}>
+                              {(biomeToken) => (
+                                <BiomeConditionChip
+                                  token={biomeToken}
+                                  qualifyingLocations={props.biomeTagIndex[biomeToken] ?? []}
+                                />
+                              )}
+                            </For>
+                          </div>
+                        </Show>
                         <Show when={chips.length > 0}>
                           <div class="mb-2 flex flex-wrap gap-1">
                             <For each={chips.slice(0, 4)}>
@@ -1086,6 +1123,144 @@ function TypeIcon(props: { type: string }) {
 
 function EggGroupIcon(props: { group: string }) {
   return <IconEgg class="h-3.5 w-3.5" style={{ color: getEggGroupColor(props.group) }} />
+}
+
+function getConditionBiomeTokens(condition: Record<string, unknown> | null): string[] {
+  if (!condition || !Array.isArray(condition.biomes)) {
+    return []
+  }
+
+  const seenTokens = new Set<string>()
+  const tokens: string[] = []
+
+  for (const biomeToken of condition.biomes) {
+    if (typeof biomeToken !== "string") {
+      continue
+    }
+
+    const normalizedToken = biomeToken.trim()
+    if (!normalizedToken || seenTokens.has(normalizedToken)) {
+      continue
+    }
+
+    seenTokens.add(normalizedToken)
+    tokens.push(normalizedToken)
+  }
+
+  return tokens
+}
+
+function getConditionYRange(condition: Record<string, unknown> | null): string | null {
+  if (!condition) {
+    return null
+  }
+
+  const minY = typeof condition.minY === "number" ? Math.trunc(condition.minY) : null
+  const maxY = typeof condition.maxY === "number" ? Math.trunc(condition.maxY) : null
+
+  if (minY === null && maxY === null) {
+    return null
+  }
+
+  return `${minY ?? "*"}-${maxY ?? "*"}`
+}
+
+function styleBiomeTooltipSurface(instance: { popper: HTMLElement }) {
+  const tooltipBox = instance.popper.querySelector<HTMLElement>(".tippy-box")
+  if (!tooltipBox) {
+    return
+  }
+
+  tooltipBox.style.backgroundColor = "rgba(9, 9, 11, 0.88)"
+  tooltipBox.style.border = "1px solid rgba(255, 255, 255, 0.14)"
+  tooltipBox.style.backdropFilter = "blur(12px)"
+  tooltipBox.style.setProperty("-webkit-backdrop-filter", "blur(12px)")
+  tooltipBox.style.boxShadow = "0 18px 40px rgba(0, 0, 0, 0.45)"
+
+  const tooltipContent = tooltipBox.querySelector<HTMLElement>(".tippy-content")
+  if (tooltipContent) {
+    tooltipContent.style.padding = "10px"
+  }
+}
+
+function BiomeConditionChip(props: { token: string; qualifyingLocations: string[] }) {
+  const baseChipClass =
+    "inline-flex items-center border border-success/30 bg-success/10 px-2 py-0.5 font-mono text-[11px] text-success"
+
+  const tooltipContent = (
+    <div class="w-[22rem] max-w-[calc(100vw-2rem)] space-y-2">
+      <p class="font-mono text-[11px] text-white/95">{props.token}</p>
+      <p class="font-mono text-[10px] text-white/70 uppercase tracking-wider">
+        Qualifying locations
+      </p>
+      <div class="max-h-56 overflow-y-auto overflow-x-hidden rounded-[2px] border border-white/10 bg-white/[0.03] p-2">
+        <ul class="m-0 list-none space-y-1 p-0">
+          <For each={props.qualifyingLocations}>
+            {(location) => (
+              <li class="break-all font-mono text-[11px] text-white/90 leading-relaxed">
+                {location}
+              </li>
+            )}
+          </For>
+        </ul>
+      </div>
+    </div>
+  )
+
+  if (!props.token.startsWith("#") || props.qualifyingLocations.length === 0) {
+    return <span class={baseChipClass}>{props.token}</span>
+  }
+
+  return (
+    <Tippy
+      content={tooltipContent}
+      props={{
+        trigger: "mouseenter focus click",
+        placement: "top-start",
+        interactive: true,
+        arrow: false,
+        maxWidth: "none",
+        delay: [100, 60],
+        offset: [0, 8],
+        appendTo: () => document.body,
+        onCreate(instance) {
+          styleBiomeTooltipSurface(instance)
+        },
+        onMount(instance) {
+          styleBiomeTooltipSurface(instance)
+        },
+        popperOptions: {
+          strategy: "fixed",
+          modifiers: [
+            {
+              name: "preventOverflow",
+              options: {
+                altAxis: true,
+                padding: 12,
+              },
+            },
+            {
+              name: "flip",
+              options: {
+                padding: 12,
+              },
+            },
+          ],
+        },
+      }}
+    >
+      <button
+        type="button"
+        class={cn(
+          baseChipClass,
+          "cursor-help transition-colors hover:border-success/50 hover:bg-success/15 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-success/50"
+        )}
+        aria-label={`Show qualifying locations for ${props.token}`}
+      >
+        {props.token}
+      </button>
+    </Tippy>
+  )
 }
 
 function RideableHeroTag(props: { summary: RideableSummaryRecord; slug: string }) {
@@ -1402,7 +1577,7 @@ function CompetitiveSection(props: {
     <section class="border border-border bg-card">
       <div class="flex items-center justify-between gap-2 border-border border-b bg-secondary px-4 py-3">
         <div class="flex items-center gap-2">
-          <IconShield class="h-4 w-4 text-muted-foreground" />
+          <IconMedalOutline class="h-4 w-4 text-muted-foreground" />
           <h2 class="font-semibold">Competitive</h2>
         </div>
 
