@@ -1,56 +1,76 @@
-# 🐇 Solid Hop
+# Cobblepedia
 
-💙 A **minimal** and **unopinionated** Vike + Solid + Hono starter.
+A keyboard-first Cobblemon encyclopedia. Built for speed.
 
-❤️ We love Vike and Solid, but it might be overwhelming to setup. The goal of this starter is to get you up and running quickly with good defaults without getting in the way of your opinions.
+Press `Cmd+K` (or `Ctrl+K`), type `lucario moves`, hit Enter. That's it.
 
-This is more or less what you would get from a starter with `create next-app` or `create svelte` or `create solid`.
+![Command palette quickview](_docs/command-palette-quickview.webp)
 
-If you want a more opinionated and fully-featured boilerplate instead: http://github.com/blankeos/solid-launch
+## What it does
 
-## Tech Stack:
+Cobblepedia lets you look up Cobblemon data without clicking through menus. Type natural queries like:
 
-1. Vike + Hono - For SSR + Your own Server.
-2. SolidJS
-3. Bun (Can swap this with Node easily if you want).
-4. Tools: Biome
+- `lucario egg group` — breeding info
+- `lucario moves` — full moveset with tabs
+- `lucario spawn` — where to find them
+- `lucario evolution` — evolution chain and methods
+- `moves trickroom` — which Pokemon learn a move
 
-## Features:
+Results appear instantly. No page reloads.
 
-- [x] 🦋 **Type-safe Routing** - Inspired by TanStack Router, I'm the author of [`vike-routegen`](https://github.com/blankeos/vike-routegen) which codegens typesafe page routing for you, and it's a breeze!
-- [x] ⚡️ **Super-fast dev server** - way faster than NextJS thanks to Vite. You need to feel it to believe it! It can also literally build your app in seconds.
-- [x] **🥊 Robust Error Practices** - I thoughtfully made sure there's a best practice for errors here already. You can throw errors in a consistent manner in the backend and display them consistently in the frontend.
+## Why it exists
 
-## Quick Start
+The official [Cobbledex](https://cobbledex.info) is great for browsing. Cobblepedia is for when you already know what you want and need it fast.
 
-1. Get template
+## Features
 
-```sh
-npx degit https://github.com/blankeos/solid-hop <your-app-name>
-```
+- **Command palette** — Global search with `Cmd+K`
+- **Smart facets** — Add `moves`, `spawn`, or `evolution` to any Pokemon query
+- **Move lookup** — Find every Pokemon that learns a specific move
+- **Keyboard-first** — Navigate everything without touching your mouse
+- **Live previews** — Sprite and artwork from PokeAPI, 3D models from Cobblemon assets
 
-1. Install
+## Tech
 
-```sh
+Vike + SolidJS + Hono, Bun, Tailwind CSS v4, FlexSearch for the index.
+
+## Setup
+
+```bash
+# 1. Install
 bun install
-```
 
-3. Run dev server
+# 2. Clone Cobblemon source (for data generation)
+git clone https://gitlab.com/cable-mc/cobblemon .tmp-cobblemon
 
-```sh
+# 3. Generate data
+bun run generate:data
+
+# 4. Start dev server
 bun dev
 ```
 
-## Building and Deployment
+Open `http://localhost:3000`.
 
-1. Build
+## Screenshots
 
-```sh
-bun run build
-```
+| Home | Detail Page |
+|:---:|:---:|
+| ![Homepage](_docs/homepage-hero.webp) | ![Pokemon detail](_docs/pokemon-detail-moves.webp) |
 
-2. Wherever you deploy, just run make sure that this is ran:
+| Evolution View |
+|:---:|
+| ![Evolution family](_docs/evolution-family-flow.webp) |
 
-```sh
-bun run preview # Just runs server.ts
-```
+## Credits
+
+- Data: [Cobblemon](https://gitlab.com/cable-mc/cobblemon)
+- Models: [Cobblemon Assets](https://gitlab.com/cable-mc/cobblemon-assets)
+- Sprites: [PokeAPI](https://pokeapi.co)
+- Inspired by: [Cobbledex](https://cobbledex.info)
+
+Unofficial fan project. Not affiliated with Cobblemon, Mojang, Nintendo, Game Freak, or The Pokémon Company.
+
+## License
+
+MIT
