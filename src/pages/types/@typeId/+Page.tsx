@@ -1,5 +1,6 @@
 import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
+import { IconShield, IconSword } from "@/assets/icons"
 import { DualTypeSelector } from "@/components/dual-type-selector"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import { loadPokemonTypeEntries } from "@/data/data-loader"
@@ -341,24 +342,25 @@ export function TypesPageView(props: { initialType?: string }) {
 
                           <div class="flex items-center gap-1">
                             <For each={pokemon.types}>
-                              {(type) => (
-                                <span
-                                  class={cn(
-                                    "border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider",
-                                    type === primaryType() &&
-                                      "ring-1 ring-offset-1 ring-offset-background",
-                                    type === secondaryType() &&
-                                      "ring-1 ring-offset-1 ring-offset-background"
-                                  )}
-                                  style={{
-                                    "border-color": TYPE_COLORS[type] ?? "#888888",
-                                    color: TYPE_COLORS[type] ?? "#888888",
-                                    "--tw-ring-color": TYPE_COLORS[type] ?? "#888888",
-                                  }}
-                                >
-                                  {titleCaseFromId(type)}
-                                </span>
-                              )}
+                              {(type) => {
+                                const isActive = type === primaryType() || type === secondaryType()
+                                const typeColor = TYPE_COLORS[type] ?? "#888888"
+                                return (
+                                  <span
+                                    class={cn(
+                                      "px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider",
+                                      isActive ? "text-white" : "border bg-transparent"
+                                    )}
+                                    style={{
+                                      "border-color": isActive ? undefined : typeColor,
+                                      "background-color": isActive ? typeColor : undefined,
+                                      color: isActive ? undefined : typeColor,
+                                    }}
+                                  >
+                                    {titleCaseFromId(type)}
+                                  </span>
+                                )
+                              }}
                             </For>
                           </div>
                         </a>
@@ -390,25 +392,34 @@ function EffectivenessCard(props: {
     props.superEffective.length > 0 ||
     props.noEffect.length > 0
 
+  const Icon = () =>
+    props.title === "Offensive" ? (
+      <IconSword width={20} height={20} />
+    ) : (
+      <IconShield width={20} height={20} />
+    )
+
   return (
-    <div class="border border-border bg-card">
-      <div class="border-border border-b px-4 py-3">
-        <div class="flex items-center gap-2">
+    <div class="overflow-hidden border border-border bg-card">
+      <div class="border-border border-b bg-muted/30 px-4 py-4">
+        <div class="flex items-center gap-3">
           <div
-            class="h-2 w-2 border"
+            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
             style={{
-              "background-color": props.typeColor,
-              "border-color": props.typeColor,
+              "background-color": `${props.typeColor}20`,
+              color: props.typeColor,
             }}
-          />
+          >
+            <Icon />
+          </div>
           <div>
-            <h3 class="font-medium text-sm">{props.title}</h3>
+            <h3 class="font-semibold text-base">{props.title}</h3>
             <p class="text-muted-foreground text-xs">{props.subtitle}</p>
           </div>
         </div>
       </div>
 
-      <div class="space-y-3 p-4">
+      <div class="space-y-4 p-4">
         <Show when={hasData()} fallback={<NoEffectData />}>
           <Show when={props.superEffective.length > 0}>
             <MatchupGroup
