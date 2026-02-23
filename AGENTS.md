@@ -247,11 +247,18 @@ Model previews are required to be runtime-fetched (not stored in this repo).
 
 PokeAPI sprite/art requirements:
 
-- Use PokeAPI v1beta2 GraphQL endpoint: `https://graphql.pokeapi.co/v1beta2`
-- Use `fetch` directly for GraphQL POST requests. Do **not** add a full GraphQL client dependency.
-- Docs/explorer: `https://graphql.pokeapi.co/v1beta2/console/`
-- Preferred art sprite path in response JSON:
-  - `pokemon[0].pokemonsprites[0].sprites.other["official-artwork"].front_default`
-- Recommended fallback order when artwork is missing:
-  1. `sprites.other.home.front_default`
-  2. `sprites.front_default`
+- Terminology:
+  - **artwork** = large image on `/pokemon/:slug`
+  - **small sprites** = tiny sprites used in command palette, lists, evolution family, etc.
+- Do **not** use PokeAPI GraphQL for either artwork or small sprites.
+- Use static artwork/sprite assets from `https://github.com/PokeAPI/sprites` via direct raw URLs.
+- Do **not** clone or vendor the `PokeAPI/sprites` repository into this project.
+- For form-specific artwork/small sprites, use a deterministic generated local mapping (`form -> PokeAPI pokemon id`) built from bulk CSV sources (`pokemon.csv`, `pokemon_forms.csv`) during data generation.
+- Avoid per-Pokemon API requests for form resolution; prefer bulk source fetches and local artifacts.
+- Preferred artwork URL pattern:
+  - `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{pokemon-id}.png`
+- Small sprite URL pattern:
+  - `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon-id}.png`
+- Recommended artwork fallback order when artwork is missing:
+  1. `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/{pokemon-id}.png`
+  2. `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon-id}.png`

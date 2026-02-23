@@ -5,6 +5,7 @@ import type {
   MoveLearnerEntryRecord,
   PokemonDetailRecord,
   PokemonDexNavItem,
+  PokemonFormSpriteIndex,
   PokemonListItem,
   PokemonTypeEntryRecord,
   RideableMonRecord,
@@ -19,6 +20,7 @@ let pokemonDexNavPromise: Promise<PokemonDexNavItem[]> | null = null
 let pokemonTypeEntriesPromise: Promise<PokemonTypeEntryRecord[]> | null = null
 let abilityIndexPromise: Promise<AbilityIndex> | null = null
 let itemIndexPromise: Promise<ItemIndex> | null = null
+let pokemonFormSpriteIndexPromise: Promise<PokemonFormSpriteIndex> | null = null
 let rideableMonsPromise: Promise<RideableMonRecord[]> | null = null
 let metaPromise: Promise<MetaRecord> | null = null
 let publicGeneratedVersionPromise: Promise<string | null> | null = null
@@ -97,6 +99,16 @@ export function loadItemIndex(): Promise<ItemIndex> {
   }
 
   return itemIndexPromise
+}
+
+export function loadPokemonFormSpriteIndex(): Promise<PokemonFormSpriteIndex> {
+  if (!pokemonFormSpriteIndexPromise) {
+    pokemonFormSpriteIndexPromise = loadGeneratedJson<PokemonFormSpriteIndex>(
+      "pokemon-form-sprite-index.json"
+    ).catch(() => ({}))
+  }
+
+  return pokemonFormSpriteIndexPromise
 }
 
 export function loadRideableMons(): Promise<RideableMonRecord[]> {

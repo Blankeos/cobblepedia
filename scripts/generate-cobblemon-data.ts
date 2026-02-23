@@ -14,6 +14,7 @@ import type {
   PokemonDetailRecord,
   PokemonDexNavItem,
   PokemonFormRecord,
+  PokemonFormSpriteIndex,
   PokemonListItem,
   PokemonTypeEntryRecord,
   RideableMonRecord,
@@ -43,6 +44,10 @@ const UPSTREAM_URL = "https://gitlab.com/cable-mc/cobblemon"
 const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
 const COBBLEMON_ASSETS_REF = "master"
 const COBBLEMON_ASSETS_ITEMS_ROOT = "items"
+const POKEAPI_POKEMON_CSV_URL =
+  "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon.csv"
+const POKEAPI_POKEMON_FORMS_CSV_URL =
+  "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon_forms.csv"
 const KNOWN_MOVE_PREFIXES = new Set(["egg", "tm", "tutor", "legacy", "special", "form_change"])
 const EVOLUTION_FORM_REGION_ALIASES: Record<string, string> = {
   alola: "alola",
@@ -64,6 +69,46 @@ const EVOLUTION_FORM_REGION_ALIASES: Record<string, string> = {
   unova: "unova",
   unovan: "unova",
 }
+
+const FORM_SUFFIX_ALIASES: Record<string, string[]> = {
+  f: ["female"],
+  m: ["male"],
+  dusk: ["owntempo"],
+  duskmane: ["dusk"],
+  dawnwings: ["dawn"],
+  noiceface: ["noice"],
+  partner: ["starter"],
+  galar: ["galarstandard"],
+  paldeacombat: ["paldeacombatbreed"],
+  paldeablaze: ["paldeablazebreed"],
+  paldeaaqua: ["paldeaaquabreed"],
+  blue: ["blueplumage"],
+  yellow: ["yellowplumage"],
+  white: ["whiteplumage"],
+  wellspring: ["wellspringmask"],
+  hearthflame: ["hearthflamemask"],
+  cornerstone: ["cornerstonemask"],
+  wellspringtera: ["wellspringmask"],
+  hearthflametera: ["hearthflamemask"],
+  cornerstonetera: ["cornerstonemask"],
+  bond: ["battlebond"],
+  "10c": ["10powerconstruct"],
+  "50c": ["50powerconstruct"],
+  meteor: ["redmeteor"],
+  four: ["familyoffour"],
+}
+
+const ALCREMIE_FLAVOR_SUFFIXES = [
+  "vanillacream",
+  "rubycream",
+  "matchacream",
+  "mintcream",
+  "lemoncream",
+  "saltedcream",
+  "rubyswirl",
+  "caramelswirl",
+  "rainbowswirl",
+]
 
 const SPECIES_ROOT = path.join(UPSTREAM_ROOT, "common/src/main/resources/data/cobblemon/species")
 const SPAWN_POOL_ROOT = path.join(
@@ -172,6 +217,37 @@ type GitLabTreeEntry = {
   type: "tree" | "blob"
 }
 
+type PokeapiPokemonCsvRow = {
+  id: number
+  identifier: string
+  speciesId: number
+}
+
+type PokeapiFormCsvRow = {
+  identifier: string
+  pokemonId: number
+}
+
+type PokeapiFormLookupEntry = {
+  pokemonId: number
+  pokemonIdentifier: string
+  speciesId: number
+}
+
+type PokeapiFormLookup = {
+  formIdentifierToPokemon: Map<string, PokeapiFormLookupEntry>
+  formIdentifiersBySpeciesId: Map<number, string[]>
+  defaultPokemonIdentifierBySpeciesId: Map<number, string>
+}
+
+type PokeapiSpeciesFormCandidate = {
+  formIdentifier: string
+  pokemonId: number
+  pokemonIdentifier: string
+  fullCanonical: string
+  suffixCanonical: string
+}
+
 await main()
 
 async function main() {
@@ -231,6 +307,7 @@ async function main() {
   const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
   const itemIndex = await loadItemIndex()
   const rideableMons = buildRideableMons(detailsBySlug)
+  const pokemonFormSpriteIndex = await buildPokemonFormSpriteIndex(detailsBySlug)
   const searchIndex = buildSearchIndex(pokemonList, moveLearners)
 
   if (searchIndex.some((doc) => doc.resultType === "pokemon-overview" && !doc.implemented)) {
@@ -264,6 +341,7 @@ async function main() {
     abilityIndex,
     itemIndex,
     rideableMons,
+    pokemonFormSpriteIndex,
     searchIndex,
     detailsBySlug,
   })
@@ -274,6 +352,7 @@ async function main() {
   console.log(`- Spawn entries: ${meta.spawnEntryCount}`)
   console.log(`- Move map size: ${meta.moveCount}`)
   console.log(`- Item entries: ${meta.itemCount}`)
+  console.log(`- Form sprite mappings: ${Object.keys(pokemonFormSpriteIndex).length}`)
   console.log(`- Learnset entries parsed: ${showdownData.learnsetCount}`)
 }
 
@@ -1975,6 +2054,481 @@ function buildPokemonTypeEntries(
   })
 }
 
+async function buildPokemonFormSpriteIndex(
+  detailsBySlug: Map<string, PokemonDetailRecord>
+): Promise<PokemonFormSpriteIndex> {
+  let pokeapiLookup: PokeapiFormLookup
+  try {
+    pokeapiLookup = await loadPokeapiFormLookup()
+  } catch (error) {
+    console.warn(`[warn] Failed to load PokeAPI CSV form lookup: ${String(error)}`)
+    return {}
+  }
+
+  const index: PokemonFormSpriteIndex = {}
+  const sortedDetails = Array.from(detailsBySlug.values()).sort((left, right) => {
+    return left.slug.localeCompare(right.slug)
+  })
+
+  for (const detail of sortedDetails) {
+    if (detail.forms.length === 0) {
+      continue
+    }
+
+    const baseCanonical = canonicalId(detail.slug)
+    if (!baseCanonical) {
+      continue
+    }
+
+    const availableFormIdentifiers = Array.from(
+      new Set(pokeapiLookup.formIdentifiersBySpeciesId.get(detail.dexNumber) ?? [])
+    )
+    if (availableFormIdentifiers.length === 0) {
+      continue
+    }
+
+    const defaultIdentifier = pokeapiLookup.defaultPokemonIdentifierBySpeciesId.get(
+      detail.dexNumber
+    )
+    const defaultIdentifierCanonical = defaultIdentifier ? canonicalId(defaultIdentifier) : null
+
+    const speciesCandidates = availableFormIdentifiers
+      .map((formIdentifier) => {
+        const lookupEntry = pokeapiLookup.formIdentifierToPokemon.get(formIdentifier)
+        if (!lookupEntry) {
+          return null
+        }
+
+        const fullCanonical = canonicalId(formIdentifier)
+        if (!fullCanonical) {
+          return null
+        }
+
+        return {
+          formIdentifier,
+          pokemonId: lookupEntry.pokemonId,
+          pokemonIdentifier: lookupEntry.pokemonIdentifier,
+          fullCanonical,
+          suffixCanonical: fullCanonical.startsWith(baseCanonical)
+            ? fullCanonical.slice(baseCanonical.length)
+            : fullCanonical,
+        }
+      })
+      .filter((candidate): candidate is PokeapiSpeciesFormCandidate => candidate !== null)
+
+    if (speciesCandidates.length === 0) {
+      continue
+    }
+
+    for (const form of detail.forms) {
+      const matchedCandidate = resolvePokeapiFormCandidate({
+        baseSlug: detail.slug,
+        formSlug: form.slug,
+        formName: form.name,
+        baseCanonical,
+        defaultIdentifierCanonical,
+        candidates: speciesCandidates,
+      })
+      if (!matchedCandidate) {
+        continue
+      }
+
+      const slugKey = buildFormSpriteSlugLookupKey(detail.slug, form.slug)
+      if (slugKey) {
+        index[slugKey] = {
+          pokemonId: matchedCandidate.pokemonId,
+          pokemonIdentifier: matchedCandidate.pokemonIdentifier,
+        }
+      }
+
+      const nameKey = buildFormSpriteNameLookupKey(detail.slug, form.name)
+      if (nameKey) {
+        index[nameKey] = {
+          pokemonId: matchedCandidate.pokemonId,
+          pokemonIdentifier: matchedCandidate.pokemonIdentifier,
+        }
+      }
+    }
+  }
+
+  return index
+}
+
+async function loadPokeapiFormLookup(): Promise<PokeapiFormLookup> {
+  const [pokemonRows, formRows] = await Promise.all([
+    fetchPokeapiPokemonCsvRows(),
+    fetchPokeapiFormCsvRows(),
+  ])
+
+  const pokemonById = new Map<number, PokeapiPokemonCsvRow>()
+  const pokemonBySpeciesId = new Map<number, PokeapiPokemonCsvRow[]>()
+  const formIdentifierToPokemon = new Map<string, PokeapiFormLookupEntry>()
+  const formIdentifiersBySpeciesId = new Map<number, Set<string>>()
+
+  const addFormIdentifier = (
+    speciesId: number,
+    formIdentifier: string,
+    pokemonRow: PokeapiPokemonCsvRow
+  ) => {
+    const normalizedIdentifier = normalizePokeapiIdentifier(formIdentifier)
+    if (!normalizedIdentifier) {
+      return
+    }
+
+    formIdentifierToPokemon.set(normalizedIdentifier, {
+      pokemonId: pokemonRow.id,
+      pokemonIdentifier: pokemonRow.identifier,
+      speciesId,
+    })
+
+    if (!formIdentifiersBySpeciesId.has(speciesId)) {
+      formIdentifiersBySpeciesId.set(speciesId, new Set())
+    }
+
+    formIdentifiersBySpeciesId.get(speciesId)?.add(normalizedIdentifier)
+  }
+
+  for (const pokemonRow of pokemonRows) {
+    pokemonById.set(pokemonRow.id, pokemonRow)
+
+    if (!pokemonBySpeciesId.has(pokemonRow.speciesId)) {
+      pokemonBySpeciesId.set(pokemonRow.speciesId, [])
+    }
+    pokemonBySpeciesId.get(pokemonRow.speciesId)?.push(pokemonRow)
+
+    addFormIdentifier(pokemonRow.speciesId, pokemonRow.identifier, pokemonRow)
+  }
+
+  for (const formRow of formRows) {
+    const pokemonRow = pokemonById.get(formRow.pokemonId)
+    if (!pokemonRow) {
+      continue
+    }
+
+    addFormIdentifier(pokemonRow.speciesId, formRow.identifier, pokemonRow)
+  }
+
+  const defaultPokemonIdentifierBySpeciesId = new Map<number, string>()
+  for (const [speciesId, rows] of pokemonBySpeciesId.entries()) {
+    rows.sort((left, right) => left.id - right.id)
+
+    const primary = rows.find((row) => row.id === speciesId) ?? rows[0]
+    if (!primary) {
+      continue
+    }
+
+    defaultPokemonIdentifierBySpeciesId.set(speciesId, primary.identifier)
+  }
+
+  const sortedFormIdentifiersBySpeciesId = new Map<number, string[]>()
+  for (const [speciesId, identifiers] of formIdentifiersBySpeciesId.entries()) {
+    sortedFormIdentifiersBySpeciesId.set(
+      speciesId,
+      Array.from(identifiers.values()).sort((left, right) => left.localeCompare(right))
+    )
+  }
+
+  return {
+    formIdentifierToPokemon,
+    formIdentifiersBySpeciesId: sortedFormIdentifiersBySpeciesId,
+    defaultPokemonIdentifierBySpeciesId,
+  }
+}
+
+async function fetchPokeapiPokemonCsvRows(): Promise<PokeapiPokemonCsvRow[]> {
+  const csvText = await fetchCsvText(POKEAPI_POKEMON_CSV_URL)
+  const rows = parseCsvRows(csvText)
+  const parsed: PokeapiPokemonCsvRow[] = []
+
+  for (const row of rows.slice(1)) {
+    const id = parseInteger(row[0])
+    const identifier = normalizePokeapiIdentifier(row[1])
+    const speciesId = parseInteger(row[2])
+    if (id === null || speciesId === null || !identifier) {
+      continue
+    }
+
+    parsed.push({
+      id,
+      identifier,
+      speciesId,
+    })
+  }
+
+  return parsed
+}
+
+async function fetchPokeapiFormCsvRows(): Promise<PokeapiFormCsvRow[]> {
+  const csvText = await fetchCsvText(POKEAPI_POKEMON_FORMS_CSV_URL)
+  const rows = parseCsvRows(csvText)
+  const parsed: PokeapiFormCsvRow[] = []
+
+  for (const row of rows.slice(1)) {
+    const identifier = normalizePokeapiIdentifier(row[1])
+    const pokemonId = parseInteger(row[3])
+    if (pokemonId === null || !identifier) {
+      continue
+    }
+
+    parsed.push({
+      identifier,
+      pokemonId,
+    })
+  }
+
+  return parsed
+}
+
+function resolvePokeapiFormCandidate(params: {
+  baseSlug: string
+  formSlug: string
+  formName: string
+  baseCanonical: string
+  defaultIdentifierCanonical: string | null
+  candidates: PokeapiSpeciesFormCandidate[]
+}): PokeapiSpeciesFormCandidate | null {
+  const formSlugCanonical = canonicalId(params.formSlug)
+  const formSlugSuffixCanonical = extractCanonicalFormSuffix(params.baseSlug, params.formSlug)
+  const suffixCandidates = buildCanonicalFormSuffixCandidates({
+    baseSlug: params.baseSlug,
+    formSlug: params.formSlug,
+    formName: params.formName,
+    baseCanonical: params.baseCanonical,
+    defaultIdentifierCanonical: params.defaultIdentifierCanonical,
+  })
+
+  const fullCandidates = new Set<string>()
+  if (formSlugCanonical) {
+    fullCandidates.add(formSlugCanonical)
+  }
+
+  for (const suffixCandidate of suffixCandidates) {
+    fullCandidates.add(`${params.baseCanonical}${suffixCandidate}`)
+    if (params.defaultIdentifierCanonical) {
+      fullCandidates.add(`${params.defaultIdentifierCanonical}${suffixCandidate}`)
+    }
+  }
+
+  const matches = params.candidates.filter((candidate) => {
+    if (fullCandidates.has(candidate.fullCanonical)) {
+      return true
+    }
+
+    return suffixCandidates.has(candidate.suffixCanonical)
+  })
+
+  if (matches.length === 0) {
+    return null
+  }
+
+  if (matches.length === 1) {
+    return matches[0]
+  }
+
+  const scoredMatches = matches
+    .map((candidate) => {
+      let score = 0
+
+      if (formSlugCanonical && candidate.fullCanonical === formSlugCanonical) {
+        score += 1000
+      }
+
+      if (formSlugSuffixCanonical && candidate.suffixCanonical === formSlugSuffixCanonical) {
+        score += 400
+      }
+
+      if (fullCandidates.has(candidate.fullCanonical)) {
+        score += 240
+      }
+
+      if (suffixCandidates.has(candidate.suffixCanonical)) {
+        score += 160
+      }
+
+      if (
+        params.defaultIdentifierCanonical &&
+        candidate.fullCanonical.startsWith(params.defaultIdentifierCanonical)
+      ) {
+        score += 80
+      }
+
+      return {
+        candidate,
+        score,
+      }
+    })
+    .sort((left, right) => {
+      if (right.score !== left.score) {
+        return right.score - left.score
+      }
+
+      if (left.candidate.pokemonId !== right.candidate.pokemonId) {
+        return left.candidate.pokemonId - right.candidate.pokemonId
+      }
+
+      return left.candidate.formIdentifier.localeCompare(right.candidate.formIdentifier)
+    })
+
+  return scoredMatches[0]?.candidate ?? null
+}
+
+function buildCanonicalFormSuffixCandidates(params: {
+  baseSlug: string
+  formSlug: string
+  formName: string
+  baseCanonical: string
+  defaultIdentifierCanonical: string | null
+}): Set<string> {
+  const values = new Set<string>()
+
+  const addCanonical = (value: string | null | undefined) => {
+    if (typeof value !== "string") {
+      return
+    }
+
+    const normalized = canonicalId(value)
+    if (!normalized) {
+      return
+    }
+
+    values.add(normalized)
+  }
+
+  const formSlugSuffixRaw = extractFormSlugSuffix(params.baseSlug, params.formSlug)
+  const formNameNormalized = normalizePokeapiIdentifier(params.formName)
+  const formSlugSuffixNormalized = normalizePokeapiIdentifier(formSlugSuffixRaw)
+
+  addCanonical(formSlugSuffixRaw)
+  addCanonical(formSlugSuffixNormalized)
+  addCanonical(params.formName)
+  addCanonical(formNameNormalized)
+
+  const snapshot = Array.from(values.values())
+
+  for (const value of snapshot) {
+    for (const alias of FORM_SUFFIX_ALIASES[value] ?? []) {
+      addCanonical(alias)
+    }
+  }
+
+  if (values.has("gmax")) {
+    const defaultSuffix = params.defaultIdentifierCanonical?.startsWith(params.baseCanonical)
+      ? params.defaultIdentifierCanonical.slice(params.baseCanonical.length)
+      : ""
+
+    if (defaultSuffix) {
+      addCanonical(`${defaultSuffix}gmax`)
+    }
+  }
+
+  if (params.baseCanonical === "alcremie") {
+    for (const flavorSuffix of ALCREMIE_FLAVOR_SUFFIXES) {
+      if (values.has(flavorSuffix)) {
+        addCanonical(`${flavorSuffix}strawberrysweet`)
+      }
+    }
+  }
+
+  const trimmedFormName = params.formName.trim()
+  if (params.baseCanonical === "unown" && trimmedFormName === "!") {
+    addCanonical("exclamation")
+  }
+
+  if (params.baseCanonical === "unown" && trimmedFormName === "?") {
+    addCanonical("question")
+  }
+
+  return values
+}
+
+function buildFormSpriteSlugLookupKey(baseSlug: string, formSlug: string): string | null {
+  const normalizedBaseSlug = canonicalId(baseSlug)
+  const normalizedFormSlug = canonicalId(formSlug)
+
+  if (!normalizedBaseSlug || !normalizedFormSlug) {
+    return null
+  }
+
+  return `${normalizedBaseSlug}::${normalizedFormSlug}`
+}
+
+function buildFormSpriteNameLookupKey(baseSlug: string, formName: string): string | null {
+  const normalizedBaseSlug = canonicalId(baseSlug)
+  const normalizedFormName = canonicalId(formName)
+
+  if (!normalizedBaseSlug || !normalizedFormName) {
+    return null
+  }
+
+  return `${normalizedBaseSlug}::name:${normalizedFormName}`
+}
+
+function extractFormSlugSuffix(baseSlug: string, formSlug: string): string {
+  if (formSlug.startsWith(`${baseSlug}-`)) {
+    return formSlug.slice(baseSlug.length + 1)
+  }
+
+  return formSlug
+}
+
+function extractCanonicalFormSuffix(baseSlug: string, formSlug: string): string {
+  const baseCanonical = canonicalId(baseSlug)
+  const formCanonical = canonicalId(formSlug)
+
+  if (!formCanonical) {
+    return ""
+  }
+
+  if (baseCanonical && formCanonical.startsWith(baseCanonical)) {
+    return formCanonical.slice(baseCanonical.length)
+  }
+
+  return formCanonical
+}
+
+function normalizePokeapiIdentifier(value: string | null | undefined): string {
+  if (typeof value !== "string") {
+    return ""
+  }
+
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+}
+
+function parseCsvRows(csvText: string): string[][] {
+  return csvText
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
+    .map((line) => line.split(",").map((cell) => cell.trim()))
+}
+
+function parseInteger(rawValue: string | undefined): number | null {
+  if (typeof rawValue !== "string") {
+    return null
+  }
+
+  const parsed = Number.parseInt(rawValue, 10)
+  if (!Number.isFinite(parsed)) {
+    return null
+  }
+
+  return parsed
+}
+
+async function fetchCsvText(url: string): Promise<string> {
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error(`CSV fetch failed with status ${response.status}: ${url}`)
+  }
+
+  return response.text()
+}
+
 function buildMoveLearnersIndex(
   detailsBySlug: Map<string, PokemonDetailRecord>,
   moveLearnersBuild: MoveLearnersBuildMap,
@@ -2353,6 +2907,7 @@ async function writeArtifacts(params: {
   abilityIndex: AbilityIndex
   itemIndex: ItemIndex
   rideableMons: RideableMonRecord[]
+  pokemonFormSpriteIndex: PokemonFormSpriteIndex
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
 }) {
@@ -2376,6 +2931,7 @@ async function writeArtifacts(params: {
   await writeSharedArtifact("ability-index.json", params.abilityIndex)
   await writeSharedArtifact("item-index.json", params.itemIndex)
   await writeSharedArtifact("rideable-mons.json", params.rideableMons)
+  await writeSharedArtifact("pokemon-form-sprite-index.json", params.pokemonFormSpriteIndex)
   await writeSharedArtifact("search-index.json", params.searchIndex)
 
   for (const [shardId, shardData] of params.moveLearnerShards) {

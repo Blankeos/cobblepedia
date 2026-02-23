@@ -283,6 +283,13 @@ export type PokemonTypeEntryRecord = {
   types: string[]
 }
 
+export type PokemonFormSpriteIndexEntry = {
+  pokemonId: number
+  pokemonIdentifier: string
+}
+
+export type PokemonFormSpriteIndex = Record<string, PokemonFormSpriteIndexEntry>
+
 export type SearchDocument = {
   id: string
   resultType: SearchResultType
