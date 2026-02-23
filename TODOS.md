@@ -22,7 +22,7 @@ Big feats:
   - Change the leader key
 - [ ] SteamDeck accessibility, in case people play on steamdeck and still want to browse this.
 - [ ] Unimplemented mons base. Make the 'Not in the Game' clickable when I see a 'not in the game' thingy.
-- [ ] Rideable mon stats (just like cobbledex i.e. speed etc. Show it there.)
+- [x] Rideable mon stats (just like cobbledex i.e. speed etc. Show it there.)
 - [ ] Evo item who is it related to wiki info i.e. Fire Stone. Alcremie's items.
 - [ ] Drop item data when I kill them
 - [ ] Drop item data when I put them in pasture blocks. (Cobbleverse-specific)
