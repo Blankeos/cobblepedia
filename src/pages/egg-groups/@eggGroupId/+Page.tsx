@@ -1,12 +1,5 @@
-import {
-  createEffect,
-  createMemo,
-  createResource,
-  createSignal,
-  For,
-  onCleanup,
-  Show,
-} from "solid-js"
+import { useQuery } from "@tanstack/solid-query"
+import { createEffect, createMemo, createSignal, For, onCleanup, Show } from "solid-js"
 import { navigate } from "vike/client/router"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
@@ -76,6 +69,8 @@ const TYPE_COLORS: Record<string, string> = {
   fairy: "#EE99AC",
 }
 
+const COMPATIBILITY_DETAIL_TIMEOUT_MS = 8000
+
 type BreedingCompatibilityMode = "loading" | "standard" | "genderless" | "ditto" | "none"
 
 type BreedingCompatibilitySection = {
@@ -117,7 +112,11 @@ export function EggGroupsPageView(props: {
   initialPokemonSlug?: string
 }) {
   const pageContext = usePageContext()
-  const [pokemonList] = createResource(loadPokemonList)
+  const pokemonListQuery = useQuery(() => ({
+    queryKey: ["pokemon-list"],
+    queryFn: loadPokemonList,
+  }))
+  const pokemonList = createMemo(() => pokemonListQuery.data ?? [])
   const [primaryEggGroup, setPrimaryEggGroup] = createSignal("")
   const [secondaryEggGroup, setSecondaryEggGroup] = createSignal<string | null>(null)
   const [selectedPokemonSlug, setSelectedPokemonSlug] = createSignal("")
@@ -131,7 +130,7 @@ export function EggGroupsPageView(props: {
 
   const availableEggGroups = createMemo(() => {
     const set = new Set<string>()
-    for (const pokemon of pokemonList() ?? []) {
+    for (const pokemon of pokemonList()) {
       for (const group of pokemon.eggGroups) {
         set.add(group)
       }
@@ -150,7 +149,7 @@ export function EggGroupsPageView(props: {
     if (!normalized) return ""
 
     return (
-      (pokemonList() ?? []).find(
+      pokemonList().find(
         (pokemon) => pokemon.implemented && canonicalId(pokemon.slug) === normalized
       )?.slug ?? ""
     )
@@ -317,7 +316,7 @@ export function EggGroupsPageView(props: {
   })
 
   const filteredPokemon = createMemo(() => {
-    const list = pokemonList() ?? []
+    const list = pokemonList()
     const primary = primaryEggGroup()
     const secondary = secondaryEggGroup()
     if (!primary) return []
@@ -353,24 +352,40 @@ export function EggGroupsPageView(props: {
     if (!selectedSlug) return null
 
     return (
-      (pokemonList() ?? []).find(
+      pokemonList().find(
         (pokemon) => pokemon.implemented && canonicalId(pokemon.slug) === canonicalId(selectedSlug)
       ) ?? null
     )
   })
 
-  const [selectedPokemonDetail] = createResource(
-    () => selectedPokemon()?.slug ?? "",
-    async (slug) => {
-      if (!slug) return null
-      return loadPokemonDetail(slug)
-    }
-  )
+  const selectedPokemonDetailSlug = createMemo(() => selectedPokemon()?.slug ?? "")
+
+  const selectedPokemonDetailQuery = useQuery(() => ({
+    queryKey: ["pokemon-detail", selectedPokemonDetailSlug()],
+    enabled: selectedPokemonDetailSlug().length > 0,
+    queryFn: async () => {
+      const slug = selectedPokemonDetailSlug()
+      if (!slug) {
+        return null
+      }
+
+      return withTimeout(loadPokemonDetail(slug), COMPATIBILITY_DETAIL_TIMEOUT_MS, null)
+    },
+  }))
+
+  const selectedPokemonDetail = createMemo(() => selectedPokemonDetailQuery.data ?? null)
+  const selectedPokemonDetailIsLoading = createMemo(() => {
+    return (
+      selectedPokemonDetailSlug().length > 0 &&
+      selectedPokemonDetailQuery.isFetching &&
+      selectedPokemonDetailQuery.data === undefined
+    )
+  })
 
   const standardCompatibilityProfileKey = createMemo(() => {
     const selected = selectedPokemon()
     if (!selected) return ""
-    if (selectedPokemonDetail.loading) return ""
+    if (selectedPokemonDetailIsLoading()) return ""
 
     const selectedEggGroups = selected.eggGroups.map((group) => canonicalId(group))
     const selectedIsDitto =
@@ -383,7 +398,7 @@ export function EggGroupsPageView(props: {
     }
 
     const candidates = dedupePokemonBySlug(
-      (pokemonList() ?? []).filter((pokemon) => {
+      pokemonList().filter((pokemon) => {
         if (!pokemon.implemented) return false
         if (canonicalId(pokemon.slug) === "ditto") return false
         if (pokemon.eggGroups.some((group) => canonicalId(group) === "undiscovered")) {
@@ -400,9 +415,11 @@ export function EggGroupsPageView(props: {
       .join("|")
   })
 
-  const [standardCompatibilityProfiles] = createResource(
-    standardCompatibilityProfileKey,
-    async (slugKey) => {
+  const standardCompatibilityProfilesQuery = useQuery(() => ({
+    queryKey: ["egg-group-standard-compatibility-profiles", standardCompatibilityProfileKey()],
+    enabled: standardCompatibilityProfileKey().length > 0,
+    queryFn: async () => {
+      const slugKey = standardCompatibilityProfileKey()
       if (!slugKey) {
         return new Map<string, BreedingGenderProfile>()
       }
@@ -410,14 +427,29 @@ export function EggGroupsPageView(props: {
       const slugs = slugKey.split("|").filter(Boolean)
       const entries = await Promise.all(
         slugs.map(async (slug) => {
-          const detail = await loadPokemonDetail(slug)
+          const detail = await withTimeout(
+            loadPokemonDetail(slug),
+            COMPATIBILITY_DETAIL_TIMEOUT_MS,
+            null
+          )
           return [canonicalId(slug), resolveBreedingGenderProfile(detail?.maleRatio)] as const
         })
       )
 
       return new Map<string, BreedingGenderProfile>(entries)
-    }
+    },
+  }))
+
+  const standardCompatibilityProfiles = createMemo(
+    () => standardCompatibilityProfilesQuery.data ?? new Map<string, BreedingGenderProfile>()
   )
+  const standardCompatibilityProfilesAreLoading = createMemo(() => {
+    return (
+      standardCompatibilityProfileKey().length > 0 &&
+      standardCompatibilityProfilesQuery.isFetching &&
+      standardCompatibilityProfilesQuery.data === undefined
+    )
+  })
 
   createEffect(() => {
     selectedPokemon()?.slug
@@ -428,7 +460,7 @@ export function EggGroupsPageView(props: {
     const selected = selectedPokemon()
     if (!selected) return null
 
-    if (selectedPokemonDetail.loading) {
+    if (selectedPokemonDetailIsLoading()) {
       return {
         mode: "loading",
         sections: [],
@@ -437,7 +469,7 @@ export function EggGroupsPageView(props: {
       }
     }
 
-    const implementedPokemon = (pokemonList() ?? []).filter((pokemon) => pokemon.implemented)
+    const implementedPokemon = pokemonList().filter((pokemon) => pokemon.implemented)
     const dittoPokemon =
       implementedPokemon.find((pokemon) => canonicalId(pokemon.slug) === "ditto") ?? null
     const selectedEggGroupsNormalized = selected.eggGroups.map((group) => canonicalId(group))
@@ -525,7 +557,7 @@ export function EggGroupsPageView(props: {
       }
     }
 
-    if (standardCompatibilityProfiles.loading) {
+    if (standardCompatibilityProfilesAreLoading()) {
       return {
         mode: "loading",
         sections: [],
@@ -534,8 +566,7 @@ export function EggGroupsPageView(props: {
       }
     }
 
-    const partnerProfiles =
-      standardCompatibilityProfiles() ?? new Map<string, BreedingGenderProfile>()
+    const partnerProfiles = standardCompatibilityProfiles()
 
     const sections = selected.eggGroups
       .filter((group) => {
@@ -606,7 +637,7 @@ export function EggGroupsPageView(props: {
 
   return (
     <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      <Show when={!pokemonList.loading} fallback={<LoadingState />}>
+      <Show when={!pokemonListQuery.isPending} fallback={<LoadingState />}>
         <Show
           when={!isUnknownEggGroup()}
           fallback={<UnknownEggGroupState eggGroupId={requestedEggGroupId()} />}
@@ -1151,5 +1182,23 @@ function sortEggGroups(groups: string[]): string[] {
     if (rightIndex !== -1) return 1
 
     return left.localeCompare(right)
+  })
+}
+
+function withTimeout<T>(promise: Promise<T>, timeoutMs: number, fallback: T): Promise<T> {
+  return new Promise((resolve) => {
+    const timeoutId = globalThis.setTimeout(() => {
+      resolve(fallback)
+    }, timeoutMs)
+
+    promise
+      .then((value) => {
+        globalThis.clearTimeout(timeoutId)
+        resolve(value)
+      })
+      .catch(() => {
+        globalThis.clearTimeout(timeoutId)
+        resolve(fallback)
+      })
   })
 }
