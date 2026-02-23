@@ -344,13 +344,37 @@ function formatRequirementTokens(edge: EvolutionFamilyEdgeRecord): Array<{
     }
   }
 
-  const itemId =
-    normalizedMethod === "item_interact" ? inferItemIdFromRequirementLabel(deduped[0] ?? "") : null
-
   return deduped.map((text, index) => ({
     text,
-    itemId: index === 0 ? itemId : null,
+    itemId: inferRequirementItemId({
+      normalizedMethod,
+      tokenText: text,
+      tokenIndex: index,
+    }),
   }))
+}
+
+function inferRequirementItemId(params: {
+  normalizedMethod: string
+  tokenText: string
+  tokenIndex: number
+}): string | null {
+  const text = params.tokenText.trim()
+  if (!text) {
+    return null
+  }
+
+  const lower = text.toLowerCase()
+
+  if (params.normalizedMethod === "item_interact" && params.tokenIndex === 0) {
+    return inferItemIdFromRequirementLabel(text)
+  }
+
+  if (lower.startsWith("hold ")) {
+    return inferItemIdFromRequirementLabel(text.slice(5))
+  }
+
+  return null
 }
 
 function normalizeEvolutionMethod(method: string): string {
