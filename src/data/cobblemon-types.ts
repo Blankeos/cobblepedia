@@ -254,10 +254,18 @@ export type AbilityEntryRecord = {
 
 export type AbilityIndex = Record<string, AbilityEntryRecord>
 
+export type RideableStatRecord = {
+  statId: string
+  rawValue: string
+  min: number | null
+  max: number | null
+}
+
 export type RideableBehaviourRecord = {
   category: string
   key: string
   classId: string
+  stats: RideableStatRecord[]
 }
 
 export type RideableSummaryRecord = {

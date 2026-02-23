@@ -4,14 +4,20 @@ import { createEffect, createMemo, createResource, createSignal, For, Show } fro
 import { useMetadata } from "vike-metadata-solid"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
+import type { RideableMonRecord, RideableStatRecord } from "@/data/cobblemon-types"
 import { loadRideableMons } from "@/data/data-loader"
 import { titleCaseFromId } from "@/data/formatters"
-import { formatRideableCategory, formatRideableClass } from "@/data/rideable"
+import {
+  formatRideableCategory,
+  formatRideableClass,
+  formatRideableStatLabel,
+  formatRideableStatRange,
+} from "@/data/rideable"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
 
 type SeatFilter = "ALL" | "1" | "2" | "3+"
-type SortOption = "dex" | "name" | "seats" | "modes"
+type SortOption = "dex" | "name" | "seats" | "modes" | "speed"
 
 const CATEGORY_FILTERS = ["ALL", "LAND", "LIQUID", "AIR"] as const
 type RideableCategoryFilter = (typeof CATEGORY_FILTERS)[number]
@@ -172,6 +178,15 @@ export default function Page() {
         }
       }
 
+      if (sort === "speed") {
+        const leftSpeed = getTopRideableStatMax(left, "SPEED")
+        const rightSpeed = getTopRideableStatMax(right, "SPEED")
+
+        if (leftSpeed !== rightSpeed) {
+          return rightSpeed - leftSpeed
+        }
+      }
+
       if (left.dexNumber !== right.dexNumber) {
         return left.dexNumber - right.dexNumber
       }
@@ -317,6 +332,7 @@ export default function Page() {
                       <option value="name">Name</option>
                       <option value="seats">Seats</option>
                       <option value="modes">Modes</option>
+                      <option value="speed">Top Speed</option>
                     </select>
                   </div>
                 </div>
@@ -424,6 +440,9 @@ export default function Page() {
                           <th class="px-4 py-2.5 text-left font-medium text-muted-foreground text-xs uppercase">
                             Ride Type
                           </th>
+                          <th class="px-4 py-2.5 text-left font-medium text-muted-foreground text-xs uppercase">
+                            Stats
+                          </th>
                           <th class="px-4 py-2.5 text-right font-medium text-muted-foreground text-xs uppercase">
                             Seats
                           </th>
@@ -501,6 +520,38 @@ export default function Page() {
                                   </div>
                                 </td>
 
+                                <td class="px-4 py-2.5">
+                                  <div class="space-y-1.5">
+                                    <For each={pokemon.behaviours}>
+                                      {(behaviour) => (
+                                        <div class="space-y-1">
+                                          <div class="flex items-center gap-1 text-[10px] text-muted-foreground uppercase tracking-wide">
+                                            <RideableCategoryIcon
+                                              category={behaviour.category}
+                                              class="h-3 w-3"
+                                            />
+                                            <span>
+                                              {formatRideableCategory(behaviour.category)}
+                                            </span>
+                                          </div>
+                                          <div class="flex flex-wrap gap-1">
+                                            <For each={behaviour.stats}>
+                                              {(stat) => (
+                                                <span class="inline-flex items-center gap-1 border border-border bg-secondary/40 px-1.5 py-0.5 font-mono text-[10px]">
+                                                  <span class="text-muted-foreground">
+                                                    {formatRideableStatLabel(stat.statId)}
+                                                  </span>
+                                                  <span>{formatRideableStatRange(stat)}</span>
+                                                </span>
+                                              )}
+                                            </For>
+                                          </div>
+                                        </div>
+                                      )}
+                                    </For>
+                                  </div>
+                                </td>
+
                                 <td class="px-4 py-2.5 text-right">
                                   <span class="font-mono text-base">{pokemon.seatCount}</span>
                                 </td>
@@ -524,6 +575,42 @@ export default function Page() {
       </Show>
     </div>
   )
+}
+
+function getTopRideableStatMax(pokemon: RideableMonRecord, statId: string): number {
+  const targetStatId = statId.trim().toUpperCase()
+  if (!targetStatId) {
+    return 0
+  }
+
+  let maxValue = 0
+
+  for (const behaviour of pokemon.behaviours) {
+    for (const stat of behaviour.stats) {
+      if (stat.statId.toUpperCase() !== targetStatId) {
+        continue
+      }
+
+      const candidate = getRideableStatCeiling(stat)
+      if (candidate > maxValue) {
+        maxValue = candidate
+      }
+    }
+  }
+
+  return maxValue
+}
+
+function getRideableStatCeiling(stat: RideableStatRecord): number {
+  if (typeof stat.max === "number") {
+    return stat.max
+  }
+
+  if (typeof stat.min === "number") {
+    return stat.min
+  }
+
+  return 0
 }
 
 function FilterPill(props: {
