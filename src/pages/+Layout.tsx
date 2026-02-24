@@ -15,15 +15,26 @@ const queryClient = new QueryClient({
   },
 })
 
-useMetadata.setGlobalDefaults({
-  title: getTitle("Home"),
-  description: "Fast, comprehensive Cobblemon reference.",
-})
-
 export default function RootLayout(props: FlowProps) {
   const openPalette = () => {
     window.dispatchEvent(new CustomEvent("cobblepedia:open-palette"))
   }
+
+  useMetadata.setGlobalDefaults({
+    title: getTitle("Home"),
+    description:
+      "Keyboard-first Cobblemon encyclopedia. Search moves, spawns, evolutions, and competitive sets instantly with Cmd+K.",
+    icons: {
+      icon: "/favicon.png",
+    },
+    openGraph: {
+      images: ["/cobblepedia-banner.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/cobblepedia-banner.png"],
+    },
+  })
 
   return (
     <QueryClientProvider client={queryClient}>
