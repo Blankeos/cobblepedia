@@ -19,6 +19,7 @@ import {
 } from "@/assets/icons"
 import { EvolutionFamilyFlow } from "@/components/evolution-family-flow"
 import { ItemSprite, parseItemId } from "@/components/item-sprite"
+import { PokemonModelPreview } from "@/components/pokemon-model-preview"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
   BiomeTagIndex,
@@ -65,7 +66,7 @@ import getTitle from "@/utils/get-title"
 
 const PAGE_MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type PageMoveTab = (typeof PAGE_MOVE_TABS)[number]
-type ArtworkView = "official" | "shiny"
+type ArtworkView = "official" | "shiny" | "model3d"
 
 const SMOGON_LOGO_URL = "https://archives.bulbagarden.net/media/upload/3/38/Smogon_logo.png"
 const PIKALYTICS_LOGO_URL = "https://cdn.pikalytics.com/images/favicon/apple-icon.png"
@@ -696,6 +697,11 @@ function PokemonDetailView(props: {
                 onClick={() => setActiveView("shiny")}
                 label="Shiny"
               />
+              <ViewToggleButton
+                active={activeView() === "model3d"}
+                onClick={() => setActiveView("model3d")}
+                label="3D"
+              />
             </div>
 
             <Show when={artworkFallbackLabel()}>
@@ -708,38 +714,49 @@ function PokemonDetailView(props: {
 
             {/* Artwork Display - Compact */}
             <div class="relative h-40 w-40 overflow-hidden border border-border bg-secondary/30 sm:h-44 sm:w-44">
-              <Show
-                when={!artworkResolutionQuery.isPending}
-                fallback={
-                  <div class="flex h-full w-full items-center justify-center">
-                    <div class="h-5 w-5 animate-spin border-2 border-border border-t-foreground" />
-                  </div>
-                }
-              >
+              <Show when={activeView() === "model3d"}>
+                <div class="h-full w-full">
+                  <PokemonModelPreview
+                    slug={detail().slug}
+                    dexNumber={detail().dexNumber}
+                    name={detail().name}
+                  />
+                </div>
+              </Show>
+              <Show when={activeView() !== "model3d"}>
                 <Show
-                  when={!artworkFailed() ? artworkUrl() : null}
+                  when={!artworkResolutionQuery.isPending}
                   fallback={
-                    <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2 text-center">
-                      <div class="text-2xl">🖼️</div>
-                      <p class="text-muted-foreground text-xs">
-                        Artwork unavailable for this view.
-                      </p>
+                    <div class="flex h-full w-full items-center justify-center">
+                      <div class="h-5 w-5 animate-spin border-2 border-border border-t-foreground" />
                     </div>
                   }
                 >
-                  {(url) => (
-                    <div class="flex h-full w-full items-center justify-center p-2">
-                      <img
-                        src={url()}
-                        alt={`${displayName()} ${activeView()} artwork`}
-                        class="h-full w-full object-contain"
-                        loading="eager"
-                        decoding="async"
-                        referrerPolicy="no-referrer"
-                        onError={handleArtworkError}
-                      />
-                    </div>
-                  )}
+                  <Show
+                    when={!artworkFailed() ? artworkUrl() : null}
+                    fallback={
+                      <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2 text-center">
+                        <div class="text-2xl">🖼️</div>
+                        <p class="text-muted-foreground text-xs">
+                          Artwork unavailable for this view.
+                        </p>
+                      </div>
+                    }
+                  >
+                    {(url) => (
+                      <div class="flex h-full w-full items-center justify-center p-2">
+                        <img
+                          src={url()}
+                          alt={`${displayName()} ${activeView()} artwork`}
+                          class="h-full w-full object-contain"
+                          loading="eager"
+                          decoding="async"
+                          referrerPolicy="no-referrer"
+                          onError={handleArtworkError}
+                        />
+                      </div>
+                    )}
+                  </Show>
                 </Show>
               </Show>
             </div>
