@@ -127,11 +127,7 @@ export function EggGroupsPageView(props: {
     const normalized = canonicalId(value)
     if (!normalized) return ""
 
-    return (
-      pokemonList().find(
-        (pokemon) => pokemon.implemented && canonicalId(pokemon.slug) === normalized
-      )?.slug ?? ""
-    )
+    return pokemonList().find((pokemon) => canonicalId(pokemon.slug) === normalized)?.slug ?? ""
   }
 
   const getRoutePathname = () => {
@@ -301,7 +297,6 @@ export function EggGroupsPageView(props: {
     if (!primary) return []
 
     return list.filter((pokemon) => {
-      if (!pokemon.implemented) return false
       if (!pokemon.eggGroups.includes(primary)) return false
       if (secondary && !pokemon.eggGroups.includes(secondary)) return false
       return true
@@ -331,9 +326,8 @@ export function EggGroupsPageView(props: {
     if (!selectedSlug) return null
 
     return (
-      pokemonList().find(
-        (pokemon) => pokemon.implemented && canonicalId(pokemon.slug) === canonicalId(selectedSlug)
-      ) ?? null
+      pokemonList().find((pokemon) => canonicalId(pokemon.slug) === canonicalId(selectedSlug)) ??
+      null
     )
   })
 

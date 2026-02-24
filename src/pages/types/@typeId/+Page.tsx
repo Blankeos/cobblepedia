@@ -154,7 +154,6 @@ export function TypesPageView(props: { initialType?: string }) {
     if (!currentType) return []
 
     return list.filter((entry) => {
-      if (!entry.implemented) return false
       if (!entry.types.includes(currentType)) return false
       if (secondary && !entry.types.includes(secondary)) return false
       return true

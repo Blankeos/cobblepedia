@@ -187,7 +187,6 @@ export default function CommandPalette() {
     }
 
     return list
-      .filter((pokemon) => pokemon.implemented)
       .filter((pokemon) => {
         if (!searchTerm) {
           return true
@@ -1419,7 +1418,7 @@ function TypeEntryQuickview(props: {
     }
 
     return (props.pokemonList ?? []).filter((pokemon) => {
-      return pokemon.implemented && pokemon.types.includes(currentType)
+      return pokemon.types.includes(currentType)
     })
   })
 
@@ -1469,7 +1468,7 @@ function EggGroupEntryQuickview(props: {
     }
 
     return (props.pokemonList ?? []).filter((pokemon) => {
-      return pokemon.implemented && pokemon.eggGroups.includes(currentGroup)
+      return pokemon.eggGroups.includes(currentGroup)
     })
   })
 
