@@ -50,7 +50,7 @@ export default function RootLayout(props: FlowProps) {
     <QueryClientProvider client={queryClient}>
       <div class="min-h-screen bg-background">
         <header class="sticky top-0 z-40 border-border border-b bg-background">
-          <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-3 sm:px-4 lg:px-8">
             <a href="/" class="flex items-center gap-2 font-medium text-sm">
               <span>Cobblepedia</span>
             </a>
@@ -69,7 +69,7 @@ export default function RootLayout(props: FlowProps) {
           </div>
         </header>
 
-        <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">{props.children}</main>
+        <main class="mx-auto max-w-6xl px-3 sm:px-4 lg:px-8">{props.children}</main>
         <CommandPalette />
       </div>
     </QueryClientProvider>

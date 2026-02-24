@@ -509,7 +509,7 @@ function PokemonDetailView(props: {
   })
 
   return (
-    <div class="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-3 py-4 sm:px-4 lg:px-8">
       {/* Dex Navigation Bar - Pokemon cards instead of arrows */}
       <nav class="mb-4 flex items-center justify-between gap-4">
         <DexNavCard pokemon={props.previous} direction="previous" />

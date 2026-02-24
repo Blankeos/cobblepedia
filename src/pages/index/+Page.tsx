@@ -226,7 +226,7 @@ export default function Page() {
         </div>
 
         {/* Hero Content */}
-        <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
+        <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-3 py-24 text-center sm:px-4 sm:py-32 lg:px-8">
           {/* Badge */}
           <div class="mb-8 inline-flex items-center gap-2 border border-border bg-secondary/80 px-3 py-1.5 backdrop-blur-sm">
             <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-success" />
@@ -245,8 +245,7 @@ export default function Page() {
           {/* Subheadline */}
           <p class="mb-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
             Built for speed. <span class="text-foreground">Vim-inspired.</span>
-            <br class="hidden sm:block" />
-            Keyboard-first, zero friction, instant answers.
+            <br class="hidden sm:block" /> Keyboard-first, zero friction, instant answers.
           </p>
           <p class="mb-10 max-w-xl text-muted-foreground text-sm">
             Spawns, moves, evolutions, egg groups, rideable mons, plus Smogon/Pikalytics movesets —
@@ -387,7 +386,7 @@ export default function Page() {
 
       {/* Feature Cards - Four Ways In */}
       <section class="border-border border-b py-20 sm:py-28">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-3 sm:px-4 lg:px-8">
           <div class="mb-16 text-center">
             <span class="mb-3 block font-medium font-mono text-muted-foreground text-xs uppercase tracking-widest">
               Features
@@ -505,7 +504,7 @@ export default function Page() {
 
       {/* Interactive Playground */}
       <section class="border-border border-b bg-secondary/30 py-20 sm:py-28">
-        <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl px-3 sm:px-4 lg:px-8">
           <div class="mb-8 text-center">
             <span class="mb-3 block font-medium font-mono text-muted-foreground text-xs uppercase tracking-widest">
               Try It Live
@@ -640,7 +639,7 @@ export default function Page() {
 
       {/* Data Section - Trust & Transparency */}
       <section class="border-border border-b py-20 sm:py-28">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-3 sm:px-4 lg:px-8">
           <div class="mb-16 text-center">
             <span class="mb-3 block font-medium font-mono text-muted-foreground text-xs uppercase tracking-widest">
               Data
@@ -943,7 +942,7 @@ export default function Page() {
 
       {/* Quick Links Section */}
       <section class="border-border border-b bg-secondary/30 py-20 sm:py-28">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-3 sm:px-4 lg:px-8">
           <div class="mb-12 text-center">
             <span class="mb-3 block font-medium font-mono text-muted-foreground text-xs uppercase tracking-widest">
               Resources
@@ -1034,7 +1033,7 @@ export default function Page() {
         {/* Background gradient */}
         <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/30 via-background to-background" />
 
-        <div class="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="relative z-10 mx-auto max-w-4xl px-3 text-center sm:px-4 lg:px-8">
           <h2 class="mb-6 font-semibold text-4xl tracking-tight sm:text-5xl lg:text-6xl">
             Everything's here.
           </h2>
@@ -1095,7 +1094,7 @@ export default function Page() {
 
       {/* Footer */}
       <footer class="border-border border-t py-8">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-3 sm:px-4 lg:px-8">
           <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div class="text-muted-foreground text-sm">
               Cobblepedia — Unofficial Cobblemon reference

@@ -26,7 +26,7 @@ export default function Page() {
   })
 
   return (
-    <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-3 py-8 sm:px-4 lg:px-8">
       <Show when={!entry.loading} fallback={<LoadingState />}>
         <Show when={entry()} fallback={<NotFoundState abilityId={abilityId()} />}>
           {(entrySignal) => <AbilityDetailView entry={entrySignal()} />}

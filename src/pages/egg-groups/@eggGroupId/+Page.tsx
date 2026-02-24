@@ -615,7 +615,7 @@ export function EggGroupsPageView(props: {
   const hasNoSelection = createMemo(() => !primaryEggGroup())
 
   return (
-    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-3 py-8 sm:px-4 lg:px-8">
       <Show when={!pokemonListQuery.isPending} fallback={<LoadingState />}>
         <Show
           when={!isUnknownEggGroup()}

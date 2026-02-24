@@ -281,7 +281,7 @@ export default function Page() {
   })
 
   return (
-    <div class="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-3 py-6 sm:px-4 lg:px-8">
       <Show when={!rideableMons.loading} fallback={<LoadingState />}>
         <Show when={rideableMons()}>
           {(dataSignal) => (

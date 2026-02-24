@@ -186,7 +186,7 @@ export function TypesPageView(props: { initialType?: string }) {
   const hasNoSelection = createMemo(() => !primaryType())
 
   return (
-    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-3 py-8 sm:px-4 lg:px-8">
       <Show when={!pokemonTypeEntries.loading} fallback={<LoadingState />}>
         <Show when={!isUnknownType()} fallback={<UnknownTypeState typeId={primaryType()} />}>
           <div class="space-y-8">

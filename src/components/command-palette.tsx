@@ -575,7 +575,7 @@ export default function CommandPalette() {
           placeholder="Search Pokemon, moves, abilities, items, types, egg groups..."
         />
 
-        <div class="grid h-[500px] min-h-[400px] grid-cols-[280px_1fr] overflow-hidden">
+        <div class="grid h-[500px] min-h-[400px] grid-cols-1 overflow-hidden lg:grid-cols-[280px_1fr]">
           <div class="min-h-0 overflow-hidden border-border border-r">
             <Show
               when={!loadError()}
