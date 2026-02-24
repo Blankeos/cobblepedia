@@ -147,12 +147,24 @@ type CompiledAnimationPlayer = {
   update: (deltaSeconds: number) => void
 }
 
+type OrbitController = {
+  update: (deltaSeconds: number) => void
+  syncFromCamera: (lookTarget: Vector3, modelSize: Vector3) => void
+  dispose: () => void
+}
+
+type FitModelResult = {
+  lookTarget: Vector3
+  size: Vector3
+}
+
 type SceneRuntime = {
   scene: Scene
   renderer: WebGLRenderer
   camera: PerspectiveCamera
   modelRoot: Group
   animationPlayer: CompiledAnimationPlayer | null
+  orbitController: OrbitController
   resizeObserver: ResizeObserver
   frame: number
 }
@@ -196,6 +208,8 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
 
     containerRef.append(renderer.domElement)
 
+    const orbitController = createOrbitController(camera, renderer.domElement)
+
     const resize = () => {
       if (!containerRef) {
         return
@@ -221,6 +235,7 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
       camera,
       modelRoot,
       animationPlayer: null,
+      orbitController,
       resizeObserver,
       frame: 0,
     }
@@ -236,9 +251,9 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
 
       if (runtimeState.animationPlayer) {
         runtimeState.animationPlayer.update(deltaSeconds)
-      } else {
-        modelRoot.rotation.y += 0.0032
       }
+
+      runtimeState.orbitController.update(deltaSeconds)
 
       renderer.render(scene, camera)
     }
@@ -291,6 +306,7 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
     window.cancelAnimationFrame(runtime.frame)
     runtime.resizeObserver.disconnect()
     runtime.animationPlayer = null
+    runtime.orbitController.dispose()
     clearGroup(runtime.modelRoot)
     runtime.renderer.dispose()
     runtime.renderer.domElement.remove()
@@ -367,7 +383,10 @@ async function loadModel(
 
   runtime.modelRoot.rotation.set(0, 0, 0)
   runtime.modelRoot.add(model.group)
-  fitModelInPreview(model, runtime.camera)
+  const fitResult = fitModelInPreview(model, runtime.camera)
+  if (fitResult) {
+    runtime.orbitController.syncFromCamera(fitResult.lookTarget, fitResult.size)
+  }
   runtime.animationPlayer = createIdleAnimationPlayer(model, animationFile)
 
   return true
@@ -1400,7 +1419,172 @@ function isFaceUvMap(value: unknown): value is Record<string, unknown> {
   return !!value && typeof value === "object" && !Array.isArray(value)
 }
 
-function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
+const ORBIT_MIN_POLAR = 0.16
+const ORBIT_MAX_POLAR = Math.PI - 0.08
+const ORBIT_DRAG_SENSITIVITY = 0.008
+const ORBIT_ZOOM_SENSITIVITY = 0.0015
+const ORBIT_AUTO_ROTATE_SPEED = 0.2
+const ORBIT_RESUME_DELAY_MS = 1200
+
+function createOrbitController(
+  camera: PerspectiveCamera,
+  element: HTMLCanvasElement
+): OrbitController {
+  const previousTouchAction = element.style.touchAction
+  const previousCursor = element.style.cursor
+
+  const state = {
+    target: new Vector3(0, 0.95, 0),
+    radius: 4,
+    minRadius: 0.9,
+    maxRadius: 14,
+    azimuth: 0,
+    polar: Math.PI * 0.33,
+    isDragging: false,
+    activePointerId: null as number | null,
+    lastPointerX: 0,
+    lastPointerY: 0,
+    lastInteractionAt: 0,
+  }
+
+  const applyCamera = () => {
+    state.polar = MathUtils.clamp(state.polar, ORBIT_MIN_POLAR, ORBIT_MAX_POLAR)
+    state.radius = MathUtils.clamp(state.radius, state.minRadius, state.maxRadius)
+
+    const sinPolar = Math.sin(state.polar)
+    camera.position.set(
+      state.target.x + state.radius * sinPolar * Math.sin(state.azimuth),
+      state.target.y + state.radius * Math.cos(state.polar),
+      state.target.z + state.radius * sinPolar * Math.cos(state.azimuth)
+    )
+    camera.lookAt(state.target)
+    camera.updateProjectionMatrix()
+  }
+
+  const syncFromCurrentCamera = () => {
+    const offset = camera.position.clone().sub(state.target)
+    const length = Math.max(offset.length(), 0.0001)
+    state.radius = length
+    state.azimuth = Math.atan2(offset.x, offset.z)
+    state.polar = Math.acos(MathUtils.clamp(offset.y / length, -1, 1))
+  }
+
+  const markInteraction = () => {
+    state.lastInteractionAt = performance.now()
+  }
+
+  const handlePointerDown = (event: PointerEvent) => {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return
+    }
+
+    state.isDragging = true
+    state.activePointerId = event.pointerId
+    state.lastPointerX = event.clientX
+    state.lastPointerY = event.clientY
+    markInteraction()
+
+    element.setPointerCapture(event.pointerId)
+    element.style.cursor = "grabbing"
+  }
+
+  const handlePointerMove = (event: PointerEvent) => {
+    if (!state.isDragging || state.activePointerId !== event.pointerId) {
+      return
+    }
+
+    const deltaX = event.clientX - state.lastPointerX
+    const deltaY = event.clientY - state.lastPointerY
+    state.lastPointerX = event.clientX
+    state.lastPointerY = event.clientY
+
+    state.azimuth -= deltaX * ORBIT_DRAG_SENSITIVITY
+    state.polar = MathUtils.clamp(
+      state.polar - deltaY * ORBIT_DRAG_SENSITIVITY,
+      ORBIT_MIN_POLAR,
+      ORBIT_MAX_POLAR
+    )
+
+    markInteraction()
+    applyCamera()
+  }
+
+  const stopDragging = (event: PointerEvent) => {
+    if (state.activePointerId !== event.pointerId) {
+      return
+    }
+
+    state.isDragging = false
+    state.activePointerId = null
+    markInteraction()
+    element.style.cursor = "grab"
+  }
+
+  const handleWheel = (event: WheelEvent) => {
+    event.preventDefault()
+
+    const scale = Math.exp(event.deltaY * ORBIT_ZOOM_SENSITIVITY)
+    state.radius = MathUtils.clamp(state.radius * scale, state.minRadius, state.maxRadius)
+
+    markInteraction()
+    applyCamera()
+  }
+
+  element.style.touchAction = "none"
+  element.style.cursor = "grab"
+
+  element.addEventListener("pointerdown", handlePointerDown)
+  element.addEventListener("pointermove", handlePointerMove)
+  element.addEventListener("pointerup", stopDragging)
+  element.addEventListener("pointercancel", stopDragging)
+  element.addEventListener("lostpointercapture", stopDragging)
+  element.addEventListener("wheel", handleWheel, { passive: false })
+
+  syncFromCurrentCamera()
+
+  return {
+    update: (deltaSeconds: number) => {
+      if (
+        !state.isDragging &&
+        performance.now() - state.lastInteractionAt > ORBIT_RESUME_DELAY_MS
+      ) {
+        state.azimuth += ORBIT_AUTO_ROTATE_SPEED * deltaSeconds
+      }
+
+      applyCamera()
+    },
+    syncFromCamera: (lookTarget: Vector3, modelSize: Vector3) => {
+      state.target.copy(lookTarget)
+
+      const dominantDimension = Math.max(modelSize.x, modelSize.y, modelSize.z, 0.0001)
+      state.minRadius = Math.max(dominantDimension * 0.5, 0.9)
+      state.maxRadius = Math.max(dominantDimension * 4.8, state.minRadius + 0.75)
+
+      const offset = camera.position.clone().sub(state.target)
+      const radius = Math.max(offset.length(), 0.0001)
+      state.radius = MathUtils.clamp(radius, state.minRadius, state.maxRadius)
+      state.azimuth = Math.atan2(offset.x, offset.z)
+      state.polar = Math.acos(MathUtils.clamp(offset.y / radius, -1, 1))
+      state.polar = MathUtils.clamp(state.polar, ORBIT_MIN_POLAR, ORBIT_MAX_POLAR)
+
+      markInteraction()
+      applyCamera()
+    },
+    dispose: () => {
+      element.removeEventListener("pointerdown", handlePointerDown)
+      element.removeEventListener("pointermove", handlePointerMove)
+      element.removeEventListener("pointerup", stopDragging)
+      element.removeEventListener("pointercancel", stopDragging)
+      element.removeEventListener("lostpointercapture", stopDragging)
+      element.removeEventListener("wheel", handleWheel)
+
+      element.style.touchAction = previousTouchAction
+      element.style.cursor = previousCursor
+    },
+  }
+}
+
+function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera): FitModelResult | null {
   const group = model.group
   group.position.set(0, 0, 0)
   group.scale.setScalar(1)
@@ -1409,7 +1593,7 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
 
   const rawBox = new Box3().setFromObject(group)
   if (rawBox.isEmpty()) {
-    return
+    return null
   }
 
   const rawSize = new Vector3()
@@ -1422,7 +1606,7 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
 
   const scaledBox = new Box3().setFromObject(group)
   if (scaledBox.isEmpty()) {
-    return
+    return null
   }
 
   const scaledCenter = new Vector3()
@@ -1436,7 +1620,7 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
 
   const finalBox = new Box3().setFromObject(group)
   if (finalBox.isEmpty()) {
-    return
+    return null
   }
 
   const finalSize = new Vector3()
@@ -1472,10 +1656,15 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
 
   const newX = lookTarget.x + distance * 0.82
   const newY = lookTarget.y + finalSize.y * 0.12
-  const newZ = lookTarget.z + distance * 0.82
+  const newZ = lookTarget.z - distance * 0.82
   camera.position.set(newX, newY, newZ)
   camera.lookAt(lookTarget)
   camera.updateProjectionMatrix()
+
+  return {
+    lookTarget,
+    size: finalSize,
+  }
 }
 
 const CUBE_FACE_ORDER: CubeFaceName[] = ["east", "west", "up", "down", "south", "north"]
