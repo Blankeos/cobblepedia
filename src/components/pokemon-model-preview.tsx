@@ -1655,8 +1655,11 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera): FitMod
   const distance = Math.max(distanceForHeight, distanceForWidth, 1.35) * 1.2
 
   const newX = lookTarget.x + distance * 0.82
-  const newY = lookTarget.y + finalSize.y * 0.12
+  const newY = lookTarget.y + finalSize.y * 0.18
   const newZ = lookTarget.z - distance * 0.82
+
+  lookTarget.y += 0.2 // Look up a bit, since there's too much empty space.
+
   camera.position.set(newX, newY, newZ)
   camera.lookAt(lookTarget)
   camera.updateProjectionMatrix()
