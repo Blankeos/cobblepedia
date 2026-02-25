@@ -76,7 +76,7 @@ export const pokemonController = new Hono().get("/dex-neighbors", async (c) => {
   }
 
   const index = resolvePokemonDexIndex(navIndex, slug, dexNumber)
-  c.header("cache-control", "public, max-age=3600, stale-while-revalidate=86400")
+  c.header("cache-control", "public, max-age=7200") // 2 hrs
   return c.json(toNeighborsResponse(navIndex.items, index))
 })
 

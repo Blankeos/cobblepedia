@@ -386,13 +386,13 @@ async function main() {
 
   const upstreamBranch = gitValue(["rev-parse", "--abbrev-ref", "HEAD"])
   const upstreamCommitSha = gitValue(["rev-parse", "HEAD"])
-  const upstreamCommitDate = gitValue(["show", "-s", "--format=%cI", "HEAD"])
+  const generatedAt = new Date().toISOString()
 
   const meta: MetaRecord = {
     upstreamUrl: UPSTREAM_URL,
     branch: upstreamBranch,
     commitSha: upstreamCommitSha,
-    generatedAt: upstreamCommitDate !== "unknown" ? upstreamCommitDate : "1970-01-01T00:00:00.000Z",
+    generatedAt,
     speciesCount: pokemonList.length,
     implementedSpeciesCount: pokemonList.filter((pokemon) => pokemon.implemented).length,
     spawnEntryCount: Array.from(detailsBySlug.values()).reduce((sum, detail) => {

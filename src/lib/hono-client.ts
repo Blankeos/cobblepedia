@@ -16,7 +16,16 @@ export const initHonoClient = (
   hc<AppRouter>(`${baseUrl}/api`, {
     headers: ssrProxyParams?.requestHeaders ?? {},
     fetch: async (input: RequestInfo | URL, init?: RequestInit) => {
-      const response = await fetch(input, { ...init, cache: "no-store" })
+      const requestInit: RequestInit = { ...init }
+      const method = (requestInit.method ?? (input instanceof Request ? input.method : "GET"))
+        .toUpperCase()
+        .trim()
+
+      if (!requestInit.cache) {
+        requestInit.cache = method === "GET" || method === "HEAD" ? "default" : "no-store"
+      }
+
+      const response = await fetch(input, requestInit)
 
       if (!response.ok) {
         const json: ApiErrorResponse = await response.json()

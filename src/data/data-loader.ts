@@ -453,6 +453,7 @@ async function fetchPublicGeneratedJson<T>(
   options: GeneratedJsonLoadOptions = {}
 ): Promise<T> {
   const withVersion = options.withVersion ?? true
+  const cacheMode: RequestCache = withVersion ? "force-cache" : "no-store"
   const version = withVersion ? await loadPublicGeneratedVersion() : null
   const cacheBuster = version ? `?v=${encodeURIComponent(version)}` : ""
 
@@ -463,7 +464,7 @@ async function fetchPublicGeneratedJson<T>(
 
   try {
     const response = await fetch(`${publicDataBasePath}/${relativePath}${cacheBuster}`, {
-      cache: "force-cache",
+      cache: cacheMode,
       signal: controller.signal,
     })
     if (!response.ok) {
@@ -488,6 +489,11 @@ function loadPublicGeneratedVersion(): Promise<string | null> {
       withVersion: false,
     })
       .then((meta) => {
+        const generatedAt = meta.generatedAt?.trim()
+        if (generatedAt) {
+          return generatedAt
+        }
+
         const commitSha = meta.commitSha?.trim()
         return commitSha ? commitSha.slice(0, 12) : null
       })
