@@ -7,7 +7,12 @@ import tsConfigPaths from "vite-tsconfig-paths"
 
 export default defineConfig({
   plugins: [tailwindcss(), tsConfigPaths(), vike(), vikeSolid(), vikeRoutegen()],
-  server: { port: 3000 },
+  server: {
+    port: 3000,
+    watch: {
+      ignored: ["**/public/data/generated/**"],
+    },
+  },
   preview: { port: 3000 },
   envPrefix: ["PUBLIC_"],
 })
