@@ -2,7 +2,57 @@
   "slug": "kartana",
   "name": "Kartana",
   "dexNumber": 798,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/kartana.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0798_kartana.json",
+        "data/cobblemon/species_additions/kartana.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation7/kartana.json",
+        "data/ultra_beast_spawns_atm/spawn_pool_world/kartana.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/kartana.json",
+        "data/cobblemon/species_additions/missingmons/kartana_size.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "grass",
     "steel"
@@ -900,10 +950,10 @@
     "catchRate": 45,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.3,
     "hitbox": {
       "width": 1,
-      "height": 1,
+      "height": 1.9,
       "fixed": false
     },
     "drops": {
@@ -1020,6 +1070,7 @@
         "willDefendOwner": true,
         "willFlee": false
       }
-    }
+    },
+    "implemented": "true"
   }
 }

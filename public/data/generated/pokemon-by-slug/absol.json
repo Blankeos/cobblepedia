@@ -3,6 +3,49 @@
   "name": "Absol",
   "dexNumber": 359,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0359_absol.json",
+        "data/cobblemon/species/generation3/absol.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation3/absol.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0359_absol.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation3/absol_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dark"
   ],
@@ -36,7 +79,9 @@
   "aliases": [
     "absol",
     "absol mega",
-    "mega"
+    "absol mega-z",
+    "mega",
+    "mega-z"
   ],
   "maleRatio": 0.5,
   "height": 12,
@@ -1946,6 +1991,91 @@
         "evolutions": [],
         "battleOnly": true
       }
+    },
+    {
+      "name": "Mega-Z",
+      "slug": "absol-megaz",
+      "aspects": [
+        "mega_z"
+      ],
+      "labels": [
+        "gen3",
+        "mega_z"
+      ],
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "maleRatio": null,
+      "height": 12,
+      "weight": 490,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 65,
+        "attack": 154,
+        "defence": 60,
+        "special_attack": 75,
+        "special_defence": 60,
+        "speed": 151
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "technician",
+          "hidden": false,
+          "label": "Technician",
+          "slot": "first"
+        },
+        {
+          "id": "technician",
+          "hidden": false,
+          "label": "Technician",
+          "slot": "second"
+        },
+        {
+          "id": "technician",
+          "hidden": true,
+          "label": "Technician",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega-Z",
+        "primaryType": "dark",
+        "secondaryType": "ghost",
+        "pokedex": [
+          "cobblemon.species.absol-mega-z.desc"
+        ],
+        "labels": [
+          "gen3",
+          "mega_z"
+        ],
+        "aspects": [
+          "mega_z"
+        ],
+        "abilities": [
+          "technician",
+          "technician",
+          "h:technician"
+        ],
+        "baseStats": {
+          "hp": 65,
+          "attack": 154,
+          "defence": 60,
+          "special_attack": 75,
+          "special_defence": 60,
+          "speed": 151
+        },
+        "battleOnly": true,
+        "height": 12,
+        "weight": 490
+      }
     }
   ],
   "drops": {
@@ -2238,6 +2368,37 @@
         "dynamaxBlocked": true,
         "evolutions": [],
         "battleOnly": true
+      },
+      {
+        "name": "Mega-Z",
+        "primaryType": "dark",
+        "secondaryType": "ghost",
+        "pokedex": [
+          "cobblemon.species.absol-mega-z.desc"
+        ],
+        "labels": [
+          "gen3",
+          "mega_z"
+        ],
+        "aspects": [
+          "mega_z"
+        ],
+        "abilities": [
+          "technician",
+          "technician",
+          "h:technician"
+        ],
+        "baseStats": {
+          "hp": 65,
+          "attack": 154,
+          "defence": 60,
+          "special_attack": 75,
+          "special_defence": 60,
+          "speed": 151
+        },
+        "battleOnly": true,
+        "height": 12,
+        "weight": 490
       }
     ],
     "behaviour": {
@@ -2258,6 +2419,46 @@
         "willDefendOwner": true,
         "willFlee": false
       }
-    }
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "30-55",
+            "ACCELERATION": "30-55",
+            "SKILL": "40-70",
+            "JUMP": "25-45",
+            "STAMINA": "30-60"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.3,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ]
   }
 }

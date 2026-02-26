@@ -3,6 +3,49 @@
   "name": "Victreebel",
   "dexNumber": 71,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0071_victreebel.json",
+        "data/cobblemon/species/generation1/victreebel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/victreebel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0071_victreebel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation1/victreebel_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "grass",
     "poison"
@@ -29,7 +72,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "victreebel"
+    "mega",
+    "victreebel",
+    "victreebel mega"
   ],
   "maleRatio": 0.5,
   "height": 17,
@@ -1415,7 +1460,84 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "victreebel-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen1",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 45,
+      "weight": 1255,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 80,
+        "attack": 125,
+        "defence": 85,
+        "special_attack": 135,
+        "special_defence": 95,
+        "speed": 70
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "triage",
+          "hidden": false,
+          "label": "Triage",
+          "slot": "first"
+        },
+        {
+          "id": "triage",
+          "hidden": true,
+          "label": "Triage",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "labels": [
+          "gen1",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "triage",
+          "h:triage"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "attack": 125,
+          "defence": 85,
+          "special_attack": 135,
+          "special_defence": 95,
+          "speed": 70
+        },
+        "baseScale": 1.3,
+        "hitbox": {
+          "width": 1.8,
+          "height": 3,
+          "fixed": false
+        },
+        "battleOnly": true,
+        "height": 45,
+        "weight": 1255
+      }
+    }
+  ],
   "drops": {
     "amount": 2,
     "entries": [
@@ -1644,6 +1766,83 @@
       "special:teeterdance"
     ],
     "preEvolution": "weepinbell",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "20-32",
+            "ACCELERATION": "25-40",
+            "SKILL": "30-45",
+            "JUMP": "10-20",
+            "STAMINA": "55-85"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.15,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK",
+                "HOVER",
+                "FLOAT",
+                "SWIM",
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "labels": [
+          "gen1",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "triage",
+          "h:triage"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "attack": 125,
+          "defence": 85,
+          "special_attack": 135,
+          "special_defence": 95,
+          "speed": 70
+        },
+        "baseScale": 1.3,
+        "hitbox": {
+          "width": 1.8,
+          "height": 3,
+          "fixed": false
+        },
+        "battleOnly": true,
+        "height": 45,
+        "weight": 1255
+      }
+    ]
   }
 }

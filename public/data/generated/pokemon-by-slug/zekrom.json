@@ -2,7 +2,78 @@
   "slug": "zekrom",
   "name": "Zekrom",
   "dexNumber": 644,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/zekrom.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0644_zekrom.json",
+        "data/cobblemon/species_additions/zekrom.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/zekrom.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/zekrom_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/zekrom.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0644_zekrom.json",
+        "data/cobblemon/species_additions/zekrom.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/zekrom.json",
+        "data/cobblemon/species_additions/zekrom.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dragon",
     "electric"
@@ -1529,11 +1600,31 @@
   "spawnEntries": [],
   "forms": [],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:dragon_breath",
         "quantityRange": "2-3"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:dragon_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1584,17 +1675,28 @@
     "baseFriendship": 0,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
-      "fixed": false
+      "width": 4,
+      "height": 5,
+      "fixed": false,
+      "baseScale": -0.7
     },
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.7
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.3,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -1605,6 +1707,9 @@
       "resting": {
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "1"
       }
     },
     "moves": [
@@ -1756,13 +1861,183 @@
     ],
     "evolutions": [],
     "drops": {
-      "amount": 3,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:dragon_breath",
           "quantityRange": "2-3"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:dragon_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
+    },
+    "implemented": true,
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "soundLocation": "cobblemon:ride.loop.wind"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "66-67",
+            "JUMP": "30-60",
+            "SKILL": "55-67",
+            "SPEED": "94-101",
+            "STAMINA": "50-80"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-77",
+            "JUMP": "20-40",
+            "SKILL": "10-40",
+            "SPEED": "25-90",
+            "STAMINA": "30-100"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.039005388,
+                "y": -2.4511793,
+                "z": 0.10381147
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.058042027,
+                "y": -2.1422236,
+                "z": -0.52422106
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.7674751,
+                "z": -0.27694723
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ],
+      "behaviour": {
+        "key": "cobblemon:composite",
+        "transitionStrategy": "cobblemon:strategy/jump",
+        "defaultBehaviour": {
+          "key": "cobblemon:land/generic",
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            "-1 * 0.5*q.jump_strength/50"
+          ]
+        },
+        "alternateBehaviour": {
+          "key": "cobblemon:air/bird",
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            0
+          ]
+        }
+      }
     }
   }
 }

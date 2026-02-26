@@ -3,6 +3,49 @@
   "name": "Turtonator",
   "dexNumber": 776,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0776_turtonator.json",
+        "data/cobblemon/species/generation7/turtonator.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation7/turtonator.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0776_turtonator.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/turtonator.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire",
     "dragon"
@@ -1545,6 +1588,92 @@
       "legacy:swagger",
       "legacy:toxic"
     ],
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "20-40",
+            "JUMP": "5-15",
+            "SKILL": "25-45",
+            "SPEED": "15-30",
+            "STAMINA": "55-85"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.7,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -1.75,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.5,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.5,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.03,
+                "y": -1.45,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.6,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

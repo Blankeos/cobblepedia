@@ -2,7 +2,56 @@
   "slug": "kingambit",
   "name": "Kingambit",
   "dexNumber": 983,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/kingambit.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0983_kingambit.json",
+        "data/cobblemon/species_additions/kingambit.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/kingambit.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/kingambit.json",
+        "data/cobblemon/species_additions/kingambit.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dark",
     "steel"
@@ -102,6 +151,16 @@
         "method": "level_up",
         "requirementText": [
           "Defeat 3 Kings Rock"
+        ]
+      },
+      {
+        "fromNodeId": "bisharp",
+        "toNodeId": "kingambit",
+        "fromSlug": "bisharp",
+        "toSlug": "kingambit",
+        "method": "level_up",
+        "requirementText": [
+          "Defeat 3 Bisharp"
         ]
       },
       {
@@ -1457,7 +1516,19 @@
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.3,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
@@ -1469,6 +1540,13 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "implemented": true,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 2,
+      "height": 3,
+      "fixed": false
     }
   }
 }

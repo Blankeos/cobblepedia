@@ -2,7 +2,56 @@
   "slug": "guzzlord",
   "name": "Guzzlord",
   "dexNumber": 799,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/guzzlord.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0799_guzzlord.json",
+        "data/cobblemon/species_additions/guzzlord.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation7/guzzlord.json",
+        "data/ultra_beast_spawns_atm/spawn_pool_world/guzzlord.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0799_guzzlord.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dark",
     "dragon"
@@ -1300,10 +1349,10 @@
     "catchRate": 45,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.6,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 10,
+      "height": 10,
       "fixed": false
     },
     "drops": {
@@ -1452,6 +1501,15 @@
         ],
         "drowsyChance": 0.0014,
         "rouseChance": 0.0042
+      }
+    },
+    "implemented": "true",
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "walkSpeed": 0.175,
+        "canWalk": true,
+        "avoidsLand": false
       }
     }
   }

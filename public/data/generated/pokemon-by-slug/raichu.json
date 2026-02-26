@@ -3,6 +3,40 @@
   "name": "Raichu",
   "dexNumber": 26,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0026_raichu.json",
+        "data/cobblemon/species/generation1/raichu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0026_raichu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation1/raichu_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "electric"
   ],
@@ -31,8 +65,12 @@
   "aspects": [],
   "aliases": [
     "alola",
+    "mega-x",
+    "mega-y",
     "raichu",
-    "raichu alola"
+    "raichu alola",
+    "raichu mega-x",
+    "raichu mega-y"
   ],
   "maleRatio": 0.5,
   "height": 8,
@@ -4235,6 +4273,152 @@
         "evolutions": [],
         "battleOnly": false
       }
+    },
+    {
+      "name": "Mega-X",
+      "slug": "raichu-megax",
+      "aspects": [
+        "mega_x"
+      ],
+      "labels": [
+        "gen1",
+        "mega_x"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 12,
+      "weight": 380,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 60,
+        "attack": 135,
+        "defence": 95,
+        "special_attack": 90,
+        "special_defence": 95,
+        "speed": 110
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "levitate",
+          "hidden": false,
+          "label": "Levitate",
+          "slot": "first"
+        },
+        {
+          "id": "levitate",
+          "hidden": true,
+          "label": "Levitate",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega-X",
+        "pokedex": [
+          "cobblemon.species.raichu-mega-x.desc"
+        ],
+        "labels": [
+          "gen1",
+          "mega_x"
+        ],
+        "aspects": [
+          "mega_x"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 135,
+          "defence": 95,
+          "special_attack": 90,
+          "special_defence": 95,
+          "speed": 110
+        },
+        "battleOnly": true,
+        "height": 12,
+        "weight": 380
+      }
+    },
+    {
+      "name": "Mega-Y",
+      "slug": "raichu-megay",
+      "aspects": [
+        "mega_y"
+      ],
+      "labels": [
+        "gen1",
+        "mega_y"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 10,
+      "weight": 260,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 60,
+        "attack": 100,
+        "defence": 55,
+        "special_attack": 160,
+        "special_defence": 80,
+        "speed": 130
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "transistor",
+          "hidden": false,
+          "label": "Transistor",
+          "slot": "first"
+        },
+        {
+          "id": "transistor",
+          "hidden": true,
+          "label": "Transistor",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega-Y",
+        "pokedex": [
+          "cobblemon.species.raichu-mega-y.desc"
+        ],
+        "labels": [
+          "gen1",
+          "mega_y"
+        ],
+        "aspects": [
+          "mega_y"
+        ],
+        "abilities": [
+          "transistor",
+          "h:transistor"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 100,
+          "defence": 55,
+          "special_attack": 160,
+          "special_defence": 80,
+          "speed": 130
+        },
+        "battleOnly": true,
+        "height": 10,
+        "weight": 260
+      }
     }
   ],
   "drops": {
@@ -4300,7 +4484,8 @@
     "eggCycles": 10,
     "baseFriendship": 50,
     "features": [
-      "alolan"
+      "alolan",
+      "mega_evolution"
     ],
     "baseScale": 0.75,
     "hitbox": {
@@ -4787,6 +4972,62 @@
         "preEvolution": "pikachu",
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "Mega-X",
+        "pokedex": [
+          "cobblemon.species.raichu-mega-x.desc"
+        ],
+        "labels": [
+          "gen1",
+          "mega_x"
+        ],
+        "aspects": [
+          "mega_x"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 135,
+          "defence": 95,
+          "special_attack": 90,
+          "special_defence": 95,
+          "speed": 110
+        },
+        "battleOnly": true,
+        "height": 12,
+        "weight": 380
+      },
+      {
+        "name": "Mega-Y",
+        "pokedex": [
+          "cobblemon.species.raichu-mega-y.desc"
+        ],
+        "labels": [
+          "gen1",
+          "mega_y"
+        ],
+        "aspects": [
+          "mega_y"
+        ],
+        "abilities": [
+          "transistor",
+          "h:transistor"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 100,
+          "defence": 55,
+          "special_attack": 160,
+          "special_defence": 80,
+          "speed": 130
+        },
+        "battleOnly": true,
+        "height": 10,
+        "weight": 260
       }
     ]
   }

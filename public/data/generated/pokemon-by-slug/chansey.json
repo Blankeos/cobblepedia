@@ -3,6 +3,49 @@
   "name": "Chansey",
   "dexNumber": 113,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0113_chansey.json",
+        "data/cobblemon/species/generation1/chansey.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/chansey.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0113_chansey.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "normal"
   ],
@@ -2646,6 +2689,47 @@
           }
         ]
       }
-    ]
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "0-15",
+            "JUMP": "5-15",
+            "SKILL": "0-20",
+            "SPEED": "5-20",
+            "STAMINA": "50-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.3,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK",
+                "HOVER",
+                "FLOAT",
+                "SWIM",
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

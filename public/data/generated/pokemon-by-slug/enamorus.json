@@ -2,7 +2,65 @@
   "slug": "enamorus",
   "name": "Enamorus",
   "dexNumber": 905,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation8a/enamorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0905_enamorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation8a/enamorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/legendary_spawns_atm/spawn_pool_world/enamorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/enamorus.json",
+        "data/cobblemon/species_additions/enamorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "fairy",
     "flying"
@@ -60,7 +118,49 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "enamorus_therian",
+      "variant": "level_up",
+      "result": {
+        "raw": "enamorus mirror_forme=therian",
+        "slug": "enamorus",
+        "aspectTokens": [
+          "mirror_forme=therian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Wide Lens"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Wide Lens",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:wide_lens"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "enamorus_therian",
+        "variant": "level_up",
+        "result": "enamorus mirror_forme=therian",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:wide_lens"
+          }
+        ]
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
       {
@@ -70,9 +170,28 @@
         "dexNumber": 905,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "enamorus-therian",
+        "slug": "enamorus",
+        "name": "Enamorus",
+        "dexNumber": 905,
+        "formSlug": "enamorus-therian",
+        "formName": "Therian"
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "enamorus",
+        "toNodeId": "enamorus-therian",
+        "fromSlug": "enamorus",
+        "toSlug": "enamorus",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Wide Lens"
+        ]
+      }
+    ],
     "roots": [
       "enamorus"
     ]
@@ -1146,7 +1265,21 @@
       "tutor:uproar",
       "tutor:zenheadbutt"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "enamorus_therian",
+        "variant": "level_up",
+        "result": "enamorus mirror_forme=therian",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:wide_lens"
+          }
+        ]
+      }
+    ],
     "forms": [
       {
         "name": "Therian",
@@ -1179,19 +1312,46 @@
         },
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "Therian",
+        "aspects": [
+          "therian-forme"
+        ],
+        "evolutions": [
+          {
+            "id": "enamorus_therian_r",
+            "variant": "level_up",
+            "result": "enamorus mirror_forme=incarnate",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "held_item",
+                "itemCondition": "cobblemon:wide_lens"
+              }
+            ]
+          }
+        ]
       }
     ],
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
           "canFly": true
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": true,
+          "walkSpeed": 0.6,
+          "avoidsLand": false
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendSelf": true,
@@ -1202,6 +1362,12 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "baseScale": 1.1,
+    "hitbox": {
+      "width": 1.5,
+      "height": 2.5,
+      "fixed": false
     }
   }
 }

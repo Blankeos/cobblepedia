@@ -2,7 +2,54 @@
   "slug": "genesect",
   "name": "Genesect",
   "dexNumber": 649,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/genesect.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0649_genesect.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/genesect.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/genesect.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "bug",
     "steel"
@@ -1600,10 +1647,10 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.8,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 0.8,
+      "height": 2,
       "fixed": false
     },
     "moves": [
@@ -1830,10 +1877,18 @@
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
           "canFly": true
+        },
+        "canLook": false,
+        "walk": {
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -1843,7 +1898,10 @@
       },
       "resting": {
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": false,
+        "depth": "normal",
+        "light": "4-15"
       }
     },
     "drops": {
@@ -1851,6 +1909,42 @@
       "entries": [
         {
           "item": "cobblemon:metal_coat"
+        }
+      ]
+    },
+    "implemented": true,
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "41-60",
+            "JUMP": "41-60",
+            "SKILL": "41-60",
+            "SPEED": "80-160",
+            "STAMINA": "80-120"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "21-40",
+            "JUMP": "41-60",
+            "SKILL": "21-40",
+            "SPEED": "21-40",
+            "STAMINA": "41-60"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
         }
       ]
     }

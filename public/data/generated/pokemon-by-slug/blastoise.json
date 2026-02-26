@@ -3,6 +3,41 @@
   "name": "Blastoise",
   "dexNumber": 9,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0009_blastoise.json",
+        "data/cobblemon/species/generation1/blastoise.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0009_blastoise.json",
+        "data/cobblemon/species_additions/blastoise.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation1/blastoise.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "water"
   ],
@@ -2382,10 +2417,10 @@
             }
           ],
           "stats": {
-            "ACCELERATION": "5-40",
+            "ACCELERATION": "20-50",
             "JUMP": "10-20",
-            "SKILL": "30-60",
-            "SPEED": "5-15",
+            "SKILL": "40-60",
+            "SPEED": "75-95",
             "STAMINA": "2-20"
           }
         },
@@ -2393,10 +2428,10 @@
           "key": "cobblemon:land/horse",
           "rideSounds": [],
           "stats": {
-            "ACCELERATION": "30-50",
-            "JUMP": "15-30",
-            "SKILL": "10-35",
-            "SPEED": "30-65",
+            "ACCELERATION": "20-40",
+            "JUMP": "20-35",
+            "SKILL": "30-50",
+            "SPEED": "40-70",
             "STAMINA": "15-35"
           }
         },
@@ -2432,10 +2467,10 @@
           ],
           "hitboxBreachPercentage": 0.75,
           "stats": {
-            "ACCELERATION": "45-65",
+            "ACCELERATION": "50-75",
             "JUMP": "30-50",
-            "SKILL": "50-75",
-            "SPEED": "35-65",
+            "SKILL": "60-85",
+            "SPEED": "75-95",
             "STAMINA": "35-70"
           }
         }
@@ -2596,6 +2631,146 @@
               "poseTypes": [
                 "GLIDE"
               ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": -0.000759989,
+                "y": -2.7762213,
+                "z": -0.08708589
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": 0.000713408,
+                "y": -2.888495,
+                "z": -0.031018771
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER",
+                "FLY"
+              ],
+              "offset": {
+                "x": -0.031250015,
+                "y": -2.8524113,
+                "z": 0.27662846
+              }
+            },
+            {
+              "poseTypes": [
+                "FLOAT"
+              ],
+              "offset": {
+                "x": 0.021855652,
+                "y": -1.4104469,
+                "z": -0.49374536
+              }
+            },
+            {
+              "poseTypes": [
+                "SWIM"
+              ],
+              "offset": {
+                "x": -0.030396074,
+                "y": -1.1050735,
+                "z": -0.6272919
+              }
+            },
+            {
+              "poseTypes": [
+                "GLIDE"
+              ],
+              "offset": {
+                "x": -0.003324896,
+                "y": -2.741436,
+                "z": -0.37943092
+              }
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0.0065662265,
+                "y": -1.938705,
+                "z": 0.75241566
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": 0.1671896,
+                "y": -2.013784,
+                "z": 0.75219035
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER",
+                "FLY"
+              ],
+              "offset": {
+                "x": -0.031250015,
+                "y": -1.9133127,
+                "z": 1.0007445
+              }
+            },
+            {
+              "poseTypes": [
+                "FLOAT"
+              ],
+              "offset": {
+                "x": 0.01992935,
+                "y": -1.0380715,
+                "z": 0.24457838
+              }
+            },
+            {
+              "poseTypes": [
+                "SWIM"
+              ],
+              "offset": {
+                "x": -0.062409163,
+                "y": -1.0400126,
+                "z": 0.044064052
+              }
+            },
+            {
+              "poseTypes": [
+                "GLIDE"
+              ],
+              "offset": {
+                "x": 0.0050011426,
+                "y": -2.03721,
+                "z": 0.5746374
+              }
             }
           ]
         }

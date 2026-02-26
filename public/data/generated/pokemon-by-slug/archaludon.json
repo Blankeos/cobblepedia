@@ -2,7 +2,66 @@
   "slug": "archaludon",
   "name": "Archaludon",
   "dexNumber": 1018,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [LackingMons - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/archaludon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1018_archaludon.json",
+        "data/cobblemon/species_additions/archaludon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/archaludon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/archaludon.json",
+        "data/cobblemon/species/generation9/archaludon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/missingmons/archaludon_size.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "steel",
     "dragon"
@@ -1056,7 +1115,16 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 0,
+    "entries": [
+      {
+        "item": "minecraft:iron_ingot",
+        "quantityRange": "1-32",
+        "percentage": 50
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 1018,
     "name": "Archaludon",
@@ -1204,7 +1272,16 @@
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": false,
+        "walk": {
+          "walkSpeed": 0.18,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -1217,8 +1294,68 @@
           "any"
         ],
         "drowsyChance": 0.0014,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       }
+    },
+    "implemented": true,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1.2,
+      "height": 2.2,
+      "fixed": false
+    },
+    "drops": {
+      "amount": "1",
+      "entries": [
+        {
+          "item": "minecraft:iron_ingot",
+          "quantityRange": "1-32",
+          "percentage": 50
+        }
+      ]
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "20-40",
+            "JUMP": "10-30",
+            "SKILL": "35-55",
+            "SPEED": "20-40",
+            "STAMINA": "75-95"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 1.1,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.3,
+                "z": 0.1
+              }
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 1.1,
+            "z": 0
+          }
+        }
+      ]
     }
   }
 }

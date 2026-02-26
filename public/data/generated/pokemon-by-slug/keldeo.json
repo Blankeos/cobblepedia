@@ -2,7 +2,67 @@
   "slug": "keldeo",
   "name": "Keldeo",
   "dexNumber": 647,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/keldeo.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0647_keldeo.json",
+        "data/cobblemon/species_additions/keldeo.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/keldeo.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/keldeo_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/keldeo.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/keldeo.json",
+        "data/cobblemon/species_additions/keldeo.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "water",
     "fighting"
@@ -60,7 +120,49 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "keldeo_keldeor",
+      "variant": "level_up",
+      "result": {
+        "raw": "keldeo sword_form=resolute",
+        "slug": "keldeo",
+        "aspectTokens": [
+          "sword_form=resolute"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Knows Secretsword"
+      ],
+      "requirements": [
+        {
+          "variant": "has_move",
+          "text": "Knows Secretsword",
+          "raw": {
+            "variant": "has_move",
+            "move": "secretsword"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "keldeo_keldeor",
+        "variant": "level_up",
+        "result": "keldeo sword_form=resolute",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "has_move",
+            "move": "secretsword"
+          }
+        ]
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
       {
@@ -70,9 +172,28 @@
         "dexNumber": 647,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "keldeo-resolute",
+        "slug": "keldeo",
+        "name": "Keldeo",
+        "dexNumber": 647,
+        "formSlug": "keldeo-resolute",
+        "formName": "Resolute"
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "keldeo",
+        "toNodeId": "keldeo-resolute",
+        "fromSlug": "keldeo",
+        "toSlug": "keldeo",
+        "method": "level_up",
+        "requirementText": [
+          "Knows Secretsword"
+        ]
+      }
+    ],
     "roots": [
       "keldeo"
     ]
@@ -1347,7 +1468,31 @@
       }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:fighting_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 647,
     "name": "Keldeo",
@@ -1514,7 +1659,21 @@
       "legacy:swagger",
       "legacy:toxic"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "keldeo_keldeor",
+        "variant": "level_up",
+        "result": "keldeo sword_form=resolute",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "has_move",
+            "move": "secretsword"
+          }
+        ]
+      }
+    ],
     "forms": [
       {
         "name": "Resolute",
@@ -1572,11 +1731,33 @@
             "rouseChance": 0.0042
           }
         }
+      },
+      {
+        "name": "Resolute",
+        "aspects": [
+          "resolute-form"
+        ],
+        "baseScale": 1,
+        "evolutions": [
+          {
+            "id": "keldeo_keldeor",
+            "variant": "level_up",
+            "result": "keldeo sword_form=ordinary",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "has_move",
+                "move": "secretsword"
+              }
+            ]
+          }
+        ]
       }
     ],
     "behaviour": {
       "herd": {
-        "maxSize": "4",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "rapidash",
@@ -1622,7 +1803,19 @@
       },
       "moving": {
         "swim": {
-          "canWalkOnWater": true
+          "canWalkOnWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.6,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
@@ -1634,6 +1827,62 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "implemented": true,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-60",
+            "JUMP": "30-65",
+            "SKILL": "20-50",
+            "SPEED": "40-50",
+            "STAMINA": "100-145"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:fighting_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

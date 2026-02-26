@@ -3,6 +3,49 @@
   "name": "Sylveon",
   "dexNumber": 700,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0700_sylveon.json",
+        "data/cobblemon/species/generation6/sylveon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0700_sylveon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_sylveon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fairy"
   ],
@@ -2168,6 +2211,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.21
         }
       },
       "combat": {

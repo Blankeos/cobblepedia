@@ -2,7 +2,45 @@
   "slug": "typenull",
   "name": "Type: Null",
   "dexNumber": 772,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/typenull.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/typenull.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/typenull.json",
+        "data/cobblemon/species_additions/typenull.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "normal"
   ],
@@ -118,9 +156,307 @@
         "dexNumber": 773,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "silvally-bug",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-bug",
+        "formName": "Bug"
+      },
+      {
+        "nodeId": "silvally-dark",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-dark",
+        "formName": "Dark"
+      },
+      {
+        "nodeId": "silvally-dragon",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-dragon",
+        "formName": "Dragon"
+      },
+      {
+        "nodeId": "silvally-electric",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-electric",
+        "formName": "Electric"
+      },
+      {
+        "nodeId": "silvally-fighting",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-fighting",
+        "formName": "Fighting"
+      },
+      {
+        "nodeId": "silvally-fire",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-fire",
+        "formName": "Fire"
+      },
+      {
+        "nodeId": "silvally-flying",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-flying",
+        "formName": "Flying"
+      },
+      {
+        "nodeId": "silvally-ghost",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-ghost",
+        "formName": "Ghost"
+      },
+      {
+        "nodeId": "silvally-grass",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-grass",
+        "formName": "Grass"
+      },
+      {
+        "nodeId": "silvally-ground",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-ground",
+        "formName": "Ground"
+      },
+      {
+        "nodeId": "silvally-ice",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-ice",
+        "formName": "Ice"
+      },
+      {
+        "nodeId": "silvally-poison",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-poison",
+        "formName": "Poison"
+      },
+      {
+        "nodeId": "silvally-psychic",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-psychic",
+        "formName": "Psychic"
+      },
+      {
+        "nodeId": "silvally-rock",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-rock",
+        "formName": "Rock"
+      },
+      {
+        "nodeId": "silvally-steel",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-steel",
+        "formName": "Steel"
+      },
+      {
+        "nodeId": "silvally-water",
+        "slug": "silvally",
+        "name": "Silvally",
+        "dexNumber": 773,
+        "formSlug": "silvally-water",
+        "formName": "Water"
       }
     ],
     "edges": [
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-bug",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Bug Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-dark",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Dark Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-dragon",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Dragon Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-electric",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Electric Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-fighting",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Fighting Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-fighting",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-fire",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Fire Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-flying",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Flying Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-ghost",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Ghost Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-grass",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Grass Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-ground",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Ground Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-ice",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Ice Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-poison",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Poison Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-psychic",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Psychic Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-rock",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Rock Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-steel",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Steel Gem"
+        ]
+      },
+      {
+        "fromNodeId": "silvally",
+        "toNodeId": "silvally-water",
+        "fromSlug": "silvally",
+        "toSlug": "silvally",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Gem"
+        ]
+      },
       {
         "fromNodeId": "typenull",
         "toNodeId": "silvally",
@@ -1016,8 +1352,8 @@
     "baseFriendship": 0,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 2,
+      "height": 3,
       "fixed": false
     },
     "moves": [
@@ -1138,7 +1474,19 @@
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.3,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.4,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
@@ -1150,6 +1498,31 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "implemented": true,
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-60",
+            "JUMP": "30-65",
+            "SKILL": "40-70",
+            "SPEED": "20-40",
+            "STAMINA": "60-95"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
     }
   }
 }

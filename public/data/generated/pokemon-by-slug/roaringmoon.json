@@ -2,7 +2,46 @@
   "slug": "roaringmoon",
   "name": "Roaring Moon",
   "dexNumber": 1005,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/roaringmoon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1005_roaringmoon.json",
+        "data/cobblemon/species_additions/roaringmoon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/roaringmoon.json",
+        "data/paradox_spawns_atm/spawn_pool_world/roaringmoon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dragon",
     "dark"
@@ -1364,7 +1403,11 @@
           "avoidsWater": true
         },
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.6
+        },
+        "walk": {
+          "walkSpeed": 0.2
         }
       },
       "combat": {
@@ -1374,8 +1417,23 @@
       },
       "resting": {
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
-      }
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleepOnBed": false,
+        "depth": "normal",
+        "light": "0-4"
+      },
+      "canLook": true,
+      "looksAtEntities": true,
+      "wanderChance": 120,
+      "wanderSpeed": 0.2
+    },
+    "implemented": true,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 2.4,
+      "height": 1.9,
+      "fixed": false
     }
   }
 }

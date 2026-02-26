@@ -3,6 +3,40 @@
   "name": "Tangrowth",
   "dexNumber": 465,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0465_tangrowth.json",
+        "data/cobblemon/species/generation4/tangrowth.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation4/tangrowth.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0465_tangrowth.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "grass"
   ],
@@ -1746,6 +1780,43 @@
         "willDefendOwner": true,
         "willFlee": false
       }
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "15-30",
+            "ACCELERATION": "15-30",
+            "SKILL": "35-60",
+            "JUMP": "10-25",
+            "STAMINA": "45-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.15,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.35,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

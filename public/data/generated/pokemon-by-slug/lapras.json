@@ -3,6 +3,32 @@
   "name": "Lapras",
   "dexNumber": 131,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0131_lapras.json",
+        "data/cobblemon/species/generation1/lapras.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0131_lapras.json",
+        "data/cobblemon/species_additions/lapras.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "water",
     "ice"
@@ -2185,10 +2211,10 @@
           "canJump": false,
           "canSprint": false,
           "stats": {
-            "ACCELERATION": "10-40",
-            "JUMP": "10-40",
-            "SKILL": "80-100",
-            "SPEED": "10-40",
+            "ACCELERATION": "10-35",
+            "JUMP": "0-5",
+            "SKILL": "20-40",
+            "SPEED": "10-25",
             "STAMINA": "10-40"
           }
         },
@@ -2213,10 +2239,10 @@
             }
           ],
           "stats": {
-            "ACCELERATION": "30-55",
+            "ACCELERATION": "60-85",
             "JUMP": "20-30",
-            "SKILL": "50-75",
-            "SPEED": "25-40",
+            "SKILL": "60-85",
+            "SPEED": "80-105",
             "STAMINA": "45-75"
           },
           "surfaceLevelOffset": -1.6
@@ -2299,6 +2325,85 @@
               "poseTypes": [
                 "GLIDE"
               ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.377378,
+                "z": 0.081582785
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.3771001,
+                "z": 0.24808589
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.377378,
+                "z": 0.081582785
+              }
+            },
+            {
+              "poseTypes": [
+                "FLY"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.377378,
+                "z": 0.081582785
+              }
+            },
+            {
+              "poseTypes": [
+                "FLOAT"
+              ],
+              "offset": {
+                "x": 0.05,
+                "y": -1.0596714,
+                "z": 0.08635005
+              }
+            },
+            {
+              "poseTypes": [
+                "SWIM"
+              ],
+              "offset": {
+                "x": 0.05959252,
+                "y": -1.0513167,
+                "z": -0.1178946
+              }
+            },
+            {
+              "poseTypes": [
+                "GLIDE"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.377378,
+                "z": 0.081582785
+              }
             }
           ]
         }

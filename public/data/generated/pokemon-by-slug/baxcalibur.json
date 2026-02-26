@@ -2,7 +2,77 @@
   "slug": "baxcalibur",
   "name": "Baxcalibur",
   "dexNumber": 998,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "z DO NOT ENABLE z [LackingMons - Credits Only]",
+    "zamega-fabric-1.5.4"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/baxcalibur.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0998_baxcalibur.json",
+        "data/cobblemon/species_additions/baxcalibur.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/baxcalibur.json",
+        "data/cobblemon/species_additions/generation9/baxcalibur.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0998_baxcalibur.json",
+        "data/cobblemon/species_additions/baxcalibur.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/baxcalibur.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation9/baxcalibur_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dragon",
     "ice"
@@ -31,7 +101,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "baxcalibur"
+    "baxcalibur",
+    "baxcalibur mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 21,
@@ -1018,7 +1090,87 @@
     }
   ],
   "spawnEntries": [],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "baxcalibur-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen9",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 21,
+      "weight": 3150,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 115,
+        "attack": 175,
+        "defence": 117,
+        "special_attack": 105,
+        "special_defence": 101,
+        "speed": 87
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "thermalexchange",
+          "hidden": false,
+          "label": "Thermalexchange",
+          "slot": "first"
+        },
+        {
+          "id": "thermalexchange",
+          "hidden": true,
+          "label": "Thermalexchange",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.baxcalibur-mega.desc"
+        ],
+        "abilities": [
+          "thermalexchange",
+          "h:thermalexchange"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 115,
+          "attack": 175,
+          "defence": 117,
+          "special_attack": 105,
+          "special_defence": 101,
+          "speed": 87
+        },
+        "baseScale": 1.1,
+        "hitbox": {
+          "width": 1.5,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 21,
+        "weight": 3150
+      }
+    }
+  ],
   "drops": {
     "amount": 1,
     "entries": [
@@ -1183,6 +1335,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.2
         }
       },
       "combat": {
@@ -1194,6 +1349,52 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "implemented": true,
+    "baseScale": 0.88,
+    "hitbox": {
+      "width": 3,
+      "height": 2.5,
+      "fixed": false
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.baxcalibur-mega.desc"
+        ],
+        "abilities": [
+          "thermalexchange",
+          "h:thermalexchange"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 115,
+          "attack": 175,
+          "defence": 117,
+          "special_attack": 105,
+          "special_defence": 101,
+          "speed": 87
+        },
+        "baseScale": 1.1,
+        "hitbox": {
+          "width": 1.5,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 21,
+        "weight": 3150
+      }
+    ]
   }
 }

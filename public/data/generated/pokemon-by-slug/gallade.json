@@ -3,6 +3,49 @@
   "name": "Gallade",
   "dexNumber": 475,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0475_gallade.json",
+        "data/cobblemon/species/generation4/gallade.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0475_gallade.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/gallade.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "psychic",
     "fighting"
@@ -68,9 +111,76 @@
     "slug": "kirlia",
     "aspectTokens": []
   },
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "gallade_megagallade",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megagallade",
+        "slug": "megagallade",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Key Stone"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:key_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "gallade_megagallade",
+        "variant": "item_interact",
+        "result": "megagallade",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      }
+    },
+    {
+      "id": "gallade_megagallade1",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megagallade",
+        "slug": "megagallade",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Mega Ring"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:mega_ring",
+      "fromForm": null,
+      "raw": {
+        "id": "gallade_megagallade1",
+        "variant": "item_interact",
+        "result": "megagallade",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
+      {
+        "nodeId": "megagallade",
+        "slug": "megagallade",
+        "name": "Megagallade",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "megagardevoir",
+        "slug": "megagardevoir",
+        "name": "Megagardevoir",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
       {
         "nodeId": "ralts",
         "slug": "ralts",
@@ -105,6 +215,46 @@
       }
     ],
     "edges": [
+      {
+        "fromNodeId": "gallade",
+        "toNodeId": "megagallade",
+        "fromSlug": "gallade",
+        "toSlug": "megagallade",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "gallade",
+        "toNodeId": "megagallade",
+        "fromSlug": "gallade",
+        "toSlug": "megagallade",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
+        ]
+      },
+      {
+        "fromNodeId": "gardevoir",
+        "toNodeId": "megagardevoir",
+        "fromSlug": "gardevoir",
+        "toSlug": "megagardevoir",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "gardevoir",
+        "toNodeId": "megagardevoir",
+        "fromSlug": "gardevoir",
+        "toSlug": "megagardevoir",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
+        ]
+      },
       {
         "fromNodeId": "kirlia",
         "toNodeId": "gallade",
@@ -3282,7 +3432,24 @@
       "special:wish"
     ],
     "preEvolution": "kirlia",
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "gallade_megagallade",
+        "variant": "item_interact",
+        "result": "megagallade",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      },
+      {
+        "id": "gallade_megagallade1",
+        "variant": "item_interact",
+        "result": "megagallade",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    ],
     "forms": [
       {
         "name": "Mega",

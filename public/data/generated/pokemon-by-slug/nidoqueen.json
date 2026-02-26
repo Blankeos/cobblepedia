@@ -3,6 +3,50 @@
   "name": "Nidoqueen",
   "dexNumber": 31,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0031_nidoqueen.json",
+        "data/cobblemon/species/generation1/nidoqueen.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/nidoqueen.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0031_nidoqueen.json",
+        "data/cobblemon/species_additions/nidoqueen.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_nidoqueen.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "poison",
     "ground"
@@ -2197,6 +2241,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.2
         }
       },
       "combat": {
@@ -2447,9 +2494,96 @@
           }
         }
       },
-      "seats": [],
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.5,
+                "z": 0.2
+              },
+              "poseTypes": [
+                "STAND",
+                "HOVER",
+                "FLY",
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.5,
+                "z": 0.15
+              },
+              "poseTypes": [
+                "WALK",
+                "FLOAT",
+                "SWIM"
+              ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.4,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.45,
+                "z": 0.05
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.4,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ],
       "behaviour": {
         "key": "cobblemon:land/horse"
+      },
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "30-40",
+            "ACCELERATION": "50-70",
+            "SKILL": "30-60",
+            "JUMP": "30-40",
+            "STAMINA": "70-100"
+          }
+        }
       }
     }
   }

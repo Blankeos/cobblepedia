@@ -3,6 +3,58 @@
   "name": "Iron Leaves",
   "dexNumber": 1010,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/ironleaves.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation9/ironleaves.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1010_ironleaves.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/ironleaves.json",
+        "data/paradox_spawns_atm/spawn_pool_world/ironleaves.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/ironleaves.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "grass",
     "psychic"
@@ -978,7 +1030,16 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 0,
+    "entries": [
+      {
+        "item": "minecraft:iron_ingot",
+        "quantityRange": "1-32",
+        "percentage": 50
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 1010,
@@ -1038,7 +1099,8 @@
           "any"
         ],
         "drowsyChance": 0.0014,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "depth": "normal"
       },
       "herd": {
         "maxSize": "4"
@@ -1047,7 +1109,14 @@
         "swim": {
           "avoidsWater": true,
           "canSwimInWater": false,
-          "canBreatheUnderwater": true
+          "canBreatheUnderwater": false,
+          "swimSpeed": 0.1
+        },
+        "canLook": false,
+        "walk": {
+          "walkSpeed": 0.19,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -1152,6 +1221,93 @@
     "lightingData": {
       "lightLevel": 6,
       "liquidGlowMode": "BOTH"
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "55-80",
+            "JUMP": "25-45",
+            "SKILL": "45-70",
+            "SPEED": "55-85",
+            "STAMINA": "35-60"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.85,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.06,
+                "y": -1.95,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.5,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.03,
+                "y": -1.45,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -2.05,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "drops": {
+      "amount": "1",
+      "entries": [
+        {
+          "item": "minecraft:iron_ingot",
+          "quantityRange": "1-32",
+          "percentage": 50
+        }
+      ]
     }
   }
 }

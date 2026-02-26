@@ -2,7 +2,45 @@
   "slug": "abomasnow",
   "name": "Abomasnow",
   "dexNumber": 460,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation4/abomasnow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0460_abomasnow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0460_abomasnow.json",
+        "data/cobblemon/species_additions/abomasnow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "grass",
     "ice"
@@ -1611,8 +1649,8 @@
     "baseFriendship": 50,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 2,
+      "height": 2.7,
       "fixed": false
     },
     "drops": {
@@ -1847,6 +1885,7 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "implemented": true
   }
 }

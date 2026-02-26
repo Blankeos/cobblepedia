@@ -3,6 +3,58 @@
   "name": "Xerneas",
   "dexNumber": 716,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation6/xerneas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0716_xerneas.json",
+        "data/cobblemon/species_additions/xerneas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/legendary_spawns_atm/spawn_pool_world/xerneas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0716_xerneas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/xerneas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fairy"
   ],
@@ -1355,7 +1407,7 @@
     ],
     "behaviour": {
       "herd": {
-        "maxSize": "2",
+        "maxSize": 2,
         "toleratedLeaders": [
           {
             "pokemon": "xerneas",
@@ -1378,6 +1430,30 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "70-90",
+            "JUMP": "30-65",
+            "SKILL": "20-50",
+            "SPEED": "80-100",
+            "STAMINA": "60-120"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
     }
   }
 }

@@ -2,7 +2,86 @@
   "slug": "magearna",
   "name": "Magearna",
   "dexNumber": 801,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [LackingMons - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]",
+    "zamega-fabric-1.5.4"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/magearna.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0801_magearna.json",
+        "data/cobblemon/species_additions/magearna.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation7/magearna.json",
+        "data/legendary_spawns_atm/spawn_pool_world/magearna.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/magearna.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/magearna.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/magearna.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation7/magearna_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "steel",
     "fairy"
@@ -31,7 +110,11 @@
   "aspects": [],
   "aliases": [
     "magearna",
+    "magearna mega",
+    "magearna megao",
     "magearna original",
+    "mega",
+    "megao",
     "original"
   ],
   "maleRatio": -1,
@@ -1616,9 +1699,189 @@
         "evolutions": [],
         "battleOnly": false
       }
+    },
+    {
+      "name": "Mega",
+      "slug": "magearna-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "mega",
+        "mythical"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 13,
+      "weight": 2481,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 80,
+        "attack": 125,
+        "defence": 115,
+        "special_attack": 170,
+        "special_defence": 115,
+        "speed": 95
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "soulheart",
+          "hidden": false,
+          "label": "Soulheart",
+          "slot": "first"
+        },
+        {
+          "id": "soulheart",
+          "hidden": true,
+          "label": "Soulheart",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.magearna-mega.desc"
+        ],
+        "abilities": [
+          "soulheart",
+          "h:soulheart"
+        ],
+        "labels": [
+          "mega",
+          "mythical"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 80,
+          "attack": 125,
+          "defence": 115,
+          "special_attack": 170,
+          "special_defence": 115,
+          "speed": 95
+        },
+        "hitbox": {
+          "width": 1.3,
+          "height": 2.2
+        },
+        "height": 13,
+        "weight": 2481
+      }
+    },
+    {
+      "name": "MegaO",
+      "slug": "magearna-megao",
+      "aspects": [
+        "mega",
+        "original-color"
+      ],
+      "labels": [
+        "mega",
+        "mythical"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 13,
+      "weight": 2481,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 80,
+        "attack": 125,
+        "defence": 115,
+        "special_attack": 170,
+        "special_defence": 115,
+        "speed": 95
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "soulheart",
+          "hidden": false,
+          "label": "Soulheart",
+          "slot": "first"
+        },
+        {
+          "id": "soulheart",
+          "hidden": true,
+          "label": "Soulheart",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "MegaO",
+        "pokedex": [
+          "cobblemon.species.magearna-megao.desc"
+        ],
+        "abilities": [
+          "soulheart",
+          "h:soulheart"
+        ],
+        "labels": [
+          "mega",
+          "mythical"
+        ],
+        "aspects": [
+          "mega",
+          "original-color"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 80,
+          "attack": 125,
+          "defence": 115,
+          "special_attack": 170,
+          "special_defence": 115,
+          "speed": 95
+        },
+        "hitbox": {
+          "width": 1.3,
+          "height": 2.2
+        },
+        "height": 13,
+        "weight": 2481
+      }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:steel_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 801,
     "name": "Magearna",
@@ -1663,10 +1926,10 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.6,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 1.2,
+      "height": 2.5,
       "fixed": false
     },
     "moves": [
@@ -1841,6 +2104,71 @@
         ],
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.magearna-mega.desc"
+        ],
+        "abilities": [
+          "soulheart",
+          "h:soulheart"
+        ],
+        "labels": [
+          "mega",
+          "mythical"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 80,
+          "attack": 125,
+          "defence": 115,
+          "special_attack": 170,
+          "special_defence": 115,
+          "speed": 95
+        },
+        "hitbox": {
+          "width": 1.3,
+          "height": 2.2
+        },
+        "height": 13,
+        "weight": 2481
+      },
+      {
+        "name": "MegaO",
+        "pokedex": [
+          "cobblemon.species.magearna-megao.desc"
+        ],
+        "abilities": [
+          "soulheart",
+          "h:soulheart"
+        ],
+        "labels": [
+          "mega",
+          "mythical"
+        ],
+        "aspects": [
+          "mega",
+          "original-color"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 80,
+          "attack": 125,
+          "defence": 115,
+          "special_attack": 170,
+          "special_defence": 115,
+          "speed": 95
+        },
+        "hitbox": {
+          "width": 1.3,
+          "height": 2.2
+        },
+        "height": 13,
+        "weight": 2481
       }
     ],
     "behaviour": {
@@ -1849,11 +2177,27 @@
           "any"
         ],
         "drowsyChance": 0.0014,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": false,
+        "depth": "normal",
+        "light": "4-15"
       },
       "moving": {
         "swim": {
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": true,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "canWalk": true,
+          "walkSpeed": 0.25,
+          "avoidsLand": false,
           "avoidsWater": true
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
@@ -1861,6 +2205,36 @@
         "willDefendOwner": true,
         "willFlee": false
       }
+    },
+    "implemented": true,
+    "shoulderMountable": false,
+    "features": [
+      "mega_evolution"
+    ],
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:steel_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

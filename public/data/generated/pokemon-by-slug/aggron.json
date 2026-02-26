@@ -3,6 +3,41 @@
   "name": "Aggron",
   "dexNumber": 306,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0306_aggron.json",
+        "data/cobblemon/species/generation3/aggron.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0306_aggron.json",
+        "data/cobblemon/species_additions/aggron.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/aggron.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "steel",
     "rock"
@@ -2334,8 +2369,8 @@
     "baseFriendship": 35,
     "baseScale": 1,
     "hitbox": {
-      "width": 1.4,
-      "height": 3.1,
+      "width": 1.5,
+      "height": 2.5,
       "fixed": false
     },
     "behaviour": {
@@ -2343,6 +2378,9 @@
         "swim": {
           "avoidsWater": true,
           "canSwimInLava": true
+        },
+        "walk": {
+          "walkSpeed": 0.2
         }
       },
       "herd": {
@@ -2630,6 +2668,30 @@
           "fireImmune": true
         }
       }
-    ]
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-60",
+            "JUMP": "30-65",
+            "SKILL": "20-50",
+            "SPEED": "40-80",
+            "STAMINA": "60-120"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    }
   }
 }

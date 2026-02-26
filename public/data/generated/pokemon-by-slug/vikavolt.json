@@ -2,7 +2,57 @@
   "slug": "vikavolt",
   "name": "Vikavolt",
   "dexNumber": 738,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/vikavolt.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0738_vikavolt.json",
+        "data/cobblemon/species_additions/vikavolt.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/vikavolt.json",
+        "data/cobblemon/species_additions/generation7/vikavolt.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0738_vikavolt.json",
+        "data/cobblemon/species_additions/vikavolt.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "bug",
     "electric"
@@ -1325,8 +1375,8 @@
     "baseFriendship": 50,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 2,
+      "height": 2.5,
       "fixed": false
     },
     "drops": {
@@ -1467,7 +1517,11 @@
           "avoidsWater": true
         },
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.7
+        },
+        "walk": {
+          "walkSpeed": 0.31
         }
       },
       "combat": {
@@ -1482,6 +1536,7 @@
         "drowsyChance": 0.0014,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "implemented": true
   }
 }

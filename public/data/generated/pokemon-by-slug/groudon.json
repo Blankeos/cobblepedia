@@ -2,7 +2,68 @@
   "slug": "groudon",
   "name": "Groudon",
   "dexNumber": 383,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation3/groudon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0383_groudon.json",
+        "data/cobblemon/species_additions/groudon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/groudon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/groudon_drops.json",
+        "data/cobblemon/species_additions/groudon_meta.json",
+        "data/legendary_spawns_atm/spawn_pool_world/groudon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/groudon.json",
+        "data/cobblemon/species/generation3/groudon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "ground"
   ],
@@ -34,7 +95,9 @@
   "aliases": [
     "groudon",
     "groudon primal",
-    "primal"
+    "groudon virus",
+    "primal",
+    "virus"
   ],
   "maleRatio": -1,
   "height": 35,
@@ -1686,13 +1749,1722 @@
         "evolutions": [],
         "battleOnly": true
       }
+    },
+    {
+      "name": "Virus",
+      "slug": "groudon-virus",
+      "aspects": [
+        "virus"
+      ],
+      "labels": [],
+      "types": [
+        "ground",
+        "poison"
+      ],
+      "maleRatio": null,
+      "height": null,
+      "weight": null,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 113,
+        "attack": 97,
+        "defence": 130,
+        "special_attack": 147,
+        "special_defence": 113,
+        "speed": 70
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "eartheater",
+          "hidden": false,
+          "label": "Eartheater",
+          "slot": "first"
+        },
+        {
+          "id": "thermalexchange",
+          "hidden": false,
+          "label": "Thermalexchange",
+          "slot": "second"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "1:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "1:lavaplume",
+          "moveId": "lavaplume",
+          "moveName": "Lava Plume",
+          "type": "fire",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "1:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "1:precipiceblades",
+          "moveId": "precipiceblades",
+          "moveName": "Precipice Blades",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "1:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "5:ingrain",
+          "moveId": "ingrain",
+          "moveName": "Ingrain",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 5,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "5:leechseed",
+          "moveId": "leechseed",
+          "moveName": "Leech Seed",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 5,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "7:vinewhip",
+          "moveId": "vinewhip",
+          "moveName": "Vine Whip",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 7,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "9:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 9,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "10:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 10,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "12:sludge",
+          "moveId": "sludge",
+          "moveName": "Sludge",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "18:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "type": "fighting",
+          "sourceType": "level",
+          "sourceValue": 18,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "20:acidarmor",
+          "moveId": "acidarmor",
+          "moveName": "Acid Armor",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "22:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 22,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "25:venoshock",
+          "moveId": "venoshock",
+          "moveName": "Venoshock",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 25,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "27:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 27,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "30:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "35:powerwhip",
+          "moveId": "powerwhip",
+          "moveName": "Power Whip",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 35,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "36:hammerarm",
+          "moveId": "hammerarm",
+          "moveName": "Hammer Arm",
+          "type": "fighting",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "45:fissure",
+          "moveId": "fissure",
+          "moveName": "Fissure",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 45,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "50:venomdrench",
+          "moveId": "venomdrench",
+          "moveName": "Venom Drench",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 50,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "54:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 54,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "72:fireblast",
+          "moveId": "fireblast",
+          "moveName": "Fire Blast",
+          "type": "fire",
+          "sourceType": "level",
+          "sourceValue": 72,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "75:strengthsap",
+          "moveId": "strengthsap",
+          "moveName": "Strength Sap",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 75,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "81:solarbeam",
+          "moveId": "solarbeam",
+          "moveName": "Solar Beam",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 81,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "90:eruption",
+          "moveId": "eruption",
+          "moveName": "Eruption",
+          "type": "fire",
+          "sourceType": "level",
+          "sourceValue": 90,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:bodypress",
+          "moveId": "bodypress",
+          "moveName": "Body Press",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:brutalswing",
+          "moveId": "brutalswing",
+          "moveName": "Brutal Swing",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:crunch",
+          "moveId": "crunch",
+          "moveName": "Crunch",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:cut",
+          "moveId": "cut",
+          "moveName": "Cut",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:dragonclaw",
+          "moveId": "dragonclaw",
+          "moveName": "Dragon Claw",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:fireblast",
+          "moveId": "fireblast",
+          "moveName": "Fire Blast",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:fling",
+          "moveId": "fling",
+          "moveName": "Fling",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:focusblast",
+          "moveId": "focusblast",
+          "moveName": "Focus Blast",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:headbutt",
+          "moveId": "headbutt",
+          "moveName": "Headbutt",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:heatcrash",
+          "moveId": "heatcrash",
+          "moveName": "Heat Crash",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:heatwave",
+          "moveId": "heatwave",
+          "moveName": "Heat Wave",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:heavyslam",
+          "moveId": "heavyslam",
+          "moveName": "Heavy Slam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:highhorsepower",
+          "moveId": "highhorsepower",
+          "moveName": "High Horsepower",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:honeclaws",
+          "moveId": "honeclaws",
+          "moveName": "Hone Claws",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:incinerate",
+          "moveId": "incinerate",
+          "moveName": "Incinerate",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:megakick",
+          "moveId": "megakick",
+          "moveName": "Mega Kick",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:megapunch",
+          "moveId": "megapunch",
+          "moveName": "Mega Punch",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:overheat",
+          "moveId": "overheat",
+          "moveName": "Overheat",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:poweruppunch",
+          "moveId": "poweruppunch",
+          "moveName": "Power-Up Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:roar",
+          "moveId": "roar",
+          "moveName": "Roar",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rockblast",
+          "moveId": "rockblast",
+          "moveName": "Rock Blast",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rockclimb",
+          "moveId": "rockclimb",
+          "moveName": "Rock Climb",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rockpolish",
+          "moveId": "rockpolish",
+          "moveName": "Rock Polish",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:rollout",
+          "moveId": "rollout",
+          "moveName": "Rollout",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:safeguard",
+          "moveId": "safeguard",
+          "moveName": "Safeguard",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:sandtomb",
+          "moveId": "sandtomb",
+          "moveName": "Sand Tomb",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:scorchingsands",
+          "moveId": "scorchingsands",
+          "moveName": "Scorching Sands",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:smackdown",
+          "moveId": "smackdown",
+          "moveName": "Smack Down",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:solarbeam",
+          "moveId": "solarbeam",
+          "moveName": "Solar Beam",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:spikes",
+          "moveId": "spikes",
+          "moveName": "Spikes",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:strength",
+          "moveId": "strength",
+          "moveName": "Strength",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:strengthsap",
+          "moveId": "strengthsap",
+          "moveName": "Strength Sap",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:thunder",
+          "moveId": "thunder",
+          "moveName": "Thunder",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:thunderwave",
+          "moveId": "thunderwave",
+          "moveName": "Thunder Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:toxicspikes",
+          "moveId": "toxicspikes",
+          "moveName": "Toxic Spikes",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:willowisp",
+          "moveId": "willowisp",
+          "moveName": "Will-O-Wisp",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tm:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:firefang",
+          "moveId": "firefang",
+          "moveName": "Fire Fang",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:heatwave",
+          "moveId": "heatwave",
+          "moveName": "Heat Wave",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:highhorsepower",
+          "moveId": "highhorsepower",
+          "moveName": "High Horsepower",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:rollout",
+          "moveId": "rollout",
+          "moveName": "Rollout",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:scorchingsands",
+          "moveId": "scorchingsands",
+          "moveName": "Scorching Sands",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:spikes",
+          "moveId": "spikes",
+          "moveName": "Spikes",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        },
+        {
+          "raw": "tutor:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Virus",
+          "fromFormSlug": "groudon-virus"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Virus",
+        "primaryType": "ground",
+        "secondaryType": "poison",
+        "aspects": [
+          "virus"
+        ],
+        "pokedex": [
+          "cobblemon.species.groudon-virus.desc"
+        ],
+        "baseScale": 1.45,
+        "abilities": [
+          "eartheater",
+          "thermalexchange"
+        ],
+        "baseStats": {
+          "hp": 113,
+          "attack": 97,
+          "defence": 130,
+          "special_attack": 147,
+          "special_defence": 113,
+          "speed": 70
+        },
+        "moves": [
+          "1:mudshot",
+          "1:scaryface",
+          "1:lavaplume",
+          "1:ancientpower",
+          "1:precipiceblades",
+          "1:gigadrain",
+          "5:ingrain",
+          "5:leechseed",
+          "7:vinewhip",
+          "9:earthpower",
+          "10:synthesis",
+          "12:sludge",
+          "18:bulkup",
+          "20:acidarmor",
+          "22:sludgewave",
+          "25:venoshock",
+          "27:earthquake",
+          "30:sludgebomb",
+          "35:powerwhip",
+          "36:hammerarm",
+          "45:fissure",
+          "50:venomdrench",
+          "54:rest",
+          "72:fireblast",
+          "75:strengthsap",
+          "81:solarbeam",
+          "90:eruption",
+          "tm:aerialace",
+          "tm:ancientpower",
+          "tm:block",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:bulkup",
+          "tm:bulldoze",
+          "tm:crunch",
+          "tm:cut",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firepunch",
+          "tm:flamethrower",
+          "tm:fling",
+          "tm:focusblast",
+          "tm:focuspunch",
+          "tm:furycutter",
+          "tm:gigaimpact",
+          "tm:headbutt",
+          "tm:heatcrash",
+          "tm:heatwave",
+          "tm:heavyslam",
+          "tm:helpinghand",
+          "tm:highhorsepower",
+          "tm:honeclaws",
+          "tm:hyperbeam",
+          "tm:incinerate",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalclaw",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:overheat",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockblast",
+          "tm:rockclimb",
+          "tm:rockpolish",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:rollout",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:sandtomb",
+          "tm:scaryface",
+          "tm:scorchingsands",
+          "tm:shadowclaw",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:smackdown",
+          "tm:solarbeam",
+          "tm:spikes",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:strength",
+          "tm:strengthsap",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:willowisp",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:ancientpower",
+          "tutor:block",
+          "tutor:bulkup",
+          "tutor:bulldoze",
+          "tutor:dragonpulse",
+          "tutor:earthpower",
+          "tutor:firefang",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:focuspunch",
+          "tutor:furycutter",
+          "tutor:gigaimpact",
+          "tutor:heatwave",
+          "tutor:helpinghand",
+          "tutor:highhorsepower",
+          "tutor:hyperbeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:mudslap",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:rollout",
+          "tutor:scorchingsands",
+          "tutor:shadowclaw",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:spikes",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:thunderbolt",
+          "tutor:thunderpunch",
+          "tutor:zenheadbutt"
+        ]
+      }
     }
   ],
   "drops": {
-    "amount": 1,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:ground_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1744,8 +3516,8 @@
     "baseFriendship": 0,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 5.5,
+      "height": 6,
       "fixed": false
     },
     "behaviour": {
@@ -1753,7 +3525,15 @@
         "swim": {
           "avoidsWater": true,
           "canBreatheInLava": true,
-          "canSwimInLava": true
+          "canSwimInLava": true,
+          "hurtByLava": false,
+          "canWalkOnLava": true
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.6,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -1765,13 +3545,36 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       },
-      "fireImmune": true
+      "fireImmune": true,
+      "herd": {
+        "maxSize": "1"
+      }
     },
     "drops": {
-      "amount": 1,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:nether_star"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:ground_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
     },
@@ -1966,7 +3769,424 @@
         "dynamaxBlocked": true,
         "evolutions": [],
         "battleOnly": true
+      },
+      {
+        "name": "Virus",
+        "primaryType": "ground",
+        "secondaryType": "poison",
+        "aspects": [
+          "virus"
+        ],
+        "pokedex": [
+          "cobblemon.species.groudon-virus.desc"
+        ],
+        "baseScale": 1.45,
+        "abilities": [
+          "eartheater",
+          "thermalexchange"
+        ],
+        "baseStats": {
+          "hp": 113,
+          "attack": 97,
+          "defence": 130,
+          "special_attack": 147,
+          "special_defence": 113,
+          "speed": 70
+        },
+        "moves": [
+          "1:mudshot",
+          "1:scaryface",
+          "1:lavaplume",
+          "1:ancientpower",
+          "1:precipiceblades",
+          "1:gigadrain",
+          "5:ingrain",
+          "5:leechseed",
+          "7:vinewhip",
+          "9:earthpower",
+          "10:synthesis",
+          "12:sludge",
+          "18:bulkup",
+          "20:acidarmor",
+          "22:sludgewave",
+          "25:venoshock",
+          "27:earthquake",
+          "30:sludgebomb",
+          "35:powerwhip",
+          "36:hammerarm",
+          "45:fissure",
+          "50:venomdrench",
+          "54:rest",
+          "72:fireblast",
+          "75:strengthsap",
+          "81:solarbeam",
+          "90:eruption",
+          "tm:aerialace",
+          "tm:ancientpower",
+          "tm:block",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:bulkup",
+          "tm:bulldoze",
+          "tm:crunch",
+          "tm:cut",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firepunch",
+          "tm:flamethrower",
+          "tm:fling",
+          "tm:focusblast",
+          "tm:focuspunch",
+          "tm:furycutter",
+          "tm:gigaimpact",
+          "tm:headbutt",
+          "tm:heatcrash",
+          "tm:heatwave",
+          "tm:heavyslam",
+          "tm:helpinghand",
+          "tm:highhorsepower",
+          "tm:honeclaws",
+          "tm:hyperbeam",
+          "tm:incinerate",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalclaw",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:overheat",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockblast",
+          "tm:rockclimb",
+          "tm:rockpolish",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:rollout",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:sandtomb",
+          "tm:scaryface",
+          "tm:scorchingsands",
+          "tm:shadowclaw",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:smackdown",
+          "tm:solarbeam",
+          "tm:spikes",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:strength",
+          "tm:strengthsap",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:willowisp",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:ancientpower",
+          "tutor:block",
+          "tutor:bulkup",
+          "tutor:bulldoze",
+          "tutor:dragonpulse",
+          "tutor:earthpower",
+          "tutor:firefang",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:focuspunch",
+          "tutor:furycutter",
+          "tutor:gigaimpact",
+          "tutor:heatwave",
+          "tutor:helpinghand",
+          "tutor:highhorsepower",
+          "tutor:hyperbeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:mudslap",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:rollout",
+          "tutor:scorchingsands",
+          "tutor:shadowclaw",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:spikes",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:thunderbolt",
+          "tutor:thunderpunch",
+          "tutor:zenheadbutt"
+        ]
+      },
+      {
+        "name": "Virus",
+        "primaryType": "ground",
+        "secondaryType": "poison",
+        "aspects": [
+          "virus"
+        ],
+        "pokedex": [
+          "cobblemon.species.groudon-virus.desc"
+        ],
+        "baseScale": 1.2,
+        "hitbox": {
+          "width": 3.25,
+          "height": 6,
+          "fixed": false
+        },
+        "abilities": [
+          "eartheater",
+          "thermalexchange"
+        ],
+        "baseStats": {
+          "hp": 113,
+          "attack": 97,
+          "defence": 130,
+          "special_attack": 147,
+          "special_defence": 113,
+          "speed": 70
+        },
+        "moves": [
+          "1:mudshot",
+          "1:scaryface",
+          "1:lavaplume",
+          "1:ancientpower",
+          "1:precipiceblades",
+          "1:gigadrain",
+          "5:ingrain",
+          "5:leechseed",
+          "7:vinewhip",
+          "9:earthpower",
+          "10:synthesis",
+          "12:sludge",
+          "18:bulkup",
+          "20:acidarmor",
+          "22:sludgewave",
+          "25:venoshock",
+          "27:earthquake",
+          "30:sludgebomb",
+          "35:powerwhip",
+          "36:hammerarm",
+          "45:fissure",
+          "50:venomdrench",
+          "54:rest",
+          "72:fireblast",
+          "75:strengthsap",
+          "81:solarbeam",
+          "90:eruption",
+          "tm:aerialace",
+          "tm:ancientpower",
+          "tm:block",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:bulkup",
+          "tm:bulldoze",
+          "tm:crunch",
+          "tm:cut",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firefang",
+          "tm:firepunch",
+          "tm:flamethrower",
+          "tm:fling",
+          "tm:focusblast",
+          "tm:focuspunch",
+          "tm:furycutter",
+          "tm:gigaimpact",
+          "tm:headbutt",
+          "tm:heatcrash",
+          "tm:heatwave",
+          "tm:heavyslam",
+          "tm:helpinghand",
+          "tm:highhorsepower",
+          "tm:honeclaws",
+          "tm:hyperbeam",
+          "tm:incinerate",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalclaw",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:overheat",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockblast",
+          "tm:rockclimb",
+          "tm:rockpolish",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:rollout",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:sandtomb",
+          "tm:scaryface",
+          "tm:scorchingsands",
+          "tm:shadowclaw",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:smackdown",
+          "tm:solarbeam",
+          "tm:spikes",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:strength",
+          "tm:strengthsap",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:willowisp",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:ancientpower",
+          "tutor:block",
+          "tutor:bulkup",
+          "tutor:bulldoze",
+          "tutor:dragonpulse",
+          "tutor:earthpower",
+          "tutor:firefang",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:focuspunch",
+          "tutor:furycutter",
+          "tutor:gigaimpact",
+          "tutor:heatwave",
+          "tutor:helpinghand",
+          "tutor:highhorsepower",
+          "tutor:hyperbeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:mudslap",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:rollout",
+          "tutor:scorchingsands",
+          "tutor:shadowclaw",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:spikes",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:thunderbolt",
+          "tutor:thunderpunch",
+          "tutor:zenheadbutt"
+        ],
+        "behaviour": {
+          "moving": {
+            "canLook": true,
+            "walk": {
+              "walkSpeed": 0.6,
+              "canWalk": true,
+              "avoidsLand": false
+            },
+            "swim": {
+              "hurtByLava": false,
+              "canWalkOnLava": true
+            }
+          }
+        },
+        "riding": {
+          "behaviours": {
+            "LAND": {
+              "key": "cobblemon:land/horse",
+              "rideSounds": [],
+              "stats": {
+                "ACCELERATION": "30-60",
+                "JUMP": "30-65",
+                "SKILL": "20-50",
+                "SPEED": "20-40",
+                "STAMINA": "80-135"
+              }
+            }
+          },
+          "seats": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        }
       }
-    ]
+    ],
+    "implemented": true,
+    "features": [
+      "virus"
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-60",
+            "JUMP": "30-65",
+            "SKILL": "20-50",
+            "SPEED": "20-40",
+            "STAMINA": "80-135"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    }
   }
 }

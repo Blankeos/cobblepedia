@@ -3,6 +3,40 @@
   "name": "Tatsugiri",
   "dexNumber": 978,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0978_tatsugiri.json",
+        "data/cobblemon/species/generation9/tatsugiri.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0978_tatsugiri.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation9/tatsugiri_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dragon",
     "water"
@@ -32,9 +66,15 @@
   ],
   "aliases": [
     "droopy",
+    "mega",
+    "megad",
+    "megas",
     "stretchy",
     "tatsugiri",
     "tatsugiri droopy",
+    "tatsugiri mega",
+    "tatsugiri megad",
+    "tatsugiri megas",
     "tatsugiri stretchy"
   ],
   "maleRatio": 0.5,
@@ -994,6 +1034,249 @@
         "evolutions": [],
         "battleOnly": false
       }
+    },
+    {
+      "name": "Mega",
+      "slug": "tatsugiri-mega",
+      "aspects": [
+        "mega",
+        "tatsugiri-texture-curly"
+      ],
+      "labels": [
+        "gen9",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 6,
+      "weight": 240,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 68,
+        "attack": 65,
+        "defence": 90,
+        "special_attack": 135,
+        "special_defence": 125,
+        "speed": 92
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "drizzle",
+          "hidden": false,
+          "label": "Drizzle",
+          "slot": "first"
+        },
+        {
+          "id": "drizzle",
+          "hidden": true,
+          "label": "Drizzle",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.tatsugiri-curly-mega.desc"
+        ],
+        "abilities": [
+          "drizzle",
+          "h:drizzle"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega",
+          "tatsugiri-texture-curly"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 68,
+          "attack": 65,
+          "defence": 90,
+          "special_attack": 135,
+          "special_defence": 125,
+          "speed": 92
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 2.5,
+          "height": 1.6,
+          "fixed": false
+        },
+        "height": 6,
+        "weight": 240
+      }
+    },
+    {
+      "name": "MegaS",
+      "slug": "tatsugiri-megas",
+      "aspects": [
+        "mega",
+        "tatsugiri-texture-stretchy"
+      ],
+      "labels": [
+        "gen9",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 6,
+      "weight": 240,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 68,
+        "attack": 65,
+        "defence": 90,
+        "special_attack": 135,
+        "special_defence": 125,
+        "speed": 92
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "drizzle",
+          "hidden": false,
+          "label": "Drizzle",
+          "slot": "first"
+        },
+        {
+          "id": "drizzle",
+          "hidden": true,
+          "label": "Drizzle",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "MegaS",
+        "pokedex": [
+          "cobblemon.species.tatsugiri-stretchy-mega.desc"
+        ],
+        "abilities": [
+          "drizzle",
+          "h:drizzle"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega",
+          "tatsugiri-texture-stretchy"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 68,
+          "attack": 65,
+          "defence": 90,
+          "special_attack": 135,
+          "special_defence": 125,
+          "speed": 92
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 2.5,
+          "height": 1.6,
+          "fixed": false
+        },
+        "height": 6,
+        "weight": 240
+      }
+    },
+    {
+      "name": "MegaD",
+      "slug": "tatsugiri-megad",
+      "aspects": [
+        "mega",
+        "tatsugiri-texture-droopy"
+      ],
+      "labels": [
+        "gen9",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 6,
+      "weight": 240,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 68,
+        "attack": 65,
+        "defence": 90,
+        "special_attack": 135,
+        "special_defence": 125,
+        "speed": 92
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "drizzle",
+          "hidden": false,
+          "label": "Drizzle",
+          "slot": "first"
+        },
+        {
+          "id": "drizzle",
+          "hidden": true,
+          "label": "Drizzle",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "MegaD",
+        "pokedex": [
+          "cobblemon.species.tatsugiri-droopy-mega.desc"
+        ],
+        "abilities": [
+          "drizzle",
+          "h:drizzle"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega",
+          "tatsugiri-texture-droopy"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 68,
+          "attack": 65,
+          "defence": 90,
+          "special_attack": 135,
+          "special_defence": 125,
+          "speed": 92
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 2.5,
+          "height": 1.6,
+          "fixed": false
+        },
+        "height": 6,
+        "weight": 240
+      }
     }
   ],
   "drops": {
@@ -1208,7 +1491,115 @@
         ],
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.tatsugiri-curly-mega.desc"
+        ],
+        "abilities": [
+          "drizzle",
+          "h:drizzle"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega",
+          "tatsugiri-texture-curly"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 68,
+          "attack": 65,
+          "defence": 90,
+          "special_attack": 135,
+          "special_defence": 125,
+          "speed": 92
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 2.5,
+          "height": 1.6,
+          "fixed": false
+        },
+        "height": 6,
+        "weight": 240
+      },
+      {
+        "name": "MegaS",
+        "pokedex": [
+          "cobblemon.species.tatsugiri-stretchy-mega.desc"
+        ],
+        "abilities": [
+          "drizzle",
+          "h:drizzle"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega",
+          "tatsugiri-texture-stretchy"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 68,
+          "attack": 65,
+          "defence": 90,
+          "special_attack": 135,
+          "special_defence": 125,
+          "speed": 92
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 2.5,
+          "height": 1.6,
+          "fixed": false
+        },
+        "height": 6,
+        "weight": 240
+      },
+      {
+        "name": "MegaD",
+        "pokedex": [
+          "cobblemon.species.tatsugiri-droopy-mega.desc"
+        ],
+        "abilities": [
+          "drizzle",
+          "h:drizzle"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega",
+          "tatsugiri-texture-droopy"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 68,
+          "attack": 65,
+          "defence": 90,
+          "special_attack": 135,
+          "special_defence": 125,
+          "speed": 92
+        },
+        "baseScale": 0.8,
+        "hitbox": {
+          "width": 2.5,
+          "height": 1.6,
+          "fixed": false
+        },
+        "height": 6,
+        "weight": 240
       }
+    ],
+    "features": [
+      "mega_evolution"
     ]
   }
 }

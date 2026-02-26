@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process"
+import { createHash } from "node:crypto"
 import { mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises"
 import path from "node:path"
 import JSZip from "jszip"
@@ -7,7 +8,9 @@ import type {
   AbilitySlot,
   BiomeTagIndex,
   CompetitiveStatSpread,
+  CoverageReportRecord,
   EvolutionEdgeRecord,
+  GenerationProfile,
   ItemIndex,
   MetaRecord,
   MoveLearnersIndex,
@@ -21,6 +24,8 @@ import type {
   PokemonInteractionIndex,
   PokemonInteractionRecord,
   PokemonListItem,
+  PokemonProvenanceEvidence,
+  PokemonProvenanceStatus,
   PokemonTypeEntryRecord,
   RideableMonRecord,
   SearchDocument,
@@ -43,9 +48,24 @@ import { parseRideableSummary } from "../src/data/rideable"
 
 const PROJECT_ROOT = path.resolve(import.meta.dir, "..")
 const DEFAULT_UPSTREAM_ROOT = path.resolve(PROJECT_ROOT, ".tmp-cobblemon")
-const UPSTREAM_ROOT = path.resolve(
-  process.argv[2] ?? process.env.COBBLEMON_REPO_PATH ?? DEFAULT_UPSTREAM_ROOT
+const DEFAULT_COBBLEVERSE_MRPACK_PATH = path.resolve(
+  PROJECT_ROOT,
+  ".tmp-cobbleverse/COBBLEVERSE 1.7.3.mrpack"
 )
+const DEFAULT_COBBLEVERSE_MRPACK_URL =
+  "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+const COBBLEVERSE_MODRINTH_COLLECTION_URL = "https://modrinth.com/collection/vgKtV1Ao"
+const COBBLEVERSE_CACHE_ROOT = path.resolve(PROJECT_ROOT, ".tmp-cobbleverse/cache")
+
+const CLI_ARGS = parseCliArgs(process.argv.slice(2))
+const DATA_PROFILE = CLI_ARGS.profile
+const UPSTREAM_ROOT = path.resolve(
+  CLI_ARGS.upstreamRoot ?? process.env.COBBLEMON_REPO_PATH ?? DEFAULT_UPSTREAM_ROOT
+)
+const COBBLEVERSE_MRPACK_PATH = path.resolve(
+  process.env.COBBLEVERSE_MRPACK_PATH ?? DEFAULT_COBBLEVERSE_MRPACK_PATH
+)
+const COBBLEVERSE_MRPACK_URL = process.env.COBBLEVERSE_MRPACK_URL ?? DEFAULT_COBBLEVERSE_MRPACK_URL
 
 const UPSTREAM_URL = "https://gitlab.com/cable-mc/cobblemon"
 const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
@@ -137,7 +157,15 @@ const ALCREMIE_FLAVOR_SUFFIXES = [
   "rainbowswirl",
 ]
 
+const ADDON_SPECIES_JSON_PATTERN = /^data\/[^/]+\/species\/.+\.json$/i
+const ADDON_SPECIES_ADDITIONS_JSON_PATTERN = /^data\/[^/]+\/species_additions\/.+\.json$/i
+const ADDON_SPAWN_POOL_JSON_PATTERN = /^data\/[^/]+\/spawn_pool_world\/.+\.json$/i
+
 const SPECIES_ROOT = path.join(UPSTREAM_ROOT, "common/src/main/resources/data/cobblemon/species")
+const SPECIES_ADDITIONS_ROOT = path.join(
+  UPSTREAM_ROOT,
+  "common/src/main/resources/data/cobblemon/species_additions"
+)
 const SPAWN_POOL_ROOT = path.join(
   UPSTREAM_ROOT,
   "common/src/main/resources/data/cobblemon/spawn_pool_world"
@@ -187,6 +215,67 @@ type RawSpeciesFile = {
   slug: string
   filePath: string
   data: Record<string, unknown>
+}
+
+type CliArgs = {
+  profile: GenerationProfile
+  upstreamRoot: string | null
+}
+
+type ResolvedPokemonProvenance = {
+  isBaseCobblemonImplemented: boolean
+  isCobbleverseProvided: boolean
+  providedByMods: string[]
+  provenanceEvidence: PokemonProvenanceEvidence[]
+  provenanceStatus: PokemonProvenanceStatus
+  effectiveImplemented: boolean
+}
+
+type SpeciesEvidenceByMod = Map<
+  string,
+  {
+    files: Set<string>
+    urls: Set<string>
+  }
+>
+
+type SpeciesAdditionsBySlug = Map<string, Record<string, unknown>[]>
+
+type SpeciesAddonSignals = {
+  touchedMods: Set<string>
+  explicitImplementedMods: Set<string>
+  evidenceByMod: SpeciesEvidenceByMod
+}
+
+type ArtifactEvidenceAccumulator = {
+  mod: string
+  mrpackPath: string
+  downloadUrl: string | null
+  sha1: string
+  evidenceFiles: Set<string>
+}
+
+type CobbleverseEvidenceContext = {
+  versionId: string | null
+  dependencyFiles: number
+  mrpackSha1: string
+  artifactEvidence: ArtifactEvidenceAccumulator[]
+  speciesSignalsBySlug: Map<string, SpeciesAddonSignals>
+  speciesAdditionsBySlug: SpeciesAdditionsBySlug
+}
+
+type ProvenanceResolution = {
+  bySlug: Map<string, ResolvedPokemonProvenance>
+  baseImplemented: number
+  addonImplemented: number
+  addonTouchedNotImplemented: number
+  unresolvedSpecies: string[]
+}
+
+type CobbleverseLockfileEntry = {
+  path: string
+  downloadUrl: string
+  sha1: string
 }
 
 type DirectedEvolutionEdge = {
@@ -312,7 +401,24 @@ async function main() {
   await validateInputPaths()
 
   const rawSpecies = await loadRawSpeciesFiles()
-  const speciesLookup = buildSpeciesLookup(rawSpecies)
+  let speciesLookup = buildSpeciesLookup(rawSpecies)
+  const baseSpeciesAdditionsBySlug = await loadBaseSpeciesAdditionsBySlug(speciesLookup)
+  const cobbleverseEvidence =
+    DATA_PROFILE === "cobbleverse" ? await loadCobbleverseEvidenceContext(speciesLookup) : null
+  const provenanceResolution = resolveSpeciesProvenance(rawSpecies, cobbleverseEvidence)
+
+  const combinedSpeciesAdditionsBySlug = mergeSpeciesAdditionsBySlug(
+    baseSpeciesAdditionsBySlug,
+    cobbleverseEvidence?.speciesAdditionsBySlug
+  )
+  applySpeciesAdditionsToRawSpecies(rawSpecies, combinedSpeciesAdditionsBySlug)
+  speciesLookup = buildSpeciesLookup(rawSpecies)
+
+  if (DATA_PROFILE === "cobbleverse" && provenanceResolution.unresolvedSpecies.length > 0) {
+    throw new Error(
+      `Cobbleverse parity profile has unresolved species (${provenanceResolution.unresolvedSpecies.length}): ${provenanceResolution.unresolvedSpecies.join(", ")}`
+    )
+  }
 
   const showdownData = await loadShowdownData()
   const spawnPresets = await loadSpawnPresets()
@@ -336,6 +442,11 @@ async function main() {
 
   const detailsBySlug = new Map<string, PokemonDetailRecord>()
   for (const speciesFile of rawSpecies) {
+    const provenance = provenanceResolution.bySlug.get(speciesFile.slug)
+    if (!provenance) {
+      throw new Error(`Missing provenance classification for species: ${speciesFile.slug}`)
+    }
+
     const detail = buildPokemonDetailRecord({
       speciesFile,
       speciesLookup,
@@ -343,6 +454,7 @@ async function main() {
       moveEntries: showdownData.moves,
       spawnEntries: spawnBySlug.get(speciesFile.slug) ?? [],
       moveLearnersBuild,
+      provenance,
     })
 
     detailsBySlug.set(speciesFile.slug, detail)
@@ -383,12 +495,19 @@ async function main() {
   const upstreamBranch = gitValue(["rev-parse", "--abbrev-ref", "HEAD"])
   const upstreamCommitSha = gitValue(["rev-parse", "HEAD"])
   const generatedAt = new Date().toISOString()
+  const coverageReport = buildCoverageReport({
+    provenanceResolution,
+    upstreamBranch,
+    upstreamCommitSha,
+    cobbleverseEvidence,
+  })
 
   const meta: MetaRecord = {
     upstreamUrl: UPSTREAM_URL,
     branch: upstreamBranch,
     commitSha: upstreamCommitSha,
     generatedAt,
+    generationProfile: DATA_PROFILE,
     speciesCount: pokemonList.length,
     implementedSpeciesCount: pokemonList.filter((pokemon) => pokemon.implemented).length,
     spawnEntryCount: Array.from(detailsBySlug.values()).reduce((sum, detail) => {
@@ -413,9 +532,11 @@ async function main() {
     smogonMovesetsBySlug,
     searchIndex,
     detailsBySlug,
+    coverageReport,
   })
 
   console.log("Generated Cobblepedia data artifacts")
+  console.log(`- Profile: ${DATA_PROFILE}`)
   console.log(`- Upstream: ${UPSTREAM_ROOT}`)
   console.log(`- Species: ${meta.speciesCount} (${meta.implementedSpeciesCount} implemented)`)
   console.log(`- Spawn entries: ${meta.spawnEntryCount}`)
@@ -424,6 +545,820 @@ async function main() {
   console.log(`- Form sprite mappings: ${Object.keys(pokemonFormSpriteIndex).length}`)
   console.log(`- Smogon moveset shards: ${smogonMovesetsBySlug.size}`)
   console.log(`- Learnset entries parsed: ${showdownData.learnsetCount}`)
+  console.log(`- Coverage unresolved: ${coverageReport.unresolved}`)
+}
+
+function parseCliArgs(args: string[]): CliArgs {
+  const envProfileRaw = process.env.COBBLEPEDIA_DATA_PROFILE
+  let profile = resolveGenerationProfile(
+    typeof envProfileRaw === "string" ? envProfileRaw.trim().toLowerCase() : ""
+  )
+  let upstreamRoot: string | null = null
+
+  for (let index = 0; index < args.length; index += 1) {
+    const argument = args[index]
+
+    if (argument === "--help" || argument === "-h") {
+      console.log(
+        [
+          "Usage: bun scripts/generate-cobblemon-data.ts [options] [upstream-root]",
+          "",
+          "Options:",
+          "  --profile <base|cobbleverse>",
+          "  --upstream-root <path>",
+        ].join("\n")
+      )
+      process.exit(0)
+    }
+
+    if (argument === "--profile") {
+      const nextValue = args[index + 1]
+      if (!nextValue) {
+        throw new Error("Expected a value after --profile")
+      }
+
+      profile = resolveGenerationProfile(nextValue.trim().toLowerCase())
+      index += 1
+      continue
+    }
+
+    if (argument.startsWith("--profile=")) {
+      profile = resolveGenerationProfile(argument.slice("--profile=".length).trim().toLowerCase())
+      continue
+    }
+
+    if (argument === "--upstream-root") {
+      const nextValue = args[index + 1]
+      if (!nextValue) {
+        throw new Error("Expected a value after --upstream-root")
+      }
+
+      upstreamRoot = nextValue
+      index += 1
+      continue
+    }
+
+    if (argument.startsWith("--upstream-root=")) {
+      upstreamRoot = argument.slice("--upstream-root=".length)
+      continue
+    }
+
+    if (argument.startsWith("-")) {
+      throw new Error(`Unknown argument: ${argument}`)
+    }
+
+    if (upstreamRoot !== null) {
+      throw new Error(`Unexpected positional argument: ${argument}`)
+    }
+
+    upstreamRoot = argument
+  }
+
+  return {
+    profile,
+    upstreamRoot,
+  }
+}
+
+function resolveGenerationProfile(rawProfile: string): GenerationProfile {
+  if (!rawProfile) {
+    return "base"
+  }
+
+  if (rawProfile === "base" || rawProfile === "cobbleverse") {
+    return rawProfile
+  }
+
+  throw new Error(
+    `Unsupported generation profile: ${rawProfile}. Expected one of: base, cobbleverse.`
+  )
+}
+
+async function loadBaseSpeciesAdditionsBySlug(
+  speciesLookup: Map<string, string>
+): Promise<SpeciesAdditionsBySlug> {
+  const speciesAdditionsBySlug = new Map<string, Record<string, unknown>[]>()
+  if (!(await pathExists(SPECIES_ADDITIONS_ROOT))) {
+    return speciesAdditionsBySlug
+  }
+
+  const additionFiles = await collectJsonFiles(SPECIES_ADDITIONS_ROOT)
+  for (const filePath of additionFiles) {
+    const parsed = await readJson(filePath)
+    const speciesSlug = resolveSpeciesSlugFromSpeciesAdditionPayload(
+      parsed,
+      filePath,
+      speciesLookup
+    )
+    if (!speciesSlug) {
+      continue
+    }
+
+    collectSpeciesAdditionPayload(speciesAdditionsBySlug, speciesSlug, parsed)
+  }
+
+  return speciesAdditionsBySlug
+}
+
+function mergeSpeciesAdditionsBySlug(
+  baseSpeciesAdditionsBySlug: SpeciesAdditionsBySlug,
+  addonSpeciesAdditionsBySlug?: SpeciesAdditionsBySlug | null
+): SpeciesAdditionsBySlug {
+  const merged = new Map<string, Record<string, unknown>[]>()
+
+  const pushEntries = (input: SpeciesAdditionsBySlug | null | undefined) => {
+    if (!input) {
+      return
+    }
+
+    for (const [slug, additions] of input) {
+      if (!merged.has(slug)) {
+        merged.set(slug, [])
+      }
+
+      const targetAdditions = merged.get(slug)
+      if (!targetAdditions) {
+        continue
+      }
+
+      for (const addition of additions) {
+        targetAdditions.push(cloneJsonRecord(addition))
+      }
+    }
+  }
+
+  pushEntries(baseSpeciesAdditionsBySlug)
+  pushEntries(addonSpeciesAdditionsBySlug)
+
+  return merged
+}
+
+function applySpeciesAdditionsToRawSpecies(
+  rawSpecies: RawSpeciesFile[],
+  speciesAdditionsBySlug: SpeciesAdditionsBySlug
+) {
+  if (speciesAdditionsBySlug.size === 0) {
+    return
+  }
+
+  const rawSpeciesBySlug = new Map(rawSpecies.map((speciesFile) => [speciesFile.slug, speciesFile]))
+
+  for (const [slug, additions] of speciesAdditionsBySlug) {
+    const speciesFile = rawSpeciesBySlug.get(slug)
+    if (!speciesFile) {
+      continue
+    }
+
+    for (const addition of additions) {
+      mergeSpeciesAdditionIntoRawSpecies(speciesFile.data, addition)
+    }
+  }
+}
+
+function mergeSpeciesAdditionIntoRawSpecies(
+  targetSpecies: Record<string, unknown>,
+  addition: Record<string, unknown>
+) {
+  for (const [key, value] of Object.entries(addition)) {
+    if (key === "target") {
+      continue
+    }
+
+    const currentValue = targetSpecies[key]
+    if (Array.isArray(currentValue) && Array.isArray(value)) {
+      targetSpecies[key] = mergeArrayValues(currentValue, value)
+      continue
+    }
+
+    if (isRecord(currentValue) && isRecord(value)) {
+      targetSpecies[key] = mergeUnknown(currentValue, value)
+      continue
+    }
+
+    targetSpecies[key] = value
+  }
+}
+
+function mergeArrayValues(left: unknown[], right: unknown[]): unknown[] {
+  const values = [...left, ...right]
+  const deduped: unknown[] = []
+  const seen = new Set<string>()
+
+  for (const value of values) {
+    const dedupeKey = JSON.stringify(value)
+    if (seen.has(dedupeKey)) {
+      continue
+    }
+
+    seen.add(dedupeKey)
+    deduped.push(value)
+  }
+
+  return deduped
+}
+
+function cloneJsonRecord(value: Record<string, unknown>): Record<string, unknown> {
+  return JSON.parse(JSON.stringify(value)) as Record<string, unknown>
+}
+
+function resolveSpeciesProvenance(
+  rawSpecies: RawSpeciesFile[],
+  cobbleverseEvidence: CobbleverseEvidenceContext | null
+): ProvenanceResolution {
+  const bySlug = new Map<string, ResolvedPokemonProvenance>()
+
+  let baseImplemented = 0
+  let addonImplemented = 0
+  let addonTouchedNotImplemented = 0
+  const unresolvedSpecies: string[] = []
+
+  for (const speciesFile of rawSpecies) {
+    const isBaseCobblemonImplemented = Boolean(speciesFile.data.implemented)
+    const addonSignals = cobbleverseEvidence?.speciesSignalsBySlug.get(speciesFile.slug) ?? null
+    const hasExplicitAddonImplementation = (addonSignals?.explicitImplementedMods.size ?? 0) > 0
+    const hasAddonTouch = (addonSignals?.touchedMods.size ?? 0) > 0
+
+    const provenanceStatus: PokemonProvenanceStatus = isBaseCobblemonImplemented
+      ? "base-implemented"
+      : hasExplicitAddonImplementation
+        ? "addon-implemented"
+        : hasAddonTouch
+          ? "addon-touched-not-implemented"
+          : "unresolved"
+
+    const effectiveImplemented =
+      provenanceStatus === "base-implemented" || provenanceStatus === "addon-implemented"
+
+    const providedByMods =
+      provenanceStatus === "addon-implemented" ||
+      provenanceStatus === "addon-touched-not-implemented"
+        ? Array.from(addonSignals?.touchedMods ?? []).sort((left, right) =>
+            left.localeCompare(right)
+          )
+        : []
+
+    const provenanceEvidence = Array.from(addonSignals?.evidenceByMod.entries() ?? [])
+      .map(([mod, evidence]): PokemonProvenanceEvidence => {
+        return {
+          mod,
+          files: Array.from(evidence.files).sort((left, right) => left.localeCompare(right)),
+          urls: Array.from(evidence.urls).sort((left, right) => left.localeCompare(right)),
+        }
+      })
+      .sort((left, right) => left.mod.localeCompare(right.mod))
+
+    if (provenanceStatus === "base-implemented") {
+      baseImplemented += 1
+    } else if (provenanceStatus === "addon-implemented") {
+      addonImplemented += 1
+    } else if (provenanceStatus === "addon-touched-not-implemented") {
+      addonTouchedNotImplemented += 1
+    } else {
+      unresolvedSpecies.push(speciesFile.slug)
+    }
+
+    bySlug.set(speciesFile.slug, {
+      isBaseCobblemonImplemented,
+      isCobbleverseProvided: provenanceStatus === "addon-implemented",
+      providedByMods,
+      provenanceEvidence,
+      provenanceStatus,
+      effectiveImplemented,
+    })
+  }
+
+  unresolvedSpecies.sort((left, right) => left.localeCompare(right))
+
+  return {
+    bySlug,
+    baseImplemented,
+    addonImplemented,
+    addonTouchedNotImplemented,
+    unresolvedSpecies,
+  }
+}
+
+function buildCoverageReport(params: {
+  provenanceResolution: ProvenanceResolution
+  upstreamBranch: string
+  upstreamCommitSha: string
+  cobbleverseEvidence: CobbleverseEvidenceContext | null
+}): CoverageReportRecord {
+  const artifacts = params.cobbleverseEvidence
+    ? params.cobbleverseEvidence.artifactEvidence
+        .map((artifact) => {
+          return {
+            mod: artifact.mod,
+            mrpackPath: artifact.mrpackPath,
+            downloadUrl: artifact.downloadUrl,
+            sha1: artifact.sha1,
+            evidenceFiles: Array.from(artifact.evidenceFiles).sort((left, right) =>
+              left.localeCompare(right)
+            ),
+          }
+        })
+        .sort((left, right) => left.mrpackPath.localeCompare(right.mrpackPath))
+    : []
+
+  return {
+    profile: DATA_PROFILE,
+    speciesTotal: params.provenanceResolution.bySlug.size,
+    baseImplemented: params.provenanceResolution.baseImplemented,
+    addonImplemented: params.provenanceResolution.addonImplemented,
+    addonTouchedNotImplemented: params.provenanceResolution.addonTouchedNotImplemented,
+    unresolved: params.provenanceResolution.unresolvedSpecies.length,
+    unresolvedSpecies: [...params.provenanceResolution.unresolvedSpecies],
+    sourceSnapshot: {
+      cobblemon: {
+        upstreamUrl: UPSTREAM_URL,
+        sourceRoot: UPSTREAM_ROOT,
+        branch: params.upstreamBranch,
+        commitSha: params.upstreamCommitSha,
+      },
+      cobbleverse: params.cobbleverseEvidence
+        ? {
+            mrpackPath: COBBLEVERSE_MRPACK_PATH,
+            mrpackSha1: params.cobbleverseEvidence.mrpackSha1,
+            mrpackUrl: COBBLEVERSE_MRPACK_URL,
+            modrinthCollectionUrl: COBBLEVERSE_MODRINTH_COLLECTION_URL,
+            versionId: params.cobbleverseEvidence.versionId,
+            dependencyFiles: params.cobbleverseEvidence.dependencyFiles,
+          }
+        : null,
+    },
+    artifacts,
+  }
+}
+
+async function loadCobbleverseEvidenceContext(
+  speciesLookup: Map<string, string>
+): Promise<CobbleverseEvidenceContext> {
+  if (!(await pathExists(COBBLEVERSE_MRPACK_PATH))) {
+    throw new Error(`Required Cobbleverse MRPack is missing: ${COBBLEVERSE_MRPACK_PATH}`)
+  }
+
+  const mrpackBytes = new Uint8Array(await readFile(COBBLEVERSE_MRPACK_PATH))
+  const mrpackSha1 = toSha1(mrpackBytes)
+  const mrpackZip = await JSZip.loadAsync(mrpackBytes)
+
+  const modrinthIndexRaw = await readZipEntryAsJson(mrpackZip, "modrinth.index.json")
+  if (!isRecord(modrinthIndexRaw)) {
+    throw new Error("Expected `modrinth.index.json` to be an object in Cobbleverse MRPack")
+  }
+
+  const lockfileEntries = parseCobbleverseLockfileEntries(modrinthIndexRaw)
+  const overrideArchivePaths = collectCobbleverseOverrideArchivePaths(mrpackZip)
+
+  const speciesSignalsBySlug = new Map<string, SpeciesAddonSignals>()
+  const speciesAdditionsBySlug = new Map<string, Record<string, unknown>[]>()
+  const artifactEvidence: ArtifactEvidenceAccumulator[] = []
+
+  for (const overridePath of overrideArchivePaths) {
+    const archiveBytes = await readZipEntryAsBytes(mrpackZip, overridePath)
+    const artifact = buildArtifactEvidenceAccumulator({
+      mod: deriveModLabelFromArtifactPath(overridePath),
+      mrpackPath: overridePath,
+      downloadUrl: COBBLEVERSE_MRPACK_URL,
+      sha1: toSha1(archiveBytes),
+    })
+
+    if (isArchiveFilePath(overridePath)) {
+      await collectSpeciesSignalsFromArchive({
+        archiveBytes,
+        artifact,
+        speciesLookup,
+        speciesSignalsBySlug,
+        speciesAdditionsBySlug,
+      })
+    }
+
+    artifactEvidence.push(artifact)
+  }
+
+  for (const lockfileEntry of lockfileEntries) {
+    const artifactBytes = await loadLockfileArtifactBytes(lockfileEntry)
+    const artifact = buildArtifactEvidenceAccumulator({
+      mod: deriveModLabelFromArtifactPath(lockfileEntry.path),
+      mrpackPath: lockfileEntry.path,
+      downloadUrl: lockfileEntry.downloadUrl,
+      sha1: lockfileEntry.sha1,
+    })
+
+    if (isArchiveFilePath(lockfileEntry.path)) {
+      await collectSpeciesSignalsFromArchive({
+        archiveBytes: artifactBytes,
+        artifact,
+        speciesLookup,
+        speciesSignalsBySlug,
+        speciesAdditionsBySlug,
+      })
+    }
+
+    artifactEvidence.push(artifact)
+  }
+
+  return {
+    versionId: typeof modrinthIndexRaw.versionId === "string" ? modrinthIndexRaw.versionId : null,
+    dependencyFiles: lockfileEntries.length,
+    mrpackSha1,
+    artifactEvidence,
+    speciesSignalsBySlug,
+    speciesAdditionsBySlug,
+  }
+}
+
+function parseCobbleverseLockfileEntries(
+  modrinthIndex: Record<string, unknown>
+): CobbleverseLockfileEntry[] {
+  const files = modrinthIndex.files
+  if (!Array.isArray(files)) {
+    throw new Error("`modrinth.index.json` is missing a valid files[] array")
+  }
+
+  const entries: CobbleverseLockfileEntry[] = []
+
+  for (const fileEntry of files) {
+    if (!isRecord(fileEntry)) {
+      throw new Error("Encountered non-object file entry in `modrinth.index.json`")
+    }
+
+    const artifactPath =
+      typeof fileEntry.path === "string" ? fileEntry.path.trim().replace(/^\/+/u, "") : ""
+    if (!artifactPath) {
+      throw new Error("Encountered lockfile entry without a valid `path`")
+    }
+
+    const downloads = Array.isArray(fileEntry.downloads)
+      ? fileEntry.downloads.filter((value): value is string => typeof value === "string")
+      : []
+    const downloadUrl = downloads[0]?.trim()
+    if (!downloadUrl) {
+      throw new Error(`Lockfile entry is missing download URL(s): ${artifactPath}`)
+    }
+
+    const hashes = isRecord(fileEntry.hashes) ? fileEntry.hashes : null
+    const sha1Raw = typeof hashes?.sha1 === "string" ? hashes.sha1.trim().toLowerCase() : ""
+    if (!/^[a-f0-9]{40}$/u.test(sha1Raw)) {
+      throw new Error(`Lockfile entry is missing valid sha1 hash: ${artifactPath}`)
+    }
+
+    entries.push({
+      path: artifactPath,
+      downloadUrl,
+      sha1: sha1Raw,
+    })
+  }
+
+  return entries.sort((left, right) => left.path.localeCompare(right.path))
+}
+
+function collectCobbleverseOverrideArchivePaths(mrpackZip: JSZip): string[] {
+  return Object.values(mrpackZip.files)
+    .filter((entry) => {
+      if (entry.dir) {
+        return false
+      }
+
+      return (
+        /^overrides\/datapacks\/.+\.zip$/i.test(entry.name) ||
+        /^overrides\/mods\/.+\.jar$/i.test(entry.name)
+      )
+    })
+    .map((entry) => entry.name)
+    .sort((left, right) => left.localeCompare(right))
+}
+
+async function loadLockfileArtifactBytes(
+  lockfileEntry: CobbleverseLockfileEntry
+): Promise<Uint8Array> {
+  const cacheRelativePath = normalizeCacheRelativePath(lockfileEntry.path)
+  const cacheFilePath = path.join(COBBLEVERSE_CACHE_ROOT, cacheRelativePath)
+
+  if (await pathExists(cacheFilePath)) {
+    const cachedBytes = new Uint8Array(await readFile(cacheFilePath))
+    if (toSha1(cachedBytes) === lockfileEntry.sha1) {
+      return cachedBytes
+    }
+
+    console.warn(`[warn] Cobbleverse cache hash mismatch, re-downloading: ${lockfileEntry.path}`)
+  }
+
+  const response = await fetch(lockfileEntry.downloadUrl)
+  if (!response.ok) {
+    throw new Error(
+      `Failed to download lockfile artifact (${response.status}): ${lockfileEntry.downloadUrl}`
+    )
+  }
+
+  const downloadedBytes = new Uint8Array(await response.arrayBuffer())
+  const downloadedSha1 = toSha1(downloadedBytes)
+  if (downloadedSha1 !== lockfileEntry.sha1) {
+    throw new Error(
+      `Lockfile hash mismatch for ${lockfileEntry.path}: expected ${lockfileEntry.sha1}, got ${downloadedSha1}`
+    )
+  }
+
+  await mkdir(path.dirname(cacheFilePath), { recursive: true })
+  await writeFile(cacheFilePath, downloadedBytes)
+
+  return downloadedBytes
+}
+
+async function collectSpeciesSignalsFromArchive(params: {
+  archiveBytes: Uint8Array
+  artifact: ArtifactEvidenceAccumulator
+  speciesLookup: Map<string, string>
+  speciesSignalsBySlug: Map<string, SpeciesAddonSignals>
+  speciesAdditionsBySlug: SpeciesAdditionsBySlug
+}) {
+  const archive = await JSZip.loadAsync(params.archiveBytes)
+  const entryPaths = Object.values(archive.files)
+    .filter((entry) => !entry.dir)
+    .map((entry) => entry.name)
+    .sort((left, right) => left.localeCompare(right))
+
+  for (const entryPath of entryPaths) {
+    if (ADDON_SPECIES_JSON_PATTERN.test(entryPath)) {
+      const parsed = await readZipEntryAsJson(archive, entryPath)
+      if (!isRecord(parsed)) {
+        continue
+      }
+
+      const speciesSlug = resolveAddonSpeciesSlugFromEntryPath(entryPath, params.speciesLookup)
+      if (!speciesSlug) {
+        continue
+      }
+
+      addSpeciesAddonSignal({
+        speciesSlug,
+        explicitImplemented: isExplicitImplementedSignal(parsed.implemented),
+        entryPath,
+        artifact: params.artifact,
+        speciesSignalsBySlug: params.speciesSignalsBySlug,
+      })
+      continue
+    }
+
+    if (ADDON_SPECIES_ADDITIONS_JSON_PATTERN.test(entryPath)) {
+      const parsed = await readZipEntryAsJson(archive, entryPath)
+      if (!isRecord(parsed)) {
+        continue
+      }
+
+      const speciesSlug = resolveSpeciesSlugFromSpeciesAdditionPayload(
+        parsed,
+        entryPath,
+        params.speciesLookup
+      )
+      if (!speciesSlug) {
+        continue
+      }
+
+      collectSpeciesAdditionPayload(params.speciesAdditionsBySlug, speciesSlug, parsed)
+      addSpeciesAddonSignal({
+        speciesSlug,
+        explicitImplemented: isExplicitImplementedSignal(parsed.implemented),
+        entryPath,
+        artifact: params.artifact,
+        speciesSignalsBySlug: params.speciesSignalsBySlug,
+      })
+      continue
+    }
+
+    if (!ADDON_SPAWN_POOL_JSON_PATTERN.test(entryPath)) {
+      continue
+    }
+
+    const parsed = await readZipEntryAsJson(archive, entryPath)
+    if (!isRecord(parsed)) {
+      continue
+    }
+
+    const speciesSlugs = extractSpawnSpeciesSlugsFromArchivePayload(parsed, params.speciesLookup)
+    for (const speciesSlug of speciesSlugs) {
+      addSpeciesAddonSignal({
+        speciesSlug,
+        explicitImplemented: false,
+        entryPath,
+        artifact: params.artifact,
+        speciesSignalsBySlug: params.speciesSignalsBySlug,
+      })
+    }
+  }
+}
+
+function addSpeciesAddonSignal(params: {
+  speciesSlug: string
+  explicitImplemented: boolean
+  entryPath: string
+  artifact: ArtifactEvidenceAccumulator
+  speciesSignalsBySlug: Map<string, SpeciesAddonSignals>
+}) {
+  const speciesSlug = params.speciesSlug.trim().toLowerCase()
+  if (!speciesSlug) {
+    return
+  }
+
+  if (!params.speciesSignalsBySlug.has(speciesSlug)) {
+    params.speciesSignalsBySlug.set(speciesSlug, {
+      touchedMods: new Set<string>(),
+      explicitImplementedMods: new Set<string>(),
+      evidenceByMod: new Map(),
+    })
+  }
+
+  const signal = params.speciesSignalsBySlug.get(speciesSlug)
+  if (!signal) {
+    return
+  }
+
+  signal.touchedMods.add(params.artifact.mod)
+  if (params.explicitImplemented) {
+    signal.explicitImplementedMods.add(params.artifact.mod)
+  }
+
+  if (!signal.evidenceByMod.has(params.artifact.mod)) {
+    signal.evidenceByMod.set(params.artifact.mod, {
+      files: new Set<string>(),
+      urls: new Set<string>(),
+    })
+  }
+
+  const evidence = signal.evidenceByMod.get(params.artifact.mod)
+  if (!evidence) {
+    return
+  }
+
+  evidence.files.add(params.entryPath)
+  if (params.artifact.downloadUrl) {
+    evidence.urls.add(params.artifact.downloadUrl)
+  }
+
+  params.artifact.evidenceFiles.add(params.entryPath)
+}
+
+function resolveAddonSpeciesSlugFromEntryPath(
+  entryPath: string,
+  speciesLookup: Map<string, string>
+): string | null {
+  const baseName = path.posix.basename(entryPath, ".json")
+  const canonical = canonicalId(baseName)
+  if (!canonical) {
+    return null
+  }
+
+  return speciesLookup.get(canonical) ?? canonical
+}
+
+function resolveSpeciesSlugFromSpeciesAdditionPayload(
+  payload: Record<string, unknown>,
+  entryPath: string,
+  speciesLookup: Map<string, string>
+): string | null {
+  const targetRaw = typeof payload.target === "string" ? payload.target.trim() : ""
+  if (targetRaw) {
+    const targetWithoutNamespace = targetRaw.includes(":")
+      ? (targetRaw.split(":").at(-1) ?? targetRaw)
+      : targetRaw
+
+    const parsedTarget = parsePokemonRef(targetWithoutNamespace)
+    const resolvedByBaseId = resolvePokemonSlug(parsedTarget.baseId, speciesLookup)
+    if (resolvedByBaseId) {
+      return resolvedByBaseId
+    }
+
+    const canonicalTarget = canonicalId(targetWithoutNamespace)
+    if (canonicalTarget) {
+      return speciesLookup.get(canonicalTarget) ?? canonicalTarget
+    }
+  }
+
+  return resolveAddonSpeciesSlugFromEntryPath(entryPath, speciesLookup)
+}
+
+function collectSpeciesAdditionPayload(
+  speciesAdditionsBySlug: SpeciesAdditionsBySlug,
+  speciesSlug: string,
+  payload: Record<string, unknown>
+) {
+  const normalizedSlug = speciesSlug.trim().toLowerCase()
+  if (!normalizedSlug) {
+    return
+  }
+
+  if (!speciesAdditionsBySlug.has(normalizedSlug)) {
+    speciesAdditionsBySlug.set(normalizedSlug, [])
+  }
+
+  const additions = speciesAdditionsBySlug.get(normalizedSlug)
+  if (!additions) {
+    return
+  }
+
+  additions.push(cloneJsonRecord(payload))
+}
+
+function extractSpawnSpeciesSlugsFromArchivePayload(
+  payload: Record<string, unknown>,
+  speciesLookup: Map<string, string>
+): string[] {
+  const speciesSlugs = new Set<string>()
+  const rawSpawns = Array.isArray(payload.spawns) ? payload.spawns : []
+
+  for (const rawSpawn of rawSpawns) {
+    if (!isRecord(rawSpawn)) {
+      continue
+    }
+
+    const pokemonValues: string[] = []
+    if (typeof rawSpawn.pokemon === "string") {
+      pokemonValues.push(rawSpawn.pokemon)
+    } else if (Array.isArray(rawSpawn.pokemon)) {
+      for (const pokemonValue of rawSpawn.pokemon) {
+        if (typeof pokemonValue === "string") {
+          pokemonValues.push(pokemonValue)
+        }
+      }
+    }
+
+    for (const pokemonValue of pokemonValues) {
+      const parsedPokemon = parsePokemonRef(pokemonValue)
+      const slug =
+        resolvePokemonSlug(parsedPokemon.baseId, speciesLookup) ?? canonicalId(parsedPokemon.baseId)
+      if (!slug) {
+        continue
+      }
+
+      speciesSlugs.add(slug)
+    }
+  }
+
+  return Array.from(speciesSlugs)
+}
+
+function isExplicitImplementedSignal(value: unknown): boolean {
+  if (value === true) {
+    return true
+  }
+
+  if (typeof value === "string") {
+    return value.trim().toLowerCase() === "true"
+  }
+
+  return false
+}
+
+function deriveModLabelFromArtifactPath(artifactPath: string): string {
+  const baseName = path.posix.basename(artifactPath)
+  const normalized = baseName.replace(/(\.jar|\.zip|\.disabled)+$/gi, "").trim()
+  return normalized || artifactPath
+}
+
+function buildArtifactEvidenceAccumulator(params: {
+  mod: string
+  mrpackPath: string
+  downloadUrl: string | null
+  sha1: string
+}): ArtifactEvidenceAccumulator {
+  return {
+    mod: params.mod,
+    mrpackPath: params.mrpackPath,
+    downloadUrl: params.downloadUrl,
+    sha1: params.sha1,
+    evidenceFiles: new Set<string>(),
+  }
+}
+
+function isArchiveFilePath(filePath: string): boolean {
+  return /\.(jar|zip)$/i.test(filePath)
+}
+
+function normalizeCacheRelativePath(relativePath: string): string {
+  const normalized = path.posix
+    .normalize(relativePath.replaceAll("\\", "/"))
+    .replace(/^\/+/, "")
+    .split("/")
+    .filter((segment) => segment && segment !== "." && segment !== "..")
+    .join("/")
+
+  if (!normalized) {
+    throw new Error(`Invalid lockfile artifact path: ${relativePath}`)
+  }
+
+  return normalized
+}
+
+function toSha1(bytes: Uint8Array): string {
+  return createHash("sha1").update(bytes).digest("hex")
+}
+
+async function readZipEntryAsBytes(zip: JSZip, entryPath: string): Promise<Uint8Array> {
+  const entry = zip.file(entryPath)
+  if (!entry) {
+    throw new Error(`Missing required archive entry: ${entryPath}`)
+  }
+
+  return entry.async("uint8array")
 }
 
 async function validateInputPaths() {
@@ -998,13 +1933,14 @@ function buildPokemonDetailRecord(params: {
   moveEntries: ShowdownData["moves"]
   spawnEntries: SpawnEntryRecord[]
   moveLearnersBuild: MoveLearnersBuildMap
+  provenance: ResolvedPokemonProvenance
 }): PokemonDetailRecord {
   const { speciesFile } = params
   const raw = speciesFile.data
 
   const name = String(raw.name)
   const dexNumber = Number(raw.nationalPokedexNumber)
-  const implemented = Boolean(raw.implemented)
+  const implemented = params.provenance.effectiveImplemented
 
   const types = [raw.primaryType, raw.secondaryType]
     .filter((value): value is string => typeof value === "string" && value.length > 0)
@@ -1067,6 +2003,11 @@ function buildPokemonDetailRecord(params: {
     name,
     dexNumber,
     implemented,
+    isBaseCobblemonImplemented: params.provenance.isBaseCobblemonImplemented,
+    isCobbleverseProvided: params.provenance.isCobbleverseProvided,
+    providedByMods: params.provenance.providedByMods,
+    provenanceEvidence: params.provenance.provenanceEvidence,
+    provenanceStatus: params.provenance.provenanceStatus,
     types,
     abilities,
     eggGroups,
@@ -1872,6 +2813,7 @@ function parseForms(
   }
 
   const parsed: PokemonFormRecord[] = []
+  const seenFormSlugs = new Set<string>()
   for (const [index, rawForm] of rawForms.entries()) {
     if (!isRecord(rawForm)) {
       continue
@@ -1882,6 +2824,11 @@ function parseForms(
     const formSlug = formSlugBase
       ? `${params.speciesSlug}-${formSlugBase}`
       : `${params.speciesSlug}-form-${index + 1}`
+
+    if (seenFormSlugs.has(formSlug)) {
+      continue
+    }
+    seenFormSlugs.add(formSlug)
 
     const formTypes = [rawForm.primaryType, rawForm.secondaryType]
       .filter((value): value is string => typeof value === "string" && value.length > 0)
@@ -4080,6 +5027,7 @@ async function writeArtifacts(params: {
   smogonMovesetsBySlug: Map<string, SmogonMovesetsByPokemonRecord>
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
+  coverageReport: CoverageReportRecord
 }) {
   await rm(PUBLIC_GENERATED_ROOT, { recursive: true, force: true })
   await mkdir(PUBLIC_GENERATED_BY_SLUG_ROOT, { recursive: true })
@@ -4101,6 +5049,7 @@ async function writeArtifacts(params: {
   await writePublicArtifact("rideable-mons.json", params.rideableMons)
   await writePublicArtifact("pokemon-form-sprite-index.json", params.pokemonFormSpriteIndex)
   await writePublicArtifact("search-index.json", params.searchIndex)
+  await writePublicArtifact("coverage-report.json", params.coverageReport)
 
   for (const [shardId, shardData] of params.moveLearnerShards) {
     const shardFileName = `${shardId}.json`
@@ -4477,6 +5426,224 @@ async function readZipEntryAsText(zip: JSZip, entryPath: string): Promise<string
   return entry.async("text")
 }
 
+async function readZipEntryAsJson(zip: JSZip, entryPath: string): Promise<unknown> {
+  const source = await readZipEntryAsText(zip, entryPath)
+  return parseJsonWithBomSupport(source, entryPath)
+}
+
+function parseJsonWithBomSupport(source: string, context: string): unknown {
+  const normalizedSource = source.replace(/^\uFEFF/u, "")
+  try {
+    return JSON.parse(normalizedSource) as unknown
+  } catch (error) {
+    const relaxedSource = normalizeJsonNumberTokens(
+      stripJsonTrailingCommas(stripJsonComments(normalizedSource))
+    )
+    if (relaxedSource !== normalizedSource) {
+      try {
+        return JSON.parse(relaxedSource) as unknown
+      } catch (relaxedError) {
+        throw new Error(
+          `Failed to parse JSON (${context}): ${String(error)}; relaxed parse also failed: ${String(relaxedError)}`
+        )
+      }
+    }
+
+    throw new Error(`Failed to parse JSON (${context}): ${String(error)}`)
+  }
+}
+
+function normalizeJsonNumberTokens(source: string): string {
+  let output = ""
+  let inString = false
+  let escaped = false
+
+  for (let index = 0; index < source.length; index += 1) {
+    const current = source[index]
+
+    if (inString) {
+      output += current
+      if (escaped) {
+        escaped = false
+        continue
+      }
+
+      if (current === "\\") {
+        escaped = true
+        continue
+      }
+
+      if (current === '"') {
+        inString = false
+      }
+      continue
+    }
+
+    if (current === '"') {
+      inString = true
+      output += current
+      continue
+    }
+
+    if (current !== "-" && (current < "0" || current > "9")) {
+      output += current
+      continue
+    }
+
+    let endIndex = index + 1
+    while (endIndex < source.length && /[0-9.eE+-]/u.test(source[endIndex] ?? "")) {
+      endIndex += 1
+    }
+
+    const token = source.slice(index, endIndex)
+    const normalizedToken = normalizeLegacyNumberToken(token)
+    output += normalizedToken
+    index = endIndex - 1
+  }
+
+  return output
+}
+
+function normalizeLegacyNumberToken(token: string): string {
+  if (!/^[-+]?\d/u.test(token)) {
+    return token
+  }
+
+  const match = token.match(/^(-?)(0+)(\d+)(\.\d+)?([eE][+-]?\d+)?$/u)
+  if (!match) {
+    return token
+  }
+
+  const sign = match[1] ?? ""
+  const integerPart = match[3] ?? ""
+  const fractionPart = match[4] ?? ""
+  const exponentPart = match[5] ?? ""
+
+  return `${sign}${integerPart}${fractionPart}${exponentPart}`
+}
+
+function stripJsonComments(source: string): string {
+  let output = ""
+  let inString = false
+  let escaped = false
+  let inLineComment = false
+  let inBlockComment = false
+
+  for (let index = 0; index < source.length; index += 1) {
+    const current = source[index]
+    const next = source[index + 1]
+
+    if (inLineComment) {
+      if (current === "\n") {
+        inLineComment = false
+        output += current
+      }
+      continue
+    }
+
+    if (inBlockComment) {
+      if (current === "*" && next === "/") {
+        inBlockComment = false
+        index += 1
+      }
+      continue
+    }
+
+    if (inString) {
+      output += current
+      if (escaped) {
+        escaped = false
+        continue
+      }
+
+      if (current === "\\") {
+        escaped = true
+        continue
+      }
+
+      if (current === '"') {
+        inString = false
+      }
+      continue
+    }
+
+    if (current === '"') {
+      inString = true
+      output += current
+      continue
+    }
+
+    if (current === "/" && next === "/") {
+      inLineComment = true
+      index += 1
+      continue
+    }
+
+    if (current === "/" && next === "*") {
+      inBlockComment = true
+      index += 1
+      continue
+    }
+
+    output += current
+  }
+
+  return output
+}
+
+function stripJsonTrailingCommas(source: string): string {
+  let output = ""
+  let inString = false
+  let escaped = false
+
+  for (let index = 0; index < source.length; index += 1) {
+    const current = source[index]
+
+    if (inString) {
+      output += current
+      if (escaped) {
+        escaped = false
+        continue
+      }
+
+      if (current === "\\") {
+        escaped = true
+        continue
+      }
+
+      if (current === '"') {
+        inString = false
+      }
+      continue
+    }
+
+    if (current === '"') {
+      inString = true
+      output += current
+      continue
+    }
+
+    if (current !== ",") {
+      output += current
+      continue
+    }
+
+    let lookahead = index + 1
+    while (lookahead < source.length && /\s/u.test(source[lookahead] ?? "")) {
+      lookahead += 1
+    }
+
+    const nextNonWhitespace = source[lookahead]
+    if (nextNonWhitespace === "}" || nextNonWhitespace === "]") {
+      continue
+    }
+
+    output += current
+  }
+
+  return output
+}
+
 async function pathExists(filePath: string): Promise<boolean> {
   try {
     await stat(filePath)
@@ -4507,7 +5674,7 @@ async function collectJsonFiles(rootDir: string): Promise<string[]> {
 
 async function readJson(filePath: string): Promise<Record<string, unknown>> {
   const content = await readFile(filePath, "utf8")
-  const parsed = JSON.parse(content) as unknown
+  const parsed = parseJsonWithBomSupport(content, filePath)
 
   if (!isRecord(parsed)) {
     throw new Error(`Expected JSON object in ${filePath}`)

@@ -2,7 +2,67 @@
   "slug": "darkrai",
   "name": "Darkrai",
   "dexNumber": 491,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "zamega-fabric-1.5.4"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation4/darkrai.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0491_darkrai.json",
+        "data/cobblemon/species_additions/darkrai.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/darkrai.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/darkrai.json",
+        "data/cobblemon/species_additions/drops/darkrai_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/darkrai.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation4/darkrai_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dark"
   ],
@@ -29,7 +89,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "darkrai"
+    "darkrai",
+    "darkrai mega",
+    "mega"
   ],
   "maleRatio": -1,
   "height": 15,
@@ -1425,7 +1487,89 @@
     }
   ],
   "spawnEntries": [],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "darkrai-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen4",
+        "legendary",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 30,
+      "weight": 2400,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 70,
+        "attack": 120,
+        "defence": 130,
+        "special_attack": 165,
+        "special_defence": 130,
+        "speed": 85
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "darkaura",
+          "hidden": false,
+          "label": "Darkaura",
+          "slot": "first"
+        },
+        {
+          "id": "darkaura",
+          "hidden": true,
+          "label": "Darkaura",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.darkrai-mega.desc"
+        ],
+        "abilities": [
+          "darkaura",
+          "h:darkaura"
+        ],
+        "labels": [
+          "gen4",
+          "legendary",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 70,
+          "attack": 120,
+          "defence": 130,
+          "special_attack": 165,
+          "special_defence": 130,
+          "speed": 85
+        },
+        "baseScale": 0.6,
+        "hitbox": {
+          "width": 2.5,
+          "height": 7,
+          "fixed": false
+        },
+        "height": 30,
+        "weight": 2400
+      }
+    }
+  ],
   "drops": {
     "amount": 5,
     "entries": [
@@ -1435,6 +1579,26 @@
       },
       {
         "item": "cobblemon:reaper_cloth"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:dark_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1483,8 +1647,8 @@
     "baseFriendship": 0,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 1.1,
+      "height": 2.9,
       "fixed": false
     },
     "drops": {
@@ -1496,6 +1660,26 @@
         },
         {
           "item": "cobblemon:reaper_cloth"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:dark_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
     },
@@ -1653,14 +1837,60 @@
           "canFly": true
         },
         "walk": {
-          "canWalk": false
+          "canWalk": true,
+          "walkSpeed": 0.6,
+          "avoidsLand": false
         }
       },
       "combat": {
         "willDefendSelf": true,
         "willDefendOwner": true,
         "willFlee": false
+      },
+      "herd": {
+        "maxSize": "1"
       }
-    }
+    },
+    "implemented": true,
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.darkrai-mega.desc"
+        ],
+        "abilities": [
+          "darkaura",
+          "h:darkaura"
+        ],
+        "labels": [
+          "gen4",
+          "legendary",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 70,
+          "attack": 120,
+          "defence": 130,
+          "special_attack": 165,
+          "special_defence": 130,
+          "speed": 85
+        },
+        "baseScale": 0.6,
+        "hitbox": {
+          "width": 2.5,
+          "height": 7,
+          "fixed": false
+        },
+        "height": 30,
+        "weight": 2400
+      }
+    ]
   }
 }

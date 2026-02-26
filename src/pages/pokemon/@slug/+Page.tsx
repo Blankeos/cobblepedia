@@ -562,6 +562,34 @@ function PokemonDetailView(props: {
     return hasRequestedForm ? requestedSlug : null
   })
 
+  const provenanceStatus = createMemo(() => {
+    const status = detail().provenanceStatus
+    if (
+      status === "base-implemented" ||
+      status === "addon-implemented" ||
+      status === "addon-touched-not-implemented" ||
+      status === "unresolved"
+    ) {
+      return status
+    }
+
+    return detail().implemented ? "base-implemented" : "unresolved"
+  })
+
+  const provenanceMods = createMemo(() => {
+    return (detail().providedByMods ?? []).filter(
+      (mod): mod is string => typeof mod === "string" && mod.trim().length > 0
+    )
+  })
+
+  const isAddonProvided = createMemo(() => {
+    if (detail().isCobbleverseProvided) {
+      return true
+    }
+
+    return provenanceStatus() === "addon-implemented"
+  })
+
   return (
     <div class="mx-auto max-w-6xl px-3 py-4 sm:px-4 lg:px-8">
       {/* Dex Navigation Bar - Pokemon cards instead of arrows */}
@@ -587,25 +615,39 @@ function PokemonDetailView(props: {
       </nav>
 
       <Show when={!detail().implemented}>
-        <section class="mb-4 border border-warning/30 bg-warning/10 px-4 py-3">
-          <p class="font-semibold text-warning text-xs uppercase tracking-wider">Not in the game</p>
-          <p class="mt-1 text-muted-foreground text-sm">
-            This Pokemon is in the National Dex, but the current Cobblemon snapshot marks it as
-            unimplemented.
-          </p>
-          <p class="mt-2 text-muted-foreground text-xs">
-            It's definitely on{" "}
-            <a
-              href="https://modrinth.com/modpack/cobbleverse"
-              target="_blank"
-              rel="noreferrer"
-              class="font-medium text-warning underline underline-offset-2 transition-opacity hover:opacity-80"
-            >
-              Cobbleverse
-            </a>
-            .
-          </p>
-        </section>
+        <Show
+          when={!detail().isBaseCobblemonImplemented && isAddonProvided()}
+          fallback={
+            <section class="mb-4 border border-destructive/35 bg-destructive/10 px-4 py-3">
+              <p class="font-semibold text-destructive text-xs uppercase tracking-wider">
+                Source unresolved
+              </p>
+              <p class="mt-1 text-muted-foreground text-sm">Not in base Cobblemon.</p>
+              <p class="mt-1 text-muted-foreground text-sm">
+                {provenanceStatus() === "addon-touched-not-implemented"
+                  ? "Cobbleverse data touches this species, but implementation is not yet deterministic."
+                  : "Cobbleverse source evidence for this species is still pending."}
+              </p>
+            </section>
+          }
+        >
+          <section class="mb-4 border border-warning/30 bg-warning/10 px-4 py-3">
+            <p class="font-semibold text-warning text-xs uppercase tracking-wider">
+              Cobbleverse data
+            </p>
+            <p class="mt-1 text-muted-foreground text-sm">Not in base Cobblemon.</p>
+            <p class="mt-1 text-muted-foreground text-sm">
+              Added by Cobbleverse mod(s):
+              <span class="font-medium text-foreground">
+                {" "}
+                {provenanceMods().join(", ") || "unknown"}
+              </span>
+            </p>
+            <p class="mt-2 text-muted-foreground text-xs">
+              Source profile: <span class="font-mono">{provenanceStatus()}</span>
+            </p>
+          </section>
+        </Show>
       </Show>
 
       {/* Hero Section - Compact with view toggle */}

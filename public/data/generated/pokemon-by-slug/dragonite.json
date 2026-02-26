@@ -3,6 +3,40 @@
   "name": "Dragonite",
   "dexNumber": 149,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0149_dragonite.json",
+        "data/cobblemon/species/generation1/dragonite.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0149_dragonite.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation1/dragonite_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dragon",
     "flying"
@@ -31,7 +65,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "dragonite"
+    "dragonite",
+    "dragonite mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 22,
@@ -2545,7 +2581,87 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "dragonite-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen1",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 22,
+      "weight": 2900,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 91,
+        "attack": 124,
+        "defence": 115,
+        "special_attack": 145,
+        "special_defence": 125,
+        "speed": 100
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "sheerforce",
+          "hidden": false,
+          "label": "Sheerforce",
+          "slot": "first"
+        },
+        {
+          "id": "sheerforce",
+          "hidden": true,
+          "label": "Sheerforce",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.dragonite-mega.desc"
+        ],
+        "labels": [
+          "gen1",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "sheerforce",
+          "h:sheerforce"
+        ],
+        "baseStats": {
+          "hp": 91,
+          "attack": 124,
+          "defence": 115,
+          "special_attack": 145,
+          "special_defence": 125,
+          "speed": 100
+        },
+        "battleOnly": true,
+        "baseScale": 0.9,
+        "hitbox": {
+          "width": 2,
+          "height": 3.5,
+          "fixed": false
+        },
+        "height": 22,
+        "weight": 2900
+      }
+    }
+  ],
   "drops": {
     "amount": 6,
     "entries": [
@@ -3126,6 +3242,45 @@
       "special:healbell"
     ],
     "preEvolution": "dragonair",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.dragonite-mega.desc"
+        ],
+        "labels": [
+          "gen1",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "sheerforce",
+          "h:sheerforce"
+        ],
+        "baseStats": {
+          "hp": 91,
+          "attack": 124,
+          "defence": 115,
+          "special_attack": 145,
+          "special_defence": 125,
+          "speed": 100
+        },
+        "battleOnly": true,
+        "baseScale": 0.9,
+        "hitbox": {
+          "width": 2,
+          "height": 3.5,
+          "fixed": false
+        },
+        "height": 22,
+        "weight": 2900
+      }
+    ]
   }
 }

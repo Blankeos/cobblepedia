@@ -3,6 +3,50 @@
   "name": "Purugly",
   "dexNumber": 432,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0432_purugly.json",
+        "data/cobblemon/species/generation4/purugly.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0432_purugly.json",
+        "data/cobblemon/species_additions/purugly.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation4/purugly.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "normal"
   ],
@@ -1725,9 +1769,9 @@
     "catchRate": 75,
     "eggCycles": 20,
     "baseFriendship": 50,
-    "baseScale": 1,
+    "baseScale": 0.8,
     "hitbox": {
-      "width": 1.1,
+      "width": 1,
       "height": 1.2,
       "fixed": false
     },
@@ -1741,7 +1785,11 @@
           "167-11833,13702-22299"
         ],
         "drowsyChance": 0.0021,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "moving": {
         "swim": {

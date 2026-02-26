@@ -3,6 +3,40 @@
   "name": "Swellow",
   "dexNumber": 277,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0277_swellow.json",
+        "data/cobblemon/species/generation3/swellow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation3/swellow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0277_swellow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "normal",
     "flying"
@@ -1418,6 +1452,85 @@
       "special:featherdance"
     ],
     "preEvolution": "taillow",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "40-70",
+            "JUMP": "30-55",
+            "SKILL": "45-75",
+            "SPEED": "35-65",
+            "STAMINA": "25-50"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "15-35",
+            "JUMP": "15-30",
+            "SKILL": "25-40",
+            "SPEED": "15-30",
+            "STAMINA": "20-40"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.15,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.35,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.4,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.15,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "GLIDE",
+                "FLOAT",
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

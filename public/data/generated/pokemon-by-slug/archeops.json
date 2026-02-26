@@ -3,6 +3,40 @@
   "name": "Archeops",
   "dexNumber": 567,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0567_archeops.json",
+        "data/cobblemon/species/generation5/archeops.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation5/archeops.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0567_archeops.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "rock",
     "flying"
@@ -1697,8 +1731,72 @@
               }
             }
           ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.15,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.2,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.1,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "GLIDE"
+              ]
+            }
+          ]
         }
-      ]
+      ],
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "25-45",
+            "ACCELERATION": "20-40",
+            "SKILL": "30-55",
+            "JUMP": "20-35",
+            "STAMINA": "35-65"
+          }
+        },
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "SPEED": "35-65",
+            "ACCELERATION": "35-60",
+            "SKILL": "45-75",
+            "JUMP": "35-60",
+            "STAMINA": "30-55"
+          }
+        }
+      }
     },
     "moves": [
       "1:quickattack",

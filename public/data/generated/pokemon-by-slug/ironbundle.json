@@ -2,7 +2,46 @@
   "slug": "ironbundle",
   "name": "Iron Bundle",
   "dexNumber": 991,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/ironbundle.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0991_ironbundle.json",
+        "data/cobblemon/species_additions/ironbundle.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/ironbundle.json",
+        "data/paradox_spawns_atm/spawn_pool_world/ironbundle.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "ice",
     "water"
@@ -728,7 +767,15 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:ice",
+        "quantityRange": "1-3"
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 991,
     "name": "Iron Bundle",
@@ -857,6 +904,15 @@
           "avoidsWater": true,
           "canSwimInWater": false,
           "canBreatheUnderwater": true
+        },
+        "walk": {
+          "walkSpeed": 0.4
+        },
+        "resting": {
+          "canSleep": true,
+          "willSleepOnBed": false,
+          "depth": "normal",
+          "light": "0-4"
         }
       },
       "combat": {
@@ -868,6 +924,22 @@
     "lightingData": {
       "lightLevel": 6,
       "liquidGlowMode": "BOTH"
+    },
+    "implemented": true,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 1.3,
+      "height": 1.6,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:ice",
+          "quantityRange": "1-3"
+        }
+      ]
     }
   }
 }

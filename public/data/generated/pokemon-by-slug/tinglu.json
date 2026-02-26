@@ -2,7 +2,46 @@
   "slug": "tinglu",
   "name": "Ting-Lu",
   "dexNumber": 1003,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [CavsCobbleMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/tinglu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1003_tinglu.json",
+        "data/cobblemon/species_additions/tinglu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CavsCobbleMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1003_tinglu.json",
+        "data/cobblemon/species/generation9/tinglu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2k9EDPO1/versions/j9azip42/CavsCobblemon1.4.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dark",
     "ground"
@@ -954,7 +993,16 @@
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "canSwimInWater": true,
+          "swimSpeed": 0.18,
+          "canBreatheUnderwater": true
+        },
+        "canLook": false,
+        "walk": {
+          "canWalk": true,
+          "walkSpeed": 0.23,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -969,6 +1017,46 @@
         "drowsyChance": 0.0014,
         "rouseChance": 0.0042
       }
+    },
+    "implemented": true,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1.55,
+      "height": 1.35,
+      "fixed": false
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "55-80",
+            "JUMP": "30-50",
+            "SKILL": "35-55",
+            "SPEED": "60-85",
+            "STAMINA": "35-55"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.8,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

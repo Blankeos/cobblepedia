@@ -2,7 +2,55 @@
   "slug": "dipplin",
   "name": "Dipplin",
   "dexNumber": 1011,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/dipplin.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1011_dipplin.json",
+        "data/cobblemon/species_additions/dipplin.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/dipplin.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/missingmons/dipplin_size.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "grass",
     "dragon"
@@ -109,6 +157,36 @@
           }
         ]
       }
+    },
+    {
+      "id": "dipplin_hydrapple2",
+      "variant": "item_interact",
+      "result": {
+        "raw": "hydrapple",
+        "slug": "hydrapple",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "ficklebeam"
+      ],
+      "requirementText": [
+        "Use Dragon Breath"
+      ],
+      "requirements": [],
+      "requiredContext": "minecraft:dragon_breath",
+      "fromForm": null,
+      "raw": {
+        "id": "dipplin_hydrapple2",
+        "variant": "item_interact",
+        "result": "hydrapple",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "ficklebeam"
+        ],
+        "requirements": [],
+        "requiredContext": "minecraft:dragon_breath"
+      }
     }
   ],
   "evolutionFamily": {
@@ -183,6 +261,16 @@
         "method": "item_interact",
         "requirementText": [
           "Use Tart Apple"
+        ]
+      },
+      {
+        "fromNodeId": "dipplin",
+        "toNodeId": "hydrapple",
+        "fromSlug": "dipplin",
+        "toSlug": "hydrapple",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Dragon Breath"
         ]
       },
       {
@@ -894,7 +982,16 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 0,
+    "entries": [
+      {
+        "item": "minecraft:apple",
+        "quantityRange": "1-2",
+        "percentage": 50
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 1011,
     "name": "Dipplin",
@@ -1027,22 +1124,62 @@
             "move": "dragoncheer"
           }
         ]
+      },
+      {
+        "id": "dipplin_hydrapple2",
+        "variant": "item_interact",
+        "result": "hydrapple",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "ficklebeam"
+        ],
+        "requirements": [],
+        "requiredContext": "minecraft:dragon_breath"
       }
     ],
     "behaviour": {
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": false,
+        "walk": {
+          "walkSpeed": 0.175,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
         "willDefendOwner": true
       }
+    },
+    "implemented": true,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 0.5,
+      "height": 0.5,
+      "fixed": false
+    },
+    "drops": {
+      "amount": "1",
+      "entries": [
+        {
+          "item": "minecraft:apple",
+          "quantityRange": "1-2",
+          "percentage": 50
+        }
+      ]
     }
   }
 }

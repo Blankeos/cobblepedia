@@ -2,7 +2,92 @@
   "slug": "dialga",
   "name": "Dialga",
   "dexNumber": 483,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation4/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0483_dialga.json",
+        "data/cobblemon/species_additions/dialga.json",
+        "data/cobblemon/species/generation4/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/dialga_primal.json",
+        "data/cobblemon/species_additions/drops/dialga_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0483_dialga_betterend.json",
+        "data/cobblemon/species_additions/dialga.json",
+        "data/cobblemon/species/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/dialga.json",
+        "data/cobblemon/species/generation4/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/dialga.json",
+        "data/cobblemon/species/generation4/dialga.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "steel",
     "dragon"
@@ -35,7 +120,9 @@
   "aliases": [
     "dialga",
     "dialga origin",
-    "origin"
+    "dialga primal",
+    "origin",
+    "primal"
   ],
   "maleRatio": -1,
   "height": 54,
@@ -2676,9 +2763,1275 @@
           }
         }
       }
+    },
+    {
+      "name": "Primal",
+      "slug": "dialga-primal",
+      "aspects": [
+        "primal"
+      ],
+      "labels": [
+        "gen8a",
+        "legendary",
+        "restricted",
+        "primal"
+      ],
+      "types": [
+        "steel",
+        "dragon"
+      ],
+      "maleRatio": 1,
+      "height": 70,
+      "weight": 8500,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 100,
+        "attack": 140,
+        "defence": 140,
+        "special_attack": 180,
+        "special_defence": 110,
+        "speed": 110
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "fullmetalbody",
+          "hidden": false,
+          "label": "Fullmetalbody",
+          "slot": "first"
+        },
+        {
+          "id": "fullmetalbody",
+          "hidden": true,
+          "label": "Fullmetalbody",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "1:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "8:dragonbreath",
+          "moveId": "dragonbreath",
+          "moveName": "Dragon Breath",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "16:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "24:slash",
+          "moveId": "slash",
+          "moveName": "Slash",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "32:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "40:dragonclaw",
+          "moveId": "dragonclaw",
+          "moveName": "Dragon Claw",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "48:aurasphere",
+          "moveId": "aurasphere",
+          "moveName": "Aura Sphere",
+          "type": "fighting",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "56:powergem",
+          "moveId": "powergem",
+          "moveName": "Power Gem",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 56,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "64:metalburst",
+          "moveId": "metalburst",
+          "moveName": "Metal Burst",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 64,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "72:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 72,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "80:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 80,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "88:roaroftime",
+          "moveId": "roaroftime",
+          "moveName": "Roar of Time",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 88,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:aurasphere",
+          "moveId": "aurasphere",
+          "moveName": "Aura Sphere",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:bodypress",
+          "moveId": "bodypress",
+          "moveName": "Body Press",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:breakingswipe",
+          "moveId": "breakingswipe",
+          "moveName": "Breaking Swipe",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:dracometeor",
+          "moveId": "dracometeor",
+          "moveName": "Draco Meteor",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:dragonclaw",
+          "moveId": "dragonclaw",
+          "moveName": "Dragon Claw",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:dragontail",
+          "moveId": "dragontail",
+          "moveName": "Dragon Tail",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:fireblast",
+          "moveId": "fireblast",
+          "moveName": "Fire Blast",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:focusblast",
+          "moveId": "focusblast",
+          "moveName": "Focus Blast",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:gravity",
+          "moveId": "gravity",
+          "moveName": "Gravity",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:heavyslam",
+          "moveId": "heavyslam",
+          "moveName": "Heavy Slam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:overheat",
+          "moveId": "overheat",
+          "moveName": "Overheat",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:powergem",
+          "moveId": "powergem",
+          "moveName": "Power Gem",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:psychup",
+          "moveId": "psychup",
+          "moveName": "Psych Up",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:roar",
+          "moveId": "roar",
+          "moveName": "Roar",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:scaleshot",
+          "moveId": "scaleshot",
+          "moveName": "Scale Shot",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:thunder",
+          "moveId": "thunder",
+          "moveName": "Thunder",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:thunderwave",
+          "moveId": "thunderwave",
+          "moveName": "Thunder Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:trick",
+          "moveId": "trick",
+          "moveName": "Trick",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tm:trickroom",
+          "moveId": "trickroom",
+          "moveName": "Trick Room",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:bulkup",
+          "moveId": "bulkup",
+          "moveName": "Bulk Up",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:dracometeor",
+          "moveId": "dracometeor",
+          "moveName": "Draco Meteor",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:gravity",
+          "moveId": "gravity",
+          "moveName": "Gravity",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:scaleshot",
+          "moveId": "scaleshot",
+          "moveName": "Scale Shot",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        },
+        {
+          "raw": "tutor:trick",
+          "moveId": "trick",
+          "moveName": "Trick",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Primal",
+          "fromFormSlug": "dialga-primal"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Primal",
+        "primaryType": "steel",
+        "secondaryType": "dragon",
+        "maleRatio": 1,
+        "height": 70,
+        "weight": 8500,
+        "abilities": [
+          "fullmetalbody",
+          "h:fullmetalbody"
+        ],
+        "pokedex": [
+          "cobblemon.species.dialga-primal.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "legendary",
+          "restricted",
+          "primal"
+        ],
+        "aspects": [
+          "primal"
+        ],
+        "baseStats": {
+          "hp": 100,
+          "attack": 140,
+          "defence": 140,
+          "special_attack": 180,
+          "special_defence": 110,
+          "speed": 110
+        },
+        "moves": [
+          "1:scaryface",
+          "1:metalclaw",
+          "8:dragonbreath",
+          "16:ancientpower",
+          "24:slash",
+          "32:flashcannon",
+          "40:dragonclaw",
+          "48:aurasphere",
+          "56:powergem",
+          "64:metalburst",
+          "72:earthpower",
+          "80:irontail",
+          "88:roaroftime",
+          "tm:ancientpower",
+          "tm:aurasphere",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brickbreak",
+          "tm:bulkup",
+          "tm:bulldoze",
+          "tm:dracometeor",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:flamethrower",
+          "tm:flashcannon",
+          "tm:focusblast",
+          "tm:gigaimpact",
+          "tm:gravity",
+          "tm:heavyslam",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:metalclaw",
+          "tm:metalsound",
+          "tm:outrage",
+          "tm:overheat",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychup",
+          "tm:raindance",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderwave",
+          "tm:trick",
+          "tm:trickroom",
+          "tutor:ancientpower",
+          "tutor:bulkup",
+          "tutor:bulldoze",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:earthpower",
+          "tutor:flamethrower",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:gravity",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:scaleshot",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:swift",
+          "tutor:thunderbolt",
+          "tutor:trick"
+        ],
+        "evolutions": [],
+        "battleOnly": false
+      }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:steel_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 483,
     "name": "Dialga",
@@ -2726,11 +4079,12 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.9,
     "hitbox": {
-      "width": 1,
-      "height": 1,
-      "fixed": false
+      "width": 3,
+      "height": 6,
+      "fixed": false,
+      "baseScale": -0.7
     },
     "moves": [
       "1:scaryface",
@@ -3028,16 +4382,475 @@
             "willFlee": false
           }
         }
+      },
+      {
+        "name": "Origin",
+        "primaryType": "steel",
+        "secondaryType": "dragon",
+        "maleRatio": -1,
+        "height": 70,
+        "weight": 8500,
+        "baseScale": 0.5,
+        "hitbox": {
+          "width": 2,
+          "height": 4.5,
+          "fixed": false
+        },
+        "pokedex": [
+          "cobblemon.species.dialga-origin.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "origin-forme"
+        ]
+      },
+      {
+        "name": "Primal",
+        "primaryType": "steel",
+        "secondaryType": "dragon",
+        "maleRatio": 1,
+        "height": 70,
+        "weight": 8500,
+        "abilities": [
+          "fullmetalbody",
+          "h:fullmetalbody"
+        ],
+        "pokedex": [
+          "cobblemon.species.dialga-primal.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "legendary",
+          "restricted",
+          "primal"
+        ],
+        "aspects": [
+          "primal"
+        ],
+        "baseStats": {
+          "hp": 100,
+          "attack": 140,
+          "defence": 140,
+          "special_attack": 180,
+          "special_defence": 110,
+          "speed": 110
+        },
+        "moves": [
+          "1:scaryface",
+          "1:metalclaw",
+          "8:dragonbreath",
+          "16:ancientpower",
+          "24:slash",
+          "32:flashcannon",
+          "40:dragonclaw",
+          "48:aurasphere",
+          "56:powergem",
+          "64:metalburst",
+          "72:earthpower",
+          "80:irontail",
+          "88:roaroftime",
+          "tm:ancientpower",
+          "tm:aurasphere",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brickbreak",
+          "tm:bulkup",
+          "tm:bulldoze",
+          "tm:dracometeor",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:flamethrower",
+          "tm:flashcannon",
+          "tm:focusblast",
+          "tm:gigaimpact",
+          "tm:gravity",
+          "tm:heavyslam",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:metalclaw",
+          "tm:metalsound",
+          "tm:outrage",
+          "tm:overheat",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychup",
+          "tm:raindance",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderwave",
+          "tm:trick",
+          "tm:trickroom",
+          "tutor:ancientpower",
+          "tutor:bulkup",
+          "tutor:bulldoze",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:earthpower",
+          "tutor:flamethrower",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:gravity",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:scaleshot",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:swift",
+          "tutor:thunderbolt",
+          "tutor:trick"
+        ],
+        "evolutions": [],
+        "battleOnly": false
+      },
+      {
+        "name": "Primal",
+        "primaryType": "steel",
+        "secondaryType": "dragon",
+        "baseScale": 0.95,
+        "hitbox": {
+          "width": 3.75,
+          "height": 4.5,
+          "fixed": false
+        },
+        "height": 70,
+        "weight": 8500,
+        "abilities": [
+          "fullmetalbody",
+          "h:fullmetalbody"
+        ],
+        "pokedex": [
+          "cobblemon.species.dialga-primal.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "legendary",
+          "restricted",
+          "primal"
+        ],
+        "aspects": [
+          "primal"
+        ],
+        "baseStats": {
+          "hp": 100,
+          "attack": 140,
+          "defence": 140,
+          "special_attack": 180,
+          "special_defence": 110,
+          "speed": 110
+        },
+        "moves": [
+          "1:scaryface",
+          "1:metalclaw",
+          "8:dragonbreath",
+          "16:ancientpower",
+          "24:slash",
+          "32:flashcannon",
+          "40:dragonclaw",
+          "48:aurasphere",
+          "56:powergem",
+          "64:metalburst",
+          "72:earthpower",
+          "80:irontail",
+          "88:roaroftime",
+          "tm:ancientpower",
+          "tm:aurasphere",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brickbreak",
+          "tm:bulkup",
+          "tm:bulldoze",
+          "tm:dracometeor",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:flamethrower",
+          "tm:flashcannon",
+          "tm:focusblast",
+          "tm:gigaimpact",
+          "tm:gravity",
+          "tm:heavyslam",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:metalclaw",
+          "tm:metalsound",
+          "tm:outrage",
+          "tm:overheat",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychup",
+          "tm:raindance",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderwave",
+          "tm:trick",
+          "tm:trickroom",
+          "tutor:ancientpower",
+          "tutor:bulkup",
+          "tutor:bulldoze",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:earthpower",
+          "tutor:flamethrower",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:gravity",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:scaleshot",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:swift",
+          "tutor:thunderbolt",
+          "tutor:trick"
+        ],
+        "riding": {
+          "behaviours": {
+            "AIR": {
+              "key": "cobblemon:air/bird",
+              "rideSounds": [
+                {
+                  "muffleEnabled": true,
+                  "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+                  "playForNonPassengers": true,
+                  "soundLocation": "cobblemon:ride.loop.wind",
+                  "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+                },
+                {
+                  "muffleEnabled": true,
+                  "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+                  "playForNonPassengers": true,
+                  "soundLocation": "cobblemon:ride.loop.leather",
+                  "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+                }
+              ],
+              "stats": {
+                "ACCELERATION": "45-75",
+                "JUMP": "30-65",
+                "SKILL": "55-85",
+                "SPEED": "30-80",
+                "STAMINA": "45-77"
+              }
+            },
+            "LAND": {
+              "key": "cobblemon:land/horse",
+              "rideSounds": [],
+              "stats": {
+                "ACCELERATION": "55-65",
+                "JUMP": "20-80",
+                "SKILL": "20-55",
+                "SPEED": "40-70",
+                "STAMINA": "55-99"
+              }
+            }
+          },
+          "seats": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseOffsets": [
+                {
+                  "offset": {
+                    "x": 0.0047415113,
+                    "y": -1.6152971,
+                    "z": 0.35461712
+                  },
+                  "poseTypes": [
+                    "STAND"
+                  ]
+                },
+                {
+                  "offset": {
+                    "x": -0.003806442,
+                    "y": -1.7203209,
+                    "z": 0.12983066
+                  },
+                  "poseTypes": [
+                    "WALK"
+                  ]
+                },
+                {
+                  "offset": {
+                    "x": 0.039005388,
+                    "y": -2.4511793,
+                    "z": 0.10381147
+                  },
+                  "poseTypes": [
+                    "HOVER"
+                  ]
+                },
+                {
+                  "offset": {
+                    "x": 0.056267936,
+                    "y": -2.0914204,
+                    "z": -0.45272845
+                  },
+                  "poseTypes": [
+                    "FLY"
+                  ]
+                },
+                {
+                  "offset": {
+                    "x": 0,
+                    "y": -0.7674751,
+                    "z": -0.27694723
+                  },
+                  "poseTypes": [
+                    "FLOAT"
+                  ]
+                },
+                {
+                  "offset": {
+                    "x": -0.003806442,
+                    "y": -1.7203209,
+                    "z": 0.12983066
+                  },
+                  "poseTypes": [
+                    "SWIM"
+                  ]
+                },
+                {
+                  "offset": {
+                    "x": 0.0047415113,
+                    "y": -1.6152971,
+                    "z": 0.35461712
+                  },
+                  "poseTypes": [
+                    "GLIDE"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.3
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.65
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "fireImmune": true
+        }
       }
     ],
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.5,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
-          "canFly": true
-        }
+          "canFly": true,
+          "flySpeedHorizontal": 0.7
+        },
+        "walk": {
+          "walkSpeed": 0.3,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendSelf": true,
@@ -3047,7 +4860,223 @@
       "resting": {
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
-      }
+      },
+      "herd": {
+        "maxSize": 1
+      },
+      "fireImmune": true
+    },
+    "implemented": true,
+    "features": [
+      "reversion_state"
+    ],
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "45-75",
+            "JUMP": "30-65",
+            "SKILL": "55-85",
+            "SPEED": "30-80",
+            "STAMINA": "45-77"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "55-65",
+            "JUMP": "20-80",
+            "SKILL": "20-55",
+            "SPEED": "40-70",
+            "STAMINA": "55-99"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "STAND",
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "WALK",
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.039005388,
+                "y": -2.4511793,
+                "z": 0.10381147
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.056267936,
+                "y": -2.0914204,
+                "z": -0.45272845
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.7674751,
+                "z": -0.27694723
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.039005388,
+                "y": -2.4511793,
+                "z": 0.10381147
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.056267936,
+                "y": -2.0914204,
+                "z": -0.45272845
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.7674751,
+                "z": -0.27694723
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:steel_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

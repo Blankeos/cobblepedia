@@ -3,6 +3,40 @@
   "name": "Golurk",
   "dexNumber": 623,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0623_golurk.json",
+        "data/cobblemon/species/generation5/golurk.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0623_golurk.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation5/golurk_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ground",
     "ghost"
@@ -35,7 +69,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "golurk"
+    "golurk",
+    "golurk mega",
+    "mega"
   ],
   "maleRatio": -1,
   "height": 28,
@@ -2088,7 +2124,88 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "golurk-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 40,
+      "weight": 3300,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 89,
+        "attack": 159,
+        "defence": 105,
+        "special_attack": 70,
+        "special_defence": 105,
+        "speed": 55
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "adaptability",
+          "hidden": false,
+          "label": "Adaptability",
+          "slot": "first"
+        },
+        {
+          "id": "adaptability",
+          "hidden": false,
+          "label": "Adaptability",
+          "slot": "second"
+        },
+        {
+          "id": "adaptability",
+          "hidden": true,
+          "label": "Adaptability",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.golurk-mega.desc"
+        ],
+        "abilities": [
+          "adaptability",
+          "adaptability",
+          "h:adaptability"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 89,
+          "attack": 159,
+          "defence": 105,
+          "special_attack": 70,
+          "special_defence": 105,
+          "speed": 55
+        },
+        "height": 40,
+        "weight": 3300
+      }
+    }
+  ],
   "drops": {
     "amount": 4,
     "entries": [
@@ -2673,6 +2790,40 @@
       "lightLevel": 10,
       "liquidGlowMode": "BOTH"
     },
-    "standingEyeHeight": 0.98
+    "standingEyeHeight": 0.98,
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.golurk-mega.desc"
+        ],
+        "abilities": [
+          "adaptability",
+          "adaptability",
+          "h:adaptability"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 89,
+          "attack": 159,
+          "defence": 105,
+          "special_attack": 70,
+          "special_defence": 105,
+          "speed": 55
+        },
+        "height": 40,
+        "weight": 3300
+      }
+    ]
   }
 }

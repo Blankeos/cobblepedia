@@ -6,18 +6,21 @@ Use these as canonical sources for generated Pokemon/move/spawn data.
 
 Local reference repositories for development and data inspection:
 
-- `.tmp-atmxmsd/`
-  - AllTheMons addon reference pack (assets/data).
-  - Includes contributor permission proofs in `proofs of permission/`.
 - `.tmp-blockbench/`
   - Local checkout of Blockbench.
   - Use for model tooling and format behavior reference when preview/model workflows need it.
 - `.tmp-cobblemon/`
   - Local checkout of Cobblemon upstream repository.
   - Use for validating canonical source files and paths.
-- `.tmp-mega-showdown/`
-  - Local checkout of Cobblemon Mega Showdown addon.
-  - Use for feature/form behavior cross-reference when needed.
+
+### Cobbleverse release-locked source (MRPack-first)
+
+- Primary package: `.tmp-cobbleverse/COBBLEVERSE 1.7.3.mrpack`
+- Resolve addon dependencies from `modrinth.index.json` (`files[]` download URLs + hashes).
+- Include nested override archives in the MRPack (`overrides/datapacks/**/*.zip`, relevant `overrides/mods/**/*.jar`).
+- Critical datapack in this snapshot: `overrides/datapacks/COBBLEVERSE-DP-v27.zip`
+- Treat older addon `.tmp-*` mirrors as optional debug artifacts, not canonical generation inputs.
+- Bootstrap helper: `scripts/clone-local-sources.sh` clones `.tmp-cobblemon` and downloads the pinned MRPack snapshot.
 
 ## Cobblemon upstream
 

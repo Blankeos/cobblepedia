@@ -3,6 +3,51 @@
   "name": "Eelektross",
   "dexNumber": 604,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "data/cobblemon/species/generation5/eelektross.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "data/cobblemon/species_additions/eelektross.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/eelektross.json",
+        "data/cobblemon/species_additions/eelektross.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation5/eelektross_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "electric"
   ],
@@ -28,7 +73,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "eelektross"
+    "eelektross",
+    "eelektross mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 21,
@@ -1952,7 +1999,82 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "eelektross-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 30,
+      "weight": 1800,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 85,
+        "attack": 145,
+        "defence": 80,
+        "special_attack": 135,
+        "special_defence": 90,
+        "speed": 80
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "hadronengine",
+          "hidden": false,
+          "label": "Hadronengine",
+          "slot": "first"
+        },
+        {
+          "id": "hadronengine",
+          "hidden": true,
+          "label": "Hadronengine",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.eelektross-mega.desc"
+        ],
+        "abilities": [
+          "hadronengine",
+          "h:hadronengine"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 85,
+          "attack": 145,
+          "defence": 80,
+          "special_attack": 135,
+          "special_defence": 90,
+          "speed": 80
+        },
+        "baseScale": 1.15,
+        "height": 30,
+        "weight": 1800
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -2014,7 +2136,9 @@
     "behaviour": {
       "moving": {
         "swim": {
-          "canBreatheUnderwater": true
+          "canBreatheUnderwater": true,
+          "swimSpeed": 1,
+          "canSwimInWater": true
         },
         "fly": {
           "canFly": true
@@ -2201,6 +2325,40 @@
       "legacy:toxic"
     ],
     "preEvolution": "eelektrik",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.eelektross-mega.desc"
+        ],
+        "abilities": [
+          "hadronengine",
+          "h:hadronengine"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 85,
+          "attack": 145,
+          "defence": 80,
+          "special_attack": 135,
+          "special_defence": 90,
+          "speed": 80
+        },
+        "baseScale": 1.15,
+        "height": 30,
+        "weight": 1800
+      }
+    ]
   }
 }

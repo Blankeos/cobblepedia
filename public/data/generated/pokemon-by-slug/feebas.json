@@ -3,6 +3,41 @@
   "name": "Feebas",
   "dexNumber": 349,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0349_feebas.json",
+        "data/cobblemon/species/generation3/feebas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0349_feebas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/feebas.json",
+        "data/cobblemon/species_additions/feebas.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "water"
   ],
@@ -109,6 +144,14 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "megamilotic",
+        "slug": "megamilotic",
+        "name": "Megamilotic",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
+      {
         "nodeId": "feebas",
         "slug": "feebas",
         "name": "Feebas",
@@ -134,6 +177,26 @@
         "method": "trade",
         "requirementText": [
           "Hold Prism Scale"
+        ]
+      },
+      {
+        "fromNodeId": "milotic",
+        "toNodeId": "megamilotic",
+        "fromSlug": "milotic",
+        "toSlug": "megamilotic",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "milotic",
+        "toNodeId": "megamilotic",
+        "fromSlug": "milotic",
+        "toSlug": "megamilotic",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
         ]
       }
     ],
@@ -1020,11 +1083,13 @@
       "moving": {
         "canLook": false,
         "walk": {
-          "avoidsLand": true
+          "avoidsLand": true,
+          "walkSpeed": 0.2
         },
         "swim": {
-          "swimSpeed": 0.1,
-          "canBreatheUnderwater": true
+          "swimSpeed": 1,
+          "canBreatheUnderwater": true,
+          "canSwimInWater": true
         }
       },
       "resting": {

@@ -2,7 +2,46 @@
   "slug": "gougingfire",
   "name": "Gouging Fire",
   "dexNumber": 1020,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/gougingfire.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/1020_gougingfire.json",
+        "data/cobblemon/species_additions/gougingfire.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/gougingfire.json",
+        "data/paradox_spawns_atm/spawn_pool_world/gougingfire.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "fire",
     "dragon"
@@ -1120,6 +1159,36 @@
         "rouseChance": 0.0042
       },
       "fireImmune": true
+    },
+    "implemented": true,
+    "baseScale": 1.15,
+    "hitbox": {
+      "width": 3,
+      "height": 2.5,
+      "fixed": false
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "stats": {
+            "ACCELERATION": "50-70",
+            "JUMP": "35-55",
+            "SKILL": "45-55",
+            "STAMINA": "90-110",
+            "SPEED": "50-70"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
     }
   }
 }

@@ -2,7 +2,90 @@
   "slug": "palkia",
   "name": "Palkia",
   "dexNumber": 484,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation4/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0484_palkia.json",
+        "data/cobblemon/species_additions/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/palkia_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0484_palkia_betterend.json",
+        "data/cobblemon/species_additions/palkia.json",
+        "data/cobblemon/species/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/palkia.json",
+        "data/cobblemon/species/generation4/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/palkia.json",
+        "data/cobblemon/species/generation4/palkia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "water",
     "dragon"
@@ -2750,7 +2833,31 @@
       }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:water_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 484,
     "name": "Palkia",
@@ -2798,11 +2905,12 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.8,
     "hitbox": {
-      "width": 1,
-      "height": 1,
-      "fixed": false
+      "width": 3.5,
+      "height": 6.5,
+      "fixed": false,
+      "baseScale": -0.7
     },
     "moves": [
       "1:scaryface",
@@ -3092,10 +3200,19 @@
     "behaviour": {
       "moving": {
         "swim": {
-          "canBreatheUnderwater": true
+          "canBreatheUnderwater": false,
+          "swimSpeed": 0.5,
+          "canSwimInWater": false
         },
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.7
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.4,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -3107,6 +3224,136 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "implemented": true,
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "45-75",
+            "JUMP": "30-65",
+            "SKILL": "55-85",
+            "SPEED": "100-125",
+            "STAMINA": "45-77"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "55-65",
+            "JUMP": "20-80",
+            "SKILL": "20-55",
+            "SPEED": "40-70",
+            "STAMINA": "55-99"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              },
+              "poseTypes": [
+                "STAND",
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              },
+              "poseTypes": [
+                "WALK",
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.039005388,
+                "y": -2.4511793,
+                "z": 0.10381147
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.056267936,
+                "y": -2.0914204,
+                "z": -0.45272845
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.7674751,
+                "z": -0.27694723
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:water_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

@@ -3,6 +3,50 @@
   "name": "Floette",
   "dexNumber": 670,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0670_floette.json",
+        "data/cobblemon/species/generation6/floette.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0670_floette.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0670_floette.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0670_floette.json",
+        "data/cobblemon/species_additions/generation6/floette_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fairy"
   ],
@@ -30,14 +74,18 @@
     "flower-red"
   ],
   "aliases": [
+    "ange",
     "blue",
     "eternal",
     "floette",
+    "floette ange",
     "floette blue",
     "floette eternal",
+    "floette megae",
     "floette orange",
     "floette white",
     "floette yellow",
+    "megae",
     "orange",
     "white",
     "yellow"
@@ -3838,6 +3886,197 @@
           }
         }
       }
+    },
+    {
+      "name": "MegaE",
+      "slug": "floette-megae",
+      "aspects": [
+        "mega",
+        "flower-eternal"
+      ],
+      "labels": [
+        "flower-eternal",
+        "mega",
+        "gen6",
+        "mythical"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 2,
+      "weight": 1008,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 74,
+        "attack": 85,
+        "defence": 87,
+        "special_attack": 155,
+        "special_defence": 148,
+        "speed": 102
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "regenerator",
+          "hidden": false,
+          "label": "Regenerator",
+          "slot": "first"
+        },
+        {
+          "id": "regenerator",
+          "hidden": true,
+          "label": "Regenerator",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "MegaE",
+        "pokedex": [
+          "cobblemon.species.floette-mega.desc"
+        ],
+        "abilities": [
+          "regenerator",
+          "h:regenerator"
+        ],
+        "labels": [
+          "flower-eternal",
+          "mega",
+          "gen6",
+          "mythical"
+        ],
+        "aspects": [
+          "mega",
+          "flower-eternal"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 74,
+          "attack": 85,
+          "defence": 87,
+          "special_attack": 155,
+          "special_defence": 148,
+          "speed": 102
+        },
+        "baseScale": 0.5,
+        "height": 2,
+        "weight": 1008
+      }
+    },
+    {
+      "name": "Ange",
+      "slug": "floette-ange",
+      "aspects": [
+        "angemax",
+        "flower-eternal"
+      ],
+      "labels": [
+        "flower-eternal",
+        "gen6",
+        "mythical"
+      ],
+      "types": [
+        "fairy",
+        "grass"
+      ],
+      "maleRatio": null,
+      "height": 250,
+      "weight": 9997,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 230,
+        "attack": 155,
+        "defence": 155,
+        "special_attack": 210,
+        "special_defence": 165,
+        "speed": 5
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "regenerator",
+          "hidden": false,
+          "label": "Regenerator",
+          "slot": "first"
+        },
+        {
+          "id": "regenerator",
+          "hidden": true,
+          "label": "Regenerator",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Ange",
+        "primaryType": "fairy",
+        "secondaryType": "grass",
+        "pokedex": [
+          "cobblemon.species.floette-ange.desc"
+        ],
+        "abilities": [
+          "regenerator",
+          "h:regenerator"
+        ],
+        "labels": [
+          "flower-eternal",
+          "gen6",
+          "mythical"
+        ],
+        "aspects": [
+          "angemax",
+          "flower-eternal"
+        ],
+        "battleOnly": false,
+        "baseStats": {
+          "hp": 230,
+          "attack": 155,
+          "defence": 155,
+          "special_attack": 210,
+          "special_defence": 165,
+          "speed": 5
+        },
+        "dynamaxBlocked": true,
+        "baseScale": 0.8,
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "canWalk": false
+            },
+            "fly": {
+              "canFly": false
+            },
+            "swim": {
+              "canSwim": false
+            }
+          }
+        },
+        "hitbox": {
+          "width": 10,
+          "height": 30,
+          "fixed": false
+        },
+        "height": 250,
+        "weight": 9997,
+        "drops": {
+          "amount": 64,
+          "entries": [
+            {
+              "item": "minecraft:amethyst_shard",
+              "percentage": 100
+            }
+          ]
+        }
+      }
     }
   ],
   "drops": {
@@ -4365,7 +4604,104 @@
             "willFlee": false
           }
         }
+      },
+      {
+        "name": "MegaE",
+        "pokedex": [
+          "cobblemon.species.floette-mega.desc"
+        ],
+        "abilities": [
+          "regenerator",
+          "h:regenerator"
+        ],
+        "labels": [
+          "flower-eternal",
+          "mega",
+          "gen6",
+          "mythical"
+        ],
+        "aspects": [
+          "mega",
+          "flower-eternal"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 74,
+          "attack": 85,
+          "defence": 87,
+          "special_attack": 155,
+          "special_defence": 148,
+          "speed": 102
+        },
+        "baseScale": 0.5,
+        "height": 2,
+        "weight": 1008
+      },
+      {
+        "name": "Ange",
+        "primaryType": "fairy",
+        "secondaryType": "grass",
+        "pokedex": [
+          "cobblemon.species.floette-ange.desc"
+        ],
+        "abilities": [
+          "regenerator",
+          "h:regenerator"
+        ],
+        "labels": [
+          "flower-eternal",
+          "gen6",
+          "mythical"
+        ],
+        "aspects": [
+          "angemax",
+          "flower-eternal"
+        ],
+        "battleOnly": false,
+        "baseStats": {
+          "hp": 230,
+          "attack": 155,
+          "defence": 155,
+          "special_attack": 210,
+          "special_defence": 165,
+          "speed": 5
+        },
+        "dynamaxBlocked": true,
+        "baseScale": 0.8,
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "canWalk": false
+            },
+            "fly": {
+              "canFly": false
+            },
+            "swim": {
+              "canSwim": false
+            }
+          }
+        },
+        "hitbox": {
+          "width": 10,
+          "height": 30,
+          "fixed": false
+        },
+        "height": 250,
+        "weight": 9997,
+        "drops": {
+          "amount": 64,
+          "entries": [
+            {
+              "item": "minecraft:amethyst_shard",
+              "percentage": 100
+            }
+          ]
+        }
       }
+    ],
+    "features": [
+      "mega_evolution",
+      "angemax"
     ]
   }
 }

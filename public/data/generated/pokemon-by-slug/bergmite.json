@@ -3,6 +3,51 @@
   "name": "Bergmite",
   "dexNumber": 712,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0712_bergmite.json",
+        "data/cobblemon/species/generation6/bergmite.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0712_bergmite.json",
+        "data/cobblemon/species_additions/bergmite.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation6/bergmite.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/bergmite.json",
+        "data/cobblemon/species_additions/bergmite.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ice"
   ],
@@ -105,6 +150,180 @@
           }
         ]
       }
+    },
+    {
+      "id": "bergmite_avalugghisui2",
+      "variant": "level_up",
+      "result": {
+        "raw": "avalugg hisuian",
+        "slug": "avalugg",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "rockslide"
+      ],
+      "requirementText": [
+        "Level 37+",
+        "Biome Evolution Regional Bergmite Hisuibiome",
+        "Not in biome Evolution Regional Bergmite Kalosbiome"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 37+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 37
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Evolution Regional Bergmite Hisuibiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/bergmite_hisuibiome"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Not in biome Evolution Regional Bergmite Kalosbiome",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/bergmite_kalosbiome"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "bergmite_avalugghisui2",
+        "variant": "level_up",
+        "result": "avalugg hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "rockslide"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 37
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/bergmite_hisuibiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/bergmite_kalosbiome"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bergmite_avalugg",
+      "variant": "level_up",
+      "result": {
+        "raw": "avalugg hisuian=false",
+        "slug": "avalugg",
+        "aspectTokens": [
+          "hisuian=false"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "bodyslam"
+      ],
+      "requirementText": [
+        "Level 37+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 37+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 37
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "bergmite_avalugg",
+        "variant": "level_up",
+        "result": "avalugg hisuian=false",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "bodyslam"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 37
+          }
+        ]
+      }
+    },
+    {
+      "id": "bergmite_avalugg_hisuian",
+      "variant": "level_up",
+      "result": {
+        "raw": "avalugg hisuian=true",
+        "slug": "avalugg",
+        "aspectTokens": [
+          "hisuian=true"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "rockslide"
+      ],
+      "requirementText": [
+        "Level 37+",
+        "Biome Is Mountain"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 37+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 37
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Is Mountain",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:is_mountain"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "bergmite_avalugg_hisuian",
+        "variant": "level_up",
+        "result": "avalugg hisuian=true",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "rockslide"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 37
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:is_mountain"
+          }
+        ]
+      }
     }
   ],
   "evolutionFamily": {
@@ -124,6 +343,14 @@
         "dexNumber": 713,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "avalugg-hisui",
+        "slug": "avalugg",
+        "name": "Avalugg",
+        "dexNumber": 713,
+        "formSlug": "avalugg-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
@@ -139,7 +366,8 @@
       }
     ],
     "roots": [
-      "bergmite"
+      "bergmite",
+      "avalugg-hisui"
     ]
   },
   "moves": [
@@ -1503,6 +1731,63 @@
           {
             "variant": "level",
             "minLevel": 37
+          }
+        ]
+      },
+      {
+        "id": "bergmite_avalugghisui2",
+        "variant": "level_up",
+        "result": "avalugg hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "rockslide"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 37
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/bergmite_hisuibiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/bergmite_kalosbiome"
+          }
+        ]
+      },
+      {
+        "id": "bergmite_avalugg",
+        "variant": "level_up",
+        "result": "avalugg hisuian=false",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "bodyslam"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 37
+          }
+        ]
+      },
+      {
+        "id": "bergmite_avalugg_hisuian",
+        "variant": "level_up",
+        "result": "avalugg hisuian=true",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "rockslide"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 37
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:is_mountain"
           }
         ]
       }

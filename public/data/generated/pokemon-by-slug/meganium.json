@@ -3,6 +3,49 @@
   "name": "Meganium",
   "dexNumber": 154,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0154_meganium.json",
+        "data/cobblemon/species/generation2/meganium.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation2/meganium.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0154_meganium.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation2/meganium_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "grass"
   ],
@@ -29,7 +72,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "meganium"
+    "mega",
+    "meganium",
+    "meganium mega"
   ],
   "maleRatio": 0.875,
   "height": 18,
@@ -1585,7 +1630,87 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "meganium-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen2",
+        "mega"
+      ],
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "maleRatio": null,
+      "height": 24,
+      "weight": 2010,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 80,
+        "attack": 92,
+        "defence": 115,
+        "special_attack": 143,
+        "special_defence": 115,
+        "speed": 80
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "flowerveil",
+          "hidden": false,
+          "label": "Flowerveil",
+          "slot": "first"
+        },
+        {
+          "id": "flowerveil",
+          "hidden": true,
+          "label": "Flowerveil",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "primaryType": "grass",
+        "secondaryType": "fairy",
+        "pokedex": [
+          "cobblemon.species.meganium-mega.desc"
+        ],
+        "abilities": [
+          "flowerveil",
+          "h:flowerveil"
+        ],
+        "labels": [
+          "gen2",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 80,
+          "attack": 92,
+          "defence": 115,
+          "special_attack": 143,
+          "special_defence": 115,
+          "speed": 80
+        },
+        "baseScale": 1,
+        "height": 24,
+        "weight": 2010
+      }
+    }
+  ],
   "drops": {
     "amount": 1,
     "entries": [
@@ -1830,6 +1955,128 @@
       "special:frenzyplant"
     ],
     "preEvolution": "bayleef",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "35-60",
+            "JUMP": "30-55",
+            "SKILL": "20-45",
+            "SPEED": "25-45",
+            "STAMINA": "50-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.65,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.7,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.35,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.35,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.45,
+                "z": -0.35
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -1.8,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "primaryType": "grass",
+        "secondaryType": "fairy",
+        "pokedex": [
+          "cobblemon.species.meganium-mega.desc"
+        ],
+        "abilities": [
+          "flowerveil",
+          "h:flowerveil"
+        ],
+        "labels": [
+          "gen2",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 80,
+          "attack": 92,
+          "defence": 115,
+          "special_attack": 143,
+          "special_defence": 115,
+          "speed": 80
+        },
+        "baseScale": 1,
+        "height": 24,
+        "weight": 2010
+      }
+    ]
   }
 }

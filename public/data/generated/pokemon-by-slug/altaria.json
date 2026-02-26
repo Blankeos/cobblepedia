@@ -3,6 +3,32 @@
   "name": "Altaria",
   "dexNumber": 334,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0334_altaria.json",
+        "data/cobblemon/species/generation3/altaria.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0334_altaria.json",
+        "data/cobblemon/species_additions/altaria.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dragon",
     "flying"
@@ -2028,13 +2054,20 @@
               "playForPassengers": false,
               "soundLocation": "cobblemon:ride.loop.wind.mono",
               "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
             }
           ],
           "stats": {
-            "ACCELERATION": "25-45",
+            "ACCELERATION": "60-85",
             "JUMP": "25-45",
-            "SKILL": "40-50",
-            "SPEED": "25-35",
+            "SKILL": "75-95",
+            "SPEED": "115-145",
             "STAMINA": "70-90"
           }
         },
@@ -2044,10 +2077,10 @@
           "canJump": false,
           "canSprint": false,
           "stats": {
-            "ACCELERATION": "10-40",
+            "ACCELERATION": "40-60",
             "JUMP": "10-40",
             "SKILL": "80-100",
-            "SPEED": "10-40",
+            "SPEED": "30-50",
             "STAMINA": "10-40"
           }
         }

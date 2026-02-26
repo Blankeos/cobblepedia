@@ -2,7 +2,69 @@
   "slug": "charjabug",
   "name": "Charjabug",
   "dexNumber": 737,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/charjabug.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0737_charjabug.json",
+        "data/cobblemon/species_additions/charjabug.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/charjabug.json",
+        "data/cobblemon/species_additions/generation7/charjabug.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0737_charjabug.json",
+        "data/cobblemon/species_additions/charjabug.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/charjabug.json",
+        "data/cobblemon/spawn_pool_world/vikavolt.json",
+        "data/cobblemon/species/generation7/charjabug.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "bug",
     "electric"
@@ -1018,7 +1080,7 @@
     "catchRate": 120,
     "eggCycles": 15,
     "baseFriendship": 50,
-    "baseScale": 1,
+    "baseScale": 0.5,
     "hitbox": {
       "width": 1,
       "height": 1,
@@ -1142,6 +1204,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.22
         }
       },
       "combat": {
@@ -1154,6 +1219,7 @@
         "drowsyChance": 0.0014,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "implemented": true
   }
 }

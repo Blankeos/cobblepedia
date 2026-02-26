@@ -2,7 +2,76 @@
   "slug": "landorus",
   "name": "Landorus",
   "dexNumber": 645,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/landorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0645_landorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/landorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/landorus_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/landorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0645_landorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/landorus.json",
+        "data/cobblemon/species_additions/landorus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "ground",
     "flying"
@@ -60,7 +129,49 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "landorus_therian",
+      "variant": "level_up",
+      "result": {
+        "raw": "landorus mirror_forme=therian",
+        "slug": "landorus",
+        "aspectTokens": [
+          "mirror_forme=therian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Wide Lens"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Wide Lens",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:wide_lens"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "landorus_therian",
+        "variant": "level_up",
+        "result": "landorus mirror_forme=therian",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:wide_lens"
+          }
+        ]
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
       {
@@ -70,9 +181,28 @@
         "dexNumber": 645,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "landorus-therian",
+        "slug": "landorus",
+        "name": "Landorus",
+        "dexNumber": 645,
+        "formSlug": "landorus-therian",
+        "formName": "Therian"
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "landorus",
+        "toNodeId": "landorus-therian",
+        "fromSlug": "landorus",
+        "toSlug": "landorus",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Wide Lens"
+        ]
+      }
+    ],
     "roots": [
       "landorus"
     ]
@@ -1327,7 +1457,31 @@
       }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:flying_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 645,
     "name": "Landorus",
@@ -1491,7 +1645,21 @@
       "legacy:swagger",
       "legacy:toxic"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "landorus_therian",
+        "variant": "level_up",
+        "result": "landorus mirror_forme=therian",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:wide_lens"
+          }
+        ]
+      }
+    ],
     "forms": [
       {
         "name": "Therian",
@@ -1532,19 +1700,47 @@
         },
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "Therian",
+        "aspects": [
+          "therian-forme"
+        ],
+        "baseScale": 1,
+        "evolutions": [
+          {
+            "id": "landorus_therian_r",
+            "variant": "level_up",
+            "result": "landorus mirror_forme=incarnate",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "held_item",
+                "itemCondition": "cobblemon:wide_lens"
+              }
+            ]
+          }
+        ]
       }
     ],
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
           "canFly": true
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": true,
+          "walkSpeed": 0.6,
+          "avoidsLand": false
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendSelf": true,
@@ -1555,6 +1751,37 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:flying_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
+    },
+    "baseScale": 1.1,
+    "hitbox": {
+      "width": 1.5,
+      "height": 2.5,
+      "fixed": false
     }
   }
 }

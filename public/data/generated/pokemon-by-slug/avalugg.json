@@ -3,6 +3,49 @@
   "name": "Avalugg",
   "dexNumber": 713,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0713_avalugg.json",
+        "data/cobblemon/species/generation6/avalugg.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation6/avalugg.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0713_avalugg.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/avalugg.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ice"
   ],
@@ -86,6 +129,14 @@
         "dexNumber": 713,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "avalugg-hisui",
+        "slug": "avalugg",
+        "name": "Avalugg",
+        "dexNumber": 713,
+        "formSlug": "avalugg-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
@@ -101,7 +152,8 @@
       }
     ],
     "roots": [
-      "bergmite"
+      "bergmite",
+      "avalugg-hisui"
     ]
   },
   "moves": [
@@ -3177,6 +3229,92 @@
           }
         }
       }
-    ]
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "10-25",
+            "ACCELERATION": "15-30",
+            "SKILL": "40-70",
+            "JUMP": "5-15",
+            "STAMINA": "60-90"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -2.1,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -2.2,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.9,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.9,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.03,
+                "y": -1.85,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.95,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

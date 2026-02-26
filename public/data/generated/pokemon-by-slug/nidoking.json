@@ -3,6 +3,50 @@
   "name": "Nidoking",
   "dexNumber": 34,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0034_nidoking.json",
+        "data/cobblemon/species/generation1/nidoking.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/nidoking.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0034_nidoking.json",
+        "data/cobblemon/species_additions/nidoking.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_nidoking.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "poison",
     "ground"
@@ -2239,6 +2283,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.2
         }
       },
       "combat": {
@@ -2459,6 +2506,57 @@
       "legacy:watergun"
     ],
     "preEvolution": "nidorino",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "40-55",
+            "ACCELERATION": "65-75",
+            "SKILL": "40-70",
+            "JUMP": "30-50",
+            "STAMINA": "30-45"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.5,
+                "z": 0.2
+              },
+              "poseTypes": [
+                "STAND",
+                "HOVER",
+                "FLY",
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.5,
+                "z": 0.15
+              },
+              "poseTypes": [
+                "WALK",
+                "FLOAT",
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

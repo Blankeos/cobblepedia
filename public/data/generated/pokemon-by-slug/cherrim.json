@@ -2,7 +2,45 @@
   "slug": "cherrim",
   "name": "Cherrim",
   "dexNumber": 421,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation4/cherrim.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0421_cherrim.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0421_cherrim.json",
+        "data/cobblemon/species_additions/cherrim.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "grass"
   ],
@@ -2169,16 +2207,31 @@
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "4-15"
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "canWalk": true,
+          "avoidsLand": true
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
         "willDefendOwner": true
       }
-    }
+    },
+    "implemented": true
   }
 }

@@ -2,7 +2,67 @@
   "slug": "hoopa",
   "name": "Hoopa",
   "dexNumber": 720,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation6/hoopa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0720_hoopa.json",
+        "data/cobblemon/species_additions/hoopa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation6/hoopa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/hoopa_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/hoopa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/hoopa.json",
+        "data/cobblemon/species_additions/hoopa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "psychic",
     "ghost"
@@ -60,7 +120,49 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "HoopaUnbound_Hoopa",
+      "variant": "level_up",
+      "result": {
+        "raw": "hoopa djinn_state=unbound",
+        "slug": "hoopa",
+        "aspectTokens": [
+          "djinn_state=unbound"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Ender Eye"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Ender Eye",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "minecraft:ender_eye"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "HoopaUnbound_Hoopa",
+        "variant": "level_up",
+        "result": "hoopa djinn_state=unbound",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "minecraft:ender_eye"
+          }
+        ]
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
       {
@@ -70,9 +172,28 @@
         "dexNumber": 720,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "hoopa-unbound",
+        "slug": "hoopa",
+        "name": "Hoopa",
+        "dexNumber": 720,
+        "formSlug": "hoopa-unbound",
+        "formName": "Unbound"
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "hoopa",
+        "toNodeId": "hoopa-unbound",
+        "fromSlug": "hoopa",
+        "toSlug": "hoopa",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Ender Eye"
+        ]
+      }
+    ],
     "roots": [
       "hoopa"
     ]
@@ -3178,7 +3299,31 @@
       }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:psychic_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 720,
     "name": "Hoopa",
@@ -3384,7 +3529,21 @@
       "legacy:toxic",
       "legacy:uproar"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "HoopaUnbound_Hoopa",
+        "variant": "level_up",
+        "result": "hoopa djinn_state=unbound",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "minecraft:ender_eye"
+          }
+        ]
+      }
+    ],
     "forms": [
       {
         "name": "Unbound",
@@ -3575,11 +3734,33 @@
             "rouseChance": 0.0042
           }
         }
+      },
+      {
+        "name": "Unbound",
+        "aspects": [
+          "unbound"
+        ],
+        "baseScale": 1,
+        "evolutions": [
+          {
+            "id": "HoopaUnbound_Hoopa",
+            "variant": "level_up",
+            "result": "hoopa djinn_state=confined",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "held_item",
+                "itemCondition": "minecraft:ender_eye"
+              }
+            ]
+          }
+        ]
       }
     ],
     "behaviour": {
       "herd": {
-        "maxSize": "2",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "hoopa unbound",
@@ -3590,22 +3771,57 @@
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
           "canFly": true
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": true,
+          "walkSpeed": 0.6,
+          "avoidsLand": false
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendOwner": true
       }
+    },
+    "implemented": true,
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:psychic_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

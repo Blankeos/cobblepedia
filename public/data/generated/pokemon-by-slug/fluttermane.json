@@ -2,7 +2,66 @@
   "slug": "fluttermane",
   "name": "Flutter Mane",
   "dexNumber": 987,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [LackingMons - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/fluttermane.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0987_fluttermane.json",
+        "data/cobblemon/species_additions/fluttermane.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/fluttermane.json",
+        "data/paradox_spawns_atm/spawn_pool_world/fluttermane.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/fluttermane.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/fluttermane.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "ghost",
     "fairy"
@@ -1041,14 +1100,19 @@
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
           "canFly": true
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "canLook": false
       },
       "combat": {
         "willDefendSelf": true,
@@ -1060,8 +1124,68 @@
           "day"
         ],
         "drowsyChance": 0.0033,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "4-15"
       }
+    },
+    "implemented": true,
+    "baseScale": 0.7,
+    "hitbox": {
+      "width": 0.7,
+      "height": 2,
+      "fixed": false
+    },
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/hover",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "30-50",
+            "JUMP": "10-20",
+            "SKILL": "50-75",
+            "SPEED": "40-75",
+            "STAMINA": "15-30"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.9,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK",
+                "HOVER",
+                "FLY",
+                "FLOAT",
+                "SWIM",
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

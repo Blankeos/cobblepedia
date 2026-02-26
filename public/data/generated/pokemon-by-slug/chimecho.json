@@ -3,6 +3,40 @@
   "name": "Chimecho",
   "dexNumber": 358,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0358_chimecho.json",
+        "data/cobblemon/species/generation3/chimecho.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0358_chimecho.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation3/chimecho_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "psychic"
   ],
@@ -28,7 +62,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "chimecho"
+    "chimecho",
+    "chimecho mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 6,
@@ -1729,7 +1765,92 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "chimecho-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen3",
+        "mega"
+      ],
+      "types": [
+        "psychic",
+        "steel"
+      ],
+      "maleRatio": null,
+      "height": 12,
+      "weight": 80,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 75,
+        "attack": 50,
+        "defence": 110,
+        "special_attack": 135,
+        "special_defence": 120,
+        "speed": 65
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "levitate",
+          "hidden": false,
+          "label": "Levitate",
+          "slot": "first"
+        },
+        {
+          "id": "levitate",
+          "hidden": true,
+          "label": "Levitate",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "primaryType": "psychic",
+        "secondaryType": "steel",
+        "pokedex": [
+          "cobblemon.species.chimecho-mega.desc"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "labels": [
+          "gen3",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 75,
+          "attack": 50,
+          "defence": 110,
+          "special_attack": 135,
+          "special_defence": 120,
+          "speed": 65
+        },
+        "baseScale": 0.7,
+        "hitbox": {
+          "width": 1.5,
+          "height": 2,
+          "fixed": false
+        },
+        "height": 12,
+        "weight": 80
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -1995,6 +2116,47 @@
       "legacy:toxic"
     ],
     "preEvolution": "chingling",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "primaryType": "psychic",
+        "secondaryType": "steel",
+        "pokedex": [
+          "cobblemon.species.chimecho-mega.desc"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "labels": [
+          "gen3",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 75,
+          "attack": 50,
+          "defence": 110,
+          "special_attack": 135,
+          "special_defence": 120,
+          "speed": 65
+        },
+        "baseScale": 0.7,
+        "hitbox": {
+          "width": 1.5,
+          "height": 2,
+          "fixed": false
+        },
+        "height": 12,
+        "weight": 80
+      }
+    ]
   }
 }

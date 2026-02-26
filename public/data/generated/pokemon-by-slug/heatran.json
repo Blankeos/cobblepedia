@@ -2,7 +2,56 @@
   "slug": "heatran",
   "name": "Heatran",
   "dexNumber": 485,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "zamega-fabric-1.5.4"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation4/heatran.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0485_heatran.json",
+        "data/cobblemon/species_additions/heatran.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation4/heatran.json",
+        "data/legendary_spawns_atm/spawn_pool_world/heatran.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation4/heatran_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "fire",
     "steel"
@@ -30,7 +79,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "heatran"
+    "heatran",
+    "heatran mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 17,
@@ -1286,9 +1337,90 @@
     }
   ],
   "spawnEntries": [],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "heatran-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen4",
+        "legendary",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 28,
+      "weight": 5700,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 91,
+        "attack": 120,
+        "defence": 106,
+        "special_attack": 175,
+        "special_defence": 141,
+        "speed": 67
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "filter",
+          "hidden": false,
+          "label": "Filter",
+          "slot": "first"
+        },
+        {
+          "id": "filter",
+          "hidden": true,
+          "label": "Filter",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.heatran-mega.desc"
+        ],
+        "abilities": [
+          "filter",
+          "h:filter"
+        ],
+        "labels": [
+          "gen4",
+          "legendary",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 91,
+          "attack": 120,
+          "defence": 106,
+          "special_attack": 175,
+          "special_defence": 141,
+          "speed": 67
+        },
+        "hitbox": {
+          "width": 4,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 28,
+        "weight": 5700
+      }
+    }
+  ],
   "drops": {
-    "amount": 8,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:magma_cream",
@@ -1297,6 +1429,26 @@
       {
         "item": "minecraft:blaze_powder",
         "quantityRange": "2-4"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:fire_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1346,8 +1498,8 @@
     "baseFriendship": 100,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 2.5,
+      "height": 1.6,
       "fixed": false
     },
     "moves": [
@@ -1490,14 +1642,17 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       },
-      "fireImmune": true
+      "fireImmune": true,
+      "herd": {
+        "maxSize": "1"
+      }
     },
     "lightingData": {
       "lightLevel": 12,
       "liquidGlowMode": "LAND"
     },
     "drops": {
-      "amount": 8,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:magma_cream",
@@ -1506,8 +1661,68 @@
         {
           "item": "minecraft:blaze_powder",
           "quantityRange": "2-4"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:fire_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
-    }
+    },
+    "implemented": true,
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.heatran-mega.desc"
+        ],
+        "abilities": [
+          "filter",
+          "h:filter"
+        ],
+        "labels": [
+          "gen4",
+          "legendary",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 91,
+          "attack": 120,
+          "defence": 106,
+          "special_attack": 175,
+          "special_defence": 141,
+          "speed": 67
+        },
+        "hitbox": {
+          "width": 4,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 28,
+        "weight": 5700
+      }
+    ]
   }
 }

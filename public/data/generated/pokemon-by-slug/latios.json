@@ -3,6 +3,69 @@
   "name": "Latios",
   "dexNumber": 381,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation3/latios.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0381_latios.json",
+        "data/cobblemon/species_additions/latios.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/latios.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/latios_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/latios.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0381_latios.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/latios.json",
+        "data/cobblemon/species_additions/latios.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dragon",
     "psychic"
@@ -1850,11 +1913,35 @@
     }
   ],
   "drops": {
-    "amount": 4,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:feather",
         "quantityRange": "2-4"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:psychic_gem",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:ice_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1910,6 +1997,13 @@
               "playForNonPassengers": true,
               "soundLocation": "cobblemon:ride.loop.wind",
               "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
             }
           ],
           "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
@@ -1919,11 +2013,11 @@
             0
           ],
           "stats": {
-            "ACCELERATION": "70-95",
-            "JUMP": "80-100",
-            "SKILL": "70-95",
-            "SPEED": "85-100",
-            "STAMINA": "70-95"
+            "ACCELERATION": "70-90",
+            "JUMP": "41-60",
+            "SKILL": "100-130",
+            "SPEED": "85-95",
+            "STAMINA": "82-120"
           }
         },
         "LAND": {
@@ -1932,11 +2026,29 @@
           "canJump": false,
           "canSprint": false,
           "stats": {
-            "ACCELERATION": "10-40",
-            "JUMP": "10-40",
-            "SKILL": "80-100",
-            "SPEED": "10-40",
-            "STAMINA": "10-40"
+            "ACCELERATION": "41-60",
+            "JUMP": "41-60",
+            "SKILL": "21-40",
+            "SPEED": "21-40",
+            "STAMINA": "61-80"
+          },
+          "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            "-1 * 0.5*q.jump_strength/50"
+          ]
+        },
+        "LIQUID": {
+          "key": "cobblemon:liquid/dolphin",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "0-20",
+            "JUMP": "41-60",
+            "SKILL": "60-80",
+            "SPEED": "41-60",
+            "STAMINA": "60-90"
           }
         }
       },
@@ -2019,6 +2131,164 @@
               ]
             }
           ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.79316,
+                "z": 0.7641932
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -2.0687745,
+                "z": 0.5822059
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.79316,
+                "z": 0.7641932
+              }
+            },
+            {
+              "poseTypes": [
+                "FLY"
+              ],
+              "offset": {
+                "x": 0.35303587,
+                "y": -1.1183715,
+                "z": -0.25105122
+              }
+            },
+            {
+              "poseTypes": [
+                "FLOAT"
+              ],
+              "offset": {
+                "x": -0.016359132,
+                "y": -2.2029357,
+                "z": 0.8644739
+              }
+            },
+            {
+              "poseTypes": [
+                "SWIM"
+              ],
+              "offset": {
+                "x": -0.016359132,
+                "y": -2.2029357,
+                "z": 0.8644739
+              }
+            },
+            {
+              "poseTypes": [
+                "GLIDE"
+              ],
+              "offset": {
+                "x": -0.016359132,
+                "y": -2.2029357,
+                "z": 0.8644739
+              }
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2031,18 +2301,24 @@
       },
       "moving": {
         "walk": {
-          "walkSpeed": 0.3
+          "walkSpeed": 1.5,
+          "canWalk": true,
+          "avoidsLand": false
         },
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.7
         },
         "swim": {
           "canSwim": true,
-          "canBreatheUnderwater": true
-        }
+          "canBreatheUnderwater": false,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false
+        },
+        "canLook": true
       },
       "herd": {
-        "maxSize": "6",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "latias mega=false",
@@ -2075,16 +2351,40 @@
     "baseFriendship": 90,
     "baseScale": 1,
     "hitbox": {
-      "width": 2,
-      "height": 1.7,
+      "width": 3,
+      "height": 2.5,
       "fixed": false
     },
     "drops": {
-      "amount": 4,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:feather",
           "quantityRange": "2-4"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:psychic_gem",
+          "percentage": 50
+        },
+        {
+          "item": "cobblemon:ice_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
     },

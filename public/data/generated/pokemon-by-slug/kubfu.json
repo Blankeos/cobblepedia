@@ -2,7 +2,89 @@
   "slug": "kubfu",
   "name": "Kubfu",
   "dexNumber": 891,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [CavsCobbleMons - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation8/kubfu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0891_kubfu.json",
+        "data/cobblemon/species_additions/kubfu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation8/kubfu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/kubfu_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/kubfu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CavsCobbleMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0891_kubfu.json",
+        "data/cobblemon/species/generation8/kubfu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2k9EDPO1/versions/j9azip42/CavsCobblemon1.4.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/kubfu.json",
+        "data/cobblemon/species_additions/missingmons/kubfu_size.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/kubfu.json",
+        "data/cobblemon/species_additions/kubfu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "fighting"
   ],
@@ -119,6 +201,96 @@
         "requirements": [],
         "requiredContext": "cobblemon:scroll_of_waters"
       }
+    },
+    {
+      "id": "kubfu_urshifu",
+      "variant": "level_up",
+      "result": {
+        "raw": "urshifu wushu_style=single_strike",
+        "slug": "urshifu",
+        "aspectTokens": [
+          "wushu_style=single_strike"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "wickedblow"
+      ],
+      "requirementText": [
+        "Hold Muscle Band"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Muscle Band",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:muscle_band"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "kubfu_urshifu",
+        "variant": "level_up",
+        "result": "urshifu wushu_style=single_strike",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "wickedblow"
+        ],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:muscle_band"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kubfu_urshifurapidstrike",
+      "variant": "level_up",
+      "result": {
+        "raw": "urshifu wushu_style=rapid_strike",
+        "slug": "urshifu",
+        "aspectTokens": [
+          "wushu_style=rapid_strike"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "surgingstrikes"
+      ],
+      "requirementText": [
+        "Hold Expert Belt"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Expert Belt",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:expert_belt"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "kubfu_urshifurapidstrike",
+        "variant": "level_up",
+        "result": "urshifu wushu_style=rapid_strike",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "surgingstrikes"
+        ],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:expert_belt"
+          }
+        ]
+      }
     }
   ],
   "evolutionFamily": {
@@ -169,12 +341,32 @@
       },
       {
         "fromNodeId": "kubfu",
+        "toNodeId": "urshifu-gmax",
+        "fromSlug": "kubfu",
+        "toSlug": "urshifu",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Muscle Band"
+        ]
+      },
+      {
+        "fromNodeId": "kubfu",
         "toNodeId": "urshifu-rapidstrike",
         "fromSlug": "kubfu",
         "toSlug": "urshifu",
         "method": "item_interact",
         "requirementText": [
           "Use Scroll Of Waters"
+        ]
+      },
+      {
+        "fromNodeId": "kubfu",
+        "toNodeId": "urshifu-rapidstrike",
+        "fromSlug": "kubfu",
+        "toSlug": "urshifu",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Expert Belt"
         ]
       }
     ],
@@ -927,7 +1119,31 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:fighting_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 891,
     "name": "Kubfu",
@@ -1075,11 +1291,41 @@
         ],
         "requirements": [],
         "requiredContext": "cobblemon:scroll_of_waters"
+      },
+      {
+        "id": "kubfu_urshifu",
+        "variant": "level_up",
+        "result": "urshifu wushu_style=single_strike",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "wickedblow"
+        ],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:muscle_band"
+          }
+        ]
+      },
+      {
+        "id": "kubfu_urshifurapidstrike",
+        "variant": "level_up",
+        "result": "urshifu wushu_style=rapid_strike",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "surgingstrikes"
+        ],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:expert_belt"
+          }
+        ]
       }
     ],
     "behaviour": {
       "herd": {
-        "maxSize": "2",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "urshifu",
@@ -1094,7 +1340,19 @@
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.3,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
@@ -1102,6 +1360,33 @@
         "willDefendOwner": true,
         "willFlee": false
       }
-    }
+    },
+    "implemented": true,
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:fighting_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
+    },
+    "shoulderMountable": true
   }
 }

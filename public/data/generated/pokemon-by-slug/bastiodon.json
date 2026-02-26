@@ -3,6 +3,32 @@
   "name": "Bastiodon",
   "dexNumber": 411,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0411_bastiodon.json",
+        "data/cobblemon/species/generation4/bastiodon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0411_bastiodon.json",
+        "data/cobblemon/species_additions/bastiodon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "rock",
     "steel"
@@ -1596,10 +1622,10 @@
           "key": "cobblemon:land/horse",
           "rideSounds": [],
           "stats": {
-            "ACCELERATION": "15-25",
-            "JUMP": "0-5",
-            "SKILL": "0-5",
-            "SPEED": "15-35",
+            "ACCELERATION": "30-50",
+            "JUMP": "15-30",
+            "SKILL": "20-40",
+            "SPEED": "65-85",
             "STAMINA": "50-90"
           }
         }
@@ -1760,6 +1786,92 @@
               "poseTypes": [
                 "GLIDE"
               ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.3025863,
+                "z": -0.1542604
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": -0.02595697,
+                "y": -1.282828,
+                "z": -0.16504669
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "FLOAT",
+                "SWIM",
+                "GLIDE"
+              ],
+              "offset": {
+                "x": -0.03984697,
+                "y": -1.3177792,
+                "z": -0.18566585
+              }
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.2831491,
+                "z": 0.36128467
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": -0.008630978,
+                "y": -1.2763681,
+                "z": 0.3505332
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "FLOAT",
+                "SWIM",
+                "GLIDE"
+              ],
+              "offset": {
+                "x": -0.013196847,
+                "y": -1.3370697,
+                "z": 0.32919547
+              }
             }
           ]
         }

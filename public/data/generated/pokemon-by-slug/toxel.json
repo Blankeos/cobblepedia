@@ -3,6 +3,42 @@
   "name": "Toxel",
   "dexNumber": 848,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0848_toxel.json",
+        "data/cobblemon/species/generation8/toxel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0848_toxel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MundialMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0848_toxel.json",
+        "data/cobblemon/species_additions/toxel.json",
+        "data/cobblemon/species/toxel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ubCG349l/versions/ObF5y08k/MundialMons.1.3.2V.%5BBUGS%20AND%20FIX%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "electric",
     "poison"
@@ -2143,11 +2179,23 @@
   ],
   "forms": [],
   "drops": {
-    "amount": 1,
+    "amount": 0,
     "entries": [
       {
         "item": "cobblemon:shuca_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 35
+      },
+      {
+        "item": "minecraft:slime_ball",
+        "percentage": 100
       }
     ]
   },
@@ -2197,18 +2245,30 @@
     "catchRate": 75,
     "eggCycles": 25,
     "baseFriendship": 50,
-    "baseScale": 0.8,
+    "baseScale": 0.7,
     "hitbox": {
       "width": 0.7,
-      "height": 0.9,
+      "height": 0.7,
       "fixed": false
     },
     "drops": {
-      "amount": 1,
+      "amount": "3",
       "entries": [
         {
           "item": "cobblemon:shuca_berry",
           "percentage": 2.5
+        },
+        {
+          "item": "minecraft:slime_ball",
+          "quantityRange": "0-3"
+        },
+        {
+          "item": "cobblemon:shuca_berry",
+          "percentage": 35
+        },
+        {
+          "item": "minecraft:slime_ball",
+          "percentage": 100
         }
       ]
     },
@@ -2688,7 +2748,10 @@
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "moving": {
         "swim": {
@@ -2699,6 +2762,7 @@
     "lightingData": {
       "lightLevel": 6,
       "liquidGlowMode": "BOTH"
-    }
+    },
+    "shoulderMountable": true
   }
 }

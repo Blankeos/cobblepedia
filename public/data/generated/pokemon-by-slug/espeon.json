@@ -3,6 +3,58 @@
   "name": "Espeon",
   "dexNumber": 196,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0196_espeon.json",
+        "data/cobblemon/species/generation2/espeon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation2/espeon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0196_espeon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_espeon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "psychic"
   ],
@@ -2352,6 +2404,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.21
         }
       },
       "combat": {
@@ -2361,6 +2416,52 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "35-60",
+            "JUMP": "20-35",
+            "SKILL": "45-70",
+            "SPEED": "45-75",
+            "STAMINA": "25-45"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.1,
+                "z": 0.05
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.15,
+                "z": 0.07
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

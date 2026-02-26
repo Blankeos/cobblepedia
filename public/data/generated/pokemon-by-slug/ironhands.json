@@ -2,7 +2,35 @@
   "slug": "ironhands",
   "name": "Iron Hands",
   "dexNumber": 992,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/ironhands.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0992_ironhands.json",
+        "data/cobblemon/species_additions/ironhands.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "fighting",
     "electric"
@@ -1066,6 +1094,13 @@
     "lightingData": {
       "lightLevel": 7,
       "liquidGlowMode": "BOTH"
+    },
+    "implemented": true,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 2,
+      "height": 1.8,
+      "fixed": false
     }
   }
 }

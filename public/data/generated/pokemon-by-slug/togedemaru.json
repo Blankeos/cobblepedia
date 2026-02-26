@@ -3,6 +3,41 @@
   "name": "Togedemaru",
   "dexNumber": 777,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0777_togedemaru.json",
+        "data/cobblemon/species/generation7/togedemaru.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0777_togedemaru.json",
+        "data/cobblemon/species_additions/togedemaru.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation7/togedemaru.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "electric",
     "steel"
@@ -1355,9 +1390,9 @@
     "eggCycles": 10,
     "baseFriendship": 50,
     "shoulderMountable": true,
-    "baseScale": 0.5,
+    "baseScale": 0.7,
     "hitbox": {
-      "width": 0.9,
+      "width": 0.5,
       "height": 1,
       "fixed": false
     },
@@ -1367,7 +1402,15 @@
           "walkSpeed": 0.2
         },
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": false,
+        "walk": {
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "resting": {
@@ -1378,7 +1421,8 @@
           "any"
         ],
         "drowsyChance": 0.0014,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "depth": "normal"
       },
       "herd": {
         "maxSize": "4",

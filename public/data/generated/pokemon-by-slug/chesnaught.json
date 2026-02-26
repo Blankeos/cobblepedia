@@ -3,6 +3,49 @@
   "name": "Chesnaught",
   "dexNumber": 652,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0652_chesnaught.json",
+        "data/cobblemon/species/generation6/chesnaught.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation6/chesnaught.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0652_chesnaught.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/chesnaught_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "grass",
     "fighting"
@@ -29,7 +72,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "chesnaught"
+    "chesnaught",
+    "chesnaught mega",
+    "mega"
   ],
   "maleRatio": 0.875,
   "height": 16,
@@ -1934,7 +1979,81 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "chesnaught-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 16,
+      "weight": 900,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 88,
+        "attack": 137,
+        "defence": 172,
+        "special_attack": 74,
+        "special_defence": 115,
+        "speed": 44
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "grassysurge",
+          "hidden": false,
+          "label": "Grassysurge",
+          "slot": "first"
+        },
+        {
+          "id": "grassysurge",
+          "hidden": true,
+          "label": "Grassysurge",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.chesnaught-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "grassysurge",
+          "h:grassysurge"
+        ],
+        "baseStats": {
+          "hp": 88,
+          "attack": 137,
+          "defence": 172,
+          "special_attack": 74,
+          "special_defence": 115,
+          "speed": 44
+        },
+        "battleOnly": true,
+        "height": 16,
+        "weight": 900
+      }
+    }
+  ],
   "drops": {
     "amount": 1,
     "entries": [
@@ -2201,6 +2320,115 @@
       "legacy:toxic"
     ],
     "preEvolution": "quilladin",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-55",
+            "JUMP": "20-35",
+            "SKILL": "35-60",
+            "SPEED": "25-45",
+            "STAMINA": "55-85"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -2,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -2.05,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -1.85,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.9,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -2.1,
+                "z": -0.18
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.chesnaught-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "grassysurge",
+          "h:grassysurge"
+        ],
+        "baseStats": {
+          "hp": 88,
+          "attack": 137,
+          "defence": 172,
+          "special_attack": 74,
+          "special_defence": 115,
+          "speed": 44
+        },
+        "battleOnly": true,
+        "height": 16,
+        "weight": 900
+      }
+    ]
   }
 }

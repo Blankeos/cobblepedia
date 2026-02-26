@@ -3,6 +3,50 @@
   "name": "Drampa",
   "dexNumber": 780,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0780_drampa.json",
+        "data/cobblemon/species/generation7/drampa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/drampa.json",
+        "data/cobblemon/species_additions/generation7/drampa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0780_drampa.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation7/drampa_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "normal",
     "dragon"
@@ -36,7 +80,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "drampa"
+    "drampa",
+    "drampa mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 30,
@@ -1583,7 +1629,94 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "drampa-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen7",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 30,
+      "weight": 2405,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 78,
+        "attack": 85,
+        "defence": 110,
+        "special_attack": 160,
+        "special_defence": 116,
+        "speed": 36
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "adaptability",
+          "hidden": false,
+          "label": "Adaptability",
+          "slot": "first"
+        },
+        {
+          "id": "adaptability",
+          "hidden": false,
+          "label": "Adaptability",
+          "slot": "second"
+        },
+        {
+          "id": "adaptability",
+          "hidden": true,
+          "label": "Adaptability",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.drampa-mega.desc"
+        ],
+        "abilities": [
+          "adaptability",
+          "adaptability",
+          "h:adaptability"
+        ],
+        "labels": [
+          "gen7",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 78,
+          "attack": 85,
+          "defence": 110,
+          "special_attack": 160,
+          "special_defence": 116,
+          "speed": 36
+        },
+        "baseScale": 1,
+        "hitbox": {
+          "width": 1.5,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 30,
+        "weight": 2405
+      }
+    }
+  ],
   "drops": {
     "amount": 2,
     "entries": [
@@ -1829,6 +1962,158 @@
       "legacy:snore",
       "legacy:toxic"
     ],
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "50-80",
+            "JUMP": "30-70",
+            "SKILL": "60-90",
+            "SPEED": "40-80",
+            "STAMINA": "35-75"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "15-35",
+            "JUMP": "5-15",
+            "SKILL": "30-55",
+            "SPEED": "20-40",
+            "STAMINA": "60-90"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.8,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -1.85,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.5,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.5,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.03,
+                "y": -1.45,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.6,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.drampa-mega.desc"
+        ],
+        "abilities": [
+          "adaptability",
+          "adaptability",
+          "h:adaptability"
+        ],
+        "labels": [
+          "gen7",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 78,
+          "attack": 85,
+          "defence": 110,
+          "special_attack": 160,
+          "special_defence": 116,
+          "speed": 36
+        },
+        "baseScale": 1,
+        "hitbox": {
+          "width": 1.5,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 30,
+        "weight": 2405
+      }
+    ]
   }
 }

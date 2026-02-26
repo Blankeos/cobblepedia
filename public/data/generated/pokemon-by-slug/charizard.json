@@ -3,6 +3,41 @@
   "name": "Charizard",
   "dexNumber": 6,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0006_charizard.json",
+        "data/cobblemon/species/generation1/charizard.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0006_charizard.json",
+        "data/cobblemon/species_additions/charizard.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation1/charizard.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire",
     "flying"
@@ -2539,10 +2574,10 @@
             }
           ],
           "stats": {
-            "ACCELERATION": "45-75",
+            "ACCELERATION": "70-90",
             "JUMP": "30-65",
-            "SKILL": "55-85",
-            "SPEED": "30-65",
+            "SKILL": "60-85",
+            "SPEED": "80-100",
             "STAMINA": "45-75"
           }
         },
@@ -2550,10 +2585,10 @@
           "key": "cobblemon:land/horse",
           "rideSounds": [],
           "stats": {
-            "ACCELERATION": "55-65",
+            "ACCELERATION": "40-60",
             "JUMP": "15-25",
-            "SKILL": "10-25",
-            "SPEED": "25-40",
+            "SKILL": "30-50",
+            "SPEED": "45-60",
             "STAMINA": "20-30"
           }
         }
@@ -2635,6 +2670,85 @@
               "poseTypes": [
                 "GLIDE"
               ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER"
+              ],
+              "offset": {
+                "x": 0.039005388,
+                "y": -2.4511793,
+                "z": 0.10381147
+              }
+            },
+            {
+              "poseTypes": [
+                "FLY"
+              ],
+              "offset": {
+                "x": 0.056267936,
+                "y": -2.0914204,
+                "z": -0.45272845
+              }
+            },
+            {
+              "poseTypes": [
+                "FLOAT"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -0.7674751,
+                "z": -0.27694723
+              }
+            },
+            {
+              "poseTypes": [
+                "SWIM"
+              ],
+              "offset": {
+                "x": -0.003806442,
+                "y": -1.7203209,
+                "z": 0.12983066
+              }
+            },
+            {
+              "poseTypes": [
+                "GLIDE"
+              ],
+              "offset": {
+                "x": 0.0047415113,
+                "y": -1.6152971,
+                "z": 0.35461712
+              }
             }
           ]
         }

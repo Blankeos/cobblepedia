@@ -3,6 +3,58 @@
   "name": "Regieleki",
   "dexNumber": 894,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation8/regieleki.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation8/regieleki.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0894_regieleki.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/legendary_spawns_atm/spawn_pool_world/regieleki.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/regieleki.json",
+        "data/cobblemon/species_additions/regieleki.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "electric"
   ],
@@ -811,10 +863,10 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 35,
-    "baseScale": 1,
+    "baseScale": 1.7,
     "hitbox": {
-      "width": 1.5,
-      "height": 2.5,
+      "width": 2.3,
+      "height": 2.4,
       "fixed": false
     },
     "moves": [
@@ -911,8 +963,10 @@
           "avoidsWater": true
         },
         "fly": {
-          "canFly": true
-        }
+          "canFly": false,
+          "flySpeedHorizontal": 0.35
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendSelf": true,
@@ -923,6 +977,155 @@
     "lightingData": {
       "lightLevel": 15,
       "liquidGlowMode": "BOTH"
+    },
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "speed": "math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "key": "cobblemon:air/jet",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            0
+          ],
+          "stats": {
+            "ACCELERATION": "50-70",
+            "JUMP": "20-70",
+            "SKILL": "50-60",
+            "SPEED": "70-80",
+            "STAMINA": "30-50"
+          }
+        },
+        "LAND": {
+          "speed": "math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            "-1 * 0.5*q.jump_strength/50"
+          ],
+          "stats": {
+            "ACCELERATION": "65-75",
+            "JUMP": "30-50",
+            "SKILL": "40-70",
+            "SPEED": "40-55",
+            "STAMINA": "30-45"
+          }
+        },
+        "LIQUID": {
+          "key": "cobblemon:liquid/boat",
+          "surfaceLevelOffset": -1.7,
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.water_surface",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "75-85",
+            "JUMP": "40-80",
+            "SKILL": "10-25",
+            "SPEED": "35-60",
+            "STAMINA": "5-10"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -2.1011124,
+                "z": 0.16987759
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.01469376,
+                "y": -1.9109085,
+                "z": -0.45310298
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05311563,
+                "y": -1.1318469,
+                "z": -0.39360297
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05311563,
+                "y": -1.1318469,
+                "z": -0.39360297
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0006860052,
+                "y": -2.1426969,
+                "z": -0.23987202
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.14164889,
+                "y": -1.6177647,
+                "z": -0.14327948
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0008643751,
+                "y": -2.4092257,
+                "z": -0.33146888
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

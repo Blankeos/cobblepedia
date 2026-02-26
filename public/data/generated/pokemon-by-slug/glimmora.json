@@ -3,6 +3,40 @@
   "name": "Glimmora",
   "dexNumber": 970,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0970_glimmora.json",
+        "data/cobblemon/species/generation9/glimmora.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0970_glimmora.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation9/glimmora_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "rock",
     "poison"
@@ -29,7 +63,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "glimmora"
+    "glimmora",
+    "glimmora mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 15,
@@ -1052,7 +1088,86 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "glimmora-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen9",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 28,
+      "weight": 770,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 83,
+        "attack": 90,
+        "defence": 105,
+        "special_attack": 150,
+        "special_defence": 96,
+        "speed": 101
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "levitate",
+          "hidden": false,
+          "label": "Levitate",
+          "slot": "first"
+        },
+        {
+          "id": "levitate",
+          "hidden": true,
+          "label": "Levitate",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.glimmora-mega.desc"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 83,
+          "attack": 90,
+          "defence": 105,
+          "special_attack": 150,
+          "special_defence": 96,
+          "speed": 101
+        },
+        "hitbox": {
+          "width": 1.2,
+          "height": 3.5,
+          "fixed": false
+        },
+        "height": 28,
+        "weight": 770
+      }
+    }
+  ],
   "drops": {
     "amount": 4,
     "entries": [
@@ -1256,6 +1371,44 @@
       "tutor:stoneedge"
     ],
     "preEvolution": "glimmet",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.glimmora-mega.desc"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 83,
+          "attack": 90,
+          "defence": 105,
+          "special_attack": 150,
+          "special_defence": 96,
+          "speed": 101
+        },
+        "hitbox": {
+          "width": 1.2,
+          "height": 3.5,
+          "fixed": false
+        },
+        "height": 28,
+        "weight": 770
+      }
+    ]
   }
 }

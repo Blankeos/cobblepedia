@@ -3,6 +3,50 @@
   "name": "Moltres",
   "dexNumber": 146,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation1/moltres.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0146_moltres.json",
+        "data/cobblemon/species/generation1/moltres.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation1/moltres.json",
+        "data/legendary_spawns_atm/spawn_pool_world/moltres.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/moltres.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire",
     "flying"
@@ -2358,7 +2402,7 @@
     }
   ],
   "drops": {
-    "amount": 6,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -2369,6 +2413,26 @@
       },
       {
         "item": "cobblemon:charcoal_stick"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:fire_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -2421,10 +2485,10 @@
     "features": [
       "galarian"
     ],
-    "baseScale": 1,
+    "baseScale": 0.85,
     "hitbox": {
-      "width": 1.5,
-      "height": 4,
+      "width": 2,
+      "height": 3,
       "fixed": false
     },
     "riding": {
@@ -2489,7 +2553,7 @@
         }
       },
       "herd": {
-        "maxSize": "2",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "moltres galarian=false",
@@ -2509,7 +2573,7 @@
       "fireImmune": true
     },
     "drops": {
-      "amount": 6,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:feather",
@@ -2520,6 +2584,26 @@
         },
         {
           "item": "cobblemon:charcoal_stick"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:fire_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
     },

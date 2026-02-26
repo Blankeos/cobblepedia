@@ -3,6 +3,50 @@
   "name": "Clobbopus",
   "dexNumber": 852,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0852_clobbopus.json",
+        "data/cobblemon/species/generation8/clobbopus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0852_clobbopus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation8/clobbopus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MundialMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0852_clobbopus.json",
+        "data/cobblemon/species_additions/clobbopus.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ubCG349l/versions/ObF5y08k/MundialMons.1.3.2V.%5BBUGS%20AND%20FIX%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fighting"
   ],
@@ -1397,7 +1441,7 @@
   ],
   "forms": [],
   "drops": {
-    "amount": 4,
+    "amount": 0,
     "entries": [
       {
         "item": "minecraft:ink_sac",
@@ -1406,6 +1450,10 @@
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "minecraft:ink_sac",
+        "percentage": 100
       }
     ]
   },
@@ -1480,11 +1528,15 @@
       },
       "resting": {
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "depth": "normal",
+        "light": "0-4"
       }
     },
     "drops": {
-      "amount": 4,
+      "amount": "1",
       "entries": [
         {
           "item": "minecraft:ink_sac",
@@ -1493,6 +1545,10 @@
         {
           "item": "cobblemon:pinap_berry",
           "percentage": 2.5
+        },
+        {
+          "item": "minecraft:ink_sac",
+          "percentage": 100
         }
       ]
     },
@@ -1579,6 +1635,7 @@
           }
         ]
       }
-    ]
+    ],
+    "shoulderMountable": true
   }
 }

@@ -3,6 +3,59 @@
   "name": "Mew",
   "dexNumber": 151,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation1/mew.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0151_mew.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "MelloMons RP",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0151_mew.json",
+        "data/cobblemon/species_additions/mew_addition.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/HFE7B8bM/versions/g8PU5ubT/MelloMons.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation1/mew.json",
+        "data/legendary_spawns_atm/spawn_pool_world/mew.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/mew.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "psychic"
   ],
@@ -5416,7 +5469,31 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:psychic_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 151,
@@ -5462,28 +5539,34 @@
     "eggCycles": 120,
     "baseFriendship": 100,
     "shoulderMountable": true,
-    "baseScale": 0.5,
+    "baseScale": 0.65,
     "hitbox": {
-      "width": 0.6,
-      "height": 1.6,
+      "width": 0.65,
+      "height": 1.61,
       "fixed": false
     },
     "behaviour": {
       "moving": {
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.3
         },
         "swim": {
           "avoidsWater": true
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": true,
+          "walkSpeed": 0.4
+        },
+        "canLook": true
       },
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "combat": {
         "willDefendOwner": true
@@ -6068,6 +6151,31 @@
       "behaviour": {
         "key": "cobblemon:land/vehicle"
       }
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:psychic_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

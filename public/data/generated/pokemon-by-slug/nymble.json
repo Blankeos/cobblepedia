@@ -2,7 +2,57 @@
   "slug": "nymble",
   "name": "Nymble",
   "dexNumber": 919,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MundialMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation9/nymble.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0919_nymble.json",
+        "data/cobblemon/species_additions/nymble.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/nymble.json",
+        "data/cobblemon/species_additions/generation9/nymble.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MundialMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0919_nymble.json",
+        "data/cobblemon/species_additions/nymble.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ubCG349l/versions/ObF5y08k/MundialMons.1.3.2V.%5BBUGS%20AND%20FIX%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "bug"
   ],
@@ -599,11 +649,15 @@
   "spawnEntries": [],
   "forms": [],
   "drops": {
-    "amount": 1,
+    "amount": 0,
     "entries": [
       {
         "item": "cobblemon:coba_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-3"
       }
     ]
   },
@@ -650,11 +704,15 @@
     "eggCycles": 20,
     "baseFriendship": 20,
     "drops": {
-      "amount": 1,
+      "amount": "2",
       "entries": [
         {
           "item": "cobblemon:coba_berry",
           "percentage": 2.5
+        },
+        {
+          "item": "minecraft:string",
+          "quantityRange": "0-3"
         }
       ]
     },
@@ -727,16 +785,37 @@
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "times": "night",
+        "light": "0-4"
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
-        }
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": true,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "wanderChance": 1
       },
       "combat": {
         "willDefendOwner": true
       }
-    }
+    },
+    "implemented": true,
+    "baseScale": 0.7,
+    "hitbox": {
+      "width": 0.5,
+      "height": 0.7,
+      "fixed": false
+    },
+    "shoulderMountable": false
   }
 }

@@ -2,7 +2,66 @@
   "slug": "meltan",
   "name": "Meltan",
   "dexNumber": 808,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7b/meltan.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0808_meltan.json",
+        "data/cobblemon/species_additions/meltan.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/meltan.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/legendary_spawns_atm/spawn_pool_world/meltan.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/meltan.json",
+        "data/cobblemon/species_additions/missingmons/meltan_melmetal.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "steel"
   ],
@@ -55,7 +114,112 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "meltan_melmetal",
+      "variant": "level_up",
+      "result": {
+        "raw": "melmetal",
+        "slug": "melmetal",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Anvil",
+        "Level 70+"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Anvil",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "minecraft:anvil"
+          }
+        },
+        {
+          "variant": "level",
+          "text": "Level 70+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 70
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "meltan_melmetal",
+        "variant": "level_up",
+        "result": "melmetal",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "minecraft:anvil"
+          },
+          {
+            "variant": "level",
+            "minLevel": 70
+          }
+        ]
+      }
+    },
+    {
+      "id": "meltan_melmetal",
+      "variant": "level_up",
+      "result": {
+        "raw": "melmetal",
+        "slug": "melmetal",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Anvil",
+        "Level up"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Anvil",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "minecraft:anvil"
+          }
+        },
+        {
+          "variant": "level",
+          "text": "Level up",
+          "raw": {
+            "variant": "level",
+            "minlevel": "60"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "meltan_melmetal",
+        "variant": "level_up",
+        "result": "melmetal",
+        "consumeHeldItem": true,
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "minecraft:anvil"
+          },
+          {
+            "variant": "level",
+            "minlevel": "60"
+          }
+        ],
+        "permanent": true
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
       {
@@ -65,9 +229,40 @@
         "dexNumber": 808,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "melmetal",
+        "slug": "melmetal",
+        "name": "Melmetal",
+        "dexNumber": 809,
+        "formSlug": null,
+        "formName": null
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "meltan",
+        "toNodeId": "melmetal",
+        "fromSlug": "meltan",
+        "toSlug": "melmetal",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Anvil",
+          "Level 70+"
+        ]
+      },
+      {
+        "fromNodeId": "meltan",
+        "toNodeId": "melmetal",
+        "fromSlug": "meltan",
+        "toSlug": "melmetal",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Anvil",
+          "Level up"
+        ]
+      }
+    ],
     "roots": [
       "meltan"
     ]
@@ -376,7 +571,16 @@
   ],
   "spawnEntries": [],
   "forms": [],
-  "drops": null,
+  "drops": {
+    "amount": 0,
+    "entries": [
+      {
+        "item": "minecraft:iron_ingot",
+        "quantityRange": "1-5",
+        "percentage": 50
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 808,
     "name": "Meltan",
@@ -420,10 +624,10 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.3,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 0.4,
+      "height": 0.8,
       "fixed": false
     },
     "moves": [
@@ -458,7 +662,42 @@
       "legacy:snore",
       "legacy:toxic"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "meltan_melmetal",
+        "variant": "level_up",
+        "result": "melmetal",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "minecraft:anvil"
+          },
+          {
+            "variant": "level",
+            "minLevel": 70
+          }
+        ]
+      },
+      {
+        "id": "meltan_melmetal",
+        "variant": "level_up",
+        "result": "melmetal",
+        "consumeHeldItem": true,
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "minecraft:anvil"
+          },
+          {
+            "variant": "level",
+            "minlevel": "60"
+          }
+        ],
+        "permanent": true
+      }
+    ],
     "behaviour": {
       "herd": {
         "maxSize": "9",
@@ -479,17 +718,39 @@
           "any"
         ],
         "drowsyChance": 0.0014,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "moving": {
         "swim": {
           "avoidsWater": true,
-          "canSwimInWater": false
+          "canSwimInWater": false,
+          "swimSpeed": 0.1,
+          "canBreatheUnderwater": false
+        },
+        "canLook": false,
+        "walk": {
+          "walkSpeed": 0.175,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
         "willDefendOwner": true
       }
+    },
+    "implemented": true,
+    "drops": {
+      "amount": "1",
+      "entries": [
+        {
+          "item": "minecraft:iron_ingot",
+          "quantityRange": "1-5",
+          "percentage": 50
+        }
+      ]
     }
   }
 }

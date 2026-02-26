@@ -3,6 +3,59 @@
   "name": "Scovillain",
   "dexNumber": 952,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0952_scovillain.json",
+        "data/cobblemon/species/generation9/scovillain.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0952_scovillain.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [GlitchDex - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/952_scovillain.json",
+        "data/cobblemon/species/generation9/scovillain.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Gdq5F7ud/versions/eHQG8T0Y/GlitchDex-1.1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/scovillain.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation9/scovillain_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "grass",
     "fire"
@@ -35,7 +88,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "scovillain"
+    "mega",
+    "scovillain",
+    "scovillain mega"
   ],
   "maleRatio": 0.5,
   "height": 9,
@@ -1061,7 +1116,88 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "scovillain-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen9",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 12,
+      "weight": 220,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 65,
+        "attack": 138,
+        "defence": 85,
+        "special_attack": 138,
+        "special_defence": 85,
+        "speed": 75
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "contrary",
+          "hidden": false,
+          "label": "Contrary",
+          "slot": "first"
+        },
+        {
+          "id": "contrary",
+          "hidden": false,
+          "label": "Contrary",
+          "slot": "second"
+        },
+        {
+          "id": "contrary",
+          "hidden": true,
+          "label": "Contrary",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.scovillain-mega.desc"
+        ],
+        "abilities": [
+          "contrary",
+          "contrary",
+          "h:contrary"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 138,
+          "defence": 85,
+          "special_attack": 138,
+          "special_defence": 85,
+          "speed": 75
+        },
+        "height": 12,
+        "weight": 220
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -1256,6 +1392,40 @@
         "willDefendOwner": true,
         "willFlee": false
       }
-    }
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.scovillain-mega.desc"
+        ],
+        "abilities": [
+          "contrary",
+          "contrary",
+          "h:contrary"
+        ],
+        "labels": [
+          "gen9",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 138,
+          "defence": 85,
+          "special_attack": 138,
+          "special_defence": 85,
+          "speed": 75
+        },
+        "height": 12,
+        "weight": 220
+      }
+    ]
   }
 }

@@ -2,7 +2,77 @@
   "slug": "zygarde",
   "name": "Zygarde",
   "dexNumber": 718,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "zamega-fabric-1.5.4"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation6/zygarde.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0718_zygarde.json",
+        "data/cobblemon/species/generation6/zygarde.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation6/zygarde.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/legendary_spawns_atm/spawn_pool_world/zygarde.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0718_zygarde.json",
+        "data/cobblemon/species_additions/zygarde.json",
+        "data/cobblemon/species/zygarde.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/zygarde_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dragon",
     "ground"
@@ -37,11 +107,15 @@
     "10 -c",
     "50 -c",
     "complete",
+    "core",
+    "megac",
     "zygarde",
     "zygarde 10",
     "zygarde 10 -c",
     "zygarde 50 -c",
-    "zygarde complete"
+    "zygarde complete",
+    "zygarde core",
+    "zygarde megac"
   ],
   "maleRatio": -1,
   "height": 50,
@@ -6070,6 +6144,156 @@
         "evolutions": [],
         "battleOnly": true
       }
+    },
+    {
+      "name": "MegaC",
+      "slug": "zygarde-megac",
+      "aspects": [
+        "complete-percent",
+        "mega"
+      ],
+      "labels": [
+        "MegaC",
+        "complete-percent",
+        "legendary",
+        "restricted"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 77,
+      "weight": 6100,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 216,
+        "attack": 70,
+        "defence": 91,
+        "special_attack": 216,
+        "special_defence": 85,
+        "speed": 100
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "aurabreak",
+          "hidden": false,
+          "label": "Aurabreak",
+          "slot": "first"
+        },
+        {
+          "id": "aurabreak",
+          "hidden": true,
+          "label": "Aurabreak",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "MegaC",
+        "pokedex": [
+          "cobblemon.species.zygarde-mega.desc"
+        ],
+        "abilities": [
+          "aurabreak",
+          "h:aurabreak"
+        ],
+        "labels": [
+          "MegaC",
+          "complete-percent",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "complete-percent",
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 216,
+          "attack": 70,
+          "defence": 91,
+          "special_attack": 216,
+          "special_defence": 85,
+          "speed": 100
+        },
+        "baseScale": 0.7,
+        "hitbox": {
+          "width": 3,
+          "height": 12,
+          "fixed": false
+        },
+        "height": 77,
+        "weight": 6100
+      }
+    },
+    {
+      "name": "Core",
+      "slug": "zygarde-core",
+      "aspects": [
+        "core-percent"
+      ],
+      "labels": [],
+      "types": [],
+      "maleRatio": null,
+      "height": null,
+      "weight": null,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 1,
+        "attack": 1,
+        "defence": 1,
+        "special_attack": 1,
+        "special_defence": 1,
+        "speed": 1
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [],
+      "moves": [
+        {
+          "raw": "1:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Core",
+          "fromFormSlug": "zygarde-core"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Core",
+        "baseScale": 0.5,
+        "hitbox": {
+          "width": 1,
+          "height": 1,
+          "fixed": false
+        },
+        "aspects": [
+          "core-percent"
+        ],
+        "baseStats": {
+          "hp": 1,
+          "attack": 1,
+          "defence": 1,
+          "special_attack": 1,
+          "special_defence": 1,
+          "speed": 1
+        },
+        "moves": [
+          "1:bulldoze"
+        ],
+        "evolutions": [],
+        "battleOnly": true
+      }
     }
   ],
   "drops": null,
@@ -6796,6 +7020,68 @@
         ],
         "evolutions": [],
         "battleOnly": true
+      },
+      {
+        "name": "MegaC",
+        "pokedex": [
+          "cobblemon.species.zygarde-mega.desc"
+        ],
+        "abilities": [
+          "aurabreak",
+          "h:aurabreak"
+        ],
+        "labels": [
+          "MegaC",
+          "complete-percent",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "complete-percent",
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 216,
+          "attack": 70,
+          "defence": 91,
+          "special_attack": 216,
+          "special_defence": 85,
+          "speed": 100
+        },
+        "baseScale": 0.7,
+        "hitbox": {
+          "width": 3,
+          "height": 12,
+          "fixed": false
+        },
+        "height": 77,
+        "weight": 6100
+      },
+      {
+        "name": "Core",
+        "baseScale": 0.5,
+        "hitbox": {
+          "width": 1,
+          "height": 1,
+          "fixed": false
+        },
+        "aspects": [
+          "core-percent"
+        ],
+        "baseStats": {
+          "hp": 1,
+          "attack": 1,
+          "defence": 1,
+          "special_attack": 1,
+          "special_defence": 1,
+          "speed": 1
+        },
+        "moves": [
+          "1:bulldoze"
+        ],
+        "evolutions": [],
+        "battleOnly": true
       }
     ],
     "behaviour": {
@@ -6816,6 +7102,9 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "features": [
+      "mega_evolution"
+    ]
   }
 }

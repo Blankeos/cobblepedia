@@ -3,6 +3,41 @@
   "name": "Staraptor",
   "dexNumber": 398,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0398_staraptor.json",
+        "data/cobblemon/species/generation4/staraptor.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0398_staraptor.json",
+        "data/cobblemon/species_additions/staraptor.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation4/staraptor_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "normal",
     "flying"
@@ -29,7 +64,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "staraptor"
+    "mega",
+    "staraptor",
+    "staraptor mega"
   ],
   "maleRatio": 0.5,
   "height": 12,
@@ -1209,7 +1246,86 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "staraptor-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen4",
+        "mega"
+      ],
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "maleRatio": null,
+      "height": 19,
+      "weight": 500,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 85,
+        "attack": 140,
+        "defence": 100,
+        "special_attack": 60,
+        "special_defence": 90,
+        "speed": 110
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "toughclaws",
+          "hidden": false,
+          "label": "Toughclaws",
+          "slot": "first"
+        },
+        {
+          "id": "toughclaws",
+          "hidden": true,
+          "label": "Toughclaws",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "primaryType": "fighting",
+        "secondaryType": "flying",
+        "pokedex": [
+          "cobblemon.species.staraptor-mega.desc"
+        ],
+        "abilities": [
+          "toughclaws",
+          "h:toughclaws"
+        ],
+        "labels": [
+          "gen4",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 85,
+          "attack": 140,
+          "defence": 100,
+          "special_attack": 60,
+          "special_defence": 90,
+          "speed": 110
+        },
+        "height": 19,
+        "weight": 500
+      }
+    }
+  ],
   "drops": {
     "amount": 6,
     "entries": [
@@ -1319,10 +1435,10 @@
             }
           ],
           "stats": {
-            "ACCELERATION": "45-70",
+            "ACCELERATION": "75-95",
             "JUMP": "45-65",
-            "SKILL": "25-45",
-            "SPEED": "35-55",
+            "SKILL": "60-85",
+            "SPEED": "85-105",
             "STAMINA": "45-70"
           }
         },
@@ -1335,7 +1451,7 @@
             "ACCELERATION": "10-40",
             "JUMP": "10-40",
             "SKILL": "80-100",
-            "SPEED": "10-40",
+            "SPEED": "20-45",
             "STAMINA": "10-40"
           }
         }
@@ -1417,6 +1533,85 @@
               "poseTypes": [
                 "GLIDE"
               ]
+            }
+          ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND"
+              ],
+              "offset": {
+                "x": 0.0009571392,
+                "y": -1.234365,
+                "z": 0.35967734
+              }
+            },
+            {
+              "poseTypes": [
+                "WALK"
+              ],
+              "offset": {
+                "x": 0.007911977,
+                "y": -1.2373239,
+                "z": 0.2598092
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -0.8240394,
+                "z": 0.35912716
+              }
+            },
+            {
+              "poseTypes": [
+                "FLY"
+              ],
+              "offset": {
+                "x": 0,
+                "y": -1.0298951,
+                "z": 0.2007187
+              }
+            },
+            {
+              "poseTypes": [
+                "FLOAT"
+              ],
+              "offset": {
+                "x": 0.0009571392,
+                "y": -1.234365,
+                "z": 0.35967734
+              }
+            },
+            {
+              "poseTypes": [
+                "SWIM"
+              ],
+              "offset": {
+                "x": 0.007911977,
+                "y": -1.2373239,
+                "z": 0.2598092
+              }
+            },
+            {
+              "poseTypes": [
+                "GLIDE"
+              ],
+              "offset": {
+                "x": 0.0009571392,
+                "y": -1.234365,
+                "z": 0.35967734
+              }
             }
           ]
         }
@@ -1571,6 +1766,41 @@
       "legacy:toxic"
     ],
     "preEvolution": "staravia",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "primaryType": "fighting",
+        "secondaryType": "flying",
+        "pokedex": [
+          "cobblemon.species.staraptor-mega.desc"
+        ],
+        "abilities": [
+          "toughclaws",
+          "h:toughclaws"
+        ],
+        "labels": [
+          "gen4",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 85,
+          "attack": 140,
+          "defence": 100,
+          "special_attack": 60,
+          "special_defence": 90,
+          "speed": 110
+        },
+        "height": 19,
+        "weight": 500
+      }
+    ]
   }
 }

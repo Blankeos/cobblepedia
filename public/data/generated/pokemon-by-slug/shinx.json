@@ -3,6 +3,41 @@
   "name": "Shinx",
   "dexNumber": 403,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0403_shinx.json",
+        "data/cobblemon/species/generation4/shinx.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0403_shinx.json",
+        "data/cobblemon/species_additions/shinx.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_shinx.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "electric"
   ],
@@ -1371,6 +1406,9 @@
       "moving": {
         "swim": {
           "avoidsWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.215
         }
       },
       "combat": {
@@ -1509,6 +1547,10 @@
           }
         ]
       }
-    ]
+    ],
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true
+    }
   }
 }

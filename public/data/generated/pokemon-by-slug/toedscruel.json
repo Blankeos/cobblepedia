@@ -3,6 +3,50 @@
   "name": "Toedscruel",
   "dexNumber": 949,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0949_toedscruel.json",
+        "data/cobblemon/species/generation9/toedscruel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation9/toedscruel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0949_toedscruel.json",
+        "data/cobblemon/species_additions/toedscruel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation9/toedscruel.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ground",
     "grass"
@@ -1217,10 +1261,10 @@
     "catchRate": 90,
     "eggCycles": 20,
     "baseFriendship": 50,
-    "baseScale": 0.8,
+    "baseScale": 1,
     "hitbox": {
-      "width": 1.6,
-      "height": 3.05,
+      "width": 1,
+      "height": 2.1,
       "fixed": false
     },
     "standingEyeHeight": 0.71,
@@ -1359,6 +1403,83 @@
       "tutor:swift"
     ],
     "preEvolution": "toedscool",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "20-40",
+            "JUMP": "15-30",
+            "SKILL": "30-60",
+            "SPEED": "30-55",
+            "STAMINA": "35-65"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.8,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -1.9,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.5,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.03,
+                "y": -1.55,
+                "z": -0.35
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -2,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

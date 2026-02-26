@@ -3,6 +3,49 @@
   "name": "Delphox",
   "dexNumber": 655,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0655_delphox.json",
+        "data/cobblemon/species/generation6/delphox.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation6/delphox.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0655_delphox.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/delphox_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire",
     "psychic"
@@ -29,7 +72,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "delphox"
+    "delphox",
+    "delphox mega",
+    "mega"
   ],
   "maleRatio": 0.875,
   "height": 15,
@@ -1806,7 +1851,117 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "delphox-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 15,
+      "weight": 390,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 75,
+        "attack": 69,
+        "defence": 72,
+        "special_attack": 159,
+        "special_defence": 125,
+        "speed": 134
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "levitate",
+          "hidden": false,
+          "label": "Levitate",
+          "slot": "first"
+        },
+        {
+          "id": "levitate",
+          "hidden": true,
+          "label": "Levitate",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.delphox-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "baseStats": {
+          "hp": 75,
+          "attack": 69,
+          "defence": 72,
+          "special_attack": 159,
+          "special_defence": 125,
+          "speed": 134
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.55
+            },
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.65
+            },
+            "herd": {
+              "maxSize": "5"
+            },
+            "resting": {
+              "times": [
+                "day"
+              ],
+              "drowsyChance": 0.0033,
+              "rouseChance": 0.0042
+            },
+            "combat": {
+              "willDefendSelf": true,
+              "willDefendOwner": true,
+              "willFlee": false
+            },
+            "fireImmune": true
+          }
+        },
+        "battleOnly": true,
+        "hitbox": {
+          "width": 1.5,
+          "height": 3.8,
+          "fixed": false
+        },
+        "height": 15,
+        "weight": 390
+      }
+    }
+  ],
   "drops": {
     "amount": 5,
     "entries": [
@@ -2082,6 +2237,151 @@
       "legacy:toxic"
     ],
     "preEvolution": "braixen",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "35-60",
+            "JUMP": "20-35",
+            "SKILL": "50-75",
+            "SPEED": "30-55",
+            "STAMINA": "35-60"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.85,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -1.95,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -1.6,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.55,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -2,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.delphox-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "levitate",
+          "h:levitate"
+        ],
+        "baseStats": {
+          "hp": 75,
+          "attack": 69,
+          "defence": 72,
+          "special_attack": 159,
+          "special_defence": 125,
+          "speed": 134
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.55
+            },
+            "swim": {
+              "avoidsWater": true,
+              "canSwimInLava": true
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.65
+            },
+            "herd": {
+              "maxSize": "5"
+            },
+            "resting": {
+              "times": [
+                "day"
+              ],
+              "drowsyChance": 0.0033,
+              "rouseChance": 0.0042
+            },
+            "combat": {
+              "willDefendSelf": true,
+              "willDefendOwner": true,
+              "willFlee": false
+            },
+            "fireImmune": true
+          }
+        },
+        "battleOnly": true,
+        "hitbox": {
+          "width": 1.5,
+          "height": 3.8,
+          "fixed": false
+        },
+        "height": 15,
+        "weight": 390
+      }
+    ]
   }
 }

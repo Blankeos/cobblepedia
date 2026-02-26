@@ -2,7 +2,35 @@
   "slug": "dustox",
   "name": "Dustox",
   "dexNumber": 269,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation3/dustox.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0269_dustox.json",
+        "data/cobblemon/species_additions/dustox.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "bug",
     "poison"
@@ -1215,10 +1243,10 @@
     "catchRate": 45,
     "eggCycles": 15,
     "baseFriendship": 50,
-    "baseScale": 1,
+    "baseScale": 0.7,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 0.8,
+      "height": 1.2,
       "fixed": false
     },
     "drops": {
@@ -1356,15 +1384,20 @@
           "avoidsWater": true
         },
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.6
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": true,
+          "walkSpeed": 0.5
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendOwner": true
       }
-    }
+    },
+    "implemented": true,
+    "shoulderMountable": false
   }
 }

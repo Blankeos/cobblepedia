@@ -3,6 +3,49 @@
   "name": "Greninja",
   "dexNumber": 658,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0658_greninja.json",
+        "data/cobblemon/species/generation6/greninja.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation6/greninja.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0658_greninja.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/greninja_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "water",
     "dark"
@@ -33,7 +76,9 @@
     "bond",
     "greninja",
     "greninja ash",
-    "greninja bond"
+    "greninja bond",
+    "greninja mega",
+    "mega"
   ],
   "maleRatio": 0.875,
   "height": 15,
@@ -1973,6 +2018,115 @@
           }
         }
       }
+    },
+    {
+      "name": "Mega",
+      "slug": "greninja-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 15,
+      "weight": 400,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 72,
+        "attack": 125,
+        "defence": 77,
+        "special_attack": 133,
+        "special_defence": 81,
+        "speed": 142
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "protean",
+          "hidden": false,
+          "label": "Protean",
+          "slot": "first"
+        },
+        {
+          "id": "protean",
+          "hidden": true,
+          "label": "Protean",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.greninja-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "protean",
+          "h:protean"
+        ],
+        "baseStats": {
+          "hp": 72,
+          "attack": 125,
+          "defence": 77,
+          "special_attack": 133,
+          "special_defence": 81,
+          "speed": 142
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.55
+            },
+            "swim": {
+              "avoidsWater": false,
+              "canSwimInLava": false
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.65
+            },
+            "herd": {
+              "maxSize": "5"
+            },
+            "resting": {
+              "times": [
+                "day"
+              ],
+              "drowsyChance": 0.0033,
+              "rouseChance": 0.0042
+            },
+            "combat": {
+              "willDefendSelf": true,
+              "willDefendOwner": true,
+              "willFlee": false
+            },
+            "fireImmune": false
+          }
+        },
+        "battleOnly": true,
+        "hitbox": {
+          "width": 1.1,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 15,
+        "weight": 400
+      }
     }
   ],
   "drops": {
@@ -2300,7 +2454,169 @@
             "rouseChance": 0.0042
           }
         }
+      },
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.greninja-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "protean",
+          "h:protean"
+        ],
+        "baseStats": {
+          "hp": 72,
+          "attack": 125,
+          "defence": 77,
+          "special_attack": 133,
+          "special_defence": 81,
+          "speed": 142
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.55
+            },
+            "swim": {
+              "avoidsWater": false,
+              "canSwimInLava": false
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.65
+            },
+            "herd": {
+              "maxSize": "5"
+            },
+            "resting": {
+              "times": [
+                "day"
+              ],
+              "drowsyChance": 0.0033,
+              "rouseChance": 0.0042
+            },
+            "combat": {
+              "willDefendSelf": true,
+              "willDefendOwner": true,
+              "willFlee": false
+            },
+            "fireImmune": false
+          }
+        },
+        "battleOnly": true,
+        "hitbox": {
+          "width": 1.1,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 15,
+        "weight": 400
       }
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "55-80",
+            "JUMP": "35-55",
+            "SKILL": "50-75",
+            "SPEED": "45-75",
+            "STAMINA": "35-55"
+          }
+        },
+        "LIQUID": {
+          "key": "cobblemon:liquid/dolphin",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.water_surface",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "60-85",
+            "JUMP": "35-65",
+            "SKILL": "60-85",
+            "SPEED": "50-80",
+            "STAMINA": "40-65"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.75,
+                "z": -0.05
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.04,
+                "y": -1.85,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.35,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.25,
+                "z": -0.35
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.01,
+                "y": -1.9,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
     ]
   }
 }

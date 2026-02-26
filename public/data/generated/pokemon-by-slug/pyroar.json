@@ -3,6 +3,50 @@
   "name": "Pyroar",
   "dexNumber": 668,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0668_pyroar.json",
+        "data/cobblemon/species/generation6/pyroar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0668_pyroar.json",
+        "data/cobblemon/species_additions/pyroar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation6/pyroar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/pyroar_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire",
     "normal"
@@ -35,7 +79,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "pyroar"
+    "mega",
+    "pyroar",
+    "pyroar mega"
   ],
   "maleRatio": 0.125,
   "height": 15,
@@ -1327,9 +1373,91 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "pyroar-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 15,
+      "weight": 933,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 86,
+        "attack": 88,
+        "defence": 92,
+        "special_attack": 129,
+        "special_defence": 86,
+        "speed": 126
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "drought",
+          "hidden": false,
+          "label": "Drought",
+          "slot": "first"
+        },
+        {
+          "id": "drought",
+          "hidden": false,
+          "label": "Drought",
+          "slot": "second"
+        },
+        {
+          "id": "drought",
+          "hidden": true,
+          "label": "Drought",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.pyroar-mega.desc"
+        ],
+        "abilities": [
+          "drought",
+          "drought",
+          "h:drought"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 86,
+          "attack": 88,
+          "defence": 92,
+          "special_attack": 129,
+          "special_defence": 86,
+          "speed": 126
+        },
+        "baseScale": 1.15,
+        "height": 15,
+        "weight": 933
+      }
+    }
+  ],
   "drops": {
-    "amount": 4,
+    "amount": 0,
     "entries": [
       {
         "item": "minecraft:rotten_flesh",
@@ -1342,6 +1470,10 @@
       {
         "item": "cobblemon:rawst_berry",
         "percentage": 5
+      },
+      {
+        "item": "minecraft:blaze_powder",
+        "percentage": 10
       }
     ]
   },
@@ -1390,11 +1522,11 @@
     "catchRate": 65,
     "eggCycles": 20,
     "baseFriendship": 50,
-    "baseScale": 0.85,
+    "baseScale": 0.8,
     "standingEyeHeight": 0.8,
     "hitbox": {
-      "width": 1.5,
-      "height": 2.4,
+      "width": 1,
+      "height": 1.6,
       "fixed": false
     },
     "behaviour": {
@@ -1428,12 +1560,16 @@
       },
       "resting": {
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "depth": "normal",
+        "light": "0-4"
       },
       "fireImmune": true
     },
     "drops": {
-      "amount": 4,
+      "amount": "3",
       "entries": [
         {
           "item": "minecraft:rotten_flesh",
@@ -1446,6 +1582,10 @@
         {
           "item": "cobblemon:rawst_berry",
           "percentage": 5
+        },
+        {
+          "item": "minecraft:blaze_powder",
+          "percentage": 10
         }
       ]
     },
@@ -1559,6 +1699,65 @@
       "legacy:toxic"
     ],
     "preEvolution": "litleo",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "40-60",
+            "ACCELERATION": "30-55",
+            "SKILL": "25-45",
+            "JUMP": "15-30",
+            "STAMINA": "50-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.pyroar-mega.desc"
+        ],
+        "abilities": [
+          "drought",
+          "drought",
+          "h:drought"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 86,
+          "attack": 88,
+          "defence": 92,
+          "special_attack": 129,
+          "special_defence": 86,
+          "speed": 126
+        },
+        "baseScale": 1.15,
+        "height": 15,
+        "weight": 933
+      }
+    ]
   }
 }

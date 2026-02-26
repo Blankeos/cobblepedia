@@ -3,6 +3,49 @@
   "name": "Clefable",
   "dexNumber": 36,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0036_clefable.json",
+        "data/cobblemon/species/generation1/clefable.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/clefable.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0036_clefable.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation1/clefable_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fairy"
   ],
@@ -34,7 +77,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "clefable"
+    "clefable",
+    "clefable mega",
+    "mega"
   ],
   "maleRatio": 0.25,
   "height": 13,
@@ -2680,7 +2725,110 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "clefable-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen1",
+        "mega"
+      ],
+      "types": [
+        "fairy",
+        "flying"
+      ],
+      "maleRatio": null,
+      "height": 17,
+      "weight": 423,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 95,
+        "attack": 80,
+        "defence": 93,
+        "special_attack": 135,
+        "special_defence": 110,
+        "speed": 70
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "prankster",
+          "hidden": false,
+          "label": "Prankster",
+          "slot": "first"
+        },
+        {
+          "id": "prankster",
+          "hidden": false,
+          "label": "Prankster",
+          "slot": "second"
+        },
+        {
+          "id": "prankster",
+          "hidden": true,
+          "label": "Prankster",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "primaryType": "fairy",
+        "secondaryType": "flying",
+        "pokedex": [
+          "cobblemon.species.clefable-mega.desc"
+        ],
+        "abilities": [
+          "prankster",
+          "prankster",
+          "h:prankster"
+        ],
+        "labels": [
+          "gen1",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 95,
+          "attack": 80,
+          "defence": 93,
+          "special_attack": 135,
+          "special_defence": 110,
+          "speed": 70
+        },
+        "baseScale": 0.8,
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.147
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.6
+            }
+          }
+        },
+        "hitbox": {
+          "width": 1.5,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 17,
+        "weight": 423
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -3023,6 +3171,119 @@
       "legacy:zapcannon"
     ],
     "preEvolution": "clefairy",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "35-55",
+            "JUMP": "20-35",
+            "SKILL": "35-55",
+            "SPEED": "30-45",
+            "STAMINA": "55-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.45,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.45,
+                "z": 0.15
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.45,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "FLOAT",
+                "SWIM",
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "primaryType": "fairy",
+        "secondaryType": "flying",
+        "pokedex": [
+          "cobblemon.species.clefable-mega.desc"
+        ],
+        "abilities": [
+          "prankster",
+          "prankster",
+          "h:prankster"
+        ],
+        "labels": [
+          "gen1",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 95,
+          "attack": 80,
+          "defence": 93,
+          "special_attack": 135,
+          "special_defence": 110,
+          "speed": 70
+        },
+        "baseScale": 0.8,
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.147
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.6
+            }
+          }
+        },
+        "hitbox": {
+          "width": 1.5,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 17,
+        "weight": 423
+      }
+    ]
   }
 }

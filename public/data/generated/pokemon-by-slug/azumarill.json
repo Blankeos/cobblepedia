@@ -3,6 +3,40 @@
   "name": "Azumarill",
   "dexNumber": 184,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0184_azumarill.json",
+        "data/cobblemon/species/generation2/azumarill.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0184_azumarill.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation2/azumarill.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "water",
     "fairy"
@@ -1934,17 +1968,18 @@
     "catchRate": 75,
     "eggCycles": 10,
     "baseFriendship": 50,
-    "baseScale": 0.9,
+    "baseScale": 1,
     "hitbox": {
-      "width": 0.8,
-      "height": 1.2,
+      "width": 0.7,
+      "height": 1,
       "fixed": false
     },
     "behaviour": {
       "moving": {
         "swim": {
           "canBreatheUnderwater": true,
-          "swimSpeed": "0.2"
+          "swimSpeed": 0.1,
+          "canSwimInWater": true
         }
       },
       "resting": {

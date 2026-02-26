@@ -3,6 +3,40 @@
   "name": "Scolipede",
   "dexNumber": 545,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "data/cobblemon/species/generation5/scolipede.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0545_scolipede.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation5/scolipede_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "bug",
     "poison"
@@ -35,7 +69,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "scolipede"
+    "mega",
+    "scolipede",
+    "scolipede mega"
   ],
   "maleRatio": 0.5,
   "height": 25,
@@ -1646,7 +1682,89 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "scolipede-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 32,
+      "weight": 2305,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 60,
+        "attack": 140,
+        "defence": 149,
+        "special_attack": 75,
+        "special_defence": 99,
+        "speed": 62
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "tintedlens",
+          "hidden": false,
+          "label": "Tintedlens",
+          "slot": "first"
+        },
+        {
+          "id": "tintedlens",
+          "hidden": false,
+          "label": "Tintedlens",
+          "slot": "second"
+        },
+        {
+          "id": "tintedlens",
+          "hidden": true,
+          "label": "Tintedlens",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.scolipede-mega.desc"
+        ],
+        "abilities": [
+          "tintedlens",
+          "tintedlens",
+          "h:tintedlens"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 60,
+          "attack": 140,
+          "defence": 149,
+          "special_attack": 75,
+          "special_defence": 99,
+          "speed": 62
+        },
+        "baseScale": 1.05,
+        "height": 32,
+        "weight": 2305
+      }
+    }
+  ],
   "drops": {
     "amount": 2,
     "entries": [
@@ -1891,6 +2009,41 @@
       "legacy:swagger"
     ],
     "preEvolution": "whirlipede",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.scolipede-mega.desc"
+        ],
+        "abilities": [
+          "tintedlens",
+          "tintedlens",
+          "h:tintedlens"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 60,
+          "attack": 140,
+          "defence": 149,
+          "special_attack": 75,
+          "special_defence": 99,
+          "speed": 62
+        },
+        "baseScale": 1.05,
+        "height": 32,
+        "weight": 2305
+      }
+    ]
   }
 }

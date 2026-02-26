@@ -3,6 +3,41 @@
   "name": "Inkay",
   "dexNumber": 686,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0686_inkay.json",
+        "data/cobblemon/species/generation6/inkay.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0686_inkay.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MundialMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0686_inkay.json",
+        "data/cobblemon/species_additions/inkay.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ubCG349l/versions/ObF5y08k/MundialMons.1.3.2V.%5BBUGS%20AND%20FIX%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dark",
     "psychic"
@@ -2254,7 +2289,7 @@
   ],
   "forms": [],
   "drops": {
-    "amount": 2,
+    "amount": 0,
     "entries": [
       {
         "item": "minecraft:ink_sac",
@@ -2263,6 +2298,10 @@
       {
         "item": "cobblemon:tanga_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "minecraft:ink_sac",
+        "percentage": 100
       }
     ]
   },
@@ -2314,8 +2353,8 @@
     "baseFriendship": 50,
     "baseScale": 0.7,
     "hitbox": {
-      "width": 0.8,
-      "height": 0.9,
+      "width": 1,
+      "height": 1,
       "fixed": false
     },
     "behaviour": {
@@ -2350,14 +2389,19 @@
           "day"
         ],
         "drowsyChance": 0.0033,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleeph": "normal",
+        "walkSpeed": 0.25,
+        "runSpeed": 0.35,
+        "light": "0-4"
       },
       "combat": {
         "willDefendOwner": true
       }
     },
     "drops": {
-      "amount": 2,
+      "amount": "1",
       "entries": [
         {
           "item": "minecraft:ink_sac",
@@ -2366,6 +2410,10 @@
         {
           "item": "cobblemon:tanga_berry",
           "percentage": 2.5
+        },
+        {
+          "item": "minecraft:ink_sac",
+          "percentage": 100
         }
       ]
     },
@@ -2543,6 +2591,7 @@
           }
         ]
       }
-    ]
+    ],
+    "shoulderMountable": true
   }
 }

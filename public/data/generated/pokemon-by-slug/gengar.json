@@ -3,6 +3,67 @@
   "name": "Gengar",
   "dexNumber": 94,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0094_gengar.json",
+        "data/cobblemon/species/generation1/gengar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/gengar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0094_gengar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation1/gengar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/gengar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [TDmon - Credits Only]",
+      "files": [
+        "data/cobblemon/species/generation1/gengar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/b8PVSzJC/versions/hcVF2EwL/TDmon%5BV1.3.1a-Gastly%20Line%20Ported%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ghost",
     "poison"
@@ -63,9 +124,68 @@
     "slug": "haunter",
     "aspectTokens": []
   },
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "gengar_megagengar",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megagengar",
+        "slug": "megagengar",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Key Stone"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:key_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "gengar_megagengar",
+        "variant": "item_interact",
+        "result": "megagengar",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      }
+    },
+    {
+      "id": "gengar_megagengar1",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megagengar",
+        "slug": "megagengar",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Mega Ring"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:mega_ring",
+      "fromForm": null,
+      "raw": {
+        "id": "gengar_megagengar1",
+        "variant": "item_interact",
+        "result": "megagengar",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
+      {
+        "nodeId": "megagengar",
+        "slug": "megagengar",
+        "name": "Megagengar",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
       {
         "nodeId": "gastly",
         "slug": "gastly",
@@ -100,6 +220,26 @@
         "method": "level_up",
         "requirementText": [
           "Level 25+"
+        ]
+      },
+      {
+        "fromNodeId": "gengar",
+        "toNodeId": "megagengar",
+        "fromSlug": "gengar",
+        "toSlug": "megagengar",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "gengar",
+        "toNodeId": "megagengar",
+        "fromSlug": "gengar",
+        "toSlug": "megagengar",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
         ]
       },
       {
@@ -2639,7 +2779,24 @@
       "legacy:zapcannon"
     ],
     "preEvolution": "haunter",
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "gengar_megagengar",
+        "variant": "item_interact",
+        "result": "megagengar",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      },
+      {
+        "id": "gengar_megagengar1",
+        "variant": "item_interact",
+        "result": "megagengar",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    ],
     "forms": [
       {
         "name": "Mega",
@@ -2722,6 +2879,121 @@
         "evolutions": [],
         "battleOnly": true
       }
-    ]
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "35-55",
+            "JUMP": "20-35",
+            "SKILL": "45-65",
+            "SPEED": "25-40",
+            "STAMINA": "30-55"
+          }
+        },
+        "AIR": {
+          "key": "cobblemon:air/hover",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "25-45",
+            "JUMP": "25-45",
+            "SKILL": "55-80",
+            "SPEED": "20-35",
+            "STAMINA": "30-60"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.6,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -1.65,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.4,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.4,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.03,
+                "y": -1.35,
+                "z": -0.35
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.45,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -1.7,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

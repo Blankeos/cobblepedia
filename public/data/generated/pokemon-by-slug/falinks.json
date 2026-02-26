@@ -3,6 +3,40 @@
   "name": "Falinks",
   "dexNumber": 870,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0870_falinks.json",
+        "data/cobblemon/species/generation8/falinks.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0870_falinks.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation8/falinks_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fighting"
   ],
@@ -29,7 +63,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "falinks"
+    "falinks",
+    "falinks mega",
+    "mega"
   ],
   "maleRatio": -1,
   "height": 30,
@@ -1106,7 +1142,87 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "falinks-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen8",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 16,
+      "weight": 990,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 65,
+        "attack": 135,
+        "defence": 135,
+        "special_attack": 70,
+        "special_defence": 65,
+        "speed": 100
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "dauntlessshield",
+          "hidden": false,
+          "label": "Dauntlessshield",
+          "slot": "first"
+        },
+        {
+          "id": "dauntlessshield",
+          "hidden": true,
+          "label": "Dauntlessshield",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.falinks-mega.desc"
+        ],
+        "abilities": [
+          "dauntlessshield",
+          "h:dauntlessshield"
+        ],
+        "labels": [
+          "gen8",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 135,
+          "defence": 135,
+          "special_attack": 70,
+          "special_defence": 65,
+          "speed": 100
+        },
+        "baseScale": 1.05,
+        "hitbox": {
+          "width": 1.2,
+          "height": 2.1,
+          "fixed": false
+        },
+        "height": 16,
+        "weight": 990
+      }
+    }
+  ],
   "drops": {
     "amount": 2,
     "entries": [
@@ -1304,6 +1420,45 @@
       "legacy:round",
       "legacy:snore"
     ],
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.falinks-mega.desc"
+        ],
+        "abilities": [
+          "dauntlessshield",
+          "h:dauntlessshield"
+        ],
+        "labels": [
+          "gen8",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 135,
+          "defence": 135,
+          "special_attack": 70,
+          "special_defence": 65,
+          "speed": 100
+        },
+        "baseScale": 1.05,
+        "hitbox": {
+          "width": 1.2,
+          "height": 2.1,
+          "fixed": false
+        },
+        "height": 16,
+        "weight": 990
+      }
+    ]
   }
 }

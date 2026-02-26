@@ -3,6 +3,51 @@
   "name": "Lugia",
   "dexNumber": 249,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation2/lugia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0249_lugia.json",
+        "data/cobblemon/species_additions/lugia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/lugia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/lugia_drops.json",
+        "data/cobblemon/species_additions/lugia_shadow.json",
+        "data/legendary_spawns_atm/spawn_pool_world/lugia.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "psychic",
     "flying"
@@ -31,7 +76,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "lugia"
+    "lugia",
+    "lugia shadow",
+    "shadow"
   ],
   "maleRatio": -1,
   "height": 52,
@@ -1787,13 +1834,1952 @@
     }
   ],
   "spawnEntries": [],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Shadow",
+      "slug": "lugia-shadow",
+      "aspects": [
+        "shadow"
+      ],
+      "labels": [],
+      "types": [
+        "dark",
+        "flying"
+      ],
+      "maleRatio": null,
+      "height": null,
+      "weight": null,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 106,
+        "attack": 130,
+        "defence": 90,
+        "special_attack": 154,
+        "special_defence": 90,
+        "speed": 110
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "darkaura",
+          "hidden": false,
+          "label": "Darkaura",
+          "slot": "first"
+        },
+        {
+          "id": "shadowshield",
+          "hidden": true,
+          "label": "Shadowshield",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:whirlwind",
+          "moveId": "whirlwind",
+          "moveName": "Whirlwind",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:weatherball",
+          "moveId": "weatherball",
+          "moveName": "Weather Ball",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:gust",
+          "moveId": "gust",
+          "moveName": "Gust",
+          "type": "flying",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:dragonrush",
+          "moveId": "dragonrush",
+          "moveName": "Dragon Rush",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:punishment",
+          "moveId": "punishment",
+          "moveName": "Punishment",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:naturalgift",
+          "moveId": "naturalgift",
+          "moveName": "Natural Gift",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:pursuit",
+          "moveId": "pursuit",
+          "moveName": "Pursuit",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "1:shadowsneak",
+          "moveId": "shadowsneak",
+          "moveName": "Shadow Sneak",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "9:mist",
+          "moveId": "mist",
+          "moveName": "Mist",
+          "type": "ice",
+          "sourceType": "level",
+          "sourceValue": 9,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "14:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 14,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "18:safeguard",
+          "moveId": "safeguard",
+          "moveName": "Safeguard",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 18,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "23:feintattack",
+          "moveId": "feintattack",
+          "moveName": "Feint Attack",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 23,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "27:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 27,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "31:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 31,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "36:extrasensory",
+          "moveId": "extrasensory",
+          "moveName": "Extrasensory",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "41:payback",
+          "moveId": "payback",
+          "moveName": "Payback",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 41,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "45:recover",
+          "moveId": "recover",
+          "moveName": "Recover",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 45,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "48:nastyplot",
+          "moveId": "nastyplot",
+          "moveName": "Nasty Plot",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "51:nightshade",
+          "moveId": "nightshade",
+          "moveName": "Night Shade",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 51,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "53:nightslash",
+          "moveId": "nightslash",
+          "moveName": "Night Slash",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 53,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "54:aeroblast",
+          "moveId": "aeroblast",
+          "moveName": "Aeroblast",
+          "type": "flying",
+          "sourceType": "level",
+          "sourceValue": 54,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "56:darkpulse",
+          "moveId": "darkpulse",
+          "moveName": "Dark Pulse",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 56,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "60:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 60,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "63:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 63,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "68:nightdaze",
+          "moveId": "nightdaze",
+          "moveName": "Night Daze",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 68,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "72:hydropump",
+          "moveId": "hydropump",
+          "moveName": "Hydro Pump",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 72,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "81:futuresight",
+          "moveId": "futuresight",
+          "moveName": "Future Sight",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 81,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "90:skyattack",
+          "moveId": "skyattack",
+          "moveName": "Sky Attack",
+          "type": "flying",
+          "sourceType": "level",
+          "sourceValue": 90,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:acrobatics",
+          "moveId": "acrobatics",
+          "moveName": "Acrobatics",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:aircutter",
+          "moveId": "aircutter",
+          "moveName": "Air Cutter",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:airslash",
+          "moveId": "airslash",
+          "moveName": "Air Slash",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:aquatail",
+          "moveId": "aquatail",
+          "moveName": "Aqua Tail",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:avalanche",
+          "moveId": "avalanche",
+          "moveName": "Avalanche",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:bravebird",
+          "moveId": "bravebird",
+          "moveName": "Brave Bird",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:brine",
+          "moveId": "brine",
+          "moveName": "Brine",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:chargebeam",
+          "moveId": "chargebeam",
+          "moveName": "Charge Beam",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:chillingwater",
+          "moveId": "chillingwater",
+          "moveName": "Chilling Water",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:defog",
+          "moveId": "defog",
+          "moveName": "Defog",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:dive",
+          "moveId": "dive",
+          "moveName": "Dive",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:dragontail",
+          "moveId": "dragontail",
+          "moveName": "Dragon Tail",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:dreameater",
+          "moveId": "dreameater",
+          "moveName": "Dream Eater",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:dualwingbeat",
+          "moveId": "dualwingbeat",
+          "moveName": "Dual Wingbeat",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:echoedvoice",
+          "moveId": "echoedvoice",
+          "moveName": "Echoed Voice",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:flash",
+          "moveId": "flash",
+          "moveName": "Flash",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:fly",
+          "moveId": "fly",
+          "moveName": "Fly",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:futuresight",
+          "moveId": "futuresight",
+          "moveName": "Future Sight",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:hail",
+          "moveId": "hail",
+          "moveName": "Hail",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:headbutt",
+          "moveId": "headbutt",
+          "moveName": "Headbutt",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:hurricane",
+          "moveId": "hurricane",
+          "moveName": "Hurricane",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:hydropump",
+          "moveId": "hydropump",
+          "moveName": "Hydro Pump",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:icywind",
+          "moveId": "icywind",
+          "moveName": "Icy Wind",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:imprison",
+          "moveId": "imprison",
+          "moveName": "Imprison",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:laserfocus",
+          "moveId": "laserfocus",
+          "moveName": "Laser Focus",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:lightscreen",
+          "moveId": "lightscreen",
+          "moveName": "Light Screen",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:liquidation",
+          "moveId": "liquidation",
+          "moveName": "Liquidation",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:naturalgift",
+          "moveId": "naturalgift",
+          "moveName": "Natural Gift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:ominouswind",
+          "moveId": "ominouswind",
+          "moveName": "Ominous Wind",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:psychicnoise",
+          "moveId": "psychicnoise",
+          "moveName": "Psychic Noise",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:psychup",
+          "moveId": "psychup",
+          "moveName": "Psych Up",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:psyshock",
+          "moveId": "psyshock",
+          "moveName": "Psyshock",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:reflect",
+          "moveId": "reflect",
+          "moveName": "Reflect",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:roost",
+          "moveId": "roost",
+          "moveName": "Roost",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:safeguard",
+          "moveId": "safeguard",
+          "moveName": "Safeguard",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:scaleshot",
+          "moveId": "scaleshot",
+          "moveName": "Scale Shot",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:signalbeam",
+          "moveId": "signalbeam",
+          "moveName": "Signal Beam",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:skillswap",
+          "moveId": "skillswap",
+          "moveName": "Skill Swap",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:skyattack",
+          "moveId": "skyattack",
+          "moveName": "Sky Attack",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:skydrop",
+          "moveId": "skydrop",
+          "moveName": "Sky Drop",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:steelwing",
+          "moveId": "steelwing",
+          "moveName": "Steel Wing",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:strength",
+          "moveId": "strength",
+          "moveName": "Strength",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:surf",
+          "moveId": "surf",
+          "moveName": "Surf",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:tailwind",
+          "moveId": "tailwind",
+          "moveName": "Tailwind",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:telekinesis",
+          "moveId": "telekinesis",
+          "moveName": "Telekinesis",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:thunder",
+          "moveId": "thunder",
+          "moveName": "Thunder",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:trick",
+          "moveId": "trick",
+          "moveName": "Trick",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:twister",
+          "moveId": "twister",
+          "moveName": "Twister",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:waterfall",
+          "moveId": "waterfall",
+          "moveName": "Waterfall",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:weatherball",
+          "moveId": "weatherball",
+          "moveName": "Weather Ball",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:whirlpool",
+          "moveId": "whirlpool",
+          "moveName": "Whirlpool",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:wonderroom",
+          "moveId": "wonderroom",
+          "moveName": "Wonder Room",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tm:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:aircutter",
+          "moveId": "aircutter",
+          "moveName": "Air Cutter",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:aquatail",
+          "moveId": "aquatail",
+          "moveName": "Aqua Tail",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:chargebeam",
+          "moveId": "chargebeam",
+          "moveName": "Charge Beam",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:defog",
+          "moveId": "defog",
+          "moveName": "Defog",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:dive",
+          "moveId": "dive",
+          "moveName": "Dive",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:dualwingbeat",
+          "moveId": "dualwingbeat",
+          "moveName": "Dual Wingbeat",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:icywind",
+          "moveId": "icywind",
+          "moveName": "Icy Wind",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:laserfocus",
+          "moveId": "laserfocus",
+          "moveName": "Laser Focus",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:liquidation",
+          "moveId": "liquidation",
+          "moveName": "Liquidation",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:ominouswind",
+          "moveId": "ominouswind",
+          "moveName": "Ominous Wind",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:roost",
+          "moveId": "roost",
+          "moveName": "Roost",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:scaleshot",
+          "moveId": "scaleshot",
+          "moveName": "Scale Shot",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:signalbeam",
+          "moveId": "signalbeam",
+          "moveName": "Signal Beam",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:skillswap",
+          "moveId": "skillswap",
+          "moveName": "Skill Swap",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:skyattack",
+          "moveId": "skyattack",
+          "moveName": "Sky Attack",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:tailwind",
+          "moveId": "tailwind",
+          "moveName": "Tailwind",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:telekinesis",
+          "moveId": "telekinesis",
+          "moveName": "Telekinesis",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:trick",
+          "moveId": "trick",
+          "moveName": "Trick",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:twister",
+          "moveId": "twister",
+          "moveName": "Twister",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:wonderroom",
+          "moveId": "wonderroom",
+          "moveName": "Wonder Room",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        },
+        {
+          "raw": "tutor:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Shadow",
+          "fromFormSlug": "lugia-shadow"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Shadow",
+        "primaryType": "dark",
+        "secondaryType": "flying",
+        "aspects": [
+          "shadow"
+        ],
+        "abilities": [
+          "darkaura",
+          "h:shadowshield"
+        ],
+        "pokedex": [
+          "cobblemon.species.lugia-shadow.desc"
+        ],
+        "baseStats": {
+          "hp": 106,
+          "attack": 130,
+          "defence": 90,
+          "special_attack": 154,
+          "special_defence": 90,
+          "speed": 110
+        },
+        "moves": [
+          "1:whirlwind",
+          "1:weatherball",
+          "1:gust",
+          "1:dragonrush",
+          "1:punishment",
+          "1:ancientpower",
+          "1:naturalgift",
+          "1:pursuit",
+          "1:shadowsneak",
+          "9:mist",
+          "14:taunt",
+          "18:safeguard",
+          "23:feintattack",
+          "27:calmmind",
+          "31:snarl",
+          "36:extrasensory",
+          "41:payback",
+          "45:recover",
+          "48:nastyplot",
+          "51:nightshade",
+          "53:nightslash",
+          "54:aeroblast",
+          "56:darkpulse",
+          "60:suckerpunch",
+          "63:raindance",
+          "68:nightdaze",
+          "72:hydropump",
+          "81:futuresight",
+          "90:skyattack",
+          "tm:acrobatics",
+          "tm:aerialace",
+          "tm:aircutter",
+          "tm:airslash",
+          "tm:ancientpower",
+          "tm:aquatail",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:bravebird",
+          "tm:brine",
+          "tm:calmmind",
+          "tm:chargebeam",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:defog",
+          "tm:dive",
+          "tm:doubleedge",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dreameater",
+          "tm:dualwingbeat",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:echoedvoice",
+          "tm:endure",
+          "tm:facade",
+          "tm:flash",
+          "tm:fly",
+          "tm:futuresight",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:hail",
+          "tm:headbutt",
+          "tm:helpinghand",
+          "tm:hurricane",
+          "tm:hydropump",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:icywind",
+          "tm:imprison",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:laserfocus",
+          "tm:lightscreen",
+          "tm:liquidation",
+          "tm:naturalgift",
+          "tm:ominouswind",
+          "tm:protect",
+          "tm:psychic",
+          "tm:psychicnoise",
+          "tm:psychup",
+          "tm:psyshock",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:rocksmash",
+          "tm:roost",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowball",
+          "tm:shockwave",
+          "tm:signalbeam",
+          "tm:skillswap",
+          "tm:skyattack",
+          "tm:skydrop",
+          "tm:sleeptalk",
+          "tm:steelwing",
+          "tm:strength",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:swift",
+          "tm:tailwind",
+          "tm:takedown",
+          "tm:telekinesis",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:trick",
+          "tm:twister",
+          "tm:waterfall",
+          "tm:waterpulse",
+          "tm:weatherball",
+          "tm:whirlpool",
+          "tm:wonderroom",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:aircutter",
+          "tutor:ancientpower",
+          "tutor:aquatail",
+          "tutor:calmmind",
+          "tutor:chargebeam",
+          "tutor:defog",
+          "tutor:dive",
+          "tutor:dragonpulse",
+          "tutor:dualwingbeat",
+          "tutor:earthpower",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:icywind",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:laserfocus",
+          "tutor:liquidation",
+          "tutor:ominouswind",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:roost",
+          "tutor:scaleshot",
+          "tutor:shadowball",
+          "tutor:shockwave",
+          "tutor:signalbeam",
+          "tutor:skillswap",
+          "tutor:skyattack",
+          "tutor:sleeptalk",
+          "tutor:swift",
+          "tutor:tailwind",
+          "tutor:telekinesis",
+          "tutor:thunderbolt",
+          "tutor:trick",
+          "tutor:twister",
+          "tutor:waterpulse",
+          "tutor:wonderroom",
+          "tutor:zenheadbutt"
+        ],
+        "riding": {
+          "behaviours": {
+            "AIR": {
+              "key": "cobblemon:air/bird",
+              "rideSounds": [
+                {
+                  "soundLocation": "cobblemon:ride.loop.plumage",
+                  "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)",
+                  "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+                  "playForNonPassengers": true,
+                  "muffleEnabled": true
+                }
+              ],
+              "stats": {
+                "SPEED": "85-110",
+                "ACCELERATION": "20-100",
+                "SKILL": "50-100",
+                "JUMP": "25-50",
+                "STAMINA": "150-180"
+              }
+            },
+            "LAND": {
+              "key": "cobblemon:land/horse",
+              "stats": {
+                "SPEED": "10-20",
+                "ACCELERATION": "90-100",
+                "SKILL": "15-30",
+                "JUMP": "10-20",
+                "STAMINA": "15-30"
+              }
+            },
+            "LIQUID": {
+              "key": "cobblemon:liquid/dolphin",
+              "rideSounds": [],
+              "stats": {
+                "ACCELERATION": "55-85",
+                "JUMP": "30-65",
+                "SKILL": "10-40",
+                "SPEED": "55-85",
+                "STAMINA": "80-135"
+              }
+            }
+          },
+          "seats": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseOffsets": [
+                {
+                  "offset": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "poseTypes": [
+                    "FLY"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
   "drops": {
-    "amount": 4,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:feather",
         "quantityRange": "2-4"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:psychic_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1843,19 +3829,27 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 1.1,
     "hitbox": {
       "width": 2,
-      "height": 4.5,
+      "height": 7,
       "fixed": false
     },
     "behaviour": {
       "moving": {
         "fly": {
-          "canFly": true
+          "canFly": true,
+          "flySpeedHorizontal": 0.7
         },
         "swim": {
-          "canBreatheUnderwater": true
+          "canBreatheUnderwater": true,
+          "swimSpeed": 0.7,
+          "canWalkOnWater": false,
+          "canSwimInWater": true,
+          "canSwimInLava": false
+        },
+        "walk": {
+          "walkSpeed": 0.55
         }
       },
       "resting": {
@@ -1868,7 +3862,7 @@
         "rouseChance": 0.0042
       },
       "herd": {
-        "maxSize": "2",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "lugia",
@@ -1903,11 +3897,11 @@
             }
           ],
           "stats": {
-            "SPEED": "60-80",
-            "ACCELERATION": "65-85",
-            "SKILL": "60-80",
-            "JUMP": "75-90",
-            "STAMINA": "65-90"
+            "SPEED": "70-95",
+            "ACCELERATION": "20-100",
+            "SKILL": "50-100",
+            "JUMP": "25-50",
+            "STAMINA": "130-150"
           }
         },
         "LAND": {
@@ -1916,22 +3910,22 @@
           "canJump": false,
           "canSprint": false,
           "stats": {
-            "ACCELERATION": "10-40",
-            "JUMP": "10-40",
-            "SKILL": "80-100",
-            "SPEED": "10-40",
-            "STAMINA": "10-40"
+            "ACCELERATION": "90-100",
+            "JUMP": "10-20",
+            "SKILL": "15-30",
+            "SPEED": "10-20",
+            "STAMINA": "15-30"
           }
         },
         "LIQUID": {
           "key": "cobblemon:liquid/dolphin",
           "rideSounds": [],
           "stats": {
-            "ACCELERATION": "80-100",
-            "JUMP": "75-90",
-            "SKILL": "75-95",
-            "SPEED": "60-80",
-            "STAMINA": "80-100"
+            "ACCELERATION": "55-85",
+            "JUMP": "30-65",
+            "SKILL": "10-40",
+            "SPEED": "55-85",
+            "STAMINA": "80-135"
           }
         }
       },
@@ -2014,15 +4008,54 @@
               ]
             }
           ]
+        },
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            }
+          ]
         }
       ]
     },
     "drops": {
-      "amount": 4,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:feather",
           "quantityRange": "2-4"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:psychic_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
     },
@@ -2199,6 +4232,539 @@
       "special:featherdance",
       "special:psychoboost"
     ],
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "shadow"
+    ],
+    "forms": [
+      {
+        "name": "Shadow",
+        "primaryType": "dark",
+        "secondaryType": "flying",
+        "aspects": [
+          "shadow"
+        ],
+        "abilities": [
+          "darkaura",
+          "h:shadowshield"
+        ],
+        "pokedex": [
+          "cobblemon.species.lugia-shadow.desc"
+        ],
+        "baseStats": {
+          "hp": 106,
+          "attack": 130,
+          "defence": 90,
+          "special_attack": 154,
+          "special_defence": 90,
+          "speed": 110
+        },
+        "moves": [
+          "1:whirlwind",
+          "1:weatherball",
+          "1:gust",
+          "1:dragonrush",
+          "1:punishment",
+          "1:ancientpower",
+          "1:naturalgift",
+          "1:pursuit",
+          "1:shadowsneak",
+          "9:mist",
+          "14:taunt",
+          "18:safeguard",
+          "23:feintattack",
+          "27:calmmind",
+          "31:snarl",
+          "36:extrasensory",
+          "41:payback",
+          "45:recover",
+          "48:nastyplot",
+          "51:nightshade",
+          "53:nightslash",
+          "54:aeroblast",
+          "56:darkpulse",
+          "60:suckerpunch",
+          "63:raindance",
+          "68:nightdaze",
+          "72:hydropump",
+          "81:futuresight",
+          "90:skyattack",
+          "tm:acrobatics",
+          "tm:aerialace",
+          "tm:aircutter",
+          "tm:airslash",
+          "tm:ancientpower",
+          "tm:aquatail",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:bravebird",
+          "tm:brine",
+          "tm:calmmind",
+          "tm:chargebeam",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:defog",
+          "tm:dive",
+          "tm:doubleedge",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dreameater",
+          "tm:dualwingbeat",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:echoedvoice",
+          "tm:endure",
+          "tm:facade",
+          "tm:flash",
+          "tm:fly",
+          "tm:futuresight",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:hail",
+          "tm:headbutt",
+          "tm:helpinghand",
+          "tm:hurricane",
+          "tm:hydropump",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:icywind",
+          "tm:imprison",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:laserfocus",
+          "tm:lightscreen",
+          "tm:liquidation",
+          "tm:naturalgift",
+          "tm:ominouswind",
+          "tm:protect",
+          "tm:psychic",
+          "tm:psychicnoise",
+          "tm:psychup",
+          "tm:psyshock",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:rocksmash",
+          "tm:roost",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowball",
+          "tm:shockwave",
+          "tm:signalbeam",
+          "tm:skillswap",
+          "tm:skyattack",
+          "tm:skydrop",
+          "tm:sleeptalk",
+          "tm:steelwing",
+          "tm:strength",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:swift",
+          "tm:tailwind",
+          "tm:takedown",
+          "tm:telekinesis",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:trick",
+          "tm:twister",
+          "tm:waterfall",
+          "tm:waterpulse",
+          "tm:weatherball",
+          "tm:whirlpool",
+          "tm:wonderroom",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:aircutter",
+          "tutor:ancientpower",
+          "tutor:aquatail",
+          "tutor:calmmind",
+          "tutor:chargebeam",
+          "tutor:defog",
+          "tutor:dive",
+          "tutor:dragonpulse",
+          "tutor:dualwingbeat",
+          "tutor:earthpower",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:icywind",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:laserfocus",
+          "tutor:liquidation",
+          "tutor:ominouswind",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:roost",
+          "tutor:scaleshot",
+          "tutor:shadowball",
+          "tutor:shockwave",
+          "tutor:signalbeam",
+          "tutor:skillswap",
+          "tutor:skyattack",
+          "tutor:sleeptalk",
+          "tutor:swift",
+          "tutor:tailwind",
+          "tutor:telekinesis",
+          "tutor:thunderbolt",
+          "tutor:trick",
+          "tutor:twister",
+          "tutor:waterpulse",
+          "tutor:wonderroom",
+          "tutor:zenheadbutt"
+        ],
+        "riding": {
+          "behaviours": {
+            "AIR": {
+              "key": "cobblemon:air/bird",
+              "rideSounds": [
+                {
+                  "soundLocation": "cobblemon:ride.loop.plumage",
+                  "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)",
+                  "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+                  "playForNonPassengers": true,
+                  "muffleEnabled": true
+                }
+              ],
+              "stats": {
+                "SPEED": "85-110",
+                "ACCELERATION": "20-100",
+                "SKILL": "50-100",
+                "JUMP": "25-50",
+                "STAMINA": "150-180"
+              }
+            },
+            "LAND": {
+              "key": "cobblemon:land/horse",
+              "stats": {
+                "SPEED": "10-20",
+                "ACCELERATION": "90-100",
+                "SKILL": "15-30",
+                "JUMP": "10-20",
+                "STAMINA": "15-30"
+              }
+            },
+            "LIQUID": {
+              "key": "cobblemon:liquid/dolphin",
+              "rideSounds": [],
+              "stats": {
+                "ACCELERATION": "55-85",
+                "JUMP": "30-65",
+                "SKILL": "10-40",
+                "SPEED": "55-85",
+                "STAMINA": "80-135"
+              }
+            }
+          },
+          "seats": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseOffsets": [
+                {
+                  "offset": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "poseTypes": [
+                    "FLY"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Shadow",
+        "primaryType": "dark",
+        "secondaryType": "flying",
+        "aspects": [
+          "shadows"
+        ],
+        "baseScale": 0.5,
+        "hitbox": {
+          "width": 2,
+          "height": 7,
+          "fixed": false
+        },
+        "abilities": [
+          "darkaura",
+          "h:shadowshield"
+        ],
+        "pokedex": [
+          "cobblemon.species.lugia-shadow.desc"
+        ],
+        "baseStats": {
+          "hp": 106,
+          "attack": 130,
+          "defence": 90,
+          "special_attack": 154,
+          "special_defence": 90,
+          "speed": 110
+        },
+        "moves": [
+          "1:whirlwind",
+          "1:weatherball",
+          "1:gust",
+          "1:dragonrush",
+          "1:punishment",
+          "1:ancientpower",
+          "1:naturalgift",
+          "1:pursuit",
+          "1:shadowsneak",
+          "9:mist",
+          "14:taunt",
+          "18:safeguard",
+          "23:feintattack",
+          "27:calmmind",
+          "31:snarl",
+          "36:extrasensory",
+          "41:payback",
+          "45:recover",
+          "48:nastyplot",
+          "51:nightshade",
+          "53:nightslash",
+          "54:aeroblast",
+          "56:darkpulse",
+          "60:suckerpunch",
+          "63:raindance",
+          "68:nightdaze",
+          "72:hydropump",
+          "81:futuresight",
+          "90:skyattack",
+          "tm:acrobatics",
+          "tm:aerialace",
+          "tm:aircutter",
+          "tm:airslash",
+          "tm:ancientpower",
+          "tm:aquatail",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:bravebird",
+          "tm:brine",
+          "tm:calmmind",
+          "tm:chargebeam",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:defog",
+          "tm:dive",
+          "tm:doubleedge",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dreameater",
+          "tm:dualwingbeat",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:echoedvoice",
+          "tm:endure",
+          "tm:facade",
+          "tm:flash",
+          "tm:fly",
+          "tm:futuresight",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:hail",
+          "tm:headbutt",
+          "tm:helpinghand",
+          "tm:hurricane",
+          "tm:hydropump",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:icywind",
+          "tm:imprison",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:laserfocus",
+          "tm:lightscreen",
+          "tm:liquidation",
+          "tm:naturalgift",
+          "tm:ominouswind",
+          "tm:protect",
+          "tm:psychic",
+          "tm:psychicnoise",
+          "tm:psychup",
+          "tm:psyshock",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:rocksmash",
+          "tm:roost",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowball",
+          "tm:shockwave",
+          "tm:signalbeam",
+          "tm:skillswap",
+          "tm:skyattack",
+          "tm:skydrop",
+          "tm:sleeptalk",
+          "tm:steelwing",
+          "tm:strength",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:swift",
+          "tm:tailwind",
+          "tm:takedown",
+          "tm:telekinesis",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:trick",
+          "tm:twister",
+          "tm:waterfall",
+          "tm:waterpulse",
+          "tm:weatherball",
+          "tm:whirlpool",
+          "tm:wonderroom",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:aircutter",
+          "tutor:ancientpower",
+          "tutor:aquatail",
+          "tutor:calmmind",
+          "tutor:chargebeam",
+          "tutor:defog",
+          "tutor:dive",
+          "tutor:dragonpulse",
+          "tutor:dualwingbeat",
+          "tutor:earthpower",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:icywind",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:laserfocus",
+          "tutor:liquidation",
+          "tutor:ominouswind",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rocksmash",
+          "tutor:roost",
+          "tutor:scaleshot",
+          "tutor:shadowball",
+          "tutor:shockwave",
+          "tutor:signalbeam",
+          "tutor:skillswap",
+          "tutor:skyattack",
+          "tutor:sleeptalk",
+          "tutor:swift",
+          "tutor:tailwind",
+          "tutor:telekinesis",
+          "tutor:thunderbolt",
+          "tutor:trick",
+          "tutor:twister",
+          "tutor:waterpulse",
+          "tutor:wonderroom",
+          "tutor:zenheadbutt"
+        ],
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.55
+            },
+            "fly": {
+              "canFly": true,
+              "flySpeedHorizontal": 0.7
+            },
+            "swim": {
+              "swimSpeed": 0.7,
+              "canBreatheUnderwater": true,
+              "canWalkOnWater": false,
+              "canSwimInWater": true,
+              "canSwimInLava": false
+            }
+          }
+        },
+        "riding": {
+          "behaviours": {
+            "AIR": {
+              "key": "cobblemon:air/bird",
+              "rideSounds": [
+                {
+                  "soundLocation": "cobblemon:ride.loop.plumage",
+                  "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)",
+                  "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+                  "playForNonPassengers": true,
+                  "muffleEnabled": true
+                }
+              ],
+              "stats": {
+                "SPEED": "85-110",
+                "ACCELERATION": "20-100",
+                "SKILL": "50-100",
+                "JUMP": "25-50",
+                "STAMINA": "150-180"
+              }
+            },
+            "LAND": {
+              "key": "cobblemon:land/horse",
+              "stats": {
+                "SPEED": "10-20",
+                "ACCELERATION": "90-100",
+                "SKILL": "15-30",
+                "JUMP": "10-20",
+                "STAMINA": "15-30"
+              }
+            },
+            "LIQUID": {
+              "key": "cobblemon:liquid/dolphin",
+              "rideSounds": [],
+              "stats": {
+                "ACCELERATION": "55-85",
+                "JUMP": "30-65",
+                "SKILL": "10-40",
+                "SPEED": "55-85",
+                "STAMINA": "80-135"
+              }
+            }
+          },
+          "seats": [
+            {
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "poseOffsets": [
+                {
+                  "offset": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  },
+                  "poseTypes": [
+                    "FLY"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
   }
 }

@@ -3,6 +3,32 @@
   "name": "Aerodactyl",
   "dexNumber": 142,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0142_aerodactyl.json",
+        "data/cobblemon/species/generation1/aerodactyl.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0142_aerodactyl.json",
+        "data/cobblemon/species_additions/aerodactyl.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "rock",
     "flying"
@@ -1791,14 +1817,28 @@
               "playForPassengers": false,
               "soundLocation": "cobblemon:ride.loop.leather.mono",
               "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
             }
           ],
           "stats": {
-            "ACCELERATION": "35-65",
+            "ACCELERATION": "60-85",
             "JUMP": "45-75",
-            "SKILL": "35-70",
-            "SPEED": "45-75",
-            "STAMINA": "40-65"
+            "SKILL": "60-90",
+            "SPEED": "120-150",
+            "STAMINA": "80-110"
           }
         },
         "LAND": {

@@ -2,7 +2,46 @@
   "slug": "seismitoad",
   "name": "Seismitoad",
   "dexNumber": 537,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [LackingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/seismitoad.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0537_seismitoad.json",
+        "data/cobblemon/species_additions/seismitoad.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/seismitoad.json",
+        "data/cobblemon/species_additions/seismitoad.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "water",
     "ground"
@@ -1432,15 +1471,16 @@
     "baseFriendship": 50,
     "baseScale": 1,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 1.5,
+      "height": 2.2,
       "fixed": false
     },
     "behaviour": {
       "moving": {
         "swim": {
           "canBreatheUnderwater": true,
-          "swimSpeed": "0.2"
+          "swimSpeed": 1,
+          "canSwimInWater": true
         }
       },
       "herd": {
@@ -1600,6 +1640,7 @@
       "legacy:swagger"
     ],
     "preEvolution": "palpitoad",
-    "evolutions": []
+    "evolutions": [],
+    "implemented": true
   }
 }

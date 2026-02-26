@@ -3,6 +3,59 @@
   "name": "Scrafty",
   "dexNumber": 560,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0560_scrafty.json",
+        "data/cobblemon/species/generation5/scrafty.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0560_scrafty.json",
+        "data/cobblemon/species_additions/scrafty.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_scrafty.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation5/scrafty_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dark",
     "fighting"
@@ -36,7 +89,11 @@
   ],
   "aspects": [],
   "aliases": [
-    "scrafty"
+    "form 2",
+    "mega",
+    "scrafty",
+    "scrafty form 2",
+    "scrafty mega"
   ],
   "maleRatio": 0.5,
   "height": 11,
@@ -1875,7 +1932,121 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "scrafty-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 11,
+      "weight": 310,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 65,
+        "attack": 130,
+        "defence": 135,
+        "special_attack": 55,
+        "special_defence": 135,
+        "speed": 68
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "shedskin",
+          "hidden": false,
+          "label": "Shedskin",
+          "slot": "first"
+        },
+        {
+          "id": "shedskin",
+          "hidden": false,
+          "label": "Shedskin",
+          "slot": "second"
+        },
+        {
+          "id": "shedskin",
+          "hidden": true,
+          "label": "Shedskin",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.scrafty-mega.desc"
+        ],
+        "abilities": [
+          "shedskin",
+          "shedskin",
+          "h:shedskin"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 130,
+          "defence": 135,
+          "special_attack": 55,
+          "special_defence": 135,
+          "speed": 68
+        },
+        "baseScale": 1.05,
+        "height": 11,
+        "weight": 310
+      }
+    },
+    {
+      "name": "Form 2",
+      "slug": "scrafty-form2",
+      "aspects": [],
+      "labels": [],
+      "types": [],
+      "maleRatio": null,
+      "height": null,
+      "weight": null,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "aspect": [
+          "alolan"
+        ],
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.185
+            }
+          }
+        }
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -1939,10 +2110,10 @@
     "catchRate": 90,
     "eggCycles": 15,
     "baseFriendship": 50,
-    "baseScale": 1,
+    "baseScale": 0.75,
     "hitbox": {
-      "width": 0.85,
-      "height": 1.65,
+      "width": 1,
+      "height": 1.4,
       "fixed": false
     },
     "drops": {
@@ -2146,6 +2317,53 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.scrafty-mega.desc"
+        ],
+        "abilities": [
+          "shedskin",
+          "shedskin",
+          "h:shedskin"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 130,
+          "defence": 135,
+          "special_attack": 55,
+          "special_defence": 135,
+          "speed": 68
+        },
+        "baseScale": 1.05,
+        "height": 11,
+        "weight": 310
+      },
+      {
+        "aspect": [
+          "alolan"
+        ],
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.185
+            }
+          }
+        }
+      }
+    ]
   }
 }

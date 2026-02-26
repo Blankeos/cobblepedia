@@ -3,6 +3,31 @@
   "name": "Metang",
   "dexNumber": 375,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0375_metang.json",
+        "data/cobblemon/species/generation3/metang.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0375_metang.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "steel",
     "psychic"
@@ -107,6 +132,14 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "megametagross",
+        "slug": "megametagross",
+        "name": "Megametagross",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
+      {
         "nodeId": "beldum",
         "slug": "beldum",
         "name": "Beldum",
@@ -140,6 +173,26 @@
         "method": "level_up",
         "requirementText": [
           "Level 20+"
+        ]
+      },
+      {
+        "fromNodeId": "metagross",
+        "toNodeId": "megametagross",
+        "fromSlug": "metagross",
+        "toSlug": "megametagross",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "metagross",
+        "toNodeId": "megametagross",
+        "fromSlug": "metagross",
+        "toSlug": "megametagross",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
         ]
       },
       {

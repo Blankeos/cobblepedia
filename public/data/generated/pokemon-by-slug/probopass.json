@@ -3,6 +3,40 @@
   "name": "Probopass",
   "dexNumber": 476,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0476_probopass.json",
+        "data/cobblemon/species/generation4/probopass.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation4/probopass.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0476_probopass.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "rock",
     "steel"
@@ -1747,7 +1781,7 @@
         }
       },
       "herd": {
-        "maxSize": "3"
+        "maxSize": 3
       },
       "combat": {
         "willDefendSelf": true,
@@ -1928,6 +1962,75 @@
       "legacy:toxic"
     ],
     "preEvolution": "nosepass",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "SPEED": "40-60",
+            "ACCELERATION": "50-65",
+            "SKILL": "35-60",
+            "JUMP": "35-60",
+            "STAMINA": "55-90"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "30-50",
+            "ACCELERATION": "30-55",
+            "SKILL": "40-70",
+            "JUMP": "25-40",
+            "STAMINA": "40-75"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.2,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.4,
+                "z": 0
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "GLIDE",
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.3,
+                "z": 0.05
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

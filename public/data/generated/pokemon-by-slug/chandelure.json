@@ -3,6 +3,49 @@
   "name": "Chandelure",
   "dexNumber": 609,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0609_chandelure.json",
+        "data/cobblemon/species/generation5/chandelure.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation5/chandelure.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0609_chandelure.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation5/chandelure_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ghost",
     "fire"
@@ -35,7 +78,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "chandelure"
+    "chandelure",
+    "chandelure mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 10,
@@ -1366,7 +1411,94 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "chandelure-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 25,
+      "weight": 696,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 60,
+        "attack": 75,
+        "defence": 110,
+        "special_attack": 175,
+        "special_defence": 110,
+        "speed": 90
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "magicguard",
+          "hidden": false,
+          "label": "Magicguard",
+          "slot": "first"
+        },
+        {
+          "id": "magicguard",
+          "hidden": false,
+          "label": "Magicguard",
+          "slot": "second"
+        },
+        {
+          "id": "magicguard",
+          "hidden": true,
+          "label": "Magicguard",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.chandelure-mega.desc"
+        ],
+        "abilities": [
+          "magicguard",
+          "magicguard",
+          "h:magicguard"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 60,
+          "attack": 75,
+          "defence": 110,
+          "special_attack": 175,
+          "special_defence": 110,
+          "speed": 90
+        },
+        "baseScale": 1.05,
+        "hitbox": {
+          "width": 1.5,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 25,
+        "weight": 696
+      }
+    }
+  ],
   "drops": {
     "amount": 5,
     "entries": [
@@ -1606,6 +1738,93 @@
     "lightingData": {
       "lightLevel": 13,
       "liquidGlowMode": "LAND"
-    }
+    },
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "25-45",
+            "JUMP": "20-35",
+            "SKILL": "45-70",
+            "SPEED": "20-40",
+            "STAMINA": "35-65"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.1,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.25,
+                "z": 0
+              },
+              "poseTypes": [
+                "HOVER",
+                "FLY",
+                "GLIDE",
+                "FLOAT"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.chandelure-mega.desc"
+        ],
+        "abilities": [
+          "magicguard",
+          "magicguard",
+          "h:magicguard"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 60,
+          "attack": 75,
+          "defence": 110,
+          "special_attack": 175,
+          "special_defence": 110,
+          "speed": 90
+        },
+        "baseScale": 1.05,
+        "hitbox": {
+          "width": 1.5,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 25,
+        "weight": 696
+      }
+    ]
   }
 }

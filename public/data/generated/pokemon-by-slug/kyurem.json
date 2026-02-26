@@ -2,7 +2,79 @@
   "slug": "kyurem",
   "name": "Kyurem",
   "dexNumber": 646,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/kyurem.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0646_kyurem.json",
+        "data/cobblemon/species_additions/kyurem.json",
+        "data/cobblemon/species/generation5/kyurem.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation5/kyurem.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/kyurem_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/kyurem.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Hydro Reanimodel - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0646_kyurem.json",
+        "data/cobblemon/species_additions/kyurem.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lYp6oiT3/versions/IYbKm2yW/Hydro%20Reanimodel%20Pack%200.1.7.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/kyurem.json",
+        "data/cobblemon/species_additions/kyurem.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "dragon",
     "ice"
@@ -61,7 +133,94 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "kyurem_white",
+      "variant": "level_up",
+      "result": {
+        "raw": "kyurem absofusion=white",
+        "slug": "kyurem",
+        "aspectTokens": [
+          "absofusion=white"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Party member: Reshiram"
+      ],
+      "requirements": [
+        {
+          "variant": "party_member",
+          "text": "Party member: Reshiram",
+          "raw": {
+            "variant": "party_member",
+            "target": "reshiram",
+            "contains": true
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "kyurem_white",
+        "variant": "level_up",
+        "result": "kyurem absofusion=white",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "party_member",
+            "target": "reshiram",
+            "contains": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "kyurem_black",
+      "variant": "level_up",
+      "result": {
+        "raw": "kyurem absofusion=black",
+        "slug": "kyurem",
+        "aspectTokens": [
+          "absofusion=black"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Party member: Zekrom"
+      ],
+      "requirements": [
+        {
+          "variant": "party_member",
+          "text": "Party member: Zekrom",
+          "raw": {
+            "variant": "party_member",
+            "target": "zekrom",
+            "contains": true
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "kyurem_black",
+        "variant": "level_up",
+        "result": "kyurem absofusion=black",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "party_member",
+            "target": "zekrom",
+            "contains": true
+          }
+        ]
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
       {
@@ -71,9 +230,46 @@
         "dexNumber": 646,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "kyurem-black",
+        "slug": "kyurem",
+        "name": "Kyurem",
+        "dexNumber": 646,
+        "formSlug": "kyurem-black",
+        "formName": "Black"
+      },
+      {
+        "nodeId": "kyurem-white",
+        "slug": "kyurem",
+        "name": "Kyurem",
+        "dexNumber": 646,
+        "formSlug": "kyurem-white",
+        "formName": "White"
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "kyurem",
+        "toNodeId": "kyurem-black",
+        "fromSlug": "kyurem",
+        "toSlug": "kyurem",
+        "method": "level_up",
+        "requirementText": [
+          "Party member: Zekrom"
+        ]
+      },
+      {
+        "fromNodeId": "kyurem",
+        "toNodeId": "kyurem-white",
+        "fromSlug": "kyurem",
+        "toSlug": "kyurem",
+        "method": "level_up",
+        "requirementText": [
+          "Party member: Reshiram"
+        ]
+      }
+    ],
     "roots": [
       "kyurem"
     ]
@@ -4318,11 +4514,35 @@
     }
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:dragon_breath",
         "quantityRange": "2-3"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:dragon_gem",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:ice_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -4505,7 +4725,36 @@
       "legacy:swagger",
       "legacy:toxic"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "kyurem_white",
+        "variant": "level_up",
+        "result": "kyurem absofusion=white",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "party_member",
+            "target": "reshiram",
+            "contains": true
+          }
+        ]
+      },
+      {
+        "id": "kyurem_black",
+        "variant": "level_up",
+        "result": "kyurem absofusion=black",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "party_member",
+            "target": "zekrom",
+            "contains": true
+          }
+        ]
+      }
+    ],
     "forms": [
       {
         "name": "White",
@@ -4846,16 +5095,363 @@
         ],
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "White",
+        "primaryType": "dragon",
+        "secondaryType": "ice",
+        "maleRatio": -1,
+        "height": 36,
+        "weight": 3250,
+        "pokedex": [
+          "cobblemon.species.kyurem-white.desc"
+        ],
+        "labels": [
+          "gen5",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "white-fusion"
+        ],
+        "abilities": [
+          "turboblaze",
+          "h:turboblaze"
+        ],
+        "baseStats": {
+          "hp": 125,
+          "attack": 120,
+          "defence": 90,
+          "special_attack": 170,
+          "special_defence": 100,
+          "speed": 95
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 0,
+          "defence": 0,
+          "special_attack": 3,
+          "special_defence": 0,
+          "speed": 0
+        },
+        "baseExperienceYield": 350,
+        "moves": [
+          "1:dragonrage",
+          "1:ancientpower",
+          "1:dragonbreath",
+          "1:nobleroar",
+          "1:freezedry",
+          "8:slash",
+          "16:endeavor",
+          "24:dragonpulse",
+          "32:icebeam",
+          "40:hypervoice",
+          "48:fusionflare",
+          "56:blizzard",
+          "64:imprison",
+          "72:outrage",
+          "80:iceburn",
+          "88:sheercold",
+          "tm:aerialace",
+          "tm:ancientpower",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brutalswing",
+          "tm:cut",
+          "tm:dracometeor",
+          "tm:dragoncheer",
+          "tm:dragonclaw",
+          "tm:dragondance",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dualwingbeat",
+          "tm:earthpower",
+          "tm:echoedvoice",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:flashcannon",
+          "tm:fling",
+          "tm:fly",
+          "tm:focusblast",
+          "tm:gigaimpact",
+          "tm:hail",
+          "tm:helpinghand",
+          "tm:honeclaws",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:icefang",
+          "tm:iciclespear",
+          "tm:icywind",
+          "tm:imprison",
+          "tm:ironhead",
+          "tm:laserfocus",
+          "tm:lightscreen",
+          "tm:outrage",
+          "tm:payback",
+          "tm:protect",
+          "tm:psychic",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:roost",
+          "tm:safeguard",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowball",
+          "tm:shadowclaw",
+          "tm:signalbeam",
+          "tm:sleeptalk",
+          "tm:snowscape",
+          "tm:steelwing",
+          "tm:stoneedge",
+          "tm:strength",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:weatherball",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:ancientpower",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:dualwingbeat",
+          "tutor:earthpower",
+          "tutor:endeavor",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:icefang",
+          "tutor:icywind",
+          "tutor:ironhead",
+          "tutor:laserfocus",
+          "tutor:outrage",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:roost",
+          "tutor:scaleshot",
+          "tutor:shadowball",
+          "tutor:shadowclaw",
+          "tutor:signalbeam",
+          "tutor:sleeptalk",
+          "tutor:stoneedge",
+          "tutor:swift",
+          "tutor:zenheadbutt"
+        ],
+        "evolutions": [
+          {
+            "id": "white_kyurem",
+            "variant": "level_up",
+            "result": "kyurem absofusion=none",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": []
+          }
+        ],
+        "battleOnly": false
+      },
+      {
+        "name": "Black",
+        "primaryType": "dragon",
+        "secondaryType": "ice",
+        "maleRatio": -1,
+        "height": 33,
+        "weight": 3250,
+        "pokedex": [
+          "cobblemon.species.kyurem-black.desc"
+        ],
+        "labels": [
+          "gen5",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "black-fusion"
+        ],
+        "abilities": [
+          "teravolt",
+          "h:teravolt"
+        ],
+        "baseStats": {
+          "hp": 125,
+          "attack": 170,
+          "defence": 100,
+          "special_attack": 120,
+          "special_defence": 90,
+          "speed": 95
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 3,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 0,
+          "speed": 0
+        },
+        "baseExperienceYield": 350,
+        "moves": [
+          "1:dragonrage",
+          "1:ancientpower",
+          "1:dragonbreath",
+          "1:nobleroar",
+          "1:freezedry",
+          "8:slash",
+          "16:endeavor",
+          "24:dragonpulse",
+          "32:icebeam",
+          "40:hypervoice",
+          "48:fusionbolt",
+          "56:blizzard",
+          "64:imprison",
+          "72:outrage",
+          "80:freezeshock",
+          "88:sheercold",
+          "tm:aerialace",
+          "tm:ancientpower",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brutalswing",
+          "tm:cut",
+          "tm:dracometeor",
+          "tm:dragoncheer",
+          "tm:dragonclaw",
+          "tm:dragondance",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dualwingbeat",
+          "tm:earthpower",
+          "tm:echoedvoice",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:flashcannon",
+          "tm:fling",
+          "tm:fly",
+          "tm:focusblast",
+          "tm:gigaimpact",
+          "tm:hail",
+          "tm:helpinghand",
+          "tm:honeclaws",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:icebeam",
+          "tm:icefang",
+          "tm:iciclespear",
+          "tm:icywind",
+          "tm:imprison",
+          "tm:ironhead",
+          "tm:laserfocus",
+          "tm:lightscreen",
+          "tm:outrage",
+          "tm:payback",
+          "tm:protect",
+          "tm:psychic",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:roar",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:roost",
+          "tm:safeguard",
+          "tm:scaleshot",
+          "tm:scaryface",
+          "tm:shadowball",
+          "tm:shadowclaw",
+          "tm:signalbeam",
+          "tm:sleeptalk",
+          "tm:snowscape",
+          "tm:steelwing",
+          "tm:stoneedge",
+          "tm:strength",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swift",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:weatherball",
+          "tm:zenheadbutt",
+          "tutor:aerialace",
+          "tutor:ancientpower",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:dualwingbeat",
+          "tutor:earthpower",
+          "tutor:endeavor",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:icebeam",
+          "tutor:icefang",
+          "tutor:icywind",
+          "tutor:ironhead",
+          "tutor:laserfocus",
+          "tutor:outrage",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:roost",
+          "tutor:scaleshot",
+          "tutor:shadowball",
+          "tutor:shadowclaw",
+          "tutor:signalbeam",
+          "tutor:sleeptalk",
+          "tutor:stoneedge",
+          "tutor:swift",
+          "tutor:zenheadbutt"
+        ],
+        "evolutions": [
+          {
+            "id": "black_kyurem",
+            "variant": "level_up",
+            "result": "kyurem absofusion=none",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": []
+          }
+        ],
+        "battleOnly": false
       }
     ],
     "behaviour": {
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
-          "canFly": true
-        }
+          "canFly": false
+        },
+        "walk": {
+          "walkSpeed": 0.6,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "canLook": true
       },
       "combat": {
         "willDefendSelf": true,
@@ -4865,14 +5461,138 @@
       "resting": {
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "1"
       }
     },
     "drops": {
-      "amount": 3,
+      "amount": 5,
       "entries": [
         {
           "item": "minecraft:dragon_breath",
           "quantityRange": "2-3"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:dragon_gem",
+          "percentage": 50
+        },
+        {
+          "item": "cobblemon:ice_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
+    },
+    "implemented": true,
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "20-55",
+            "JUMP": "25-40",
+            "SKILL": "15-30",
+            "SPEED": "55-75",
+            "STAMINA": "30-50"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": -0.004955834,
+                "y": -1.5021043,
+                "z": -0.13071083
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.00920631,
+                "y": -1.4530607,
+                "z": -0.125
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.625,
+                "z": -0.125
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.625,
+                "z": -0.125
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.00920631,
+                "y": -1.4530607,
+                "z": -0.125
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.00920631,
+                "y": -1.4530607,
+                "z": -0.125
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.625,
+                "z": -0.125
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
         }
       ]
     }

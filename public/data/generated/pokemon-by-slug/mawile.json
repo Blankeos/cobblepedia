@@ -3,6 +3,40 @@
   "name": "Mawile",
   "dexNumber": 303,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0303_mawile.json",
+        "data/cobblemon/species/generation3/mawile.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0303_mawile.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/mawile.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "steel",
     "fairy"
@@ -64,9 +98,68 @@
     "speed": 0
   },
   "preEvolution": null,
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "mawile_megamawile",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megamawile",
+        "slug": "megamawile",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Key Stone"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:key_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "mawile_megamawile",
+        "variant": "item_interact",
+        "result": "megamawile",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      }
+    },
+    {
+      "id": "mawile_megamawile1",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megamawile",
+        "slug": "megamawile",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Mega Ring"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:mega_ring",
+      "fromForm": null,
+      "raw": {
+        "id": "mawile_megamawile1",
+        "variant": "item_interact",
+        "result": "megamawile",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
+      {
+        "nodeId": "megamawile",
+        "slug": "megamawile",
+        "name": "Megamawile",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
       {
         "nodeId": "mawile",
         "slug": "mawile",
@@ -76,7 +169,28 @@
         "formName": null
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "mawile",
+        "toNodeId": "megamawile",
+        "fromSlug": "mawile",
+        "toSlug": "megamawile",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "mawile",
+        "toNodeId": "megamawile",
+        "fromSlug": "mawile",
+        "toSlug": "megamawile",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
+        ]
+      }
+    ],
     "roots": [
       "mawile"
     ]
@@ -2183,7 +2297,24 @@
       "legacy:toxic",
       "special:sing"
     ],
-    "evolutions": [],
+    "evolutions": [
+      {
+        "id": "mawile_megamawile",
+        "variant": "item_interact",
+        "result": "megamawile",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      },
+      {
+        "id": "mawile_megamawile1",
+        "variant": "item_interact",
+        "result": "megamawile",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    ],
     "forms": [
       {
         "name": "Mega",

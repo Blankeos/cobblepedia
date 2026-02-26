@@ -3,6 +3,49 @@
   "name": "Emboar",
   "dexNumber": 500,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0500_emboar.json",
+        "data/cobblemon/species/generation5/emboar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation5/emboar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0500_emboar.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation5/emboar_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire",
     "fighting"
@@ -29,7 +72,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "emboar"
+    "emboar",
+    "emboar mega",
+    "mega"
   ],
   "maleRatio": 0.875,
   "height": 16,
@@ -1750,7 +1795,82 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "emboar-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 18,
+      "weight": 1803,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 110,
+        "attack": 148,
+        "defence": 75,
+        "special_attack": 110,
+        "special_defence": 110,
+        "speed": 75
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "supremeoverlord",
+          "hidden": false,
+          "label": "Supremeoverlord",
+          "slot": "first"
+        },
+        {
+          "id": "supremeoverlord",
+          "hidden": true,
+          "label": "Supremeoverlord",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.emboar-mega.desc"
+        ],
+        "abilities": [
+          "supremeoverlord",
+          "h:supremeoverlord"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 110,
+          "attack": 148,
+          "defence": 75,
+          "special_attack": 110,
+          "special_defence": 110,
+          "speed": 75
+        },
+        "baseScale": 1.15,
+        "height": 18,
+        "weight": 1803
+      }
+    }
+  ],
   "drops": {
     "amount": 5,
     "entries": [
@@ -2018,6 +2138,77 @@
     "lightingData": {
       "lightLevel": 15,
       "liquidGlowMode": "LAND"
-    }
+    },
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "SPEED": "25-45",
+            "ACCELERATION": "25-45",
+            "SKILL": "35-60",
+            "JUMP": "20-35",
+            "STAMINA": "45-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.15,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.55,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND",
+                "WALK"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.emboar-mega.desc"
+        ],
+        "abilities": [
+          "supremeoverlord",
+          "h:supremeoverlord"
+        ],
+        "labels": [
+          "gen5",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 110,
+          "attack": 148,
+          "defence": 75,
+          "special_attack": 110,
+          "special_defence": 110,
+          "speed": 75
+        },
+        "baseScale": 1.15,
+        "height": 18,
+        "weight": 1803
+      }
+    ]
   }
 }

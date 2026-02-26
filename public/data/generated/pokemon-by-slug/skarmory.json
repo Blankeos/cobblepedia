@@ -3,6 +3,49 @@
   "name": "Skarmory",
   "dexNumber": 227,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0227_skarmory.json",
+        "data/cobblemon/species/generation2/skarmory.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation2/skarmory.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0227_skarmory.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation2/skarmory_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "steel",
     "flying"
@@ -35,7 +78,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "skarmory"
+    "mega",
+    "skarmory",
+    "skarmory mega"
   ],
   "maleRatio": 0.5,
   "height": 17,
@@ -1479,7 +1524,94 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "skarmory-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen2",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 17,
+      "weight": 404,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 65,
+        "attack": 140,
+        "defence": 110,
+        "special_attack": 40,
+        "special_defence": 100,
+        "speed": 110
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "toughclaws",
+          "hidden": false,
+          "label": "Toughclaws",
+          "slot": "first"
+        },
+        {
+          "id": "toughclaws",
+          "hidden": false,
+          "label": "Toughclaws",
+          "slot": "second"
+        },
+        {
+          "id": "toughclaws",
+          "hidden": true,
+          "label": "Toughclaws",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.skarmory-mega.desc"
+        ],
+        "abilities": [
+          "toughclaws",
+          "toughclaws",
+          "h:toughclaws"
+        ],
+        "labels": [
+          "gen2",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 140,
+          "defence": 110,
+          "special_attack": 40,
+          "special_defence": 100,
+          "speed": 110
+        },
+        "baseScale": 1.35,
+        "hitbox": {
+          "width": 2,
+          "height": 2,
+          "fixed": false
+        },
+        "height": 17,
+        "weight": 404
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -1729,6 +1861,163 @@
       "legacy:swagger",
       "legacy:toxic"
     ],
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "40-70",
+            "JUMP": "35-60",
+            "SKILL": "55-80",
+            "SPEED": "35-65",
+            "STAMINA": "30-55"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "canJump": false,
+          "canSprint": false,
+          "stats": {
+            "ACCELERATION": "20-35",
+            "JUMP": "10-25",
+            "SKILL": "20-35",
+            "SPEED": "20-35",
+            "STAMINA": "25-40"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.7,
+                "z": 0.25
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.05,
+                "y": -1.8,
+                "z": 0.05
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -2.3,
+                "z": 0
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -2,
+                "z": -0.45
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -0.85,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -1.75,
+                "z": 0.05
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.7,
+                "z": 0.25
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.skarmory-mega.desc"
+        ],
+        "abilities": [
+          "toughclaws",
+          "toughclaws",
+          "h:toughclaws"
+        ],
+        "labels": [
+          "gen2",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 140,
+          "defence": 110,
+          "special_attack": 40,
+          "special_defence": 100,
+          "speed": 110
+        },
+        "baseScale": 1.35,
+        "hitbox": {
+          "width": 2,
+          "height": 2,
+          "fixed": false
+        },
+        "height": 17,
+        "weight": 404
+      }
+    ]
   }
 }

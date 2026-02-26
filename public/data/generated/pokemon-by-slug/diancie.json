@@ -2,7 +2,46 @@
   "slug": "diancie",
   "name": "Diancie",
   "dexNumber": 719,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation6/diancie.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0719_diancie.json",
+        "data/cobblemon/species_additions/diancie.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/drops/diancie_drops.json",
+        "data/legendary_spawns_atm/spawn_pool_world/diancie.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "rock",
     "fairy"
@@ -1540,7 +1579,31 @@
       }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:fairy_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 719,
     "name": "Diancie",
@@ -1585,10 +1648,10 @@
     "catchRate": 3,
     "eggCycles": 25,
     "baseFriendship": 50,
-    "baseScale": 1,
+    "baseScale": 0.8,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 0.8,
+      "height": 1.6,
       "fixed": false
     },
     "moves": [
@@ -1803,7 +1866,7 @@
     ],
     "behaviour": {
       "herd": {
-        "maxSize": "5",
+        "maxSize": "6",
         "toleratedLeaders": [
           {
             "pokemon": "diancie mega=false",
@@ -1812,6 +1875,10 @@
           {
             "pokemon": "diancie mega",
             "tier": 2
+          },
+          {
+            "pokemon": "diancie mega",
+            "tier": 1
           }
         ]
       },
@@ -1831,7 +1898,8 @@
           "canFly": true
         },
         "walk": {
-          "canWalk": false
+          "canWalk": false,
+          "walkSpeed": 0.33
         }
       },
       "combat": {
@@ -1840,6 +1908,32 @@
         "willFlee": false
       },
       "fireImmune": true
+    },
+    "implemented": true,
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:fairy_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 8
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
+        }
+      ]
     }
   }
 }

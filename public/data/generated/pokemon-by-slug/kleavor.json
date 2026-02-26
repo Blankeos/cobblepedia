@@ -3,6 +3,31 @@
   "name": "Kleavor",
   "dexNumber": 900,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0900_kleavor.json",
+        "data/cobblemon/species/generation8a/kleavor.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0900_kleavor.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "bug",
     "rock"
@@ -69,6 +94,14 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "megascizor",
+        "slug": "megascizor",
+        "name": "Megascizor",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
+      {
         "nodeId": "scyther",
         "slug": "scyther",
         "name": "Scyther",
@@ -94,6 +127,26 @@
       }
     ],
     "edges": [
+      {
+        "fromNodeId": "scizor",
+        "toNodeId": "megascizor",
+        "fromSlug": "scizor",
+        "toSlug": "megascizor",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "scizor",
+        "toNodeId": "megascizor",
+        "fromSlug": "scizor",
+        "toSlug": "megascizor",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
+        ]
+      },
       {
         "fromNodeId": "scyther",
         "toNodeId": "kleavor",

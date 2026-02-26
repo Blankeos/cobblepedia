@@ -2,7 +2,65 @@
   "slug": "urshifu",
   "name": "Urshifu",
   "dexNumber": 892,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [Pokemans - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation8/urshifu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0892_urshifu.json",
+        "data/cobblemon/species_additions/urshifu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/urshifu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/urshifu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [Pokemans - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/urshifu.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/GFYCh249/versions/YRMjzyUR/pokemans_v15_toxicCloud.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "fighting",
     "dark"
@@ -117,12 +175,32 @@
       },
       {
         "fromNodeId": "kubfu",
+        "toNodeId": "urshifu-gmax",
+        "fromSlug": "kubfu",
+        "toSlug": "urshifu",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Muscle Band"
+        ]
+      },
+      {
+        "fromNodeId": "kubfu",
         "toNodeId": "urshifu-rapidstrike",
         "fromSlug": "kubfu",
         "toSlug": "urshifu",
         "method": "item_interact",
         "requirementText": [
           "Use Scroll Of Waters"
+        ]
+      },
+      {
+        "fromNodeId": "kubfu",
+        "toNodeId": "urshifu-rapidstrike",
+        "fromSlug": "kubfu",
+        "toSlug": "urshifu",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Expert Belt"
         ]
       }
     ],
@@ -3846,7 +3924,7 @@
     "baseScale": 1,
     "hitbox": {
       "width": 1,
-      "height": 1,
+      "height": 2,
       "fixed": false
     },
     "moves": [
@@ -4255,11 +4333,23 @@
     ],
     "behaviour": {
       "herd": {
-        "maxSize": "3"
+        "maxSize": "1"
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
+        },
+        "canLook": true,
+        "walk": {
+          "walkSpeed": 0.3,
+          "canWalk": true,
+          "avoidsLand": false
+        },
+        "fly": {
+          "canFly": false
         }
       },
       "combat": {
@@ -4271,6 +4361,7 @@
         "drowsyChance": 0.0333,
         "rouseChance": 0.0042
       }
-    }
+    },
+    "implemented": true
   }
 }

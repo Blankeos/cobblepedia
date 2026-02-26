@@ -3,6 +3,40 @@
   "name": "Dragapult",
   "dexNumber": 887,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0887_dragapult.json",
+        "data/cobblemon/species/generation8/dragapult.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0887_dragapult.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/dragapult.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "dragon",
     "ghost"
@@ -1602,11 +1636,11 @@
     "catchRate": 45,
     "eggCycles": 40,
     "baseFriendship": 50,
-    "baseScale": 0.8,
+    "baseScale": 1,
     "hitbox": {
-      "height": 3,
+      "height": 2.4,
       "fixed": false,
-      "width": 1.2
+      "width": 1.5
     },
     "riding": {
       "behaviours": {
@@ -1769,12 +1803,14 @@
       },
       "moving": {
         "fly": {
-          "canFly": true
+          "canFly": false,
+          "flySpeedHorizontal": 0.35
         },
         "swim": {
           "canBreatheUnderwater": true,
           "swimSpeed": 0.3
-        }
+        },
+        "canLook": true
       },
       "resting": {
         "canSleep": true,

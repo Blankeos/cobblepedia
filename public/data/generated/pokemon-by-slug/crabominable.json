@@ -3,6 +3,49 @@
   "name": "Crabominable",
   "dexNumber": 740,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0740_crabominable.json",
+        "data/cobblemon/species/generation7/crabominable.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation7/crabominable.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0740_crabominable.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation7/crabominable_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fighting",
     "ice"
@@ -35,7 +78,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "crabominable"
+    "crabominable",
+    "crabominable mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 17,
@@ -1453,7 +1498,93 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "crabominable-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen7",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 26,
+      "weight": 2528,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 97,
+        "attack": 157,
+        "defence": 122,
+        "special_attack": 62,
+        "special_defence": 107,
+        "speed": 33
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "icescales",
+          "hidden": false,
+          "label": "Icescales",
+          "slot": "first"
+        },
+        {
+          "id": "icescales",
+          "hidden": false,
+          "label": "Icescales",
+          "slot": "second"
+        },
+        {
+          "id": "icescales",
+          "hidden": true,
+          "label": "Icescales",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.crabominable-mega.desc"
+        ],
+        "abilities": [
+          "icescales",
+          "icescales",
+          "h:icescales"
+        ],
+        "labels": [
+          "gen7",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 97,
+          "attack": 157,
+          "defence": 122,
+          "special_attack": 62,
+          "special_defence": 107,
+          "speed": 33
+        },
+        "hitbox": {
+          "width": 2.5,
+          "height": 4.5,
+          "fixed": false
+        },
+        "height": 26,
+        "weight": 2528
+      }
+    }
+  ],
   "drops": {
     "amount": 1,
     "entries": [
@@ -1672,6 +1803,113 @@
       "legacy:toxic"
     ],
     "preEvolution": "crabrawler",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "canJump": false,
+          "canSprint": false,
+          "stats": {
+            "ACCELERATION": "15-30",
+            "JUMP": "5-15",
+            "SKILL": "25-45",
+            "SPEED": "15-30",
+            "STAMINA": "45-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.8,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -1.9,
+                "z": -0.2
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.4,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.4,
+                "z": -0.3
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.crabominable-mega.desc"
+        ],
+        "abilities": [
+          "icescales",
+          "icescales",
+          "h:icescales"
+        ],
+        "labels": [
+          "gen7",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 97,
+          "attack": 157,
+          "defence": 122,
+          "special_attack": 62,
+          "special_defence": 107,
+          "speed": 33
+        },
+        "hitbox": {
+          "width": 2.5,
+          "height": 4.5,
+          "fixed": false
+        },
+        "height": 26,
+        "weight": 2528
+      }
+    ]
   }
 }

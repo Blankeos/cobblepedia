@@ -3,6 +3,50 @@
   "name": "Froslass",
   "dexNumber": 478,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0478_froslass.json",
+        "data/cobblemon/species/generation4/froslass.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0478_froslass.json",
+        "data/cobblemon/species_additions/froslass.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/froslass.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation4/froslass_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ice",
     "ghost"
@@ -30,7 +74,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "froslass"
+    "froslass",
+    "froslass mega",
+    "mega"
   ],
   "maleRatio": 0,
   "height": 13,
@@ -1875,7 +1921,87 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "froslass-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen4",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 26,
+      "weight": 296,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 70,
+        "attack": 80,
+        "defence": 70,
+        "special_attack": 140,
+        "special_defence": 100,
+        "speed": 120
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "snowwarning",
+          "hidden": false,
+          "label": "Snowwarning",
+          "slot": "first"
+        },
+        {
+          "id": "snowwarning",
+          "hidden": true,
+          "label": "Snowwarning",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.froslass-mega.desc"
+        ],
+        "abilities": [
+          "snowwarning",
+          "h:snowwarning"
+        ],
+        "labels": [
+          "gen4",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 70,
+          "attack": 80,
+          "defence": 70,
+          "special_attack": 140,
+          "special_defence": 100,
+          "speed": 120
+        },
+        "baseScale": 0.75,
+        "hitbox": {
+          "width": 1,
+          "height": 3.2,
+          "fixed": false
+        },
+        "height": 26,
+        "weight": 296
+      }
+    }
+  ],
   "drops": {
     "amount": 5,
     "entries": [
@@ -1944,10 +2070,10 @@
     "baseFriendship": 50,
     "standingEyeHeight": 0.8,
     "flyingEyeHeight": 0.8,
-    "baseScale": 0.85,
+    "baseScale": 0.75,
     "hitbox": {
-      "width": 0.7,
-      "height": 1.85,
+      "width": 1,
+      "height": 2,
       "fixed": false
     },
     "behaviour": {
@@ -2152,6 +2278,45 @@
       "special:sing"
     ],
     "preEvolution": "snorunt",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.froslass-mega.desc"
+        ],
+        "abilities": [
+          "snowwarning",
+          "h:snowwarning"
+        ],
+        "labels": [
+          "gen4",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 70,
+          "attack": 80,
+          "defence": 70,
+          "special_attack": 140,
+          "special_defence": 100,
+          "speed": 120
+        },
+        "baseScale": 0.75,
+        "hitbox": {
+          "width": 1,
+          "height": 3.2,
+          "fixed": false
+        },
+        "height": 26,
+        "weight": 296
+      }
+    ]
   }
 }

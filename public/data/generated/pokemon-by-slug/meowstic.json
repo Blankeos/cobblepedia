@@ -3,6 +3,59 @@
   "name": "Meowstic",
   "dexNumber": 678,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "cobblemon-additions-4.1.6",
+      "files": [
+        "data/cobblemon/spawn_pool_world/village_pokemon.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+      ]
+    },
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0678_meowstic.json",
+        "data/cobblemon/species/generation6/meowstic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0678_meowstic.json",
+        "data/cobblemon/species_additions/meowstic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation6/meowstic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/meowstic_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "psychic"
   ],
@@ -37,10 +90,12 @@
   ],
   "aliases": [
     "f",
+    "mega",
     "meowstic",
-    "meowstic f"
+    "meowstic f",
+    "meowstic mega"
   ],
-  "maleRatio": 1,
+  "maleRatio": 0.5,
   "height": 6,
   "weight": 85,
   "catchRate": 75,
@@ -3547,6 +3602,92 @@
         "evolutions": [],
         "battleOnly": false
       }
+    },
+    {
+      "name": "Mega",
+      "slug": "meowstic-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "mega",
+        "gen6"
+      ],
+      "types": [],
+      "maleRatio": 0.5,
+      "height": 0.8,
+      "weight": 101,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 74,
+        "attack": 48,
+        "defence": 76,
+        "special_attack": 143,
+        "special_defence": 101,
+        "speed": 124
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "psychicsurge",
+          "hidden": false,
+          "label": "Psychicsurge",
+          "slot": "first"
+        },
+        {
+          "id": "psychicsurge",
+          "hidden": false,
+          "label": "Psychicsurge",
+          "slot": "second"
+        },
+        {
+          "id": "psychicsurge",
+          "hidden": true,
+          "label": "Psychicsurge",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "maleRatio": 0.5,
+        "pokedex": [
+          "cobblemon.species.meowstic-mega.desc"
+        ],
+        "abilities": [
+          "psychicsurge",
+          "psychicsurge",
+          "h:psychicsurge"
+        ],
+        "labels": [
+          "mega",
+          "gen6"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 74,
+          "attack": 48,
+          "defence": 76,
+          "special_attack": 143,
+          "special_defence": 101,
+          "speed": 124
+        },
+        "hitbox": {
+          "width": 0.85,
+          "height": 2.5,
+          "fixed": false
+        },
+        "height": 0.8,
+        "weight": 101
+      }
     }
   ],
   "drops": {
@@ -3563,7 +3704,7 @@
     "nationalPokedexNumber": 678,
     "name": "Meowstic",
     "primaryType": "psychic",
-    "maleRatio": 1,
+    "maleRatio": 0.5,
     "height": 6,
     "weight": 85,
     "pokedex": [
@@ -3604,10 +3745,10 @@
     "catchRate": 75,
     "eggCycles": 20,
     "baseFriendship": 50,
-    "baseScale": 0.55,
+    "baseScale": 0.6,
     "hitbox": {
-      "width": 0.85,
-      "height": 1.5,
+      "width": 0.6,
+      "height": 1.4,
       "fixed": false
     },
     "behaviour": {
@@ -3633,7 +3774,11 @@
           "167-11833,13702-22299"
         ],
         "drowsyChance": 0.0021,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "depth": "normal",
+        "light": "0-4"
       }
     },
     "drops": {
@@ -3954,7 +4099,45 @@
         "preEvolution": "espurr",
         "evolutions": [],
         "battleOnly": false
+      },
+      {
+        "name": "Mega",
+        "maleRatio": 0.5,
+        "pokedex": [
+          "cobblemon.species.meowstic-mega.desc"
+        ],
+        "abilities": [
+          "psychicsurge",
+          "psychicsurge",
+          "h:psychicsurge"
+        ],
+        "labels": [
+          "mega",
+          "gen6"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 74,
+          "attack": 48,
+          "defence": 76,
+          "special_attack": 143,
+          "special_defence": 101,
+          "speed": 124
+        },
+        "hitbox": {
+          "width": 0.85,
+          "height": 2.5,
+          "fixed": false
+        },
+        "height": 0.8,
+        "weight": 101
       }
+    ],
+    "features": [
+      "mega_evolution"
     ]
   }
 }

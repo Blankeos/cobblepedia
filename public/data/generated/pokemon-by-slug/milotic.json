@@ -3,6 +3,50 @@
   "name": "Milotic",
   "dexNumber": 350,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0350_milotic.json",
+        "data/cobblemon/species/generation3/milotic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation3/milotic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0350_milotic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [LackingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/milotic.json",
+        "data/cobblemon/species_additions/milotic.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/ouf6KDf2/versions/pLXYHK8J/LackingMons-ReleaseCanditate-1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "water"
   ],
@@ -65,9 +109,68 @@
     "slug": "feebas",
     "aspectTokens": []
   },
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "milotic_megamilotic",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megamilotic",
+        "slug": "megamilotic",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Key Stone"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:key_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "milotic_megamilotic",
+        "variant": "item_interact",
+        "result": "megamilotic",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      }
+    },
+    {
+      "id": "milotic_megamilotic1",
+      "variant": "item_interact",
+      "result": {
+        "raw": "megamilotic",
+        "slug": "megamilotic",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Mega Ring"
+      ],
+      "requirements": [],
+      "requiredContext": "lackingmegas:mega_ring",
+      "fromForm": null,
+      "raw": {
+        "id": "milotic_megamilotic1",
+        "variant": "item_interact",
+        "result": "megamilotic",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    }
+  ],
   "evolutionFamily": {
     "members": [
+      {
+        "nodeId": "megamilotic",
+        "slug": "megamilotic",
+        "name": "Megamilotic",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
       {
         "nodeId": "feebas",
         "slug": "feebas",
@@ -94,6 +197,26 @@
         "method": "trade",
         "requirementText": [
           "Hold Prism Scale"
+        ]
+      },
+      {
+        "fromNodeId": "milotic",
+        "toNodeId": "megamilotic",
+        "fromSlug": "milotic",
+        "toSlug": "megamilotic",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "milotic",
+        "toNodeId": "megamilotic",
+        "fromSlug": "milotic",
+        "toSlug": "megamilotic",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
         ]
       }
     ],
@@ -1597,11 +1720,12 @@
       "moving": {
         "walk": {
           "avoidsLand": true,
-          "walkSpeed": 0.3
+          "walkSpeed": 0.2
         },
         "swim": {
-          "swimSpeed": 0.3,
-          "canBreatheUnderwater": true
+          "swimSpeed": 1,
+          "canBreatheUnderwater": true,
+          "canSwimInWater": true
         }
       },
       "resting": {
@@ -1776,6 +1900,79 @@
       "legacy:toxic"
     ],
     "preEvolution": "feebas",
-    "evolutions": []
+    "evolutions": [
+      {
+        "id": "milotic_megamilotic",
+        "variant": "item_interact",
+        "result": "megamilotic",
+        "consumeHeldItem": true,
+        "requirements": [],
+        "requiredContext": "lackingmegas:key_stone"
+      },
+      {
+        "id": "milotic_megamilotic1",
+        "variant": "item_interact",
+        "result": "megamilotic",
+        "consumeHeldItem": false,
+        "requirements": [],
+        "requiredContext": "lackingmegas:mega_ring"
+      }
+    ],
+    "riding": {
+      "behaviours": {
+        "LIQUID": {
+          "key": "cobblemon:liquid/dolphin",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.water_surface",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "35-65",
+            "JUMP": "25-45",
+            "SKILL": "55-80",
+            "SPEED": "40-70",
+            "STAMINA": "45-85"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0.15,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.55,
+                "z": 0
+              },
+              "poseTypes": [
+                "STAND",
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.6,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "SWIM",
+                "HOVER"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

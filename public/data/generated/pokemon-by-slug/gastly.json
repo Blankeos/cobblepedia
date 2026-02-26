@@ -3,6 +3,40 @@
   "name": "Gastly",
   "dexNumber": 92,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0092_gastly.json",
+        "data/cobblemon/species/generation1/gastly.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0092_gastly.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [TDmon - Credits Only]",
+      "files": [
+        "data/cobblemon/species/generation1/gastly.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/b8PVSzJC/versions/hcVF2EwL/TDmon%5BV1.3.1a-Gastly%20Line%20Ported%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "ghost",
     "poison"
@@ -103,6 +137,14 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "megagengar",
+        "slug": "megagengar",
+        "name": "Megagengar",
+        "dexNumber": 0,
+        "formSlug": null,
+        "formName": null
+      },
+      {
         "nodeId": "gastly",
         "slug": "gastly",
         "name": "Gastly",
@@ -136,6 +178,26 @@
         "method": "level_up",
         "requirementText": [
           "Level 25+"
+        ]
+      },
+      {
+        "fromNodeId": "gengar",
+        "toNodeId": "megagengar",
+        "fromSlug": "gengar",
+        "toSlug": "megagengar",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Key Stone"
+        ]
+      },
+      {
+        "fromNodeId": "gengar",
+        "toNodeId": "megagengar",
+        "fromSlug": "gengar",
+        "toSlug": "megagengar",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Mega Ring"
         ]
       },
       {

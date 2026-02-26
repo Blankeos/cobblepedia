@@ -2,7 +2,44 @@
   "slug": "melmetal",
   "name": "Melmetal",
   "dexNumber": 809,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7b/melmetal.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "mega_showdown-fabric-1.6.10+1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species_additions/melmetal.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/SszvX85I/versions/GCGtiDQy/mega_showdown-fabric-1.6.10%2B1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/missingmons/melmetal_size.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "steel"
   ],
@@ -61,6 +98,14 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "meltan",
+        "slug": "meltan",
+        "name": "Meltan",
+        "dexNumber": 808,
+        "formSlug": null,
+        "formName": null
+      },
+      {
         "nodeId": "melmetal",
         "slug": "melmetal",
         "name": "Melmetal",
@@ -69,9 +114,32 @@
         "formName": null
       }
     ],
-    "edges": [],
+    "edges": [
+      {
+        "fromNodeId": "meltan",
+        "toNodeId": "melmetal",
+        "fromSlug": "meltan",
+        "toSlug": "melmetal",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Anvil",
+          "Level 70+"
+        ]
+      },
+      {
+        "fromNodeId": "meltan",
+        "toNodeId": "melmetal",
+        "fromSlug": "meltan",
+        "toSlug": "melmetal",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Anvil",
+          "Level up"
+        ]
+      }
+    ],
     "roots": [
-      "melmetal"
+      "meltan"
     ]
   },
   "moves": [
@@ -846,7 +914,16 @@
       }
     }
   ],
-  "drops": null,
+  "drops": {
+    "amount": 0,
+    "entries": [
+      {
+        "item": "minecraft:iron_block",
+        "quantityRange": "1-2",
+        "percentage": 50
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 809,
     "name": "Melmetal",
@@ -890,10 +967,10 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 1.2,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 2,
+      "height": 3,
       "fixed": false
     },
     "moves": [
@@ -1000,7 +1077,15 @@
       "moving": {
         "swim": {
           "avoidsWater": true,
-          "canSwimInWater": false
+          "canSwimInWater": false,
+          "swimSpeed": 0.1,
+          "canBreatheUnderwater": false
+        },
+        "canLook": false,
+        "walk": {
+          "walkSpeed": 0.195,
+          "canWalk": true,
+          "avoidsLand": false
         }
       },
       "combat": {
@@ -1013,8 +1098,46 @@
           "any"
         ],
         "drowsyChance": 0.0014,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "depth": "normal",
+        "light": "0-4"
       }
+    },
+    "implemented": true,
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "30-60",
+            "JUMP": "30-65",
+            "SKILL": "20-50",
+            "SPEED": "20-40",
+            "STAMINA": "80-135"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    },
+    "drops": {
+      "amount": "1",
+      "entries": [
+        {
+          "item": "minecraft:iron_block",
+          "quantityRange": "1-2",
+          "percentage": 50
+        }
+      ]
     }
   }
 }

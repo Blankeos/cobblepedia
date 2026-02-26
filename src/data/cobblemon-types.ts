@@ -14,11 +14,26 @@ export type SearchResultType =
   | "egg-group-entry"
   | "primary-page"
 
+export type GenerationProfile = "base" | "cobbleverse"
+
+export type PokemonProvenanceStatus =
+  | "base-implemented"
+  | "addon-implemented"
+  | "addon-touched-not-implemented"
+  | "unresolved"
+
+export type PokemonProvenanceEvidence = {
+  mod: string
+  files: string[]
+  urls: string[]
+}
+
 export type MetaRecord = {
   upstreamUrl: string
   branch: string
   commitSha: string
   generatedAt: string
+  generationProfile: GenerationProfile
   speciesCount: number
   implementedSpeciesCount: number
   spawnEntryCount: number
@@ -198,6 +213,11 @@ export type PokemonDetailRecord = {
   name: string
   dexNumber: number
   implemented: boolean
+  isBaseCobblemonImplemented: boolean
+  isCobbleverseProvided: boolean
+  providedByMods: string[]
+  provenanceEvidence: PokemonProvenanceEvidence[]
+  provenanceStatus: PokemonProvenanceStatus
   types: string[]
   abilities: PokemonAbility[]
   eggGroups: string[]
@@ -397,6 +417,41 @@ export type SearchDocument = {
   implemented: boolean
   dexNumber: number | null
   learnerCount: number | null
+}
+
+export type CoverageReportArtifactRecord = {
+  mod: string
+  mrpackPath: string
+  downloadUrl: string | null
+  sha1: string
+  evidenceFiles: string[]
+}
+
+export type CoverageReportRecord = {
+  profile: GenerationProfile
+  speciesTotal: number
+  baseImplemented: number
+  addonImplemented: number
+  addonTouchedNotImplemented: number
+  unresolved: number
+  unresolvedSpecies: string[]
+  sourceSnapshot: {
+    cobblemon: {
+      upstreamUrl: string
+      sourceRoot: string
+      branch: string
+      commitSha: string
+    }
+    cobbleverse: {
+      mrpackPath: string
+      mrpackSha1: string
+      mrpackUrl: string | null
+      modrinthCollectionUrl: string
+      versionId: string | null
+      dependencyFiles: number
+    } | null
+  }
+  artifacts: CoverageReportArtifactRecord[]
 }
 
 export type PaletteResult = {

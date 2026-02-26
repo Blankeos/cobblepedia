@@ -2,7 +2,56 @@
   "slug": "zeraora",
   "name": "Zeraora",
   "dexNumber": 807,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "zamega-fabric-1.5.4"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation7/zeraora.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0807_zeraora.json",
+        "data/cobblemon/species_additions/zeraora.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation7/zeraora.json",
+        "data/legendary_spawns_atm/spawn_pool_world/zeraora.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation7/zeraora_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "electric"
   ],
@@ -29,7 +78,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "zeraora"
+    "mega",
+    "zeraora",
+    "zeraora mega"
   ],
   "maleRatio": -1,
   "height": 15,
@@ -1335,8 +1386,80 @@
     }
   ],
   "spawnEntries": [],
-  "forms": [],
-  "drops": null,
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "zeraora-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen7",
+        "mega",
+        "mythical"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 15,
+      "weight": 445,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 88,
+        "attack": 157,
+        "defence": 75,
+        "special_attack": 147,
+        "special_defence": 80,
+        "speed": 153
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.zeraora-mega.desc"
+        ],
+        "labels": [
+          "gen7",
+          "mega",
+          "mythical"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "baseStats": {
+          "hp": 88,
+          "attack": 157,
+          "defence": 75,
+          "special_attack": 147,
+          "special_defence": 80,
+          "speed": 153
+        },
+        "battleOnly": true,
+        "hitbox": {
+          "width": 1.2,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 15,
+        "weight": 445
+      }
+    }
+  ],
+  "drops": {
+    "amount": 0,
+    "entries": [
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 100
+      }
+    ]
+  },
   "rawSpecies": {
     "nationalPokedexNumber": 807,
     "name": "Zeraora",
@@ -1380,10 +1503,10 @@
     "catchRate": 3,
     "eggCycles": 120,
     "baseFriendship": 0,
-    "baseScale": 1,
+    "baseScale": 0.7,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 0.7,
+      "height": 2.4,
       "fixed": false
     },
     "behaviour": {
@@ -1403,7 +1526,14 @@
       },
       "resting": {
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": true,
+        "willSleepOnBed": true,
+        "depth": "normal",
+        "light": "0-4"
+      },
+      "herd": {
+        "maxSize": "1"
       }
     },
     "moves": [
@@ -1534,6 +1664,52 @@
       "legacy:snore",
       "legacy:toxic"
     ],
-    "evolutions": []
+    "evolutions": [],
+    "implemented": true,
+    "shoulderMountable": false,
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.zeraora-mega.desc"
+        ],
+        "labels": [
+          "gen7",
+          "mega",
+          "mythical"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "baseStats": {
+          "hp": 88,
+          "attack": 157,
+          "defence": 75,
+          "special_attack": 147,
+          "special_defence": 80,
+          "speed": 153
+        },
+        "battleOnly": true,
+        "hitbox": {
+          "width": 1.2,
+          "height": 3,
+          "fixed": false
+        },
+        "height": 15,
+        "weight": 445
+      }
+    ],
+    "drops": {
+      "amount": "1",
+      "entries": [
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 100
+        }
+      ]
+    }
   }
 }

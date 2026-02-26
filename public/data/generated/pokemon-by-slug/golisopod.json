@@ -3,6 +3,49 @@
   "name": "Golisopod",
   "dexNumber": 768,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0768_golisopod.json",
+        "data/cobblemon/species/generation7/golisopod.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation7/golisopod.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0768_golisopod.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation7/golisopod_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "bug",
     "water"
@@ -30,7 +73,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "golisopod"
+    "golisopod",
+    "golisopod mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 20,
@@ -2095,7 +2140,92 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "golisopod-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen7",
+        "mega"
+      ],
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "maleRatio": null,
+      "height": 23,
+      "weight": 1480,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 75,
+        "attack": 150,
+        "defence": 175,
+        "special_attack": 70,
+        "special_defence": 120,
+        "speed": 40
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "heatproof",
+          "hidden": false,
+          "label": "Heatproof",
+          "slot": "first"
+        },
+        {
+          "id": "heatproof",
+          "hidden": true,
+          "label": "Heatproof",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "primaryType": "bug",
+        "secondaryType": "steel",
+        "pokedex": [
+          "cobblemon.species.golisopod-mega.desc"
+        ],
+        "abilities": [
+          "heatproof",
+          "h:heatproof"
+        ],
+        "labels": [
+          "gen7",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 75,
+          "attack": 150,
+          "defence": 175,
+          "special_attack": 70,
+          "special_defence": 120,
+          "speed": 40
+        },
+        "baseScale": 1,
+        "hitbox": {
+          "width": 1.5,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 23,
+        "weight": 1480
+      }
+    }
+  ],
   "drops": {
     "amount": 1,
     "entries": [
@@ -2338,6 +2468,152 @@
       "legacy:toxic"
     ],
     "preEvolution": "wimpod",
-    "evolutions": []
+    "evolutions": [],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "20-40",
+            "JUMP": "15-30",
+            "SKILL": "45-70",
+            "SPEED": "25-40",
+            "STAMINA": "40-70"
+          }
+        },
+        "LIQUID": {
+          "key": "cobblemon:liquid/dolphin",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.water_surface",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "35-60",
+            "JUMP": "25-45",
+            "SKILL": "40-65",
+            "SPEED": "35-65",
+            "STAMINA": "45-80"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -2.2,
+                "z": 0.1
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05,
+                "y": -2.3,
+                "z": -0.1
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.7,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.7,
+                "z": -0.25
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.03,
+                "y": -1.5,
+                "z": -0.35
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": -0.02,
+                "y": -2.35,
+                "z": -0.15
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "primaryType": "bug",
+        "secondaryType": "steel",
+        "pokedex": [
+          "cobblemon.species.golisopod-mega.desc"
+        ],
+        "abilities": [
+          "heatproof",
+          "h:heatproof"
+        ],
+        "labels": [
+          "gen7",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 75,
+          "attack": 150,
+          "defence": 175,
+          "special_attack": 70,
+          "special_defence": 120,
+          "speed": 40
+        },
+        "baseScale": 1,
+        "hitbox": {
+          "width": 1.5,
+          "height": 4,
+          "fixed": false
+        },
+        "height": 23,
+        "weight": 1480
+      }
+    ]
   }
 }

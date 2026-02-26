@@ -3,6 +3,40 @@
   "name": "Fearow",
   "dexNumber": 22,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0022_fearow.json",
+        "data/cobblemon/species/generation1/fearow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/fearow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0022_fearow.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "normal",
     "flying"
@@ -1504,9 +1538,94 @@
           }
         }
       },
-      "seats": [],
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 1.5,
+            "z": -0.3
+          },
+          "poseOffsets": [
+            {
+              "poseTypes": [
+                "STAND",
+                "WALK",
+                "SWIM",
+                "FLOAT",
+                "GLIDE"
+              ],
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            },
+            {
+              "poseTypes": [
+                "HOVER"
+              ],
+              "offset": {
+                "x": 0,
+                "y": 0.4,
+                "z": -0.2
+              }
+            },
+            {
+              "poseTypes": [
+                "FLY"
+              ],
+              "offset": {
+                "x": 0,
+                "y": 0.2,
+                "z": -0.3
+              }
+            }
+          ]
+        }
+      ],
       "behaviour": {
         "key": "cobblemon:land/horse"
+      },
+      "behaviours": {
+        "AIR": {
+          "key": "cobblemon:air/bird",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.leather",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "50-80",
+            "JUMP": "30-70",
+            "SKILL": "60-90",
+            "SPEED": "40-80",
+            "STAMINA": "35-75"
+          }
+        },
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "canJump": true,
+          "canSprint": true,
+          "stats": {
+            "ACCELERATION": "45-65",
+            "JUMP": "20-35",
+            "SKILL": "20-40",
+            "SPEED": "30-50",
+            "STAMINA": "25-40"
+          }
+        }
       }
     }
   }

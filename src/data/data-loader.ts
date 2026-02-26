@@ -429,7 +429,6 @@ function buildGeneratedDataBasePaths(
       candidateBasePaths.add(pathModule.join(current, "public", "data", "generated"))
       candidateBasePaths.add(pathModule.join(current, "dist", "client", "data", "generated"))
       candidateBasePaths.add(pathModule.join(current, "dist", "server", "data", "generated"))
-      candidateBasePaths.add(pathModule.join(current, "src", "data", "generated"))
       candidateBasePaths.add(pathModule.join(current, "data", "generated"))
 
       const parent = pathModule.dirname(current)

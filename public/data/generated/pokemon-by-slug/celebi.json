@@ -2,7 +2,67 @@
   "slug": "celebi",
   "name": "Celebi",
   "dexNumber": 251,
-  "implemented": false,
+  "implemented": true,
+  "isBaseCobblemonImplemented": false,
+  "isCobbleverseProvided": true,
+  "providedByMods": [
+    "Cobblemon-fabric-1.7.3+1.21.1",
+    "COBBLEVERSE-DP-v27",
+    "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+    "z DO NOT ENABLE z [MissingMons - Credits Only]",
+    "z DO NOT ENABLE z [MysticMons - Credits Only]"
+  ],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/species/generation2/celebi.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0251_celebi.json",
+        "data/cobblemon/species_additions/celebi.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [ATM x MSD - Credits Only]",
+      "files": [
+        "data/cobblemon/species_additions/generation2/celebi.json",
+        "data/legendary_spawns_atm/spawn_pool_world/celebi.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/odZZdRCE/versions/N10nVTzj/ATM%20x%20MSD%20%5B3.2.1%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MissingMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/celebi.json",
+        "data/cobblemon/species_additions/missingmons/celebi_size.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/jbbBrQVa/versions/m53LoEZd/MissingMon_v3.6.1%20%5BFloral%20Awakening%20%5D.zip"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [MysticMons - Credits Only]",
+      "files": [
+        "data/cobblemon/spawn_pool_world/celebi.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/TiFXQSAQ/versions/n1gBFmIp/MysticMons_v3.2.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "addon-implemented",
   "types": [
     "psychic",
     "grass"
@@ -1628,10 +1688,30 @@
   "spawnEntries": [],
   "forms": [],
   "drops": {
-    "amount": 1,
+    "amount": 5,
     "entries": [
       {
         "item": "cobblemon:miracle_seed"
+      },
+      {
+        "item": "cobblemon:rare_candy",
+        "quantityRange": "2-6"
+      },
+      {
+        "item": "cobblemon:psychic_gem",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10
       }
     ]
   },
@@ -1679,17 +1759,37 @@
     "catchRate": 45,
     "eggCycles": 120,
     "baseFriendship": 100,
-    "baseScale": 1,
+    "baseScale": 0.5,
     "hitbox": {
-      "width": 1,
-      "height": 1,
+      "width": 0.5,
+      "height": 1.4,
       "fixed": false
     },
     "drops": {
-      "amount": 1,
+      "amount": 5,
       "entries": [
         {
           "item": "cobblemon:miracle_seed"
+        },
+        {
+          "item": "cobblemon:rare_candy",
+          "quantityRange": "2-6"
+        },
+        {
+          "item": "cobblemon:psychic_gem",
+          "percentage": 50
+        },
+        {
+          "item": "minecraft:nether_star",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:ability_capsule",
+          "percentage": 25
+        },
+        {
+          "item": "cobblemon:ability_patch",
+          "percentage": 10
         }
       ]
     },
@@ -1853,7 +1953,7 @@
     "evolutions": [],
     "behaviour": {
       "herd": {
-        "maxSize": "9",
+        "maxSize": "1",
         "toleratedLeaders": [
           {
             "pokemon": "celebi",
@@ -1864,22 +1964,32 @@
       "resting": {
         "willSleepOnBed": true,
         "drowsyChance": 0.0333,
-        "rouseChance": 0.0042
+        "rouseChance": 0.0042,
+        "canSleep": false,
+        "depth": "normal",
+        "light": "4-15"
       },
       "moving": {
         "swim": {
-          "avoidsWater": true
+          "avoidsWater": true,
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": false
         },
         "fly": {
           "canFly": true
         },
         "walk": {
-          "canWalk": false
-        }
+          "canWalk": false,
+          "avoidsLand": false
+        },
+        "canLook": false
       },
       "combat": {
         "willDefendOwner": true
       }
-    }
+    },
+    "implemented": true,
+    "shoulderMountable": true
   }
 }

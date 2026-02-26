@@ -3,6 +3,40 @@
   "name": "Dragalge",
   "dexNumber": 691,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0691_dragalge.json",
+        "data/cobblemon/species/generation6/dragalge.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0691_dragalge.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "zamega-fabric-1.5.4",
+      "files": [
+        "data/cobblemon/species_additions/generation6/dragalge_mega.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/2V1Y86sc/versions/vVdlKcht/zamega-fabric-1.5.4.jar"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "poison",
     "dragon"
@@ -36,7 +70,9 @@
   ],
   "aspects": [],
   "aliases": [
-    "dragalge"
+    "dragalge",
+    "dragalge mega",
+    "mega"
   ],
   "maleRatio": 0.5,
   "height": 18,
@@ -1661,7 +1697,89 @@
       }
     }
   ],
-  "forms": [],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "dragalge-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "types": [],
+      "maleRatio": null,
+      "height": 21,
+      "weight": 1003,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 65,
+        "attack": 85,
+        "defence": 105,
+        "special_attack": 132,
+        "special_defence": 163,
+        "speed": 44
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "regenerator",
+          "hidden": false,
+          "label": "Regenerator",
+          "slot": "first"
+        },
+        {
+          "id": "regenerator",
+          "hidden": false,
+          "label": "Regenerator",
+          "slot": "second"
+        },
+        {
+          "id": "regenerator",
+          "hidden": true,
+          "label": "Regenerator",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.dragalge-mega.desc"
+        ],
+        "abilities": [
+          "regenerator",
+          "regenerator",
+          "h:regenerator"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 85,
+          "defence": 105,
+          "special_attack": 132,
+          "special_defence": 163,
+          "speed": 44
+        },
+        "baseScale": 1.05,
+        "height": 21,
+        "weight": 1003
+      }
+    }
+  ],
   "drops": {
     "amount": 3,
     "entries": [
@@ -1888,6 +2006,41 @@
       "legacy:swagger"
     ],
     "preEvolution": "skrelp",
-    "evolutions": []
+    "evolutions": [],
+    "features": [
+      "mega_evolution"
+    ],
+    "forms": [
+      {
+        "name": "Mega",
+        "pokedex": [
+          "cobblemon.species.dragalge-mega.desc"
+        ],
+        "abilities": [
+          "regenerator",
+          "regenerator",
+          "h:regenerator"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "battleOnly": true,
+        "baseStats": {
+          "hp": 65,
+          "attack": 85,
+          "defence": 105,
+          "special_attack": 132,
+          "special_defence": 163,
+          "speed": 44
+        },
+        "baseScale": 1.05,
+        "height": 21,
+        "weight": 1003
+      }
+    ]
   }
 }

@@ -3,6 +3,50 @@
   "name": "Ninetales",
   "dexNumber": 38,
   "implemented": true,
+  "isBaseCobblemonImplemented": true,
+  "isCobbleverseProvided": false,
+  "providedByMods": [],
+  "provenanceEvidence": [
+    {
+      "mod": "Cobblemon-fabric-1.7.3+1.21.1",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0038_ninetales.json",
+        "data/cobblemon/species/generation1/ninetales.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/MdwFAVRL/versions/kF7CvxTo/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+      ]
+    },
+    {
+      "mod": "cobblemon-journey-mounts-1.7.3-cobbleverse",
+      "files": [
+        "data/cobblemon/species_additions/generation1/ninetales.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "COBBLEVERSE-DP-v27",
+      "files": [
+        "data/cobblemon/spawn_pool_world/0038_ninetales.json",
+        "data/cobblemon/species_additions/ninetales.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/Jkb29YJU/versions/Cg3gXABt/COBBLEVERSE%201.7.3.mrpack"
+      ]
+    },
+    {
+      "mod": "z DO NOT ENABLE z [CobbleMotion - Credits Only]",
+      "files": [
+        "data/cobblemotionv1_4_1/species_additions/cobblemotion_ninetales.json"
+      ],
+      "urls": [
+        "https://cdn.modrinth.com/data/lIDAJAby/versions/1WmRp4YR/CobbleMotion_v1.4.1.zip"
+      ]
+    }
+  ],
+  "provenanceStatus": "base-implemented",
   "types": [
     "fire"
   ],
@@ -30,8 +74,10 @@
   "aspects": [],
   "aliases": [
     "alola",
+    "form 2",
     "ninetales",
-    "ninetales alola"
+    "ninetales alola",
+    "ninetales form 2"
   ],
   "maleRatio": 0.25,
   "height": 11,
@@ -3494,6 +3540,38 @@
           }
         }
       }
+    },
+    {
+      "name": "Form 2",
+      "slug": "ninetales-form2",
+      "aspects": [],
+      "labels": [],
+      "types": [],
+      "maleRatio": null,
+      "height": null,
+      "weight": null,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "aspect": [
+          "alolan"
+        ],
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.1965
+            }
+          }
+        }
+      }
     }
   ],
   "drops": {
@@ -3980,7 +4058,70 @@
             "willFlee": false
           }
         }
+      },
+      {
+        "aspect": [
+          "alolan"
+        ],
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.1965
+            }
+          }
+        }
       }
-    ]
+    ],
+    "riding": {
+      "behaviours": {
+        "LAND": {
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "stats": {
+            "ACCELERATION": "65-85",
+            "JUMP": "40-60",
+            "SKILL": "40-75",
+            "SPEED": "45-70",
+            "STAMINA": "30-60"
+          }
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -1.1,
+                "z": 0.05
+              },
+              "poseTypes": [
+                "STAND",
+                "FLOAT",
+                "HOVER",
+                "FLY",
+                "GLIDE"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.02,
+                "y": -1.15,
+                "z": 0.07
+              },
+              "poseTypes": [
+                "WALK",
+                "SWIM"
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }
