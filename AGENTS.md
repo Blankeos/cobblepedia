@@ -14,3 +14,4 @@ If you are confused about project rules or references, check the minimal docs in
 - Slowpoke shearing (`tasty_tail`) is driven by `species_feature_assignments/slowpoke_tail_regrowth.json` + `mechanics/slowpoke_tails.json`.
 - Local smoke tests can be misleading if another `vike dev`/`preview` process is already bound to port `3000`; stop old processes before validating endpoints.
 - Headless CLI requests to `/pokemon/:slug` can return an empty response while Vike only logs slow `onRenderHtml` warnings; validate `/api/pokemon/dex-neighbors` independently when this happens.
+- Installing `@photonjs/cloudflare` can trigger a first-request dev failure in this repo (`configValuesSerialized`/virtual module race in Vike + Cloudflare plugin). Keep `photon.target` on `node` during `vike dev` and use `auto` for production builds.

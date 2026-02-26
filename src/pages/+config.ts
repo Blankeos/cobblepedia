@@ -6,6 +6,7 @@ import config from "vike-solid/config"
 export default {
   extends: [config, vikePhoton],
   photon: {
+    target: process.env.NODE_ENV === "development" ? "node" : "auto",
     server: "../server/server.ts",
   },
 } satisfies Config
