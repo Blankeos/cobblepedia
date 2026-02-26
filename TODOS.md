@@ -52,6 +52,8 @@ Improve the design for this new Competitive Card please. each tab looks kinda di
 
 - [x] Interactable pokemon https://wiki.cobblemon.com/index.php/Pok%C3%A9mon
 
-- [ ] EV Training map. + what EVs yield for this pokemon.
+- [ ] EV Training map. + what EVs yield for this pokemon. (or just link it)
+
+- [ ] Bug: Helioptile - I think I should see spawn rates, these are 'Cobbleverse-specific'
 
 - [ ] Drops item search i.e. Who drops what in by-item pages.

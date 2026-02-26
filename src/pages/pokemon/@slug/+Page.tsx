@@ -594,8 +594,110 @@ function PokemonDetailView(props: {
     return provenanceStatus() === "addon-implemented"
   })
 
-  const showCobbleverseOnlyFlag = createMemo(
+  const showCobbleverseOnlySpeciesFlag = createMemo(
     () => isCobbleverseOnly() && provenanceStatus() === "addon-implemented"
+  )
+
+  const selectedFormProvenanceTokens = createMemo(() => {
+    const form = selectedForm()
+    if (!form) {
+      return [] as string[]
+    }
+
+    const speciesToken = canonicalId(detail().slug)
+    const collected = new Set<string>()
+
+    const addToken = (value: string | null | undefined) => {
+      if (!value) {
+        return
+      }
+
+      const token = canonicalId(value)
+      if (!token || token.length < 3) {
+        return
+      }
+
+      collected.add(token)
+    }
+
+    addToken(form.name)
+    addToken(form.slug)
+    for (const aspect of form.aspects) {
+      addToken(aspect)
+    }
+    for (const label of form.labels) {
+      addToken(label)
+    }
+
+    const formSlugToken = canonicalId(form.slug)
+    if (speciesToken && formSlugToken.startsWith(speciesToken)) {
+      addToken(formSlugToken.slice(speciesToken.length))
+    }
+
+    if (Array.from(collected).some((token) => token.includes("mega"))) {
+      collected.add("mega")
+    }
+
+    return Array.from(collected)
+  })
+
+  const cobbleverseFormMods = createMemo(() => {
+    const form = selectedForm()
+    if (!form || !detail().isBaseCobblemonImplemented) {
+      return [] as string[]
+    }
+
+    const speciesToken = canonicalId(detail().slug)
+    const formTokens = selectedFormProvenanceTokens()
+    if (!speciesToken || formTokens.length === 0) {
+      return [] as string[]
+    }
+
+    const modSet = new Set<string>()
+
+    for (const evidence of detail().provenanceEvidence ?? []) {
+      const files = evidence.files ?? []
+      const matchesSelectedForm = files.some((filePath) => {
+        const canonicalPath = canonicalId(filePath)
+        if (!canonicalPath.includes("speciesadditions")) {
+          return false
+        }
+
+        if (!canonicalPath.includes(speciesToken)) {
+          return false
+        }
+
+        return formTokens.some((token) => canonicalPath.includes(token))
+      })
+
+      if (!matchesSelectedForm) {
+        continue
+      }
+
+      const modName = evidence.mod.trim()
+      if (modName) {
+        modSet.add(modName)
+      }
+    }
+
+    return Array.from(modSet)
+  })
+
+  const showCobbleverseOnlyFormFlag = createMemo(
+    () =>
+      detail().isBaseCobblemonImplemented &&
+      selectedForm() !== null &&
+      cobbleverseFormMods().length > 0
+  )
+
+  const showCobbleverseOnlyFlag = createMemo(
+    () => showCobbleverseOnlySpeciesFlag() || showCobbleverseOnlyFormFlag()
+  )
+
+  const cobbleverseOnlyFlagText = createMemo(() =>
+    showCobbleverseOnlySpeciesFlag()
+      ? "Not implemented in base Cobblemon · Cobbleverse only"
+      : "Form not in base Cobblemon · Cobbleverse only"
   )
 
   const showSourceUnresolvedAlert = createMemo(
@@ -603,12 +705,21 @@ function PokemonDetailView(props: {
   )
 
   const cobbleverseOnlyTooltip = createMemo(() => {
-    const mods = provenanceMods()
-    if (mods.length === 0) {
-      return "Cobbleverse-only species."
+    if (showCobbleverseOnlySpeciesFlag()) {
+      const mods = provenanceMods()
+      if (mods.length === 0) {
+        return "Cobbleverse-only species."
+      }
+
+      return `Added by Cobbleverse mod(s): ${mods.join(", ")}`
     }
 
-    return `Added by Cobbleverse mod(s): ${mods.join(", ")}`
+    const formMods = cobbleverseFormMods()
+    if (formMods.length === 0) {
+      return "Selected form is provided by Cobbleverse addon data."
+    }
+
+    return `Selected form is added by Cobbleverse mod(s): ${formMods.join(", ")}`
   })
 
   return (
@@ -663,7 +774,7 @@ function PokemonDetailView(props: {
                   class="inline-flex items-center border border-border/80 bg-secondary/45 px-2 py-0.5 font-mono text-[10px] text-muted-foreground leading-none"
                   title={cobbleverseOnlyTooltip()}
                 >
-                  Not implemented in base Cobblemon · Cobbleverse only
+                  {cobbleverseOnlyFlagText()}
                 </span>
               </Show>
             </div>
