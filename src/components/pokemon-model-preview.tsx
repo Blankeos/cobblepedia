@@ -16,13 +16,13 @@ import { Group } from "three/src/objects/Group.js"
 import { Mesh } from "three/src/objects/Mesh.js"
 import { WebGLRenderer } from "three/src/renderers/WebGLRenderer.js"
 import { Scene } from "three/src/scenes/Scene.js"
-import { CanvasTexture } from "three/src/textures/CanvasTexture.js"
 import type { Texture } from "three/src/textures/Texture.js"
 
 type ModelPreviewManifest = {
   geoUrl: string
   textureUrl: string
   transparencyTextureUrl?: string
+  layerTextureUrls?: string[]
   animationUrl?: string
 }
 
@@ -154,6 +154,13 @@ type OrbitController = {
 type FitModelResult = {
   lookTarget: Vector3
   size: Vector3
+}
+
+type TransparencyTextureMode = "none" | "overlay" | "alpha-mask"
+
+type LoadedPreviewTexture = {
+  baseTexture: Texture
+  layerTextures: Texture[]
 }
 
 type SceneRuntime = {
@@ -358,21 +365,29 @@ async function loadModel(
     return false
   }
 
-  const [geoResponse, texture, animationFile] = await Promise.all([
+  const [geoResponse, loadedTexture, animationFile] = await Promise.all([
     fetch(manifest.geoUrl),
-    loadTexture(manifest.textureUrl, manifest.transparencyTextureUrl),
+    loadTexture(
+      manifest.textureUrl,
+      manifest.transparencyTextureUrl,
+      manifest.layerTextureUrls ?? []
+    ),
     loadAnimationFile(manifest.animationUrl),
   ])
 
   if (!geoResponse.ok) {
-    texture.dispose()
+    disposeLoadedPreviewTexture(loadedTexture)
     return false
   }
 
   const geoFile = (await geoResponse.json()) as BedrockGeoFile
-  const model = buildModelFromBedrock(geoFile, texture)
+  const model = buildModelFromBedrock(
+    geoFile,
+    loadedTexture.baseTexture,
+    loadedTexture.layerTextures
+  )
   if (!model) {
-    texture.dispose()
+    disposeLoadedPreviewTexture(loadedTexture)
     return false
   }
 
@@ -392,6 +407,14 @@ async function loadModel(
   return true
 }
 
+function disposeLoadedPreviewTexture(loadedTexture: LoadedPreviewTexture) {
+  loadedTexture.baseTexture.dispose()
+
+  for (const layerTexture of loadedTexture.layerTextures) {
+    layerTexture.dispose()
+  }
+}
+
 async function loadAnimationFile(url?: string): Promise<BedrockAnimationFile | null> {
   if (!url) {
     return null
@@ -405,22 +428,73 @@ async function loadAnimationFile(url?: string): Promise<BedrockAnimationFile | n
   return (await response.json()) as BedrockAnimationFile
 }
 
-async function loadTexture(url: string, transparencyUrl?: string): Promise<Texture> {
+async function loadTexture(
+  url: string,
+  transparencyUrl?: string,
+  layerTextureUrls: string[] = []
+): Promise<LoadedPreviewTexture> {
   const textureLoader = new TextureLoader()
+  const uniqueLayerTextureUrls = Array.from(new Set(layerTextureUrls)).filter(Boolean)
+  const transparencyMode = resolveTransparencyTextureMode(transparencyUrl)
+  const shouldLoadTransparencyOverlay = transparencyMode === "overlay"
 
-  if (transparencyUrl) {
-    const [baseTexture, transparencyTexture] = await Promise.all([
-      textureLoader.loadAsync(url),
-      textureLoader.loadAsync(transparencyUrl),
-    ])
+  const baseTexture = configurePreviewTexture(await textureLoader.loadAsync(url))
 
-    const mergedTexture = mergeLayeredTextures(baseTexture, transparencyTexture)
-    baseTexture.dispose()
-    transparencyTexture.dispose()
-    return mergedTexture
+  const [transparencyTexture, layerTextures] = await Promise.all([
+    shouldLoadTransparencyOverlay ? loadOptionalTexture(textureLoader, transparencyUrl) : null,
+    Promise.all(
+      uniqueLayerTextureUrls.map((layerUrl) => loadOptionalTexture(textureLoader, layerUrl))
+    ),
+  ])
+
+  const availableLayerTextures = layerTextures.filter(
+    (texture): texture is Texture => texture !== null
+  )
+
+  const configuredLayerTextures = availableLayerTextures.map((texture) =>
+    configurePreviewTexture(texture)
+  )
+
+  const overlayTextures = [...configuredLayerTextures]
+
+  if (transparencyTexture) {
+    overlayTextures.unshift(configurePreviewTexture(transparencyTexture))
   }
 
-  const texture = await textureLoader.loadAsync(url)
+  return {
+    baseTexture,
+    layerTextures: overlayTextures,
+  }
+}
+
+function resolveTransparencyTextureMode(textureUrl?: string): TransparencyTextureMode {
+  if (!textureUrl) {
+    return "none"
+  }
+
+  if (/_alpha\.png(?:$|[?#&])/iu.test(textureUrl)) {
+    return "alpha-mask"
+  }
+
+  return "overlay"
+}
+
+async function loadOptionalTexture(
+  textureLoader: TextureLoader,
+  textureUrl?: string
+): Promise<Texture | null> {
+  if (!textureUrl) {
+    return null
+  }
+
+  try {
+    return await textureLoader.loadAsync(textureUrl)
+  } catch {
+    return null
+  }
+}
+
+function configurePreviewTexture(texture: Texture): Texture {
   texture.colorSpace = SRGBColorSpace
   texture.flipY = true
   texture.magFilter = NearestFilter
@@ -428,55 +502,6 @@ async function loadTexture(url: string, transparencyUrl?: string): Promise<Textu
   texture.generateMipmaps = false
   texture.needsUpdate = true
   return texture
-}
-
-function mergeLayeredTextures(baseTexture: Texture, transparencyTexture: Texture): Texture {
-  const baseImage = baseTexture.image as CanvasImageSource | undefined
-  const transparencyImage = transparencyTexture.image as CanvasImageSource | undefined
-
-  if (
-    !(baseImage instanceof HTMLImageElement) ||
-    !(transparencyImage instanceof HTMLImageElement)
-  ) {
-    const fallbackTexture = baseTexture.clone()
-    fallbackTexture.colorSpace = SRGBColorSpace
-    fallbackTexture.flipY = true
-    fallbackTexture.magFilter = NearestFilter
-    fallbackTexture.minFilter = NearestFilter
-    fallbackTexture.generateMipmaps = false
-    fallbackTexture.needsUpdate = true
-    return fallbackTexture
-  }
-
-  const canvas = document.createElement("canvas")
-  canvas.width = baseImage.naturalWidth || baseImage.width
-  canvas.height = baseImage.naturalHeight || baseImage.height
-
-  const context = canvas.getContext("2d")
-  if (!context) {
-    const fallbackTexture = baseTexture.clone()
-    fallbackTexture.colorSpace = SRGBColorSpace
-    fallbackTexture.flipY = true
-    fallbackTexture.magFilter = NearestFilter
-    fallbackTexture.minFilter = NearestFilter
-    fallbackTexture.generateMipmaps = false
-    fallbackTexture.needsUpdate = true
-    return fallbackTexture
-  }
-
-  context.imageSmoothingEnabled = false
-  context.clearRect(0, 0, canvas.width, canvas.height)
-  context.drawImage(baseImage, 0, 0, canvas.width, canvas.height)
-  context.drawImage(transparencyImage, 0, 0, canvas.width, canvas.height)
-
-  const mergedTexture = new CanvasTexture(canvas)
-  mergedTexture.colorSpace = SRGBColorSpace
-  mergedTexture.flipY = true
-  mergedTexture.magFilter = NearestFilter
-  mergedTexture.minFilter = NearestFilter
-  mergedTexture.generateMipmaps = false
-  mergedTexture.needsUpdate = true
-  return mergedTexture
 }
 
 const MOLANG_ALLOWED_IDENTIFIERS = new Set([
@@ -1227,7 +1252,11 @@ function toRotationTuple(value?: [number, number, number]): [number, number, num
   ]
 }
 
-function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): BuiltModel | null {
+function buildModelFromBedrock(
+  geoFile: BedrockGeoFile,
+  texture: Texture,
+  layerTextures: Texture[] = []
+): BuiltModel | null {
   const geometryRoot = geoFile["minecraft:geometry"]?.[0]
   const bones = geometryRoot?.bones
 
@@ -1242,9 +1271,25 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
     color: "#ffffff",
     map: texture,
     transparent: false,
-    alphaTest: 0.5,
+    alphaTest: 0.01,
+    depthWrite: true,
     roughness: 0.9,
     metalness: 0,
+  })
+
+  const layerMaterials = layerTextures.map((layerTexture, index) => {
+    return new MeshStandardMaterial({
+      color: "#ffffff",
+      map: layerTexture,
+      transparent: true,
+      alphaTest: 0.01,
+      depthWrite: false,
+      polygonOffset: true,
+      polygonOffsetFactor: -1 - index,
+      polygonOffsetUnits: -1 - index,
+      roughness: 0.9,
+      metalness: 0,
+    })
   })
 
   const skeletonRoot = new Group()
@@ -1289,6 +1334,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
         cube,
         bonePivot,
         material,
+        layerMaterials,
         textureWidth,
         textureHeight,
         meshMeta,
@@ -1315,6 +1361,7 @@ function createCubeObject(
   cube: BedrockCube,
   bonePivot: Vector3,
   material: MeshStandardMaterial,
+  layerMaterials: MeshStandardMaterial[],
   textureWidth: number,
   textureHeight: number,
   meshMeta: MeshVolumeMeta[],
@@ -1352,6 +1399,29 @@ function createCubeObject(
 
   const mesh = new Mesh(geometry, material)
   mesh.frustumCulled = false
+  mesh.renderOrder = 0
+
+  const signedScale = signedSize.map((value) => (value < 0 ? -1 : 1)) as [number, number, number]
+  mesh.scale.set(signedScale[0], signedScale[1], signedScale[2])
+
+  const overlayMeshes = layerMaterials.map((layerMaterial, index) => {
+    const layerMesh = new Mesh(geometry.clone(), layerMaterial)
+    layerMesh.frustumCulled = false
+    layerMesh.renderOrder = index + 1
+    layerMesh.scale.set(signedScale[0], signedScale[1], signedScale[2])
+    return layerMesh
+  })
+
+  let cubeVisual: Group | Mesh = mesh
+
+  if (overlayMeshes.length > 0) {
+    const layeredCube = new Group()
+    layeredCube.add(mesh)
+    for (const overlayMesh of overlayMeshes) {
+      layeredCube.add(overlayMesh)
+    }
+    cubeVisual = layeredCube
+  }
 
   const volume = Math.max(Math.abs(signedSize[0] * signedSize[1] * signedSize[2]), 0.001)
   meshMeta.push({
@@ -1364,16 +1434,16 @@ function createCubeObject(
   const center = from.clone().add(to).multiplyScalar(0.5)
 
   if (!cube.pivot && !cube.rotation) {
-    mesh.position.copy(center.sub(bonePivot))
-    return mesh
+    cubeVisual.position.copy(center.sub(bonePivot))
+    return cubeVisual
   }
 
   const pivot = toBedrockPivotVector(cube.pivot)
   const wrapper = new Group()
   wrapper.position.copy(pivot.sub(bonePivot))
   applyBedrockEulerDegrees(wrapper, cube.rotation)
-  mesh.position.copy(center.sub(toBedrockPivotVector(cube.pivot)))
-  wrapper.add(mesh)
+  cubeVisual.position.copy(center.sub(toBedrockPivotVector(cube.pivot)))
+  wrapper.add(cubeVisual)
   return wrapper
 }
 

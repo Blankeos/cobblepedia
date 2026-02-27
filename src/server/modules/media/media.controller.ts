@@ -14,16 +14,33 @@ type ModelPreviewManifest = {
   geoFile: string
   textureFile: string
   transparencyTextureFile?: string
+  layerTextureFiles?: string[]
   animationFile?: string
   geoUrl: string
   textureUrl: string
   transparencyTextureUrl?: string
+  layerTextureUrls?: string[]
   animationUrl?: string
 }
 
 const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
 const COBBLEMON_ASSETS_REF = "master"
 const COBBLEMON_ASSETS_ROOT = "blockbench/pokemon"
+
+const LAYER_TEXTURE_KEYWORDS = [
+  "aura",
+  "effect",
+  "energy",
+  "flame",
+  "gel",
+  "glow",
+  "layer",
+  "liquid",
+  "mist",
+  "overlay",
+  "particle",
+  "smoke",
+]
 
 const modelPreviewCache = new Map<string, ModelPreviewManifest | null>()
 
@@ -129,6 +146,12 @@ async function resolveModelPreview(
     }
 
     const transparencyTextureFile = pickTransparencyTextureFile(entries, geoFile)
+    const layerTextureFiles = pickLayerTextureFiles(
+      entries,
+      geoFile,
+      textureFile,
+      transparencyTextureFile
+    )
     const animationFile = pickAnimationFile(entries, geoFile)
 
     const geoAssetPath = `${directoryPath}/${geoFile}`
@@ -136,6 +159,9 @@ async function resolveModelPreview(
     const transparencyTextureAssetPath = transparencyTextureFile
       ? `${directoryPath}/${transparencyTextureFile}`
       : null
+    const layerTextureAssetPaths = layerTextureFiles.map(
+      (layerTextureFile) => `${directoryPath}/${layerTextureFile}`
+    )
     const animationAssetPath = animationFile ? `${directoryPath}/${animationFile}` : null
 
     return {
@@ -146,12 +172,20 @@ async function resolveModelPreview(
       geoFile,
       textureFile,
       transparencyTextureFile: transparencyTextureFile ?? undefined,
+      layerTextureFiles: layerTextureFiles.length > 0 ? layerTextureFiles : undefined,
       animationFile: animationFile ?? undefined,
       geoUrl: `/api/media/cobblemon-asset?path=${encodeURIComponent(geoAssetPath)}`,
       textureUrl: `/api/media/cobblemon-asset?path=${encodeURIComponent(textureAssetPath)}`,
       transparencyTextureUrl: transparencyTextureAssetPath
         ? `/api/media/cobblemon-asset?path=${encodeURIComponent(transparencyTextureAssetPath)}`
         : undefined,
+      layerTextureUrls:
+        layerTextureAssetPaths.length > 0
+          ? layerTextureAssetPaths.map(
+              (layerTextureAssetPath) =>
+                `/api/media/cobblemon-asset?path=${encodeURIComponent(layerTextureAssetPath)}`
+            )
+          : undefined,
       animationUrl: animationAssetPath
         ? `/api/media/cobblemon-asset?path=${encodeURIComponent(animationAssetPath)}`
         : undefined,
@@ -218,18 +252,159 @@ function pickTransparencyTextureFile(entries: GitLabTreeEntry[], geoFile: string
   const files = entries
     .filter((entry) => entry.type === "blob" && entry.name.endsWith(".png"))
     .map((entry) => entry.name)
-    .filter((file) => file.includes("transparency") && !file.includes("_shiny"))
+    .filter((file) => !file.includes("_shiny"))
+    .filter((file) => /(_alpha|transparency)\.png$/iu.test(file))
 
   if (files.length === 0) {
     return null
   }
 
   const baseName = geoFile.replace(/\.geo\.json$/u, "")
+  if (files.includes(`${baseName}_alpha.png`)) {
+    return `${baseName}_alpha.png`
+  }
+
   if (files.includes(`${baseName}_transparency.png`)) {
     return `${baseName}_transparency.png`
   }
 
-  return files.sort((a, b) => a.length - b.length || a.localeCompare(b))[0] ?? null
+  const sorted = files
+    .map((file) => ({ file, score: scoreTransparencyTextureFile(file, baseName) }))
+    .sort(
+      (a, b) => b.score - a.score || a.file.length - b.file.length || a.file.localeCompare(b.file)
+    )
+
+  return sorted[0]?.file ?? null
+}
+
+function scoreTransparencyTextureFile(file: string, baseName: string): number {
+  const normalized = file.toLowerCase()
+  const normalizedBaseName = baseName.toLowerCase()
+  let score = 0
+
+  if (normalized === `${normalizedBaseName}_alpha.png`) {
+    score += 300
+  }
+
+  if (normalized === `${normalizedBaseName}_transparency.png`) {
+    score += 280
+  }
+
+  if (normalized.startsWith(`${normalizedBaseName}_`)) {
+    score += 120
+  }
+
+  if (normalized.includes("_alpha")) {
+    score += 80
+  }
+
+  if (normalized.includes("transparency")) {
+    score += 65
+  }
+
+  return score
+}
+
+function pickLayerTextureFiles(
+  entries: GitLabTreeEntry[],
+  geoFile: string,
+  textureFile: string,
+  transparencyTextureFile?: string | null
+): string[] {
+  const files = entries
+    .filter((entry) => entry.type === "blob" && entry.name.endsWith(".png"))
+    .map((entry) => entry.name)
+
+  const excluded = new Set<string>([textureFile])
+  if (transparencyTextureFile) {
+    excluded.add(transparencyTextureFile)
+  }
+
+  const candidates = files.filter((file) => {
+    if (excluded.has(file)) {
+      return false
+    }
+
+    if (file.includes("_shiny")) {
+      return false
+    }
+
+    if (/(_alpha|transparency)\.png$/iu.test(file)) {
+      return false
+    }
+
+    return true
+  })
+
+  if (candidates.length === 0) {
+    return []
+  }
+
+  const baseName = geoFile.replace(/\.geo\.json$/u, "")
+  const preferredCandidates = candidates.filter((file) => file.startsWith(`${baseName}_`))
+  const filesToGroup = preferredCandidates.length > 0 ? preferredCandidates : candidates
+
+  const groups = new Map<string, string[]>()
+
+  for (const file of filesToGroup) {
+    const groupKey = file.replace(/\.png$/iu, "").replace(/\d+$/u, "")
+    const group = groups.get(groupKey)
+
+    if (group) {
+      group.push(file)
+      continue
+    }
+
+    groups.set(groupKey, [file])
+  }
+
+  const selectedFiles = Array.from(groups.values()).map((groupFiles) => {
+    const sortedGroup = [...groupFiles].sort(compareLayerTextureFiles)
+    return sortedGroup[0] as string
+  })
+
+  const filteredLayerFiles = selectedFiles.filter((selectedFile) => {
+    const selectedGroupKey = selectedFile.replace(/\.png$/iu, "").replace(/\d+$/u, "")
+    const selectedGroupFiles = groups.get(selectedGroupKey) ?? []
+    return isLikelyLayerTextureGroup(selectedGroupKey, selectedGroupFiles)
+  })
+
+  return filteredLayerFiles.sort(compareLayerTextureFiles)
+}
+
+function isLikelyLayerTextureGroup(groupKey: string, groupFiles: string[]): boolean {
+  const normalizedGroupKey = groupKey.toLowerCase()
+
+  if (LAYER_TEXTURE_KEYWORDS.some((keyword) => normalizedGroupKey.includes(`_${keyword}`))) {
+    return true
+  }
+
+  const animatedFrameCount = groupFiles.filter((file) => extractFrameNumber(file) > 0).length
+  if (animatedFrameCount >= 2) {
+    return true
+  }
+
+  return false
+}
+
+function compareLayerTextureFiles(a: string, b: string): number {
+  const frameA = extractFrameNumber(a)
+  const frameB = extractFrameNumber(b)
+
+  if (frameA !== frameB) {
+    return frameA - frameB
+  }
+
+  return a.length - b.length || a.localeCompare(b)
+}
+
+function extractFrameNumber(file: string): number {
+  const match = file.match(/(\d+)\.png$/iu)
+  if (!match) {
+    return 0
+  }
+
+  return Number.parseInt(match[1] ?? "0", 10)
 }
 
 function pickAnimationFile(entries: GitLabTreeEntry[], geoFile: string): string | null {
